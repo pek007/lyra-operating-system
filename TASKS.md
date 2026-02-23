@@ -4,14 +4,13 @@ Use this until a dedicated work tool is selected.
 
 ## Inbox
 - [ ] Select work management tool (from ADR-001)
-- [ ] Approve ADR-001 option
+- [ ] Approve ADR-001 option (A/B/C)
 
 ## Triage
-- [ ] Create SOP-001 Intake & Triage
-- [ ] Create STD-001 Definition of Done
+- [ ] Define initial weekly metrics template (METRICS_WEEKLY.md)
 
 ## Active
-- [ ] (none)
+- [ ] Decide and confirm final systems-of-record setup
 
 ## Waiting
 - [ ] (none)
@@ -19,3 +18,6 @@ Use this until a dedicated work tool is selected.
 ## Done
 - [x] Create MODEL_ROUTING_POLICY.md
 - [x] Create WAYS_OF_WORKING_V1.md
+- [x] Create ADR-001_SYSTEMS_OF_RECORD.md
+- [x] Create SOP-001_INTAKE_TRIAGE.md
+- [x] Create STD-001_DEFINITION_OF_DONE.md
