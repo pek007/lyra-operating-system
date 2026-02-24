@@ -10,7 +10,11 @@ Use this until a dedicated work tool is selected.
 - [ ] Begin weekly metrics update cadence (every Friday)
 
 ## Active
-- [ ] Decide and confirm final systems-of-record setup
+- [ ] Set up concrete work tool (Trello) for Option C
+- [ ] Define task ID + task↔doc linking convention
+- [ ] Create IR-001 incident mini-runbook
+- [ ] Create OPS-001 backup/restore runbook
+- [ ] Create GOV-001 retention/access baseline
 
 ## Waiting
 - [ ] (none)
