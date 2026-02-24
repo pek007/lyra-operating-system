@@ -14,7 +14,9 @@ Use this until a dedicated work tool is selected.
 - [ ] Run first SEC-001 baseline review and log remediation tasks
 - [ ] Start 30-day Brave API usage/ROI baseline in SUBSCRIPTION_REGISTER.md
 - [ ] Schedule monthly subscription review (keep/downgrade/cancel)
-- [ ] Decide Phase 1 sub-agent activation sequence from multi-agent model
+- [ ] Implement multi-agent v1.1 execution semantics (persistent vs spawned)
+- [ ] Define permission envelopes per agent
+- [ ] Add champion-challenger model routing scorecard + monthly anti-thrash rule
 
 ## Waiting
 - [ ] (none)
