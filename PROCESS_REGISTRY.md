@@ -19,6 +19,7 @@ Track core processes, standards, and runbooks with review state.
 | GOV-001_RETENTION_ACCESS_BASELINE.md | Governance | Lyra | Active | 2026-02-24 | 2026-03-24 |
 | SEC-001_BASELINE_CHECKLIST.md | Security Baseline | Lyra | Active | 2026-02-24 | 2026-03-24 |
 | SEC_REVIEW_2026-02-24.md | Security Review | Lyra | Active | 2026-02-24 | 2026-03-24 |
+| ACCESS_REVIEW_LOG.md | Access Governance Log | Lyra | Active | 2026-02-24 | 2026-03-24 |
 | TASK_LINKING_STANDARD.md | Standard | Lyra | Active | 2026-02-24 | 2026-03-24 |
 | AGENT_EXECUTION_SEMANTICS.md | Multi-agent Control | Lyra | Active | 2026-02-24 | 2026-03-24 |
 | AGENT_PERMISSION_ENVELOPES.md | Multi-agent Security | Lyra | Active | 2026-02-24 | 2026-03-24 |

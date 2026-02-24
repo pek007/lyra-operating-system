@@ -4,9 +4,9 @@
 Minimum security controls for safe day-to-day operation.
 
 ## Identity & Access
-- [ ] MFA enabled on critical accounts (email, Telegram bot owner, model providers, repo)
+- [x] MFA enabled on critical accounts (email, Telegram bot owner, model providers, repo)
 - [ ] No shared passwords without explicit control
-- [ ] Access list reviewed monthly
+- [x] Access list reviewed monthly
 
 ## Device Security
 - [ ] Full-disk encryption enabled (FileVault)

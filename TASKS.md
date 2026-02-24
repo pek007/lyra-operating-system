@@ -10,7 +10,6 @@ Use this until a dedicated work tool is selected.
 
 ## Active
 - [ ] OPS-2026-005 | Clean ineffective denyCommands entries and re-audit
-- [ ] OPS-2026-006 | Complete MFA/access monthly review setup + backup evidence check
 
 ## Waiting
 - [ ] (none)
