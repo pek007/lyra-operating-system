@@ -21,3 +21,5 @@ Use this until a dedicated work tool is selected.
 - [x] Create ADR-001_SYSTEMS_OF_RECORD.md
 - [x] Create SOP-001_INTAKE_TRIAGE.md
 - [x] Create STD-001_DEFINITION_OF_DONE.md
+- [x] Create DESIGN_PRINCIPLES.md
+- [x] Create DECISION_PRINCIPLES.md
