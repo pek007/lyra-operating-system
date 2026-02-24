@@ -11,6 +11,8 @@ Use this until a dedicated work tool is selected.
 
 ## Active
 - [ ] Set up concrete work tool (Trello) for Option C
+- [ ] Configure Trello API credentials (key/token/board id)
+- [ ] Run `tools/trello_sync.py` dry-run then apply
 - [ ] Define task ID + task↔doc linking convention
 - [ ] Execute first restore test and record evidence (RST-2026-001)
 - [ ] Run first SEC-001 baseline review and log remediation tasks
