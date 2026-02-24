@@ -7,7 +7,7 @@ Use this until a dedicated work tool is selected.
 - [ ] Approve ADR-001 option (A/B/C)
 
 ## Triage
-- [ ] Define initial weekly metrics template (METRICS_WEEKLY.md)
+- [ ] Begin weekly metrics update cadence (every Friday)
 
 ## Active
 - [ ] Decide and confirm final systems-of-record setup
