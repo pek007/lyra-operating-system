@@ -3,8 +3,8 @@
 Use this until a dedicated work tool is selected.
 
 ## Inbox
-- [ ] Select work management tool (from ADR-001)
-- [ ] Approve ADR-001 option (A/B/C)
+- [ ] Select concrete work tool for Option C (initial choice + setup)
+- [ ] Define linking convention between task IDs and docs
 
 ## Triage
 - [ ] Begin weekly metrics update cadence (every Friday)

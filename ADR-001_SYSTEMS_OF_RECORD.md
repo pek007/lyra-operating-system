@@ -1,6 +1,6 @@
 # ADR-001: Systems of Record for Work and Knowledge
 
-- **Status:** Proposed (ready for decision)
+- **Status:** Approved
 - **Date:** 2026-02-23
 - **Owner:** Peter (A), Lyra (R)
 
