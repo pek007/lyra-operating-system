@@ -9,7 +9,7 @@ Maintain a live register of operational, security, and execution risks.
 | Missing external web search API | Medium | High | Peter | Use manual deep research until business case approved | Open |
 | Process drift (docs not followed) | Medium | Medium | Lyra | Weekly metrics + review cadence + DoD enforcement | Open |
 | Single-provider model dependency | Medium | Medium | Peter/Lyra | Model routing policy + add secondary/provider fallback | Open |
-| Backup/restore not yet fully runbooked | High | Medium | Lyra | Create OPS-001 + restoration test evidence | Planned |
+| Backup/restore execution evidence incomplete | High | Medium | Lyra | OPS-001 created; execute and log restore test evidence | Open |
 
 ## Review Rule
 - Update weekly in metrics cycle.

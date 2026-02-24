@@ -12,9 +12,8 @@ Use this until a dedicated work tool is selected.
 ## Active
 - [ ] Set up concrete work tool (Trello) for Option C
 - [ ] Define task ID + task↔doc linking convention
-- [ ] Create IR-001 incident mini-runbook
-- [ ] Create OPS-001 backup/restore runbook
-- [ ] Create GOV-001 retention/access baseline
+- [ ] Execute first restore test and record evidence (RST-2026-001)
+- [ ] Run first SEC-001 baseline review and log remediation tasks
 
 ## Waiting
 - [ ] (none)
