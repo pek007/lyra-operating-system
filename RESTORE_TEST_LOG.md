@@ -16,11 +16,11 @@ Evidence log for backup restore tests.
 
 ## Entries
 
-### RST-2026-001 (Planned)
+### RST-2026-001
 - Test ID: RST-2026-001
-- Date: Pending
+- Date: 2026-02-24
 - Scope/files tested: CONTROL_PANEL.md, MISSION.md, TASKS.md
-- Restore target location: Pending
-- Result (Pass/Fail): Pending
-- Notes: Initial baseline restore test to be executed this week
-- Next actions: Execute and document evidence
+- Restore target location: `/Users/lyra/.openclaw/workspace/.restore-tests/RST-2026-001`
+- Result (Pass/Fail): Pass
+- Notes: File copies restored successfully and SHA1 checksums match source files.
+- Next actions: Repeat monthly; add offsite restore simulation in next cycle

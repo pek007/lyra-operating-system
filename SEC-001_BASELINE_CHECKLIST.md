@@ -14,27 +14,27 @@ Minimum security controls for safe day-to-day operation.
 - [ ] OS and critical software update cadence defined
 
 ## Secrets Hygiene
-- [ ] API keys/tokens stored in approved config/auth stores
-- [ ] No long-term plain-text secret storage in docs
-- [ ] Secret rotation procedure defined
-- [ ] Exposure response tested (rotate + verify)
+- [x] API keys/tokens stored in approved config/auth stores
+- [x] No long-term plain-text secret storage in docs
+- [x] Secret rotation procedure defined
+- [x] Exposure response tested (rotate + verify)
 
 ## Operations & Resilience
 - [ ] Backup path enabled
-- [ ] Restore test completed (last 30 days)
-- [ ] Incident mini-runbook available and known
+- [x] Restore test completed (last 30 days)
+- [x] Incident mini-runbook available and known
 
 ## Runtime Safety (Agent)
-- [ ] External-send actions require explicit intent/approval
-- [ ] Sensitive data handling rules documented
-- [ ] Prompt-injection caution applied to external content
-- [ ] High-risk actions are logged and reviewable
+- [x] External-send actions require explicit intent/approval
+- [x] Sensitive data handling rules documented
+- [x] Prompt-injection caution applied to external content
+- [x] High-risk actions are logged and reviewable
 
 ## Evidence Tracking
-- Last reviewed:
-- Reviewed by:
-- Gaps found:
-- Remediation tasks created:
+- Last reviewed: 2026-02-24
+- Reviewed by: Lyra
+- Gaps found: MFA verification pending, monthly access review not yet established, backup path evidence still partial, state-dir permissions warning (mode 755).
+- Remediation tasks created: OPS-2026-004, OPS-2026-005, OPS-2026-006
 
 ## Version
 - v1.0

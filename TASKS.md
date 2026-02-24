@@ -3,20 +3,14 @@
 Use this until a dedicated work tool is selected.
 
 ## Inbox
-- [ ] Define linking convention between task IDs and docs
+- [ ] (none)
 
 ## Triage
 - [ ] Begin weekly metrics update cadence (every Friday)
 
 ## Active
-- [ ] Define task ID + task↔doc linking convention
-- [ ] Execute first restore test and record evidence (RST-2026-001)
-- [ ] Run first SEC-001 baseline review and log remediation tasks
-- [ ] Start 30-day Brave API usage/ROI baseline in SUBSCRIPTION_REGISTER.md
-- [ ] Schedule monthly subscription review (keep/downgrade/cancel)
-- [ ] Implement multi-agent v1.1 execution semantics (persistent vs spawned)
-- [ ] Define permission envelopes per agent
-- [ ] Add champion-challenger model routing scorecard + monthly anti-thrash rule
+- [ ] OPS-2026-005 | Clean ineffective denyCommands entries and re-audit
+- [ ] OPS-2026-006 | Complete MFA/access monthly review setup + backup evidence check
 
 ## Waiting
 - [ ] (none)
@@ -33,3 +27,12 @@ Use this until a dedicated work tool is selected.
 - [x] Configure Trello API credentials (key/token/board id)
 - [x] Run `tools/trello_sync.py` dry-run then apply
 - [x] Add automated Trello sync cron (every 30 min)
+- [x] Define task ID + task↔doc linking convention
+- [x] Execute first restore test and record evidence (RST-2026-001)
+- [x] Run first SEC-001 baseline review and log remediation tasks
+- [x] OPS-2026-004 | Harden state-dir permissions (`chmod 700 /Users/lyra/.openclaw`)
+- [x] Start 30-day Brave API usage/ROI baseline (`BRAVE_USAGE_BASELINE_2026-03.md`)
+- [x] Schedule monthly subscription review cron
+- [x] Implement multi-agent v1.1 execution semantics (`AGENT_EXECUTION_SEMANTICS.md`)
+- [x] Define permission envelopes per agent (`AGENT_PERMISSION_ENVELOPES.md`)
+- [x] Add champion-challenger model routing scorecard + monthly anti-thrash rule (`MODEL_ROUTING_SCORECARD.md`)

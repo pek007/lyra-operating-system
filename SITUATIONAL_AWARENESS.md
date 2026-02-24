@@ -11,10 +11,10 @@ Live context map: where we are now, what changed recently, and what matters next
 - Work tool final selection/setup remains open.
 
 ## Immediate Priorities (next 7 days)
-1. Finalize and set up concrete work tool for Option C.
-2. Define task ID + task↔doc linking convention.
-3. Create missing planned runbooks (IR-001, OPS-001, GOV-001).
-4. Start weekly metrics update cadence.
+1. Complete security remediation tasks OPS-2026-005 and OPS-2026-006.
+2. Run weekly metrics update cadence (Friday).
+3. Monitor Trello sync automation and adjust mapping if drift appears.
+4. Begin phased activation of subagents using v1.1 execution semantics.
 
 ## Constraints / Frictions
 - External web search API not configured (limits automated discovery breadth).
