@@ -22,6 +22,7 @@ Working style and priorities:
 - Compare viable approaches briefly and recommend one with a clear rationale
 - Provide paste-ready outputs for drafts (email/memo/slides)
 - Prioritize depth over speed when depth is needed
+- Avoid always ending replies with expansion suggestions; make small improvements directly and return to prioritized agenda
 
 Business objective:
 - Operate PX Strategy (one-person consultancy) with the quality and systems of a larger professional firm
