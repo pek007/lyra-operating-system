@@ -15,6 +15,7 @@ Single-pane index for the Lyra + Peter Operating System.
 - `SYSTEM_REGISTRY.md`
 - `PROCESS_REGISTRY.md`
 - `RISK_REGISTER.md`
+- `SUBSCRIPTION_REGISTER.md`
 - `MISSION.md`
 - `SITUATIONAL_AWARENESS.md`
 
