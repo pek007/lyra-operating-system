@@ -6,6 +6,7 @@ import re
 import sys
 import urllib.parse
 import urllib.request
+import urllib.error
 from dataclasses import dataclass
 from typing import Dict, List, Tuple
 
@@ -54,8 +55,12 @@ class TrelloClient:
         qs = urllib.parse.urlencode(params)
         url = f"https://api.trello.com/1{path}?{qs}"
         req = urllib.request.Request(url=url, method=method)
-        with urllib.request.urlopen(req) as resp:
-            return json.loads(resp.read().decode("utf-8"))
+        try:
+            with urllib.request.urlopen(req) as resp:
+                return json.loads(resp.read().decode("utf-8"))
+        except urllib.error.HTTPError as e:
+            body = e.read().decode("utf-8", errors="ignore")
+            raise RuntimeError(f"Trello API {method} {path} failed: HTTP {e.code} - {body}") from e
 
     def get_lists(self, board_id: str):
         return self._request("GET", f"/boards/{board_id}/lists", {"cards": "none", "filter": "open"})
@@ -87,6 +92,9 @@ def ensure_lists(client: TrelloClient, board_id: str, apply: bool) -> Dict[str, 
             if apply:
                 obj = client.create_list(board_id, name)
                 existing[name] = obj["id"]
+            else:
+                # placeholder in dry-run so downstream planning still works
+                existing[name] = f"DRYRUN:{name}"
     # refresh to catch position/order after creates
     if apply:
         existing = {l["name"]: l["id"] for l in client.get_lists(board_id)}
