@@ -10,6 +10,9 @@ Use this until a dedicated work tool is selected.
 
 ## Active
 - [ ] OPS-2026-005 | Clean ineffective denyCommands entries and re-audit
+- [ ] OPS-2026-007 | Define machine-readable registry schemas (agent/routing/evidence/change)
+- [ ] OPS-2026-008 | Implement evidence ingestion job (doctor/security -> knowledge evidence entries)
+- [ ] OPS-2026-009 | Build Control Tower MVP views spec (Now/Next/Watch/Change)
 
 ## Waiting
 - [ ] (none)
