@@ -28,6 +28,7 @@ No paid service without an entry here.
 | Service | Category | Owner | Plan | Monthly cost (SEK) | Billing cycle | Renewal date | Purpose | Usage metric | Last 30d usage | ROI status | Cancel path tested? | Cancellation URL/steps |
 |---|---|---|---|---:|---|---|---|---|---|---|---|---|
 | Brave Search API | Research API | Peter | Search API | TBD | Monthly | TBD | Enable live web research in OpenClaw | `web_search` calls/day | Baseline starts now | Review in 30 days | No | Brave dashboard > API billing/subscription |
+| OpenRouter | Model API Aggregator | Peter | Credit-funded usage | Budgeted ($100 credit) | Usage-based | N/A | Multi-model access for specialist agents and fallback routing | API spend/day + tasks completed | Baseline starts now | Review weekly during rollout | No | OpenRouter dashboard > billing/subscription |
 
 ## Review Cadence
 - Weekly: update Last 30d usage for paid services.
