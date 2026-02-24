@@ -14,6 +14,8 @@ Use this until a dedicated work tool is selected.
 - [ ] Define task ID + task↔doc linking convention
 - [ ] Execute first restore test and record evidence (RST-2026-001)
 - [ ] Run first SEC-001 baseline review and log remediation tasks
+- [ ] Decide whether to activate Daily OpenClaw hygiene cron (spec ready)
+- [ ] Run 2-week research-provider ROI pilot if/when web API enabled
 
 ## Waiting
 - [ ] (none)
