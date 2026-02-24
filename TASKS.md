@@ -3,16 +3,12 @@
 Use this until a dedicated work tool is selected.
 
 ## Inbox
-- [ ] Select concrete work tool for Option C (initial choice + setup)
 - [ ] Define linking convention between task IDs and docs
 
 ## Triage
 - [ ] Begin weekly metrics update cadence (every Friday)
 
 ## Active
-- [ ] Set up concrete work tool (Trello) for Option C
-- [ ] Configure Trello API credentials (key/token/board id)
-- [ ] Run `tools/trello_sync.py` dry-run then apply
 - [ ] Define task ID + task↔doc linking convention
 - [ ] Execute first restore test and record evidence (RST-2026-001)
 - [ ] Run first SEC-001 baseline review and log remediation tasks
@@ -31,3 +27,7 @@ Use this until a dedicated work tool is selected.
 - [x] Create STD-001_DEFINITION_OF_DONE.md
 - [x] Create DESIGN_PRINCIPLES.md
 - [x] Create DECISION_PRINCIPLES.md
+- [x] Set up concrete work tool (Trello) for Option C
+- [x] Configure Trello API credentials (key/token/board id)
+- [x] Run `tools/trello_sync.py` dry-run then apply
+- [x] Add automated Trello sync cron (every 30 min)
