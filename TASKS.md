@@ -9,7 +9,7 @@ Use this until a dedicated work tool is selected.
 - [ ] Begin weekly metrics update cadence (every Friday)
 
 ## Active
-- [ ] (none)
+- [ ] OPS-2026-011 | Build Control Panel MVP skeleton in Claude Code using approved spec
 
 ## Waiting
 - [ ] (none)
