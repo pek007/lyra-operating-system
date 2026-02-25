@@ -9,7 +9,7 @@ Use this until a dedicated work tool is selected.
 - [ ] Begin weekly metrics update cadence (every Friday)
 
 ## Active
-- [ ] OPS-2026-010 | Wire evidence ingestion into daily hygiene flow
+- [ ] (none)
 
 ## Waiting
 - [ ] (none)
@@ -39,3 +39,4 @@ Use this until a dedicated work tool is selected.
 - [x] OPS-2026-007 | Define machine-readable registry schemas (agent/routing/evidence/change)
 - [x] OPS-2026-008 | Implement evidence ingestion job (doctor/security -> knowledge evidence entries)
 - [x] OPS-2026-009 | Build Control Tower MVP views spec (Now/Next/Watch/Change)
+- [x] OPS-2026-010 | Wire evidence ingestion into daily hygiene flow
