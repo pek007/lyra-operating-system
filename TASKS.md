@@ -10,6 +10,7 @@ Use this until a dedicated work tool is selected.
 
 ## Active
 - [ ] OPS-2026-011 | Build Control Panel MVP skeleton in Claude Code using approved spec
+- [ ] OPS-2026-013 | Enable embeddings-backed memory indexing (blocked: provider API key)
 
 ## Waiting
 - [ ] (none)
@@ -40,3 +41,4 @@ Use this until a dedicated work tool is selected.
 - [x] OPS-2026-008 | Implement evidence ingestion job (doctor/security -> knowledge evidence entries)
 - [x] OPS-2026-009 | Build Control Tower MVP views spec (Now/Next/Watch/Change)
 - [x] OPS-2026-010 | Wire evidence ingestion into daily hygiene flow
+- [x] OPS-2026-012 | Schedule weekly OpenClaw release delta review
