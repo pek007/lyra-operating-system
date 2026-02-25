@@ -1,0 +1,10 @@
+# Local runtime/state
+.openclaw/
+.restore-tests/
+
+# Generated exports
+OPERATING_SYSTEM_FULL_EXPORT*.md
+
+# Rolling generated evidence snapshots (derived)
+knowledge/evidence/latest-doctor.txt
+knowledge/evidence/latest-security-audit.json
