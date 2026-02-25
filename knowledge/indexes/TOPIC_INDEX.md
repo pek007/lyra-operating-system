@@ -22,6 +22,9 @@ Fast lookup index for reusable knowledge assets.
 - Control Panel architecture
   - Key files: `CONTROL_PANEL.md`, `knowledge/reports/2026-02-24__deepresearch__control-panel-vision__v1.md`, `knowledge/distilled/2026-02-24__control-panel-mvp-implementation-cuts__v1.md`
   - Last updated: 2026-02-24
+- Community advanced-use patterns
+  - Key files: `knowledge/reports/2026-02-25__community-notes__openclaw-advanced-use-cases__v1.md`, `knowledge/distilled/2026-02-25__community-notes__adopt-now-vs-later__v1.md`
+  - Last updated: 2026-02-25
 
 ## Add entries as:
 - Topic
