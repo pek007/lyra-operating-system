@@ -42,6 +42,12 @@ Set default design philosophy for all systems, workflows, automations, and deliv
    - Separate must-have quality from aspirational polish.
    - Upgrade quality in planned iterations, not by delaying all value.
 
+10. **Make-first bias with pragmatic progression**
+   - Default preference: Build → Open Source → SaaS.
+   - Allow SaaS-first when it is clearly faster or functionally superior.
+   - Design systems with migration paths to avoid permanent lock-in.
+   - Increase ownership over time where strategic value justifies it.
+
 ## Design Check (apply before adoption)
 For any new tool/process, answer:
 - Does this scale?
@@ -51,10 +57,11 @@ For any new tool/process, answer:
 - Does it improve over time with metrics?
 - Is the UX simple for daily operation?
 - Is the scope balanced between a shippable **Now bar** and an ambitious **Next bar**?
+- Is the Make/OSS/Buy choice explicit, with a migration path if starting SaaS-first?
 
 If two or more answers are “no”, redesign or defer.
 
 ## Version
-- v1.1
+- v1.2
 - Date: 2026-02-25
 - Owner: Peter + Lyra

@@ -89,6 +89,36 @@ Escalation check:
 - If “Now bar” compromises safety, trust, or decision quality, do not ship.
 - If “Next bar” delays value without reducing meaningful risk, defer to roadmap.
 
+## Make–Open Source–Buy Progression Principle
+**Pragmatic sovereignty: optimize time-to-value now, increase ownership over time.**
+
+Default preference order:
+1. **Build** (best when strategically core and feasible)
+2. **Adopt free open-source** (fast ownership without full build cost)
+3. **Buy SaaS** (acceptable default when speed/quality advantage is clear)
+
+Override rule (explicitly allowed):
+- Start with **SaaS** when it materially improves time-to-value, quality/functionality, or near-term risk.
+
+Strategic ownership triggers (favor Build or OSS sooner):
+- Capability is core differentiation/IP
+- Lock-in risk is high
+- Long-term economics strongly favor ownership
+- Compliance/privacy constraints require deeper control
+
+Progression path (for non-core utilities and evolving capabilities):
+1. **Phase 1 — Fastest credible start** (often SaaS)
+2. **Phase 2 — Stabilize and learn real usage patterns**
+3. **Phase 3 — Migrate to OSS/Build when justified**
+
+Minimum evaluation checklist (before deciding):
+- Time-to-value (now)
+- Functional quality fit
+- 12–24 month total cost
+- Lock-in and migration cost
+- Security/compliance posture
+- Strategic ownership value
+
 ## Decision Quality Standard
 A decision is “good” if:
 - It matches the door type
@@ -97,8 +127,9 @@ A decision is “good” if:
 - Reversal/mitigation path is clear
 - Learning is captured for future decisions
 - Ambition and pragmatism were explicitly balanced (Now vs Next bar)
+- Make/OSS/Buy choice is explicit with rationale and progression path
 
 ## Version
-- v1.1
+- v1.2
 - Date: 2026-02-25
 - Owner: Peter + Lyra
