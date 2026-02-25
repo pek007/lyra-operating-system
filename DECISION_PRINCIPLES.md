@@ -72,6 +72,23 @@ For Type 1 decisions, gather at least one external perspective:
 
 External input should inform, not replace, final judgment.
 
+## Ambition–Pragmatism Principle
+**State-of-the-art ambition, pragmatic execution.**
+
+Rule:
+- Set an ambitious target state and quality bar.
+- Ship the smallest safe version that creates real value now.
+- Do not block delivery on non-critical polish.
+- Raise the bar in planned increments after each release.
+
+Practical decision framing (required for major initiatives):
+1. **Now bar (ship bar):** minimum level to deliver safely and credibly.
+2. **Next bar (target bar):** state-of-the-art level to reach through iteration.
+
+Escalation check:
+- If “Now bar” compromises safety, trust, or decision quality, do not ship.
+- If “Next bar” delays value without reducing meaningful risk, defer to roadmap.
+
 ## Decision Quality Standard
 A decision is “good” if:
 - It matches the door type
@@ -79,8 +96,9 @@ A decision is “good” if:
 - Assumptions were explicit
 - Reversal/mitigation path is clear
 - Learning is captured for future decisions
+- Ambition and pragmatism were explicitly balanced (Now vs Next bar)
 
 ## Version
-- v1.0
-- Date: 2026-02-23
+- v1.1
+- Date: 2026-02-25
 - Owner: Peter + Lyra

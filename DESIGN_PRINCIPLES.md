@@ -36,6 +36,12 @@ Set default design philosophy for all systems, workflows, automations, and deliv
    - Reuse service architecture across domains (OS, PX, future domains).
    - Enforce strict data/config/runtime separation between domain instances.
 
+9. **State-of-the-art ambition, pragmatic delivery**
+   - Aim for best-in-class architecture and quality over time.
+   - Deliver in increments that are usable and safe now.
+   - Separate must-have quality from aspirational polish.
+   - Upgrade quality in planned iterations, not by delaying all value.
+
 ## Design Check (apply before adoption)
 For any new tool/process, answer:
 - Does this scale?
@@ -44,10 +50,11 @@ For any new tool/process, answer:
 - Is it transparent/auditable?
 - Does it improve over time with metrics?
 - Is the UX simple for daily operation?
+- Is the scope balanced between a shippable **Now bar** and an ambitious **Next bar**?
 
 If two or more answers are “no”, redesign or defer.
 
 ## Version
-- v1.0
-- Date: 2026-02-23
+- v1.1
+- Date: 2026-02-25
 - Owner: Peter + Lyra
