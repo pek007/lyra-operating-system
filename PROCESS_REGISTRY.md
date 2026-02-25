@@ -25,6 +25,9 @@ Track core processes, standards, and runbooks with review state.
 | AGENT_PERMISSION_ENVELOPES.md | Multi-agent Security | Lyra | Active | 2026-02-24 | 2026-03-24 |
 | MODEL_ROUTING_SCORECARD.md | Model Governance | Lyra | Active | 2026-02-24 | 2026-03-24 |
 | BRAVE_USAGE_BASELINE_2026-03.md | Usage Baseline | Lyra | Active | 2026-02-24 | 2026-03-26 |
+| REGISTRY_SCHEMAS_V1.md | Data Contract | Lyra | Active | 2026-02-25 | 2026-03-25 |
+| CONTROL_TOWER_MVP_VIEWS_SPEC.md | UI Spec | Lyra | Active | 2026-02-25 | 2026-03-25 |
+| tools/evidence_ingest.py | Automation Script | Lyra | Active | 2026-02-25 | 2026-03-25 |
 
 ## Notes
 - Planned items must be tracked in TASKS.md with a target date.
