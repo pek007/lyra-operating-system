@@ -11,6 +11,7 @@ Use this until a dedicated work tool is selected.
 ## Active
 - [ ] OPS-2026-011 | Build Control Panel MVP skeleton in Claude Code using approved spec
 - [ ] OPS-2026-014 | Add domain isolation support (`os` vs `px`) to Control Panel architecture
+- [ ] OPS-2026-015 | Implement tool capability contracts + approval-card pattern before enabling human-like tools
 
 ## Waiting
 - [ ] (none)
