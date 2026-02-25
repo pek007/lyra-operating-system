@@ -1,0 +1,121 @@
+policy_version: 1
+name: openclaw-skill-governance
+
+defaults:
+  runtime: sandbox
+  install_state: disabled
+  require_evidence_pack: true
+  require_version_pin: true
+  allow_auto_update_in_prod: false
+
+risk_classes:
+  S0:
+    approvals_required: false
+    allowed_actions:
+      - read_docs
+
+  S1:
+    approvals_required: false
+    controls:
+      - path_allowlist
+      - telemetry_required
+
+  S2:
+    approvals_required: true
+    approvers:
+      - peter
+    controls:
+      - least_privilege_credentials
+      - ephemeral_secret_injection
+      - write_action_confirmation
+      - outbound_domain_allowlist
+      - spend_limit_if_model_calls
+
+  S3:
+    approvals_required: true
+    approvers:
+      - peter
+    controls:
+      - dedicated_agent_only
+      - dedicated_sandbox_only
+      - strict_tool_allowlist
+      - no_extension_auto_install
+      - all_external_calls_require_approval
+
+action_gates:
+  - action: send_email
+    approval: required
+  - action: create_calendar_event
+    approval: required
+  - action: github_merge_pr
+    approval: required
+  - action: github_release
+    approval: required
+  - action: bulk_write_operation
+    approval: required
+  - action: add_mcp_server
+    approval: required
+  - action: enable_skill_in_prod_agent
+    approval: required
+
+skill_overrides:
+  weather:
+    class: S1
+    install_state: enabled
+
+  model-usage:
+    class: S1
+    install_state: enabled
+
+  openai-whisper:
+    class: S1
+    install_state: enabled
+
+  summarize:
+    class: S2
+    install_state: enabled
+    max_monthly_budget_usd: 100
+
+  github:
+    class: S2
+    install_state: enabled
+
+  gog:
+    class: S2
+    install_state: sandbox-evaluate
+
+  notion:
+    class: S2
+    install_state: sandbox-evaluate
+
+  obsidian:
+    class: S1
+    install_state: sandbox-evaluate
+
+  nano-pdf:
+    class: S1
+    install_state: sandbox-evaluate
+
+  self-improving-agent:
+    class: S2
+    install_state: sandbox-evaluate
+
+  sonoscli:
+    class: S1
+    install_state: restricted
+
+  nano-banana-pro:
+    class: S2
+    install_state: restricted
+
+  gemini:
+    class: S3
+    install_state: restricted
+
+  mcporter:
+    class: S3
+    install_state: restricted
+
+  skill-creator:
+    class: S3
+    install_state: restricted
