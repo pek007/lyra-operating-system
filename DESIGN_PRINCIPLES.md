@@ -32,6 +32,10 @@ Set default design philosophy for all systems, workflows, automations, and deliv
    - Favor low-friction workflows with clear user experience.
    - If a process is hard to use, it will not be used.
 
+8. **Shared modules, isolated instances**
+   - Reuse service architecture across domains (OS, PX, future domains).
+   - Enforce strict data/config/runtime separation between domain instances.
+
 ## Design Check (apply before adoption)
 For any new tool/process, answer:
 - Does this scale?
