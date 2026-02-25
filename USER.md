@@ -23,6 +23,7 @@ Working style and priorities:
 - Provide paste-ready outputs for drafts (email/memo/slides)
 - Prioritize depth over speed when depth is needed
 - Avoid always ending replies with expansion suggestions; make small improvements directly and return to prioritized agenda
+- Protect focused book-writing block daily 07:00-09:00 (Europe/Stockholm): avoid scheduling anything that requires Peter interaction in that window
 
 Business objective:
 - Operate PX Strategy (one-person consultancy) with the quality and systems of a larger professional firm
