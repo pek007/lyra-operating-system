@@ -21,9 +21,9 @@ First baseline pass using:
 4. Manual verification pending: MFA/account access review and backup-path evidence
 
 ## Remediation Tasks
-- **OPS-2026-004**: Harden state-dir permissions (`chmod 700 /Users/lyra/.openclaw`)
-- **OPS-2026-005**: Clean ineffective `denyCommands` entries and re-audit
-- **OPS-2026-006**: Complete MFA/access monthly review setup + backup evidence check
+- **OPS-2026-004**: Harden state-dir permissions (`chmod 700 /Users/lyra/.openclaw`) ✅
+- **OPS-2026-005**: Clean ineffective `denyCommands` entries and re-audit ✅
+- **OPS-2026-006**: Complete MFA/access monthly review setup + backup evidence check ✅
 
 ## Evidence
 - Security audit JSON run at 2026-02-24

@@ -11,7 +11,7 @@ Live context map: where we are now, what changed recently, and what matters next
 - Work tool final selection/setup remains open.
 
 ## Immediate Priorities (next 7 days)
-1. Complete security remediation task OPS-2026-005.
+1. Implement OPS-2026-007/008/009 for Control Panel MVP foundation.
 2. Run weekly metrics update cadence (Friday).
 3. Monitor Trello sync automation and adjust mapping if drift appears.
 4. Begin phased activation of subagents using v1.1 execution semantics.
