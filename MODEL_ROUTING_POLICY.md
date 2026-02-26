@@ -116,7 +116,16 @@ If preferred model/provider is unavailable:
 4. Pilot Tier 2 (Opus API) on a narrow set of high-stakes tasks only.
 5. Evaluate a local model for resilience and low-cost utility work.
 
+## Codex Reasoning-Effort Rules (operational default)
+When routing to GPT-5.3-Codex:
+- `medium` for routine coding/ops tasks
+- `high` for architecture/security/significant cross-file changes
+- `xhigh` only for high-ambiguity, high-consequence long-horizon work
+
+Reasoning effort is a routing/lane decision, not a prompt-writing substitute.
+Escalations should be noted in task artifacts with short rationale.
+
 ## Version
-- v1.0
-- Date: 2026-02-23
+- v1.1
+- Date: 2026-02-26
 - Owner: Lyra + Peter

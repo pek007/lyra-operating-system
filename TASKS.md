@@ -6,15 +6,16 @@ Use this until a dedicated work tool is selected.
 - [ ] (none)
 
 ## Triage
-- [ ] Begin weekly metrics update cadence (every Friday)
+- [ ] OPS-2026-024 | Sprint 3 kickoff decision: confirm read-first scope freeze (no task write-back in S3)
+- [ ] OPS-2026-025 | Approve S3 workflow taxonomy v1 (domain, area, task_type governed values)
 
 ## Active
-- [ ] OPS-2026-011 | Build Control Panel MVP skeleton in Claude Code using approved spec
-- [ ] OPS-2026-014 | Add domain isolation support (`os` vs `px`) to Control Panel architecture
-- [ ] OPS-2026-015 | Implement tool capability contracts + approval-card pattern before enabling human-like tools
+- [ ] OPS-2026-020 | Chief Architect: publish Sprint 3 architecture brief v1 + guardrails pack
+- [ ] OPS-2026-021 | Claude Code supplier run: implement S3 Task Center + Skills Visibility from approved prompt
+- [ ] OPS-2026-022 | Architecture QA gate: verify S3 against must constraints (taxonomy, DoW subset, redaction)
 
 ## Waiting
-- [ ] (none)
+- [ ] OPS-2026-023 | Sprint 3 closeout pack (release notes + tag + vNext backlog update) after QA pass
 
 ## Done
 - [x] Create MODEL_ROUTING_POLICY.md
