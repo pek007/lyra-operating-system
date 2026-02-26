@@ -44,3 +44,4 @@ Use this until a dedicated work tool is selected.
 - [x] OPS-2026-010 | Wire evidence ingestion into daily hygiene flow
 - [x] OPS-2026-012 | Schedule weekly OpenClaw release delta review
 - [x] OPS-2026-013 | Enable embeddings-backed memory indexing (OpenAI embeddings active)
+- [x] OPS-2026-016 | Implement autonomous security + continuous-improvement governance sweeps (cron + guardrails + docs)
