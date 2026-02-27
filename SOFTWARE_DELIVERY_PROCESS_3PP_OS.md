@@ -6,6 +6,21 @@ Owner: Peter + Lyra
 ## Purpose
 OS-level software delivery process for any project (not project-specific).
 
+## Process modes (important)
+We use two delivery modes:
+
+1. **3PP mode (current focus)**
+   - Uses external supplier lanes (e.g., Claude Code, Deep Research).
+   - Best for larger, higher-risk, architecture-heavy work.
+   - Strong packet/traceability/governance requirements.
+
+2. **Internal fast mode (Lyra-only)**
+   - Fully internal execution for smaller/low-risk tasks.
+   - No mandatory external supplier or research handoff.
+   - Optimized for speed and low overhead.
+
+Long-run expectation: internal fast mode becomes the default for most work, while 3PP mode is used selectively for larger or higher-risk initiatives.
+
 ## Outcome-first principle
 Outcome quality is primary.
 Process is support to increase quality, safety, and execution reliability.
@@ -38,3 +53,15 @@ If process and intended outcome diverge:
 ## Governance
 - Keep implementation prompts outcome/constraint driven (avoid unnecessary micromanagement).
 - Require requirement-to-evidence traceability for non-trivial deliveries.
+
+## Mode selection rule
+Choose **internal fast mode** by default when:
+- scope is small and well-understood,
+- risk is low,
+- no major architecture/security decisions are involved.
+
+Choose **3PP mode** when:
+- scope is large or cross-cutting,
+- architecture and contracts need external challenge,
+- auditability/traceability needs are high,
+- specialized implementation throughput is beneficial.
