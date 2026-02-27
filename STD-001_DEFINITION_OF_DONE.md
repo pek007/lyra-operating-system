@@ -30,6 +30,13 @@ For client-facing or high-impact items:
 - Source quality checked (when applicable)
 - Language clarity and professionalism confirmed
 
+## Additional Criteria for Code/Config Changes
+For any implemented change (code/config/automation):
+- Linked WO-ID is present in PR/commit
+- `CA_TEMPLATE_V1.md` is completed and linked
+- Required tests/checks are executed and outcomes recorded
+- Any deviations from approved scope are explicitly documented
+
 ## Not Done If
 - Output is partial without explicit agreement
 - Critical assumptions are hidden

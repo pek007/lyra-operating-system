@@ -3,7 +3,11 @@
 Use this until a dedicated work tool is selected.
 
 ## Inbox
-- [ ] (none)
+- [ ] SEC-AUTO-20260227-01 | Restrict Telegram group command senders via `groupAllowFrom` (or per-group `allowFrom`) to remove critical command-invocation exposure.
+- [ ] SEC-AUTO-20260227-02 | Decide and enforce trust-boundary model for multi-user/group usage (separate gateways vs hardened shared runtime sandbox/tool scope).
+- [ ] SEC-AUTO-20260227-03 | Confirm reverse-proxy posture for Control UI; if proxied, set `gateway.trustedProxies`, otherwise explicitly keep local-only.
+- [ ] IMP-AUTO-20260227-01 | Add lightweight markdown link-check script + cron-safe scope filters to catch local doc drift before reviews.
+- [ ] IMP-AUTO-20260227-02 | Add smoke tests for `tools/` parsers (task ID extraction + frontmatter parsing) to prevent silent automation regressions.
 
 ## Triage
 - [ ] OPS-2026-024 | Sprint 3 kickoff decision: confirm read-first scope freeze (no task write-back in S3)
@@ -47,3 +51,4 @@ Use this until a dedicated work tool is selected.
 - [x] OPS-2026-013 | Enable embeddings-backed memory indexing (OpenAI embeddings active)
 - [x] OPS-2026-016 | Implement autonomous security + continuous-improvement governance sweeps (cron + guardrails + docs)
 - [x] OPS-2026-017 | Implement cadence governance policy (throughput-first planning + cadence floor guardrails)
+- [x] OPS-2026-026 | Adopt AI-native operating policy v1 + WO/CA templates and wire into SOP/DoD/process registry

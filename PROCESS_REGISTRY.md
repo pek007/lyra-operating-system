@@ -30,6 +30,9 @@ Track core processes, standards, and runbooks with review state.
 | tools/evidence_ingest.py | Automation Script | Lyra | Active | 2026-02-25 | 2026-03-25 |
 | SPRINT3_WEEKLY_CADENCE.md | Sprint Cadence | Peter/Lyra | Superseded | 2026-02-26 | - |
 | CADENCE_GOVERNANCE_POLICY.md | Policy | Peter/Lyra | Active | 2026-02-26 | 2026-03-26 |
+| AI_NATIVE_OPERATING_POLICY_V1.md | Policy | Peter/Lyra | Active | 2026-02-27 | 2026-03-27 |
+| WO_TEMPLATE_V1.md | Template | Peter/Lyra | Active | 2026-02-27 | 2026-03-27 |
+| CA_TEMPLATE_V1.md | Template | Peter/Lyra | Active | 2026-02-27 | 2026-03-27 |
 
 ## Notes
 - Planned items must be tracked in TASKS.md with a target date.

@@ -29,6 +29,18 @@ Applies to all new requests/tasks for Lyra + Peter.
    - Target outcome
    - Initial priority (P1–P4)
 3. If request is ambiguous, capture assumptions and move to Triage.
+4. A task cannot move to **Active** unless a linked Work Order exists and passes Gate A in `AI_NATIVE_OPERATING_POLICY_V1.md`.
+
+## Work Order Requirement for Active State
+To move from Triage to Active, the linked WO must include:
+- WO-ID
+- Objective + non-goals
+- Acceptance criteria
+- Risk class
+- Verification plan
+- Dependency declaration
+
+Reference template: `WO_TEMPLATE_V1.md`.
 
 ## Triage Cadence
 - Daily 10-minute triage pass.
