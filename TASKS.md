@@ -52,3 +52,4 @@ Use this until a dedicated work tool is selected.
 - [x] OPS-2026-016 | Implement autonomous security + continuous-improvement governance sweeps (cron + guardrails + docs)
 - [x] OPS-2026-017 | Implement cadence governance policy (throughput-first planning + cadence floor guardrails)
 - [x] OPS-2026-026 | Adopt AI-native operating policy v1 + WO/CA templates and wire into SOP/DoD/process registry
+- [x] OPS-2026-027 | Establish product portfolio setup (registry, boundary template, repo naming standard, dependency rule)

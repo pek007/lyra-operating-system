@@ -33,6 +33,9 @@ Track core processes, standards, and runbooks with review state.
 | AI_NATIVE_OPERATING_POLICY_V1.md | Policy | Peter/Lyra | Active | 2026-02-27 | 2026-03-27 |
 | WO_TEMPLATE_V1.md | Template | Peter/Lyra | Active | 2026-02-27 | 2026-03-27 |
 | CA_TEMPLATE_V1.md | Template | Peter/Lyra | Active | 2026-02-27 | 2026-03-27 |
+| PRODUCT_PORTFOLIO_REGISTRY.md | Registry | Peter/Lyra | Active | 2026-02-27 | 2026-03-27 |
+| PRODUCT_BOUNDARY_TEMPLATE.md | Template | Peter/Lyra | Active | 2026-02-27 | 2026-03-27 |
+| REPO_NAMING_STANDARD_V1.md | Standard | Peter/Lyra | Active | 2026-02-27 | 2026-03-27 |
 
 ## Notes
 - Planned items must be tracked in TASKS.md with a target date.

@@ -46,6 +46,16 @@ If uncertainty is high, reduce batch size and increase verification depth.
 - Research lane: max 2 active WOs
 - High-risk WOs: max 1 active WO
 
+## Product Boundary & Dependency Rule
+- Treat initiatives as distinct products with explicit boundaries.
+- Default rule: products may depend on platform/shared components, not directly on other products.
+- Any direct product-to-product dependency requires an ADR before implementation.
+
+Reference docs:
+- `PRODUCT_PORTFOLIO_REGISTRY.md`
+- `PRODUCT_BOUNDARY_TEMPLATE.md`
+- `REPO_NAMING_STANDARD_V1.md`
+
 ## Audit Trail Standard (Minimum Viable)
 Every delivered change must be reconstructable via:
 **Intent (WO) → Prompt/version → Agent run/output → PR/commit → Tests/evidence → Release/decision note**
