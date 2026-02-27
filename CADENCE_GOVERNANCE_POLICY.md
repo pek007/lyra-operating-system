@@ -48,7 +48,7 @@ Before creating/editing cron jobs, check:
   - Target cadence: **Daily (02:10 Europe/Stockholm)**
 - `continuous-improvement:sweep`
   - Minimum safe cadence: **3x/week**
-  - Target cadence: **Mon/Wed/Fri (03:20 Europe/Stockholm)**
+  - Target cadence: **Daily (03:20 Europe/Stockholm)**
 
 ## Decision Logging
 Cadence decisions must be logged in:

@@ -40,10 +40,10 @@ Design principle: auto-implement only low-risk, uncontroversial changes; route l
 ---
 
 ### 2) `continuous-improvement:sweep`
-- **Cron:** `20 3 * * 1,3,5` (Mon/Wed/Fri)
+- **Cron:** `20 3 * * *` (daily)
 - **Timezone:** `Europe/Stockholm`
 - **Session:** `isolated`
-- **Delivery:** Telegram announce to Peter (`8283124284`)
+- **Delivery:** Telegram announce to Lyra Operations (`-1003804530741`)
 - **Intent:** Systematic marginal improvements in quality, robustness, scalability.
 
 **Runbook in prompt**
@@ -63,7 +63,7 @@ Design principle: auto-implement only low-risk, uncontroversial changes; route l
 
 ## Why this schedule
 - Security job is nightly to reduce detection latency.
-- Improvement job is 3x/week to avoid unnecessary churn/noise while maintaining compounding quality gains.
+- Improvement job is daily for now to accelerate compounding quality gains; revisit cadence once noise/churn data is available.
 
 ---
 
