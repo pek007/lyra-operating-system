@@ -1,5 +1,11 @@
 # CODEX_PROMPT_CONTRACT_TEMPLATE.md
-Version: 1.0.0
+Version: 1.1.0
+
+## Mode
+{{mode}}
+
+## Action intent
+{{action_intent}}  # implement | plan | review | investigate
 
 ## Goal
 {{goal_one_sentence}}
@@ -8,25 +14,28 @@ Version: 1.0.0
 - Repo/workspace: {{repo}}
 - Relevant paths/components: {{paths}}
 - Current state/symptom: {{state}}
+- Reference patterns/docs: {{references}}
 
 ## Scope
 - In scope: {{in_scope}}
 - Out of scope: {{out_of_scope}}
 
-## Hard constraints
-- Must: {{must_constraints}}
+## Constraints
+- Must preserve: {{must_constraints}}
 - Must not: {{must_not_constraints}}
+- Safety boundary: ask before destructive or externally visible actions
 
 ## Verification
-- Required commands/checks:
+- Reproduce/validate with:
   - {{check_1}}
   - {{check_2}}
 - Acceptance criteria:
   - {{criterion_1}}
   - {{criterion_2}}
+- If any check cannot be run, explain why explicitly
 
 ## Artifact discipline
-- Update at least one supervisory artifact:
+- Update supervisory artifact(s):
   - {{artifact_path}}
 
 ## Deliverable format

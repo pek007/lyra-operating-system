@@ -16,6 +16,17 @@
 
 ## Entries
 
+### 2026-02-28
+- Template: Claude Code prompting schema + WO/Codex contract templates
+- Version: 1.1.0 (templates), Prompting OS policy refresh
+- Change type: MINOR
+- Summary: Shifted to outcome-oriented prompts with explicit mode selection, mandatory verification blocks, explicit action intent, and fresh-context recovery rule.
+- Rationale: Reduce over-specification and improve autonomy + verification quality in Claude Code execution.
+- Expected impact: Higher first-pass usefulness, less prompt bloat, better verification discipline, fewer stuck correction loops.
+- Validation run: Governance review + template conformance pass (runtime adoption pending).
+- Owner: Peter + Lyra
+- Rollback plan: Revert template files to v1.0.0 contracts and remove mode/recovery enforcement from PROMPTING_OS_V1.md.
+
 ### 2026-02-26
 - Template: Prompting OS baseline (all v1 templates)
 - Version: 1.0.0

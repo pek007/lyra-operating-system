@@ -61,4 +61,5 @@ Use this until a dedicated work tool is selected.
 - [x] OPS-2026-031 | Implement system-level direction package (governance layer + runtime mapping) from ChatGPT 5.2 Pro analysis
 - [x] OPS-2026-032 | Ingest Claude direction package, deploy compiled runtime charter into AGENTS.md, and align SOUL/USER with non-duplication rule
 - [x] OPS-2026-033 | Establish strict OpenClaw config change-control + rollback SOP (preview/approval/apply/validate/rollback)
+- [x] OPS-2026-034 | Refine Claude Code prompting system: outcome-oriented schema, explicit modes, stronger verification, and fresh-context recovery rule
 - [x] IMP-AUTO-20260227-01 | Added lightweight markdown link-check script (`tools/markdown_link_check.py`) with cron-safe scope filters.

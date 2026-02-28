@@ -9,6 +9,9 @@ Standardize how Lyra uses external 3PP lanes (Claude Code, OpenAI Deep Research)
 ## Core principle
 Prompting is interface design, not conversation craft.
 
+## Core shift (2026-02-28)
+Default to outcome-oriented prompting: define destination, constraints, and verification; avoid unnecessary step-by-step choreography.
+
 ---
 
 ## 1) Lane model
@@ -47,33 +50,44 @@ Rule: task updates must not silently mutate policy.
 
 ---
 
-## 3) Required phase model
+## 3) Required mode model (explicit)
 
-Apply these phases in both lanes:
-1. Clarify (if missing constraints)
-2. Plan (produce reviewable plan)
-3. Execute (bounded permissions/sources)
-4. Verify (tests/citations/checklists)
+Select one mode before writing the prompt:
+- `direct_implement`
+- `plan_then_implement`
+- `spec_first`
+- `review_only`
+- `continuation`
 
-### Claude Code default
-- Plan Mode first for non-trivial work
-- Execution only after plan acceptance
+Mode rules:
+- Small/obvious/local: `direct_implement`
+- Multi-file or uncertain: `plan_then_implement`
+- Ambiguous/high-stakes product decisions: `spec_first`
+- Audit/critique only: `review_only`
+- Multi-session work: `continuation`
 
-### Deep Research default
-- Public phase first (external landscape)
-- Private/codebase phase second (internal mapping)
+### Required phase discipline
+When a mode includes implementation, enforce:
+1. Clarify (if needed)
+2. Inspect current implementation
+3. Plan (brief, only when complexity warrants)
+4. Execute in bounded increments
+5. Verify against explicit acceptance checks
 
 ---
 
 ## 4) Prompt quality checklist (mandatory)
 
 A prompt is valid only if it has:
+- [ ] explicit mode
 - [ ] clear objective and non-goals
+- [ ] targeted context anchors (relevant files/patterns/sources)
 - [ ] explicit trust boundary (sources/tools)
-- [ ] explicit acceptance criteria
+- [ ] explicit acceptance criteria and verification commands/checks
 - [ ] explicit output schema
 - [ ] explicit risk constraints
 - [ ] handoff format (DDA or CA)
+- [ ] explicit action intent (implement vs analyze/review only)
 
 ---
 
@@ -155,6 +169,11 @@ Track per lane:
 - safety/constraint violation rate
 - citation adequacy (research)
 - test evidence completeness (implementation)
+- prompt-mode selection quality (was chosen mode appropriate?)
+- fresh-context recovery rate after correction loops
+
+## 9) Session reset rule
+If the same issue requires two corrective loops, stop patching the current context and restart with a clean prompt in a fresh session.
 
 ---
 
