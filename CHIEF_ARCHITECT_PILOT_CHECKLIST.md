@@ -1,4 +1,7 @@
-# Chief Architect Pilot Checklist
+# Chief Architect Pilot Checklist (Superseded)
+
+Status: Superseded on 2026-02-28 by job-based operating model (`JOB_MARKET_MODEL_V1.md`, JOB-ARC-001).
+
 
 ## Pre-launch
 - [ ] Activation triggers confirmed

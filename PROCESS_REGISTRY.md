@@ -28,6 +28,7 @@ Track core processes, standards, and runbooks with review state.
 | REGISTRY_SCHEMAS_V1.md | Data Contract | Lyra | Active | 2026-02-25 | 2026-03-25 |
 | CONTROL_TOWER_MVP_VIEWS_SPEC.md | UI Spec | Lyra | Active | 2026-02-25 | 2026-03-25 |
 | tools/evidence_ingest.py | Automation Script | Lyra | Active | 2026-02-25 | 2026-03-25 |
+| tools/markdown_link_check.py | Automation Script | Lyra | Active | 2026-02-28 | 2026-03-28 |
 | SPRINT3_WEEKLY_CADENCE.md | Sprint Cadence | Peter/Lyra | Superseded | 2026-02-26 | - |
 | CADENCE_GOVERNANCE_POLICY.md | Policy | Peter/Lyra | Active | 2026-02-26 | 2026-03-26 |
 | AI_NATIVE_OPERATING_POLICY_V1.md | Policy | Peter/Lyra | Active | 2026-02-27 | 2026-03-27 |
@@ -37,6 +38,11 @@ Track core processes, standards, and runbooks with review state.
 | PRODUCT_BOUNDARY_TEMPLATE.md | Template | Peter/Lyra | Active | 2026-02-27 | 2026-03-27 |
 | REPO_NAMING_STANDARD_V1.md | Standard | Peter/Lyra | Active | 2026-02-27 | 2026-03-27 |
 | OPENCLAW_RELEASE_DELTA_SOP.md | SOP | Peter/Lyra | Active | 2026-02-27 | 2026-03-27 |
+| AGENT_LIFECYCLE_SOP_V1.md | SOP | Peter/Lyra | Active | 2026-02-28 | 2026-03-28 |
+| JOB_MARKET_MODEL_V1.md | Operating Model | Peter/Lyra | Active | 2026-02-28 | 2026-03-28 |
+| AGENT_DEPLOYMENT_DECISION_TEMPLATE.md | Template | Peter/Lyra | Active | 2026-02-28 | 2026-03-28 |
+| CHIEF_ARCHITECT_AGENT_SPEC.md | Spec | Peter/Lyra | Superseded | 2026-02-28 | - |
+| CHIEF_ARCHITECT_PILOT_CHECKLIST.md | Checklist | Peter/Lyra | Superseded | 2026-02-28 | - |
 | SOFTWARE_DELIVERY_PROCESS_3PP_OS.md | Delivery Process | Peter/Lyra | Active | 2026-02-27 | 2026-03-27 |
 | LEARNING_LOOPS_OS_AND_PROJECT.md | Learning Framework | Peter/Lyra | Active | 2026-02-27 | 2026-03-27 |
 

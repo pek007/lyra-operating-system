@@ -1,7 +1,13 @@
 # Chief Architect Agent — Operating Specification
 
 Date: 2026-02-26  
-Status: Active
+Status: Superseded (2026-02-28)
+
+Superseded by job-based model:
+- `JOB_MARKET_MODEL_V1.md` (JOB-ARC-001)
+- `AGENT_LIFECYCLE_SOP_V1.md`
+
+Note: Chief Architect is now treated as a **job**, not a dedicated persistent agent.
 
 ## Mission
 Provide architecture governance and end-to-end design leadership across the stack, producing implementable constraints (contracts + guardrails + fitness checks) that enable fast delivery without architectural drift.

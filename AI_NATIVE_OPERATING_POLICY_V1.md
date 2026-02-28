@@ -56,6 +56,12 @@ Reference docs:
 - `PRODUCT_BOUNDARY_TEMPLATE.md`
 - `REPO_NAMING_STANDARD_V1.md`
 
+## Jobs vs Agents Rule
+- Organize responsibilities as jobs first; assign runtime surfaces second; create persistent agents third.
+- A job is not equivalent to a persistent agent.
+- New persistent agents require lifecycle evaluation per `AGENT_LIFECYCLE_SOP_V1.md` and decision record via `AGENT_DEPLOYMENT_DECISION_TEMPLATE.md`.
+- Chief Architect is handled as JOB-ARC-001 in `JOB_MARKET_MODEL_V1.md`, not as a dedicated persistent agent by default.
+
 ## Audit Trail Standard (Minimum Viable)
 Every delivered change must be reconstructable via:
 **Intent (WO) → Prompt/version → Agent run/output → PR/commit → Tests/evidence → Release/decision note**
