@@ -62,6 +62,15 @@ Reference docs:
 - New persistent agents require lifecycle evaluation per `AGENT_LIFECYCLE_SOP_V1.md` and decision record via `AGENT_DEPLOYMENT_DECISION_TEMPLATE.md`.
 - Chief Architect is handled as JOB-ARC-001 in `JOB_MARKET_MODEL_V1.md`, not as a dedicated persistent agent by default.
 
+## System Direction Layering
+- Human governance source-of-truth lives under `governance/`:
+  - `system-charter.md`
+  - `policy-register.md`
+  - `agent-catalog.md`
+  - `playbook-inventory.md`
+  - `task-decision-engine-contract.md`
+- Runtime behavior is derived into built-in OpenClaw files/config (`AGENTS.md`, related bootstrap files, and gateway config).
+
 ## Audit Trail Standard (Minimum Viable)
 Every delivered change must be reconstructable via:
 **Intent (WO) → Prompt/version → Agent run/output → PR/commit → Tests/evidence → Release/decision note**

@@ -58,4 +58,5 @@ Use this until a dedicated work tool is selected.
 - [x] OPS-2026-028 | Add OpenClaw release-delta tracking SOP and integrate into daily continuous-improvement sweep
 - [x] OPS-2026-029 | Implement agent lifecycle SOP + internal job market model; supersede Chief Architect agent plan in favor of Chief Architect job
 - [x] OPS-2026-030 | Implement Control Panel post-mortem process hardening (start gate, decision-first MVP, data/system ownership contracts, supplier WIP/evidence rules)
+- [x] OPS-2026-031 | Implement system-level direction package (governance layer + runtime mapping) from ChatGPT 5.2 Pro analysis
 - [x] IMP-AUTO-20260227-01 | Added lightweight markdown link-check script (`tools/markdown_link_check.py`) with cron-safe scope filters.
