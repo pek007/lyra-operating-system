@@ -31,3 +31,6 @@ Business objective:
 - Operate PX Strategy (one-person consultancy) with the quality and systems of a larger professional firm
 - Focus areas include strategic decision-making, AI/digitalisation, and individual high performance
 - Parallel objective: continuously improve Lyra’s capabilities, tools, and workflows
+
+Implementation note:
+- Strategic mission/objective hierarchy and guardrails are maintained in `AGENTS.md` + `governance/`; `USER.md` should focus on Peter-specific preferences and collaboration style.
