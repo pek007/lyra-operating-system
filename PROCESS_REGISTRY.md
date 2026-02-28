@@ -54,6 +54,8 @@ Track core processes, standards, and runbooks with review state.
 | governance/task-decision-engine-contract.md | Governance | Peter/Lyra | Active | 2026-02-28 | 2026-03-28 |
 | governance/system-direction-research-2026-02-28.md | Reference | Peter/Lyra | Active | 2026-02-28 | 2026-03-28 |
 | governance/direction-package.md | Governance Package | Peter/Lyra | Active | 2026-02-28 | 2026-03-28 |
+| OPENCLAW_CONFIG_CHANGE_SOP_V1.md | SOP | Peter/Lyra | Active | 2026-02-28 | 2026-03-28 |
+| OPENCLAW_CONFIG_CHANGE_CHECKLIST_V1.md | Checklist | Peter/Lyra | Active | 2026-02-28 | 2026-03-28 |
 | SOFTWARE_DELIVERY_PROCESS_3PP_OS.md | Delivery Process | Peter/Lyra | Active | 2026-02-27 | 2026-03-27 |
 | LEARNING_LOOPS_OS_AND_PROJECT.md | Learning Framework | Peter/Lyra | Active | 2026-02-27 | 2026-03-27 |
 
