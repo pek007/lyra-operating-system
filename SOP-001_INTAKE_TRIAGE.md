@@ -42,6 +42,18 @@ To move from Triage to Active, the linked WO must include:
 
 Reference template: `WO_TEMPLATE_V1.md`.
 
+## New Project Start Gate (required)
+For any new product/project initiative, no implementation task may move to Active until a Start Packet is approved.
+
+Required Start Packet sections:
+- Product goal (why)
+- Top 3 decision use-cases
+- Explicit non-goals
+- Success metrics
+- Kill criteria
+
+Reference template: `PROJECT_START_PACKET_TEMPLATE_V1.md`.
+
 ## Triage Cadence
 - Daily 10-minute triage pass.
 - For each item in Inbox/Triage:

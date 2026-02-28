@@ -68,6 +68,15 @@ Every delivered change must be reconstructable via:
 
 If this chain is broken, the change is non-compliant.
 
+## Decision-First Delivery Rule
+- For new dashboard/reporting initiatives, first prove value with a recurring decision artifact (report/materialized summary) before expanding UI scope.
+- UI expansion requires explicit decision-use-case coverage and data contract clarity.
+
+Reference docs:
+- `CONTROL_PANEL_TERMINATION_ACTION_PLAN_V1.md`
+- `DATA_CONTRACT_INVENTORY_TEMPLATE_V1.md`
+- `SYSTEM_OWNERSHIP_CONTRACT_TEMPLATE_V1.md`
+
 ## Retro-to-Improvement Rule
 Every retrospective action must include:
 - owner

@@ -43,6 +43,10 @@ Track core processes, standards, and runbooks with review state.
 | AGENT_DEPLOYMENT_DECISION_TEMPLATE.md | Template | Peter/Lyra | Active | 2026-02-28 | 2026-03-28 |
 | CHIEF_ARCHITECT_AGENT_SPEC.md | Spec | Peter/Lyra | Superseded | 2026-02-28 | - |
 | CHIEF_ARCHITECT_PILOT_CHECKLIST.md | Checklist | Peter/Lyra | Superseded | 2026-02-28 | - |
+| CONTROL_PANEL_TERMINATION_ACTION_PLAN_V1.md | Action Plan | Peter/Lyra | Active | 2026-02-28 | 2026-03-14 |
+| PROJECT_START_PACKET_TEMPLATE_V1.md | Template | Peter/Lyra | Active | 2026-02-28 | 2026-03-28 |
+| DATA_CONTRACT_INVENTORY_TEMPLATE_V1.md | Template | Peter/Lyra | Active | 2026-02-28 | 2026-03-28 |
+| SYSTEM_OWNERSHIP_CONTRACT_TEMPLATE_V1.md | Template | Peter/Lyra | Active | 2026-02-28 | 2026-03-28 |
 | SOFTWARE_DELIVERY_PROCESS_3PP_OS.md | Delivery Process | Peter/Lyra | Active | 2026-02-27 | 2026-03-27 |
 | LEARNING_LOOPS_OS_AND_PROJECT.md | Learning Framework | Peter/Lyra | Active | 2026-02-27 | 2026-03-27 |
 
