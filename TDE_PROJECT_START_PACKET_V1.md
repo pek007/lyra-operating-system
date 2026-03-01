@@ -3,6 +3,8 @@
 ## 1) Product Goal (Why)
 Establish a Task & Decision Engine (TDE) definition baseline that enables continuous, policy-governed operation in Lyra without human micro-management, while integrating natively with OpenClaw and enabling Trello retirement.
 
+**Vision addendum:** Build the capability to autonomously pursue high-level goals.
+
 ## 2) Top 3 Decision Use-Cases
 1. Should a task transition be allowed now (DoR/DoD, authority, risk gates)?
 2. Which items require escalation/approval vs autonomous execution?

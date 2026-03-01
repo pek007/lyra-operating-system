@@ -6,6 +6,10 @@ Decision Owner: Peter
 Prepared by: Lyra
 
 ## Adoption decision
+
+## Vision
+Build the capability to autonomously pursue high-level goals.
+
 Adopt this v2 memo as the governing basis for the **Project Definition Phase**.
 
 This is approval for definition work only (not full build), aligned with:

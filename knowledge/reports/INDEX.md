@@ -74,3 +74,9 @@ Curated external analyses and research notes.
   Source: deepresearch; Ingested from: `telegram attachment file_93`
 - `2026-03-01__deepresearch__decision-memo-task-decision-engine-project-definition-gate-v2__v1.md` — **Decision Memo — Task & Decision Engine Project Definition Gate v2**
   Source: deepresearch; Ingested from: `telegram attachment file_94`
+- `2026-03-01__deepresearch__idempotent-action-contract-patterns-for-agent-tool-execution__v1.md` — **Idempotent Action Contract Patterns for Agent Tool Execution**
+  Source: deepresearch; Ingested from: `telegram attachment file_95`
+- `2026-03-01__deepresearch__trello-cutover-playbook-low-risk-migration-to-task-decision-engine__v1.md` — **Trello Cutover Playbook: Low-Risk Migration to a Task & Decision Engine**
+  Source: deepresearch; Ingested from: `telegram attachment file_96`
+- `2026-03-01__deepresearch__policy-as-code-decision-rights-for-lyra-tde__v1.md` — **Policy-as-Code Decision Rights for Lyra TDE**
+  Source: deepresearch; Ingested from: `telegram attachment file_97`
