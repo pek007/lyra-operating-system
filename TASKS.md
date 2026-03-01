@@ -16,12 +16,11 @@ Use this until a dedicated work tool is selected.
 - [ ] IMP-AUTO-20260301-02 | Add a small docs hygiene CI/cron check bundle (markdown links + duplicate task-ID lint) to catch governance drift early.
 
 ## Triage
-- [ ] OPS-2026-035 | Approve Project Start Packet for Chat Continuity Execution Track (`PROJECT_START_PACKET_CHAT_CONTINUITY_V1.md`).
-- [ ] OPS-2026-036 | Approve WO-2026-CC-001 and move Chat Continuity Sprint 1 to Active.
 - [ ] OPS-2026-024 | Sprint 3 kickoff decision: confirm read-first scope freeze (no task write-back in S3)
 - [ ] OPS-2026-025 | Approve S3 workflow taxonomy v1 (domain, area, task_type governed values)
 
 ## Active
+- [ ] OPS-2026-037 | Execute Chat Continuity Sprint 1 (apply protocol daily, publish first channel-handoff summary, and run first weekly consolidation check).
 - [ ] OPS-2026-020 | Chief Architect job: publish Sprint 3 architecture brief v1 + guardrails pack (job-based, not dedicated agent)
 - [ ] OPS-2026-021 | Claude Code supplier run: implement S3 Task Center + Skills Visibility from approved prompt
 - [ ] OPS-2026-022 | Architecture QA gate (JOB-ARC-001): verify S3 against must constraints (taxonomy, DoW subset, redaction)
@@ -30,6 +29,8 @@ Use this until a dedicated work tool is selected.
 - [ ] OPS-2026-023 | Sprint 3 closeout pack (release notes + tag + vNext backlog update) after QA pass
 
 ## Done
+- [x] OPS-2026-035 | Approved Project Start Packet for Chat Continuity Execution Track (`PROJECT_START_PACKET_CHAT_CONTINUITY_V1.md`).
+- [x] OPS-2026-036 | Approved WO-2026-CC-001 and authorized move to Active.
 - [x] Create MODEL_ROUTING_POLICY.md
 - [x] Create WAYS_OF_WORKING_V1.md
 - [x] Create ADR-001_SYSTEMS_OF_RECORD.md

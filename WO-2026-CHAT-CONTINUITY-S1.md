@@ -45,7 +45,7 @@
 - Expected output artifacts: Updated tasks, daily memory logs, approval record.
 
 ## Closure
-- Outcome summary: Pending
-- Accepted by: Pending
+- Outcome summary: In progress (approved and moved to Active on 2026-03-01).
+- Accepted by: Peter Eklind (execution authorization)
 - Date closed: Pending
-- Linked Change Artifact(s): Pending
+- Linked Change Artifact(s): 64c022c (start-gate artifacts), pending sprint closure commit(s)
