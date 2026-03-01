@@ -4,14 +4,20 @@ Use this until a dedicated work tool is selected.
 
 ## Inbox
 - [ ] SEC-AUTO-20260227-01 | Restrict Telegram group command senders via `groupAllowFrom` (or per-group `allowFrom`) to remove critical command-invocation exposure.
+- [ ] SEC-AUTO-20260301-01 | Decide and implement trust-boundary model for Telegram/group usage (single trusted operator vs split gateways) to clear `security.trust_model.multi_user_heuristic` warning.
+- [ ] SEC-AUTO-20260301-02 | Confirm Control UI exposure model and either keep explicit local-only posture or configure `gateway.trustedProxies` for actual reverse proxy IPs to clear `gateway.trusted_proxies_missing` warning.
 - [ ] SEC-AUTO-20260227-02 | Decide and enforce trust-boundary model for multi-user/group usage (separate gateways vs hardened shared runtime sandbox/tool scope).
 - [ ] SEC-AUTO-20260227-03 | Confirm reverse-proxy posture for Control UI; if proxied, set `gateway.trustedProxies`, otherwise explicitly keep local-only.
 - [ ] SEC-AUTO-20260228-01 | Resolve persistent `security.trust_model.multi_user_heuristic` warning: choose single-trust boundary or split to separate gateways/identities for group contexts.
 - [ ] SEC-AUTO-20260228-02 | Resolve persistent `gateway.trusted_proxies_missing` warning: explicitly document local-only UI posture or configure `gateway.trustedProxies` for actual reverse proxy IPs.
 - [ ] IMP-AUTO-20260227-02 | Add smoke tests for `tools/` parsers (task ID extraction + frontmatter parsing) to prevent silent automation regressions.
 - [ ] IMP-AUTO-20260228-01 | Automate daily OpenClaw release-delta evidence snapshot (`openclaw --version/status/update status`) into `knowledge/evidence/` for auditable change tracking.
+- [ ] IMP-AUTO-20260301-01 | Consolidate duplicate SEC-AUTO trust-boundary/trusted-proxy tasks into canonical items with superseded links to reduce triage noise.
+- [ ] IMP-AUTO-20260301-02 | Add a small docs hygiene CI/cron check bundle (markdown links + duplicate task-ID lint) to catch governance drift early.
 
 ## Triage
+- [ ] OPS-2026-035 | Approve Project Start Packet for Chat Continuity Execution Track (`PROJECT_START_PACKET_CHAT_CONTINUITY_V1.md`).
+- [ ] OPS-2026-036 | Approve WO-2026-CC-001 and move Chat Continuity Sprint 1 to Active.
 - [ ] OPS-2026-024 | Sprint 3 kickoff decision: confirm read-first scope freeze (no task write-back in S3)
 - [ ] OPS-2026-025 | Approve S3 workflow taxonomy v1 (domain, area, task_type governed values)
 
