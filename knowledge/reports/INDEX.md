@@ -72,3 +72,5 @@ Curated external analyses and research notes.
   Source: deepresearch; Ingested from: `telegram attachment file_92`
 - `2026-03-01__deepresearch__best-practices-for-task-and-decision-management-engines-for-lyra-openclaw__v1.md` — **Best Practices for Task and Decision Management Engines for Lyra OpenClaw**
   Source: deepresearch; Ingested from: `telegram attachment file_93`
+- `2026-03-01__deepresearch__decision-memo-task-decision-engine-project-definition-gate-v2__v1.md` — **Decision Memo — Task & Decision Engine Project Definition Gate v2**
+  Source: deepresearch; Ingested from: `telegram attachment file_94`
