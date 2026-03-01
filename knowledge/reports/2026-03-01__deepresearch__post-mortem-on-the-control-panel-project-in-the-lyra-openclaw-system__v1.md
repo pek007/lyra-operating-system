@@ -1,0 +1,114 @@
+---
+title: "Post-mortem on the Control Panel project in the Lyra OpenClaw system"
+date: 2026-03-01
+source: deepresearch
+ingest_from: "knowledge/inbox/external-analysis-dropzone/deep-research-report (23).md"
+tags: [external-analysis, deepresearch]
+decision_relevance: tbd
+confidence: tbd
+status: archived-source
+---
+
+# Post-mortem on the Control Panel project in the Lyra OpenClaw system
+
+## Context and outcome
+
+You terminated the Control Panel software development project after six sprints because it did not demonstrate enough value and was not converging toward progressively better versions of a useful product. Your own diagnosis centers on a classic failure mode: beginning with an implementation direction (“build a dashboard”) without a sufficiently explicit “why,” decision use-cases, or a data architecture that clarified what information you already had versus what you needed. fileciteturn14file0L1-L120 fileciteturn20file35L1-L120
+
+The evidence in the selected repositories shows two things at once: (a) substantial engineering output and process hardening over the sprint sequence, and (b) a moving target—information architecture and product intent evolve from “MVP skeleton above existing docs” toward a broader “decision cockpit” framing, alongside a late push to formalize an external-supplier execution packet (PRD/use-cases/data architecture/acceptance matrix). This combination is a strong signature of “delivery capability exists, but discovery and framing were unstable.” fileciteturn14file0L1-L120 fileciteturn20file35L1-L120 fileciteturn20file9L1-L120 fileciteturn20file6L1-L80
+
+## What was built and what actually changed across the sprints
+
+The original MVP specification in the operating-system repo is explicitly solution-led: a “lightweight Control Panel MVP skeleton” with four operator views (Now / Next / Watch / Change Feed), reading from existing markdown registries and evidence files via a local Node/TypeScript + Express API and a Vite/React UI. It is framed as “render transparent operational state from our existing docs/evidence,” with authentication and write-back called out as non-goals, which matters because later sprints added authenticated action surfaces and broader executive intelligence. fileciteturn14file0L1-L140 fileciteturn14file1L1-L120
+
+By Sprint 2–5 in the control-panel repo, the implemented product is materially more ambitious than that MVP skeleton: role-based summaries, KPI metadata, a control-action API backed by an append-only audit log, an executive summary endpoint/UI, and later reliability hardening plus “materialization jobs” (scheduled summary artifacts) and an intent-driven navigation consolidation (Executive / Work / Risk & Security / Build / Capabilities / Changes). This breadth is documented explicitly in release notes and sprint closeouts. fileciteturn20file15L1-L120 fileciteturn20file25L1-L120 fileciteturn20file28L1-L120 fileciteturn20file5L1-L140 fileciteturn20file29L1-L140 fileciteturn20file26L1-L160 fileciteturn20file11L1-L90
+
+Technically, the API surface is structured like a local “read-model + controlled write surfaces” system. The server is explicitly local-only (binding to 127.0.0.1), mounts many read endpoints, and conditionally enables authenticated control actions while keeping executive routes mounted but returning explicit disabled/auth states when not configured. This is a serious “operator tool” posture rather than a throwaway dashboard. fileciteturn25file0L1-L120
+
+The project also built a parallel “data production” layer: a job runner with idempotent daily jobs (executive, risk-audit, capabilities, build) that writes summary artifacts and a run log, plus a runbook clarifying freshness semantics and file locations. This is noteworthy because it resembles the kind of “cron job + semi-manual analysis MVP” you now think would have been the right early angle—yet it arrived later as hardening work rather than as the primary early validation path. fileciteturn30file2L1-L120 fileciteturn12file0L1-L220
+
+Finally, documentation and governance expanded significantly during/after the sprint sequence: release notes, closeout docs, a misses log plus a continuous improvement framework, a product vision (dated 2026‑02‑27), and a “3PP software delivery process” that introduces a mandatory pre-execution packet and acceptance traceability. This internal documentation footprint is itself evidence that you experienced ambiguity/rework and attempted to compensate by increasing specification rigor. fileciteturn20file35L1-L120 fileciteturn20file4L1-L80 fileciteturn20file37L1-L200 fileciteturn20file9L1-L160
+
+## Diagnosis of non-convergence
+
+A useful way to explain what happened is to separate “engineering convergence” from “product convergence.”
+
+Engineering convergence appears strong. The codebase shows deliberate attention to local-first safety, deterministic configuration resolution, schema validation, and test coverage. Sprint 5 reports 34 test files and 323 passing tests, which is not consistent with a toy prototype. fileciteturn20file29L1-L80 fileciteturn25file0L1-L120
+
+Product convergence appears weak in the early-to-mid project: the objective framing shifts from “four views that render state” (MVP skeleton) to role-centric decision support, then to executive intelligence, then to an “intent-driven cockpit,” and finally (Sprint 6 planning) toward “task management service foundation” and a backlog explicitly focused on de-duplicating boundaries between “Gateway vs Control Panel.” When direction changes at the level of “what product are we building,” it is normal for features to be built and later removed—not because engineers are sloppy, but because the target is moving. fileciteturn14file0L1-L120 fileciteturn20file28L1-L140 fileciteturn20file29L1-L140 fileciteturn20file0L1-L220 fileciteturn20file17L1-L200 fileciteturn20file13L1-L220
+
+The clearest structural root cause is “solution-first without stable decision use-cases.” The early MVP spec is about views and parsing sources, not about the actual leadership decisions the tool must make easier (e.g., “Is our system safe?” “What should we focus on?”). The later product vision finally articulates daily leadership questions, but it is dated after much of the implementation. From a professional product perspective, this sequencing is backwards: you want the “decisions and outcomes” fixed before you optimize the UI shell. fileciteturn14file0L1-L120 fileciteturn20file35L1-L120 citeturn7search4turn4search3
+
+A second root cause is “data architecture lag.” The implementation reads from a workspace rooted in markdown registries and evidence files; the API even has explicit “key files” it expects to exist (e.g., TASKS.md, RISK_REGISTER.md, skills policy, workflow config, latest security audit JSON). When the data inventory and contracts are not explicit up front, teams naturally implement what is easiest to parse—and later discover it is not the data required to answer the important questions. This dynamic is visible in the code’s reliance on file-based sources and in the later focus on data materialization jobs and schema validation. fileciteturn31file0L1-L120 fileciteturn30file0L1-L120 fileciteturn12file0L1-L220 citeturn5search3turn5search5
+
+A third root cause is “unclear system boundary and ownership.” Sprint 6 planning includes a dedicated de-dup backlog that calls out overlap between Gateway-owned functionality and Control Panel-owned decision support, with explicit acceptance checks like “no duplicated authoritative operational screens exist in CP for Gateway-owned capabilities” and “every gateway-derived card has freshness and deep-link affordance.” This kind of boundary confusion is a classic cause of rework because it forces repeated re-decisions about “where does truth live?” and “what belongs in this product?” fileciteturn20file17L1-L220
+
+A fourth root cause is the external AI supplier workflow you described: developing outside the OpenClaw environment, with you as a manual “middleman.” Even if the supplier is capable, this structure is vulnerable to context loss and misaligned intent, because the fastest feedback loops are broken: the implementer is not continuously exposed to your evolving “why,” and you are incentivized to communicate in “tickets and technical requirements” rather than in shared product context. The appearance of a late “3PP delivery process” that mandates a PRD, use cases, data architecture, and an acceptance matrix is consistent with learning this the hard way. fileciteturn20file9L1-L200 citeturn2search3turn1search4
+
+## Was terminating the project the right decision
+
+From a professional delivery standpoint, the decision to stop is defensible—and arguably correct—if (a) the Sprint Goal or product goal has become obsolete, or (b) the cost of continued iteration exceeds the value of the learning you are getting. Scrum explicitly recognizes that work should be re-planned when goals become obsolete; the Scrum Guide also describes how incomplete items are returned to the backlog when work is cancelled, with an explicit warning that partially-done work “depreciates quickly.” citeturn7search7turn7search0
+
+From a Lean Startup lens, what you observed is an invalidated “build hypothesis”: the team was building many things, but not increasing validated learning about the core value proposition. Lean practice is explicit that the core loop is build–measure–learn and that teams should decide whether to pivot or persevere based on what they learn, not just on how much they build. Termination (followed by a restart with an improved working model) is functionally a pivot: a deliberate reset of approach in response to insufficient learning and value. citeturn4search3turn4search45
+
+There is, however, an important nuance: “terminate the project” does not have to mean “discard the code.” The control-panel repo contains a number of high-quality, reusable components that can be carried forward into a restart with a clearer product thesis. Three examples illustrate this reusability:
+
+The control-action/audit subsystem has an explicit allowlist policy, 24-hour idempotency windowing, immutable logging of allowed and denied actions, and a local SQLite store with WAL mode and supportive indexes. This is a robust foundation for any future governed write-back path. fileciteturn55file0L1-L260 fileciteturn57file0L1-L160
+
+The runtime safety and diagnosability posture (health endpoint with feature flags, deterministic workspace resolution, explicit warnings when workspace data is missing) is precisely the kind of boring reliability work that teams regret re-building from scratch. fileciteturn35file12L1-L120 fileciteturn31file0L1-L120 fileciteturn30file0L1-L120
+
+The “data production” layer (materialization jobs + run artifacts + runbook) already implements the MVP direction you now think would have been better: answer leadership questions with scheduled summaries and explicit freshness, without requiring the UI to be the first-class value surface. fileciteturn30file2L1-L120 fileciteturn12file0L1-L220
+
+So the verdict is: stopping ongoing feature development is a sound decision; the “right” follow-on move is to archive the current repository state as a reference implementation and salvage the durable primitives into the restart, rather than starting from a blank slate. fileciteturn20file29L1-L80 fileciteturn55file0L1-L260
+
+## Code quality and progress assessment from the repository evidence
+
+The control-panel codebase is organized as a monorepo with coordinated “api + web” development scripts and a pnpm-based workflow, which is a standard and maintainable shape for a local tool. fileciteturn84file0L1-L80 fileciteturn35file6L1-L80
+
+The backend implementation choices are generally professional-grade for an operator-facing system: Express-based API, explicit local binding, schema validation and structured response envelopes (as described in release notes), and a clear separation between read surfaces and authenticated action surfaces. fileciteturn25file0L1-L120 fileciteturn20file15L1-L140 fileciteturn20file28L1-L140
+
+The control action service is particularly strong as an example of disciplined engineering: explicit policy allowlists, object-level authorization via “subject exists” checks, immutable audit events even for denied actions, and idempotency scoping to prevent duplicate actions within a time window. This is the opposite of “random dashboard hacking”; it reflects careful thinking about safety and traceability. fileciteturn35file11L1-L220 fileciteturn55file0L1-L260 fileciteturn57file0L1-L220
+
+The frontend also looks intentionally structured: route-based pages, reusable components (tables, status cards, badges), and an “intent-driven” navigation model in App.tsx that matches the late-stage product vision. fileciteturn20file11L1-L120 fileciteturn46file0L1-L320
+
+The most concerning “quality signal” is not code correctness; it is product/data fit and UI-data alignment. For example, WorkPage defines a data contract that includes agents, processes, routing rules, and a board—but the rendered UI (in the fetched file) primarily displays task lists and “recent evidence,” leaving other parts as unused or future-facing fields. This pattern is consistent with your observation that the team “added data we had but not necessarily the one we needed,” and it is a known symptom of building data plumbing without a sharply prioritized decision use-case. fileciteturn48file0L1-L120
+
+Finally, there are explicit “known limitations” in the release notes, including a TypeScript build issue in the web workspace and other non-fatal compatibility issues (e.g., tag-format shell compatibility). These are normal, but they reinforce that “value not proven” was not due to a total lack of implementation progress—rather, it was due to direction and validation. fileciteturn20file29L1-L140
+
+## Comparison to professional best practices
+
+Professional agile practice emphasizes that teams should bias toward working software and learning, not toward heavy process artifacts. The Agile Manifesto explicitly values “working software over comprehensive documentation” and “responding to change over following a plan,” which argues for documents only when they increase outcome quality, not as a proxy for certainty. citeturn0search6
+
+At the same time, professional Scrum practice is unambiguous that work needs a “why.” The Scrum Guide’s concept of a Product Goal (and Sprint Goal) exists to provide that coherence and focus; backlog refinement is the ongoing mechanism that turns blurry ideas into sprint-ready work items. In your reflection, sprint planning was “top-of-mind ideas” that did not consistently convert into refined backlog scope; that is precisely the failure mode Scrum tries to prevent with Product Goal + refinement discipline. citeturn7search4turn7search1turn7search5
+
+Lean startup practice adds the missing bridge between “idea” and “build”: you build to measure, and you measure to learn whether to pivot or persevere. The core critique of your early approach—building a dashboard rather than directly answering the high-value questions with the simplest mechanisms—matches Lean’s emphasis on small experiments and validated learning over polished solutions. citeturn4search3turn4search45
+
+Professional delivery also assumes explicit WIP (work-in-progress) control and batch-size control to avoid thrash. Kanban practice highlights that limiting WIP reduces multitasking, exposes bottlenecks, and improves flow. In your project, the effective WIP may have been “whatever came to mind,” which increases context switching and makes convergence harder—especially in an AI-supplier model where each instruction batch is expensive to correct after the fact. citeturn1search0
+
+On the architecture side, professionals typically do not require heavy “Big Design Up Front,” but they do require a clear system boundary, data ownership model, and minimal diagrams that let everyone share the same mental model. The C4 model’s value proposition is exactly this: lightweight but consistent architecture communication (context/container/component) so teams align early and prevent avoidable rework. citeturn6search0
+
+The same is true for data architecture: modern practice increasingly uses “data contracts” to align producers and consumers on schema, quality expectations, refresh frequency, and ownership. In your setting, where the Control Panel consumes many documents/artifacts, a data contract layer would directly counter the “we implemented what we could parse, not what we needed” dynamic by forcing explicit agreements about canonical sources and semantics. citeturn5search3turn5search5
+
+Finally, your reflection about “micromanaging the AI models” is supported by best-practice guidance from entity["company","Anthropic","ai research company"]: their Claude prompt engineering guidance is explicit that providing context and motivation improves performance, and that being clear about desired output matters. Claude Code’s own positioning is that it can build awareness of the entire codebase and coordinate changes across files—capabilities that are undermined if the workflow reduces it to a narrow “code monkey” receiving only low-level technical requirements. citeturn1search4turn2search3
+
+Similarly, entity["company","OpenAI","ai research company"] positions deep research as an agentic capability that can synthesize many sources and (critically) be connected to external systems via MCP and constrained to trusted sources—exactly the properties you want if the biggest failure mode is “insufficient shared context and unstable objectives.” citeturn2search0turn2search2
+
+## Recommendations to improve your software development process
+
+Adopt a project intake tollgate that is *small but non-negotiable*. The goal is not bureaucracy; it is preventing “solution-first drift.” A “start packet” can be only 1–2 pages, but it must include: the Product Goal (“why”), the top 3 decisions the system must improve, explicit non-goals, success metrics, and kill criteria. This is aligned with Scrum’s emphasis on goals providing coherence and focus, and with Lean’s emphasis on measurable learning outcomes. citeturn7search4turn4search3
+
+Operationalize “decision-first MVP” as a default pattern. Before building or refining dashboards, require at least one sprint where the MVP is delivered as a daily/weekly artifact that answers a decision question (e.g., “Safety status: ok/warn/critical + why + evidence links”), even if it’s produced by cron jobs and a structured markdown/JSON report. Your codebase already evolved in this direction with summary materialization jobs and a runbook; the recommendation is to make this the *front door* of MVP validation rather than a late reliability enhancement. fileciteturn12file0L1-L220 citeturn4search3
+
+Introduce an explicit “systems of record vs derived views” contract and enforce it in UI language (ownership tags, freshness badges, deep-links). Sprint 6 planning already recognizes the need to de-duplicate Gateway vs Control Panel authority; treat this as a hard architecture boundary, not as backlog cleanup. This prevents later feature removal caused by discovering you built the wrong owner surface. fileciteturn20file17L1-L220 fileciteturn20file0L1-L220
+
+Create a lightweight data architecture inventory before implementation. For each leadership question, list: “required data,” “actual current source,” “schema/contract,” “freshness,” “owner,” and “known gaps.” This aligns with data contract thinking (schema + quality + SLA + ownership) and directly counters building dashboards atop the wrong data. citeturn5search3turn5search5 fileciteturn30file0L1-L120
+
+Shift sprint planning from “top-of-mind features” to “refined backlog + sprint goal + acceptance checks.” In Scrum terms: every sprint should have one Sprint Goal, and items should enter the sprint only after refinement yields testable acceptance criteria. Your own 3PP process document already encodes this as “Definition of Ready” and an acceptance matrix; the recommendation is to apply a leaner version of that discipline consistently, even for internal/fast work. citeturn7search3turn7search5 fileciteturn20file9L1-L200
+
+Enforce WIP limits and smaller batch sizes in the workflow that feeds the external supplier. A practical rule is: never give a supplier more than 1–2 “in flight” deliverables at once, and require each to be verifiably accepted (tests, screenshots, sample outputs) before starting the next. Kanban’s rationale is that limiting WIP reduces context switching and accelerates flow. citeturn1search0
+
+Re-architect the AI supplier interaction around a “context pack + autonomy + verification” loop. Concretely: provide a single canonical context pack (goal, decision questions, constraints, data sources, contracts, acceptance tests), then allow the agent to propose the implementation plan and execute against it, while you review *outputs and acceptance evidence*, not step-by-step internal decisions. This approach matches both Anthropic’s guidance on context and Claude Code’s strengths (codebase-wide coordination), and it is consistent with your own “3PP work order”/traceability intent. citeturn1search4turn2search3 fileciteturn20file9L1-L200 fileciteturn70file1L1-L120
+
+Keep documentation minimal but high-leverage by standardizing on three artifacts: a one-page Product Goal + decision map, short Architecture Decision Records (ADRs) when a decision is non-obvious or reversible, and a data contract inventory for consumed sources. This keeps you aligned with the Agile Manifesto value of working software over comprehensive documentation, while still preventing the specific failure modes that sunk the project. citeturn0search6turn6search7turn5search3
+
+Adopt a restart strategy that salvages proven engineering primitives. Rather than “rewrite the control panel,” treat the restart as “replatform the product intent”: reuse the audit log/idempotency machinery, workspace resolution and diagnostics, the job runner and artifact format, and the existing UI component library—while replacing the top-level navigation and data contracts so the system answers the right questions. This is consistent with Scrum’s warning that incomplete work depreciates quickly (so stop feature thrash), but completed, well-tested components are valuable assets. fileciteturn55file0L1-L260 fileciteturn57file0L1-L220 fileciteturn12file0L1-L220 citeturn7search7
