@@ -14,10 +14,9 @@ Use this until a dedicated work tool is selected.
 ## Triage
 
 ## Active
-
+- [ ] TDE-2026-004 | Milestone gate packet for JOB-OWN-001 presented for decision (`knowledge/distilled/2026-03-02__milestone-packet__tde-kernel-s1-s2-gate-for-job-own-001-v1.md`)
 
 ## Waiting
-- [ ] TDE-2026-004 | Milestone gate packet for JOB-OWN-001 after S2 evidence is complete
 
 ## Done
 - [x] Create MODEL_ROUTING_POLICY.md
