@@ -14,7 +14,7 @@ Use this until a dedicated work tool is selected.
 ## Triage
 
 ## Active
-- [ ] TDE-2026-008 | Execute next slice: live canary wiring of runtime-triggered anti-stall checks (no 3PP, no new repo)
+- [ ] TDE-2026-008 | Execute WO-2026-TDE-KERNEL-S4: live canary wiring of runtime-triggered anti-stall checks (no 3PP, no new repo)
 
 ## Waiting
 
