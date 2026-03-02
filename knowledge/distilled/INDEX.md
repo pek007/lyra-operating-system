@@ -8,3 +8,4 @@
 - `2026-03-01__spec__tde-thin-slice-acceptance-tests-v1.md` — Acceptance test spec for the kernel thin slice.
 - `2026-03-02__plan__process-as-code-implementation-v1.md` — Implement-now plan for process-as-code hardening.
 - `2026-03-02__plan__memory-architecture-improvements-v1.md` — Implement-now plan for memory portability and deterministic write-back.
+- `2026-03-02__plan__devsecops-maturity-uplift-v1.md` — Implement-now DevSecOps maturity uplift plan.
