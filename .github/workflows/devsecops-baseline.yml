@@ -1,0 +1,32 @@
+name: devsecops-baseline
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  governance-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Validate process metadata
+        run: python3 tools/validate_process_metadata.py
+
+      - name: Validate review dates
+        run: python3 tools/validate_review_dates.py
+
+      - name: Optional thin-slice tests
+        run: |
+          if [ -f tools/tde_kernel_slice_tests.py ]; then
+            python3 tools/tde_kernel_slice_tests.py
+          else
+            echo "No thin-slice test file found; skipping."
+          fi
