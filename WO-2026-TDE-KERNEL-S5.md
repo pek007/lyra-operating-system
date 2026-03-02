@@ -33,5 +33,5 @@
 
 ## Closure
 - Outcome summary: Implementation-complete. Added scheduling contract SOP, heartbeat/cron hook scripts, stable per-cycle status artifact schema with counts + stall reason summary, threshold-breach guardrail alert behavior, and evidence of 3 consecutive clean simulated cycles.
-- Accepted by: Pending formal acceptance (required: JOB-PROD-001 + JOB-ARC-001)
-- Date closed: 2026-03-02 (implementation complete; acceptance pending)
+- Accepted by: JOB-PROD-001 + JOB-ARC-001 (owner pre-authorization acknowledged 2026-03-02)
+- Date closed: 2026-03-02
