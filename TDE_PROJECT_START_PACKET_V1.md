@@ -8,7 +8,7 @@ Establish a Task & Decision Engine (TDE) definition baseline that enables contin
 ## 2) Top 3 Decision Use-Cases
 1. Should a task transition be allowed now (DoR/DoD, authority, risk gates)?
 2. Which items require escalation/approval vs autonomous execution?
-3. Is the system converging toward high-level goals or drifting (WIP/aging/blocker control)?
+3. Is the system converging toward high-level goals or drifting (WIP/aging/blocker control), including anti-stall auto-follow-up so no important item remains indefinitely stuck?
 
 ## 3) Explicit Non-Goals
 - Full UI-first control panel rebuild in this phase.
