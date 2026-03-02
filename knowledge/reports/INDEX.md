@@ -80,3 +80,5 @@ Curated external analyses and research notes.
   Source: deepresearch; Ingested from: `telegram attachment file_96`
 - `2026-03-01__deepresearch__policy-as-code-decision-rights-for-lyra-tde__v1.md` — **Policy-as-Code Decision Rights for Lyra TDE**
   Source: deepresearch; Ingested from: `telegram attachment file_97`
+- `2026-03-02__deepresearch__improving-lyra-openclaw-agent-system-processes__v1.md` — **Deep research on Lyra OpenClaw agent-system processes**
+  Source: deepresearch; Ingested from: `telegram attachment file_98`

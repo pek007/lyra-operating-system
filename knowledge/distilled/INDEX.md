@@ -6,3 +6,4 @@
 - `2026-03-01__package__tde-definition-phase-consolidation__v1.md` — Consolidated definition-phase package and gate recommendation.
 - `2026-03-01__matrix__tde-mutation-authority-v1.md` — Mutation authority matrix for policy enforcement.
 - `2026-03-01__spec__tde-thin-slice-acceptance-tests-v1.md` — Acceptance test spec for the kernel thin slice.
+- `2026-03-02__plan__process-as-code-implementation-v1.md` — Implement-now plan for process-as-code hardening.
