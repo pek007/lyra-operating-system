@@ -42,6 +42,6 @@ Rationale: keep early slices low-friction and focused on kernel logic/controls b
 **GO** to next slice: live canary wiring of runtime-triggered anti-stall checks with strict guardrails.
 
 ## Decision request
-- [ ] GO
+- [x] GO
 - [ ] NO-GO
-- Notes:
+- Notes: Approved by JOB-OWN-001 (Peter) on 2026-03-02.
