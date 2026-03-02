@@ -22,6 +22,6 @@
 
 ## Closure
 - Outcome summary: Implementation-complete. Added automated S4–S7 consolidated milestone snapshot generator (`tools/tde_milestone_snapshot.py`) with reliability checks for missing/stale artifacts and guardrail-signal detection; generated S8 snapshot evidence artifact and verification packet.
-- Accepted by: Pending formal acceptance (JOB-PROD-001 + JOB-ARC-001)
+- Accepted by: JOB-PROD-001 + JOB-ARC-001 (owner pre-authorization acknowledged 2026-03-02)
 - Date closed: 2026-03-02
 - Linked Change Artifact(s): `tools/tde_milestone_snapshot.py`; `knowledge/evidence/2026-03/tde-milestone-s4-s7-snapshot.json`; `knowledge/evidence/2026-03/2026-03-02__verification__wo-2026-tde-kernel-s8.md`
