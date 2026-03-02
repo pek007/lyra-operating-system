@@ -12,16 +12,14 @@ Use this until a dedicated work tool is selected.
 - [ ] IMP-AUTO-20260228-01 | Automate daily OpenClaw release-delta evidence snapshot (`openclaw --version/status/update status`) into `knowledge/evidence/` for auditable change tracking.
 
 ## Triage
-- [ ] OPS-2026-024 | Sprint 3 kickoff decision: confirm read-first scope freeze (no task write-back in S3)
-- [ ] OPS-2026-025 | Approve S3 workflow taxonomy v1 (domain, area, task_type governed values)
+- [ ] TDE-2026-001 | Formal acceptance sign-off for WO-2026-TDE-KERNEL-S1 (JOB-PROD-001 + JOB-ARC-001)
+- [ ] TDE-2026-002 | Define next kernel slice WO (S2) with progress-transparency signal implementation plan
 
 ## Active
-- [ ] OPS-2026-020 | Chief Architect job: publish Sprint 3 architecture brief v1 + guardrails pack (job-based, not dedicated agent)
-- [ ] OPS-2026-021 | Claude Code supplier run: implement S3 Task Center + Skills Visibility from approved prompt
-- [ ] OPS-2026-022 | Architecture QA gate (JOB-ARC-001): verify S3 against must constraints (taxonomy, DoW subset, redaction)
+- [ ] TDE-2026-003 | Execute kernel-slice S2 planning packet (tests, anti-stall integration, progress state model)
 
 ## Waiting
-- [ ] OPS-2026-023 | Sprint 3 closeout pack (release notes + tag + vNext backlog update) after QA pass
+- [ ] TDE-2026-004 | Milestone gate packet for JOB-OWN-001 after S2 evidence is complete
 
 ## Done
 - [x] Create MODEL_ROUTING_POLICY.md
