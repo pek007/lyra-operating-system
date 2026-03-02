@@ -36,6 +36,7 @@ Propose -> Classify change -> Authority diff check -> Approval gate -> Activate 
   - **JOB-PROD-001 (Product Owner)** approves product fitness/completeness.
   - **JOB-ARC-001 (Chief Architect)** approves technical/safety integrity.
   - **JOB-OWN-001** is escalation/final arbiter only for unresolved conflicts or high/critical risk exceptions.
+- Phase-level delegation to JOB-PROD-001 must be documented in a charter artifact with explicit reserved authorities.
 
 ## Binding and transfer integration
 Authority follows jobs, not fixed agents.

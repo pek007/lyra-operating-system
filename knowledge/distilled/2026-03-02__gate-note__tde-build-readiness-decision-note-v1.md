@@ -27,6 +27,10 @@ Authorize start of **TDE build phase (kernel slice only)** once delegated gate a
 ## Pre-authorization rule (from JOB-OWN-001)
 If both approvals above are marked approved, this note automatically satisfies owner pre-authorization for build start.
 
+## Delegation rule for execution phase
+Execution authority is delegated to **JOB-PROD-001** per:
+`knowledge/distilled/2026-03-02__charter__tde-phase-delegation-charter-v1.md`
+
 ## Final gate outcome
 - Gate decision: [ ] GO  [ ] NO-GO
 - Scope if GO: **Kernel slice only; no scope expansion**
