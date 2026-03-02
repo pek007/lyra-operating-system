@@ -1,7 +1,7 @@
 # TDE Canary Runtime Wiring v1
 
 Date: 2026-03-02
-Status: Active
+Status: Active (superseded in scheduling/alert details by `os/sops/TDE_CANARY_SCHEDULING_CONTRACT_V1.md`)
 
 ## Canary scope
 - In-scope set: high-priority items tagged `tde_canary=true`

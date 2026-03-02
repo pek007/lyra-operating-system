@@ -17,6 +17,7 @@ Use this until a dedicated work tool is selected.
 
 ## Waiting
 - [ ] TDE-2026-009 | Formal acceptance sign-off for WO-2026-TDE-KERNEL-S4 (JOB-PROD-001 + JOB-ARC-001)
+- [ ] TDE-2026-011 | Formal acceptance sign-off for WO-2026-TDE-KERNEL-S5 (JOB-PROD-001 + JOB-ARC-001)
 
 ## Done
 - [x] Create MODEL_ROUTING_POLICY.md
@@ -67,3 +68,4 @@ Use this until a dedicated work tool is selected.
 - [x] TDE-2026-004 | Milestone gate approved GO by JOB-OWN-001 (`knowledge/distilled/2026-03-02__milestone-packet__tde-kernel-s1-s2-gate-for-job-own-001-v1.md`).
 - [x] TDE-2026-007 | Milestone gate approved GO by JOB-OWN-001 (`knowledge/distilled/2026-03-02__milestone-packet__tde-kernel-s1-s3-gate-for-job-own-001-v1.md`).
 - [x] TDE-2026-008 | Executed WO-2026-TDE-KERNEL-S4 (canary runtime wiring + cycle artifact + fail-closed approval route evidence).
+- [x] TDE-2026-010 | Executed WO-2026-TDE-KERNEL-S5 (scheduling contract + stable status artifact counts/reasons + stalled-threshold guardrail alert + 3 clean-cycle simulation evidence).

@@ -1,19 +1,35 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import argparse
 import json
-from dataclasses import asdict
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from typing import Any
 
 from tde_kernel_slice_tests import TDEKernel, TriggerContract
 
 
-def main() -> None:
-    now = datetime.now(timezone.utc)
-    kernel = TDEKernel()
+def _default_items(now: datetime, simulate_clean: bool) -> list[dict[str, Any]]:
+    if simulate_clean:
+        return [
+            {
+                "id": "TASK-CANARY-ACTIVE-1",
+                "priority": "high",
+                "tde_canary": True,
+                "lastMeaningfulEventAt": (now - timedelta(minutes=20)).isoformat(),
+                "nextExpectedCheckpointAt": (now + timedelta(minutes=50)).isoformat(),
+            },
+            {
+                "id": "TASK-CANARY-AT-RISK-1",
+                "priority": "high",
+                "tde_canary": True,
+                "lastMeaningfulEventAt": (now - timedelta(minutes=150)).isoformat(),
+                "nextExpectedCheckpointAt": (now + timedelta(minutes=10)).isoformat(),
+            },
+        ]
 
-    items = [
+    return [
         {
             "id": "TASK-CANARY-STALE",
             "priority": "high",
@@ -31,32 +47,130 @@ def main() -> None:
         },
     ]
 
+
+def _load_state(state_path: Path) -> dict[str, Any]:
+    if not state_path.exists():
+        return {"consecutiveCleanCycles": 0, "lastCycleTimestamp": None}
+    return json.loads(state_path.read_text(encoding="utf-8"))
+
+
+def _write_json(path: Path, payload: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+
+
+def run_cycle(
+    trigger_source: str,
+    stalled_alert_threshold: int,
+    artifact_path: Path,
+    state_path: Path,
+    simulate_clean: bool = False,
+) -> dict[str, Any]:
+    now = datetime.now(timezone.utc)
+    kernel = TDEKernel()
+
+    items = _default_items(now, simulate_clean=simulate_clean)
     canary_items = [i for i in items if i.get("tde_canary") is True and i.get("priority") == "high"]
 
     trigger = TriggerContract(
-        trigger_source="cron",
-        trigger_id=f"cron-tde-canary-{now.strftime('%Y%m%d-%H%M%S')}",
-        session_key="cron:tde-canary-v1",
+        trigger_source=trigger_source,
+        trigger_id=f"{trigger_source}-tde-canary-{now.strftime('%Y%m%d-%H%M%S')}",
+        session_key="main" if trigger_source == "heartbeat" else "cron:tde-canary-v1",
         actor="lyra",
         job="JOB-ENG-001",
         triggered_at=now.isoformat(),
     )
 
     cycle = kernel.run_runtime_triggered_cycle(trigger, canary_items, now=now)
+    state_counts = {
+        "active": 0,
+        "atRisk": 0,
+        "stalled": 0,
+    }
+    reason_summary: dict[str, int] = {}
+
+    for c in cycle["classifications"]:
+        if c["state"] == "active-background":
+            state_counts["active"] += 1
+        elif c["state"] == "at-risk":
+            state_counts["atRisk"] += 1
+        elif c["state"] == "stalled":
+            state_counts["stalled"] += 1
+            reason = c.get("stallReasonCode") or "UNKNOWN_NEEDS_TRIAGE"
+            reason_summary[reason] = reason_summary.get(reason, 0) + 1
+
+    guardrail_violations: list[str] = []
+    for route in cycle["followups"]:
+        if route["requiresApproval"] and route["status"] != "blocked_pending_approval":
+            guardrail_violations.append(
+                f"approval_gate_bypass:{route['targetId']}:{route['status']}"
+            )
+
+    threshold_breached = state_counts["stalled"] > stalled_alert_threshold
+    if threshold_breached:
+        guardrail_violations.append(
+            f"stalled_threshold_breached:{state_counts['stalled']}>{stalled_alert_threshold}"
+        )
+
+    prior_state = _load_state(state_path)
+    prior_streak = int(prior_state.get("consecutiveCleanCycles", 0))
+    clean_cycle = len(guardrail_violations) == 0
+    clean_streak = prior_streak + 1 if clean_cycle else 0
 
     artifact = {
         "cycleTimestamp": cycle["cycleTimestamp"],
         "triggerSource": cycle["trigger"]["triggerSource"],
         "triggerId": cycle["trigger"]["triggerId"],
         "evaluatedCount": len(cycle["classifications"]),
-        "stalledCount": len(cycle["followups"]),
+        "counts": state_counts,
+        "stalledCount": state_counts["stalled"],
+        "stallReasonSummary": reason_summary,
         "routes": cycle["followups"],
+        "guardrail": {
+            "stalledAlertThreshold": stalled_alert_threshold,
+            "thresholdBreached": threshold_breached,
+            "violations": guardrail_violations,
+            "status": "alert" if guardrail_violations else "ok",
+        },
+        "cleanCycle": clean_cycle,
+        "consecutiveCleanCycles": clean_streak,
     }
 
-    out = Path("knowledge/evidence/2026-03/tde-canary-status-latest.json")
-    out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(json.dumps(artifact, indent=2) + "\n", encoding="utf-8")
+    _write_json(artifact_path, artifact)
+    _write_json(
+        state_path,
+        {
+            "consecutiveCleanCycles": clean_streak,
+            "lastCycleTimestamp": cycle["cycleTimestamp"],
+            "lastGuardrailStatus": artifact["guardrail"]["status"],
+        },
+    )
 
+    return artifact
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Run one TDE canary runtime cycle")
+    parser.add_argument("--trigger-source", choices=["heartbeat", "cron"], default="cron")
+    parser.add_argument("--stalled-alert-threshold", type=int, default=1)
+    parser.add_argument(
+        "--artifact-path",
+        default="knowledge/evidence/2026-03/tde-canary-status-latest.json",
+    )
+    parser.add_argument(
+        "--state-path",
+        default="knowledge/evidence/2026-03/tde-canary-cycle-state.json",
+    )
+    parser.add_argument("--simulate-clean", action="store_true")
+    args = parser.parse_args()
+
+    artifact = run_cycle(
+        trigger_source=args.trigger_source,
+        stalled_alert_threshold=args.stalled_alert_threshold,
+        artifact_path=Path(args.artifact_path),
+        state_path=Path(args.state_path),
+        simulate_clean=args.simulate_clean,
+    )
     print(json.dumps(artifact))
 
 
