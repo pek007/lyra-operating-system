@@ -61,9 +61,10 @@ The definition phase now has a coherent, integration-first blueprint for a Task 
 - [x] Trello cutover design and readiness checklist defined
 
 ### Remaining pre-build clarifications (small)
-- [ ] Final mutation authority matrix as a standalone artifact
-- [ ] Thin vertical slice acceptance test specification (single file)
+- [x] Final mutation authority matrix as a standalone artifact (`knowledge/distilled/2026-03-02__matrix__tde-mutation-authority-v2-job-bound.md`)
+- [x] Thin vertical slice acceptance test specification (single file) (`knowledge/distilled/2026-03-01__spec__tde-thin-slice-acceptance-tests-v1.md`)
 - [ ] Build-phase backlog sequencing (WIP-limited)
+- [x] Job binding and authority-transfer semantics (`knowledge/distilled/2026-03-02__spec__job-binding-and-authority-transfer-v1.md`)
 
 ## Recommendation
 Proceed to a **Build Readiness Gate Review** immediately.
