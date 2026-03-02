@@ -14,6 +14,7 @@ Use this until a dedicated work tool is selected.
 ## Triage
 
 ## Active
+- [ ] TDE-2026-014 | Define and execute S7 (canary-to-broader rollout control under existing guardrails)
 
 ## Waiting
 - [ ] TDE-2026-012 | Milestone gate packet for JOB-OWN-001 after S4/S5 acceptance consolidation
