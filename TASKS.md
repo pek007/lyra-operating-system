@@ -14,7 +14,7 @@ Use this until a dedicated work tool is selected.
 ## Triage
 
 ## Active
-
+- [ ] TDE-2026-007 | Milestone gate packet for JOB-OWN-001 (S1–S3) presented for decision (`knowledge/distilled/2026-03-02__milestone-packet__tde-kernel-s1-s3-gate-for-job-own-001-v1.md`)
 
 ## Waiting
 
