@@ -14,9 +14,9 @@ Use this until a dedicated work tool is selected.
 ## Triage
 
 ## Active
-- [ ] TDE-2026-004 | Milestone gate packet for JOB-OWN-001 presented for decision (`knowledge/distilled/2026-03-02__milestone-packet__tde-kernel-s1-s2-gate-for-job-own-001-v1.md`)
 
 ## Waiting
+- [ ] TDE-2026-006 | Execute next kernel slice (runtime-triggered heartbeat/cron anti-stall checks) under post-gate constraints
 
 ## Done
 - [x] Create MODEL_ROUTING_POLICY.md
@@ -63,3 +63,4 @@ Use this until a dedicated work tool is selected.
 - [x] TDE-2026-002 | Defined S2 WO and planning packet (`WO-2026-TDE-KERNEL-S2.md`, `knowledge/distilled/2026-03-02__packet__tde-kernel-s2-planning-v1.md`).
 - [x] TDE-2026-003 | Executed kernel-slice S2 planning packet (progress-state model, anti-stall integration, deterministic routing verification tests).
 - [x] TDE-2026-005 | Executed WO-2026-TDE-KERNEL-S2 (heartbeat anti-stall + progress-state classification + routing checks) with S2 evidence artifact.
+- [x] TDE-2026-004 | Milestone gate approved GO by JOB-OWN-001 (`knowledge/distilled/2026-03-02__milestone-packet__tde-kernel-s1-s2-gate-for-job-own-001-v1.md`).
