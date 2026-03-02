@@ -19,6 +19,7 @@
 2. Thin-slice tests T1–T6 pass; T7 readiness hooks are implemented for canary transition.
 3. All mutate/execute actions emit policy decision record id, idempotency key, actor+job identity, and audit link.
 4. Anti-stall control hook defined for heartbeat/cron follow-up of idle high-priority items (resume/escalate/redefine/retire pathway).
+5. Progress transparency hook defined for owner visibility: active-background vs stalled state signal.
 
 ## Verification Plan (Required)
 - Automated tests: thin-slice suite mapped to `knowledge/distilled/2026-03-01__spec__tde-thin-slice-acceptance-tests-v1.md`.
