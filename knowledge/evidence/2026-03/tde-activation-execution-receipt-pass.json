@@ -1,0 +1,31 @@
+{
+  "generatedAt": "2026-03-02T20:44:05.237001+00:00",
+  "receiptId": "actrcpt-a46271103aa60dbf",
+  "artifactType": "tde_activation_execution_receipt",
+  "releaseEnvelopeRef": {
+    "envelopeId": "env-f80caec0226851f2",
+    "path": "knowledge/evidence/2026-03/tde-release-envelope-pass.json"
+  },
+  "decisionTrace": {
+    "decision": "GO",
+    "decisionSource": "READY_FOR_HANDOFF",
+    "rationale": "Activation handoff executed under deterministic pass guard.",
+    "guardState": {
+      "status": "pass",
+      "handoffAllowed": true,
+      "escalationDetected": false,
+      "escalationReasons": [],
+      "blockOnEscalation": true,
+      "failClosed": true
+    }
+  },
+  "execution": {
+    "executed": true,
+    "route": "handoff_to_JOB-PROD-001_and_JOB-ARC-001",
+    "nextAction": "Proceed with pre-authorized rollout handoff package."
+  },
+  "policy": {
+    "preAuthorizationModel": "owner pre-authorization for escalation only; no approval bypass",
+    "failClosed": true
+  }
+}

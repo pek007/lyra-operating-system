@@ -1,0 +1,33 @@
+{
+  "generatedAt": "2026-03-02T20:44:05.294992+00:00",
+  "receiptId": "actrcpt-ed63a673241d3748",
+  "artifactType": "tde_activation_execution_receipt",
+  "releaseEnvelopeRef": {
+    "envelopeId": "env-95c7216a98a2562b",
+    "path": "knowledge/evidence/2026-03/tde-release-envelope-blocked.json"
+  },
+  "decisionTrace": {
+    "decision": "BLOCKED",
+    "decisionSource": "BLOCKED_ESCALATION",
+    "rationale": "Activation blocked by deterministic fail-closed guard due to escalation.",
+    "guardState": {
+      "status": "blocked",
+      "handoffAllowed": false,
+      "escalationDetected": true,
+      "escalationReasons": [
+        "simulated:pre_authorization_guard_test"
+      ],
+      "blockOnEscalation": true,
+      "failClosed": true
+    }
+  },
+  "execution": {
+    "executed": false,
+    "route": "hold_fail_closed",
+    "nextAction": "Escalate evidence packet; activation remains blocked until escalation is cleared."
+  },
+  "policy": {
+    "preAuthorizationModel": "owner pre-authorization for escalation only; no approval bypass",
+    "failClosed": true
+  }
+}

@@ -1,5 +1,6 @@
 {
-  "generatedAt": "2026-03-02T20:20:29.401700+00:00",
+  "generatedAt": "2026-03-02T20:44:05.265970+00:00",
+  "envelopeId": "env-95c7216a98a2562b",
   "artifactType": "tde_release_envelope",
   "releaseDecision": "BLOCKED_ESCALATION",
   "sourceArtifacts": {

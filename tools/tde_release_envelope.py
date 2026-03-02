@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 from datetime import datetime, timezone
 from pathlib import Path
@@ -40,6 +41,12 @@ def _derive_escalation(snapshot: dict[str, Any], owner_packet: dict[str, Any]) -
     return deduped
 
 
+def _deterministic_envelope_id(payload: dict[str, Any]) -> str:
+    canonical = json.dumps(payload, sort_keys=True, separators=(",", ":"))
+    digest = hashlib.sha256(canonical.encode("utf-8")).hexdigest()[:16]
+    return f"env-{digest}"
+
+
 def build_release_envelope(
     snapshot: dict[str, Any],
     owner_packet: dict[str, Any],
@@ -66,8 +73,7 @@ def build_release_envelope(
         },
     }
 
-    return {
-        "generatedAt": now,
+    envelope_core = {
         "artifactType": "tde_release_envelope",
         "releaseDecision": "READY_FOR_HANDOFF" if handoff_allowed else "BLOCKED_ESCALATION",
         "sourceArtifacts": {
@@ -92,6 +98,13 @@ def build_release_envelope(
         },
     }
 
+    envelope = {
+        "generatedAt": now,
+        "envelopeId": _deterministic_envelope_id(envelope_core),
+        **envelope_core,
+    }
+    return envelope
+
 
 def _to_markdown(envelope: dict[str, Any]) -> str:
     guard = envelope.get("activationGuard", {})
@@ -99,6 +112,7 @@ def _to_markdown(envelope: dict[str, Any]) -> str:
         "# TDE Release Envelope",
         "",
         f"- Generated at: `{envelope.get('generatedAt')}`",
+        f"- Envelope ID: `{envelope.get('envelopeId')}`",
         f"- Release decision: **{envelope.get('releaseDecision')}**",
         f"- Handoff eligible: `{envelope.get('rolloutHandoff', {}).get('eligible')}`",
         "",
@@ -156,6 +170,7 @@ def main() -> None:
             {
                 "releaseEnvelopePath": str(out_json),
                 "releaseEnvelopeMarkdownPath": str(out_md),
+                "envelopeId": envelope["envelopeId"],
                 "releaseDecision": envelope["releaseDecision"],
                 "handoffEligible": envelope["rolloutHandoff"]["eligible"],
             }

@@ -1,6 +1,7 @@
 # TDE Release Envelope
 
-- Generated at: `2026-03-02T20:20:29.401700+00:00`
+- Generated at: `2026-03-02T20:44:05.265970+00:00`
+- Envelope ID: `env-95c7216a98a2562b`
 - Release decision: **BLOCKED_ESCALATION**
 - Handoff eligible: `False`
 

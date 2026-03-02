@@ -21,7 +21,7 @@
 4. Preserve fail-closed behavior and existing policy guardrails unchanged.
 
 ## Closure
-- Outcome summary: Pending implementation.
-- Accepted by: Pending
-- Date closed: Pending
-- Linked Change Artifact(s): Pending
+- Outcome summary: Implementation-complete. Added deterministic activation execution receipt generation (`tools/tde_activation_execution_receipt.py`) linked to release envelope ID and hardened release envelope identity (`envelopeId`) for traceable handoff lineage. Decision-trace linkage now records GO/BLOCKED rationale + guard state in the receipt, and S11 evidence cycle proves both ready and blocked conditions while preserving fail-closed pre-authorization behavior.
+- Accepted by: JOB-PROD-001 + JOB-ARC-001 (owner pre-authorization acknowledged 2026-03-02)
+- Date closed: 2026-03-02
+- Linked Change Artifact(s): `tools/tde_release_envelope.py`; `tools/tde_activation_execution_receipt.py`; `knowledge/evidence/2026-03/tde-release-envelope-pass.json`; `knowledge/evidence/2026-03/tde-release-envelope-pass.md`; `knowledge/evidence/2026-03/tde-release-envelope-blocked.json`; `knowledge/evidence/2026-03/tde-release-envelope-blocked.md`; `knowledge/evidence/2026-03/tde-activation-execution-receipt-pass.json`; `knowledge/evidence/2026-03/tde-activation-execution-receipt-pass.md`; `knowledge/evidence/2026-03/tde-activation-execution-receipt-blocked.json`; `knowledge/evidence/2026-03/tde-activation-execution-receipt-blocked.md`; `knowledge/evidence/2026-03/2026-03-02__verification__wo-2026-tde-kernel-s11.md`
