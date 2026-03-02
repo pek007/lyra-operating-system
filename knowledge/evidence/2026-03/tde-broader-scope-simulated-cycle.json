@@ -1,0 +1,111 @@
+{
+  "generatedAt": "2026-03-02T18:36:16.807795+00:00",
+  "cycle": {
+    "cycleTimestamp": "2026-03-02T18:36:16.807795+00:00",
+    "trigger": {
+      "triggerSource": "cron",
+      "triggerId": "cron-tde-broader-scope-20260302-183616",
+      "sessionKey": "cron:tde-broader-rollout-v1",
+      "actor": "lyra",
+      "job": "JOB-ENG-001",
+      "triggeredAt": "2026-03-02T18:36:16.807795+00:00"
+    },
+    "classifications": [
+      {
+        "id": "TASK-BROAD-1",
+        "state": "active-background",
+        "lastMeaningfulEventAt": "2026-03-02T18:11:16.807795+00:00",
+        "nextExpectedCheckpointAt": "2026-03-02T19:16:16.807795+00:00",
+        "stallReasonCode": null,
+        "nextAction": "continue"
+      },
+      {
+        "id": "TASK-BROAD-2",
+        "state": "active-background",
+        "lastMeaningfulEventAt": "2026-03-02T17:36:16.807795+00:00",
+        "nextExpectedCheckpointAt": "2026-03-02T19:06:16.807795+00:00",
+        "stallReasonCode": null,
+        "nextAction": "continue"
+      },
+      {
+        "id": "TASK-BROAD-3",
+        "state": "at-risk",
+        "lastMeaningfulEventAt": "2026-03-02T15:46:16.807795+00:00",
+        "nextExpectedCheckpointAt": "2026-03-02T18:41:16.807795+00:00",
+        "stallReasonCode": null,
+        "nextAction": "warning"
+      },
+      {
+        "id": "TASK-BROAD-4",
+        "state": "at-risk",
+        "lastMeaningfulEventAt": "2026-03-02T15:31:16.807795+00:00",
+        "nextExpectedCheckpointAt": "2026-03-02T18:26:16.807795+00:00",
+        "stallReasonCode": null,
+        "nextAction": "warning"
+      },
+      {
+        "id": "TASK-BROAD-5",
+        "state": "stalled",
+        "lastMeaningfulEventAt": "2026-03-02T12:36:16.807795+00:00",
+        "nextExpectedCheckpointAt": "2026-03-02T17:36:16.807795+00:00",
+        "stallReasonCode": "WAITING_APPROVAL",
+        "nextAction": "escalate"
+      },
+      {
+        "id": "TASK-BROAD-6",
+        "state": "active-background",
+        "lastMeaningfulEventAt": "2026-03-02T18:01:16.807795+00:00",
+        "nextExpectedCheckpointAt": "2026-03-02T19:21:16.807795+00:00",
+        "stallReasonCode": null,
+        "nextAction": "continue"
+      }
+    ],
+    "followups": [
+      {
+        "targetId": "TASK-BROAD-5",
+        "route": "escalate",
+        "stallReasonCode": "WAITING_APPROVAL",
+        "requiresApproval": true,
+        "policyGate": "approval_required",
+        "status": "blocked_pending_approval"
+      }
+    ]
+  },
+  "counts": {
+    "active": 3,
+    "atRisk": 2,
+    "stalled": 1
+  },
+  "stalledRatio": 0.1667,
+  "expansionCriteria": {
+    "expansionWindow": {
+      "fromMaxItems": 3,
+      "toMaxItems": 8
+    },
+    "scopeRule": "expand high-priority local tasks only; no 3PP integrations",
+    "requiredPreconditions": {
+      "consecutiveCleanCyclesMin": 3,
+      "guardrailStatus": "ok",
+      "approvalGateBypass": "forbidden"
+    },
+    "cycleHealthThresholds": {
+      "maxStalledCount": 1,
+      "maxStalledRatio": 0.25
+    },
+    "rollbackTriggers": [
+      "guardrail.status == alert",
+      "approval_gate_bypass detected",
+      "stalled_count > 1 in broadened cycle"
+    ]
+  },
+  "guardrailEvaluation": {
+    "approvalGateBypassDetected": [],
+    "status": "ok"
+  },
+  "healthEvaluation": {
+    "withinBounds": true,
+    "maxStalledCount": 1,
+    "maxStalledRatio": 0.25
+  },
+  "broaderRolloutDecision": "GO"
+}
