@@ -63,3 +63,4 @@ Use this until a dedicated work tool is selected.
 - [x] OPS-2026-033 | Establish strict OpenClaw config change-control + rollback SOP (preview/approval/apply/validate/rollback)
 - [x] OPS-2026-034 | Refine Claude Code prompting system: outcome-oriented schema, explicit modes, stronger verification, and fresh-context recovery rule
 - [x] IMP-AUTO-20260227-01 | Added lightweight markdown link-check script (`tools/markdown_link_check.py`) with cron-safe scope filters.
+- [x] WO-2026-TDE-KERNEL-S1 | Implemented TDE kernel thin-slice scaffolding (T1–T7 acceptance runner + anti-stall heartbeat/cron hook contract + verification evidence).

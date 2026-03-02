@@ -46,7 +46,7 @@
 - Expected output artifacts: implementation diff, test evidence, gate-ready closure summary.
 
 ## Closure
-- Outcome summary: Pending
-- Accepted by: JOB-PROD-001 + JOB-ARC-001 (technical co-sign)
-- Date closed: Pending
-- Linked Change Artifact(s): Pending
+- Outcome summary: Kernel-slice scaffolding implemented with T1-T7 acceptance runner and anti-stall hook contract; verification evidence recorded.
+- Accepted by: Pending formal acceptance (JOB-PROD-001 + JOB-ARC-001)
+- Date closed: 2026-03-02 (implementation complete; awaiting acceptance sign-off)
+- Linked Change Artifact(s): `knowledge/evidence/2026-03/2026-03-02__verification__wo-2026-tde-kernel-s1.md`
