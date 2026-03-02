@@ -59,6 +59,7 @@ Track core processes, standards, and runbooks with review state.
 | OPENCLAW_PROMPTING_GUIDE_CLAUDE_CODE_V2.md | Guide | Peter/Lyra | Active | 2026-02-28 | 2026-03-28 |
 | SOFTWARE_DELIVERY_PROCESS_3PP_OS.md | Delivery Process | Peter/Lyra | Active | 2026-02-27 | 2026-03-27 |
 | LEARNING_LOOPS_OS_AND_PROJECT.md | Learning Framework | Peter/Lyra | Active | 2026-02-27 | 2026-03-27 |
+| JOB_MEMORY_PORTABILITY_PROCESS_V1.md | Process | Peter/Lyra | Active | 2026-03-02 | 2026-04-02 |
 
 ## Notes
 - Planned items must be tracked in TASKS.md with a target date.
