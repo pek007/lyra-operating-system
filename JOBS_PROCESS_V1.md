@@ -30,6 +30,13 @@ Propose -> Classify change -> Authority diff check -> Approval gate -> Activate 
 - Class B: job owner + **JOB-OWN-001** approval
 - Class C: **JOB-OWN-001** + independent second approver (dual control), plus rollback plan
 
+## Product/acceptance governance rule
+- Detailed acceptance-test approvals are delegated to domain jobs, not defaulted to **JOB-OWN-001**.
+- For TDE thin-slice acceptance tests:
+  - **JOB-PROD-001 (Product Owner)** approves product fitness/completeness.
+  - **JOB-ARC-001 (Chief Architect)** approves technical/safety integrity.
+  - **JOB-OWN-001** is escalation/final arbiter only for unresolved conflicts or high/critical risk exceptions.
+
 ## Binding and transfer integration
 Authority follows jobs, not fixed agents.
 - Use `knowledge/distilled/2026-03-02__spec__job-binding-and-authority-transfer-v1.md` for transfer protocol.

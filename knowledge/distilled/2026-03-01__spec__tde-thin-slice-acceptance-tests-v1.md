@@ -3,6 +3,11 @@
 Status: Draft-for-approval  
 Date: 2026-03-01
 
+## Approval model
+- Primary approver (product acceptance): **JOB-PROD-001 — Product Owner**
+- Co-approver (technical/safety integrity): **JOB-ARC-001 — Chief Architect**
+- Escalation/final arbiter only: **JOB-OWN-001 — System Owner & Final Decision Authority**
+
 ## Slice under test
 Trigger -> evaluate state -> generate decision packet -> apply approval gate -> idempotent execution -> audit/evidence linkage.
 

@@ -68,6 +68,12 @@ Manage responsibilities as **jobs** that can be assigned to the best execution s
 - Execution profile: human decision owner (Peter), not delegated to autonomous runtime by default
 - Preferred runtime: N/A (human authority role)
 
+### JOB-PROD-001 — Product Owner
+- Domain: OS/PX Shared
+- Mission: own product acceptance criteria, outcome fitness, and release-readiness decisions at feature/slice level
+- Execution profile: decision-heavy, scope/quality trade-off ownership, low direct side effects
+- Preferred runtime: main agent + structured review sessions
+
 ### JOB-ARC-001 — Chief Architect (Job, not agent)
 - Domain: OS/PX Shared
 - Mission: architecture constraints, boundary governance, ADR quality, sign-off recommendations

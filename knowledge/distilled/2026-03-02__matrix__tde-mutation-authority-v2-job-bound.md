@@ -56,6 +56,17 @@ Interpretation:
 - Merge/release/deploy prod-affecting changes: **propose-only**
 - Emergency actions: **allow-with-obligations** (only via break-glass protocol)
 
+#### JOB-PROD-001 — Product Owner
+- Read/query/summarize: **allow**
+- Create/triage product tasks and acceptance criteria: **allow**
+- Approve/reject slice-level acceptance tests: **allow**
+- Low-risk task transitions: **allow (policy-checked)**
+- External send/publish: **propose-only**
+- OpenClaw config/routing/tool-policy changes: **propose-only**
+- Credential/access boundary changes: **deny**
+- Merge/release/deploy prod-affecting changes: **propose-only**
+- Emergency actions: **deny**
+
 #### JOB-ARC-001 — Chief Architect
 - Read/query/summarize: **allow**
 - Create/triage architecture tasks: **allow**
