@@ -19,12 +19,27 @@ Use two complementary OpenClaw primitives:
    - executes same stale-item query in isolated run
    - emits report/evidence even when no main-session activity occurs
 
-## Decision pathway per stale high-priority item
-Exactly one action must be selected and recorded:
-- **resume** (clear blocker, assign next executable step)
-- **escalate** (approval/owner attention required)
-- **redefine** (scope or acceptance criteria changed)
-- **retire** (explicit stop/cancel with rationale)
+## Progress-state contract (S2)
+Required machine-readable fields per tracked item:
+- `lastMeaningfulEventAt`
+- `nextExpectedCheckpointAt`
+- `state` (`active-background|at-risk|stalled`)
+- `stallReasonCode` (required when `state=stalled`)
+- `nextAction`
+
+Classification policy:
+- `active-background`: recent meaningful activity and checkpoint still inside SLA
+- `at-risk`: aging warning threshold breached or checkpoint overdue, but not yet stalled
+- `stalled`: stale beyond SLA without meaningful progress
+
+## Decision pathway per stalled high-priority item
+Exactly one action must be selected and recorded.
+Deterministic reason-code routing (v1):
+- `WAITING_APPROVAL` -> **escalate**
+- `DEPENDENCY_BLOCKED` -> **escalate**
+- `NO_EXECUTOR_ACTIVITY` -> **resume**
+- `RETRYING_FAILURE` -> **redefine**
+- `UNKNOWN_NEEDS_TRIAGE` -> **retire**
 
 ## Guardrails
 - No autonomous authority expansion.

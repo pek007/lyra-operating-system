@@ -14,8 +14,7 @@ Use this until a dedicated work tool is selected.
 ## Triage
 
 ## Active
-- [ ] TDE-2026-003 | Execute kernel-slice S2 planning packet (tests, anti-stall integration, progress state model)
-- [ ] TDE-2026-005 | Execute WO-2026-TDE-KERNEL-S2 (heartbeat anti-stall + progress-state classification + routing checks)
+
 
 ## Waiting
 - [ ] TDE-2026-004 | Milestone gate packet for JOB-OWN-001 after S2 evidence is complete
@@ -63,3 +62,5 @@ Use this until a dedicated work tool is selected.
 - [x] WO-2026-TDE-KERNEL-S1 | Implemented TDE kernel thin-slice scaffolding (T1–T7 acceptance runner + anti-stall heartbeat/cron hook contract + verification evidence).
 - [x] TDE-2026-001 | Formal acceptance sign-off completed for WO-2026-TDE-KERNEL-S1 (JOB-PROD-001 + JOB-ARC-001, owner acknowledged 2026-03-02).
 - [x] TDE-2026-002 | Defined S2 WO and planning packet (`WO-2026-TDE-KERNEL-S2.md`, `knowledge/distilled/2026-03-02__packet__tde-kernel-s2-planning-v1.md`).
+- [x] TDE-2026-003 | Executed kernel-slice S2 planning packet (progress-state model, anti-stall integration, deterministic routing verification tests).
+- [x] TDE-2026-005 | Executed WO-2026-TDE-KERNEL-S2 (heartbeat anti-stall + progress-state classification + routing checks) with S2 evidence artifact.
