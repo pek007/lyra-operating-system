@@ -28,6 +28,7 @@ The definition phase now has a coherent, integration-first blueprint for a Task 
 - `JOB_MARKET_MODEL_V1.md`
 - `AGENT_LIFECYCLE_SOP_V1.md`
 - `JOBS_PROCESS_V1.md`
+- `knowledge/distilled/2026-03-02__raci__tde-build-gate-approvals-v1.md`
 
 ### Process system and audit
 - `PROCESS_LIFECYCLE_PROCESS_V1.md`
@@ -69,5 +70,5 @@ The definition phase now has a coherent, integration-first blueprint for a Task 
 ## Recommendation
 Proceed to a **Build Readiness Gate Review** immediately.
 
-- If remaining three clarifications are completed and approved: **Go to build phase (kernel slice only)**.
+- If remaining clarifications are completed and approved: **Go to build phase (kernel slice only)**.
 - If not: complete them first and re-run the gate (no scope expansion).
