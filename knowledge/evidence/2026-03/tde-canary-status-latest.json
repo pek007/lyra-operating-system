@@ -1,0 +1,17 @@
+{
+  "cycleTimestamp": "2026-03-02T18:11:42.795034+00:00",
+  "triggerSource": "cron",
+  "triggerId": "cron-tde-canary-20260302-181142",
+  "evaluatedCount": 2,
+  "stalledCount": 1,
+  "routes": [
+    {
+      "targetId": "TASK-CANARY-STALE",
+      "route": "escalate",
+      "stallReasonCode": "WAITING_APPROVAL",
+      "requiresApproval": true,
+      "policyGate": "approval_required",
+      "status": "blocked_pending_approval"
+    }
+  ]
+}

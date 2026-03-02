@@ -14,9 +14,9 @@ Use this until a dedicated work tool is selected.
 ## Triage
 
 ## Active
-- [ ] TDE-2026-008 | Execute WO-2026-TDE-KERNEL-S4: live canary wiring of runtime-triggered anti-stall checks (no 3PP, no new repo)
 
 ## Waiting
+- [ ] TDE-2026-009 | Formal acceptance sign-off for WO-2026-TDE-KERNEL-S4 (JOB-PROD-001 + JOB-ARC-001)
 
 ## Done
 - [x] Create MODEL_ROUTING_POLICY.md
@@ -66,3 +66,4 @@ Use this until a dedicated work tool is selected.
 - [x] TDE-2026-006 | Executed WO-2026-TDE-KERNEL-S3 (runtime-triggered heartbeat/cron anti-stall checks) with trigger-contract validation, runtime cycle simulation tests, and S3 evidence artifact.
 - [x] TDE-2026-004 | Milestone gate approved GO by JOB-OWN-001 (`knowledge/distilled/2026-03-02__milestone-packet__tde-kernel-s1-s2-gate-for-job-own-001-v1.md`).
 - [x] TDE-2026-007 | Milestone gate approved GO by JOB-OWN-001 (`knowledge/distilled/2026-03-02__milestone-packet__tde-kernel-s1-s3-gate-for-job-own-001-v1.md`).
+- [x] TDE-2026-008 | Executed WO-2026-TDE-KERNEL-S4 (canary runtime wiring + cycle artifact + fail-closed approval route evidence).
