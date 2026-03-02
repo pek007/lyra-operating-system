@@ -37,6 +37,16 @@ class AuditRecord:
     details: dict[str, Any] = field(default_factory=dict)
 
 
+@dataclass
+class TriggerContract:
+    trigger_source: str  # heartbeat|cron
+    trigger_id: str
+    session_key: str
+    actor: str
+    job: str
+    triggered_at: str
+
+
 class TDEKernel:
     """Thin-slice deterministic governance kernel for acceptance tests."""
 
@@ -246,6 +256,62 @@ class TDEKernel:
                 out.append(classified)
         return out
 
+    def validate_trigger_contract(self, trigger: TriggerContract) -> dict[str, Any]:
+        if trigger.trigger_source not in {"heartbeat", "cron"}:
+            raise ValueError(f"invalid trigger_source: {trigger.trigger_source}")
+        if not trigger.trigger_id.strip():
+            raise ValueError("trigger_id is required")
+        if not trigger.session_key.strip():
+            raise ValueError("session_key is required")
+        if not trigger.actor.strip() or not trigger.job.strip():
+            raise ValueError("actor and job are required")
+        datetime.fromisoformat(trigger.triggered_at)
+        return {
+            "triggerSource": trigger.trigger_source,
+            "triggerId": trigger.trigger_id,
+            "sessionKey": trigger.session_key,
+            "actor": trigger.actor,
+            "job": trigger.job,
+            "triggeredAt": trigger.triggered_at,
+        }
+
+    def apply_stall_followup_policy(self, classified: dict[str, Any]) -> dict[str, Any]:
+        if classified["state"] != "stalled":
+            raise ValueError("follow-up policy only applies to stalled items")
+
+        route = classified["nextAction"]
+        if route not in {"resume", "escalate", "redefine", "retire"}:
+            raise ValueError(f"invalid routed action: {route}")
+
+        # fail-closed: potentially external/boundary-changing paths remain gated
+        requires_approval = route in {"escalate", "retire"}
+        return {
+            "targetId": classified["id"],
+            "route": route,
+            "stallReasonCode": classified["stallReasonCode"],
+            "requiresApproval": requires_approval,
+            "policyGate": "approval_required" if requires_approval else "none",
+            "status": "blocked_pending_approval" if requires_approval else "ready_for_execution",
+        }
+
+    def run_runtime_triggered_cycle(
+        self,
+        trigger: TriggerContract,
+        items: list[dict[str, Any]],
+        now: datetime | None = None,
+        idle_minutes: int = 240,
+    ) -> dict[str, Any]:
+        contract = self.validate_trigger_contract(trigger)
+        current = now or datetime.now(timezone.utc)
+        classifications = [self.classify_progress_state(item, now=current, stalled_minutes=idle_minutes) for item in items]
+        followups = [self.apply_stall_followup_policy(c) for c in classifications if c["state"] == "stalled"]
+        return {
+            "cycleTimestamp": current.isoformat(),
+            "trigger": contract,
+            "classifications": classifications,
+            "followups": followups,
+        }
+
 
 def assert_common_fields(result: dict[str, Any]) -> None:
     assert "policy_decision_id" in result
@@ -373,7 +439,64 @@ def run_tests() -> None:
     assert k.route_stall_action("RETRYING_FAILURE") == "redefine"
     assert k.route_stall_action("UNKNOWN_NEEDS_TRIAGE") == "retire"
 
-    print("[PASS] TDE kernel thin-slice tests passed (T1-T7 + S2 progress-state + deterministic anti-stall routing)")
+    # S3-1: heartbeat-triggered runtime cycle validates contract and emits policy-gated followup
+    heartbeat_trigger = TriggerContract(
+        trigger_source="heartbeat",
+        trigger_id="hb-20260302-1200",
+        session_key="main",
+        actor="lyra",
+        job="JOB-ENG-001",
+        triggered_at=fixed_now.isoformat(),
+    )
+    hb_cycle = k.run_runtime_triggered_cycle(heartbeat_trigger, [active, stalled], now=fixed_now)
+    assert hb_cycle["trigger"]["triggerSource"] == "heartbeat"
+    assert len(hb_cycle["classifications"]) == 2
+    assert [f["targetId"] for f in hb_cycle["followups"]] == ["TASK-HIGH-STALE"]
+    assert hb_cycle["followups"][0]["route"] == "escalate"
+    assert hb_cycle["followups"][0]["requiresApproval"] is True
+    assert hb_cycle["followups"][0]["status"] == "blocked_pending_approval"
+
+    # S3-2: cron-triggered runtime cycle checks deterministic followup without approval bypass
+    no_exec_stalled = {
+        "id": "TASK-NO-EXECUTOR",
+        "priority": "high",
+        "lastMeaningfulEventAt": (fixed_now - timedelta(hours=5)).isoformat(),
+        "nextExpectedCheckpointAt": (fixed_now - timedelta(minutes=45)).isoformat(),
+        "stallReasonCode": "NO_EXECUTOR_ACTIVITY",
+    }
+    cron_trigger = TriggerContract(
+        trigger_source="cron",
+        trigger_id="cron-tde-anti-stall-20260302-1200",
+        session_key="cron:tde-anti-stall-v1",
+        actor="lyra",
+        job="JOB-ENG-001",
+        triggered_at=fixed_now.isoformat(),
+    )
+    cron_cycle = k.run_runtime_triggered_cycle(cron_trigger, [no_exec_stalled], now=fixed_now)
+    assert cron_cycle["trigger"]["triggerSource"] == "cron"
+    assert cron_cycle["followups"][0]["route"] == "resume"
+    assert cron_cycle["followups"][0]["requiresApproval"] is False
+    assert cron_cycle["followups"][0]["status"] == "ready_for_execution"
+
+    # S3-3: invalid trigger source fails closed
+    try:
+        k.run_runtime_triggered_cycle(
+            TriggerContract(
+                trigger_source="webhook",
+                trigger_id="bad-trigger",
+                session_key="main",
+                actor="lyra",
+                job="JOB-ENG-001",
+                triggered_at=fixed_now.isoformat(),
+            ),
+            [active],
+            now=fixed_now,
+        )
+        raise AssertionError("expected invalid trigger source failure")
+    except ValueError as e:
+        assert "invalid trigger_source" in str(e)
+
+    print("[PASS] TDE kernel thin-slice tests passed (T1-T7 + S2 progress-state + deterministic anti-stall routing + S3 runtime-triggered heartbeat/cron cycle checks)")
 
 
 if __name__ == "__main__":

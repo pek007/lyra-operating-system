@@ -19,6 +19,18 @@ Use two complementary OpenClaw primitives:
    - executes same stale-item query in isolated run
    - emits report/evidence even when no main-session activity occurs
 
+## Runtime trigger contract (S3)
+Each runtime-triggered anti-stall cycle must validate this trigger packet before classification:
+
+- `triggerSource` (`heartbeat|cron`) — reject any other source (fail-closed)
+- `triggerId` (non-empty deterministic run identifier)
+- `sessionKey` (e.g., `main` or `cron:<jobId>`)
+- `actor`
+- `job`
+- `triggeredAt` (ISO-8601 timestamp)
+
+If any field is invalid/missing, cycle stops with no follow-up action execution.
+
 ## Progress-state contract (S2)
 Required machine-readable fields per tracked item:
 - `lastMeaningfulEventAt`
@@ -43,6 +55,9 @@ Deterministic reason-code routing (v1):
 
 ## Guardrails
 - No autonomous authority expansion.
+- Policy-gated follow-up path is mandatory:
+  - `escalate` and `retire` => `blocked_pending_approval` until explicit approval
+  - `resume` and `redefine` => may proceed without approval
 - External-send or boundary-changing actions remain approval-gated.
 - If route unresolved after two sweeps, escalate to `JOB-OWN-001`.
 
