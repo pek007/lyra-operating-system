@@ -1,0 +1,10 @@
+{
+  "lastSummaryGeneratedAt": "2026-03-02T18:28:41.543266+00:00",
+  "sourceCycleTimestamp": "2026-03-02T18:28:41.515208+00:00",
+  "counts": {
+    "active": 1,
+    "atRisk": 0,
+    "stalled": 1
+  },
+  "guardrailStatus": "ok"
+}

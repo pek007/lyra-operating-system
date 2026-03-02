@@ -1,7 +1,7 @@
 {
-  "cycleTimestamp": "2026-03-02T18:20:38.541894+00:00",
+  "cycleTimestamp": "2026-03-02T18:28:41.515208+00:00",
   "triggerSource": "cron",
-  "triggerId": "cron-tde-canary-20260302-182038",
+  "triggerId": "cron-tde-canary-20260302-182841",
   "evaluatedCount": 2,
   "counts": {
     "active": 1,
@@ -29,5 +29,5 @@
     "status": "ok"
   },
   "cleanCycle": true,
-  "consecutiveCleanCycles": 2
+  "consecutiveCleanCycles": 3
 }
