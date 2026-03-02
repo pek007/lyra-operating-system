@@ -14,9 +14,9 @@ Use this until a dedicated work tool is selected.
 ## Triage
 
 ## Active
+- [ ] TDE-2026-006 | Execute WO-2026-TDE-KERNEL-S3 (runtime-triggered heartbeat/cron anti-stall checks)
 
 ## Waiting
-- [ ] TDE-2026-006 | Execute next kernel slice (runtime-triggered heartbeat/cron anti-stall checks) under post-gate constraints
 
 ## Done
 - [x] Create MODEL_ROUTING_POLICY.md
