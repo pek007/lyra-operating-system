@@ -12,7 +12,6 @@ Use this until a dedicated work tool is selected.
 - [ ] IMP-AUTO-20260228-01 | Automate daily OpenClaw release-delta evidence snapshot (`openclaw --version/status/update status`) into `knowledge/evidence/` for auditable change tracking.
 
 ## Triage
-- [ ] TDE-2026-001 | Formal acceptance sign-off for WO-2026-TDE-KERNEL-S1 (JOB-PROD-001 + JOB-ARC-001)
 
 ## Active
 - [ ] TDE-2026-003 | Execute kernel-slice S2 planning packet (tests, anti-stall integration, progress state model)
@@ -62,4 +61,5 @@ Use this until a dedicated work tool is selected.
 - [x] OPS-2026-034 | Refine Claude Code prompting system: outcome-oriented schema, explicit modes, stronger verification, and fresh-context recovery rule
 - [x] IMP-AUTO-20260227-01 | Added lightweight markdown link-check script (`tools/markdown_link_check.py`) with cron-safe scope filters.
 - [x] WO-2026-TDE-KERNEL-S1 | Implemented TDE kernel thin-slice scaffolding (T1–T7 acceptance runner + anti-stall heartbeat/cron hook contract + verification evidence).
+- [x] TDE-2026-001 | Formal acceptance sign-off completed for WO-2026-TDE-KERNEL-S1 (JOB-PROD-001 + JOB-ARC-001, owner acknowledged 2026-03-02).
 - [x] TDE-2026-002 | Defined S2 WO and planning packet (`WO-2026-TDE-KERNEL-S2.md`, `knowledge/distilled/2026-03-02__packet__tde-kernel-s2-planning-v1.md`).

@@ -48,6 +48,6 @@
 
 ## Closure
 - Outcome summary: Kernel-slice scaffolding implemented with T1-T7 acceptance runner and anti-stall hook contract; verification evidence recorded.
-- Accepted by: Pending formal acceptance (JOB-PROD-001 + JOB-ARC-001)
-- Date closed: 2026-03-02 (implementation complete; awaiting acceptance sign-off)
+- Accepted by: JOB-PROD-001 + JOB-ARC-001 (owner acknowledgement recorded 2026-03-02)
+- Date closed: 2026-03-02
 - Linked Change Artifact(s): `knowledge/evidence/2026-03/2026-03-02__verification__wo-2026-tde-kernel-s1.md`
