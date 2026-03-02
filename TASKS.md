@@ -14,11 +14,11 @@ Use this until a dedicated work tool is selected.
 ## Triage
 
 ## Active
-- [ ] TDE-2026-017 | Execute WO-2026-TDE-KERNEL-S9 (owner gate packet automation + escalation section)
 
 ## Waiting
 
 ## Done
+- [x] TDE-2026-017 | Executed WO-2026-TDE-KERNEL-S9 (automated owner-facing gate packet generation from latest milestone snapshot + guardrail outputs with explicit escalation section; S9 evidence cycle generated; pending formal acceptance).
 - [x] Create MODEL_ROUTING_POLICY.md
 - [x] Create WAYS_OF_WORKING_V1.md
 - [x] Create ADR-001_SYSTEMS_OF_RECORD.md
