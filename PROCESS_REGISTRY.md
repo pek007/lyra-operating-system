@@ -62,5 +62,7 @@ Track core processes, standards, and runbooks with review state.
 | JOB_MEMORY_PORTABILITY_PROCESS_V1.md | Process | Peter/Lyra | Active | 2026-03-02 | 2026-04-02 |
 | GDPR_AI_ACT_COMPLIANCE_BASELINE_V1.md | Compliance Baseline | Peter/Lyra | Active | 2026-03-02 | 2026-04-02 |
 
+| TOOL_EXTERNAL_SERVICE_GOVERNANCE_V1.md | Governance Policy | Peter/Lyra | Active | 2026-03-02 | 2026-04-02 |
+
 ## Notes
 - Planned items must be tracked in TASKS.md with a target date.

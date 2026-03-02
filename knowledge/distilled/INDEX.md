@@ -10,3 +10,4 @@
 - `2026-03-02__plan__memory-architecture-improvements-v1.md` — Implement-now plan for memory portability and deterministic write-back.
 - `2026-03-02__plan__devsecops-maturity-uplift-v1.md` — Implement-now DevSecOps maturity uplift plan.
 - `2026-03-02__plan__audit-compliance-uplift-v1.md` — Implement-now plan for GDPR/AI Act audit-compliance uplift.
+- `2026-03-02__plan__tool-external-service-hardening-v1.md` — Implement-now plan to harden tool and external service handling.
