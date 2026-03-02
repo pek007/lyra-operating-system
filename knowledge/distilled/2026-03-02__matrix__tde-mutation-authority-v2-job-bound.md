@@ -29,9 +29,20 @@ Interpretation:
 ## Authority matrix (v2)
 
 ### Decision owner (human)
-- **Peter** is the final authority for high/critical decisions and boundary changes unless explicit delegation is documented.
+- **JOB-OWN-001 (System Owner & Final Decision Authority)** is held by Peter by default.
+- This job is the final authority for high/critical decisions and boundary changes unless explicit delegation is documented.
 
 ### Job policies
+
+#### JOB-OWN-001 — System Owner & Final Decision Authority (Human-held)
+- Read/query/summarize: **allow**
+- Approve/reject any decision class: **allow**
+- Delegate authority to jobs: **allow-with-obligations** (must be explicit, time-bounded when temporary, and auditable)
+- OpenClaw config/routing/tool-policy changes: **allow**
+- Credential/access boundary changes: **allow**
+- Merge/release/deploy prod-affecting changes: **allow**
+- Emergency actions: **allow**
+- Authority ceiling/policy changes: **allow-with-obligations** (dual control recommended)
 
 #### JOB-CTL-001 — Head of Control Tower
 - Read/query/summarize: **allow**
