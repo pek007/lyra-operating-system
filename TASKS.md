@@ -14,9 +14,9 @@ Use this until a dedicated work tool is selected.
 ## Triage
 
 ## Active
-- [ ] TDE-2026-015 | Execute WO-2026-TDE-KERNEL-S8 (broader-scope hardening + automated milestone snapshot)
 
 ## Waiting
+- [ ] TDE-2026-016 | Formal acceptance sign-off pending for WO-2026-TDE-KERNEL-S8 (JOB-PROD-001 + JOB-ARC-001).
 
 ## Done
 - [x] Create MODEL_ROUTING_POLICY.md
@@ -72,3 +72,4 @@ Use this until a dedicated work tool is selected.
 - [x] TDE-2026-011 | Formal acceptance sign-off completed for WO-2026-TDE-KERNEL-S5 (JOB-PROD-001 + JOB-ARC-001, owner pre-authorized).
 - [x] TDE-2026-013 | Executed WO-2026-TDE-KERNEL-S6 (operational status summary artifact + rollout-readiness checklist + single guardrail operational note + end-to-end cycle evidence).
 - [x] TDE-2026-014 | Executed WO-2026-TDE-KERNEL-S7 (bounded expansion criteria + guardrail-preserving broader rollout checklist + broadened-scope simulated cycle evidence).
+- [x] TDE-2026-015 | Executed WO-2026-TDE-KERNEL-S8 (automated S4-S7 consolidated milestone snapshot + missing/stale artifact reliability checks + S8 evidence artifact).
