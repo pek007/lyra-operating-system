@@ -1,0 +1,82 @@
+{
+  "generatedAt": "2026-03-02T20:20:29.401700+00:00",
+  "artifactType": "tde_release_envelope",
+  "releaseDecision": "BLOCKED_ESCALATION",
+  "sourceArtifacts": {
+    "milestoneSnapshot": "knowledge/evidence/2026-03/tde-milestone-s4-s7-snapshot.json",
+    "ownerGatePacket": "knowledge/evidence/2026-03/tde-owner-gate-packet.json"
+  },
+  "statusSnapshot": {
+    "s4": {
+      "counts": {
+        "active": 1,
+        "atRisk": 0,
+        "stalled": 1
+      },
+      "guardrailStatus": "ok",
+      "consecutiveCleanCycles": 3
+    },
+    "s6": {
+      "summary": {
+        "activeBackground": {
+          "count": 1,
+          "trend": "baseline"
+        },
+        "atRisk": {
+          "count": 0,
+          "trend": "baseline"
+        },
+        "stalled": {
+          "count": 1,
+          "trend": "baseline"
+        }
+      },
+      "guardrailStatus": "ok"
+    },
+    "s7": {
+      "decision": "GO",
+      "counts": {
+        "active": 3,
+        "atRisk": 2,
+        "stalled": 1
+      },
+      "stalledRatio": 0.1667,
+      "guardrailStatus": "ok"
+    }
+  },
+  "integrity": {
+    "missingArtifacts": [],
+    "staleArtifacts": [],
+    "guardrailSignals": [],
+    "status": "ok"
+  },
+  "ownerGatePacket": {
+    "decision": "GO",
+    "escalation": {
+      "required": false,
+      "reasons": [
+        "No escalation needed; all integrity and guardrail checks are OK."
+      ],
+      "ownerAction": "No escalation action required."
+    }
+  },
+  "activationGuard": {
+    "status": "blocked",
+    "deterministic": true,
+    "handoffAllowed": false,
+    "blockOnEscalation": true,
+    "escalationDetected": true,
+    "escalationReasons": [
+      "simulated:pre_authorization_guard_test"
+    ],
+    "policy": {
+      "preAuthorizationModel": "owner pre-authorization for escalation only; no approval bypass",
+      "failClosed": true
+    }
+  },
+  "rolloutHandoff": {
+    "eligible": false,
+    "route": "hold_fail_closed",
+    "nextAction": "Escalate evidence packet; no rollout handoff permitted until escalation is cleared."
+  }
+}

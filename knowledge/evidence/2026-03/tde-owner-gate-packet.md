@@ -1,6 +1,6 @@
 # TDE Owner Gate Packet
 
-- Generated at: `2026-03-02T19:30:28.213526+00:00`
+- Generated at: `2026-03-02T20:20:29.346447+00:00`
 - Decision: **GO**
 - Source snapshot: `knowledge/evidence/2026-03/tde-milestone-s4-s7-snapshot.json`
 - Integrity status: `ok`

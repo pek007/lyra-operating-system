@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-03-02T19:30:28.185716+00:00",
+  "generatedAt": "2026-03-02T20:20:29.314139+00:00",
   "staleAfterHours": 24,
   "artifactChecks": {
     "s4_status": {
       "path": "knowledge/evidence/2026-03/tde-canary-status-latest.json",
       "exists": true,
       "stale": false,
-      "ageHours": 1.03,
+      "ageHours": 1.86,
       "timestampSource": "embedded",
       "timestamp": "2026-03-02T18:28:41.515208+00:00",
       "status": "ok"
@@ -15,7 +15,7 @@
       "path": "knowledge/evidence/2026-03/tde-canary-simulation-3-clean-cycles.json",
       "exists": true,
       "stale": false,
-      "ageHours": 1.18,
+      "ageHours": 2.01,
       "timestampSource": "mtime",
       "timestamp": "2026-03-02T18:19:57.552604+00:00",
       "status": "ok"
@@ -24,7 +24,7 @@
       "path": "knowledge/evidence/2026-03/tde-canary-operational-status-summary.json",
       "exists": true,
       "stale": false,
-      "ageHours": 1.03,
+      "ageHours": 1.86,
       "timestampSource": "embedded",
       "timestamp": "2026-03-02T18:28:41.543266+00:00",
       "status": "ok"
@@ -33,7 +33,7 @@
       "path": "knowledge/evidence/2026-03/tde-canary-operational-note.md",
       "exists": true,
       "stale": false,
-      "ageHours": 1.03,
+      "ageHours": 1.86,
       "timestampSource": "mtime",
       "timestamp": "2026-03-02T18:28:41.543697+00:00",
       "status": "ok"
@@ -42,7 +42,7 @@
       "path": "knowledge/evidence/2026-03/tde-broader-rollout-expansion-criteria.md",
       "exists": true,
       "stale": false,
-      "ageHours": 0.9,
+      "ageHours": 1.74,
       "timestampSource": "mtime",
       "timestamp": "2026-03-02T18:36:16.808023+00:00",
       "status": "ok"
@@ -51,7 +51,7 @@
       "path": "knowledge/evidence/2026-03/tde-broader-scope-simulated-cycle.json",
       "exists": true,
       "stale": false,
-      "ageHours": 0.9,
+      "ageHours": 1.74,
       "timestampSource": "embedded",
       "timestamp": "2026-03-02T18:36:16.807795+00:00",
       "status": "ok"

@@ -21,7 +21,7 @@
 4. Preserve existing fail-closed behavior and current policy guardrails unchanged.
 
 ## Closure
-- Outcome summary: Pending execution.
-- Accepted by: Pending formal acceptance (JOB-PROD-001 + JOB-ARC-001)
-- Date closed: Pending acceptance
-- Linked Change Artifact(s): Pending
+- Outcome summary: Implementation-complete. Added deterministic release-envelope generator (`tools/tde_release_envelope.py`) that composes latest milestone snapshot + owner gate packet into one owner-ready artifact and enforces explicit activation guard (`blockOnEscalation`) for rollout handoff. Produced S10 evidence for both pass path (`READY_FOR_HANDOFF`) and blocked path (`BLOCKED_ESCALATION`) using an escalation simulation to verify fail-closed pre-authorization-safe behavior.
+- Accepted by: Pending formal acceptance (JOB-PROD-001 + JOB-ARC-001, owner pre-authorization model preserved)
+- Date closed: 2026-03-02 (implementation complete; awaiting formal acceptance)
+- Linked Change Artifact(s): `tools/tde_release_envelope.py`; `knowledge/evidence/2026-03/tde-release-envelope-pass.json`; `knowledge/evidence/2026-03/tde-release-envelope-pass.md`; `knowledge/evidence/2026-03/tde-release-envelope-blocked.json`; `knowledge/evidence/2026-03/tde-release-envelope-blocked.md`; `knowledge/evidence/2026-03/2026-03-02__verification__wo-2026-tde-kernel-s10.md`
