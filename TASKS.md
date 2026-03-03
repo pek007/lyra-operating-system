@@ -8,8 +8,10 @@ Use this until a dedicated work tool is selected.
   - [x] 2026-03-03 | Created core artifact structure: `knowledge/friction/`, `knowledge/opportunities/`, `knowledge/experiments/`, `templates/`, `metrics/`.
   - [x] 2026-03-03 | Added `templates/OPPORTUNITY_PACKET_TEMPLATE.md` and `templates/EXPERIMENT_CLOSEOUT_TEMPLATE.md`.
   - [x] 2026-03-03 | Added baseline metrics files `metrics/CI_WEEKLY.md` and `metrics/CI_DASHBOARD.md`.
-  - [ ] 2026-03-04 | Run first weekly Layer B synthesis and produce top-3 candidates.
-  - [ ] 2026-03-04 | Score candidates with ELS rubric and activate max 1 pilot with rollback + instrumentation.
+  - [x] 2026-03-03 | Ran first weekly Layer B synthesis and produced top-3 candidates in `knowledge/reports/WEEKLY_SYNTHESIS__2026-03-03.md`.
+  - [x] 2026-03-03 | Scored candidates with ELS rubric and prepared activation packet for selected pilot `OPP-2026-001` (`knowledge/opportunities/OPP-2026-001__drift-aftercare-standard.md`).
+  - [ ] 2026-03-04 | Activate max 1 pilot (`OPP-2026-001`) with rollback + instrumentation and open execution closeout artifact.
+- [ ] OPS-2026-047 | Execute Drift Aftercare pilot (`OPP-2026-001`) for `IMP-AUTO-20260303-03`, publish 7-day checkpoint evidence, and decide scale/rollback.
 - [x] OPS-2026-045 | Shift Continuous Improvement leverage discovery cadence from monthly to weekly and formalize Deep Research handoff workflow (Layer B + Layer C).
   - [x] 2026-03-03 | Updated `CONTINUOUS_IMPROVEMENT_PROCESS_V1.md` to v1.1 with discovery layers (A daily, B weekly, C weekly via Deep Research), weekly portfolio cleanup, and `IMP-DR-*` conversion rule.
   - [x] 2026-03-03 | Updated `CRON_SPEC_AUTONOMOUS_GOVERNANCE_SWEEPS.md` with `continuous-improvement:weekly-leverage-handoff` protocol and explicit Layer B/C packet flow to Peter.

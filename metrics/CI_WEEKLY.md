@@ -1,28 +1,30 @@
 # CI Weekly Metrics
 
-## Week of YYYY-MM-DD
+## Week of 2026-03-03
 
 ### Topline
-- Status: Green | Yellow | Red
-- Active pilots (WIP):
-- Completed pilots this week:
+- Status: Yellow (engine bootstrap in progress)
+- Active pilots (WIP): 0 (activation packet ready)
+- Completed pilots this week: 0
 
 ### Leading metrics
-- Signal capture rate (#/week):
-- Synthesis precision (% themes with >=3 evidence links):
-- Pilot throughput (# completed/week):
-- Median time-to-signal (days):
+- Signal capture rate (#/week): 11 open-signal items parsed from `TASKS.md` backlog snapshot
+- Synthesis precision (% themes with >=3 evidence links): 100% (3/3 themes tied to multiple task signals)
+- Pilot throughput (# completed/week): 0
+- Median time-to-signal (days): N/A (no active pilot yet)
 
 ### Lagging metrics
-- Median cycle time (tasks/WOs):
-- Rework rate (% reopened / major redo):
-- Reliability delta (incident trend):
-- Standardization rate (# durable updates/week):
+- Median cycle time (tasks/WOs): baseline pending
+- Rework rate (% reopened / major redo): baseline pending
+- Reliability delta (incident trend): baseline pending
+- Standardization rate (# durable updates/week): 1 (engine templates + metrics scaffolding)
 
 ### Triggers fired
-- Churn trigger:
-- Noise trigger:
-- Safety trigger:
+- Churn trigger: Watch (candidate opportunities exist, no pilot completed yet)
+- Noise trigger: Not triggered
+- Safety trigger: Not triggered
 
 ### Decisions and interventions
--
+- Created first weekly synthesis artifact: `knowledge/reports/WEEKLY_SYNTHESIS__2026-03-03.md`.
+- Selected pilot candidate: `OPP-2026-001` (Drift Aftercare Standard).
+- Next action: activate one pilot and open closeout evidence path.
