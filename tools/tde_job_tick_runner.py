@@ -45,6 +45,19 @@ def _read_tasks(tasks_path: Path, section: str = "Active") -> list[dict[str, Any
     return out
 
 
+def _validate_mutation_envelope(envelope: dict[str, Any]) -> tuple[bool, str | None]:
+    required = ["job_id", "binding_id", "policy_decision_id", "idempotency_key", "expected_version"]
+    for key in required:
+        if key not in envelope:
+            return False, f"missing_required_field:{key}"
+        value = envelope[key]
+        if value is None:
+            return False, f"missing_required_field:{key}"
+        if isinstance(value, str) and not value.strip():
+            return False, f"missing_required_field:{key}"
+    return True, None
+
+
 def run_job_tick(
     *,
     job_id: str,
@@ -122,6 +135,30 @@ def run_job_tick(
         for index, item in enumerate(claimed):
             idempotency_key = f"{tick_id}:{item['id']}"
             idempotency_refs.append(idempotency_key)
+
+            mutation_envelope = {
+                "job_id": job_id,
+                "binding_id": binding_id,
+                "policy_decision_id": f"pending:{tick_id}:{item['id']}",
+                "idempotency_key": idempotency_key,
+                "expected_version": 0,
+            }
+            envelope_ok, envelope_error = _validate_mutation_envelope(mutation_envelope)
+            if not envelope_ok:
+                outcomes["failed_validation"] += 1
+                mutations.append(
+                    {
+                        "task_id": item["id"],
+                        "request_id": f"{tick_id}-{index}",
+                        "idempotency_key": idempotency_key,
+                        "status": "failed_validation",
+                        "fail_closed": True,
+                        "fail_closed_reason": envelope_error,
+                        "mutation_envelope": mutation_envelope,
+                    }
+                )
+                continue
+
             req = ActionRequest(
                 request_id=f"{tick_id}-{index}",
                 idempotency_key=idempotency_key,
@@ -130,7 +167,7 @@ def run_job_tick(
                 job=job_id,
                 action="task.transition",
                 target_id=item["id"],
-                expected_version=0,
+                expected_version=mutation_envelope["expected_version"],
                 risk="low",
             )
             result = kernel.execute(req)
@@ -149,6 +186,10 @@ def run_job_tick(
                     "policy_decision_id": result.get("policy_decision_id"),
                     "audit_link": result.get("audit_link"),
                     "status": status,
+                    "mutation_envelope": {
+                        **mutation_envelope,
+                        "policy_decision_id": result.get("policy_decision_id"),
+                    },
                 }
             )
 

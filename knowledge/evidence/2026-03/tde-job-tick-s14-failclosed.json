@@ -1,0 +1,28 @@
+{
+  "tick_id": "job-tick-s14-fail-20260303-195203",
+  "trigger_source": "cron",
+  "timestamp": "2026-03-03T18:52:03.354749+00:00",
+  "job_id": "JOB-PROD-001",
+  "binding_id": "",
+  "actor_id": "lyra",
+  "session_key": "cron:tde-job-runner-s14",
+  "claim_limit": 1,
+  "claimed": [],
+  "mutations": [],
+  "decisions": [
+    {
+      "type": "decision_required",
+      "reason": "binding_missing_or_invalid"
+    }
+  ],
+  "evidence_outputs": [],
+  "outcomes": {
+    "progressed": 0,
+    "blocked_pending_approval": 0,
+    "failed_validation": 1,
+    "no_work": 0
+  },
+  "status": "failed_validation",
+  "fail_closed": true,
+  "fail_closed_reason": "binding_missing_or_invalid"
+}
