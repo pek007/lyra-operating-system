@@ -3,6 +3,11 @@
 Use this until a dedicated work tool is selected.
 
 ## Inbox
+- [ ] TDE-2026-024 | Build real-task ingestion/normalization adapter for canary cycle (replace default synthetic task set input with canonical task source + deterministic parse/validation contract).
+- [ ] TDE-2026-025 | Deliver first real-workload canary end-to-end slice: compute progress-state/routing from canonical tasks and execute one low-risk idempotent audited write-back action.
+- [ ] TDE-2026-026 | Enforce runtime job-binding checks (`actor/job/session_key` -> active binding object) with high-risk re-authorization on binding change.
+- [ ] TDE-2026-027 | Add objective-to-work linkage contract (objective ID, checkpoint, rationale trace) and wire into TDE task/dependency artifacts.
+- [ ] TDE-2026-028 | Publish canonical TDE entrypoint index (`os/tde/INDEX.md` or equivalent) linking specs/SOPs/tools and explicit "real vs simulated" status.
 - [ ] SEC-AUTO-20260227-01 | Restrict Telegram group command senders via `groupAllowFrom` (or per-group `allowFrom`) to remove critical command-invocation exposure.
 - [ ] SEC-AUTO-20260227-02 | Decide and enforce trust-boundary model for multi-user/group usage (separate gateways vs hardened shared runtime sandbox/tool scope).
 - [ ] SEC-AUTO-20260227-03 | Confirm reverse-proxy posture for Control UI; if proxied, set `gateway.trustedProxies`, otherwise explicitly keep local-only.
