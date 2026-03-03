@@ -17,11 +17,11 @@ Use this until a dedicated work tool is selected.
 ## Triage
 
 ## Active
-- [ ] TDE-2026-025 | Deliver first real-workload canary end-to-end slice: compute progress-state/routing from canonical tasks and execute one low-risk idempotent audited write-back action.
 
 ## Waiting
 
 ## Done
+- [x] TDE-2026-038 | Executed TDE-2026-025 first real-workload end-to-end slice (claimed canonical Active task, applied low-risk idempotent audited write-back to TASKS Waiting lane, emitted deterministic artifact).
 - [x] TDE-2026-037 | Executed TDE-2026-024 real-task ingestion baseline: canary cycle now supports TASKS.md Active-lane parsing with deterministic normalization + fallback metadata in artifact output.
 - [x] TDE-2026-036 | Executed S14 mutation-gateway enforcement baseline (required mutation envelope checks + fail-closed binding validation + pass/fail evidence artifacts).
 - [x] TDE-2026-035 | Opened WO-2026-TDE-KERNEL-S14 and moved mutation-gateway enforcement task (`TDE-2026-032`) to Active.

@@ -34,7 +34,7 @@
 - `knowledge/evidence/2026-03/2026-03-03__verification__wo-2026-tde-kernel-s12.md`
 
 ## Closure
-- Outcome summary: _Pending_
-- Accepted by: _Pending_
-- Date closed: _Pending_
-- Linked Change Artifact(s): _Pending_
+- Outcome summary: Implemented real-task ingestion/normalization adapter in canary runtime (`tools/tde_canary_runtime_cycle.py`) with deterministic TASKS Active-lane parsing + fallback metadata; executed first real-workload end-to-end job-tick slice with low-risk idempotent audited write-back to canonical task state via `tools/tde_job_tick_runner.py`.
+- Accepted by: JOB-PROD-001 (execution baseline); JOB-ARC-001 formal sign-off pending
+- Date closed: 2026-03-03
+- Linked Change Artifact(s): `tools/tde_canary_runtime_cycle.py`; `tools/tde_job_tick_runner.py`; `knowledge/evidence/2026-03/tde-canary-realworkload-latest.json`; `knowledge/evidence/2026-03/tde-job-tick-s12-writeback.json`; `knowledge/evidence/2026-03/2026-03-03__verification__tde-2026-024-real-task-ingestion-baseline.md`; `knowledge/evidence/2026-03/2026-03-03__verification__tde-2026-025-real-workload-writeback-slice.md`

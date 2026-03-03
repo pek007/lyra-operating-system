@@ -58,6 +58,76 @@ def _validate_mutation_envelope(envelope: dict[str, Any]) -> tuple[bool, str | N
     return True, None
 
 
+
+
+def _apply_low_risk_writeback(tasks_path: Path, claimed_ids: list[str], tick_id: str) -> dict[str, Any]:
+    """Low-risk canonical write-back: move claimed tasks from Active -> Waiting with audit suffix.
+
+    Idempotency rule: if a claimed task no longer exists in Active, do not duplicate in Waiting.
+    """
+    if not tasks_path.exists() or not claimed_ids:
+        return {"applied": False, "reason": "no_tasks_or_no_claims", "moved": []}
+
+    lines = tasks_path.read_text(encoding="utf-8").splitlines()
+    sec = None
+    active_idx: dict[str, int] = {}
+    waiting_start = None
+
+    for i, raw in enumerate(lines):
+        if raw.startswith('## '):
+            sec = raw.strip()
+            if sec == '## Waiting':
+                waiting_start = i
+            continue
+        if sec == '## Active':
+            m = TASK_LINE_RE.match(raw.strip())
+            if m:
+                active_idx[m.group('id')] = i
+
+    moved = []
+    for task_id in claimed_ids:
+        idx = active_idx.get(task_id)
+        if idx is None:
+            continue
+        original = lines[idx]
+        lines[idx] = None
+        moved.append((task_id, original))
+
+    if not moved:
+        return {"applied": False, "reason": "no_active_claims_to_move", "moved": []}
+
+    # Build waiting lines with deterministic audit suffix
+    waiting_lines = []
+    for task_id, original in moved:
+        line = original
+        if f"[tick:{tick_id}]" not in line:
+            line = f"{line} [tick:{tick_id}]"
+        waiting_lines.append(line)
+
+    compact = [ln for ln in lines if ln is not None]
+
+    # Re-find waiting section insertion point in compacted content
+    insert_at = None
+    for i, raw in enumerate(compact):
+        if raw.strip() == '## Waiting':
+            insert_at = i + 1
+            break
+
+    if insert_at is None:
+        compact.extend(['', '## Waiting'])
+        insert_at = len(compact)
+
+    # Insert at top of waiting block preserving order
+    compact[insert_at:insert_at] = waiting_lines
+    tasks_path.write_text("\n".join(compact) + "\n", encoding='utf-8')
+
+    return {
+        "applied": True,
+        "reason": None,
+        "moved": [m[0] for m in moved],
+        "targetSection": "Waiting",
+    }
+
 def run_job_tick(
     *,
     job_id: str,
@@ -69,6 +139,7 @@ def run_job_tick(
     max_claim: int,
     tasks_path: Path,
     artifact_path: Path,
+    writeback_tasks_path: Path | None = None,
 ) -> dict[str, Any]:
     kernel = TDEKernel()
     tasks = _read_tasks(tasks_path, section="Active")
@@ -193,6 +264,8 @@ def run_job_tick(
                 }
             )
 
+        writeback = _apply_low_risk_writeback(writeback_tasks_path or tasks_path, [c["id"] for c in claimed], tick_id)
+
         if not claimed:
             outcomes["no_work"] += 1
 
@@ -208,6 +281,7 @@ def run_job_tick(
             "claimed": [c["id"] for c in claimed],
             "mutations": mutations,
             "idempotency_references": idempotency_refs,
+            "writeback": writeback,
             "decisions": [],
             "evidence_outputs": [str(artifact_path)],
             "outcomes": outcomes,
@@ -235,6 +309,7 @@ def main() -> None:
         "--artifact-path",
         default="knowledge/evidence/2026-03/tde-job-tick-latest.json",
     )
+    parser.add_argument("--writeback-tasks-path", default="TASKS.md")
 
     args = parser.parse_args()
     artifact = run_job_tick(
@@ -247,6 +322,7 @@ def main() -> None:
         max_claim=args.max_claim,
         tasks_path=Path(args.tasks_path),
         artifact_path=Path(args.artifact_path),
+        writeback_tasks_path=Path(args.writeback_tasks_path) if args.writeback_tasks_path else None,
     )
     print(json.dumps(artifact))
 
