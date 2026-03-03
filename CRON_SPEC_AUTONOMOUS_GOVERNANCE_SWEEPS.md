@@ -49,18 +49,26 @@ Design principle: auto-implement only low-risk, uncontroversial changes; route l
 **Runbook in prompt**
 1. Sweep for high-signal, low-controversy improvements across docs/code/structure:
    - consistency, clarity, naming, dead links, duplicate guidance, obvious hygiene/refactor items, missing guardrails
+   - perform a **library relevance pass** across key knowledge surfaces (`governance/`, top-level process docs, `knowledge/`, `tools/`) to identify older artifacts that became newly relevant due to recent decisions/releases
+   - run `python3 tools/docs_hygiene_bundle.py` to execute docs-hygiene checks (local markdown link integrity + TASKS.md ID hygiene) with a single fail-fast gate before proposing doc edits
+   - run `python3 -m unittest tools/test_parser_smoke.py` to keep parser helper smoke coverage green before modifying automation scripts
 2. Perform OpenClaw release-delta check (see `OPENCLAW_RELEASE_DELTA_SOP.md`):
+   - capture auditable command snapshot via `python3 tools/openclaw_release_delta_snapshot.py` (writes `knowledge/evidence/YYYY-MM-DD__openclaw-release-delta-snapshot.md`)
    - detect new versions (`openclaw update status`)
    - identify meaningful capability changes
    - convert into applied improvements or backlog tasks
-3. Auto-implement only uncontroversial changes directly in workspace.
-4. Never auto-change security boundaries, credentials, external integrations, or runtime permissions.
-5. Output format:
+3. Review `TASKS.md` improvement execution status:
+   - check open `IMP-AUTO-*` items for stale aging/blockers
+   - propose reprioritization or decomposition when execution stalls
+   - ensure at least one concrete next-step recommendation is included when open improvement work exists
+4. Auto-implement only uncontroversial changes directly in workspace.
+5. Never auto-change security boundaries, credentials, external integrations, or runtime permissions.
+6. Output format:
    - Implemented now
    - Proposed for backlog
    - Risks/assumptions
    - Next best action
-6. Backlog behavior:
+7. Backlog behavior:
    - Append non-trivial items to `TASKS.md` Inbox with ID format: `IMP-AUTO-YYYYMMDD-XX`
 
 ---
@@ -72,4 +80,9 @@ Design principle: auto-implement only low-risk, uncontroversial changes; route l
 ---
 
 ## Change Log
+- 2026-03-03: Expanded `continuous-improvement:sweep` runbook with explicit library relevance pass (`governance/`, process docs, `knowledge/`, `tools/`) and mandatory `TASKS.md` improvement-execution review (stale `IMP-AUTO-*` detection + next-step recommendation).
+- 2026-03-03: Added `tools/docs_hygiene_bundle.py` and wired continuous-improvement sweep to run docs-hygiene checks (markdown links + task ID hygiene) through a single fail-fast command.
+- 2026-03-03: Added `tools/openclaw_release_delta_snapshot.py` evidence-capture step to the continuous-improvement sweep runbook for auditable release-delta snapshots.
+- 2026-03-03: Added `python3 -m unittest tools/test_parser_smoke.py` to the continuous-improvement sweep runbook to keep parser helper smoke coverage green before automation edits.
+- 2026-03-03: Added `tools/task_hygiene_check.py` to the continuous-improvement sweep runbook to fail fast on duplicate open task IDs or malformed `IMP-AUTO` IDs.
 - 2026-02-26: Repurposed previous hygiene/research jobs into autonomous governance sweeps with explicit guardrails and backlog integration.

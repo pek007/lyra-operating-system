@@ -30,6 +30,7 @@ Guardrails > Strategic objectives > Operating principles > Job targets > Style
 ### Active jobs in current setup
 Single main runtime currently carries multiple jobs:
 - Head of Control Tower
+- Continuous Improvement Lead
 - Chief Architect (job, not dedicated agent)
 - Developer
 - Head of Security
