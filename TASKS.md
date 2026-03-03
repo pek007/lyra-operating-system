@@ -20,12 +20,13 @@ Use this until a dedicated work tool is selected.
 ## Active
 - [ ] TDE-2026-024 | Build real-task ingestion/normalization adapter for canary cycle (replace default synthetic task set input with canonical task source + deterministic parse/validation contract).
 - [ ] TDE-2026-025 | Deliver first real-workload canary end-to-end slice: compute progress-state/routing from canonical tasks and execute one low-risk idempotent audited write-back action.
-- [ ] TDE-2026-030 | Define job-tick operational contract (trigger source, job/binding IDs, claim rules, idempotency keys, decision/evidence outputs) for isolated cron execution.
-- [ ] TDE-2026-031 | Implement first isolated cron job-runner loop for one active job (internal delivery mode + bounded WIP pull/claim/progress cycle).
 
 ## Waiting
 
 ## Done
+- [x] TDE-2026-034 | Executed S13 baseline: published job-tick runtime contract (`os/sops/TDE_JOB_TICK_CONTRACT_V1.md`), implemented isolated runner (`tools/tde_job_tick_runner.py` + cron hook), and generated first run artifact/evidence.
+- [x] TDE-2026-031 | Implemented first isolated cron job-runner loop for one active job (internal delivery mode + bounded WIP pull/claim/progress cycle).
+- [x] TDE-2026-030 | Defined job-tick operational contract (trigger source, job/binding IDs, claim rules, idempotency keys, decision/evidence outputs) for isolated cron execution.
 - [x] TDE-2026-033 | Opened WO-2026-TDE-KERNEL-S13 and moved job-runtime semantics tasks (`TDE-2026-030/031`) to Active.
 - [x] TDE-2026-029 | Opened WO-2026-TDE-KERNEL-S12 and moved real-workload canary integration tasks (`TDE-2026-024/025`) to Active.
 - [x] TDE-2026-022 | Executed WO-2026-TDE-KERNEL-S11 (deterministic activation execution receipt linked to release envelope ID + GO/BLOCKED decision-trace linkage + dual-condition evidence cycle under pre-authorization guardrails).
