@@ -1,0 +1,29 @@
+{
+  "cycleTimestamp": "2026-03-03T20:30:43.094391+00:00",
+  "triggerSource": "cron",
+  "triggerId": "cron-tde-canary-20260303-203043",
+  "evaluatedCount": 2,
+  "inputNormalization": {
+    "source": "tasks",
+    "used": true,
+    "tasksPath": "/Users/lyra/.openclaw/workspace/repos/lyra-operating-system/TASKS.md",
+    "parsedActiveTasks": 2,
+    "skippedLines": 0
+  },
+  "counts": {
+    "active": 2,
+    "atRisk": 0,
+    "stalled": 0
+  },
+  "stalledCount": 0,
+  "stallReasonSummary": {},
+  "routes": [],
+  "guardrail": {
+    "stalledAlertThreshold": 1,
+    "thresholdBreached": false,
+    "violations": [],
+    "status": "ok"
+  },
+  "cleanCycle": true,
+  "consecutiveCleanCycles": 4
+}

@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
@@ -48,6 +49,56 @@ def _default_items(now: datetime, simulate_clean: bool) -> list[dict[str, Any]]:
     ]
 
 
+
+
+TASK_LINE_RE = re.compile(r"^- \[ \] (?P<id>[A-Z0-9-]+) \| (?P<title>.+)$")
+
+
+def _load_active_tasks_as_canary_items(tasks_path: Path, now: datetime) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    if not tasks_path.exists():
+        return [], {"source": "tasks", "used": False, "reason": "tasks_path_missing", "tasksPath": str(tasks_path)}
+
+    lines = tasks_path.read_text(encoding="utf-8").splitlines()
+    in_active = False
+    parsed = 0
+    skipped = 0
+    items: list[dict[str, Any]] = []
+
+    for raw in lines:
+        line = raw.strip()
+        if raw.startswith("## "):
+            in_active = raw.strip() == "## Active"
+            continue
+        if not in_active or not line:
+            continue
+
+        m = TASK_LINE_RE.match(line)
+        if not m:
+            skipped += 1
+            continue
+
+        task_id = m.group("id")
+        title = m.group("title")
+        parsed += 1
+
+        items.append({
+            "id": task_id,
+            "title": title,
+            "priority": "high",
+            "tde_canary": True,
+            # deterministic normalization defaults until richer metadata is wired
+            "lastMeaningfulEventAt": (now - timedelta(minutes=30)).isoformat(),
+            "nextExpectedCheckpointAt": (now + timedelta(minutes=45)).isoformat(),
+        })
+
+    return items, {
+        "source": "tasks",
+        "used": len(items) > 0,
+        "tasksPath": str(tasks_path),
+        "parsedActiveTasks": parsed,
+        "skippedLines": skipped,
+    }
+
 def _load_state(state_path: Path) -> dict[str, Any]:
     if not state_path.exists():
         return {"consecutiveCleanCycles": 0, "lastCycleTimestamp": None}
@@ -65,11 +116,20 @@ def run_cycle(
     artifact_path: Path,
     state_path: Path,
     simulate_clean: bool = False,
+    tasks_path: Path | None = None,
 ) -> dict[str, Any]:
     now = datetime.now(timezone.utc)
     kernel = TDEKernel()
 
-    items = _default_items(now, simulate_clean=simulate_clean)
+    normalization = {"source": "synthetic-default", "used": True}
+    if tasks_path is not None:
+        loaded_items, normalization = _load_active_tasks_as_canary_items(tasks_path, now)
+        items = loaded_items if loaded_items else _default_items(now, simulate_clean=simulate_clean)
+        if not loaded_items:
+            normalization = {**normalization, "fallback": "synthetic-default"}
+    else:
+        items = _default_items(now, simulate_clean=simulate_clean)
+
     canary_items = [i for i in items if i.get("tde_canary") is True and i.get("priority") == "high"]
 
     trigger = TriggerContract(
@@ -122,6 +182,7 @@ def run_cycle(
         "triggerSource": cycle["trigger"]["triggerSource"],
         "triggerId": cycle["trigger"]["triggerId"],
         "evaluatedCount": len(cycle["classifications"]),
+        "inputNormalization": normalization,
         "counts": state_counts,
         "stalledCount": state_counts["stalled"],
         "stallReasonSummary": reason_summary,
@@ -162,6 +223,7 @@ def main() -> None:
         default="knowledge/evidence/2026-03/tde-canary-cycle-state.json",
     )
     parser.add_argument("--simulate-clean", action="store_true")
+    parser.add_argument("--tasks-path", default="TASKS.md")
     args = parser.parse_args()
 
     artifact = run_cycle(
@@ -170,6 +232,7 @@ def main() -> None:
         artifact_path=Path(args.artifact_path),
         state_path=Path(args.state_path),
         simulate_clean=args.simulate_clean,
+        tasks_path=Path(args.tasks_path) if args.tasks_path else None,
     )
     print(json.dumps(artifact))
 

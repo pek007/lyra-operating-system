@@ -17,12 +17,12 @@ Use this until a dedicated work tool is selected.
 ## Triage
 
 ## Active
-- [ ] TDE-2026-024 | Build real-task ingestion/normalization adapter for canary cycle (replace default synthetic task set input with canonical task source + deterministic parse/validation contract).
 - [ ] TDE-2026-025 | Deliver first real-workload canary end-to-end slice: compute progress-state/routing from canonical tasks and execute one low-risk idempotent audited write-back action.
 
 ## Waiting
 
 ## Done
+- [x] TDE-2026-037 | Executed TDE-2026-024 real-task ingestion baseline: canary cycle now supports TASKS.md Active-lane parsing with deterministic normalization + fallback metadata in artifact output.
 - [x] TDE-2026-036 | Executed S14 mutation-gateway enforcement baseline (required mutation envelope checks + fail-closed binding validation + pass/fail evidence artifacts).
 - [x] TDE-2026-035 | Opened WO-2026-TDE-KERNEL-S14 and moved mutation-gateway enforcement task (`TDE-2026-032`) to Active.
 - [x] TDE-2026-034 | Executed S13 baseline: published job-tick runtime contract (`os/sops/TDE_JOB_TICK_CONTRACT_V1.md`), implemented isolated runner (`tools/tde_job_tick_runner.py` + cron hook), and generated first run artifact/evidence.
