@@ -6,8 +6,6 @@ Use this until a dedicated work tool is selected.
 - [ ] TDE-2026-026 | Enforce runtime job-binding checks (`actor/job/session_key` -> active binding object) with high-risk re-authorization on binding change.
 - [ ] TDE-2026-027 | Add objective-to-work linkage contract (objective ID, checkpoint, rationale trace) and wire into TDE task/dependency artifacts.
 - [ ] TDE-2026-028 | Publish canonical TDE entrypoint index (`os/tde/INDEX.md` or equivalent) linking specs/SOPs/tools and explicit "real vs simulated" status.
-- [ ] TDE-2026-030 | Define job-tick operational contract (trigger source, job/binding IDs, claim rules, idempotency keys, decision/evidence outputs) for isolated cron execution.
-- [ ] TDE-2026-031 | Implement first isolated cron job-runner loop for one active job (internal delivery mode + bounded WIP pull/claim/progress cycle).
 - [ ] TDE-2026-032 | Enforce mutation gateway metadata for all side-effecting task transitions (`job_id`, `binding_id`, `policy_decision_id`, `idempotency_key`, `expected_version`) with deny+audit on missing binding.
 - [ ] SEC-AUTO-20260227-01 | Restrict Telegram group command senders via `groupAllowFrom` (or per-group `allowFrom`) to remove critical command-invocation exposure.
 - [ ] SEC-AUTO-20260227-02 | Decide and enforce trust-boundary model for multi-user/group usage (separate gateways vs hardened shared runtime sandbox/tool scope).
@@ -22,10 +20,13 @@ Use this until a dedicated work tool is selected.
 ## Active
 - [ ] TDE-2026-024 | Build real-task ingestion/normalization adapter for canary cycle (replace default synthetic task set input with canonical task source + deterministic parse/validation contract).
 - [ ] TDE-2026-025 | Deliver first real-workload canary end-to-end slice: compute progress-state/routing from canonical tasks and execute one low-risk idempotent audited write-back action.
+- [ ] TDE-2026-030 | Define job-tick operational contract (trigger source, job/binding IDs, claim rules, idempotency keys, decision/evidence outputs) for isolated cron execution.
+- [ ] TDE-2026-031 | Implement first isolated cron job-runner loop for one active job (internal delivery mode + bounded WIP pull/claim/progress cycle).
 
 ## Waiting
 
 ## Done
+- [x] TDE-2026-033 | Opened WO-2026-TDE-KERNEL-S13 and moved job-runtime semantics tasks (`TDE-2026-030/031`) to Active.
 - [x] TDE-2026-029 | Opened WO-2026-TDE-KERNEL-S12 and moved real-workload canary integration tasks (`TDE-2026-024/025`) to Active.
 - [x] TDE-2026-022 | Executed WO-2026-TDE-KERNEL-S11 (deterministic activation execution receipt linked to release envelope ID + GO/BLOCKED decision-trace linkage + dual-condition evidence cycle under pre-authorization guardrails).
 - [x] TDE-2026-023 | Opened WO-2026-TDE-KERNEL-S11 for next micro-sprint and activated execution task in Active lane.
