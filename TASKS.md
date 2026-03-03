@@ -3,6 +3,9 @@
 Use this until a dedicated work tool is selected.
 
 ## Inbox
+- [x] OPS-2026-045 | Shift Continuous Improvement leverage discovery cadence from monthly to weekly and formalize Deep Research handoff workflow (Layer B + Layer C).
+  - [x] 2026-03-03 | Updated `CONTINUOUS_IMPROVEMENT_PROCESS_V1.md` to v1.1 with discovery layers (A daily, B weekly, C weekly via Deep Research), weekly portfolio cleanup, and `IMP-DR-*` conversion rule.
+  - [x] 2026-03-03 | Updated `CRON_SPEC_AUTONOMOUS_GOVERNANCE_SWEEPS.md` with `continuous-improvement:weekly-leverage-handoff` protocol and explicit Layer B/C packet flow to Peter.
 - [x] OPS-2026-044 | Formalize Continuous Improvement as a first-class job role and align daily cron runbook to include library relevance review + improvement backlog execution checks.
   - [x] 2026-03-03 | Added `JOB-CI-001 — Continuous Improvement Lead` to `JOB_MARKET_MODEL_V1.md` with mission, decision rights, execution profile, escalation triggers, KPIs, assignee model, and review cadence; bumped model version to v1.3.
   - [x] 2026-03-03 | Updated `CRON_SPEC_AUTONOMOUS_GOVERNANCE_SWEEPS.md` continuous-improvement runbook with explicit library relevance pass and mandatory `TASKS.md` `IMP-AUTO-*` execution-status review (aging/blockers + next-step recommendation).

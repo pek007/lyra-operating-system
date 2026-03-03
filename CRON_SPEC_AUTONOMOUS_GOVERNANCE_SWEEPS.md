@@ -46,6 +46,12 @@ Design principle: auto-implement only low-risk, uncontroversial changes; route l
 - **Delivery:** Telegram announce to Lyra Operations (`-1003804530741`)
 - **Intent:** Systematic marginal improvements in quality, robustness, scalability.
 
+### 3) `continuous-improvement:weekly-leverage-handoff`
+- **Cadence:** Weekly (paired with Layer B synthesis)
+- **Session:** main runtime
+- **Delivery:** Prompt packet sent to Peter for manual Deep Research execution
+- **Intent:** Discover non-obvious, high-leverage improvement opportunities beyond daily hygiene.
+
 **Runbook in prompt**
 1. Sweep for high-signal, low-controversy improvements across docs/code/structure:
    - consistency, clarity, naming, dead links, duplicate guidance, obvious hygiene/refactor items, missing guardrails
@@ -70,6 +76,17 @@ Design principle: auto-implement only low-risk, uncontroversial changes; route l
    - Next best action
 7. Backlog behavior:
    - Append non-trivial items to `TASKS.md` Inbox with ID format: `IMP-AUTO-YYYYMMDD-XX`
+
+**Weekly Layer B + Layer C handoff protocol**
+1. Summarize recurring friction patterns from past 7 days (minimum top 3).
+2. Build a Deep Research prompt packet asking for:
+   - non-obvious leverage opportunities
+   - causal mechanism and second-order effects
+   - pilotable experiment design (1-2 week reversible test)
+   - risk and disconfirming signals
+3. Send packet to Peter in concise, copy-paste-ready format.
+4. On return of Deep Research output, convert accepted opportunities to `TASKS.md` Inbox with ID format `IMP-DR-YYYYMMDD-XX`, each with owner, impact hypothesis, and next action.
+5. Explicitly log rejected opportunities with rationale to avoid rediscovery loops.
 
 ---
 
