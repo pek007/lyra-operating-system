@@ -3,6 +3,13 @@
 Use this until a dedicated work tool is selected.
 
 ## Inbox
+- [ ] OPS-2026-046 | Implement Opportunity-to-Execution Engine v1 bootstrap from Deep Research report (signal ledger + opportunity/experiment templates + weekly metrics cadence + first pilot selection).
+  - [x] 2026-03-03 | Stored Deep Research ingest artifact in library: `knowledge/reports/2026-03-03__deepresearch__opportunity-to-execution-engine-for-lyra-openclaw__v1.md`.
+  - [x] 2026-03-03 | Created core artifact structure: `knowledge/friction/`, `knowledge/opportunities/`, `knowledge/experiments/`, `templates/`, `metrics/`.
+  - [x] 2026-03-03 | Added `templates/OPPORTUNITY_PACKET_TEMPLATE.md` and `templates/EXPERIMENT_CLOSEOUT_TEMPLATE.md`.
+  - [x] 2026-03-03 | Added baseline metrics files `metrics/CI_WEEKLY.md` and `metrics/CI_DASHBOARD.md`.
+  - [ ] 2026-03-04 | Run first weekly Layer B synthesis and produce top-3 candidates.
+  - [ ] 2026-03-04 | Score candidates with ELS rubric and activate max 1 pilot with rollback + instrumentation.
 - [x] OPS-2026-045 | Shift Continuous Improvement leverage discovery cadence from monthly to weekly and formalize Deep Research handoff workflow (Layer B + Layer C).
   - [x] 2026-03-03 | Updated `CONTINUOUS_IMPROVEMENT_PROCESS_V1.md` to v1.1 with discovery layers (A daily, B weekly, C weekly via Deep Research), weekly portfolio cleanup, and `IMP-DR-*` conversion rule.
   - [x] 2026-03-03 | Updated `CRON_SPEC_AUTONOMOUS_GOVERNANCE_SWEEPS.md` with `continuous-improvement:weekly-leverage-handoff` protocol and explicit Layer B/C packet flow to Peter.
@@ -61,6 +68,7 @@ Use this until a dedicated work tool is selected.
   - [x] 2026-03-03 | Published formal governance decision record (`governance/trust-boundary-decision-record-2026-03-03.md`) with acceptance criteria/reopen triggers; evidence: `knowledge/evidence/2026-03-03__sec-auto-20260302-01-trust-boundary-decision-record-published.md`.
   - [x] 2026-03-03 | Applied fail-closed filesystem scope hardening (`tools.fs.workspaceOnly=true`) and re-ran `openclaw security audit`; warning persists due to `agents.defaults sandbox=off` runtime exposure, but fs boundary posture improved and captured in `knowledge/evidence/2026-03-03__sec-auto-20260302-01-fs-workspace-boundary-hardening-step.md`.
   - [x] 2026-03-03 | Applied `agents.defaults.sandbox.mode="all"` via `openclaw config set`, then re-ran `openclaw security audit`; multi-user warning remains but unsandboxed runtime/filesystem default exposure cleared (`no unguarded runtime/process` + `no unguarded runtime/filesystem contexts detected`). Evidence: `knowledge/evidence/2026-03-03__sec-auto-20260302-01-sandbox-default-hardening-step.md`.
+  - [x] 2026-03-03 | Corrected `agents.defaults.sandbox` to canonical object form (`{"mode":"all"}` via `--strict-json`) and re-ran `openclaw security audit`; result normalized to `0 critical · 1 warn · 1 info` with heuristic confirming no unguarded runtime/process or runtime/filesystem contexts. Evidence: `knowledge/evidence/2026-03-03__sec-auto-20260302-01-sandbox-object-hardening-and-audit-normalization.md`.
 - [ ] SEC-AUTO-20260302-02 | Resolve persistent `gateway.trusted_proxies_missing` warning by explicitly documenting local-only Control UI posture or configuring `gateway.trustedProxies` with exact reverse-proxy IPs.
 - [ ] SEC-AUTO-20260303-01 | Enable a safe read-only host-audit path for cron health checks (or documented manual step) to capture PF status on macOS, since `pfctl -s info` currently fails without elevated access in this runtime.
 - [ ] IMP-AUTO-20260302-01 | Add an automated task-hygiene pass that flags duplicate task intents/IDs in `TASKS.md` to reduce recurring SEC-AUTO inbox noise.
