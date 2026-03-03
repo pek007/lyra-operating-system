@@ -3,8 +3,6 @@
 Use this until a dedicated work tool is selected.
 
 ## Inbox
-- [ ] TDE-2026-024 | Build real-task ingestion/normalization adapter for canary cycle (replace default synthetic task set input with canonical task source + deterministic parse/validation contract).
-- [ ] TDE-2026-025 | Deliver first real-workload canary end-to-end slice: compute progress-state/routing from canonical tasks and execute one low-risk idempotent audited write-back action.
 - [ ] TDE-2026-026 | Enforce runtime job-binding checks (`actor/job/session_key` -> active binding object) with high-risk re-authorization on binding change.
 - [ ] TDE-2026-027 | Add objective-to-work linkage contract (objective ID, checkpoint, rationale trace) and wire into TDE task/dependency artifacts.
 - [ ] TDE-2026-028 | Publish canonical TDE entrypoint index (`os/tde/INDEX.md` or equivalent) linking specs/SOPs/tools and explicit "real vs simulated" status.
@@ -19,10 +17,13 @@ Use this until a dedicated work tool is selected.
 ## Triage
 
 ## Active
+- [ ] TDE-2026-024 | Build real-task ingestion/normalization adapter for canary cycle (replace default synthetic task set input with canonical task source + deterministic parse/validation contract).
+- [ ] TDE-2026-025 | Deliver first real-workload canary end-to-end slice: compute progress-state/routing from canonical tasks and execute one low-risk idempotent audited write-back action.
 
 ## Waiting
 
 ## Done
+- [x] TDE-2026-029 | Opened WO-2026-TDE-KERNEL-S12 and moved real-workload canary integration tasks (`TDE-2026-024/025`) to Active.
 - [x] TDE-2026-022 | Executed WO-2026-TDE-KERNEL-S11 (deterministic activation execution receipt linked to release envelope ID + GO/BLOCKED decision-trace linkage + dual-condition evidence cycle under pre-authorization guardrails).
 - [x] TDE-2026-023 | Opened WO-2026-TDE-KERNEL-S11 for next micro-sprint and activated execution task in Active lane.
 - [x] TDE-2026-021 | Formal acceptance sign-off completed for WO-2026-TDE-KERNEL-S10 (JOB-PROD-001 + JOB-ARC-001, owner pre-authorized).
