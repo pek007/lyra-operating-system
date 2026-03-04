@@ -108,9 +108,9 @@ Use this until a dedicated work tool is selected.
 - [ ] IMP-AUTO-20260304-03 | Backfill canonical frontmatter for legacy `knowledge/reports/*.md` and add deterministic `knowledge/reports/INDEX.md` generator so daily sweeps no longer rely on manual reconstruction.
 - [ ] OPS-2026-043 | Chat Continuity Sprint 2 metrics rollout: define handoff completeness score + stale-context drift signal, then capture first weekly baseline evidence.
 
-- [ ] OPS-2026-057 | Implement Durable State Layer v1 for TDE (SQLite event log + action ledger + projected task state) in shadow mode with deterministic parity verification against current task flow.
+- [x] OPS-2026-057 | Implement Durable State Layer v1 for TDE (SQLite event log + action ledger + projected task state) in shadow mode with deterministic parity verification against current task flow.
   - [x] 2026-03-04 | Ingested deep research architecture recommendation into `knowledge/reports/2026-03-04__deepresearch__durable-state-store-strategy-for-tde__v1.md` and added to reports index.
-  - [ ] 2026-03-05 | Deliver Sprint-1 state layer artifacts (`tools/tde_state_store.py`, schema/init, importer/exporter, parity verifier) with rollback switch kept available.
+  - [x] 2026-03-04 | Delivered Sprint-1 state layer artifacts (`tools/tde_state_store.py`, `tools/tde_state_parity_check.py`) and verified parity in shadow mode; evidence: `knowledge/evidence/2026-03-04__verification__wo-2026-tde-kernel-s31.md`.
 
 ## Triage
 
