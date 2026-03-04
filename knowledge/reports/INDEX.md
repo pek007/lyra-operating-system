@@ -189,3 +189,5 @@ Curated external analyses and research notes.
   Source: deepresearch; Ingested from: `telegram attachment deep-research-report_49---9d6fbf6c-ba61-4cb9-a6db-ff2c873a2225.md`
 - `2026-03-04__deepresearch__lyra-openclaw-task-and-decision-engine-project-state-and-gap-closing-roadmap__v1.md` — **Lyra OpenClaw Task & Decision Engine Project State and Gap-Closing Roadmap**
   Source: deepresearch; Ingested from: `telegram attachment deep-research-report_51---1bd24efb-1568-4975-a419-16d8fe92ab8c.md`
+- `2026-03-04__deepresearch__durable-state-store-strategy-for-tde__v1.md` — **Durable State Store Strategy for TDE**
+  Source: deepresearch; Ingested from: `telegram attachment deep-research-report_54---ce3ebbed-28ea-40ba-9cd9-3c31d2c4e376.md`
