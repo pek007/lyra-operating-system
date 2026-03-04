@@ -2,8 +2,12 @@
 from __future__ import annotations
 
 import argparse
+import fcntl
 import json
+import os
 import re
+import tempfile
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -165,6 +169,15 @@ def _validate_binding_integrity(
     return True, None, False
 
 
+def _atomic_write_text(path: Path, content: str) -> None:
+    with tempfile.NamedTemporaryFile("w", encoding="utf-8", dir=str(path.parent), delete=False) as tmp:
+        tmp.write(content)
+        tmp.flush()
+        os.fsync(tmp.fileno())
+        temp_name = tmp.name
+    os.replace(temp_name, path)
+
+
 def _apply_low_risk_writeback(tasks_path: Path, claimed_ids: list[str], tick_id: str) -> dict[str, Any]:
     """Low-risk canonical write-back: move claimed tasks from Active -> Waiting with audit suffix.
 
@@ -173,52 +186,71 @@ def _apply_low_risk_writeback(tasks_path: Path, claimed_ids: list[str], tick_id:
     if not tasks_path.exists() or not claimed_ids:
         return {"applied": False, "reason": "no_tasks_or_no_claims", "moved": []}
 
-    lines = tasks_path.read_text(encoding="utf-8").splitlines()
-    sec = None
-    active_idx: dict[str, int] = {}
+    lock_path = tasks_path.with_suffix(tasks_path.suffix + ".lock")
+    lock_path.parent.mkdir(parents=True, exist_ok=True)
+    with lock_path.open("a+", encoding="utf-8") as lock_file:
+        acquired = False
+        deadline = time.time() + 5.0
+        while time.time() < deadline:
+            try:
+                fcntl.flock(lock_file.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+                acquired = True
+                break
+            except BlockingIOError:
+                time.sleep(0.05)
 
-    for i, raw in enumerate(lines):
-        if raw.startswith('## '):
-            sec = raw.strip()
-            continue
-        if sec == '## Active':
-            m = TASK_LINE_RE.match(raw.strip())
-            if m:
-                active_idx[m.group('id')] = i
+        if not acquired:
+            return {"applied": False, "reason": "write_lock_timeout", "moved": []}
 
-    moved = []
-    for task_id in claimed_ids:
-        idx = active_idx.get(task_id)
-        if idx is None:
-            continue
-        original = lines[idx]
-        lines[idx] = None
-        moved.append((task_id, original))
+        try:
+            lines = tasks_path.read_text(encoding="utf-8").splitlines()
+            sec = None
+            active_idx: dict[str, int] = {}
 
-    if not moved:
-        return {"applied": False, "reason": "no_active_claims_to_move", "moved": []}
+            for i, raw in enumerate(lines):
+                if raw.startswith('## '):
+                    sec = raw.strip()
+                    continue
+                if sec == '## Active':
+                    m = TASK_LINE_RE.match(raw.strip())
+                    if m:
+                        active_idx[m.group('id')] = i
 
-    waiting_lines = []
-    for _, original in moved:
-        line = original
-        if f"[tick:{tick_id}]" not in line:
-            line = f"{line} [tick:{tick_id}]"
-        waiting_lines.append(line)
+            moved = []
+            for task_id in claimed_ids:
+                idx = active_idx.get(task_id)
+                if idx is None:
+                    continue
+                original = lines[idx]
+                lines[idx] = None
+                moved.append((task_id, original))
 
-    compact = [ln for ln in lines if ln is not None]
+            if not moved:
+                return {"applied": False, "reason": "no_active_claims_to_move", "moved": []}
 
-    insert_at = None
-    for i, raw in enumerate(compact):
-        if raw.strip() == '## Waiting':
-            insert_at = i + 1
-            break
+            waiting_lines = []
+            for _, original in moved:
+                line = original
+                if f"[tick:{tick_id}]" not in line:
+                    line = f"{line} [tick:{tick_id}]"
+                waiting_lines.append(line)
 
-    if insert_at is None:
-        compact.extend(['', '## Waiting'])
-        insert_at = len(compact)
+            compact = [ln for ln in lines if ln is not None]
 
-    compact[insert_at:insert_at] = waiting_lines
-    tasks_path.write_text("\n".join(compact) + "\n", encoding='utf-8')
+            insert_at = None
+            for i, raw in enumerate(compact):
+                if raw.strip() == '## Waiting':
+                    insert_at = i + 1
+                    break
+
+            if insert_at is None:
+                compact.extend(['', '## Waiting'])
+                insert_at = len(compact)
+
+            compact[insert_at:insert_at] = waiting_lines
+            _atomic_write_text(tasks_path, "\n".join(compact) + "\n")
+        finally:
+            fcntl.flock(lock_file.fileno(), fcntl.LOCK_UN)
 
     return {
         "applied": True,
