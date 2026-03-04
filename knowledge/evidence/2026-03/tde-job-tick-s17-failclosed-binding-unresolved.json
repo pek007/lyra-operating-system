@@ -1,0 +1,70 @@
+{
+  "artifactType": "tde_job_tick",
+  "schemaVersion": "1.0.0",
+  "tick_id": "s17-fail-20260304-1",
+  "trigger_source": "cron",
+  "timestamp": "2026-03-04T08:14:01.423439+00:00",
+  "job_id": "JOB-PROD-001",
+  "binding_id": "BIND-JOB-PROD-001-ACTIVE",
+  "actor_id": "lyra",
+  "session_key": "cron:tde-job-runner-v1",
+  "objective_linkage": {
+    "objective_id": "OBJ-TDE-FOUNDATION",
+    "objective_checkpoint": "S17",
+    "rationale_trace": "trace:s17-binding-proof"
+  },
+  "binding_context": {
+    "active_binding": {
+      "binding_id": "BIND-JOB-PROD-001-ACTIVE",
+      "job_id": "JOB-PROD-001",
+      "actor_id": "lyra",
+      "session_key": "cron:tde-job-runner-v1",
+      "status": "active",
+      "binding_epoch": 0
+    },
+    "binding_source": "fallback_from_cli",
+    "binding_status": "unproven"
+  },
+  "claim_limit": 1,
+  "claimed": [
+    "TDE-S17-001"
+  ],
+  "mutations": [
+    {
+      "task_id": "TDE-S17-001",
+      "status": "failed_validation",
+      "fail_closed": true,
+      "fail_closed_reason": "binding_unresolved_fail_closed",
+      "required_on_retry": {
+        "binding_registry_resolution": true,
+        "fresh_policy_decision_id": true,
+        "fresh_idempotency_key": true
+      }
+    }
+  ],
+  "idempotency_references": [],
+  "writeback": {
+    "applied": false,
+    "reason": "binding_unresolved_fail_closed",
+    "moved": []
+  },
+  "decisions": [
+    {
+      "type": "decision_required",
+      "reason": "binding_unresolved_fail_closed"
+    }
+  ],
+  "evidence_outputs": [
+    "knowledge/evidence/2026-03/tde-job-tick-s17-failclosed-binding-unresolved.json"
+  ],
+  "outcomes": {
+    "progressed": 0,
+    "blocked_pending_approval": 0,
+    "failed_validation": 1,
+    "no_work": 0,
+    "reauth_required": 0
+  },
+  "status": "failed_validation",
+  "fail_closed": true,
+  "fail_closed_reason": "binding_unresolved_fail_closed"
+}

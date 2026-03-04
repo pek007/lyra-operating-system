@@ -367,6 +367,59 @@ def run_job_tick(
         ready = [t for t in tasks if t.get("state") == "ready"]
         claimed = ready[: max(0, max_claim)]
 
+        binding_proven = binding_source in {"registry_exact", "registry_job_actor"}
+        if claimed and not binding_proven:
+            outcomes["failed_validation"] += len(claimed)
+            artifact = {
+                "artifactType": "tde_job_tick",
+                "schemaVersion": "1.0.0",
+                "tick_id": tick_id,
+                "trigger_source": trigger_source,
+                "timestamp": _iso_now(),
+                "job_id": job_id,
+                "binding_id": binding_id,
+                "actor_id": actor_id,
+                "session_key": session_key,
+                "objective_linkage": objective_linkage,
+                "binding_context": {
+                    "active_binding": active_binding,
+                    "binding_source": binding_source,
+                    "binding_status": "unproven",
+                },
+                "claim_limit": max_claim,
+                "claimed": [c["id"] for c in claimed],
+                "mutations": [
+                    {
+                        "task_id": c["id"],
+                        "status": "failed_validation",
+                        "fail_closed": True,
+                        "fail_closed_reason": "binding_unresolved_fail_closed",
+                        "required_on_retry": {
+                            "binding_registry_resolution": True,
+                            "fresh_policy_decision_id": True,
+                            "fresh_idempotency_key": True,
+                        },
+                    }
+                    for c in claimed
+                ],
+                "idempotency_references": [],
+                "writeback": {"applied": False, "reason": "binding_unresolved_fail_closed", "moved": []},
+                "decisions": [
+                    {
+                        "type": "decision_required",
+                        "reason": "binding_unresolved_fail_closed",
+                    }
+                ],
+                "evidence_outputs": [str(artifact_path)],
+                "outcomes": outcomes,
+                "status": "failed_validation",
+                "fail_closed": True,
+                "fail_closed_reason": "binding_unresolved_fail_closed",
+            }
+            artifact_path.parent.mkdir(parents=True, exist_ok=True)
+            artifact_path.write_text(json.dumps(artifact, indent=2) + "\n", encoding="utf-8")
+            return artifact
+
         mutations: list[dict[str, Any]] = []
         idempotency_refs: list[str] = []
 

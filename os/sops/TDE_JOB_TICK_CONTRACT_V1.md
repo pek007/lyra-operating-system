@@ -41,6 +41,8 @@ Define deterministic runtime semantics for a job-scoped execution tick so jobs a
   - `objective_id` present and non-empty
   - `objective_checkpoint` present and non-empty
   - `rationale_trace` present and non-empty
+- Runtime MUST resolve active binding object and validate envelope context.
+- For side-effecting mutation paths, unresolved binding registry lookup MUST fail closed (`binding_unresolved_fail_closed`); synthesized/fallback active bindings are not valid authority proof.
 - Runtime MUST resolve active binding object and validate envelope context:
   - `envelope.job_id == active_binding.job_id`
   - `envelope.binding_id == active_binding.binding_id`
