@@ -85,3 +85,5 @@ Curated external analyses and research notes.
   Source: deepresearch; Ingested from: `telegram attachment file_104`
 - `2026-03-03__deepresearch__making-jobs-operational-in-lyra__v1.md` — **Making “Jobs” Operational in Lyra**
   Source: deepresearch; Ingested from: `telegram attachment deep-research-report_42`
+- `2026-03-04__deepresearch__sprint-16-renewal-analysis-of-the-lyra-openclaw-tde-development-project__v1.md` — **Sprint 16 Renewal Analysis of the Lyra OpenClaw TDE Development Project**
+  Source: deepresearch; Ingested from: `telegram attachment deep-research-report_49---9d6fbf6c-ba61-4cb9-a6db-ff2c873a2225.md`

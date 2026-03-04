@@ -4,6 +4,9 @@ Use this until a dedicated work tool is selected.
 
 ## Inbox
 - [ ] TDE-2026-028 | Publish canonical TDE entrypoint index (`os/tde/INDEX.md` or equivalent) linking specs/SOPs/tools and explicit "real vs simulated" status.
+- [ ] TDE-2026-029A | Add atomic/locked TASKS writeback contract + implementation for job tick runner to prevent concurrent lost updates.
+- [ ] TDE-2026-029B | Separate runtime kernel module from test harness (`tools/tde_kernel_slice_tests.py`) to reduce coupling.
+- [ ] TDE-2026-029C | Define delivery boundary for TDE changes (merge vs activation) and start baseline DORA-aligned tracking artifact.
 - [ ] SEC-AUTO-20260227-01 | Restrict Telegram group command senders via `groupAllowFrom` (or per-group `allowFrom`) to remove critical command-invocation exposure.
 - [ ] SEC-AUTO-20260227-02 | Decide and enforce trust-boundary model for multi-user/group usage (separate gateways vs hardened shared runtime sandbox/tool scope).
 - [ ] SEC-AUTO-20260227-03 | Confirm reverse-proxy posture for Control UI; if proxied, set `gateway.trustedProxies`, otherwise explicitly keep local-only.
