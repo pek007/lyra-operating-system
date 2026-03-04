@@ -3,7 +3,6 @@
 Use this until a dedicated work tool is selected.
 
 ## Inbox
-- [ ] TDE-2026-026 | Enforce runtime job-binding checks (`actor/job/session_key` -> active binding object) with high-risk re-authorization on binding change.
 - [ ] TDE-2026-027 | Add objective-to-work linkage contract (objective ID, checkpoint, rationale trace) and wire into TDE task/dependency artifacts.
 - [ ] TDE-2026-028 | Publish canonical TDE entrypoint index (`os/tde/INDEX.md` or equivalent) linking specs/SOPs/tools and explicit "real vs simulated" status.
 - [ ] SEC-AUTO-20260227-01 | Restrict Telegram group command senders via `groupAllowFrom` (or per-group `allowFrom`) to remove critical command-invocation exposure.
@@ -17,6 +16,8 @@ Use this until a dedicated work tool is selected.
 ## Triage
 
 ## Active
+- [ ] TDE-2026-026 | Enforce runtime job-binding checks (`actor/job/session_key` -> active binding object) with high-risk re-authorization on binding change.
+  - [x] 2026-03-04 | Opened WO-2026-TDE-KERNEL-S15 start packet and activated this task as the next micro-sprint.
 
 ## Waiting
 
