@@ -14,12 +14,13 @@ Use this until a dedicated work tool is selected.
 - [ ] OPS-2026-047 | Execute Drift Aftercare pilot (`OPP-2026-001`) for `IMP-AUTO-20260303-03`, publish 7-day checkpoint evidence, and decide scale/rollback.
   - [x] 2026-03-03 | Pilot activated as `EXP-2026-001` (status: active_pilot, period: 2026-03-03 to 2026-03-10).
   - [ ] 2026-03-10 | Publish checkpoint evidence artifact and close with decision (scale/standardize/rollback/retest).
-- [ ] OPS-2026-048 | Implement machine-checkable governance bootstrap v0.1 (schema authority + validator entrypoint + inventory/index generation + CI drift checks) from 2026-03-04 deep research blueprint.
+- [x] OPS-2026-048 | Implement machine-checkable governance bootstrap v0.1 (schema authority + validator entrypoint + inventory/index generation + CI drift checks) from 2026-03-04 deep research blueprint.
   - [x] 2026-03-04 | Confirmed `schemas/` contract authority for job tick / canary status / release envelope / decision memo metadata (`schemas/_registry.json` + schema files).
   - [x] 2026-03-04 | Validated and extended `tools/validate_repo.py` as single entrypoint (includes report→decision mapping rule + generated drift checks) and wired with existing `.github/workflows/governance-machine-check.yml`.
   - [x] 2026-03-04 | Deterministic inventory/index generation enforced via validator run (`tools/gen_inventory.py`, `tools/gen_knowledge_indexes.py`).
   - [x] 2026-03-04 | Published milestone guide `MILESTONE_0_1_MACHINE_CHECKABLE_GOVERNANCE.md` with pass/fail expectations and non-disruption clause for TDE runtime.
-- [ ] OPS-2026-049 | Operationalize knowledge library systems-of-record by standing up `knowledge/inbox` + `knowledge/decisions` with generated indexes and validation.
+  - [x] 2026-03-04 | Published closeout note `knowledge/evidence/2026-03-04__ops-2026-048-049-closeout-note.md`.
+- [x] OPS-2026-049 | Operationalize knowledge library systems-of-record by standing up `knowledge/inbox` + `knowledge/decisions` with generated indexes and validation.
   - [x] 2026-03-04 | Added canonical templates: `knowledge/inbox/INBOX_ENTRY_TEMPLATE_V1.md` and `knowledge/decisions/DECISION_MEMO_TEMPLATE_V1.md`.
   - [x] 2026-03-04 | Added validator rule: decision-impacting reports (`decision_impact: true`) must map to valid `decision_id` or explicit `no_decision_marker`.
   - [x] 2026-03-04 | Published baseline generated index artifacts including `knowledge/indexes/report_decision_index.json` and updated manifest.
@@ -28,6 +29,8 @@ Use this until a dedicated work tool is selected.
   - [x] 2026-03-04 | Added `change class` + `standard class` routing fields to `WO_TEMPLATE_V1.md` and `CA_TEMPLATE_V1.md`.
   - [x] 2026-03-04 | Added policy check `tools/standard_change_policy_check.py` and wired `tools/validate_repo.py` to run strict exclusion-trigger guardrail enforcement.
   - [x] 2026-03-04 | Published 2-week pilot guardrail + audit-sample protocol `STANDARD_CHANGE_PILOT_PROTOCOL_V1.md` (window: 2026-03-04..2026-03-18).
+  - [x] 2026-03-04 | Logged Day-1 audit sample evidence `knowledge/evidence/2026-03-04__standard-change-pilot-day1-audit-sample.md`.
+  - [x] 2026-03-04 | Added pilot outcome template `templates/STANDARD_CHANGE_PILOT_OUTCOME_TEMPLATE.md`.
   - [ ] 2026-03-18 | Publish pilot outcome evidence and recommendation (keep/expand/rollback).
 - [x] OPS-2026-045 | Shift Continuous Improvement leverage discovery cadence from monthly to weekly and formalize Deep Research handoff workflow (Layer B + Layer C).
   - [x] 2026-03-03 | Updated `CONTINUOUS_IMPROVEMENT_PROCESS_V1.md` to v1.1 with discovery layers (A daily, B weekly, C weekly via Deep Research), weekly portfolio cleanup, and `IMP-DR-*` conversion rule.

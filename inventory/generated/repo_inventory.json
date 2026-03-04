@@ -694,8 +694,8 @@
     },
     {
       "path": "TASKS.md",
-      "size": 37682,
-      "mtime": 1772610077,
+      "size": 38033,
+      "mtime": 1772610303,
       "ext": ".md"
     },
     {
@@ -1371,9 +1371,21 @@
       "ext": ".md"
     },
     {
+      "path": "knowledge/evidence/2026-03-04__ops-2026-048-049-closeout-note.md",
+      "size": 1093,
+      "mtime": 1772610288,
+      "ext": ".md"
+    },
+    {
       "path": "knowledge/evidence/2026-03-04__report47-implementation-recommendations.md",
       "size": 1814,
       "mtime": 1772606873,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-04__standard-change-pilot-day1-audit-sample.md",
+      "size": 741,
+      "mtime": 1772610282,
       "ext": ".md"
     },
     {
@@ -5088,6 +5100,12 @@
       "path": "templates/OPPORTUNITY_PACKET_TEMPLATE.md",
       "size": 1093,
       "mtime": 1772569318,
+      "ext": ".md"
+    },
+    {
+      "path": "templates/STANDARD_CHANGE_PILOT_OUTCOME_TEMPLATE.md",
+      "size": 693,
+      "mtime": 1772610278,
       "ext": ".md"
     },
     {
