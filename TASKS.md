@@ -163,6 +163,7 @@ Use this until a dedicated work tool is selected.
   - [x] 2026-03-03 | Published command-ready closeout execution checklist (baseline tests, tag/push commands, post-tag board-normalization steps) to reduce execution friction once boundary commit/clean-tree condition is met; evidence: `knowledge/evidence/2026-03-03__ops-2026-023-closeout-execution-checklist-ready.md`.
 
 ## Done
+- [x] OPS-2026-061 | S34 scheduled dual-run shadow path (closed 2026-03-04 after enabling shadow-state controls in cron hook with env-based rollback switch).
 - [x] OPS-2026-059 | S33 shadow comparator thresholding (closed 2026-03-04 after adding consecutive mismatch/error threshold tracking + alert log support in job tick shadow mode).
 - [x] OPS-2026-058 | S32 shadow-state integration in job tick (closed 2026-03-04 after adding optional DB shadow sync flags, parity block emission, dedicated regression test, and CI wiring).
 - [x] OPS-2026-056 | Published TDE production readiness gate v1 (`TDE_PRODUCTION_READINESS_GATE_V1.md`) with strict GO/NO-GO controls.
