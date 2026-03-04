@@ -26,6 +26,7 @@ Single entrypoint for Task & Decision Engine contracts, runtime tools, tests, an
 - `tools/test_s18_atomic_writeback.py`
 - `tools/test_s25_binding_lifecycle.py`
 - `tools/test_s32_shadow_state_write.py`
+- `tools/test_s33_shadow_thresholds.py`
 
 ## Authority and runtime state
 - `os/runtime/tde_active_bindings.json` — active binding registry.

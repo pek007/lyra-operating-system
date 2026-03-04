@@ -330,6 +330,39 @@ def _shadow_state_sync(tasks_path: Path, db_path: Path) -> dict[str, Any]:
     }
 
 
+def _shadow_state_evaluate_threshold(status: str, alert_path: Path | None, threshold: int) -> dict[str, Any]:
+    if alert_path is None:
+        return {"threshold_exceeded": False, "consecutive_failures": 0}
+
+    alert_path.parent.mkdir(parents=True, exist_ok=True)
+    existing: list[dict[str, Any]] = []
+    if alert_path.exists():
+        for line in alert_path.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                existing.append(json.loads(line))
+            except Exception:
+                continue
+
+    existing.append({"timestamp": _iso_now(), "status": status})
+    alert_path.write_text("\n".join(json.dumps(x) for x in existing) + "\n", encoding="utf-8")
+
+    consecutive = 0
+    for row in reversed(existing):
+        if row.get("status") in {"mismatch", "error"}:
+            consecutive += 1
+        else:
+            break
+
+    return {
+        "threshold_exceeded": consecutive >= max(1, threshold),
+        "consecutive_failures": consecutive,
+        "alert_path": str(alert_path),
+    }
+
+
 def run_job_tick(
     *,
     job_id: str,
@@ -349,6 +382,8 @@ def run_job_tick(
     objective_registry_path: Path | None = None,
     shadow_state_enabled: bool = False,
     shadow_state_db_path: Path | None = None,
+    shadow_state_alert_path: Path | None = None,
+    shadow_state_mismatch_threshold: int = 3,
 ) -> dict[str, Any]:
     kernel = TDEKernel()
     tasks = _read_tasks(tasks_path, section="Active")
@@ -679,12 +714,21 @@ def run_job_tick(
     if shadow_state_enabled:
         try:
             shadow_db = shadow_state_db_path or Path("os/runtime/tde_state.sqlite")
-            artifact["shadow_state"] = _shadow_state_sync(tasks_path, shadow_db)
+            shadow = _shadow_state_sync(tasks_path, shadow_db)
+            threshold_meta = _shadow_state_evaluate_threshold(
+                shadow.get("status", "error"),
+                shadow_state_alert_path,
+                shadow_state_mismatch_threshold,
+            )
+            shadow.update(threshold_meta)
+            artifact["shadow_state"] = shadow
         except Exception as exc:
+            threshold_meta = _shadow_state_evaluate_threshold("error", shadow_state_alert_path, shadow_state_mismatch_threshold)
             artifact["shadow_state"] = {
                 "enabled": True,
                 "status": "error",
                 "error": str(exc),
+                **threshold_meta,
             }
 
     artifact_path.parent.mkdir(parents=True, exist_ok=True)
@@ -714,6 +758,8 @@ def main() -> None:
     parser.add_argument("--objective-registry-path", default="os/runtime/tde_objectives.json")
     parser.add_argument("--shadow-state-enabled", action="store_true")
     parser.add_argument("--shadow-state-db-path", default="os/runtime/tde_state.sqlite")
+    parser.add_argument("--shadow-state-alert-path", default="knowledge/evidence/metrics/tde-shadow-state-alerts.jsonl")
+    parser.add_argument("--shadow-state-mismatch-threshold", type=int, default=3)
 
     args = parser.parse_args()
     artifact = run_job_tick(
@@ -734,6 +780,8 @@ def main() -> None:
         objective_registry_path=Path(args.objective_registry_path) if args.objective_registry_path else None,
         shadow_state_enabled=args.shadow_state_enabled,
         shadow_state_db_path=Path(args.shadow_state_db_path) if args.shadow_state_db_path else None,
+        shadow_state_alert_path=Path(args.shadow_state_alert_path) if args.shadow_state_alert_path else None,
+        shadow_state_mismatch_threshold=args.shadow_state_mismatch_threshold,
     )
     print(json.dumps(artifact))
 
