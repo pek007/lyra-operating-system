@@ -4,8 +4,8 @@
   "files": [
     {
       "path": ".github/workflows/devsecops-baseline.yml",
-      "size": 1011,
-      "mtime": 1772637738,
+      "size": 1175,
+      "mtime": 1772643780,
       "ext": ".yml"
     },
     {
@@ -196,8 +196,8 @@
     },
     {
       "path": "CRON_SPEC_AUTONOMOUS_GOVERNANCE_SWEEPS.md",
-      "size": 5888,
-      "mtime": 1772611593,
+      "size": 6442,
+      "mtime": 1772648177,
       "ext": ".md"
     },
     {
@@ -342,6 +342,12 @@
       "path": "MILESTONE_0_3_OBSERVATION_LAYER.md",
       "size": 712,
       "mtime": 1772640914,
+      "ext": ".md"
+    },
+    {
+      "path": "MILESTONE_0_4_TASKOPS_BACKBONE.md",
+      "size": 655,
+      "mtime": 1772650328,
       "ext": ".md"
     },
     {
@@ -598,8 +604,8 @@
     },
     {
       "path": "TASKS.md",
-      "size": 42897,
-      "mtime": 1772639801,
+      "size": 45531,
+      "mtime": 1772648218,
       "ext": ".md"
     },
     {
@@ -813,6 +819,54 @@
       "ext": ".md"
     },
     {
+      "path": "WO-2026-TDE-KERNEL-S31.md",
+      "size": 802,
+      "mtime": 1772642161,
+      "ext": ".md"
+    },
+    {
+      "path": "WO-2026-TDE-KERNEL-S32.md",
+      "size": 890,
+      "mtime": 1772642459,
+      "ext": ".md"
+    },
+    {
+      "path": "WO-2026-TDE-KERNEL-S33.md",
+      "size": 906,
+      "mtime": 1772642799,
+      "ext": ".md"
+    },
+    {
+      "path": "WO-2026-TDE-KERNEL-S34.md",
+      "size": 730,
+      "mtime": 1772643494,
+      "ext": ".md"
+    },
+    {
+      "path": "WO-2026-TDE-KERNEL-S35.md",
+      "size": 801,
+      "mtime": 1772643806,
+      "ext": ".md"
+    },
+    {
+      "path": "WO-2026-TDE-KERNEL-S36.md",
+      "size": 781,
+      "mtime": 1772647653,
+      "ext": ".md"
+    },
+    {
+      "path": "WO-2026-TDE-KERNEL-S37.md",
+      "size": 830,
+      "mtime": 1772648014,
+      "ext": ".md"
+    },
+    {
+      "path": "WO-2026-TDE-KERNEL-S38.md",
+      "size": 779,
+      "mtime": 1772648205,
+      "ext": ".md"
+    },
+    {
       "path": "WO-2026-TDE-KERNEL-S4.md",
       "size": 1660,
       "mtime": 1772611594,
@@ -912,6 +966,12 @@
       "path": "governance/PLAN_EXECUTION_PORTFOLIO_2026-03-04.md",
       "size": 3072,
       "mtime": 1772611593,
+      "ext": ".md"
+    },
+    {
+      "path": "governance/TRUST_BOUNDARY_POLICY_RECORD_2026-03-04.md",
+      "size": 1512,
+      "mtime": 1772643103,
       "ext": ".md"
     },
     {
@@ -1401,6 +1461,30 @@
       "ext": ".md"
     },
     {
+      "path": "knowledge/evidence/2026-03/2026-03-04__verification__wo-2026-tde-kernel-s32.md",
+      "size": 651,
+      "mtime": 1772642460,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/2026-03-04__verification__wo-2026-tde-kernel-s33.md",
+      "size": 776,
+      "mtime": 1772642799,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/2026-03-04__verification__wo-2026-tde-kernel-s34.md",
+      "size": 661,
+      "mtime": 1772643494,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/2026-03-04__verification__wo-2026-tde-kernel-s35.md",
+      "size": 525,
+      "mtime": 1772643806,
+      "ext": ".md"
+    },
+    {
       "path": "knowledge/evidence/2026-03/tde-activation-execution-receipt-blocked.json",
       "size": 1072,
       "mtime": 1772611594,
@@ -1510,8 +1594,8 @@
     },
     {
       "path": "knowledge/evidence/2026-03/tde-job-tick-latest.json",
-      "size": 1094,
-      "mtime": 1772611594,
+      "size": 2296,
+      "mtime": 1772643480,
       "ext": ".json"
     },
     {
@@ -1575,6 +1659,18 @@
       "ext": ".json"
     },
     {
+      "path": "knowledge/evidence/2026-03/tde-job-tick-s32-shadow-pass.json",
+      "size": 2961,
+      "mtime": 1772642426,
+      "ext": ".json"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/tde-job-tick-s33-shadow-threshold.json",
+      "size": 1805,
+      "mtime": 1772642785,
+      "ext": ".json"
+    },
+    {
       "path": "knowledge/evidence/2026-03/tde-milestone-s4-s7-snapshot.json",
       "size": 2688,
       "mtime": 1772611594,
@@ -1635,6 +1731,12 @@
       "ext": ".md"
     },
     {
+      "path": "knowledge/evidence/2026-03-04__ops-2026-060-trust-boundary-validation-bundle.json",
+      "size": 1982,
+      "mtime": 1772643116,
+      "ext": ".json"
+    },
+    {
       "path": "knowledge/evidence/2026-03-04__ops-reliability-s27-sandbox-guardrail.md",
       "size": 701,
       "mtime": 1772637738,
@@ -1680,6 +1782,30 @@
       "path": "knowledge/evidence/2026-03-04__verification__wo-2026-tde-kernel-s30.md",
       "size": 443,
       "mtime": 1772639394,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-04__verification__wo-2026-tde-kernel-s31.md",
+      "size": 674,
+      "mtime": 1772642110,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-04__verification__wo-2026-tde-kernel-s36.md",
+      "size": 500,
+      "mtime": 1772647653,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-04__verification__wo-2026-tde-kernel-s37.md",
+      "size": 483,
+      "mtime": 1772648014,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-04__verification__wo-2026-tde-kernel-s38.md",
+      "size": 471,
+      "mtime": 1772648205,
       "ext": ".md"
     },
     {
@@ -1734,6 +1860,18 @@
       "path": "knowledge/policies/observation_sources.v1.yaml",
       "size": 514,
       "mtime": 1772640739,
+      "ext": ".yaml"
+    },
+    {
+      "path": "knowledge/policies/taskops_autonomy_policy.v1.yaml",
+      "size": 238,
+      "mtime": 1772650279,
+      "ext": ".yaml"
+    },
+    {
+      "path": "knowledge/policies/taskops_side_effect_contracts.v1.yaml",
+      "size": 551,
+      "mtime": 1772650275,
       "ext": ".yaml"
     },
     {
@@ -2073,6 +2211,18 @@
       "ext": ".md"
     },
     {
+      "path": "knowledge/reports/2026-03-04__deepresearch__durable-state-store-strategy-for-tde__v1.md",
+      "size": 1765,
+      "mtime": 1772641830,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-04__deepresearch__generalizing-lyra-openclaw-from-devsecops-to-taskops__v1.md",
+      "size": 26656,
+      "mtime": 1772650110,
+      "ext": ".md"
+    },
+    {
       "path": "knowledge/reports/2026-03-04__deepresearch__knowledge-library-audit-and-white-spots__v1.md",
       "size": 30849,
       "mtime": 1772611593,
@@ -2103,9 +2253,15 @@
       "ext": ".md"
     },
     {
+      "path": "knowledge/reports/2026-03-04__deepresearch__trust-boundary-architecture-for-openclaw-tde__v1.md",
+      "size": 2221,
+      "mtime": 1772642931,
+      "ext": ".md"
+    },
+    {
       "path": "knowledge/reports/INDEX.md",
-      "size": 24738,
-      "mtime": 1772637738,
+      "size": 25246,
+      "mtime": 1772642953,
       "ext": ".md"
     },
     {
@@ -2113,6 +2269,12 @@
       "size": 3067,
       "mtime": 1772611593,
       "ext": ".md"
+    },
+    {
+      "path": "knowledge/taskops/work_packets/TEMPLATE__taskops_work_packet.v1.json",
+      "size": 729,
+      "mtime": 1772650290,
+      "ext": ".json"
     },
     {
       "path": "memory/2026-02-23.md",
@@ -2199,6 +2361,12 @@
       "ext": ".md"
     },
     {
+      "path": "os/sops/TDE_DB_CANONICAL_CUTOVER_GATE_V1.md",
+      "size": 1104,
+      "mtime": 1772647611,
+      "ext": ".md"
+    },
+    {
       "path": "os/sops/TDE_DELIVERY_BOUNDARY_AND_DORA_BASELINE_V1.md",
       "size": 1281,
       "mtime": 1772637738,
@@ -2218,8 +2386,8 @@
     },
     {
       "path": "os/tde/INDEX.md",
-      "size": 1859,
-      "mtime": 1772637738,
+      "size": 2584,
+      "mtime": 1772647992,
       "ext": ".md"
     },
     {
@@ -3682,8 +3850,8 @@
     },
     {
       "path": "repos/lyra-operating-system/CRON_SPEC_AUTONOMOUS_GOVERNANCE_SWEEPS.md",
-      "size": 5888,
-      "mtime": 1772611496,
+      "size": 6647,
+      "mtime": 1772649411,
       "ext": ".md"
     },
     {
@@ -3766,8 +3934,8 @@
     },
     {
       "path": "repos/lyra-operating-system/IR-001_INCIDENT_MINI_RUNBOOK.md",
-      "size": 2251,
-      "mtime": 1772035686,
+      "size": 2786,
+      "mtime": 1772649171,
       "ext": ".md"
     },
     {
@@ -4433,7 +4601,7 @@
     {
       "path": "repos/lyra-operating-system/inventory/generated/repo_inventory.json",
       "size": 157663,
-      "mtime": 1772611922,
+      "mtime": 1772649190,
       "ext": ".json"
     },
     {
@@ -5123,25 +5291,25 @@
     {
       "path": "repos/lyra-operating-system/knowledge/indexes/decisions_index.json",
       "size": 196,
-      "mtime": 1772611496,
+      "mtime": 1772649070,
       "ext": ".json"
     },
     {
       "path": "repos/lyra-operating-system/knowledge/indexes/inbox_index.json",
       "size": 172,
-      "mtime": 1772611496,
+      "mtime": 1772649070,
       "ext": ".json"
     },
     {
       "path": "repos/lyra-operating-system/knowledge/indexes/indexes_manifest.json",
       "size": 295,
-      "mtime": 1772611922,
+      "mtime": 1772649190,
       "ext": ".json"
     },
     {
       "path": "repos/lyra-operating-system/knowledge/indexes/report_decision_index.json",
       "size": 18457,
-      "mtime": 1772611922,
+      "mtime": 1772649190,
       "ext": ".json"
     },
     {
@@ -5619,6 +5787,18 @@
       "ext": ""
     },
     {
+      "path": "repos/lyra-operating-system/os/runbooks/TDE_RELEASE_FAILURE_MODES_AND_CONSEQUENCES_V1.md",
+      "size": 4893,
+      "mtime": 1772649108,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/os/runbooks/TDE_RELEASE_RECOVERY_PLAYBOOK_V1.md",
+      "size": 3119,
+      "mtime": 1772649123,
+      "ext": ".md"
+    },
+    {
       "path": "repos/lyra-operating-system/os/runtime/tde_active_bindings.json",
       "size": 333,
       "mtime": 1772613637,
@@ -5667,6 +5847,12 @@
       "ext": ".md"
     },
     {
+      "path": "repos/lyra-operating-system/os/sops/TDE_RELEASE_GUARD_SCHEDULING_CONTRACT_V1.md",
+      "size": 1301,
+      "mtime": 1772649395,
+      "ext": ".md"
+    },
+    {
       "path": "repos/lyra-operating-system/os/standards/.gitkeep",
       "size": 0,
       "mtime": 1772385639,
@@ -5674,8 +5860,8 @@
     },
     {
       "path": "repos/lyra-operating-system/os/tde/INDEX.md",
-      "size": 1859,
-      "mtime": 1772613672,
+      "size": 2226,
+      "mtime": 1772649402,
       "ext": ".md"
     },
     {
@@ -5865,6 +6051,12 @@
       "ext": ".py"
     },
     {
+      "path": "repos/lyra-operating-system/tools/tde-release-guard.sh",
+      "size": 3203,
+      "mtime": 1772649156,
+      "ext": ".sh"
+    },
+    {
       "path": "repos/lyra-operating-system/tools/tde_activation_execution_receipt.py",
       "size": 6485,
       "mtime": 1772484239,
@@ -5955,6 +6147,12 @@
       "ext": ".py"
     },
     {
+      "path": "repos/lyra-operating-system/tools/tde_release_guard_cron_hook.sh",
+      "size": 420,
+      "mtime": 1772649388,
+      "ext": ".sh"
+    },
+    {
       "path": "repos/lyra-operating-system/tools/tde_rollout_broader_scope_simulation.py",
       "size": 7829,
       "mtime": 1772612593,
@@ -6034,8 +6232,8 @@
     },
     {
       "path": "schemas/_registry.json",
-      "size": 707,
-      "mtime": 1772640733,
+      "size": 801,
+      "mtime": 1772650265,
       "ext": ".json"
     },
     {
@@ -6066,6 +6264,12 @@
       "path": "schemas/scorecard/v1.0.0.schema.json",
       "size": 363,
       "mtime": 1772611593,
+      "ext": ".json"
+    },
+    {
+      "path": "schemas/taskops_work_packet/v1.0.0.schema.json",
+      "size": 1991,
+      "mtime": 1772650255,
       "ext": ".json"
     },
     {
@@ -6177,9 +6381,27 @@
       "ext": ".py"
     },
     {
+      "path": "tools/openclaw_trust_boundary_validation_bundle.py",
+      "size": 1440,
+      "mtime": 1772643103,
+      "ext": ".py"
+    },
+    {
       "path": "tools/standard_change_policy_check.py",
       "size": 3482,
       "mtime": 1772611593,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/taskops/__init__.py",
+      "size": 16,
+      "mtime": 1772650312,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/taskops/validate_work_packets.py",
+      "size": 3076,
+      "mtime": 1772650304,
       "ext": ".py"
     },
     {
@@ -6219,6 +6441,30 @@
       "ext": ".py"
     },
     {
+      "path": "tools/tde_cutover_alert_check.py",
+      "size": 825,
+      "mtime": 1772647959,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/tde_cutover_readiness_cron_hook.sh",
+      "size": 262,
+      "mtime": 1772648177,
+      "ext": ".sh"
+    },
+    {
+      "path": "tools/tde_cutover_readiness_report.py",
+      "size": 2407,
+      "mtime": 1772647627,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/tde_daily_readiness_check.sh",
+      "size": 560,
+      "mtime": 1772647949,
+      "ext": ".sh"
+    },
+    {
       "path": "tools/tde_dora_rollup.py",
       "size": 8532,
       "mtime": 1772639368,
@@ -6226,14 +6472,14 @@
     },
     {
       "path": "tools/tde_job_tick_cron_hook.sh",
-      "size": 560,
-      "mtime": 1772611594,
+      "size": 1136,
+      "mtime": 1772643466,
       "ext": ".sh"
     },
     {
       "path": "tools/tde_job_tick_runner.py",
-      "size": 26711,
-      "mtime": 1772637738,
+      "size": 30461,
+      "mtime": 1772643748,
       "ext": ".py"
     },
     {
@@ -6279,6 +6525,18 @@
       "ext": ".py"
     },
     {
+      "path": "tools/tde_state_parity_check.py",
+      "size": 732,
+      "mtime": 1772641974,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/tde_state_store.py",
+      "size": 8232,
+      "mtime": 1772643705,
+      "ext": ".py"
+    },
+    {
       "path": "tools/test_s15_binding_integrity.py",
       "size": 2657,
       "mtime": 1772637738,
@@ -6309,6 +6567,24 @@
       "ext": ".py"
     },
     {
+      "path": "tools/test_s32_shadow_state_write.py",
+      "size": 2486,
+      "mtime": 1772642396,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/test_s33_shadow_thresholds.py",
+      "size": 862,
+      "mtime": 1772642756,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/test_s35_state_ledger_write.py",
+      "size": 2649,
+      "mtime": 1772643768,
+      "ext": ".py"
+    },
+    {
       "path": "tools/trello_sync.py",
       "size": 6474,
       "mtime": 1772610437,
@@ -6334,8 +6610,8 @@
     },
     {
       "path": "tools/validate_repo.py",
-      "size": 8214,
-      "mtime": 1772640867,
+      "size": 8576,
+      "mtime": 1772650320,
       "ext": ".py"
     },
     {

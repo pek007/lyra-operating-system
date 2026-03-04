@@ -22,5 +22,8 @@
   },
   "observations_index": {
     "1.0.0": "schemas/observations_index/v1.0.0.schema.json"
+  },
+  "taskops_work_packet": {
+    "1.0.0": "schemas/taskops_work_packet/v1.0.0.schema.json"
   }
 }

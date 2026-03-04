@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lyra.local/schemas/taskops_work_packet/v1.0.0.schema.json",
+  "type": "object",
+  "required": [
+    "artifactType",
+    "schemaVersion",
+    "packet_id",
+    "title",
+    "domain",
+    "owner",
+    "objective",
+    "acceptance_criteria",
+    "risk_level",
+    "autonomy_level",
+    "side_effects",
+    "evidence_requirements",
+    "review_date",
+    "status"
+  ],
+  "properties": {
+    "artifactType": { "const": "taskops_work_packet" },
+    "schemaVersion": { "const": "1.0.0" },
+    "packet_id": { "type": "string", "pattern": "^TWP-[0-9]{4}-[0-9]{4,}$" },
+    "title": { "type": "string", "minLength": 6 },
+    "domain": { "type": "string", "enum": ["software", "research", "finance_ops", "client_delivery", "internal_ops"] },
+    "owner": { "type": "string", "minLength": 1 },
+    "objective": { "type": "string", "minLength": 10 },
+    "acceptance_criteria": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 3 } },
+    "non_goals": { "type": ["array", "null"], "items": { "type": "string" } },
+    "risk_level": { "type": "string", "enum": ["low", "medium", "high", "critical"] },
+    "autonomy_level": { "type": "string", "enum": ["advisory", "semi_auto", "auto_low_risk"] },
+    "side_effects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["surface", "action", "approval_required"],
+        "properties": {
+          "surface": { "type": "string", "minLength": 2 },
+          "action": { "type": "string", "minLength": 2 },
+          "approval_required": { "type": "boolean" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "evidence_requirements": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 2 }
+    },
+    "review_date": { "type": "string", "format": "date" },
+    "status": { "type": "string", "enum": ["draft", "active", "paused", "done"] }
+  },
+  "additionalProperties": true
+}

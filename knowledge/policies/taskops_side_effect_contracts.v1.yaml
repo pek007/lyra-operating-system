@@ -1,0 +1,17 @@
+version: 1
+surfaces:
+  github:
+    allowed_actions: [create_issue, comment_issue, update_pr]
+    default_approval_required: true
+  trello:
+    allowed_actions: [create_card, move_card, comment_card]
+    default_approval_required: false
+  docs:
+    allowed_actions: [write_report, update_index]
+    default_approval_required: false
+  accounting:
+    allowed_actions: [draft_expense, submit_expense, reconcile_entry]
+    default_approval_required: true
+  messaging:
+    allowed_actions: [draft_message, send_message]
+    default_approval_required: true

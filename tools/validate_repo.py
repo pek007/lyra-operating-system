@@ -218,6 +218,15 @@ def main() -> int:
     except Exception as e:
         messages.append(f"WARN: observation validator unavailable ({e})")
 
+    try:
+        from taskops.validate_work_packets import validate_work_packets  # type: ignore
+
+        wp_errors, wp_warnings = validate_work_packets(json.loads(SCHEMA_REGISTRY.read_text()))
+        errors.extend(wp_errors)
+        messages.extend(wp_warnings)
+    except Exception as e:
+        messages.append(f"WARN: taskops validator unavailable ({e})")
+
     if not args.fix:
         errors.extend(
             check_drift(

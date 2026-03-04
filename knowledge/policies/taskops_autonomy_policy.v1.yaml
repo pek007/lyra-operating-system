@@ -1,0 +1,11 @@
+version: 1
+autonomy_levels:
+  advisory:
+    max_risk: critical
+    allows_external_mutation: false
+  semi_auto:
+    max_risk: medium
+    allows_external_mutation: true
+  auto_low_risk:
+    max_risk: low
+    allows_external_mutation: true

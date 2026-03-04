@@ -1,0 +1,27 @@
+{
+  "artifactType": "taskops_work_packet",
+  "schemaVersion": "1.0.0",
+  "packet_id": "TWP-2026-0001",
+  "title": "Example TaskOps work packet",
+  "domain": "research",
+  "owner": "lyra",
+  "objective": "Deliver a decision-ready research memo with traceable evidence.",
+  "acceptance_criteria": [
+    "At least 5 cited sources",
+    "Contradictions flagged",
+    "Review completed"
+  ],
+  "non_goals": ["Public distribution"],
+  "risk_level": "medium",
+  "autonomy_level": "semi_auto",
+  "side_effects": [
+    {
+      "surface": "docs",
+      "action": "write_report",
+      "approval_required": false
+    }
+  ],
+  "evidence_requirements": ["citations", "observation_links"],
+  "review_date": "2026-03-11",
+  "status": "draft"
+}
