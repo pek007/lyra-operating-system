@@ -73,6 +73,44 @@ def _validate_objective_linkage(objective_linkage: dict[str, Any]) -> tuple[bool
     return True, None
 
 
+def _load_objective_registry(path: Path | None) -> dict[str, Any] | None:
+    if path is None or not path.exists():
+        return None
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        if isinstance(payload, dict):
+            return payload
+    except Exception:
+        return None
+    return None
+
+
+def _validate_objective_against_registry(
+    objective_linkage: dict[str, Any], registry: dict[str, Any] | None
+) -> tuple[bool, str | None, dict[str, Any] | None]:
+    if registry is None:
+        return False, "objective_registry_unavailable", None
+
+    objectives = registry.get("objectives", [])
+    if not isinstance(objectives, list):
+        return False, "objective_registry_invalid", None
+
+    objective_id = objective_linkage.get("objective_id")
+    checkpoint = objective_linkage.get("objective_checkpoint")
+
+    for obj in objectives:
+        if not isinstance(obj, dict):
+            continue
+        if obj.get("objective_id") != objective_id:
+            continue
+        allowed = obj.get("allowed_checkpoints", [])
+        if isinstance(allowed, list) and allowed and checkpoint not in allowed:
+            return False, "objective_checkpoint_not_allowed", obj
+        return True, None, obj
+
+    return False, "objective_not_found", None
+
+
 def _load_active_binding(
     *,
     binding_registry_path: Path | None,
@@ -276,6 +314,7 @@ def run_job_tick(
     artifact_path: Path,
     writeback_tasks_path: Path | None = None,
     binding_registry_path: Path | None = None,
+    objective_registry_path: Path | None = None,
 ) -> dict[str, Any]:
     kernel = TDEKernel()
     tasks = _read_tasks(tasks_path, section="Active")
@@ -300,6 +339,7 @@ def run_job_tick(
         session_key=session_key,
         fallback_binding_id=binding_id,
     )
+    objective_registry = _load_objective_registry(objective_registry_path)
 
     if not job_id.strip() or not actor_id.strip() or not session_key.strip() or not tick_id.strip():
         outcomes["failed_validation"] += 1
@@ -364,7 +404,15 @@ def run_job_tick(
         }
     else:
         objective_ok, objective_error = _validate_objective_linkage(objective_linkage)
-        if not objective_ok:
+        objective_registry_ok = False
+        objective_registry_error: str | None = None
+        matched_objective: dict[str, Any] | None = None
+        if objective_ok:
+            objective_registry_ok, objective_registry_error, matched_objective = _validate_objective_against_registry(
+                objective_linkage, objective_registry
+            )
+
+        if not objective_ok or not objective_registry_ok:
             outcomes["failed_validation"] += 1
             artifact = {
                 "artifactType": "tde_job_tick",
@@ -377,6 +425,11 @@ def run_job_tick(
                 "actor_id": actor_id,
                 "session_key": session_key,
                 "objective_linkage": objective_linkage,
+                "objective_registry_context": {
+                    "registry_path": str(objective_registry_path) if objective_registry_path else None,
+                    "registry_loaded": objective_registry is not None,
+                    "matched_objective": matched_objective,
+                },
                 "binding_context": {
                     "active_binding": active_binding,
                     "binding_source": binding_source,
@@ -390,7 +443,7 @@ def run_job_tick(
                 "outcomes": outcomes,
                 "status": "failed_validation",
                 "fail_closed": True,
-                "fail_closed_reason": objective_error,
+                "fail_closed_reason": objective_error or objective_registry_error,
             }
             artifact_path.parent.mkdir(parents=True, exist_ok=True)
             artifact_path.write_text(json.dumps(artifact, indent=2) + "\n", encoding="utf-8")
@@ -567,6 +620,10 @@ def run_job_tick(
             "actor_id": actor_id,
             "session_key": session_key,
             "objective_linkage": objective_linkage,
+            "objective_registry_context": {
+                "registry_path": str(objective_registry_path) if objective_registry_path else None,
+                "registry_loaded": objective_registry is not None,
+            },
             "binding_context": {
                 "active_binding": active_binding,
                 "binding_source": binding_source,
@@ -609,6 +666,7 @@ def main() -> None:
     )
     parser.add_argument("--writeback-tasks-path", default="TASKS.md")
     parser.add_argument("--binding-registry-path", default="os/runtime/tde_active_bindings.json")
+    parser.add_argument("--objective-registry-path", default="os/runtime/tde_objectives.json")
 
     args = parser.parse_args()
     artifact = run_job_tick(
@@ -626,6 +684,7 @@ def main() -> None:
         artifact_path=Path(args.artifact_path),
         writeback_tasks_path=Path(args.writeback_tasks_path) if args.writeback_tasks_path else None,
         binding_registry_path=Path(args.binding_registry_path) if args.binding_registry_path else None,
+        objective_registry_path=Path(args.objective_registry_path) if args.objective_registry_path else None,
     )
     print(json.dumps(artifact))
 

@@ -23,6 +23,7 @@ Define deterministic runtime semantics for a job-scoped execution tick so jobs a
 - `objective_id` (string, required for side-effecting mutation path)
 - `objective_checkpoint` (string, required checkpoint tag)
 - `rationale_trace` (string, required concise rationale/trace reference)
+- `objective_registry` (required objective authority source for validation of objective id/checkpoint)
 
 ## Claim Rules
 1. Pull only items routed to `job_id` and in ready state.
@@ -41,6 +42,8 @@ Define deterministic runtime semantics for a job-scoped execution tick so jobs a
   - `objective_id` present and non-empty
   - `objective_checkpoint` present and non-empty
   - `rationale_trace` present and non-empty
+  - `objective_id` exists in objective registry
+  - `objective_checkpoint` is allowed for the objective (when registry provides an allowlist)
 - Runtime MUST resolve active binding object and validate envelope context.
 - For side-effecting mutation paths, unresolved binding registry lookup MUST fail closed (`binding_unresolved_fail_closed`); synthesized/fallback active bindings are not valid authority proof.
 - Runtime MUST resolve active binding object and validate envelope context:

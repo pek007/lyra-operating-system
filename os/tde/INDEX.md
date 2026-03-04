@@ -25,6 +25,7 @@ Single entrypoint for Task & Decision Engine contracts, runtime tools, tests, an
 
 ## Authority and runtime state
 - `os/runtime/tde_active_bindings.json` — active binding registry.
+- `os/runtime/tde_objectives.json` — objective registry (objective IDs/checkpoint allowlists).
 - `TASKS.md` — current canonical task board (temporary kanban SoR).
 
 ## Evidence surfaces
