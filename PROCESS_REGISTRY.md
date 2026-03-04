@@ -73,6 +73,7 @@ Track core processes, standards, and runbooks with review state.
 | STANDARD_CHANGE_CATALOG_V1.md | Policy Standard | Peter/Lyra | Draft | 2026-03-04 | 2026-03-18 |
 | governance/PLAN_EXECUTION_PORTFOLIO_2026-03-04.md | Governance Portfolio | Peter/Lyra | Active | 2026-03-04 | 2026-03-11 |
 | MILESTONE_0_1_MACHINE_CHECKABLE_GOVERNANCE.md | Milestone Guide | Peter/Lyra | Active | 2026-03-04 | 2026-03-18 |
+| STANDARD_CHANGE_PILOT_PROTOCOL_V1.md | Pilot Protocol | Peter/Lyra | Active | 2026-03-04 | 2026-03-18 |
 
 ## Notes
 - Planned items must be tracked in TASKS.md with a target date.

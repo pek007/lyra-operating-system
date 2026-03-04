@@ -155,6 +155,7 @@ def main() -> int:
 
     run([sys.executable, "tools/gen_inventory.py"])
     run([sys.executable, "tools/gen_knowledge_indexes.py"])
+    run([sys.executable, "tools/standard_change_policy_check.py", "--strict"])
 
     errors: list[str] = []
     messages: list[str] = []

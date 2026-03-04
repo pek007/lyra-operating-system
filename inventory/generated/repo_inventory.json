@@ -142,8 +142,8 @@
     },
     {
       "path": "CA_TEMPLATE_V1.md",
-      "size": 975,
-      "mtime": 1772609799,
+      "size": 1054,
+      "mtime": 1772610058,
       "ext": ".md"
     },
     {
@@ -472,8 +472,8 @@
     },
     {
       "path": "PROCESS_REGISTRY.md",
-      "size": 6670,
-      "mtime": 1772609803,
+      "size": 6776,
+      "mtime": 1772610070,
       "ext": ".md"
     },
     {
@@ -663,6 +663,12 @@
       "ext": ".md"
     },
     {
+      "path": "STANDARD_CHANGE_PILOT_PROTOCOL_V1.md",
+      "size": 1549,
+      "mtime": 1772610067,
+      "ext": ".md"
+    },
+    {
       "path": "STD-001_DEFINITION_OF_DONE.md",
       "size": 1640,
       "mtime": 1772179196,
@@ -688,8 +694,8 @@
     },
     {
       "path": "TASKS.md",
-      "size": 37409,
-      "mtime": 1772609852,
+      "size": 37682,
+      "mtime": 1772610077,
       "ext": ".md"
     },
     {
@@ -754,8 +760,8 @@
     },
     {
       "path": "WO_TEMPLATE_V1.md",
-      "size": 1086,
-      "mtime": 1772609797,
+      "size": 1165,
+      "mtime": 1772610055,
       "ext": ".md"
     },
     {
@@ -990,6 +996,18 @@
       "path": "knowledge/evidence/2026-03/20260302-084005__doctor.md",
       "size": 499,
       "mtime": 1772437205,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/20260304-084004__security_audit.md",
+      "size": 532,
+      "mtime": 1772610004,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/20260304-084006__doctor.md",
+      "size": 499,
+      "mtime": 1772610006,
       "ext": ".md"
     },
     {
@@ -1347,6 +1365,12 @@
       "ext": ".md"
     },
     {
+      "path": "knowledge/evidence/2026-03-04__ops-2026-048-049-050-bootstrap-and-non-disruptive-activation.md",
+      "size": 1984,
+      "mtime": 1772610082,
+      "ext": ".md"
+    },
+    {
       "path": "knowledge/evidence/2026-03-04__report47-implementation-recommendations.md",
       "size": 1814,
       "mtime": 1772606873,
@@ -1354,14 +1378,14 @@
     },
     {
       "path": "knowledge/evidence/latest-doctor.txt",
-      "size": 10233,
-      "mtime": 1772437205,
+      "size": 10145,
+      "mtime": 1772610006,
       "ext": ".txt"
     },
     {
       "path": "knowledge/evidence/latest-security-audit.json",
-      "size": 2094,
-      "mtime": 1772437203,
+      "size": 1640,
+      "mtime": 1772610004,
       "ext": ".json"
     },
     {
@@ -5109,6 +5133,12 @@
       "ext": ".py"
     },
     {
+      "path": "tools/standard_change_policy_check.py",
+      "size": 3482,
+      "mtime": 1772610047,
+      "ext": ".py"
+    },
+    {
       "path": "tools/task_hygiene_check.py",
       "size": 1966,
       "mtime": 1772504466,
@@ -5146,8 +5176,8 @@
     },
     {
       "path": "tools/validate_repo.py",
-      "size": 6011,
-      "mtime": 1772609829,
+      "size": 6090,
+      "mtime": 1772610050,
       "ext": ".py"
     }
   ]

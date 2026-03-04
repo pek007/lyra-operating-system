@@ -36,5 +36,12 @@ No changes made to TDE execution semantics, mutation envelope behavior, approval
 
 ## Remaining items
 
-- `OPS-2026-050`: CI/policy checks for exclusion-trigger auto-promotion blocking.
-- `OPS-2026-050`: 2-week pilot evidence execution.
+- `OPS-2026-050`: publish pilot outcome evidence at end of window (2026-03-18).
+
+## Follow-up executed (same day)
+
+- Added `tools/standard_change_policy_check.py` and wired strict execution through `tools/validate_repo.py`.
+- Published `STANDARD_CHANGE_PILOT_PROTOCOL_V1.md` and registered it in `PROCESS_REGISTRY.md`.
+- Updated templates with required fields for deterministic exclusion-trigger checks:
+  - `Auto-promotion requested`
+  - `Exclusion trigger present`

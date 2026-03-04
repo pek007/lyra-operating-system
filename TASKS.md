@@ -26,8 +26,9 @@ Use this until a dedicated work tool is selected.
 - [ ] OPS-2026-050 | Operationalize `STANDARD_CHANGE_CATALOG_V1` into executable promotion flow (registry linkage, WO/CA classification fields, exclusion-trigger checks, pilot guardrails).
   - [x] 2026-03-04 | Linked catalog/milestone artifacts in `PROCESS_REGISTRY.md`.
   - [x] 2026-03-04 | Added `change class` + `standard class` routing fields to `WO_TEMPLATE_V1.md` and `CA_TEMPLATE_V1.md`.
-  - [ ] Add CI/policy checks to block auto-promotion on exclusion triggers.
-  - [ ] Run 2-week pilot gate with audit-sample evidence protocol.
+  - [x] 2026-03-04 | Added policy check `tools/standard_change_policy_check.py` and wired `tools/validate_repo.py` to run strict exclusion-trigger guardrail enforcement.
+  - [x] 2026-03-04 | Published 2-week pilot guardrail + audit-sample protocol `STANDARD_CHANGE_PILOT_PROTOCOL_V1.md` (window: 2026-03-04..2026-03-18).
+  - [ ] 2026-03-18 | Publish pilot outcome evidence and recommendation (keep/expand/rollback).
 - [x] OPS-2026-045 | Shift Continuous Improvement leverage discovery cadence from monthly to weekly and formalize Deep Research handoff workflow (Layer B + Layer C).
   - [x] 2026-03-03 | Updated `CONTINUOUS_IMPROVEMENT_PROCESS_V1.md` to v1.1 with discovery layers (A daily, B weekly, C weekly via Deep Research), weekly portfolio cleanup, and `IMP-DR-*` conversion rule.
   - [x] 2026-03-03 | Updated `CRON_SPEC_AUTONOMOUS_GOVERNANCE_SWEEPS.md` with `continuous-improvement:weekly-leverage-handoff` protocol and explicit Layer B/C packet flow to Peter.
