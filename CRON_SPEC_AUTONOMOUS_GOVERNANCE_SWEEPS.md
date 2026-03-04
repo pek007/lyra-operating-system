@@ -52,6 +52,18 @@ Design principle: auto-implement only low-risk, uncontroversial changes; route l
 - **Delivery:** Prompt packet sent to Peter for manual Deep Research execution
 - **Intent:** Discover non-obvious, high-leverage improvement opportunities beyond daily hygiene.
 
+### 4) `tde:cutover-readiness-daily`
+- **Cron:** `45 6 * * *`
+- **Timezone:** `Europe/Stockholm`
+- **Session:** isolated
+- **Delivery:** Telegram announce to Lyra Operations (`-1003804530741`) when alert threshold is breached; otherwise silent evidence refresh
+- **Intent:** Maintain daily DB cutover readiness evidence and fail-fast alerting on parity drift bursts.
+
+**Runbook in hook**
+1. `bash tools/tde_daily_readiness_check.sh`
+2. `python3 tools/tde_cutover_alert_check.py`
+3. If alert check fails, emit escalation summary with latest report path.
+
 **Runbook in prompt**
 1. Sweep for high-signal, low-controversy improvements across docs/code/structure:
    - consistency, clarity, naming, dead links, duplicate guidance, obvious hygiene/refactor items, missing guardrails
