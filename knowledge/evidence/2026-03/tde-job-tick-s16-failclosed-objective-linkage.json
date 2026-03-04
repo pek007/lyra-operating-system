@@ -1,0 +1,42 @@
+{
+  "tick_id": "s16-fail-20260304-1",
+  "trigger_source": "cron",
+  "timestamp": "2026-03-04T07:01:07.903295+00:00",
+  "job_id": "JOB-PROD-001",
+  "binding_id": "BIND-JOB-PROD-001-ACTIVE",
+  "actor_id": "lyra",
+  "session_key": "cron:tde-job-runner-v1",
+  "objective_linkage": {
+    "objective_id": "",
+    "objective_checkpoint": "S16",
+    "rationale_trace": "trace:s16-objective-linkage"
+  },
+  "binding_context": {
+    "active_binding": {
+      "binding_id": "BIND-JOB-PROD-001-ACTIVE",
+      "job_id": "JOB-PROD-001",
+      "actor_id": "lyra",
+      "session_key": "cron:tde-job-runner-v1",
+      "status": "active",
+      "binding_epoch": 1,
+      "updated_at": "2026-03-04T06:30:00Z"
+    },
+    "binding_source": "registry_exact",
+    "binding_status": "active"
+  },
+  "claim_limit": 1,
+  "claimed": [],
+  "mutations": [],
+  "decisions": [],
+  "evidence_outputs": [],
+  "outcomes": {
+    "progressed": 0,
+    "blocked_pending_approval": 0,
+    "failed_validation": 1,
+    "no_work": 0,
+    "reauth_required": 0
+  },
+  "status": "failed_validation",
+  "fail_closed": true,
+  "fail_closed_reason": "missing_objective_linkage_field:objective_id"
+}

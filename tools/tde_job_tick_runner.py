@@ -58,6 +58,17 @@ def _validate_mutation_envelope(envelope: dict[str, Any]) -> tuple[bool, str | N
     return True, None
 
 
+def _validate_objective_linkage(objective_linkage: dict[str, Any]) -> tuple[bool, str | None]:
+    required = ["objective_id", "objective_checkpoint", "rationale_trace"]
+    for key in required:
+        value = objective_linkage.get(key)
+        if value is None:
+            return False, f"missing_objective_linkage_field:{key}"
+        if isinstance(value, str) and not value.strip():
+            return False, f"missing_objective_linkage_field:{key}"
+    return True, None
+
+
 def _load_active_binding(
     *,
     binding_registry_path: Path | None,
@@ -226,6 +237,9 @@ def run_job_tick(
     trigger_source: str,
     tick_id: str,
     max_claim: int,
+    objective_id: str,
+    objective_checkpoint: str,
+    rationale_trace: str,
     tasks_path: Path,
     artifact_path: Path,
     writeback_tasks_path: Path | None = None,
@@ -233,6 +247,11 @@ def run_job_tick(
 ) -> dict[str, Any]:
     kernel = TDEKernel()
     tasks = _read_tasks(tasks_path, section="Active")
+    objective_linkage = {
+        "objective_id": objective_id,
+        "objective_checkpoint": objective_checkpoint,
+        "rationale_trace": rationale_trace,
+    }
 
     outcomes = {
         "progressed": 0,
@@ -260,6 +279,7 @@ def run_job_tick(
             "binding_id": binding_id,
             "actor_id": actor_id,
             "session_key": session_key,
+            "objective_linkage": objective_linkage,
             "binding_context": {
                 "active_binding": active_binding,
                 "binding_source": binding_source,
@@ -285,6 +305,7 @@ def run_job_tick(
             "binding_id": binding_id,
             "actor_id": actor_id,
             "session_key": session_key,
+            "objective_linkage": objective_linkage,
             "binding_context": {
                 "active_binding": active_binding,
                 "binding_source": binding_source,
@@ -306,6 +327,37 @@ def run_job_tick(
             "fail_closed_reason": "binding_missing_or_invalid",
         }
     else:
+        objective_ok, objective_error = _validate_objective_linkage(objective_linkage)
+        if not objective_ok:
+            outcomes["failed_validation"] += 1
+            artifact = {
+                "tick_id": tick_id,
+                "trigger_source": trigger_source,
+                "timestamp": _iso_now(),
+                "job_id": job_id,
+                "binding_id": binding_id,
+                "actor_id": actor_id,
+                "session_key": session_key,
+                "objective_linkage": objective_linkage,
+                "binding_context": {
+                    "active_binding": active_binding,
+                    "binding_source": binding_source,
+                    "binding_status": "active",
+                },
+                "claim_limit": max_claim,
+                "claimed": [],
+                "mutations": [],
+                "decisions": [],
+                "evidence_outputs": [],
+                "outcomes": outcomes,
+                "status": "failed_validation",
+                "fail_closed": True,
+                "fail_closed_reason": objective_error,
+            }
+            artifact_path.parent.mkdir(parents=True, exist_ok=True)
+            artifact_path.write_text(json.dumps(artifact, indent=2) + "\n", encoding="utf-8")
+            return artifact
+
         ready = [t for t in tasks if t.get("state") == "ready"]
         claimed = ready[: max(0, max_claim)]
 
@@ -322,6 +374,7 @@ def run_job_tick(
                 "policy_decision_id": f"pending:{tick_id}:{item['id']}",
                 "idempotency_key": idempotency_key,
                 "expected_version": 0,
+                "objective_linkage": objective_linkage,
             }
             envelope_ok, envelope_error = _validate_mutation_envelope(mutation_envelope)
             if not envelope_ok:
@@ -420,6 +473,7 @@ def run_job_tick(
             "binding_id": binding_id,
             "actor_id": actor_id,
             "session_key": session_key,
+            "objective_linkage": objective_linkage,
             "binding_context": {
                 "active_binding": active_binding,
                 "binding_source": binding_source,
@@ -452,6 +506,9 @@ def main() -> None:
     parser.add_argument("--trigger-source", choices=["cron", "heartbeat"], default="cron")
     parser.add_argument("--tick-id", default=f"job-tick-{datetime.now(timezone.utc).strftime('%Y%m%d-%H%M%S')}")
     parser.add_argument("--max-claim", type=int, default=1)
+    parser.add_argument("--objective-id", default="OBJ-TDE-FOUNDATION")
+    parser.add_argument("--objective-checkpoint", default="S16")
+    parser.add_argument("--rationale-trace", default="TDE-2026-027-objective-linkage")
     parser.add_argument("--tasks-path", default="TASKS.md")
     parser.add_argument(
         "--artifact-path",
@@ -469,6 +526,9 @@ def main() -> None:
         trigger_source=args.trigger_source,
         tick_id=args.tick_id,
         max_claim=args.max_claim,
+        objective_id=args.objective_id,
+        objective_checkpoint=args.objective_checkpoint,
+        rationale_trace=args.rationale_trace,
         tasks_path=Path(args.tasks_path),
         artifact_path=Path(args.artifact_path),
         writeback_tasks_path=Path(args.writeback_tasks_path) if args.writeback_tasks_path else None,

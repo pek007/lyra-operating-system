@@ -15,12 +15,13 @@ Use this until a dedicated work tool is selected.
 ## Triage
 
 ## Active
-- [ ] TDE-2026-027 | Add objective-to-work linkage contract (objective ID, checkpoint, rationale trace) and wire into TDE task/dependency artifacts.
-  - [x] 2026-03-04 | Opened WO-2026-TDE-KERNEL-S16 and activated this as current execution slice.
 
 ## Waiting
 
 ## Done
+- [x] TDE-2026-027 | Executed WO-2026-TDE-KERNEL-S16 objective-to-work linkage slice (required linkage fields + deterministic fail-closed validation + evidence artifacts).
+  - [x] 2026-03-04 | Opened WO-2026-TDE-KERNEL-S16 and activated this as current execution slice.
+  - [x] 2026-03-04 | Enforced `objective_id/objective_checkpoint/rationale_trace` in `tools/tde_job_tick_runner.py`, updated contract, and produced S16 pass/failclosed verification artifacts.
 - [x] TDE-2026-026 | Executed WO-2026-TDE-KERNEL-S15 runtime binding-integrity slice (active-binding validation + reauth-on-binding-change fail-closed semantics + evidence artifacts).
   - [x] 2026-03-04 | Opened WO-2026-TDE-KERNEL-S15 start packet and activated this task as the next micro-sprint.
   - [x] 2026-03-04 | Implemented runtime binding-integrity enforcement in `tools/tde_job_tick_runner.py` + added active binding registry baseline `os/runtime/tde_active_bindings.json` + produced S15 verification artifacts.

@@ -10,16 +10,16 @@ from tde_job_tick_runner import run_job_tick
 
 def _seed_tasks(path: Path) -> None:
     path.write_text(
-        """# TASKS.md (Temporary Kanban)\n\n## Inbox\n\n## Triage\n\n## Active\n- [ ] TDE-TEST-001 | Test task for S15 binding checks\n\n## Waiting\n\n## Done\n""",
+        """# TASKS.md (Temporary Kanban)\n\n## Inbox\n\n## Triage\n\n## Active\n- [ ] TDE-S16-001 | Test task for objective linkage\n\n## Waiting\n\n## Done\n""",
         encoding="utf-8",
     )
 
 
-def _seed_binding_registry(path: Path, binding_id: str) -> None:
+def _seed_binding_registry(path: Path) -> None:
     payload = {
         "bindings": [
             {
-                "binding_id": binding_id,
+                "binding_id": "BIND-JOB-PROD-001-ACTIVE",
                 "job_id": "JOB-PROD-001",
                 "actor_id": "lyra",
                 "session_key": "cron:tde-job-runner-v1",
@@ -35,55 +35,54 @@ def main() -> None:
     with tempfile.TemporaryDirectory() as tmp:
         tmpdir = Path(tmp)
         tasks = tmpdir / "TASKS.md"
-        artifact_pass = tmpdir / "pass.json"
-        artifact_fail = tmpdir / "fail.json"
         binding_registry = tmpdir / "bindings.json"
+        pass_artifact = tmpdir / "s16-pass.json"
+        fail_artifact = tmpdir / "s16-fail.json"
 
         _seed_tasks(tasks)
-        _seed_binding_registry(binding_registry, "BIND-JOB-PROD-001-ACTIVE")
+        _seed_binding_registry(binding_registry)
 
-        pass_result = run_job_tick(
+        ok = run_job_tick(
             job_id="JOB-PROD-001",
             binding_id="BIND-JOB-PROD-001-ACTIVE",
             actor_id="lyra",
             session_key="cron:tde-job-runner-v1",
             trigger_source="cron",
-            tick_id="s15-pass",
+            tick_id="s16-pass",
             max_claim=1,
             objective_id="OBJ-TDE-FOUNDATION",
-            objective_checkpoint="S15",
-            rationale_trace="binding-integrity",
+            objective_checkpoint="S16",
+            rationale_trace="trace:objective-linkage",
             tasks_path=tasks,
-            artifact_path=artifact_pass,
+            artifact_path=pass_artifact,
             writeback_tasks_path=tasks,
             binding_registry_path=binding_registry,
         )
-        assert pass_result["outcomes"]["progressed"] == 1
-        assert pass_result["outcomes"]["reauth_required"] == 0
+        assert ok["outcomes"]["progressed"] == 1
+        assert ok["objective_linkage"]["objective_id"] == "OBJ-TDE-FOUNDATION"
 
-        # reset tasks for mismatch case
         _seed_tasks(tasks)
-        mismatch_result = run_job_tick(
+        bad = run_job_tick(
             job_id="JOB-PROD-001",
-            binding_id="BIND-STALE-OLD",
+            binding_id="BIND-JOB-PROD-001-ACTIVE",
             actor_id="lyra",
             session_key="cron:tde-job-runner-v1",
             trigger_source="cron",
-            tick_id="s15-mismatch",
+            tick_id="s16-fail",
             max_claim=1,
-            objective_id="OBJ-TDE-FOUNDATION",
-            objective_checkpoint="S15",
-            rationale_trace="binding-integrity",
+            objective_id="",
+            objective_checkpoint="S16",
+            rationale_trace="trace:objective-linkage",
             tasks_path=tasks,
-            artifact_path=artifact_fail,
+            artifact_path=fail_artifact,
             writeback_tasks_path=tasks,
             binding_registry_path=binding_registry,
         )
-        assert mismatch_result["outcomes"]["reauth_required"] == 1
-        assert mismatch_result["mutations"][0]["fail_closed_reason"] == "REAUTH_REQUIRED_ON_BINDING_CHANGE"
-        assert mismatch_result["writeback"]["applied"] is False
+        assert bad["status"] == "failed_validation"
+        assert bad["fail_closed_reason"] == "missing_objective_linkage_field:objective_id"
+        assert bad["outcomes"]["failed_validation"] == 1
 
-    print("[PASS] S15 binding integrity checks passed")
+    print("[PASS] S16 objective linkage checks passed")
 
 
 if __name__ == "__main__":

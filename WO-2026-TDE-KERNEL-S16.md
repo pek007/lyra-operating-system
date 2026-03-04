@@ -33,7 +33,7 @@
 - `knowledge/evidence/2026-03/2026-03-04__verification__wo-2026-tde-kernel-s16.md`
 
 ## Closure
-- Outcome summary: _Pending_
-- Accepted by: _Pending_
-- Date closed: _Pending_
-- Linked Change Artifact(s): _Pending_
+- Outcome summary: Implemented objective-to-work linkage contract enforcement for job-tick mutation path with required fields (`objective_id`, `objective_checkpoint`, `rationale_trace`) and deterministic fail-closed behavior for missing linkage. Wired objective linkage into emitted runtime artifacts and mutation envelopes.
+- Accepted by: JOB-PROD-001 (execution baseline); JOB-ARC-001 formal sign-off pending
+- Date closed: 2026-03-04
+- Linked Change Artifact(s): `tools/tde_job_tick_runner.py`; `tools/test_s16_objective_linkage.py`; `tools/test_s15_binding_integrity.py`; `os/sops/TDE_JOB_TICK_CONTRACT_V1.md`; `knowledge/evidence/2026-03/tde-job-tick-s16-pass.json`; `knowledge/evidence/2026-03/tde-job-tick-s16-failclosed-objective-linkage.json`; `knowledge/evidence/2026-03/2026-03-04__verification__wo-2026-tde-kernel-s16.md`

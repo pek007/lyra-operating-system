@@ -20,6 +20,9 @@ Define deterministic runtime semantics for a job-scoped execution tick so jobs a
 - `tick_id` (string, unique per run)
 - `max_claim` (int, bounded by WIP policy)
 - `binding_registry` (active binding object source; required for strict runtime binding integrity)
+- `objective_id` (string, required for side-effecting mutation path)
+- `objective_checkpoint` (string, required checkpoint tag)
+- `rationale_trace` (string, required concise rationale/trace reference)
 
 ## Claim Rules
 1. Pull only items routed to `job_id` and in ready state.
@@ -34,6 +37,10 @@ Define deterministic runtime semantics for a job-scoped execution tick so jobs a
   - `policy_decision_id`
   - `idempotency_key`
   - `expected_version`
+- Runtime MUST validate objective linkage contract before side-effecting mutation:
+  - `objective_id` present and non-empty
+  - `objective_checkpoint` present and non-empty
+  - `rationale_trace` present and non-empty
 - Runtime MUST resolve active binding object and validate envelope context:
   - `envelope.job_id == active_binding.job_id`
   - `envelope.binding_id == active_binding.binding_id`
@@ -46,6 +53,7 @@ Define deterministic runtime semantics for a job-scoped execution tick so jobs a
 ## Outputs
 Per tick, emit deterministic artifact including:
 - `tick_id`, `trigger_source`, `job_id`, `binding_id`, `actor_id`, `session_key`, timestamp
+- `objective_linkage` block with `objective_id`, `objective_checkpoint`, `rationale_trace`
 - `binding_context` block with active binding object + source + status
 - Claimed item IDs + transition attempts
 - Idempotency keys used
@@ -56,6 +64,7 @@ Per tick, emit deterministic artifact including:
 ## Fail-Closed Conditions
 Tick must end without mutation when any of the following are true:
 - Missing/invalid `job_id` or `actor_id`
+- Missing objective linkage fields (`objective_id`, `objective_checkpoint`, `rationale_trace`) for mutation path
 - Missing/expired `binding_id` for mutation path
 - Binding mismatch/drift against active binding object (`actor/job/session_key/binding_id`)
 - Policy decision unavailable for gated action
