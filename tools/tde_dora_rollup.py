@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import re
+import subprocess
 from collections import defaultdict
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -12,6 +13,7 @@ WO_RE = re.compile(r"WO-2026-TDE-KERNEL-S(\d+)\.md$")
 DATE_OPENED_RE = re.compile(r"^- Date opened: (.+)$", re.MULTILINE)
 DATE_CLOSED_RE = re.compile(r"^- Date closed: (.+)$", re.MULTILINE)
 ARTIFACT_S_RE = re.compile(r"tde-job-tick-s(\d+)-.*\.json$")
+S_IN_MSG_RE = re.compile(r"\bS(\d{1,3})\b")
 
 
 @dataclass
@@ -25,6 +27,8 @@ class SliceRow:
     fails: int
     passes: int
     recovery_hours: float | None
+    commit_count: int
+    rework_commits: int
 
 
 def _parse_day(raw: str | None) -> datetime | None:
@@ -56,6 +60,25 @@ def _safe_ts(raw: str | None) -> datetime | None:
         return None
 
 
+def _git_commits_by_slice() -> dict[int, list[str]]:
+    out = subprocess.check_output([
+        "git",
+        "log",
+        "--pretty=format:%H\t%s",
+    ], text=True)
+
+    by_slice: dict[int, list[str]] = defaultdict(list)
+    for line in out.splitlines():
+        if "\t" not in line:
+            continue
+        h, msg = line.split("\t", 1)
+        matches = S_IN_MSG_RE.findall(msg)
+        for m in matches:
+            sid = int(m)
+            by_slice[sid].append(h)
+    return by_slice
+
+
 def main() -> None:
     root = Path(".")
     wos = sorted(root.glob("WO-2026-TDE-KERNEL-S*.md"))
@@ -70,7 +93,6 @@ def main() -> None:
         opened, closed = _parse_wo_dates(text)
         wo_map[sid] = (wo.name, opened, closed)
 
-    # activation artifacts: parse machine-readable job-tick evidence by slice
     events: dict[int, list[tuple[datetime | None, bool]]] = defaultdict(list)
     for p in root.glob("knowledge/evidence/**/*.json"):
         m = ARTIFACT_S_RE.search(p.name)
@@ -84,6 +106,8 @@ def main() -> None:
         ts = _safe_ts(payload.get("timestamp"))
         fail = bool(payload.get("fail_closed")) or payload.get("status") in {"failed_validation", "reauth_required"}
         events[sid].append((ts, fail))
+
+    commits_by_slice = _git_commits_by_slice()
 
     rows: list[SliceRow] = []
     for sid, (woname, opened, closed) in sorted(wo_map.items()):
@@ -105,6 +129,10 @@ def main() -> None:
             if first_pass_after:
                 recovery_hours = (first_pass_after - first_fail).total_seconds() / 3600.0
 
+        commits = commits_by_slice.get(sid, [])
+        commit_count = len(commits)
+        rework_commits = max(0, commit_count - 1)
+
         rows.append(
             SliceRow(
                 sid=sid,
@@ -116,6 +144,8 @@ def main() -> None:
                 fails=fails,
                 passes=passes,
                 recovery_hours=recovery_hours,
+                commit_count=commit_count,
+                rework_commits=rework_commits,
             )
         )
 
@@ -134,6 +164,12 @@ def main() -> None:
     rec_vals = [r.recovery_hours for r in rows if r.recovery_hours is not None]
     avg_recovery = (sum(rec_vals) / len(rec_vals)) if rec_vals else None
 
+    slices_with_commits = [r for r in rows if r.commit_count > 0]
+    rework_rate = (
+        sum(r.rework_commits for r in slices_with_commits) / sum(r.commit_count for r in slices_with_commits) * 100.0
+        if slices_with_commits else 0.0
+    )
+
     lines = [
         "# TDE DORA Weekly (Proxy)",
         "",
@@ -145,17 +181,19 @@ def main() -> None:
         f"- Lead Time for Changes (avg, opened->closed proxy): {avg_lead:.2f} days" if avg_lead is not None else "- Lead Time for Changes: insufficient data",
         f"- Change Failure Rate (slice-level proxy): {fail_rate:.1f}% ({sum(1 for r in rows_with_activation if r.fails > 0)}/{len(rows_with_activation)})",
         f"- Failed Deployment Recovery Time (avg proxy): {avg_recovery:.2f} hours" if avg_recovery is not None else "- Failed Deployment Recovery Time: insufficient fail->pass timestamp pairs",
-        "- Deployment Rework Rate: pending commit-to-slice linkage automation",
+        f"- Deployment Rework Rate (commit proxy): {rework_rate:.1f}%",
         "",
         "## Slice details (recent)",
-        "| Slice | WO | Lead(d) | Activations | Fails | Passes | Recovery(h) |",
-        "|---|---|---:|---:|---:|---:|---:|",
+        "| Slice | WO | Lead(d) | Activations | Fails | Passes | Recovery(h) | Commits | Rework commits |",
+        "|---|---|---:|---:|---:|---:|---:|---:|---:|",
     ]
 
     for r in sorted(rows, key=lambda x: x.sid)[-15:]:
         lead_str = f"{r.lead_days:.2f}" if r.lead_days is not None else "n/a"
         rec_str = f"{r.recovery_hours:.2f}" if r.recovery_hours is not None else "n/a"
-        lines.append(f"| S{r.sid} | {r.wo} | {lead_str} | {r.activations} | {r.fails} | {r.passes} | {rec_str} |")
+        lines.append(
+            f"| S{r.sid} | {r.wo} | {lead_str} | {r.activations} | {r.fails} | {r.passes} | {rec_str} | {r.commit_count} | {r.rework_commits} |"
+        )
 
     out.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"[PASS] wrote {out}")

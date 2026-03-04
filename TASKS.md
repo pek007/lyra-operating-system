@@ -155,6 +155,7 @@ Use this until a dedicated work tool is selected.
   - [x] 2026-03-03 | Published command-ready closeout execution checklist (baseline tests, tag/push commands, post-tag board-normalization steps) to reduce execution friction once boundary commit/clean-tree condition is met; evidence: `knowledge/evidence/2026-03-03__ops-2026-023-closeout-execution-checklist-ready.md`.
 
 ## Done
+- [x] OPS-2026-054 | S29 DORA rework-rate automation (closed 2026-03-04 after adding commit-to-slice linkage and automatic rework-rate proxy in `tools/tde_dora_rollup.py`).
 - [x] OPS-2026-053 | S28 DORA rollup enhancement (closed 2026-03-04 after upgrading `tools/tde_dora_rollup.py` to emit per-slice lead/failure/recovery proxies and refreshing `knowledge/evidence/metrics/TDE_DORA_WEEKLY.md`).
 - [x] OPS-2026-051 | S26 trust-boundary closure and stability revalidation (closed 2026-03-04 with single-trust-boundary acceptance and explicit reopen triggers; evidence: `knowledge/evidence/2026-03-04__sec-auto-20260304-01-s26-closeout-single-trust-boundary.md`).
 - [x] OPS-2026-052 | S27 sandbox reliability guardrail (closed 2026-03-04 after adding sandbox preflight script + SOP/checklist controls; evidence: `knowledge/evidence/2026-03-04__ops-reliability-s27-sandbox-guardrail.md`).
