@@ -6,6 +6,8 @@
 - Change owner:
 - Date:
 - Risk class:
+- Change class: (Standard / Normal / High-Risk / Emergency)
+- Standard class (if Standard): (SC-01 / SC-02 / SC-03 / SC-04 / SC-05)
 
 ## 1) Change Summary
 - What changed:

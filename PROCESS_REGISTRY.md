@@ -27,6 +27,7 @@ Track core processes, standards, and runbooks with review state.
 | BRAVE_USAGE_BASELINE_2026-03.md | Usage Baseline | Lyra | Active | 2026-02-24 | 2026-03-26 |
 | REGISTRY_SCHEMAS_V1.md | Data Contract | Lyra | Active | 2026-02-25 | 2026-03-25 |
 | CONTROL_TOWER_MVP_VIEWS_SPEC.md | UI Spec | Lyra | Active | 2026-02-25 | 2026-03-25 |
+| SPRINT3_ARCHITECTURE_BRIEF_V1.md | Architecture Brief | Peter/Lyra | Draft | 2026-03-02 | 2026-03-09 |
 | tools/evidence_ingest.py | Automation Script | Lyra | Active | 2026-02-25 | 2026-03-25 |
 | tools/markdown_link_check.py | Automation Script | Lyra | Active | 2026-02-28 | 2026-03-28 |
 | SPRINT3_WEEKLY_CADENCE.md | Sprint Cadence | Peter/Lyra | Superseded | 2026-02-26 | - |
@@ -69,6 +70,9 @@ Track core processes, standards, and runbooks with review state.
 | CONTINUOUS_IMPROVEMENT_PROCESS_V1.md | Process | Peter/Lyra | Active | 2026-03-01 | 2026-03-31 |
 | TASK_DECISION_MANAGEMENT_PROCESS_V1.md | Process | Peter/Lyra | Active | 2026-03-01 | 2026-03-31 |
 | EXECUTIVE_COMMUNICATION_PROTOCOL_V1.md | Communication Process | Peter/Lyra | Active | 2026-03-01 | 2026-03-31 |
+| STANDARD_CHANGE_CATALOG_V1.md | Policy Standard | Peter/Lyra | Draft | 2026-03-04 | 2026-03-18 |
+| governance/PLAN_EXECUTION_PORTFOLIO_2026-03-04.md | Governance Portfolio | Peter/Lyra | Active | 2026-03-04 | 2026-03-11 |
+| MILESTONE_0_1_MACHINE_CHECKABLE_GOVERNANCE.md | Milestone Guide | Peter/Lyra | Active | 2026-03-04 | 2026-03-18 |
 
 ## Notes
 - Planned items must be tracked in TASKS.md with a target date.

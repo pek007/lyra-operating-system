@@ -42,13 +42,34 @@ def index_dir(name: str) -> list[dict]:
     return rows
 
 
+def index_reports_for_decisions() -> list[dict]:
+    d = KNOW / "reports"
+    if not d.exists():
+        return []
+    rows = []
+    for p in sorted(d.rglob("*.md")):
+        rel = p.relative_to(ROOT).as_posix()
+        meta = parse_frontmatter(p)
+        impact_raw = str(meta.get("decision_impact", "")).lower()
+        rows.append({
+            "path": rel,
+            "title": meta.get("title") or p.stem,
+            "decision_impact": impact_raw in {"true", "yes", "1"},
+            "decision_id": meta.get("decision_id"),
+            "no_decision_marker": meta.get("no_decision_marker"),
+        })
+    return rows
+
+
 def main() -> int:
     IDX.mkdir(parents=True, exist_ok=True)
     inbox = index_dir("inbox")
     decisions = index_dir("decisions")
+    report_decisions = index_reports_for_decisions()
 
     (IDX / "inbox_index.json").write_text(json.dumps({"items": inbox}, indent=2) + "\n")
     (IDX / "decisions_index.json").write_text(json.dumps({"items": decisions}, indent=2) + "\n")
+    (IDX / "report_decision_index.json").write_text(json.dumps({"items": report_decisions}, indent=2) + "\n")
     (IDX / "indexes_manifest.json").write_text(
         json.dumps(
             {
@@ -56,8 +77,9 @@ def main() -> int:
                 "outputs": [
                     "knowledge/indexes/inbox_index.json",
                     "knowledge/indexes/decisions_index.json",
+                    "knowledge/indexes/report_decision_index.json",
                 ],
-                "counts": {"inbox": len(inbox), "decisions": len(decisions)},
+                "counts": {"inbox": len(inbox), "decisions": len(decisions), "report_decisions": len(report_decisions)},
             },
             indent=2,
         )

@@ -2,10 +2,12 @@
   "generatedBy": "tools/gen_knowledge_indexes.py",
   "outputs": [
     "knowledge/indexes/inbox_index.json",
-    "knowledge/indexes/decisions_index.json"
+    "knowledge/indexes/decisions_index.json",
+    "knowledge/indexes/report_decision_index.json"
   ],
   "counts": {
-    "inbox": 0,
-    "decisions": 0
+    "inbox": 1,
+    "decisions": 1,
+    "report_decisions": 49
   }
 }

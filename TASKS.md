@@ -15,17 +15,17 @@ Use this until a dedicated work tool is selected.
   - [x] 2026-03-03 | Pilot activated as `EXP-2026-001` (status: active_pilot, period: 2026-03-03 to 2026-03-10).
   - [ ] 2026-03-10 | Publish checkpoint evidence artifact and close with decision (scale/standardize/rollback/retest).
 - [ ] OPS-2026-048 | Implement machine-checkable governance bootstrap v0.1 (schema authority + validator entrypoint + inventory/index generation + CI drift checks) from 2026-03-04 deep research blueprint.
-  - [ ] Publish `schemas/` contract authority for job tick / canary status / release envelope / decision memo metadata.
-  - [ ] Implement `tools/validate_repo.py` single entrypoint and wire local + CI execution.
-  - [ ] Add deterministic inventory/index generators and enforce no-drift in CI.
-  - [ ] Produce first milestone evidence artifact with pass/fail snapshot.
+  - [x] 2026-03-04 | Confirmed `schemas/` contract authority for job tick / canary status / release envelope / decision memo metadata (`schemas/_registry.json` + schema files).
+  - [x] 2026-03-04 | Validated and extended `tools/validate_repo.py` as single entrypoint (includes report→decision mapping rule + generated drift checks) and wired with existing `.github/workflows/governance-machine-check.yml`.
+  - [x] 2026-03-04 | Deterministic inventory/index generation enforced via validator run (`tools/gen_inventory.py`, `tools/gen_knowledge_indexes.py`).
+  - [x] 2026-03-04 | Published milestone guide `MILESTONE_0_1_MACHINE_CHECKABLE_GOVERNANCE.md` with pass/fail expectations and non-disruption clause for TDE runtime.
 - [ ] OPS-2026-049 | Operationalize knowledge library systems-of-record by standing up `knowledge/inbox` + `knowledge/decisions` with generated indexes and validation.
-  - [ ] Create canonical directories + templates + index manifest contract.
-  - [ ] Add validator rule: decision-impacting reports must map to decision memo or explicit no-decision marker.
-  - [ ] Publish first baseline index artifacts under `knowledge/indexes/` with evidence.
+  - [x] 2026-03-04 | Added canonical templates: `knowledge/inbox/INBOX_ENTRY_TEMPLATE_V1.md` and `knowledge/decisions/DECISION_MEMO_TEMPLATE_V1.md`.
+  - [x] 2026-03-04 | Added validator rule: decision-impacting reports (`decision_impact: true`) must map to valid `decision_id` or explicit `no_decision_marker`.
+  - [x] 2026-03-04 | Published baseline generated index artifacts including `knowledge/indexes/report_decision_index.json` and updated manifest.
 - [ ] OPS-2026-050 | Operationalize `STANDARD_CHANGE_CATALOG_V1` into executable promotion flow (registry linkage, WO/CA classification fields, exclusion-trigger checks, pilot guardrails).
-  - [ ] Link catalog in `PROCESS_REGISTRY.md` and relevant process docs.
-  - [ ] Add `standard_class` + risk-tier routing fields to WO/CA templates.
+  - [x] 2026-03-04 | Linked catalog/milestone artifacts in `PROCESS_REGISTRY.md`.
+  - [x] 2026-03-04 | Added `change class` + `standard class` routing fields to `WO_TEMPLATE_V1.md` and `CA_TEMPLATE_V1.md`.
   - [ ] Add CI/policy checks to block auto-promotion on exclusion triggers.
   - [ ] Run 2-week pilot gate with audit-sample evidence protocol.
 - [x] OPS-2026-045 | Shift Continuous Improvement leverage discovery cadence from monthly to weekly and formalize Deep Research handoff workflow (Layer B + Layer C).

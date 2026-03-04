@@ -142,8 +142,8 @@
     },
     {
       "path": "CA_TEMPLATE_V1.md",
-      "size": 843,
-      "mtime": 1772179041,
+      "size": 975,
+      "mtime": 1772609799,
       "ext": ".md"
     },
     {
@@ -369,6 +369,12 @@
       "ext": ".md"
     },
     {
+      "path": "MILESTONE_0_1_MACHINE_CHECKABLE_GOVERNANCE.md",
+      "size": 1369,
+      "mtime": 1772609793,
+      "ext": ".md"
+    },
+    {
       "path": "MISSION.md",
       "size": 1098,
       "mtime": 1771913054,
@@ -466,8 +472,8 @@
     },
     {
       "path": "PROCESS_REGISTRY.md",
-      "size": 6330,
-      "mtime": 1772487973,
+      "size": 6670,
+      "mtime": 1772609803,
       "ext": ".md"
     },
     {
@@ -682,8 +688,8 @@
     },
     {
       "path": "TASKS.md",
-      "size": 35317,
-      "mtime": 1772590857,
+      "size": 37409,
+      "mtime": 1772609852,
       "ext": ".md"
     },
     {
@@ -748,8 +754,8 @@
     },
     {
       "path": "WO_TEMPLATE_V1.md",
-      "size": 954,
-      "mtime": 1772179036,
+      "size": 1086,
+      "mtime": 1772609797,
       "ext": ".md"
     },
     {
@@ -792,6 +798,12 @@
       "path": "evidence-pack-template.md",
       "size": 1317,
       "mtime": 1772048236,
+      "ext": ".md"
+    },
+    {
+      "path": "governance/PLAN_EXECUTION_PORTFOLIO_2026-03-04.md",
+      "size": 3072,
+      "mtime": 1772609530,
       "ext": ".md"
     },
     {
@@ -864,6 +876,12 @@
       "path": "governance/trust-boundary-decision-record-2026-03-03.md",
       "size": 1708,
       "mtime": 1772522124,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/decisions/DECISION_MEMO_TEMPLATE_V1.md",
+      "size": 410,
+      "mtime": 1772609857,
       "ext": ".md"
     },
     {
@@ -1350,6 +1368,12 @@
       "path": "knowledge/experiments/EXP-2026-001__drift-aftercare-standard.md",
       "size": 1598,
       "mtime": 1772569507,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/inbox/INBOX_ENTRY_TEMPLATE_V1.md",
+      "size": 272,
+      "mtime": 1772609793,
       "ext": ".md"
     },
     {
@@ -4204,8 +4228,8 @@
     },
     {
       "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-canary-realworkload-latest.json",
-      "size": 685,
-      "mtime": 1772569843,
+      "size": 752,
+      "mtime": 1772609280,
       "ext": ".json"
     },
     {
@@ -4222,74 +4246,74 @@
     },
     {
       "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-canary-status-latest.json",
-      "size": 745,
-      "mtime": 1772476121,
+      "size": 812,
+      "mtime": 1772609280,
       "ext": ".json"
     },
     {
       "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-canary-status-threshold-breach.json",
-      "size": 792,
-      "mtime": 1772475656,
+      "size": 859,
+      "mtime": 1772609280,
       "ext": ".json"
     },
     {
       "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-failclosed.json",
-      "size": 664,
-      "mtime": 1772563112,
+      "size": 726,
+      "mtime": 1772609280,
       "ext": ".json"
     },
     {
       "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-latest.json",
-      "size": 1032,
-      "mtime": 1772563077,
+      "size": 1094,
+      "mtime": 1772609280,
       "ext": ".json"
     },
     {
       "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-s12-writeback.json",
-      "size": 1633,
-      "mtime": 1772570179,
+      "size": 1695,
+      "mtime": 1772609280,
       "ext": ".json"
     },
     {
       "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-s14-failclosed.json",
-      "size": 674,
-      "mtime": 1772563923,
+      "size": 736,
+      "mtime": 1772609280,
       "ext": ".json"
     },
     {
       "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-s14-pass.json",
-      "size": 1451,
-      "mtime": 1772563917,
+      "size": 1513,
+      "mtime": 1772609280,
       "ext": ".json"
     },
     {
       "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-s15-failclosed-binding-mismatch.json",
-      "size": 1886,
-      "mtime": 1772604296,
+      "size": 1948,
+      "mtime": 1772609280,
       "ext": ".json"
     },
     {
       "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-s15-pass.json",
-      "size": 1847,
-      "mtime": 1772604296,
+      "size": 1909,
+      "mtime": 1772609280,
       "ext": ".json"
     },
     {
       "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-s15-reauth-required.json",
-      "size": 1964,
-      "mtime": 1772604296,
+      "size": 2026,
+      "mtime": 1772609280,
       "ext": ".json"
     },
     {
       "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-s16-failclosed-objective-linkage.json",
-      "size": 1152,
-      "mtime": 1772607667,
+      "size": 1214,
+      "mtime": 1772609280,
       "ext": ".json"
     },
     {
       "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-s16-pass.json",
-      "size": 2197,
-      "mtime": 1772607667,
+      "size": 2259,
+      "mtime": 1772609280,
       "ext": ".json"
     },
     {
@@ -4312,8 +4336,8 @@
     },
     {
       "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-release-envelope-blocked.json",
-      "size": 2072,
-      "mtime": 1772484245,
+      "size": 2100,
+      "mtime": 1772609280,
       "ext": ".json"
     },
     {
@@ -4324,8 +4348,8 @@
     },
     {
       "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-release-envelope-pass.json",
-      "size": 2007,
-      "mtime": 1772484245,
+      "size": 2035,
+      "mtime": 1772609280,
       "ext": ".json"
     },
     {
@@ -4876,8 +4900,8 @@
     },
     {
       "path": "repos/lyra-operating-system/tools/tde_canary_runtime_cycle.py",
-      "size": 8381,
-      "mtime": 1772569836,
+      "size": 8460,
+      "mtime": 1772609258,
       "ext": ".py"
     },
     {
@@ -4894,14 +4918,20 @@
     },
     {
       "path": "repos/lyra-operating-system/tools/tde_job_tick_runner.py",
-      "size": 19475,
-      "mtime": 1772607602,
+      "size": 19811,
+      "mtime": 1772609255,
       "ext": ".py"
     },
     {
       "path": "repos/lyra-operating-system/tools/tde_kernel_slice_tests.py",
       "size": 18470,
       "mtime": 1772468835,
+      "ext": ".py"
+    },
+    {
+      "path": "repos/lyra-operating-system/tools/tde_migrate_artifact_schema_fields.py",
+      "size": 1705,
+      "mtime": 1772609277,
       "ext": ".py"
     },
     {
@@ -4918,8 +4948,8 @@
     },
     {
       "path": "repos/lyra-operating-system/tools/tde_release_envelope.py",
-      "size": 6704,
-      "mtime": 1772484215,
+      "size": 6738,
+      "mtime": 1772609263,
       "ext": ".py"
     },
     {
@@ -5062,8 +5092,8 @@
     },
     {
       "path": "tools/gen_knowledge_indexes.py",
-      "size": 1985,
-      "mtime": 1772609107,
+      "size": 2884,
+      "mtime": 1772609814,
       "ext": ".py"
     },
     {
@@ -5116,8 +5146,8 @@
     },
     {
       "path": "tools/validate_repo.py",
-      "size": 4793,
-      "mtime": 1772609127,
+      "size": 6011,
+      "mtime": 1772609829,
       "ext": ".py"
     }
   ]

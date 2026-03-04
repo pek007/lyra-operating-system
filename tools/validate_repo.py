@@ -121,6 +121,33 @@ def validate_tde_artifacts() -> list[str]:
     return warnings + errs
 
 
+def validate_report_decision_mapping() -> list[str]:
+    errs = []
+    report_index = ROOT / "knowledge/indexes/report_decision_index.json"
+    decisions_index = ROOT / "knowledge/indexes/decisions_index.json"
+    if not report_index.exists() or not decisions_index.exists():
+        return errs
+
+    try:
+        reports = json.loads(report_index.read_text()).get("items", [])
+        decisions = json.loads(decisions_index.read_text()).get("items", [])
+    except Exception as e:
+        return [f"Unable to parse report/decision indexes: {e}"]
+
+    valid_decision_ids = {d.get("decision_id") for d in decisions if d.get("decision_id")}
+
+    for r in reports:
+        if not r.get("decision_impact"):
+            continue
+        has_decision = bool(r.get("decision_id")) and (r.get("decision_id") in valid_decision_ids)
+        has_marker = bool(r.get("no_decision_marker"))
+        if not has_decision and not has_marker:
+            errs.append(
+                f"{r.get('path')}: decision_impact=true requires valid decision_id or no_decision_marker"
+            )
+    return errs
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--fix", action="store_true")
@@ -135,6 +162,7 @@ def main() -> int:
     messages.extend(validate_tde_artifacts())
     errors.extend(validate_schema_files())
     errors.extend(validate_decision_frontmatter())
+    errors.extend(validate_report_decision_mapping())
 
     if not args.fix:
         errors.extend(
@@ -143,6 +171,7 @@ def main() -> int:
                     ROOT / "inventory/generated/repo_inventory.json",
                     ROOT / "knowledge/indexes/inbox_index.json",
                     ROOT / "knowledge/indexes/decisions_index.json",
+                    ROOT / "knowledge/indexes/report_decision_index.json",
                     ROOT / "knowledge/indexes/indexes_manifest.json",
                 ]
             )

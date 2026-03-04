@@ -8,6 +8,8 @@
 - Lane: (Build / Research / Ops / Security)
 - Work type: (Feature / Bugfix / Refactor / Incident / Exploration)
 - Risk class: (Low / Medium / High)
+- Change class: (Standard / Normal / High-Risk / Emergency)
+- Standard class (if Standard): (SC-01 / SC-02 / SC-03 / SC-04 / SC-05)
 
 ## Intent
 - Objective:
