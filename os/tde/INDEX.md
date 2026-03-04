@@ -18,6 +18,8 @@ Single entrypoint for Task & Decision Engine contracts, runtime tools, tests, an
 - `tools/tde_release_envelope.py` — release gate packet helper.
 - `tools/tde_state_store.py` — durable state shadow store bootstrap (SQLite init/import/export/parity primitives).
 - `tools/tde_cutover_readiness_report.py` — cutover readiness verdict emitter (GO/NO-GO baseline).
+- `tools/tde_daily_readiness_check.sh` — daily readiness report refresh + dated archive step.
+- `tools/tde_cutover_alert_check.py` — alert guard for readiness regression thresholds.
 - `tools/tde_state_parity_check.py` — shadow parity verifier between canonical TASKS parse and DB projection.
 
 ## Verification tests
