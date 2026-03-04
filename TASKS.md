@@ -14,6 +14,20 @@ Use this until a dedicated work tool is selected.
 - [ ] OPS-2026-047 | Execute Drift Aftercare pilot (`OPP-2026-001`) for `IMP-AUTO-20260303-03`, publish 7-day checkpoint evidence, and decide scale/rollback.
   - [x] 2026-03-03 | Pilot activated as `EXP-2026-001` (status: active_pilot, period: 2026-03-03 to 2026-03-10).
   - [ ] 2026-03-10 | Publish checkpoint evidence artifact and close with decision (scale/standardize/rollback/retest).
+- [ ] OPS-2026-048 | Implement machine-checkable governance bootstrap v0.1 (schema authority + validator entrypoint + inventory/index generation + CI drift checks) from 2026-03-04 deep research blueprint.
+  - [ ] Publish `schemas/` contract authority for job tick / canary status / release envelope / decision memo metadata.
+  - [ ] Implement `tools/validate_repo.py` single entrypoint and wire local + CI execution.
+  - [ ] Add deterministic inventory/index generators and enforce no-drift in CI.
+  - [ ] Produce first milestone evidence artifact with pass/fail snapshot.
+- [ ] OPS-2026-049 | Operationalize knowledge library systems-of-record by standing up `knowledge/inbox` + `knowledge/decisions` with generated indexes and validation.
+  - [ ] Create canonical directories + templates + index manifest contract.
+  - [ ] Add validator rule: decision-impacting reports must map to decision memo or explicit no-decision marker.
+  - [ ] Publish first baseline index artifacts under `knowledge/indexes/` with evidence.
+- [ ] OPS-2026-050 | Operationalize `STANDARD_CHANGE_CATALOG_V1` into executable promotion flow (registry linkage, WO/CA classification fields, exclusion-trigger checks, pilot guardrails).
+  - [ ] Link catalog in `PROCESS_REGISTRY.md` and relevant process docs.
+  - [ ] Add `standard_class` + risk-tier routing fields to WO/CA templates.
+  - [ ] Add CI/policy checks to block auto-promotion on exclusion triggers.
+  - [ ] Run 2-week pilot gate with audit-sample evidence protocol.
 - [x] OPS-2026-045 | Shift Continuous Improvement leverage discovery cadence from monthly to weekly and formalize Deep Research handoff workflow (Layer B + Layer C).
   - [x] 2026-03-03 | Updated `CONTINUOUS_IMPROVEMENT_PROCESS_V1.md` to v1.1 with discovery layers (A daily, B weekly, C weekly via Deep Research), weekly portfolio cleanup, and `IMP-DR-*` conversion rule.
   - [x] 2026-03-03 | Updated `CRON_SPEC_AUTONOMOUS_GOVERNANCE_SWEEPS.md` with `continuous-improvement:weekly-leverage-handoff` protocol and explicit Layer B/C packet flow to Peter.
@@ -75,9 +89,14 @@ Use this until a dedicated work tool is selected.
   - [x] 2026-03-03 | Corrected `agents.defaults.sandbox` to canonical object form (`{"mode":"all"}` via `--strict-json`) and re-ran `openclaw security audit`; result normalized to `0 critical · 1 warn · 1 info` with heuristic confirming no unguarded runtime/process or runtime/filesystem contexts. Evidence: `knowledge/evidence/2026-03-03__sec-auto-20260302-01-sandbox-object-hardening-and-audit-normalization.md`.
 - [ ] SEC-AUTO-20260302-02 | Resolve persistent `gateway.trusted_proxies_missing` warning by explicitly documenting local-only Control UI posture or configuring `gateway.trustedProxies` with exact reverse-proxy IPs.
 - [ ] SEC-AUTO-20260303-01 | Enable a safe read-only host-audit path for cron health checks (or documented manual step) to capture PF status on macOS, since `pfctl -s info` currently fails without elevated access in this runtime.
+- [ ] SEC-AUTO-20260304-01 | Resolve recurring `security.trust_model.multi_user_heuristic` warning by finalizing shared-vs-single trust boundary controls for Telegram group contexts (or isolating group traffic to separate gateway identity) and revalidating clean audit baseline.
 - [ ] IMP-AUTO-20260302-01 | Add an automated task-hygiene pass that flags duplicate task intents/IDs in `TASKS.md` to reduce recurring SEC-AUTO inbox noise.
-- [ ] IMP-AUTO-20260302-02 | Add lightweight unit tests for `tools/markdown_link_check.py` (code-fence ignore + optional title parsing) to prevent false-positive regressions in cron checks.
+- [x] IMP-AUTO-20260302-02 | Add lightweight unit tests for `tools/markdown_link_check.py` (code-fence ignore + optional title parsing) to prevent false-positive regressions in cron checks.
+  - [x] 2026-03-04 | Added `tools/test_markdown_link_check.py` covering fenced-code link ignore and optional link-title parsing behavior; validated with `python3 -m unittest tools/test_markdown_link_check.py` (2/2 passing).
+  - [x] 2026-03-04 | Re-ran cron hygiene baseline via `python3 tools/docs_hygiene_bundle.py` after test addition (pass in current workspace state).
 - [ ] IMP-AUTO-20260303-03 | Migrate or normalize legacy registry rows (camelCase + `type1|type2`) through the transition layer and publish a drift-burn-down snapshot to reduce residual schema mismatch risk.
+- [ ] IMP-AUTO-20260304-01 | Wire `tools/test_markdown_link_check.py` into the cron hygiene path (or adjacent CI check) so link-parser behavior regressions fail before scheduled sweeps.
+- [ ] IMP-AUTO-20260304-02 | Add `markdown_link_check.py --changed-only` mode (git-diff scoped) to reduce sweep runtime as the document corpus grows while preserving full-scan fallback.
 - [ ] OPS-2026-043 | Chat Continuity Sprint 2 metrics rollout: define handoff completeness score + stale-context drift signal, then capture first weekly baseline evidence.
 
 ## Triage
