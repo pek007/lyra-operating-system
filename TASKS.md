@@ -84,7 +84,7 @@ Use this until a dedicated work tool is selected.
   - [x] 2026-03-03 | Implemented single-command bundle runner `tools/docs_hygiene_bundle.py`, wired `continuous-improvement:sweep` runbook to call it, and validated pass in current workspace state (`python3 tools/docs_hygiene_bundle.py`); evidence: `knowledge/evidence/2026-03-03__imp-auto-20260301-02-docs-hygiene-bundle-script-and-cron-wire.md`.
   - [x] 2026-03-03 | Executed completion recheck in current workspace state (`python3 tools/docs_hygiene_bundle.py`) and normalized board state for closeout; evidence: `knowledge/evidence/2026-03-03__imp-auto-20260301-02-closeout-and-board-normalization.md`.
 
-- [ ] SEC-AUTO-20260302-01 | Resolve persistent `security.trust_model.multi_user_heuristic` warning by deciding trust boundary (single trusted operator vs split gateways/identities) and tightening sandbox/tool scope if shared access remains.
+- [x] SEC-AUTO-20260302-01 | Resolve persistent `security.trust_model.multi_user_heuristic` warning by deciding trust boundary (single trusted operator vs split gateways/identities) and tightening sandbox/tool scope if shared access remains.
   - [x] 2026-03-03 | Refreshed baseline via `openclaw security audit`; warning still reproduces with explicit trigger evidence (`agents.defaults` sandbox/runtime/fs exposure) and sequenced remediation input captured in `knowledge/evidence/2026-03-03__sec-auto-20260302-01-audit-refresh-and-decision-input.md`.
   - [x] 2026-03-03 | Published decision-draft + executable remediation sequence (single-trust boundary + fail-closed defaults proposal + revalidation criteria) in `knowledge/evidence/2026-03-03__sec-auto-20260302-01-trust-boundary-decision-draft-and-remediation-plan.md`.
   - [x] 2026-03-03 | Published formal governance decision record (`governance/trust-boundary-decision-record-2026-03-03.md`) with acceptance criteria/reopen triggers; evidence: `knowledge/evidence/2026-03-03__sec-auto-20260302-01-trust-boundary-decision-record-published.md`.
@@ -94,14 +94,18 @@ Use this until a dedicated work tool is selected.
 - [x] SEC-AUTO-20260302-02 | Resolve persistent `gateway.trusted_proxies_missing` warning by explicitly documenting local-only Control UI posture or configuring `gateway.trustedProxies` with exact reverse-proxy IPs.
   - [x] 2026-03-04 | Revalidated with `openclaw security audit` (no `gateway.trusted_proxies_missing` warning present; summary `0 critical · 1 warn · 1 info`) and captured config posture evidence (`gateway.bind=loopback`, `gateway.trustedProxies=[127.0.0.1,::1]`) in `knowledge/evidence/2026-03-04__sec-auto-20260302-02-trusted-proxies-posture-validation-and-closeout.md`.
 - [ ] SEC-AUTO-20260303-01 | Enable a safe read-only host-audit path for cron health checks (or documented manual step) to capture PF status on macOS, since `pfctl -s info` currently fails without elevated access in this runtime.
-- [ ] SEC-AUTO-20260304-01 | Resolve recurring `security.trust_model.multi_user_heuristic` warning by finalizing shared-vs-single trust boundary controls for Telegram group contexts (or isolating group traffic to separate gateway identity) and revalidating clean audit baseline.
+- [x] SEC-AUTO-20260304-01 | Resolve recurring `security.trust_model.multi_user_heuristic` warning by finalizing shared-vs-single trust boundary controls for Telegram group contexts (or isolating group traffic to separate gateway identity) and revalidating clean audit baseline.
+  - [x] 2026-03-04 | Closed S26 under single-trust-boundary model with residual heuristic warning accepted and reopen triggers documented; evidence: `knowledge/evidence/2026-03-04__sec-auto-20260304-01-s26-closeout-single-trust-boundary.md`.
+  - [x] 2026-03-04 | Re-validated stable posture (`sandbox.mode=off`, `tools.fs.workspaceOnly=true`) from host audit evidence shared by Peter.
 - [ ] IMP-AUTO-20260302-01 | Add an automated task-hygiene pass that flags duplicate task intents/IDs in `TASKS.md` to reduce recurring SEC-AUTO inbox noise.
 - [x] IMP-AUTO-20260302-02 | Add lightweight unit tests for `tools/markdown_link_check.py` (code-fence ignore + optional title parsing) to prevent false-positive regressions in cron checks.
   - [x] 2026-03-04 | Added `tools/test_markdown_link_check.py` covering fenced-code link ignore and optional link-title parsing behavior; validated with `python3 -m unittest tools/test_markdown_link_check.py` (2/2 passing).
   - [x] 2026-03-04 | Re-ran cron hygiene baseline via `python3 tools/docs_hygiene_bundle.py` after test addition (pass in current workspace state).
 - [ ] IMP-AUTO-20260303-03 | Migrate or normalize legacy registry rows (camelCase + `type1|type2`) through the transition layer and publish a drift-burn-down snapshot to reduce residual schema mismatch risk.
+  - [ ] 2026-03-04 | Daily information-model sweep reflagged residual schema drift: `REGISTRY_SCHEMAS_V1.md` still shows legacy `decisionType` + `type1|type2` examples while `DECISION_SCHEMA_V1.md` canonical enum remains `approve|reject|choose|escalate|review`; add explicit v1.1 harmonized examples and compatibility-map link.
 - [ ] IMP-AUTO-20260304-01 | Wire `tools/test_markdown_link_check.py` into the cron hygiene path (or adjacent CI check) so link-parser behavior regressions fail before scheduled sweeps.
 - [ ] IMP-AUTO-20260304-02 | Add `markdown_link_check.py --changed-only` mode (git-diff scoped) to reduce sweep runtime as the document corpus grows while preserving full-scan fallback.
+- [ ] IMP-AUTO-20260304-03 | Backfill canonical frontmatter for legacy `knowledge/reports/*.md` and add deterministic `knowledge/reports/INDEX.md` generator so daily sweeps no longer rely on manual reconstruction.
 - [ ] OPS-2026-043 | Chat Continuity Sprint 2 metrics rollout: define handoff completeness score + stale-context drift signal, then capture first weekly baseline evidence.
 
 ## Triage
@@ -151,6 +155,8 @@ Use this until a dedicated work tool is selected.
   - [x] 2026-03-03 | Published command-ready closeout execution checklist (baseline tests, tag/push commands, post-tag board-normalization steps) to reduce execution friction once boundary commit/clean-tree condition is met; evidence: `knowledge/evidence/2026-03-03__ops-2026-023-closeout-execution-checklist-ready.md`.
 
 ## Done
+- [x] OPS-2026-051 | S26 trust-boundary closure and stability revalidation (closed 2026-03-04 with single-trust-boundary acceptance and explicit reopen triggers; evidence: `knowledge/evidence/2026-03-04__sec-auto-20260304-01-s26-closeout-single-trust-boundary.md`).
+- [x] OPS-2026-052 | S27 sandbox reliability guardrail (closed 2026-03-04 after adding sandbox preflight script + SOP/checklist controls; evidence: `knowledge/evidence/2026-03-04__ops-reliability-s27-sandbox-guardrail.md`).
 - [x] IMP-AUTO-20260301-02 | Add docs hygiene CI/cron check bundle (closed 2026-03-03 after completion recheck via `python3 tools/docs_hygiene_bundle.py` and board-state normalization; evidence: `knowledge/evidence/2026-03-03__imp-auto-20260301-02-closeout-and-board-normalization.md`).
 - [x] IMP-AUTO-20260228-01 | Automate daily OpenClaw release-delta evidence snapshot (closed 2026-03-03 after completion recheck run + board-state normalization; latest artifact refresh validated in `knowledge/evidence/2026-03-03__openclaw-release-delta-snapshot.md`).
 - [x] IMP-AUTO-20260227-02 | Add smoke tests for `tools/` parsers (closed 2026-03-03 after wiring parser smoke suite into cron sweep runbook and re-validating `tools/test_parser_smoke.py`).

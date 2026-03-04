@@ -7,6 +7,8 @@
 - [ ] Peter approval received (required for high risk)
 - [ ] Backup created (`openclaw.json.bak-...`)
 - [ ] Rollback steps prepared
+- [ ] If sandbox-mode change: run `python3 tools/openclaw_sandbox_preflight.py`
+- [ ] If sandbox-mode change: confirm this is not the main execution lane, or an explicit change window + canary plan is approved
 
 ## Apply
 - [ ] Apply only approved diff

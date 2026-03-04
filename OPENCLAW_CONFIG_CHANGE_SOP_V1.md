@@ -73,6 +73,8 @@ Rollback steps:
 - Never change config and code simultaneously in same recovery window
 - Never proceed without a tested rollback path
 - Prefer staged changes over large one-shot edits
+- Main execution lane default is `agents.defaults.sandbox.mode=off`; any non-off sandbox change requires explicit change window + canary/isolated validation before broader use
+- Run `python3 tools/openclaw_sandbox_preflight.py` before applying sandbox-mode changes
 
 ## Required Artifacts
 - Change request record (can be in task/WO)

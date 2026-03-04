@@ -66,3 +66,18 @@ Chronological record of incidents, response, and learnings.
 - Preventive actions: Add preflight config/dependency guardrails, staged rollout for sandbox mode, canary job before global toggle, and per-workload runtime compatibility matrix.
 - Owner: Lyra
 - Status: Monitoring
+
+### INC-2026-004
+- Incident ID: INC-2026-004
+- Date/Time: 2026-03-04 15:30-16:05 CET
+- Severity: SEV-3
+- Incident Tags: availability, automation_regression
+- Summary: Sandbox mode was re-applied in main execution lane, causing temporary inability to complete sprint write operations and inconsistent runtime capability exposure.
+- Impact: Delayed closeout work (S26/S27) and repeated environment instability symptoms.
+- Detected by: Runtime write failures and sandbox capability mismatch during active sprint operations.
+- Containment actions: Reverted to stable main-lane posture (`sandbox.mode=off`, `workspaceOnly=true`) and revalidated via security audit.
+- Recovery actions: Added explicit main-lane sandbox guardrails to config SOP/checklist and created preflight script.
+- Root cause: Execution judgment error—applied hardening recommendation without respecting previously documented main-lane sandbox constraint.
+- Preventive actions: Mandatory preflight + explicit change-window/canary requirement for any non-off sandbox mode.
+- Owner: Lyra
+- Status: Resolved
