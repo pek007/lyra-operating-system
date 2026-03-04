@@ -9,6 +9,7 @@ Single entrypoint for Task & Decision Engine contracts, runtime tools, tests, an
 ## Contracts
 - `os/sops/TDE_JOB_TICK_CONTRACT_V1.md` — job tick mutation/authority/objective rules.
 - `os/sops/TDE_CANARY_SCHEDULING_CONTRACT_V1.md` — canary trigger and status cycle semantics.
+- `os/sops/TDE_DB_CANONICAL_CUTOVER_GATE_V1.md` — DB cutover GO/NO-GO gate criteria.
 
 ## Runtime tools
 - `tools/tde_kernel.py` — shared deterministic governance kernel module (runtime import surface).
@@ -16,6 +17,7 @@ Single entrypoint for Task & Decision Engine contracts, runtime tools, tests, an
 - `tools/tde_canary_runtime_cycle.py` — canary classification + guardrail cycle.
 - `tools/tde_release_envelope.py` — release gate packet helper.
 - `tools/tde_state_store.py` — durable state shadow store bootstrap (SQLite init/import/export/parity primitives).
+- `tools/tde_cutover_readiness_report.py` — cutover readiness verdict emitter (GO/NO-GO baseline).
 - `tools/tde_state_parity_check.py` — shadow parity verifier between canonical TASKS parse and DB projection.
 
 ## Verification tests

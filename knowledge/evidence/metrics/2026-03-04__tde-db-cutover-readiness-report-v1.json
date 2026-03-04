@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-03-04T18:07:17.463558+00:00",
+  "gate": "TDE_DB_CANONICAL_CUTOVER_GATE_V1",
+  "verdict": "NO_GO",
+  "checks": {
+    "parity_consecutive_failures": 0,
+    "parity_threshold": 3,
+    "parity_ok": true,
+    "latest_shadow_status": "ok",
+    "actions_count": 0,
+    "events_count": 0
+  },
+  "note": "GO_CANDIDATE here is preliminary and still requires 3-day observation + explicit owner approval."
+}

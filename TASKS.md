@@ -163,6 +163,7 @@ Use this until a dedicated work tool is selected.
   - [x] 2026-03-03 | Published command-ready closeout execution checklist (baseline tests, tag/push commands, post-tag board-normalization steps) to reduce execution friction once boundary commit/clean-tree condition is met; evidence: `knowledge/evidence/2026-03-03__ops-2026-023-closeout-execution-checklist-ready.md`.
 
 ## Done
+- [x] OPS-2026-063 | S36 DB canonical cutover readiness gate (closed 2026-03-04 after publishing cutover gate SOP + first readiness NO_GO baseline report).
 - [x] OPS-2026-062 | S35 durable shadow event/action ledger writes (closed 2026-03-04 after persisting per-tick action/event entries in state store and wiring regression coverage).
 - [x] OPS-2026-061 | S34 scheduled dual-run shadow path (closed 2026-03-04 after enabling shadow-state controls in cron hook with env-based rollback switch).
 - [x] OPS-2026-059 | S33 shadow comparator thresholding (closed 2026-03-04 after adding consecutive mismatch/error threshold tracking + alert log support in job tick shadow mode).
