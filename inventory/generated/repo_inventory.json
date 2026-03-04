@@ -10,8 +10,8 @@
     },
     {
       "path": ".github/workflows/governance-machine-check.yml",
-      "size": 467,
-      "mtime": 1772640892,
+      "size": 579,
+      "mtime": 1772651468,
       "ext": ".yml"
     },
     {
@@ -196,8 +196,8 @@
     },
     {
       "path": "CRON_SPEC_AUTONOMOUS_GOVERNANCE_SWEEPS.md",
-      "size": 6442,
-      "mtime": 1772648177,
+      "size": 6720,
+      "mtime": 1772651503,
       "ext": ".md"
     },
     {
@@ -604,8 +604,8 @@
     },
     {
       "path": "TASKS.md",
-      "size": 45531,
-      "mtime": 1772648218,
+      "size": 46117,
+      "mtime": 1772651551,
       "ext": ".md"
     },
     {
@@ -1716,6 +1716,12 @@
       "path": "knowledge/evidence/2026-03-03__inc-2026-003__openclaw-sandbox-docker-regression-investigation.md",
       "size": 6223,
       "mtime": 1772611593,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-04__imp-auto-hygiene-bundle-non-tde-progress.md",
+      "size": 1264,
+      "mtime": 1772651569,
       "ext": ".md"
     },
     {
@@ -6351,6 +6357,12 @@
       "ext": ".py"
     },
     {
+      "path": "tools/markdown_link_check.py",
+      "size": 2758,
+      "mtime": 1772651430,
+      "ext": ".py"
+    },
+    {
       "path": "tools/observe/README.md",
       "size": 266,
       "mtime": 1772640791,
@@ -6390,6 +6402,12 @@
       "path": "tools/standard_change_policy_check.py",
       "size": 3482,
       "mtime": 1772611593,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/task_hygiene_check.py",
+      "size": 2071,
+      "mtime": 1772651452,
       "ext": ".py"
     },
     {
@@ -6537,6 +6555,12 @@
       "ext": ".py"
     },
     {
+      "path": "tools/test_markdown_link_check.py",
+      "size": 704,
+      "mtime": 1772651513,
+      "ext": ".py"
+    },
+    {
       "path": "tools/test_s15_binding_integrity.py",
       "size": 2657,
       "mtime": 1772637738,
@@ -6610,8 +6634,8 @@
     },
     {
       "path": "tools/validate_repo.py",
-      "size": 8576,
-      "mtime": 1772650320,
+      "size": 8731,
+      "mtime": 1772651462,
       "ext": ".py"
     },
     {

@@ -68,8 +68,8 @@ Design principle: auto-implement only low-risk, uncontroversial changes; route l
 1. Sweep for high-signal, low-controversy improvements across docs/code/structure:
    - consistency, clarity, naming, dead links, duplicate guidance, obvious hygiene/refactor items, missing guardrails
    - perform a **library relevance pass** across key knowledge surfaces (`governance/`, top-level process docs, `knowledge/`, `tools/`) to identify older artifacts that became newly relevant due to recent decisions/releases
-   - run `python3 tools/docs_hygiene_bundle.py` to execute docs-hygiene checks (local markdown link integrity + TASKS.md ID hygiene) with a single fail-fast gate before proposing doc edits
-   - run `python3 -m unittest tools/test_parser_smoke.py` to keep parser helper smoke coverage green before modifying automation scripts
+   - run `python3 tools/task_hygiene_check.py --file TASKS.md` and `python3 tools/markdown_link_check.py --changed-only` as fail-fast docs/task hygiene gates before proposing doc edits
+   - run `python3 -m unittest tools/test_markdown_link_check.py` to keep link-parser behavior coverage green before automation edits
 2. Perform OpenClaw release-delta check (see `OPENCLAW_RELEASE_DELTA_SOP.md`):
    - capture auditable command snapshot via `python3 tools/openclaw_release_delta_snapshot.py` (writes `knowledge/evidence/YYYY-MM-DD__openclaw-release-delta-snapshot.md`)
    - detect new versions (`openclaw update status`)
@@ -109,6 +109,7 @@ Design principle: auto-implement only low-risk, uncontroversial changes; route l
 ---
 
 ## Change Log
+- 2026-03-04: Updated continuous-improvement hygiene gates to current toolchain (`tools/task_hygiene_check.py`, `tools/markdown_link_check.py --changed-only`, `python3 -m unittest tools/test_markdown_link_check.py`) to avoid stale references and keep non-TDE maintenance checks active.
 - 2026-03-03: Expanded `continuous-improvement:sweep` runbook with explicit library relevance pass (`governance/`, process docs, `knowledge/`, `tools/`) and mandatory `TASKS.md` improvement-execution review (stale `IMP-AUTO-*` detection + next-step recommendation).
 - 2026-03-03: Added `tools/docs_hygiene_bundle.py` and wired continuous-improvement sweep to run docs-hygiene checks (markdown links + task ID hygiene) through a single fail-fast command.
 - 2026-03-03: Added `tools/openclaw_release_delta_snapshot.py` evidence-capture step to the continuous-improvement sweep runbook for auditable release-delta snapshots.

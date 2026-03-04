@@ -199,6 +199,8 @@ def main() -> int:
     run([sys.executable, "tools/gen_inventory.py"])
     run([sys.executable, "tools/gen_knowledge_indexes.py"])
     run([sys.executable, "tools/standard_change_policy_check.py", "--strict"])
+    run([sys.executable, "tools/task_hygiene_check.py", "--file", "TASKS.md"])
+    run([sys.executable, "tools/markdown_link_check.py", "--changed-only"])
 
     errors: list[str] = []
     messages: list[str] = []

@@ -19,3 +19,5 @@ jobs:
           pip install jsonschema pyyaml
       - name: Validate repo governance
         run: python tools/validate_repo.py
+      - name: Markdown link parser unit tests
+        run: python -m unittest tools/test_markdown_link_check.py

@@ -101,14 +101,17 @@ Use this until a dedicated work tool is selected.
 - [x] SEC-AUTO-20260304-01 | Resolve recurring `security.trust_model.multi_user_heuristic` warning by finalizing shared-vs-single trust boundary controls for Telegram group contexts (or isolating group traffic to separate gateway identity) and revalidating clean audit baseline.
   - [x] 2026-03-04 | Closed S26 under single-trust-boundary model with residual heuristic warning accepted and reopen triggers documented; evidence: `knowledge/evidence/2026-03-04__sec-auto-20260304-01-s26-closeout-single-trust-boundary.md`.
   - [x] 2026-03-04 | Re-validated stable posture (`sandbox.mode=off`, `tools.fs.workspaceOnly=true`) from host audit evidence shared by Peter.
-- [ ] IMP-AUTO-20260302-01 | Add an automated task-hygiene pass that flags duplicate task intents/IDs in `TASKS.md` to reduce recurring SEC-AUTO inbox noise.
+- [x] IMP-AUTO-20260302-01 | Add an automated task-hygiene pass that flags duplicate task intents/IDs in `TASKS.md` to reduce recurring SEC-AUTO inbox noise.
+  - [x] 2026-03-04 | Added `tools/task_hygiene_check.py` with duplicate open-ID and duplicate normalized-intent detection, and wired it into `tools/validate_repo.py` for fail-fast governance checks.
 - [x] IMP-AUTO-20260302-02 | Add lightweight unit tests for `tools/markdown_link_check.py` (code-fence ignore + optional title parsing) to prevent false-positive regressions in cron checks.
   - [x] 2026-03-04 | Added `tools/test_markdown_link_check.py` covering fenced-code link ignore and optional link-title parsing behavior; validated with `python3 -m unittest tools/test_markdown_link_check.py` (2/2 passing).
   - [x] 2026-03-04 | Re-ran cron hygiene baseline via `python3 tools/docs_hygiene_bundle.py` after test addition (pass in current workspace state).
 - [ ] IMP-AUTO-20260303-03 | Migrate or normalize legacy registry rows (camelCase + `type1|type2`) through the transition layer and publish a drift-burn-down snapshot to reduce residual schema mismatch risk.
   - [ ] 2026-03-04 | Daily information-model sweep reflagged residual schema drift: `REGISTRY_SCHEMAS_V1.md` still shows legacy `decisionType` + `type1|type2` examples while `DECISION_SCHEMA_V1.md` canonical enum remains `approve|reject|choose|escalate|review`; add explicit v1.1 harmonized examples and compatibility-map link.
-- [ ] IMP-AUTO-20260304-01 | Wire `tools/test_markdown_link_check.py` into the cron hygiene path (or adjacent CI check) so link-parser behavior regressions fail before scheduled sweeps.
-- [ ] IMP-AUTO-20260304-02 | Add `markdown_link_check.py --changed-only` mode (git-diff scoped) to reduce sweep runtime as the document corpus grows while preserving full-scan fallback.
+- [x] IMP-AUTO-20260304-01 | Wire `tools/test_markdown_link_check.py` into the cron hygiene path (or adjacent CI check) so link-parser behavior regressions fail before scheduled sweeps.
+  - [x] 2026-03-04 | Added `tools/test_markdown_link_check.py` and wired execution into `.github/workflows/governance-machine-check.yml`; updated cron sweep runbook to include the same unittest gate.
+- [x] IMP-AUTO-20260304-02 | Add `markdown_link_check.py --changed-only` mode (git-diff scoped) to reduce sweep runtime as the document corpus grows while preserving full-scan fallback.
+  - [x] 2026-03-04 | Implemented `tools/markdown_link_check.py --changed-only` (git diff scoped) and wired into `tools/validate_repo.py` + cron runbook for faster non-TDE hygiene sweeps.
 - [ ] IMP-AUTO-20260304-03 | Backfill canonical frontmatter for legacy `knowledge/reports/*.md` and add deterministic `knowledge/reports/INDEX.md` generator so daily sweeps no longer rely on manual reconstruction.
 - [ ] OPS-2026-043 | Chat Continuity Sprint 2 metrics rollout: define handoff completeness score + stale-context drift signal, then capture first weekly baseline evidence.
 
