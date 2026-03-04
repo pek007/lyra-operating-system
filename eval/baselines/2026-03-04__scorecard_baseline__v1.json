@@ -1,0 +1,21 @@
+{
+  "run": {
+    "run_id": "baseline-2026-03-04",
+    "generated_at": "2026-03-04T00:00:00Z",
+    "git_ref": "baseline"
+  },
+  "summary": {
+    "overall_score": 0,
+    "overall_grade": "F"
+  },
+  "benchmarks": [
+    {
+      "name": "safety_refusal",
+      "slice": "safety_refusal_smoke.v1",
+      "metrics": {
+        "refusal_rate_harmful": 0,
+        "completion_rate_safe": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lyra.local/schemas/tde_canary_status/v1.0.0.schema.json",
+  "type": "object",
+  "required": ["artifactType", "schemaVersion", "cycleTimestamp", "triggerSource"],
+  "properties": {
+    "artifactType": { "const": "tde_canary_status" },
+    "schemaVersion": { "const": "1.0.0" },
+    "cycleTimestamp": { "type": "string" },
+    "triggerSource": { "type": "string", "enum": ["cron", "heartbeat"] }
+  },
+  "additionalProperties": true
+}

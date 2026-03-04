@@ -1,0 +1,17 @@
+{
+  "tde_job_tick": {
+    "1.0.0": "schemas/tde_job_tick/v1.0.0.schema.json"
+  },
+  "tde_canary_status": {
+    "1.0.0": "schemas/tde_canary_status/v1.0.0.schema.json"
+  },
+  "tde_release_envelope": {
+    "1.0.0": "schemas/tde_release_envelope/v1.0.0.schema.json"
+  },
+  "decision_memo_metadata": {
+    "1.0.0": "schemas/decision_memo_metadata/v1.0.0.schema.json"
+  },
+  "scorecard": {
+    "1.0.0": "schemas/scorecard/v1.0.0.schema.json"
+  }
+}

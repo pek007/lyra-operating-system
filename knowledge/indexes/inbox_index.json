@@ -1,0 +1,10 @@
+{
+  "items": [
+    {
+      "path": "knowledge/inbox/INBOX_ENTRY_TEMPLATE_V1.md",
+      "title": "Inbox item",
+      "decision_id": null,
+      "status": "open"
+    }
+  ]
+}

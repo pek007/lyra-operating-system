@@ -1,0 +1,347 @@
+{
+  "items": [
+    {
+      "path": "knowledge/reports/2026-02-24__deepresearch__control-panel-vision__v1.md",
+      "title": "2026-02-24__deepresearch__control-panel-vision__v1",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-02-25__community-notes__openclaw-advanced-use-cases__v1.md",
+      "title": "2026-02-25__community-notes__openclaw-advanced-use-cases__v1",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-02-25__deepresearch__safe-human-like-tooling__v1.md",
+      "title": "2026-02-25__deepresearch__safe-human-like-tooling__v1",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__ai-native-software-delivery-operating-system-diagnostic-and-redesign__v1.md",
+      "title": "AI-Native Software Delivery Operating System Diagnostic and Redesign",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__architectures-for-separating-an-operating-system-component-from-a-control-panel-best-pract__v1.md",
+      "title": "Architectures for Separating an Operating System Component from a Control Panel: Best Practices and Evaluation of pek007/control-panel and pek007/lyra-operating-system",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__best-practices-for-task-and-decision-management-engines-for-lyra-openclaw__v1.md",
+      "title": "Best Practices for Task and Decision Management Engines for Lyra OpenClaw",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__best-practices-for-task-management-prioritization-kanban-backlog-workflows-decision-proces__v1.md",
+      "title": "Best Practices for Task Management, Prioritization, Kanban/Backlog Workflows, Decision Processes, and Hierarchical Task Organization \u2014 With a Lyra OpenClaw Blueprint",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__boundary-and-ownership-model-for-gateway-dashboard-and-control-panel__v1.md",
+      "title": "Boundary and Ownership Model for Gateway Dashboard and Control Panel",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__chief-architect-sub-agent-in-lyra-openclaw-best-practices-system-fit-and-an-implementation__v1.md",
+      "title": "Chief Architect Sub-Agent in Lyra OpenClaw: Best Practices, System Fit, and an Implementation-Ready Spec",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__continuous-action-orchestration-for-lyra-on-openclaw__v1.md",
+      "title": "Continuous-Action Orchestration for Lyra on OpenClaw",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__continuously-improving-selfimproving-ai-agent-systems-for-lyra-openclaw__v1.md",
+      "title": "Continuously Improving Self\u2011Improving AI Agent Systems for Lyra OpenClaw",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__control-panel-task-engine-and-ui-brainstorm-for-the-third-sprint__v1.md",
+      "title": "Control Panel Task Engine and UI Brainstorm for the Third Sprint",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__decision-memo-task-decision-engine-project-definition-gate-v2__v1.md",
+      "title": "Decision Memo \u2014 Task & Decision Engine Project Definition Gate v2",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__designing-safe-human-like-tooling-for-lyra-in-openclaw__v1.md",
+      "title": "Designing Safe Human-Like Tooling for Lyra in OpenClaw",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__evaluation-of-the-top-clawhub-skills-for-openclaw__v1.md",
+      "title": "Evaluation of the Top ClawHub Skills for OpenClaw",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__feasibility-study-for-a-task-and-decision-management-engine-in-lyra-openclaw__v1.md",
+      "title": "Feasibility study for a task and decision management engine in Lyra OpenClaw",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__first-version-information-model-for-the-lyra-openclaw-system__v1.md",
+      "title": "First-Version Information Model for the Lyra OpenClaw System",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__gpt-5-3-codex-in-lyra-openclaw-capabilities-failure-modes-and-a-prompting-md-hygiene-playb__v1.md",
+      "title": "GPT-5.3-Codex in Lyra OpenClaw: Capabilities, Failure Modes, and a Prompting/MD Hygiene Playbook",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__idempotent-action-contract-patterns-for-agent-tool-execution__v1.md",
+      "title": "Idempotent Action Contract Patterns for Agent Tool Execution",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__improving-memory-and-knowledge-management-for-lyra-on-openclaw__v1.md",
+      "title": "Improving Memory and Knowledge Management for Lyra on OpenClaw",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__independent-architecture-review-for-a-localfirst-executive-intelligence-layer__v1.md",
+      "title": "Independent Architecture Review for a Local\u2011First Executive Intelligence Layer",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__independent-architecture-review-for-the-localfirst-control-panel-sprint-three__v1.md",
+      "title": "Independent Architecture Review for the Local\u2011First Control Panel Sprint Three",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__integrating-markdown-based-os-files-into-an-agent-runtime__v1.md",
+      "title": "Integrating Markdown-Based \u201cOS\u201d Files Into an Agent Runtime",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__lyra-openclaw-control-panel-architecture-second-opinion__v1.md",
+      "title": "Lyra OpenClaw Control Panel Architecture Second Opinion",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__next-phase-development-process-and-control-panel-design-for-lyra-openclaw__v1.md",
+      "title": "Next-Phase Development Process and Control Panel Design for Lyra OpenClaw",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__policy-as-code-decision-rights-for-lyra-tde__v1.md",
+      "title": "Policy-as-Code Decision Rights for Lyra TDE",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__post-mortem-on-the-control-panel-project-in-the-lyra-openclaw-system__v1.md",
+      "title": "Post-mortem on the Control Panel project in the Lyra OpenClaw system",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__pragmatic-expert-level-cybersecurity-recommendations-for-the-openclaw-solution__v1.md",
+      "title": "Pragmatic, Expert-Level Cybersecurity Recommendations for the OpenClaw Solution",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__prompting-playbooks-for-claude-code-and-openai-deep-research-in-lyra-openclaw__v1.md",
+      "title": "Prompting Playbooks for Claude Code and OpenAI Deep Research in Lyra OpenClaw",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__sprint-5-architecture-review-for-a-local-first-control-panel__v1.md",
+      "title": "Sprint 5 Architecture Review for a Local-First Control Panel",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__sprint-6-implementation-packet-review-for-os-only-task-service__v1.md",
+      "title": "Sprint 6 Implementation Packet Review for OS-only Task Service",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__sprint-6-review-of-task-service-design-for-a-localfirst-control-panel__v1.md",
+      "title": "Sprint 6 Review of Task Service Design for a Local\u2011First Control Panel",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__structuring-the-lyra-openclaw-markdown-workspace__v1.md",
+      "title": "Deep research on structuring the Lyra OpenClaw markdown workspace",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__task-and-decision-management-engine-for-lyra-openclaw-job-based-work-orchestration-and-use__v1.md",
+      "title": "Task and Decision Management Engine for Lyra OpenClaw: Job-Based Work Orchestration and Use-Case Framework",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__task-management-service-design-brief-for-a-local-first-control-panel__v1.md",
+      "title": "Task Management Service Design Brief for a Local-First Control Panel",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__trello-cutover-playbook-low-risk-migration-to-task-decision-engine__v1.md",
+      "title": "Trello Cutover Playbook: Low-Risk Migration to a Task & Decision Engine",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__expert-analysis__autonomous-agentic-architectures-an-exhaustive-analysis-of-openclaw-capabilities-replicabl__v1.md",
+      "title": "**Autonomous Agentic Architectures: An Exhaustive Analysis of OpenClaw Capabilities, Replicable Paradigms, and Enterprise Use Cases**",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__guide__openclaw-prompting-guide-for-claude-code__v1.md",
+      "title": "OpenClaw Prompting Guide for Claude Code",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__research__openclaw-direction-package-analysis-and-implementation-recommendation__v1.md",
+      "title": "OpenClaw Direction Package: Analysis and Implementation Recommendation",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__research__research-report-ai-agent-deployment-and-jobs-vs-agents-in-openclaw__v1.md",
+      "title": "Research Report: AI Agent Deployment and 'Jobs vs Agents' in OpenClaw",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__research__setting-direction-in-a-multi-agent-openclaw-system__v1.md",
+      "title": "Setting Direction in a Multi-Agent OpenClaw System",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-03__deepresearch__evaluation-and-reliability-framework-for-openclaw-tool-using-agents__v1.md",
+      "title": "Evaluation and reliability framework for OpenClaw tool-using agents",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-03__deepresearch__opportunity-to-execution-engine-for-lyra-openclaw__v1.md",
+      "title": "2026-03-03__deepresearch__opportunity-to-execution-engine-for-lyra-openclaw__v1",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-03__deepresearch__prompt-injection-defenses-and-best-practices__v1.md",
+      "title": "Lyra OpenClaw Prompt-Injection Defenses and Best Practices",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-04__deepresearch__adapting-sprint-practices-to-ai-agent-centric-lyra-openclaw__v1.md",
+      "title": "2026-03-04__deepresearch__adapting-sprint-practices-to-ai-agent-centric-lyra-openclaw__v1",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-04__deepresearch__knowledge-library-audit-and-white-spots__v1.md",
+      "title": "2026-03-04__deepresearch__knowledge-library-audit-and-white-spots__v1",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-04__deepresearch__machine-checkable-governance-and-evaluation-bootstrap__v1.md",
+      "title": "2026-03-04__deepresearch__machine-checkable-governance-and-evaluation-bootstrap__v1",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/INDEX.md",
+      "title": "INDEX",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/WEEKLY_SYNTHESIS__2026-03-03.md",
+      "title": "WEEKLY_SYNTHESIS__2026-03-03",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    }
+  ]
+}

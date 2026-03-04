@@ -1,0 +1,10 @@
+{
+  "items": [
+    {
+      "path": "knowledge/decisions/DECISION_MEMO_TEMPLATE_V1.md",
+      "title": "Decision title",
+      "decision_id": "DEC-YYYY-NNN",
+      "status": "proposed"
+    }
+  ]
+}

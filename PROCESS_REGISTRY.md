@@ -27,6 +27,7 @@ Track core processes, standards, and runbooks with review state.
 | BRAVE_USAGE_BASELINE_2026-03.md | Usage Baseline | Lyra | Active | 2026-02-24 | 2026-03-26 |
 | REGISTRY_SCHEMAS_V1.md | Data Contract | Lyra | Active | 2026-02-25 | 2026-03-25 |
 | CONTROL_TOWER_MVP_VIEWS_SPEC.md | UI Spec | Lyra | Active | 2026-02-25 | 2026-03-25 |
+| SPRINT3_ARCHITECTURE_BRIEF_V1.md | Architecture Brief | Peter/Lyra | Draft | 2026-03-02 | 2026-03-09 |
 | tools/evidence_ingest.py | Automation Script | Lyra | Active | 2026-02-25 | 2026-03-25 |
 | tools/markdown_link_check.py | Automation Script | Lyra | Active | 2026-02-28 | 2026-03-28 |
 | SPRINT3_WEEKLY_CADENCE.md | Sprint Cadence | Peter/Lyra | Superseded | 2026-02-26 | - |
@@ -59,6 +60,20 @@ Track core processes, standards, and runbooks with review state.
 | OPENCLAW_PROMPTING_GUIDE_CLAUDE_CODE_V2.md | Guide | Peter/Lyra | Active | 2026-02-28 | 2026-03-28 |
 | SOFTWARE_DELIVERY_PROCESS_3PP_OS.md | Delivery Process | Peter/Lyra | Active | 2026-02-27 | 2026-03-27 |
 | LEARNING_LOOPS_OS_AND_PROJECT.md | Learning Framework | Peter/Lyra | Active | 2026-02-27 | 2026-03-27 |
+| INFORMATION_MANAGEMENT_PROCESS_V1.md | Process | Peter/Lyra | Active | 2026-03-01 | 2026-03-31 |
+| JOBS_PROCESS_V1.md | Process | Peter/Lyra | Active | 2026-03-01 | 2026-03-31 |
+| PROCESS_LIFECYCLE_PROCESS_V1.md | Meta-Process | Peter/Lyra | Active | 2026-03-01 | 2026-03-31 |
+| PROCESS_AUDIT_FUNCTION_V1.md | Audit Function | Peter/Lyra | Active | 2026-03-01 | 2026-03-31 |
+| SOFTWARE_DEVELOPMENT_PROCESS_V1.md | Process | Peter/Lyra | Active | 2026-03-01 | 2026-03-31 |
+| RESTORE_PROCESS_V1.md | Process | Peter/Lyra | Active | 2026-03-01 | 2026-03-31 |
+| SECURITY_PROCESS_V1.md | Process | Peter/Lyra | Active | 2026-03-01 | 2026-03-31 |
+| CONTINUOUS_IMPROVEMENT_PROCESS_V1.md | Process | Peter/Lyra | Active | 2026-03-01 | 2026-03-31 |
+| TASK_DECISION_MANAGEMENT_PROCESS_V1.md | Process | Peter/Lyra | Active | 2026-03-01 | 2026-03-31 |
+| EXECUTIVE_COMMUNICATION_PROTOCOL_V1.md | Communication Process | Peter/Lyra | Active | 2026-03-01 | 2026-03-31 |
+| STANDARD_CHANGE_CATALOG_V1.md | Policy Standard | Peter/Lyra | Draft | 2026-03-04 | 2026-03-18 |
+| governance/PLAN_EXECUTION_PORTFOLIO_2026-03-04.md | Governance Portfolio | Peter/Lyra | Active | 2026-03-04 | 2026-03-11 |
+| MILESTONE_0_1_MACHINE_CHECKABLE_GOVERNANCE.md | Milestone Guide | Peter/Lyra | Active | 2026-03-04 | 2026-03-18 |
+| STANDARD_CHANGE_PILOT_PROTOCOL_V1.md | Pilot Protocol | Peter/Lyra | Active | 2026-03-04 | 2026-03-18 |
 | JOB_MEMORY_PORTABILITY_PROCESS_V1.md | Process | Peter/Lyra | Active | 2026-03-02 | 2026-04-02 |
 | GDPR_AI_ACT_COMPLIANCE_BASELINE_V1.md | Compliance Baseline | Peter/Lyra | Active | 2026-03-02 | 2026-04-02 |
 

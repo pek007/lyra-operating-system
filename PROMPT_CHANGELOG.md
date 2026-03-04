@@ -16,6 +16,17 @@
 
 ## Entries
 
+### 2026-03-03
+- Template: `prompts/deep-research/RO_public.md`, `prompts/deep-research/RO_private.md`, `prompts/deep-research/GUIDELINE.md`
+- Version: 1.0.1 (RO_public/RO_private), 1.0.0 (GUIDELINE)
+- Change type: PATCH
+- Summary: Added explicit hybrid style guidance combining expert-depth with concise decision-structured output; added deep-research prompting guideline.
+- Rationale: Improve deep research quality without sacrificing actionability; standardize prompt-writing approach.
+- Expected impact: Better technical depth, clearer recommendations, lower fluff, more consistent report quality.
+- Validation run: Template conformance check (manual); next deep-research run to compare output quality.
+- Owner: Peter + Lyra
+- Rollback plan: Remove `<style>` blocks from RO templates and delete `prompts/deep-research/GUIDELINE.md`.
+
 ### 2026-02-28
 - Template: Claude Code prompting schema + WO/Codex contract templates
 - Version: 1.1.0 (templates), Prompting OS policy refresh

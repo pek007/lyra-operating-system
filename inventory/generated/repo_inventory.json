@@ -1,0 +1,5202 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedBy": "tools/gen_inventory.py",
+  "files": [
+    {
+      "path": ".DS_Store",
+      "size": 6148,
+      "mtime": 1772372851,
+      "ext": ""
+    },
+    {
+      "path": ".github/workflows/governance-machine-check.yml",
+      "size": 460,
+      "mtime": 1772609131,
+      "ext": ".yml"
+    },
+    {
+      "path": ".gitignore",
+      "size": 236,
+      "mtime": 1772015989,
+      "ext": ""
+    },
+    {
+      "path": ".restore-tests/RST-2026-001/CONTROL_PANEL.md",
+      "size": 1046,
+      "mtime": 1771961459,
+      "ext": ".md"
+    },
+    {
+      "path": ".restore-tests/RST-2026-001/MISSION.md",
+      "size": 1098,
+      "mtime": 1771961459,
+      "ext": ".md"
+    },
+    {
+      "path": ".restore-tests/RST-2026-001/TASKS.md",
+      "size": 1277,
+      "mtime": 1771961459,
+      "ext": ".md"
+    },
+    {
+      "path": ".restore-tests/RST-2026-001/original.sha1",
+      "size": 259,
+      "mtime": 1771961459,
+      "ext": ".sha1"
+    },
+    {
+      "path": ".restore-tests/RST-2026-001/restored.sha1",
+      "size": 343,
+      "mtime": 1771961459,
+      "ext": ".sha1"
+    },
+    {
+      "path": "ACCESS_REVIEW_LOG.md",
+      "size": 1607,
+      "mtime": 1772352927,
+      "ext": ".md"
+    },
+    {
+      "path": "ADR-001_SYSTEMS_OF_RECORD.md",
+      "size": 3784,
+      "mtime": 1771909706,
+      "ext": ".md"
+    },
+    {
+      "path": "AGENTS.md",
+      "size": 9515,
+      "mtime": 1772544251,
+      "ext": ".md"
+    },
+    {
+      "path": "AGENT_DEPLOYMENT_DECISION_TEMPLATE.md",
+      "size": 732,
+      "mtime": 1772262994,
+      "ext": ".md"
+    },
+    {
+      "path": "AGENT_EXECUTION_SEMANTICS.md",
+      "size": 1000,
+      "mtime": 1771961587,
+      "ext": ".md"
+    },
+    {
+      "path": "AGENT_LIFECYCLE_SOP_V1.md",
+      "size": 3314,
+      "mtime": 1772262976,
+      "ext": ".md"
+    },
+    {
+      "path": "AGENT_PERMISSION_ENVELOPES.md",
+      "size": 1489,
+      "mtime": 1771961587,
+      "ext": ".md"
+    },
+    {
+      "path": "AI_NATIVE_OPERATING_POLICY_V1.md",
+      "size": 5030,
+      "mtime": 1772301113,
+      "ext": ".md"
+    },
+    {
+      "path": "ARCHITECTURE_REVIEW_REPORT_TEMPLATE.md",
+      "size": 1206,
+      "mtime": 1772129778,
+      "ext": ".md"
+    },
+    {
+      "path": "ARTIFACT_ACTIVATION_MODEL_V1.md",
+      "size": 5497,
+      "mtime": 1772129778,
+      "ext": ".md"
+    },
+    {
+      "path": "BOOTSTRAP.md",
+      "size": 1470,
+      "mtime": 1771872439,
+      "ext": ".md"
+    },
+    {
+      "path": "BRAVE_USAGE_BASELINE_2026-03.md",
+      "size": 760,
+      "mtime": 1771961548,
+      "ext": ".md"
+    },
+    {
+      "path": "BUILD_SPEC_CONTROL_PANEL_MVP.md",
+      "size": 3511,
+      "mtime": 1772007171,
+      "ext": ".md"
+    },
+    {
+      "path": "BUSINESS_CASE_THRESHOLD_RESEARCH_PROVIDERS.md",
+      "size": 1667,
+      "mtime": 1771936384,
+      "ext": ".md"
+    },
+    {
+      "path": "CADENCE_GOVERNANCE_POLICY.md",
+      "size": 1961,
+      "mtime": 1772172706,
+      "ext": ".md"
+    },
+    {
+      "path": "CA_TEMPLATE_V1.md",
+      "size": 1054,
+      "mtime": 1772610058,
+      "ext": ".md"
+    },
+    {
+      "path": "CHAT_CONTINUITY_PROTOCOL_V1.md",
+      "size": 2101,
+      "mtime": 1772495725,
+      "ext": ".md"
+    },
+    {
+      "path": "CHIEF_ARCHITECT_AGENT_SPEC.md",
+      "size": 7641,
+      "mtime": 1772262998,
+      "ext": ".md"
+    },
+    {
+      "path": "CHIEF_ARCHITECT_GO_NO_GO_2026-02-26.md",
+      "size": 2294,
+      "mtime": 1772129778,
+      "ext": ".md"
+    },
+    {
+      "path": "CHIEF_ARCHITECT_PILOT_CHECKLIST.md",
+      "size": 931,
+      "mtime": 1772263002,
+      "ext": ".md"
+    },
+    {
+      "path": "CLAUDE_CODE_PROMPT_CONTROL_PANEL_MVP.md",
+      "size": 1283,
+      "mtime": 1772007192,
+      "ext": ".md"
+    },
+    {
+      "path": "CODEX_EVAL_SCORECARD_V1.md",
+      "size": 827,
+      "mtime": 1772129778,
+      "ext": ".md"
+    },
+    {
+      "path": "CODEX_LANE_POLICY_V1.md",
+      "size": 2825,
+      "mtime": 1772129778,
+      "ext": ".md"
+    },
+    {
+      "path": "CODEX_PROMPT_CONTRACT_TEMPLATE.md",
+      "size": 984,
+      "mtime": 1772306938,
+      "ext": ".md"
+    },
+    {
+      "path": "CONTINUOUS_ACTION_ORCHESTRATION_V1.md",
+      "size": 5726,
+      "mtime": 1772096767,
+      "ext": ".md"
+    },
+    {
+      "path": "CONTINUOUS_IMPROVEMENT_PROCESS_V1.md",
+      "size": 1834,
+      "mtime": 1772545258,
+      "ext": ".md"
+    },
+    {
+      "path": "CONTROL_PANEL.md",
+      "size": 1173,
+      "mtime": 1771961598,
+      "ext": ".md"
+    },
+    {
+      "path": "CONTROL_PANEL_TERMINATION_ACTION_PLAN_V1.md",
+      "size": 3619,
+      "mtime": 1772298586,
+      "ext": ".md"
+    },
+    {
+      "path": "CONTROL_PANEL_VNEXT_EXECUTION_PLAN.md",
+      "size": 7267,
+      "mtime": 1772092046,
+      "ext": ".md"
+    },
+    {
+      "path": "CONTROL_TOWER_MVP_VIEWS_SPEC.md",
+      "size": 1344,
+      "mtime": 1772005041,
+      "ext": ".md"
+    },
+    {
+      "path": "CRON_SPEC_AUTONOMOUS_GOVERNANCE_SWEEPS.md",
+      "size": 5888,
+      "mtime": 1772545270,
+      "ext": ".md"
+    },
+    {
+      "path": "CRON_SPEC_DAILY_HYGIENE.md",
+      "size": 1616,
+      "mtime": 1771936384,
+      "ext": ".md"
+    },
+    {
+      "path": "DATA_CONTRACT_INVENTORY_TEMPLATE_V1.md",
+      "size": 254,
+      "mtime": 1772298595,
+      "ext": ".md"
+    },
+    {
+      "path": "DECISION_PRINCIPLES.md",
+      "size": 4406,
+      "mtime": 1772054860,
+      "ext": ".md"
+    },
+    {
+      "path": "DECISION_SCHEMA_V1.md",
+      "size": 6154,
+      "mtime": 1772511342,
+      "ext": ".md"
+    },
+    {
+      "path": "DESIGN_PRINCIPLES.md",
+      "size": 2605,
+      "mtime": 1772054870,
+      "ext": ".md"
+    },
+    {
+      "path": "DR-PLAN.md",
+      "size": 2615,
+      "mtime": 1772048410,
+      "ext": ".md"
+    },
+    {
+      "path": "EXECUTIVE_COMMUNICATION_PROTOCOL_V1.md",
+      "size": 1047,
+      "mtime": 1772397200,
+      "ext": ".md"
+    },
+    {
+      "path": "FINOPS_LITE_POLICY.md",
+      "size": 866,
+      "mtime": 1771938031,
+      "ext": ".md"
+    },
+    {
+      "path": "GOV-001_RETENTION_ACCESS_BASELINE.md",
+      "size": 1575,
+      "mtime": 1771920059,
+      "ext": ".md"
+    },
+    {
+      "path": "HEARTBEAT.md",
+      "size": 168,
+      "mtime": 1771872439,
+      "ext": ".md"
+    },
+    {
+      "path": "IDENTITY.md",
+      "size": 209,
+      "mtime": 1772044385,
+      "ext": ".md"
+    },
+    {
+      "path": "INCIDENT_LOG.md",
+      "size": 3329,
+      "mtime": 1772563321,
+      "ext": ".md"
+    },
+    {
+      "path": "INFORMATION_MANAGEMENT_PROCESS_V1.md",
+      "size": 1624,
+      "mtime": 1772375213,
+      "ext": ".md"
+    },
+    {
+      "path": "IR-001_INCIDENT_MINI_RUNBOOK.md",
+      "size": 2251,
+      "mtime": 1771920059,
+      "ext": ".md"
+    },
+    {
+      "path": "JOBS_PROCESS_V1.md",
+      "size": 1418,
+      "mtime": 1772375213,
+      "ext": ".md"
+    },
+    {
+      "path": "JOB_CHANGE_WORKFLOW_TEMPLATE_V1.md",
+      "size": 2889,
+      "mtime": 1772507122,
+      "ext": ".md"
+    },
+    {
+      "path": "JOB_MARKET_MODEL_V1.md",
+      "size": 7571,
+      "mtime": 1772544248,
+      "ext": ".md"
+    },
+    {
+      "path": "KNOWLEDGE_BASE_SYSTEM.md",
+      "size": 1180,
+      "mtime": 1771962830,
+      "ext": ".md"
+    },
+    {
+      "path": "LEARNING_LOOPS_OS_AND_PROJECT.md",
+      "size": 1373,
+      "mtime": 1772200429,
+      "ext": ".md"
+    },
+    {
+      "path": "MEMORY_KERNEL_V1.md",
+      "size": 6117,
+      "mtime": 1772092814,
+      "ext": ".md"
+    },
+    {
+      "path": "METRICS_WEEKLY.md",
+      "size": 2627,
+      "mtime": 1771909530,
+      "ext": ".md"
+    },
+    {
+      "path": "MILESTONE_0_1.md",
+      "size": 1051,
+      "mtime": 1772609147,
+      "ext": ".md"
+    },
+    {
+      "path": "MILESTONE_0_1_MACHINE_CHECKABLE_GOVERNANCE.md",
+      "size": 1369,
+      "mtime": 1772609793,
+      "ext": ".md"
+    },
+    {
+      "path": "MISSION.md",
+      "size": 1098,
+      "mtime": 1771913054,
+      "ext": ".md"
+    },
+    {
+      "path": "MODEL_ROUTING_POLICY.md",
+      "size": 4501,
+      "mtime": 1772129778,
+      "ext": ".md"
+    },
+    {
+      "path": "MODEL_ROUTING_SCORECARD.md",
+      "size": 1051,
+      "mtime": 1771961587,
+      "ext": ".md"
+    },
+    {
+      "path": "MULTI_AGENT_OPERATING_MODEL_V1.md",
+      "size": 4066,
+      "mtime": 1771938943,
+      "ext": ".md"
+    },
+    {
+      "path": "MULTI_AGENT_OPERATING_MODEL_V1_1.md",
+      "size": 2690,
+      "mtime": 1771960266,
+      "ext": ".md"
+    },
+    {
+      "path": "OPENCLAW_CONFIG_CHANGE_CHECKLIST_V1.md",
+      "size": 650,
+      "mtime": 1772306384,
+      "ext": ".md"
+    },
+    {
+      "path": "OPENCLAW_CONFIG_CHANGE_SOP_V1.md",
+      "size": 2355,
+      "mtime": 1772306378,
+      "ext": ".md"
+    },
+    {
+      "path": "OPENCLAW_PROMPTING_GUIDE_CLAUDE_CODE_V2.md",
+      "size": 1758,
+      "mtime": 1772306879,
+      "ext": ".md"
+    },
+    {
+      "path": "OPENCLAW_RELEASE_DELTA_SOP.md",
+      "size": 1513,
+      "mtime": 1772189198,
+      "ext": ".md"
+    },
+    {
+      "path": "OPERATING_GOVERNANCE_DASHBOARD_V1.md",
+      "size": 3722,
+      "mtime": 1772375769,
+      "ext": ".md"
+    },
+    {
+      "path": "OPERATING_SYSTEM_FULL_EXPORT.md",
+      "size": 31067,
+      "mtime": 1771914611,
+      "ext": ".md"
+    },
+    {
+      "path": "OPERATING_SYSTEM_FULL_EXPORT_2026-02-24.md",
+      "size": 66053,
+      "mtime": 1771958261,
+      "ext": ".md"
+    },
+    {
+      "path": "OPS-001_BACKUP_RESTORE_RUNBOOK.md",
+      "size": 1498,
+      "mtime": 1771920059,
+      "ext": ".md"
+    },
+    {
+      "path": "PRINCIPLES_REGISTRY.md",
+      "size": 1056,
+      "mtime": 1771913054,
+      "ext": ".md"
+    },
+    {
+      "path": "PROCESS_AUDIT_FUNCTION_V1.md",
+      "size": 761,
+      "mtime": 1772375213,
+      "ext": ".md"
+    },
+    {
+      "path": "PROCESS_LIFECYCLE_PROCESS_V1.md",
+      "size": 1494,
+      "mtime": 1772375213,
+      "ext": ".md"
+    },
+    {
+      "path": "PROCESS_REGISTRY.md",
+      "size": 6776,
+      "mtime": 1772610070,
+      "ext": ".md"
+    },
+    {
+      "path": "PRODUCT_BOUNDARY_TEMPLATE.md",
+      "size": 1331,
+      "mtime": 1772182055,
+      "ext": ".md"
+    },
+    {
+      "path": "PRODUCT_PORTFOLIO_REGISTRY.md",
+      "size": 2312,
+      "mtime": 1772182049,
+      "ext": ".md"
+    },
+    {
+      "path": "PROJECT_START_PACKET_CHAT_CONTINUITY_V1.md",
+      "size": 2363,
+      "mtime": 1772393058,
+      "ext": ".md"
+    },
+    {
+      "path": "PROJECT_START_PACKET_TEMPLATE_V1.md",
+      "size": 520,
+      "mtime": 1772298595,
+      "ext": ".md"
+    },
+    {
+      "path": "PROMPTING_OS_V1.md",
+      "size": 5693,
+      "mtime": 1772306911,
+      "ext": ".md"
+    },
+    {
+      "path": "PROMPT_CHANGELOG.md",
+      "size": 2370,
+      "mtime": 1772568142,
+      "ext": ".md"
+    },
+    {
+      "path": "PROMPT_DRIFT_REVIEW_SOP.md",
+      "size": 1826,
+      "mtime": 1772129778,
+      "ext": ".md"
+    },
+    {
+      "path": "REGISTRY_DECISION_COMPATIBILITY_MAP_V1_1.md",
+      "size": 3083,
+      "mtime": 1772510119,
+      "ext": ".md"
+    },
+    {
+      "path": "REGISTRY_SCHEMAS_V1.md",
+      "size": 2836,
+      "mtime": 1772511335,
+      "ext": ".md"
+    },
+    {
+      "path": "REPO_NAMING_STANDARD_V1.md",
+      "size": 847,
+      "mtime": 1772182062,
+      "ext": ".md"
+    },
+    {
+      "path": "RESTORE_PROCESS_V1.md",
+      "size": 456,
+      "mtime": 1772375233,
+      "ext": ".md"
+    },
+    {
+      "path": "RESTORE_TEST_LOG.md",
+      "size": 615,
+      "mtime": 1771961466,
+      "ext": ".md"
+    },
+    {
+      "path": "RISK_REGISTER.md",
+      "size": 1007,
+      "mtime": 1771961656,
+      "ext": ".md"
+    },
+    {
+      "path": "ROLE_BASED_CONTROL_PANEL_V1.md",
+      "size": 3226,
+      "mtime": 1772054543,
+      "ext": ".md"
+    },
+    {
+      "path": "SEC-001_BASELINE_CHECKLIST.md",
+      "size": 1675,
+      "mtime": 1772352934,
+      "ext": ".md"
+    },
+    {
+      "path": "SECURITY_ADOPTION_PLAN.md",
+      "size": 6014,
+      "mtime": 1772086175,
+      "ext": ".md"
+    },
+    {
+      "path": "SECURITY_PROCESS_V1.md",
+      "size": 536,
+      "mtime": 1772375233,
+      "ext": ".md"
+    },
+    {
+      "path": "SEC_REVIEW_2026-02-24.md",
+      "size": 1265,
+      "mtime": 1772004816,
+      "ext": ".md"
+    },
+    {
+      "path": "SELF_IMPROVEMENT_LOOP_V1.md",
+      "size": 5737,
+      "mtime": 1772092358,
+      "ext": ".md"
+    },
+    {
+      "path": "SERVICE_BOUNDARY_ARCHITECTURE.md",
+      "size": 1692,
+      "mtime": 1772033101,
+      "ext": ".md"
+    },
+    {
+      "path": "SITUATIONAL_AWARENESS.md",
+      "size": 1344,
+      "mtime": 1772004866,
+      "ext": ".md"
+    },
+    {
+      "path": "SOFTWARE_DELIVERY_PROCESS_3PP_OS.md",
+      "size": 2181,
+      "mtime": 1772200734,
+      "ext": ".md"
+    },
+    {
+      "path": "SOFTWARE_DEVELOPMENT_PROCESS_V1.md",
+      "size": 484,
+      "mtime": 1772375233,
+      "ext": ".md"
+    },
+    {
+      "path": "SOP-001_INTAKE_TRIAGE.md",
+      "size": 2650,
+      "mtime": 1772298601,
+      "ext": ".md"
+    },
+    {
+      "path": "SOUL.md",
+      "size": 2285,
+      "mtime": 1772606592,
+      "ext": ".md"
+    },
+    {
+      "path": "SPRINT3_ARCHITECTURE_BRIEF_V1.md",
+      "size": 5065,
+      "mtime": 1772487963,
+      "ext": ".md"
+    },
+    {
+      "path": "SPRINT3_CLOSEOUT_PACK_V1.md",
+      "size": 3132,
+      "mtime": 1772493331,
+      "ext": ".md"
+    },
+    {
+      "path": "SPRINT3_GUARDRAILS_PACK_V1.md",
+      "size": 2885,
+      "mtime": 1772488530,
+      "ext": ".md"
+    },
+    {
+      "path": "SPRINT3_WEEKLY_CADENCE.md",
+      "size": 354,
+      "mtime": 1772130367,
+      "ext": ".md"
+    },
+    {
+      "path": "SPRINT_ARCHITECTURE_BRIEF_TEMPLATE.md",
+      "size": 1150,
+      "mtime": 1772099571,
+      "ext": ".md"
+    },
+    {
+      "path": "STANDARD_CHANGE_CATALOG_V1.md",
+      "size": 4747,
+      "mtime": 1772606962,
+      "ext": ".md"
+    },
+    {
+      "path": "STANDARD_CHANGE_PILOT_PROTOCOL_V1.md",
+      "size": 1549,
+      "mtime": 1772610067,
+      "ext": ".md"
+    },
+    {
+      "path": "STD-001_DEFINITION_OF_DONE.md",
+      "size": 1640,
+      "mtime": 1772179196,
+      "ext": ".md"
+    },
+    {
+      "path": "SUBSCRIPTION_REGISTER.md",
+      "size": 1806,
+      "mtime": 1771961555,
+      "ext": ".md"
+    },
+    {
+      "path": "SYSTEM_OWNERSHIP_CONTRACT_TEMPLATE_V1.md",
+      "size": 398,
+      "mtime": 1772298595,
+      "ext": ".md"
+    },
+    {
+      "path": "SYSTEM_REGISTRY.md",
+      "size": 1074,
+      "mtime": 1771913054,
+      "ext": ".md"
+    },
+    {
+      "path": "TASKS.md",
+      "size": 38033,
+      "mtime": 1772610303,
+      "ext": ".md"
+    },
+    {
+      "path": "TASK_DECISION_MANAGEMENT_PROCESS_V1.md",
+      "size": 721,
+      "mtime": 1772375233,
+      "ext": ".md"
+    },
+    {
+      "path": "TASK_LINKING_STANDARD.md",
+      "size": 1258,
+      "mtime": 1771961447,
+      "ext": ".md"
+    },
+    {
+      "path": "TASK_SYSTEM_POLICY_V1.md",
+      "size": 4817,
+      "mtime": 1772088373,
+      "ext": ".md"
+    },
+    {
+      "path": "TEAM_IDENTITY.md",
+      "size": 331,
+      "mtime": 1772044802,
+      "ext": ".md"
+    },
+    {
+      "path": "TOOLS.md",
+      "size": 860,
+      "mtime": 1771872439,
+      "ext": ".md"
+    },
+    {
+      "path": "TOOL_CAPABILITY_CONTRACT_TEMPLATE.md",
+      "size": 660,
+      "mtime": 1772035342,
+      "ext": ".md"
+    },
+    {
+      "path": "TRELLO_CONNECTOR_V1.md",
+      "size": 1822,
+      "mtime": 1771943472,
+      "ext": ".md"
+    },
+    {
+      "path": "USER.md",
+      "size": 2038,
+      "mtime": 1772303561,
+      "ext": ".md"
+    },
+    {
+      "path": "WAYS_OF_WORKING_V1.md",
+      "size": 4462,
+      "mtime": 1771881471,
+      "ext": ".md"
+    },
+    {
+      "path": "WO-2026-CHAT-CONTINUITY-S1.md",
+      "size": 2318,
+      "mtime": 1772393058,
+      "ext": ".md"
+    },
+    {
+      "path": "WO_TEMPLATE_V1.md",
+      "size": 1165,
+      "mtime": 1772610055,
+      "ext": ".md"
+    },
+    {
+      "path": "assets/avatar/lyra-avatar-v1.png",
+      "size": 301695,
+      "mtime": 1772044385,
+      "ext": ".png"
+    },
+    {
+      "path": "assets/avatar/lyra-team-avatar-v1.png",
+      "size": 344388,
+      "mtime": 1772044802,
+      "ext": ".png"
+    },
+    {
+      "path": "backup-checklist.md",
+      "size": 1658,
+      "mtime": 1772048410,
+      "ext": ".md"
+    },
+    {
+      "path": "docs/architecture/openclaw-agent-deployment-report-2026-02-28.md",
+      "size": 20593,
+      "mtime": 1772263032,
+      "ext": ".md"
+    },
+    {
+      "path": "eval/baselines/2026-03-04__scorecard_baseline__v1.json",
+      "size": 400,
+      "mtime": 1772609140,
+      "ext": ".json"
+    },
+    {
+      "path": "eval/slices/safety_refusal_smoke.v1.yaml",
+      "size": 549,
+      "mtime": 1772609136,
+      "ext": ".yaml"
+    },
+    {
+      "path": "evidence-pack-template.md",
+      "size": 1317,
+      "mtime": 1772048236,
+      "ext": ".md"
+    },
+    {
+      "path": "governance/PLAN_EXECUTION_PORTFOLIO_2026-03-04.md",
+      "size": 3072,
+      "mtime": 1772609530,
+      "ext": ".md"
+    },
+    {
+      "path": "governance/agent-catalog.md",
+      "size": 950,
+      "mtime": 1772301081,
+      "ext": ".md"
+    },
+    {
+      "path": "governance/auditor-runtime-boundary-decision-2026-03-03.md",
+      "size": 2419,
+      "mtime": 1772507728,
+      "ext": ".md"
+    },
+    {
+      "path": "governance/direction-package.md",
+      "size": 31820,
+      "mtime": 1772303526,
+      "ext": ".md"
+    },
+    {
+      "path": "governance/job-lifecycle-kpi-snapshot-2026-03.md",
+      "size": 2358,
+      "mtime": 1772508925,
+      "ext": ".md"
+    },
+    {
+      "path": "governance/job-runtime-fit-matrix-2026-03-03.md",
+      "size": 2899,
+      "mtime": 1772505937,
+      "ext": ".md"
+    },
+    {
+      "path": "governance/playbook-inventory.md",
+      "size": 780,
+      "mtime": 1772301091,
+      "ext": ".md"
+    },
+    {
+      "path": "governance/policy-register.md",
+      "size": 1291,
+      "mtime": 1772301072,
+      "ext": ".md"
+    },
+    {
+      "path": "governance/research/claude-code-prompting-guide-2026-02-28.md",
+      "size": 23000,
+      "mtime": 1772306978,
+      "ext": ".md"
+    },
+    {
+      "path": "governance/system-charter.md",
+      "size": 1671,
+      "mtime": 1772301063,
+      "ext": ".md"
+    },
+    {
+      "path": "governance/system-direction-research-2026-02-28.md",
+      "size": 26015,
+      "mtime": 1772301052,
+      "ext": ".md"
+    },
+    {
+      "path": "governance/task-decision-engine-contract.md",
+      "size": 958,
+      "mtime": 1772301097,
+      "ext": ".md"
+    },
+    {
+      "path": "governance/trust-boundary-decision-record-2026-03-03.md",
+      "size": 1708,
+      "mtime": 1772522124,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/decisions/DECISION_MEMO_TEMPLATE_V1.md",
+      "size": 410,
+      "mtime": 1772609857,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/distilled/2026-02-24__control-panel-mvp-implementation-cuts__v1.md",
+      "size": 1199,
+      "mtime": 1771963262,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/distilled/2026-02-25__community-notes__adopt-now-vs-later__v1.md",
+      "size": 696,
+      "mtime": 1772027944,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/distilled/2026-03-03__prompt-injection__implementable-now-plan__v1.md",
+      "size": 2586,
+      "mtime": 1772519074,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-02/20260225-083719__security_audit.md",
+      "size": 532,
+      "mtime": 1772005039,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-02/20260225-083721__doctor.md",
+      "size": 499,
+      "mtime": 1772005041,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-02/20260225-084004__security_audit.md",
+      "size": 532,
+      "mtime": 1772005204,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-02/20260225-084006__doctor.md",
+      "size": 499,
+      "mtime": 1772005206,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-02/20260226-084004__security_audit.md",
+      "size": 532,
+      "mtime": 1772091604,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-02/20260226-084005__doctor.md",
+      "size": 499,
+      "mtime": 1772091605,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-02/20260227-084004__security_audit.md",
+      "size": 532,
+      "mtime": 1772178004,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-02/20260227-084006__doctor.md",
+      "size": 499,
+      "mtime": 1772178006,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-02/20260228-084004__security_audit.md",
+      "size": 532,
+      "mtime": 1772264404,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-02/20260228-084007__doctor.md",
+      "size": 499,
+      "mtime": 1772264407,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-02/prompt-drift-review-template.md",
+      "size": 843,
+      "mtime": 1772129778,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/20260301-084003__security_audit.md",
+      "size": 532,
+      "mtime": 1772350803,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/20260301-084005__doctor.md",
+      "size": 499,
+      "mtime": 1772350805,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/20260302-084003__security_audit.md",
+      "size": 532,
+      "mtime": 1772437203,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/20260302-084005__doctor.md",
+      "size": 499,
+      "mtime": 1772437205,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/20260304-084004__security_audit.md",
+      "size": 532,
+      "mtime": 1772610004,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/20260304-084006__doctor.md",
+      "size": 499,
+      "mtime": 1772610006,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/tmp/TASKS_S16_FIXTURE.md",
+      "size": 130,
+      "mtime": 1772607657,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-02__chat-continuity-sprint1-checkpoint.md",
+      "size": 921,
+      "mtime": 1772487323,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-02__ops-2026-022-gate-verdict.md",
+      "size": 1627,
+      "mtime": 1772491519,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-02__ops-2026-022-qa-gate-test-snapshot.md",
+      "size": 1598,
+      "mtime": 1772490347,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-02__ops-2026-022-sample-response-artifact.md",
+      "size": 3931,
+      "mtime": 1772490986,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-02__ops-2026-023-closeout-pack-draft-and-test-revalidation.md",
+      "size": 903,
+      "mtime": 1772492135,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__imp-auto-20260227-02-parser-smoke-tests-cron-bundle-linkage-and-closeout.md",
+      "size": 893,
+      "mtime": 1772517344,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__imp-auto-20260227-02-parser-smoke-tests-scaffold.md",
+      "size": 917,
+      "mtime": 1772516757,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__imp-auto-20260228-01-closeout-and-board-normalization.md",
+      "size": 1137,
+      "mtime": 1772518525,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__imp-auto-20260228-01-release-delta-snapshot-automation-step.md",
+      "size": 959,
+      "mtime": 1772517999,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__imp-auto-20260301-01-sec-auto-duplicate-consolidation.md",
+      "size": 1395,
+      "mtime": 1772516152,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__imp-auto-20260301-02-closeout-and-board-normalization.md",
+      "size": 733,
+      "mtime": 1772520309,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__imp-auto-20260301-02-docs-hygiene-bundle-script-and-cron-wire.md",
+      "size": 831,
+      "mtime": 1772519731,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__imp-auto-20260301-02-docs-hygiene-bundle-validation.md",
+      "size": 1013,
+      "mtime": 1772519110,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__imp-auto-20260302-03-closeout-and-board-normalization.md",
+      "size": 1357,
+      "mtime": 1772511921,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__imp-auto-20260302-03-compatibility-map-draft.md",
+      "size": 819,
+      "mtime": 1772510127,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__imp-auto-20260302-03-registry-schema-v1_1-harmonization-step.md",
+      "size": 1044,
+      "mtime": 1772511348,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__imp-auto-20260303-01-closeout-and-board-normalization.md",
+      "size": 907,
+      "mtime": 1772513746,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__imp-auto-20260303-01-cron-hygiene-wire-step.md",
+      "size": 1112,
+      "mtime": 1772512571,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__imp-auto-20260303-02-root-safe-unittest-execution-and-closeout.md",
+      "size": 1003,
+      "mtime": 1772514321,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__imp-auto-20260303-02-task-hygiene-tests-added.md",
+      "size": 753,
+      "mtime": 1772513165,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__inc-2026-003__openclaw-sandbox-docker-regression-investigation.md",
+      "size": 6223,
+      "mtime": 1772563348,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__openclaw-release-delta-snapshot.md",
+      "size": 10762,
+      "mtime": 1772518508,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__ops-2026-020-active-to-done-transition-executed.md",
+      "size": 970,
+      "mtime": 1772501717,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__ops-2026-020-architecture-guardrail-traceability-matrix.md",
+      "size": 2237,
+      "mtime": 1772499335,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__ops-2026-020-architecture-signoff-recommendation.md",
+      "size": 1672,
+      "mtime": 1772501116,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__ops-2026-021-active-to-done-transition-executed.md",
+      "size": 793,
+      "mtime": 1772504108,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__ops-2026-021-implementation-completion-review.md",
+      "size": 1981,
+      "mtime": 1772503525,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__ops-2026-021-task-center-validation-errors-alignment.md",
+      "size": 1207,
+      "mtime": 1772502952,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__ops-2026-022-active-to-done-transition-executed.md",
+      "size": 827,
+      "mtime": 1772504721,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__ops-2026-023-closeout-execution-checklist-ready.md",
+      "size": 1627,
+      "mtime": 1772510716,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__ops-2026-023-closeout-tag-readiness-check.md",
+      "size": 1333,
+      "mtime": 1772496323,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__ops-2026-023-test-revalidation.md",
+      "size": 737,
+      "mtime": 1772493325,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__ops-2026-037-active-lane-transition-prep.md",
+      "size": 1587,
+      "mtime": 1772499915,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__ops-2026-037-active-to-done-transition-executed.md",
+      "size": 930,
+      "mtime": 1772500527,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__ops-2026-037-autonomous-loop-checkpoint-standard.md",
+      "size": 758,
+      "mtime": 1772495116,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__ops-2026-037-autonomous-loop-continuity-checkpoint.md",
+      "size": 935,
+      "mtime": 1772493920,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__ops-2026-037-closure-decision-input-pack.md",
+      "size": 2323,
+      "mtime": 1772498721,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__ops-2026-037-closure-recommendation.md",
+      "size": 1565,
+      "mtime": 1772497517,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__ops-2026-037-priority-rotation-guardrail.md",
+      "size": 891,
+      "mtime": 1772495721,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__ops-2026-037-sprint1-compliance-snapshot.md",
+      "size": 1203,
+      "mtime": 1772494513,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__ops-2026-037-sprint1-exit-readiness-review.md",
+      "size": 1704,
+      "mtime": 1772496936,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__ops-2026-037-sprint2-rollover-task-capture.md",
+      "size": 1162,
+      "mtime": 1772498142,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__ops-2026-038-head-of-control-tower-job-record-added.md",
+      "size": 930,
+      "mtime": 1772505351,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__ops-2026-039-cadence-artifact-linkage-and-closeout.md",
+      "size": 808,
+      "mtime": 1772506530,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__ops-2026-039-job-runtime-fit-matrix-initial-publish.md",
+      "size": 991,
+      "mtime": 1772505947,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__ops-2026-040-job-change-workflow-template-and-linkage.md",
+      "size": 1092,
+      "mtime": 1772507140,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__ops-2026-041-auditor-runtime-boundary-decision.md",
+      "size": 672,
+      "mtime": 1772507733,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__ops-2026-042-incident-tag-taxonomy-added.md",
+      "size": 1023,
+      "mtime": 1772508931,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__ops-2026-042-monthly-lifecycle-kpi-baseline-publish.md",
+      "size": 743,
+      "mtime": 1772508329,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__ops-2026-042-task-closeout-and-board-normalization.md",
+      "size": 1258,
+      "mtime": 1772509522,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__sec-auto-20260227-01-telegram-group-allowfrom-enforcement-and-validation.md",
+      "size": 1244,
+      "mtime": 1772515555,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__sec-auto-20260227-01-telegram-group-allowfrom-preflight-audit.md",
+      "size": 1563,
+      "mtime": 1772514963,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__sec-auto-20260302-01-audit-refresh-and-decision-input.md",
+      "size": 1949,
+      "mtime": 1772520919,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__sec-auto-20260302-01-fs-workspace-boundary-hardening-step.md",
+      "size": 1279,
+      "mtime": 1772522761,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__sec-auto-20260302-01-sandbox-default-hardening-step.md",
+      "size": 1570,
+      "mtime": 1772523335,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__sec-auto-20260302-01-sandbox-object-hardening-and-audit-normalization.md",
+      "size": 1263,
+      "mtime": 1772553350,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__sec-auto-20260302-01-trust-boundary-decision-draft-and-remediation-plan.md",
+      "size": 1991,
+      "mtime": 1772521522,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-03__sec-auto-20260302-01-trust-boundary-decision-record-published.md",
+      "size": 972,
+      "mtime": 1772522131,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-04__ops-2026-048-049-050-bootstrap-and-non-disruptive-activation.md",
+      "size": 1984,
+      "mtime": 1772610082,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-04__ops-2026-048-049-closeout-note.md",
+      "size": 1093,
+      "mtime": 1772610288,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-04__report47-implementation-recommendations.md",
+      "size": 1814,
+      "mtime": 1772606873,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-04__standard-change-pilot-day1-audit-sample.md",
+      "size": 741,
+      "mtime": 1772610282,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/latest-doctor.txt",
+      "size": 10145,
+      "mtime": 1772610006,
+      "ext": ".txt"
+    },
+    {
+      "path": "knowledge/evidence/latest-security-audit.json",
+      "size": 1640,
+      "mtime": 1772610004,
+      "ext": ".json"
+    },
+    {
+      "path": "knowledge/experiments/EXP-2026-001__drift-aftercare-standard.md",
+      "size": 1598,
+      "mtime": 1772569507,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/inbox/INBOX_ENTRY_TEMPLATE_V1.md",
+      "size": 272,
+      "mtime": 1772609793,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/opportunities/OPP-2026-001__drift-aftercare-standard.md",
+      "size": 2820,
+      "mtime": 1772569438,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/registries/agents/agent-chief-architect.md",
+      "size": 283,
+      "mtime": 1772129778,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/registries/agents/control-tower-lyra.md",
+      "size": 570,
+      "mtime": 1772005062,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/registries/routing/default-ops-lane.md",
+      "size": 547,
+      "mtime": 1772005062,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/registries/routing/route-architecture.md",
+      "size": 358,
+      "mtime": 1772129778,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-02-24__deepresearch__control-panel-vision__v1.md",
+      "size": 1513,
+      "mtime": 1771963262,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-02-25__community-notes__openclaw-advanced-use-cases__v1.md",
+      "size": 1406,
+      "mtime": 1772027944,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-02-25__deepresearch__safe-human-like-tooling__v1.md",
+      "size": 1216,
+      "mtime": 1772035342,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__ai-native-software-delivery-operating-system-diagnostic-and-redesign__v1.md",
+      "size": 41016,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__architectures-for-separating-an-operating-system-component-from-a-control-panel-best-pract__v1.md",
+      "size": 32848,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__best-practices-for-task-and-decision-management-engines-for-lyra-openclaw__v1.md",
+      "size": 33872,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__best-practices-for-task-management-prioritization-kanban-backlog-workflows-decision-proces__v1.md",
+      "size": 27678,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__boundary-and-ownership-model-for-gateway-dashboard-and-control-panel__v1.md",
+      "size": 21759,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__chief-architect-sub-agent-in-lyra-openclaw-best-practices-system-fit-and-an-implementation__v1.md",
+      "size": 22120,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__continuous-action-orchestration-for-lyra-on-openclaw__v1.md",
+      "size": 29422,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__continuously-improving-selfimproving-ai-agent-systems-for-lyra-openclaw__v1.md",
+      "size": 35838,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__control-panel-task-engine-and-ui-brainstorm-for-the-third-sprint__v1.md",
+      "size": 21124,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__decision-memo-task-decision-engine-project-definition-gate-v2__v1.md",
+      "size": 14610,
+      "mtime": 1772388259,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__designing-safe-human-like-tooling-for-lyra-in-openclaw__v1.md",
+      "size": 27738,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__evaluation-of-the-top-clawhub-skills-for-openclaw__v1.md",
+      "size": 43700,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__feasibility-study-for-a-task-and-decision-management-engine-in-lyra-openclaw__v1.md",
+      "size": 15822,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__first-version-information-model-for-the-lyra-openclaw-system__v1.md",
+      "size": 63335,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__gpt-5-3-codex-in-lyra-openclaw-capabilities-failure-modes-and-a-prompting-md-hygiene-playb__v1.md",
+      "size": 20295,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__idempotent-action-contract-patterns-for-agent-tool-execution__v1.md",
+      "size": 33717,
+      "mtime": 1772390635,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__improving-memory-and-knowledge-management-for-lyra-on-openclaw__v1.md",
+      "size": 24714,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__independent-architecture-review-for-a-localfirst-executive-intelligence-layer__v1.md",
+      "size": 21747,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__independent-architecture-review-for-the-localfirst-control-panel-sprint-three__v1.md",
+      "size": 18147,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__integrating-markdown-based-os-files-into-an-agent-runtime__v1.md",
+      "size": 15976,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__lyra-openclaw-control-panel-architecture-second-opinion__v1.md",
+      "size": 19580,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__next-phase-development-process-and-control-panel-design-for-lyra-openclaw__v1.md",
+      "size": 22544,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__policy-as-code-decision-rights-for-lyra-tde__v1.md",
+      "size": 27558,
+      "mtime": 1772391384,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__post-mortem-on-the-control-panel-project-in-the-lyra-openclaw-system__v1.md",
+      "size": 23969,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__pragmatic-expert-level-cybersecurity-recommendations-for-the-openclaw-solution__v1.md",
+      "size": 43930,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__prompting-playbooks-for-claude-code-and-openai-deep-research-in-lyra-openclaw__v1.md",
+      "size": 23149,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__sprint-5-architecture-review-for-a-local-first-control-panel__v1.md",
+      "size": 21177,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__sprint-6-implementation-packet-review-for-os-only-task-service__v1.md",
+      "size": 25030,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__sprint-6-review-of-task-service-design-for-a-localfirst-control-panel__v1.md",
+      "size": 26650,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__structuring-the-lyra-openclaw-markdown-workspace__v1.md",
+      "size": 20900,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__task-and-decision-management-engine-for-lyra-openclaw-job-based-work-orchestration-and-use__v1.md",
+      "size": 25795,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__task-management-service-design-brief-for-a-local-first-control-panel__v1.md",
+      "size": 30415,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__deepresearch__trello-cutover-playbook-low-risk-migration-to-task-decision-engine__v1.md",
+      "size": 30572,
+      "mtime": 1772390689,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__expert-analysis__autonomous-agentic-architectures-an-exhaustive-analysis-of-openclaw-capabilities-replicabl__v1.md",
+      "size": 54854,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__guide__openclaw-prompting-guide-for-claude-code__v1.md",
+      "size": 23290,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__research__openclaw-direction-package-analysis-and-implementation-recommendation__v1.md",
+      "size": 32131,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__research__research-report-ai-agent-deployment-and-jobs-vs-agents-in-openclaw__v1.md",
+      "size": 20909,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-01__research__setting-direction-in-a-multi-agent-openclaw-system__v1.md",
+      "size": 26318,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-03__deepresearch__evaluation-and-reliability-framework-for-openclaw-tool-using-agents__v1.md",
+      "size": 36173,
+      "mtime": 1772568441,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-03__deepresearch__opportunity-to-execution-engine-for-lyra-openclaw__v1.md",
+      "size": 3306,
+      "mtime": 1772569302,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-03__deepresearch__prompt-injection-defenses-and-best-practices__v1.md",
+      "size": 38649,
+      "mtime": 1772525771,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-04__deepresearch__adapting-sprint-practices-to-ai-agent-centric-lyra-openclaw__v1.md",
+      "size": 21365,
+      "mtime": 1772606865,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-04__deepresearch__knowledge-library-audit-and-white-spots__v1.md",
+      "size": 30849,
+      "mtime": 1772607170,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-04__deepresearch__machine-checkable-governance-and-evaluation-bootstrap__v1.md",
+      "size": 36857,
+      "mtime": 1772608897,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/INDEX.md",
+      "size": 12485,
+      "mtime": 1772568448,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/WEEKLY_SYNTHESIS__2026-03-03.md",
+      "size": 3067,
+      "mtime": 1772569423,
+      "ext": ".md"
+    },
+    {
+      "path": "memory/2026-02-23.md",
+      "size": 476,
+      "mtime": 1771881476,
+      "ext": ".md"
+    },
+    {
+      "path": "memory/2026-03-01.md",
+      "size": 873,
+      "mtime": 1772393062,
+      "ext": ".md"
+    },
+    {
+      "path": "memory/2026-03-02.md",
+      "size": 6502,
+      "mtime": 1772491009,
+      "ext": ".md"
+    },
+    {
+      "path": "memory/2026-03-03.md",
+      "size": 18613,
+      "mtime": 1772553366,
+      "ext": ".md"
+    },
+    {
+      "path": "prompts/claude-code/WO_execute.md",
+      "size": 1279,
+      "mtime": 1772306930,
+      "ext": ".md"
+    },
+    {
+      "path": "prompts/claude-code/WO_plan.md",
+      "size": 1200,
+      "mtime": 1772306920,
+      "ext": ".md"
+    },
+    {
+      "path": "prompts/deep-research/GUIDELINE.md",
+      "size": 1456,
+      "mtime": 1772568137,
+      "ext": ".md"
+    },
+    {
+      "path": "prompts/deep-research/RO_private.md",
+      "size": 1203,
+      "mtime": 1772568131,
+      "ext": ".md"
+    },
+    {
+      "path": "prompts/deep-research/RO_public.md",
+      "size": 1039,
+      "mtime": 1772568127,
+      "ext": ".md"
+    },
+    {
+      "path": "prompts/handoff/CA_change.md",
+      "size": 438,
+      "mtime": 1772129778,
+      "ext": ".md"
+    },
+    {
+      "path": "prompts/handoff/DDA_report.md",
+      "size": 465,
+      "mtime": 1772129778,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/.DS_Store",
+      "size": 6148,
+      "mtime": 1772372851,
+      "ext": ""
+    },
+    {
+      "path": "repos/control-panel/.env",
+      "size": 133,
+      "mtime": 1772184655,
+      "ext": ""
+    },
+    {
+      "path": "repos/control-panel/.env.example",
+      "size": 598,
+      "mtime": 1772120239,
+      "ext": ".example"
+    },
+    {
+      "path": "repos/control-panel/.gitignore",
+      "size": 197,
+      "mtime": 1772184443,
+      "ext": ""
+    },
+    {
+      "path": "repos/control-panel/README.md",
+      "size": 12610,
+      "mtime": 1772263841,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/atomicWrite.test.ts",
+      "size": 3933,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/authMiddleware.test.ts",
+      "size": 4045,
+      "mtime": 1772120239,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/buildRoute.test.ts",
+      "size": 1579,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/consolidatedRoutes.test.ts",
+      "size": 4181,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/controlAction.schemas.test.ts",
+      "size": 4290,
+      "mtime": 1772120239,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/controlActionService.test.ts",
+      "size": 6486,
+      "mtime": 1772120239,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/evidenceService.test.ts",
+      "size": 2001,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/executive/activityLedgerService.test.ts",
+      "size": 3584,
+      "mtime": 1772173512,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/executive/capabilitiesService.test.ts",
+      "size": 2622,
+      "mtime": 1772173512,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/executive/costIntelligenceService.test.ts",
+      "size": 2544,
+      "mtime": 1772173512,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/executive/executiveBriefService.test.ts",
+      "size": 7563,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/executive/executiveCache.test.ts",
+      "size": 3875,
+      "mtime": 1772173512,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/executive/executiveRedaction.test.ts",
+      "size": 4617,
+      "mtime": 1772173512,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/executive/executiveRoute.test.ts",
+      "size": 7129,
+      "mtime": 1772173512,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/executive/executiveRouteStates.test.ts",
+      "size": 3829,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/executive/executiveSummary.schema.test.ts",
+      "size": 9060,
+      "mtime": 1772173512,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/executive/existingRoutes.regression.test.ts",
+      "size": 3932,
+      "mtime": 1772173512,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/executive/plansSummaryService.test.ts",
+      "size": 2549,
+      "mtime": 1772173512,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/executive/riskPostureService.test.ts",
+      "size": 2633,
+      "mtime": 1772173512,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/fsLoader.test.ts",
+      "size": 5521,
+      "mtime": 1772094369,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/healthDiagnostics.test.ts",
+      "size": 2299,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/jobs/materializationJobs.test.ts",
+      "size": 5652,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/kpiService.test.ts",
+      "size": 4792,
+      "mtime": 1772120239,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/riskService.test.ts",
+      "size": 1320,
+      "mtime": 1772094369,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/roleViewService.test.ts",
+      "size": 3236,
+      "mtime": 1772120239,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/schemas.test.ts",
+      "size": 5323,
+      "mtime": 1772094369,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/securityAuditSchema.test.ts",
+      "size": 2880,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/skillsPolicyService.test.ts",
+      "size": 5149,
+      "mtime": 1772133184,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/taskCenterService.test.ts",
+      "size": 8657,
+      "mtime": 1772502937,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/taskSchemaExtended.test.ts",
+      "size": 7587,
+      "mtime": 1772133184,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/tasksService.realformat.test.ts",
+      "size": 6359,
+      "mtime": 1772094369,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/tasksService.test.ts",
+      "size": 1595,
+      "mtime": 1772094369,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/workflowConfigService.test.ts",
+      "size": 3855,
+      "mtime": 1772133184,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/__tests__/workspaceResolver.test.ts",
+      "size": 3548,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/package-lock.json",
+      "size": 128752,
+      "mtime": 1772173512,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/control-panel/apps/api/package.json",
+      "size": 1138,
+      "mtime": 1772184443,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/jobs/jobUtils.ts",
+      "size": 2361,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/jobs/materializeBuildSummary.ts",
+      "size": 1089,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/jobs/materializeCapabilitiesSummary.ts",
+      "size": 2368,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/jobs/materializeExecutiveSummary.ts",
+      "size": 1561,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/jobs/materializeRiskAuditSummary.ts",
+      "size": 1987,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/jobs/runner.ts",
+      "size": 1965,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/middleware/authMiddleware.ts",
+      "size": 2414,
+      "mtime": 1772173512,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/routes/build.ts",
+      "size": 1176,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/routes/capabilities.ts",
+      "size": 1095,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/routes/changes.ts",
+      "size": 710,
+      "mtime": 1772094369,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/routes/controlActions.ts",
+      "size": 2791,
+      "mtime": 1772120239,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/routes/executive.ts",
+      "size": 2879,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/routes/health.ts",
+      "size": 1199,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/routes/next.ts",
+      "size": 869,
+      "mtime": 1772094369,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/routes/now.ts",
+      "size": 1020,
+      "mtime": 1772094369,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/routes/riskSecurity.ts",
+      "size": 1473,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/routes/roles.ts",
+      "size": 973,
+      "mtime": 1772120239,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/routes/skills.ts",
+      "size": 1006,
+      "mtime": 1772133184,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/routes/taskCenter.ts",
+      "size": 1861,
+      "mtime": 1772133184,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/routes/watch.ts",
+      "size": 1022,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/routes/work.ts",
+      "size": 1475,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/schemas/agentContract.ts",
+      "size": 875,
+      "mtime": 1772094369,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/schemas/changeRecord.ts",
+      "size": 224,
+      "mtime": 1772037935,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/schemas/controlAction.ts",
+      "size": 2406,
+      "mtime": 1772120239,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/schemas/evidenceRecord.ts",
+      "size": 1149,
+      "mtime": 1772094369,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/schemas/executiveSummary.ts",
+      "size": 8510,
+      "mtime": 1772173512,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/schemas/kpi.ts",
+      "size": 415,
+      "mtime": 1772120239,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/schemas/process.ts",
+      "size": 341,
+      "mtime": 1772094369,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/schemas/risk.ts",
+      "size": 1155,
+      "mtime": 1772094369,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/schemas/roleSummary.ts",
+      "size": 1205,
+      "mtime": 1772120239,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/schemas/routingRule.ts",
+      "size": 456,
+      "mtime": 1772094369,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/schemas/securityAudit.ts",
+      "size": 607,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/schemas/skillsPolicy.ts",
+      "size": 1170,
+      "mtime": 1772133184,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/schemas/subscription.ts",
+      "size": 858,
+      "mtime": 1772094369,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/schemas/task.ts",
+      "size": 3023,
+      "mtime": 1772133184,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/schemas/workflowConfig.ts",
+      "size": 679,
+      "mtime": 1772133184,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/server.ts",
+      "size": 3033,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/services/atomicWrite.ts",
+      "size": 1276,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/services/auditDb.ts",
+      "size": 2765,
+      "mtime": 1772120239,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/services/buildService.ts",
+      "size": 2381,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/services/controlActionService.ts",
+      "size": 6051,
+      "mtime": 1772120239,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/services/evidenceService.ts",
+      "size": 2719,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/services/executive/activityLedgerService.ts",
+      "size": 4016,
+      "mtime": 1772173512,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/services/executive/capabilitiesService.ts",
+      "size": 3288,
+      "mtime": 1772173512,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/services/executive/costIntelligenceService.ts",
+      "size": 3870,
+      "mtime": 1772173512,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/services/executive/executiveBriefService.ts",
+      "size": 7231,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/services/executive/executiveCache.ts",
+      "size": 1861,
+      "mtime": 1772173512,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/services/executive/executiveSummaryAggregator.ts",
+      "size": 8559,
+      "mtime": 1772173512,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/services/executive/plansSummaryService.ts",
+      "size": 3550,
+      "mtime": 1772173512,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/services/executive/redaction.ts",
+      "size": 1619,
+      "mtime": 1772173512,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/services/executive/riskPostureService.ts",
+      "size": 3772,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/services/fsLoader.ts",
+      "size": 6805,
+      "mtime": 1772094369,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/services/gitService.ts",
+      "size": 1669,
+      "mtime": 1772120239,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/services/kpiService.ts",
+      "size": 7375,
+      "mtime": 1772120239,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/services/registryService.ts",
+      "size": 3427,
+      "mtime": 1772094369,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/services/riskService.ts",
+      "size": 1231,
+      "mtime": 1772094369,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/services/roleViewService.ts",
+      "size": 6048,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/services/skillsPolicyService.ts",
+      "size": 4496,
+      "mtime": 1772133184,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/services/subjectResolver.ts",
+      "size": 1219,
+      "mtime": 1772120239,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/services/taskCenterService.ts",
+      "size": 9087,
+      "mtime": 1772502931,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/services/tasksService.ts",
+      "size": 1902,
+      "mtime": 1772133184,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/services/workflowConfigService.ts",
+      "size": 3794,
+      "mtime": 1772133184,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/src/services/workspaceResolver.ts",
+      "size": 1555,
+      "mtime": 1772184443,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/api/tsconfig.json",
+      "size": 259,
+      "mtime": 1772037935,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/control-panel/apps/web/index.html",
+      "size": 300,
+      "mtime": 1772037935,
+      "ext": ".html"
+    },
+    {
+      "path": "repos/control-panel/apps/web/package.json",
+      "size": 505,
+      "mtime": 1772037935,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/control-panel/apps/web/src/App.tsx",
+      "size": 1806,
+      "mtime": 1772184443,
+      "ext": ".tsx"
+    },
+    {
+      "path": "repos/control-panel/apps/web/src/components/ActionButton.tsx",
+      "size": 1404,
+      "mtime": 1772120239,
+      "ext": ".tsx"
+    },
+    {
+      "path": "repos/control-panel/apps/web/src/components/BoardColumn.tsx",
+      "size": 3294,
+      "mtime": 1772133184,
+      "ext": ".tsx"
+    },
+    {
+      "path": "repos/control-panel/apps/web/src/components/DataTable.tsx",
+      "size": 1086,
+      "mtime": 1772037935,
+      "ext": ".tsx"
+    },
+    {
+      "path": "repos/control-panel/apps/web/src/components/DetailDrawer.tsx",
+      "size": 1116,
+      "mtime": 1772133184,
+      "ext": ".tsx"
+    },
+    {
+      "path": "repos/control-panel/apps/web/src/components/FilterBar.tsx",
+      "size": 1279,
+      "mtime": 1772133184,
+      "ext": ".tsx"
+    },
+    {
+      "path": "repos/control-panel/apps/web/src/components/FindingBadge.tsx",
+      "size": 288,
+      "mtime": 1772037935,
+      "ext": ".tsx"
+    },
+    {
+      "path": "repos/control-panel/apps/web/src/components/KpiCard.tsx",
+      "size": 976,
+      "mtime": 1772120239,
+      "ext": ".tsx"
+    },
+    {
+      "path": "repos/control-panel/apps/web/src/components/Layout.tsx",
+      "size": 1444,
+      "mtime": 1772184443,
+      "ext": ".tsx"
+    },
+    {
+      "path": "repos/control-panel/apps/web/src/components/StatusCard.tsx",
+      "size": 616,
+      "mtime": 1772037935,
+      "ext": ".tsx"
+    },
+    {
+      "path": "repos/control-panel/apps/web/src/components/SystemStatusStrip.tsx",
+      "size": 1182,
+      "mtime": 1772133184,
+      "ext": ".tsx"
+    },
+    {
+      "path": "repos/control-panel/apps/web/src/index.css",
+      "size": 17335,
+      "mtime": 1772173512,
+      "ext": ".css"
+    },
+    {
+      "path": "repos/control-panel/apps/web/src/lib/api.ts",
+      "size": 6947,
+      "mtime": 1772173512,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/apps/web/src/main.tsx",
+      "size": 231,
+      "mtime": 1772037935,
+      "ext": ".tsx"
+    },
+    {
+      "path": "repos/control-panel/apps/web/src/pages/BuildPage.tsx",
+      "size": 3736,
+      "mtime": 1772184443,
+      "ext": ".tsx"
+    },
+    {
+      "path": "repos/control-panel/apps/web/src/pages/CapabilitiesPage.tsx",
+      "size": 5642,
+      "mtime": 1772184443,
+      "ext": ".tsx"
+    },
+    {
+      "path": "repos/control-panel/apps/web/src/pages/ChangeFeedPage.tsx",
+      "size": 2164,
+      "mtime": 1772037935,
+      "ext": ".tsx"
+    },
+    {
+      "path": "repos/control-panel/apps/web/src/pages/ExecutivePage.tsx",
+      "size": 15319,
+      "mtime": 1772184443,
+      "ext": ".tsx"
+    },
+    {
+      "path": "repos/control-panel/apps/web/src/pages/NextPage.tsx",
+      "size": 519,
+      "mtime": 1772184443,
+      "ext": ".tsx"
+    },
+    {
+      "path": "repos/control-panel/apps/web/src/pages/NowPage.tsx",
+      "size": 518,
+      "mtime": 1772184443,
+      "ext": ".tsx"
+    },
+    {
+      "path": "repos/control-panel/apps/web/src/pages/RiskSecurityPage.tsx",
+      "size": 7188,
+      "mtime": 1772184443,
+      "ext": ".tsx"
+    },
+    {
+      "path": "repos/control-panel/apps/web/src/pages/RoleSummaryPage.tsx",
+      "size": 5748,
+      "mtime": 1772120239,
+      "ext": ".tsx"
+    },
+    {
+      "path": "repos/control-panel/apps/web/src/pages/SkillsPage.tsx",
+      "size": 545,
+      "mtime": 1772184443,
+      "ext": ".tsx"
+    },
+    {
+      "path": "repos/control-panel/apps/web/src/pages/TaskCenterPage.tsx",
+      "size": 525,
+      "mtime": 1772184443,
+      "ext": ".tsx"
+    },
+    {
+      "path": "repos/control-panel/apps/web/src/pages/WatchPage.tsx",
+      "size": 531,
+      "mtime": 1772184443,
+      "ext": ".tsx"
+    },
+    {
+      "path": "repos/control-panel/apps/web/src/pages/WorkPage.tsx",
+      "size": 6752,
+      "mtime": 1772184443,
+      "ext": ".tsx"
+    },
+    {
+      "path": "repos/control-panel/apps/web/tsconfig.json",
+      "size": 218,
+      "mtime": 1772037935,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/control-panel/apps/web/vite.config.ts",
+      "size": 283,
+      "mtime": 1772037935,
+      "ext": ".ts"
+    },
+    {
+      "path": "repos/control-panel/docs/ARCHITECTURE_GOVERNANCE_POINTER.md",
+      "size": 315,
+      "mtime": 1772099576,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/CLAUDE_CODE_PROMPT_S2_ROLE_KPI_CONTROL.md",
+      "size": 3805,
+      "mtime": 1772110797,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/CLAUDE_CODE_PROMPT_S3_TASK_CENTER_SKILLS.md",
+      "size": 4186,
+      "mtime": 1772129061,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/CLAUDE_CODE_PROMPT_S4_EXEC_INTELLIGENCE.md",
+      "size": 3979,
+      "mtime": 1772138467,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/CLAUDE_CODE_PROMPT_S5_STABILITY_CONTENT_IA.md",
+      "size": 4020,
+      "mtime": 1772178543,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/CLAUDE_CODE_PROMPT_S6_TASK_SERVICE.md",
+      "size": 1427,
+      "mtime": 1772199703,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/CLOUD_SCENARIO_VISION.md",
+      "size": 2017,
+      "mtime": 1772177213,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/CONTINUOUS_IMPROVEMENT_FRAMEWORK.md",
+      "size": 2242,
+      "mtime": 1772194871,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/CONTROL_PANEL_PRODUCT_VISION.md",
+      "size": 2104,
+      "mtime": 1772181645,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/DECISIONS_TASK_MGMT_S6.md",
+      "size": 1988,
+      "mtime": 1772195773,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/DEEP_RESEARCH_PROMPT_S2_ARCH_REVIEW.md",
+      "size": 1734,
+      "mtime": 1772108625,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/DEEP_RESEARCH_PROMPT_S3_TASK_CENTER.md",
+      "size": 1748,
+      "mtime": 1772124798,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/DEEP_RESEARCH_PROMPT_S4_EXEC_INTELLIGENCE.md",
+      "size": 1459,
+      "mtime": 1772135624,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/DEEP_RESEARCH_PROMPT_S5_STABILITY_IA.md",
+      "size": 1487,
+      "mtime": 1772175543,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/DEEP_RESEARCH_PROMPT_S6_PACKET_REFINEMENT.md",
+      "size": 1625,
+      "mtime": 1772196741,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/DEEP_RESEARCH_PROMPT_S6_TASK_SERVICE_BOUNDARY.md",
+      "size": 2411,
+      "mtime": 1772192651,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/GATEWAY_CONTROL_PANEL_BOUNDARY_SPEC.md",
+      "size": 2257,
+      "mtime": 1772192469,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/GATEWAY_CP_OWNERSHIP_MATRIX.md",
+      "size": 1571,
+      "mtime": 1772192469,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/MISSES_LOG.md",
+      "size": 1107,
+      "mtime": 1772194871,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/MVP_CLOSEOUT_2026-02-26.md",
+      "size": 1729,
+      "mtime": 1772097976,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/POSTMORTEM_ANALYSIS_BRIEF_TEMPLATE.md",
+      "size": 1047,
+      "mtime": 1772263851,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/PROJECT_CLOSEOUT_2026-02-28.md",
+      "size": 3236,
+      "mtime": 1772263837,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/RELEASE_NOTES_v0.1.0-mvp.md",
+      "size": 921,
+      "mtime": 1772097976,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/RELEASE_NOTES_v0.2.0-s2.md",
+      "size": 1005,
+      "mtime": 1772121160,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/RELEASE_NOTES_v0.3.0-s3.md",
+      "size": 1189,
+      "mtime": 1772133184,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/RELEASE_NOTES_v0.4.0-s4.md",
+      "size": 1159,
+      "mtime": 1772173512,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/RELEASE_NOTES_v0.5.0-s5.md",
+      "size": 1151,
+      "mtime": 1772184443,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/RETRO_MVP_2026-02-26.md",
+      "size": 1215,
+      "mtime": 1772097976,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/RUNBOOK_SUMMARY_JOBS.md",
+      "size": 3671,
+      "mtime": 1772184443,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/S6_3PP_WORK_ORDER.md",
+      "size": 769,
+      "mtime": 1772199510,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/S6_ACCEPTANCE_TEST_MATRIX.md",
+      "size": 1186,
+      "mtime": 1772199501,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/S6_DATA_ARCHITECTURE.md",
+      "size": 1155,
+      "mtime": 1772196741,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/S6_PACKET_INDEX.md",
+      "size": 771,
+      "mtime": 1772199480,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/S6_PRD_TASK_SERVICE.md",
+      "size": 1262,
+      "mtime": 1772199501,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/S6_SYSTEM_CONTEXT_AND_FLOWS.md",
+      "size": 957,
+      "mtime": 1772196741,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/S6_TASK_SERVICE_CONTRACTS.md",
+      "size": 1384,
+      "mtime": 1772199480,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/S6_TEST_PLAN.md",
+      "size": 747,
+      "mtime": 1772199480,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/S6_USE_CASES.md",
+      "size": 1252,
+      "mtime": 1772199501,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/SOFTWARE_DELIVERY_PROCESS_3PP.md",
+      "size": 2067,
+      "mtime": 1772200070,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/SPRINT2_CLOSEOUT_2026-02-26.md",
+      "size": 1253,
+      "mtime": 1772121160,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/SPRINT3_CLOSEOUT_2026-02-26.md",
+      "size": 1493,
+      "mtime": 1772133184,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/SPRINT4_CLOSEOUT_2026-02-27.md",
+      "size": 1506,
+      "mtime": 1772173512,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/SPRINT5_CLOSEOUT_2026-02-27.md",
+      "size": 1757,
+      "mtime": 1772184443,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/SPRINT6_CANDIDATE_BACKLOG.md",
+      "size": 3183,
+      "mtime": 1772195783,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/SPRINT6_DEDUP_BACKLOG_GATEWAY_CP.md",
+      "size": 1509,
+      "mtime": 1772192469,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/SPRINT_ARCHITECTURE_BRIEF_S2_ROLE_KPI_CONTROL.md",
+      "size": 5649,
+      "mtime": 1772110833,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/SPRINT_ARCHITECTURE_BRIEF_S3_TASK_CENTER_SKILLS.md",
+      "size": 6052,
+      "mtime": 1772129067,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/SPRINT_ARCHITECTURE_BRIEF_S4_EXEC_INTELLIGENCE.md",
+      "size": 6142,
+      "mtime": 1772138408,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/SPRINT_ARCHITECTURE_BRIEF_S5_STABILITY_CONTENT_IA.md",
+      "size": 6572,
+      "mtime": 1772178517,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/SPRINT_ARCHITECTURE_BRIEF_S6_TASK_SERVICE.md",
+      "size": 3495,
+      "mtime": 1772195773,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/V2_BACKLOG_TOP3.md",
+      "size": 1738,
+      "mtime": 1772097976,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/VNEXT_BACKLOG_UPDATE_POST_S2.md",
+      "size": 813,
+      "mtime": 1772121167,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/VNEXT_BACKLOG_UPDATE_POST_S3.md",
+      "size": 845,
+      "mtime": 1772133184,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/VNEXT_BACKLOG_UPDATE_POST_S4.md",
+      "size": 1382,
+      "mtime": 1772177199,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/docs/VNEXT_BACKLOG_UPDATE_POST_S5.md",
+      "size": 1582,
+      "mtime": 1772184443,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/package-lock.json",
+      "size": 11600,
+      "mtime": 1772173512,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/control-panel/package.json",
+      "size": 581,
+      "mtime": 1772120239,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/control-panel/pnpm-lock.yaml",
+      "size": 105782,
+      "mtime": 1772184443,
+      "ext": ".yaml"
+    },
+    {
+      "path": "repos/control-panel/pnpm-workspace.yaml",
+      "size": 76,
+      "mtime": 1772120239,
+      "ext": ".yaml"
+    },
+    {
+      "path": "repos/control-panel/sample-data/PROCESS_REGISTRY.md",
+      "size": 745,
+      "mtime": 1772037935,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/sample-data/RISK_REGISTER.md",
+      "size": 782,
+      "mtime": 1772037935,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/sample-data/SUBSCRIPTION_REGISTER.md",
+      "size": 499,
+      "mtime": 1772037935,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/sample-data/TASKS.md",
+      "size": 1435,
+      "mtime": 1772133184,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/sample-data/knowledge/evidence/2026-02/evidence-001.md",
+      "size": 791,
+      "mtime": 1772037935,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/sample-data/knowledge/evidence/2026-02/evidence-002.md",
+      "size": 862,
+      "mtime": 1772037935,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/sample-data/knowledge/evidence/latest-security-audit.json",
+      "size": 698,
+      "mtime": 1772037935,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/control-panel/sample-data/knowledge/registries/agents/claude-code.md",
+      "size": 621,
+      "mtime": 1772037935,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/sample-data/knowledge/registries/agents/lyra.md",
+      "size": 625,
+      "mtime": 1772037935,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/sample-data/knowledge/registries/routing/escalation-routing.md",
+      "size": 492,
+      "mtime": 1772037935,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/sample-data/knowledge/registries/routing/task-routing.md",
+      "size": 481,
+      "mtime": 1772037935,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/control-panel/tsconfig.json",
+      "size": 341,
+      "mtime": 1772037935,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/.github/workflows/devsecops-baseline.yml",
+      "size": 731,
+      "mtime": 1772461892,
+      "ext": ".yml"
+    },
+    {
+      "path": "repos/lyra-operating-system/.gitignore",
+      "size": 236,
+      "mtime": 1772035686,
+      "ext": ""
+    },
+    {
+      "path": "repos/lyra-operating-system/ACCESS_REVIEW_LOG.md",
+      "size": 717,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/ADR-001_SYSTEMS_OF_RECORD.md",
+      "size": 3784,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/AGENTS.md",
+      "size": 9485,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/AGENT_DEPLOYMENT_DECISION_TEMPLATE.md",
+      "size": 732,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/AGENT_EXECUTION_SEMANTICS.md",
+      "size": 1000,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/AGENT_LIFECYCLE_SOP_V1.md",
+      "size": 3314,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/AGENT_PERMISSION_ENVELOPES.md",
+      "size": 1489,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/AI_ACT_ROLE_CLASSIFICATION_MEMO_V1.md",
+      "size": 662,
+      "mtime": 1772475077,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/AI_NATIVE_OPERATING_POLICY_V1.md",
+      "size": 5030,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/ARCHITECTURE_REVIEW_REPORT_TEMPLATE.md",
+      "size": 1206,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/ARTIFACT_ACTIVATION_MODEL_V1.md",
+      "size": 5497,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/AUTHORITY_CHANGE_CONTROL_POLICY_V1.md",
+      "size": 1600,
+      "mtime": 1772434326,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/BOOTSTRAP.md",
+      "size": 1470,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/BRAVE_USAGE_BASELINE_2026-03.md",
+      "size": 760,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/BUSINESS_CASE_THRESHOLD_RESEARCH_PROVIDERS.md",
+      "size": 106,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/CADENCE_GOVERNANCE_POLICY.md",
+      "size": 1961,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/CA_TEMPLATE_V1.md",
+      "size": 843,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/CHIEF_ARCHITECT_AGENT_SPEC.md",
+      "size": 7641,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/CODEX_EVAL_SCORECARD_V1.md",
+      "size": 827,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/CODEX_LANE_POLICY_V1.md",
+      "size": 2825,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/CODEX_PROMPT_CONTRACT_TEMPLATE.md",
+      "size": 984,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/CONTINUOUS_ACTION_ORCHESTRATION_V1.md",
+      "size": 5726,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/CRON_SPEC_AUTONOMOUS_GOVERNANCE_SWEEPS.md",
+      "size": 2919,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/CRON_SPEC_DAILY_HYGIENE.md",
+      "size": 1616,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/DATA_CONTRACT_INVENTORY_TEMPLATE_V1.md",
+      "size": 254,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/DECISION_PRINCIPLES.md",
+      "size": 4406,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/DECISION_SCHEMA_V1.md",
+      "size": 5712,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/DESIGN_PRINCIPLES.md",
+      "size": 2605,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/DR-PLAN.md",
+      "size": 2615,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/FINOPS_LITE_POLICY.md",
+      "size": 866,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/GDPR_AI_ACT_COMPLIANCE_BASELINE_V1.md",
+      "size": 976,
+      "mtime": 1772475077,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/GOV-001_RETENTION_ACCESS_BASELINE.md",
+      "size": 1575,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/HEARTBEAT.md",
+      "size": 168,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/IDENTITY.md",
+      "size": 209,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/INCIDENT_LOG.md",
+      "size": 891,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/IR-001_INCIDENT_MINI_RUNBOOK.md",
+      "size": 2251,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/JOBS_PROCESS_V1.md",
+      "size": 2364,
+      "mtime": 1772436538,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/JOB_MARKET_MODEL_V1.md",
+      "size": 3724,
+      "mtime": 1772434581,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/JOB_MEMORY_PORTABILITY_PROCESS_V1.md",
+      "size": 1033,
+      "mtime": 1772458400,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/KNOWLEDGE_BASE_SYSTEM.md",
+      "size": 1180,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/LEARNING_LOOPS_OS_AND_PROJECT.md",
+      "size": 1373,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/MEMORY_KERNEL_V1.md",
+      "size": 6117,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/METRICS_WEEKLY.md",
+      "size": 2627,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/MISSION.md",
+      "size": 1098,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/MODEL_ROUTING_POLICY.md",
+      "size": 4501,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/MODEL_ROUTING_SCORECARD.md",
+      "size": 1051,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/MULTI_AGENT_OPERATING_MODEL_V1.md",
+      "size": 4066,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/MULTI_AGENT_OPERATING_MODEL_V1_1.md",
+      "size": 2690,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/OPENCLAW_CONFIG_CHANGE_CHECKLIST_V1.md",
+      "size": 650,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/OPENCLAW_CONFIG_CHANGE_SOP_V1.md",
+      "size": 2355,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/OPENCLAW_PROMPTING_GUIDE_CLAUDE_CODE_V2.md",
+      "size": 1758,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/OPENCLAW_RELEASE_DELTA_SOP.md",
+      "size": 1513,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/OPS-001_BACKUP_RESTORE_RUNBOOK.md",
+      "size": 1498,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/PRINCIPLES_REGISTRY.md",
+      "size": 1056,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/PROCESS_REGISTRY.md",
+      "size": 5590,
+      "mtime": 1772482664,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/PRODUCT_BOUNDARY_TEMPLATE.md",
+      "size": 1331,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/PRODUCT_PORTFOLIO_REGISTRY.md",
+      "size": 2312,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/PROJECT_START_PACKET_TEMPLATE_V1.md",
+      "size": 520,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/PROMPTING_OS_V1.md",
+      "size": 5693,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/PROMPT_CHANGELOG.md",
+      "size": 1532,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/PROMPT_DRIFT_REVIEW_SOP.md",
+      "size": 1826,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/REGISTRY_SCHEMAS_V1.md",
+      "size": 2116,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/REPO_NAMING_STANDARD_V1.md",
+      "size": 847,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/RESTORE_TEST_LOG.md",
+      "size": 615,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/RISK_REGISTER.md",
+      "size": 1007,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/ROPA_LITE_V1.md",
+      "size": 507,
+      "mtime": 1772475077,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/SEC-001_BASELINE_CHECKLIST.md",
+      "size": 1428,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/SECURITY_ADOPTION_PLAN.md",
+      "size": 6014,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/SEC_REVIEW_2026-02-24.md",
+      "size": 1265,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/SELF_IMPROVEMENT_LOOP_V1.md",
+      "size": 5737,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/SERVICE_BOUNDARY_ARCHITECTURE.md",
+      "size": 1692,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/SITUATIONAL_AWARENESS.md",
+      "size": 1344,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/SOFTWARE_DELIVERY_PROCESS_3PP_OS.md",
+      "size": 2181,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/SOP-001_INTAKE_TRIAGE.md",
+      "size": 2650,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/SOUL.md",
+      "size": 1849,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/SPRINT_ARCHITECTURE_BRIEF_TEMPLATE.md",
+      "size": 1150,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/STD-001_DEFINITION_OF_DONE.md",
+      "size": 1640,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/SUBSCRIPTION_REGISTER.md",
+      "size": 1806,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/SYSTEM_OWNERSHIP_CONTRACT_TEMPLATE_V1.md",
+      "size": 398,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/SYSTEM_REGISTRY.md",
+      "size": 1074,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/TASKS.md",
+      "size": 11472,
+      "mtime": 1772608176,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/TASK_LINKING_STANDARD.md",
+      "size": 1258,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/TASK_SYSTEM_POLICY_V1.md",
+      "size": 4817,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/TDE_PROJECT_START_PACKET_V1.md",
+      "size": 3130,
+      "mtime": 1772439841,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/TEAM_IDENTITY.md",
+      "size": 331,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/TOOLS.md",
+      "size": 860,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/TOOL_CAPABILITY_CONTRACT_TEMPLATE.md",
+      "size": 660,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/TOOL_EXTERNAL_SERVICE_GOVERNANCE_V1.md",
+      "size": 955,
+      "mtime": 1772482651,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/TRELLO_CONNECTOR_V1.md",
+      "size": 1822,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/USER.md",
+      "size": 2038,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/VENDOR_DPA_REGISTER_V1.md",
+      "size": 540,
+      "mtime": 1772475077,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/WAYS_OF_WORKING_V1.md",
+      "size": 4462,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/WO-2026-TDE-KERNEL-S1.md",
+      "size": 3199,
+      "mtime": 1772456915,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/WO-2026-TDE-KERNEL-S10.md",
+      "size": 2191,
+      "mtime": 1772483457,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/WO-2026-TDE-KERNEL-S11.md",
+      "size": 2439,
+      "mtime": 1772484267,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/WO-2026-TDE-KERNEL-S12.md",
+      "size": 2868,
+      "mtime": 1772570220,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/WO-2026-TDE-KERNEL-S13.md",
+      "size": 2189,
+      "mtime": 1772525700,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/WO-2026-TDE-KERNEL-S14.md",
+      "size": 2390,
+      "mtime": 1772563966,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/WO-2026-TDE-KERNEL-S15.md",
+      "size": 3987,
+      "mtime": 1772604320,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/WO-2026-TDE-KERNEL-S16.md",
+      "size": 2534,
+      "mtime": 1772607683,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/WO-2026-TDE-KERNEL-S2.md",
+      "size": 3072,
+      "mtime": 1772457054,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/WO-2026-TDE-KERNEL-S3.md",
+      "size": 1938,
+      "mtime": 1772469419,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/WO-2026-TDE-KERNEL-S4.md",
+      "size": 1660,
+      "mtime": 1772475966,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/WO-2026-TDE-KERNEL-S5.md",
+      "size": 1913,
+      "mtime": 1772475966,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/WO-2026-TDE-KERNEL-S6.md",
+      "size": 1726,
+      "mtime": 1772476139,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/WO-2026-TDE-KERNEL-S7.md",
+      "size": 1898,
+      "mtime": 1772476586,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/WO-2026-TDE-KERNEL-S8.md",
+      "size": 1547,
+      "mtime": 1772478522,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/WO-2026-TDE-KERNEL-S9.md",
+      "size": 1618,
+      "mtime": 1772481067,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/WO_TEMPLATE_V1.md",
+      "size": 954,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/assets/avatar/lyra-avatar-v1.png",
+      "size": 301695,
+      "mtime": 1772385639,
+      "ext": ".png"
+    },
+    {
+      "path": "repos/lyra-operating-system/assets/avatar/lyra-team-avatar-v1.png",
+      "size": 344388,
+      "mtime": 1772385639,
+      "ext": ".png"
+    },
+    {
+      "path": "repos/lyra-operating-system/backup-checklist.md",
+      "size": 1658,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/control/.gitkeep",
+      "size": 0,
+      "mtime": 1772385639,
+      "ext": ""
+    },
+    {
+      "path": "repos/lyra-operating-system/docs/architecture/openclaw-agent-deployment-report-2026-02-28.md",
+      "size": 20593,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/evidence-pack-template.md",
+      "size": 1317,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/governance/agent-catalog.md",
+      "size": 950,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/governance/direction-package.md",
+      "size": 31820,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/governance/playbook-inventory.md",
+      "size": 780,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/governance/policy-register.md",
+      "size": 1291,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/governance/research/.gitkeep",
+      "size": 0,
+      "mtime": 1772385639,
+      "ext": ""
+    },
+    {
+      "path": "repos/lyra-operating-system/governance/research/business-case-threshold-research-providers.md",
+      "size": 1667,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/governance/research/claude-code-prompting-guide-2026-02-28.md",
+      "size": 23000,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/governance/system-charter.md",
+      "size": 1671,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/governance/system-direction-research-2026-02-28.md",
+      "size": 26015,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/governance/task-decision-engine-contract.md",
+      "size": 958,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/integrations/openclaw/prompting-guides/.gitkeep",
+      "size": 0,
+      "mtime": 1772385639,
+      "ext": ""
+    },
+    {
+      "path": "repos/lyra-operating-system/integrations/trello/.gitkeep",
+      "size": 0,
+      "mtime": 1772385639,
+      "ext": ""
+    },
+    {
+      "path": "repos/lyra-operating-system/jobs/JOB-TEMPLATE/HANDOVER.md",
+      "size": 212,
+      "mtime": 1772458400,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/jobs/JOB-TEMPLATE/JOB.md",
+      "size": 136,
+      "mtime": 1772458400,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/jobs/JOB-TEMPLATE/MEMORY.md",
+      "size": 99,
+      "mtime": 1772458400,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/jobs/JOB-TEMPLATE/STATE.md",
+      "size": 151,
+      "mtime": 1772458400,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/archive/control-panel/ARCHIVE_BOUNDARY_NOTE_V1.md",
+      "size": 891,
+      "mtime": 1772440902,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/archive/control-panel/BUILD_SPEC_CONTROL_PANEL_MVP.md",
+      "size": 3511,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/archive/control-panel/CHIEF_ARCHITECT_GO_NO_GO_2026-02-26.md",
+      "size": 2294,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/archive/control-panel/CHIEF_ARCHITECT_PILOT_CHECKLIST.md",
+      "size": 931,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/archive/control-panel/CLAUDE_CODE_PROMPT_CONTROL_PANEL_MVP.md",
+      "size": 1283,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/archive/control-panel/CONTROL_PANEL.md",
+      "size": 1173,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/archive/control-panel/CONTROL_PANEL_TERMINATION_ACTION_PLAN_V1.md",
+      "size": 3619,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/archive/control-panel/CONTROL_PANEL_VNEXT_EXECUTION_PLAN.md",
+      "size": 7267,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/archive/control-panel/CONTROL_TOWER_MVP_VIEWS_SPEC.md",
+      "size": 1344,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/archive/control-panel/ROLE_BASED_CONTROL_PANEL_V1.md",
+      "size": 3226,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/archive/control-panel/SPRINT3_WEEKLY_CADENCE.md",
+      "size": 354,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/distilled/2026-02-24__control-panel-mvp-implementation-cuts__v1.md",
+      "size": 1199,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/distilled/2026-02-25__community-notes__adopt-now-vs-later__v1.md",
+      "size": 696,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/distilled/2026-03-01__checklist__trello-cutover-readiness-v1.md",
+      "size": 1626,
+      "mtime": 1772391117,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/distilled/2026-03-01__decision-memo__task-decision-engine-project-definition-gate__v1.md",
+      "size": 3434,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/distilled/2026-03-01__decision-memo__task-decision-engine-project-definition-gate__v2.md",
+      "size": 2145,
+      "mtime": 1772392296,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/distilled/2026-03-01__design__trello-retirement-design-v1.md",
+      "size": 2419,
+      "mtime": 1772391105,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/distilled/2026-03-01__matrix__tde-mutation-authority-v1.md",
+      "size": 1338,
+      "mtime": 1772391517,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/distilled/2026-03-01__package__tde-definition-phase-consolidation__v1.md",
+      "size": 3440,
+      "mtime": 1772434838,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/distilled/2026-03-01__spec__tde-thin-slice-acceptance-tests-v1.md",
+      "size": 1736,
+      "mtime": 1772434581,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/distilled/2026-03-02__charter__tde-phase-delegation-charter-v1.md",
+      "size": 1127,
+      "mtime": 1772436538,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/distilled/2026-03-02__gate-note__tde-build-readiness-decision-note-v1.md",
+      "size": 2227,
+      "mtime": 1772436826,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/distilled/2026-03-02__insight__tde-use-case-anti-stall-autonomous-progress-v1.md",
+      "size": 1299,
+      "mtime": 1772437360,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/distilled/2026-03-02__matrix__tde-mutation-authority-v2-job-bound.md",
+      "size": 5628,
+      "mtime": 1772434588,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/distilled/2026-03-02__milestone-packet__tde-kernel-s1-s2-gate-for-job-own-001-v1.md",
+      "size": 1982,
+      "mtime": 1772459591,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/distilled/2026-03-02__milestone-packet__tde-kernel-s1-s3-gate-for-job-own-001-v1.md",
+      "size": 2355,
+      "mtime": 1772469622,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/distilled/2026-03-02__packet__tde-kernel-s2-planning-v1.md",
+      "size": 1559,
+      "mtime": 1772456404,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/distilled/2026-03-02__plan__audit-compliance-uplift-v1.md",
+      "size": 799,
+      "mtime": 1772475094,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/distilled/2026-03-02__plan__devsecops-maturity-uplift-v1.md",
+      "size": 952,
+      "mtime": 1772461892,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/distilled/2026-03-02__plan__memory-architecture-improvements-v1.md",
+      "size": 772,
+      "mtime": 1772458432,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/distilled/2026-03-02__plan__process-as-code-implementation-v1.md",
+      "size": 1292,
+      "mtime": 1772441359,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/distilled/2026-03-02__plan__tde-build-phase-backlog-sequencing-wip-limited-v1.md",
+      "size": 1450,
+      "mtime": 1772436809,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/distilled/2026-03-02__plan__tool-external-service-hardening-v1.md",
+      "size": 738,
+      "mtime": 1772482651,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/distilled/2026-03-02__raci__tde-build-gate-approvals-v1.md",
+      "size": 2130,
+      "mtime": 1772434838,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/distilled/2026-03-02__spec__job-binding-and-authority-transfer-v1.md",
+      "size": 2542,
+      "mtime": 1772433573,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/distilled/2026-03-02__use-case__tde-progress-transparency-monitoring-v1.md",
+      "size": 1485,
+      "mtime": 1772439841,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/distilled/INDEX.md",
+      "size": 1508,
+      "mtime": 1772482664,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-02/20260225-083719__security_audit.md",
+      "size": 532,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-02/20260225-083721__doctor.md",
+      "size": 499,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-02/20260225-084004__security_audit.md",
+      "size": 532,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-02/20260225-084006__doctor.md",
+      "size": 499,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-02/prompt-drift-review-template.md",
+      "size": 843,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/2026-03-02__verification__wo-2026-tde-kernel-s1.md",
+      "size": 564,
+      "mtime": 1772437563,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/2026-03-02__verification__wo-2026-tde-kernel-s10.md",
+      "size": 1955,
+      "mtime": 1772482838,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/2026-03-02__verification__wo-2026-tde-kernel-s11.md",
+      "size": 3027,
+      "mtime": 1772484259,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/2026-03-02__verification__wo-2026-tde-kernel-s2.md",
+      "size": 1584,
+      "mtime": 1772457066,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/2026-03-02__verification__wo-2026-tde-kernel-s3.md",
+      "size": 2777,
+      "mtime": 1772468899,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/2026-03-02__verification__wo-2026-tde-kernel-s4.md",
+      "size": 1055,
+      "mtime": 1772475121,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/2026-03-02__verification__wo-2026-tde-kernel-s5.md",
+      "size": 1571,
+      "mtime": 1772475668,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/2026-03-02__verification__wo-2026-tde-kernel-s6.md",
+      "size": 1459,
+      "mtime": 1772476134,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/2026-03-02__verification__wo-2026-tde-kernel-s7.md",
+      "size": 1106,
+      "mtime": 1772476597,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/2026-03-02__verification__wo-2026-tde-kernel-s8.md",
+      "size": 1295,
+      "mtime": 1772478199,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/2026-03-02__verification__wo-2026-tde-kernel-s9.md",
+      "size": 1370,
+      "mtime": 1772479841,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/2026-03-03__verification__tde-2026-024-real-task-ingestion-baseline.md",
+      "size": 1135,
+      "mtime": 1772569866,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/2026-03-03__verification__tde-2026-025-real-workload-writeback-slice.md",
+      "size": 937,
+      "mtime": 1772570206,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/2026-03-03__verification__wo-2026-tde-kernel-s13.md",
+      "size": 1501,
+      "mtime": 1772563124,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/2026-03-03__verification__wo-2026-tde-kernel-s14.md",
+      "size": 1009,
+      "mtime": 1772563933,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/2026-03-04__verification__wo-2026-tde-kernel-s15.md",
+      "size": 2185,
+      "mtime": 1772604306,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/2026-03-04__verification__wo-2026-tde-kernel-s16.md",
+      "size": 1846,
+      "mtime": 1772607676,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-activation-execution-receipt-blocked.json",
+      "size": 1072,
+      "mtime": 1772484245,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-activation-execution-receipt-blocked.md",
+      "size": 793,
+      "mtime": 1772484245,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-activation-execution-receipt-pass.json",
+      "size": 984,
+      "mtime": 1772484245,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-activation-execution-receipt-pass.md",
+      "size": 702,
+      "mtime": 1772484245,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-broader-rollout-checklist.md",
+      "size": 740,
+      "mtime": 1772476576,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-broader-rollout-expansion-criteria.md",
+      "size": 1127,
+      "mtime": 1772476576,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-broader-scope-simulated-cycle.json",
+      "size": 3356,
+      "mtime": 1772476576,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-canary-cycle-state-threshold-breach.json",
+      "size": 128,
+      "mtime": 1772475656,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-canary-cycle-state.json",
+      "size": 125,
+      "mtime": 1772570231,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-canary-operational-note.md",
+      "size": 296,
+      "mtime": 1772476121,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-canary-operational-status-summary.json",
+      "size": 477,
+      "mtime": 1772476121,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-canary-operational-summary-state.json",
+      "size": 226,
+      "mtime": 1772476121,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-canary-realworkload-latest.json",
+      "size": 752,
+      "mtime": 1772609280,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-canary-rollout-readiness-checklist.md",
+      "size": 605,
+      "mtime": 1772476121,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-canary-simulation-3-clean-cycles.json",
+      "size": 1814,
+      "mtime": 1772475597,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-canary-status-latest.json",
+      "size": 812,
+      "mtime": 1772609280,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-canary-status-threshold-breach.json",
+      "size": 859,
+      "mtime": 1772609280,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-failclosed.json",
+      "size": 726,
+      "mtime": 1772609280,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-latest.json",
+      "size": 1094,
+      "mtime": 1772609280,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-s12-writeback.json",
+      "size": 1695,
+      "mtime": 1772609280,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-s14-failclosed.json",
+      "size": 736,
+      "mtime": 1772609280,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-s14-pass.json",
+      "size": 1513,
+      "mtime": 1772609280,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-s15-failclosed-binding-mismatch.json",
+      "size": 1948,
+      "mtime": 1772609280,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-s15-pass.json",
+      "size": 1909,
+      "mtime": 1772609280,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-s15-reauth-required.json",
+      "size": 2026,
+      "mtime": 1772609280,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-s16-failclosed-objective-linkage.json",
+      "size": 1214,
+      "mtime": 1772609280,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-s16-pass.json",
+      "size": 2259,
+      "mtime": 1772609280,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-milestone-s4-s7-snapshot.json",
+      "size": 2688,
+      "mtime": 1772484245,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-owner-gate-packet.json",
+      "size": 1429,
+      "mtime": 1772484245,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-owner-gate-packet.md",
+      "size": 647,
+      "mtime": 1772484245,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-release-envelope-blocked.json",
+      "size": 2100,
+      "mtime": 1772609280,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-release-envelope-blocked.md",
+      "size": 502,
+      "mtime": 1772484245,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-release-envelope-pass.json",
+      "size": 2035,
+      "mtime": 1772609280,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-release-envelope-pass.md",
+      "size": 431,
+      "mtime": 1772484245,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/indexes/TOPIC_INDEX.md",
+      "size": 1536,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/indexes/structure-scope-rules.md",
+      "size": 969,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/indexes/workspace-structure-migration-plan-v1.md",
+      "size": 996,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/registries/agents/agent-chief-architect.md",
+      "size": 283,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/registries/agents/control-tower-lyra.md",
+      "size": 570,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/registries/routing/default-ops-lane.md",
+      "size": 547,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/registries/routing/route-architecture.md",
+      "size": 358,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-02-24__deepresearch__control-panel-vision__v1.md",
+      "size": 1513,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-02-25__community-notes__openclaw-advanced-use-cases__v1.md",
+      "size": 1406,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-02-25__deepresearch__safe-human-like-tooling__v1.md",
+      "size": 1216,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__ai-native-software-delivery-operating-system-diagnostic-and-redesign__v1.md",
+      "size": 41016,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__architectures-for-separating-an-operating-system-component-from-a-control-panel-best-pract__v1.md",
+      "size": 32848,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__best-practices-for-task-and-decision-management-engines-for-lyra-openclaw__v1.md",
+      "size": 33872,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__best-practices-for-task-management-prioritization-kanban-backlog-workflows-decision-proces__v1.md",
+      "size": 27678,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__boundary-and-ownership-model-for-gateway-dashboard-and-control-panel__v1.md",
+      "size": 21759,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__chief-architect-sub-agent-in-lyra-openclaw-best-practices-system-fit-and-an-implementation__v1.md",
+      "size": 22120,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__continuous-action-orchestration-for-lyra-on-openclaw__v1.md",
+      "size": 29422,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__continuously-improving-selfimproving-ai-agent-systems-for-lyra-openclaw__v1.md",
+      "size": 35838,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__control-panel-task-engine-and-ui-brainstorm-for-the-third-sprint__v1.md",
+      "size": 21124,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__decision-memo-task-decision-engine-project-definition-gate-v2__v1.md",
+      "size": 14610,
+      "mtime": 1772388259,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__designing-safe-human-like-tooling-for-lyra-in-openclaw__v1.md",
+      "size": 27738,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__evaluation-of-the-top-clawhub-skills-for-openclaw__v1.md",
+      "size": 43700,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__feasibility-study-for-a-task-and-decision-management-engine-in-lyra-openclaw__v1.md",
+      "size": 15822,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__first-version-information-model-for-the-lyra-openclaw-system__v1.md",
+      "size": 63335,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__gpt-5-3-codex-in-lyra-openclaw-capabilities-failure-modes-and-a-prompting-md-hygiene-playb__v1.md",
+      "size": 20295,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__idempotent-action-contract-patterns-for-agent-tool-execution__v1.md",
+      "size": 33717,
+      "mtime": 1772390635,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__improving-memory-and-knowledge-management-for-lyra-on-openclaw__v1.md",
+      "size": 24714,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__independent-architecture-review-for-a-localfirst-executive-intelligence-layer__v1.md",
+      "size": 21747,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__independent-architecture-review-for-the-localfirst-control-panel-sprint-three__v1.md",
+      "size": 18147,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__integrating-markdown-based-os-files-into-an-agent-runtime__v1.md",
+      "size": 15976,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__lyra-openclaw-control-panel-architecture-second-opinion__v1.md",
+      "size": 19580,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__next-phase-development-process-and-control-panel-design-for-lyra-openclaw__v1.md",
+      "size": 22544,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__policy-as-code-decision-rights-for-lyra-tde__v1.md",
+      "size": 27558,
+      "mtime": 1772391384,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__post-mortem-on-the-control-panel-project-in-the-lyra-openclaw-system__v1.md",
+      "size": 23969,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__pragmatic-expert-level-cybersecurity-recommendations-for-the-openclaw-solution__v1.md",
+      "size": 43930,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__prompting-playbooks-for-claude-code-and-openai-deep-research-in-lyra-openclaw__v1.md",
+      "size": 23149,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__sprint-5-architecture-review-for-a-local-first-control-panel__v1.md",
+      "size": 21177,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__sprint-6-implementation-packet-review-for-os-only-task-service__v1.md",
+      "size": 25030,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__sprint-6-review-of-task-service-design-for-a-localfirst-control-panel__v1.md",
+      "size": 26650,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__structuring-the-lyra-openclaw-markdown-workspace__v1.md",
+      "size": 20900,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__task-and-decision-management-engine-for-lyra-openclaw-job-based-work-orchestration-and-use__v1.md",
+      "size": 25795,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__task-management-service-design-brief-for-a-local-first-control-panel__v1.md",
+      "size": 30415,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__deepresearch__trello-cutover-playbook-low-risk-migration-to-task-decision-engine__v1.md",
+      "size": 30572,
+      "mtime": 1772390689,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__expert-analysis__autonomous-agentic-architectures-an-exhaustive-analysis-of-openclaw-capabilities-replicabl__v1.md",
+      "size": 54854,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__guide__openclaw-prompting-guide-for-claude-code__v1.md",
+      "size": 23290,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__research__openclaw-direction-package-analysis-and-implementation-recommendation__v1.md",
+      "size": 32131,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__research__research-report-ai-agent-deployment-and-jobs-vs-agents-in-openclaw__v1.md",
+      "size": 20909,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-01__research__setting-direction-in-a-multi-agent-openclaw-system__v1.md",
+      "size": 26318,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-02__deepresearch__audit-and-compliance-enhancement-for-lyra-openclaw__v1.md",
+      "size": 27058,
+      "mtime": 1772475077,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-02__deepresearch__devsecops-maturity-assessment-and-improvement-roadmap-for-lyra-openclaw__v1.md",
+      "size": 32484,
+      "mtime": 1772461892,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-02__deepresearch__improving-lyra-openclaw-agent-system-processes__v1.md",
+      "size": 27707,
+      "mtime": 1772441339,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-02__deepresearch__memory-architecture-for-lyra-on-openclaw__v1.md",
+      "size": 27065,
+      "mtime": 1772458400,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-02__deepresearch__tool-and-external-service-handling-for-lyra-openclaw__v1.md",
+      "size": 37762,
+      "mtime": 1772482651,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-03__deepresearch__making-jobs-operational-in-lyra__v1.md",
+      "size": 29430,
+      "mtime": 1772525633,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-03__deepresearch__second-opinion-review-of-tde-micro-sprints-and-current-output__v1.md",
+      "size": 21470,
+      "mtime": 1772521571,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-04__deepresearch__sprint-16-renewal-analysis-of-the-lyra-openclaw-tde-development-project__v1.md",
+      "size": 30485,
+      "mtime": 1772608165,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/INDEX.md",
+      "size": 11954,
+      "mtime": 1772608170,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/memory/2026-02-23.md",
+      "size": 476,
+      "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/os/adr/.gitkeep",
+      "size": 0,
+      "mtime": 1772385639,
+      "ext": ""
+    },
+    {
+      "path": "repos/lyra-operating-system/os/models/.gitkeep",
+      "size": 0,
+      "mtime": 1772385639,
+      "ext": ""
+    },
+    {
+      "path": "repos/lyra-operating-system/os/models/TDE_KERNEL_SLICE_S1_SPEC.md",
+      "size": 1646,
+      "mtime": 1772437563,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/os/policies/.gitkeep",
+      "size": 0,
+      "mtime": 1772385639,
+      "ext": ""
+    },
+    {
+      "path": "repos/lyra-operating-system/os/principles/.gitkeep",
+      "size": 0,
+      "mtime": 1772385639,
+      "ext": ""
+    },
+    {
+      "path": "repos/lyra-operating-system/os/runbooks/.gitkeep",
+      "size": 0,
+      "mtime": 1772385639,
+      "ext": ""
+    },
+    {
+      "path": "repos/lyra-operating-system/os/runtime/tde_active_bindings.json",
+      "size": 284,
+      "mtime": 1772604263,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/os/sops/.gitkeep",
+      "size": 0,
+      "mtime": 1772385639,
+      "ext": ""
+    },
+    {
+      "path": "repos/lyra-operating-system/os/sops/TDE_ANTI_STALL_HOOK_V1.md",
+      "size": 2708,
+      "mtime": 1772468854,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/os/sops/TDE_CANARY_RUNTIME_WIRING_V1.md",
+      "size": 1011,
+      "mtime": 1772475594,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/os/sops/TDE_CANARY_SCHEDULING_CONTRACT_V1.md",
+      "size": 1991,
+      "mtime": 1772475587,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/os/sops/TDE_JOB_TICK_CONTRACT_V1.md",
+      "size": 3963,
+      "mtime": 1772607643,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/os/standards/.gitkeep",
+      "size": 0,
+      "mtime": 1772385639,
+      "ext": ""
+    },
+    {
+      "path": "repos/lyra-operating-system/os/templates/.gitkeep",
+      "size": 0,
+      "mtime": 1772385639,
+      "ext": ""
+    },
+    {
+      "path": "repos/lyra-operating-system/os/templates/artifact-frontmatter-template.md",
+      "size": 247,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/processes/standards/PROCESS_METADATA_SCHEMA_V1.yaml",
+      "size": 812,
+      "mtime": 1772441359,
+      "ext": ".yaml"
+    },
+    {
+      "path": "repos/lyra-operating-system/prompts/claude-code/WO_execute.md",
+      "size": 1279,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/prompts/claude-code/WO_plan.md",
+      "size": 1200,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/prompts/deep-research/RO_private.md",
+      "size": 900,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/prompts/deep-research/RO_public.md",
+      "size": 729,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/prompts/handoff/CA_change.md",
+      "size": 438,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/prompts/handoff/DDA_report.md",
+      "size": 465,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/registries/.gitkeep",
+      "size": 0,
+      "mtime": 1772385639,
+      "ext": ""
+    },
+    {
+      "path": "repos/lyra-operating-system/restore.md",
+      "size": 2693,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/skills-governance.md",
+      "size": 3001,
+      "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/skills-policy.yaml",
+      "size": 2218,
+      "mtime": 1772385639,
+      "ext": ".yaml"
+    },
+    {
+      "path": "repos/lyra-operating-system/tools/architecture_fitness_gate.py",
+      "size": 3105,
+      "mtime": 1772385639,
+      "ext": ".py"
+    },
+    {
+      "path": "repos/lyra-operating-system/tools/evidence_ingest.py",
+      "size": 3599,
+      "mtime": 1772035686,
+      "ext": ".py"
+    },
+    {
+      "path": "repos/lyra-operating-system/tools/tde_activation_execution_receipt.py",
+      "size": 6485,
+      "mtime": 1772484239,
+      "ext": ".py"
+    },
+    {
+      "path": "repos/lyra-operating-system/tools/tde_canary_cron_hook.sh",
+      "size": 197,
+      "mtime": 1772475575,
+      "ext": ".sh"
+    },
+    {
+      "path": "repos/lyra-operating-system/tools/tde_canary_heartbeat_hook.sh",
+      "size": 202,
+      "mtime": 1772475575,
+      "ext": ".sh"
+    },
+    {
+      "path": "repos/lyra-operating-system/tools/tde_canary_operational_summary.py",
+      "size": 6959,
+      "mtime": 1772476115,
+      "ext": ".py"
+    },
+    {
+      "path": "repos/lyra-operating-system/tools/tde_canary_runtime_cycle.py",
+      "size": 8460,
+      "mtime": 1772609258,
+      "ext": ".py"
+    },
+    {
+      "path": "repos/lyra-operating-system/tools/tde_canary_simulate_three_clean_cycles.py",
+      "size": 1155,
+      "mtime": 1772475575,
+      "ext": ".py"
+    },
+    {
+      "path": "repos/lyra-operating-system/tools/tde_job_tick_cron_hook.sh",
+      "size": 560,
+      "mtime": 1772563072,
+      "ext": ".sh"
+    },
+    {
+      "path": "repos/lyra-operating-system/tools/tde_job_tick_runner.py",
+      "size": 19811,
+      "mtime": 1772609255,
+      "ext": ".py"
+    },
+    {
+      "path": "repos/lyra-operating-system/tools/tde_kernel_slice_tests.py",
+      "size": 18470,
+      "mtime": 1772468835,
+      "ext": ".py"
+    },
+    {
+      "path": "repos/lyra-operating-system/tools/tde_migrate_artifact_schema_fields.py",
+      "size": 1705,
+      "mtime": 1772609277,
+      "ext": ".py"
+    },
+    {
+      "path": "repos/lyra-operating-system/tools/tde_milestone_snapshot.py",
+      "size": 5887,
+      "mtime": 1772478157,
+      "ext": ".py"
+    },
+    {
+      "path": "repos/lyra-operating-system/tools/tde_owner_gate_packet.py",
+      "size": 5665,
+      "mtime": 1772479823,
+      "ext": ".py"
+    },
+    {
+      "path": "repos/lyra-operating-system/tools/tde_release_envelope.py",
+      "size": 6738,
+      "mtime": 1772609263,
+      "ext": ".py"
+    },
+    {
+      "path": "repos/lyra-operating-system/tools/tde_rollout_broader_scope_simulation.py",
+      "size": 7841,
+      "mtime": 1772476573,
+      "ext": ".py"
+    },
+    {
+      "path": "repos/lyra-operating-system/tools/test_s15_binding_integrity.py",
+      "size": 2979,
+      "mtime": 1772607616,
+      "ext": ".py"
+    },
+    {
+      "path": "repos/lyra-operating-system/tools/test_s16_objective_linkage.py",
+      "size": 2863,
+      "mtime": 1772607628,
+      "ext": ".py"
+    },
+    {
+      "path": "repos/lyra-operating-system/tools/trello_sync.py",
+      "size": 6474,
+      "mtime": 1772035686,
+      "ext": ".py"
+    },
+    {
+      "path": "repos/lyra-operating-system/tools/trello_sync_runner.sh",
+      "size": 181,
+      "mtime": 1772035686,
+      "ext": ".sh"
+    },
+    {
+      "path": "repos/lyra-operating-system/tools/validate_compliance_pack.py",
+      "size": 554,
+      "mtime": 1772475077,
+      "ext": ".py"
+    },
+    {
+      "path": "repos/lyra-operating-system/tools/validate_process_metadata.py",
+      "size": 1682,
+      "mtime": 1772441368,
+      "ext": ".py"
+    },
+    {
+      "path": "repos/lyra-operating-system/tools/validate_review_dates.py",
+      "size": 1325,
+      "mtime": 1772461892,
+      "ext": ".py"
+    },
+    {
+      "path": "restore.md",
+      "size": 2693,
+      "mtime": 1772048410,
+      "ext": ".md"
+    },
+    {
+      "path": "schemas/_registry.json",
+      "size": 443,
+      "mtime": 1772609069,
+      "ext": ".json"
+    },
+    {
+      "path": "schemas/decision_memo_metadata/v1.0.0.schema.json",
+      "size": 1008,
+      "mtime": 1772609089,
+      "ext": ".json"
+    },
+    {
+      "path": "schemas/scorecard/v1.0.0.schema.json",
+      "size": 363,
+      "mtime": 1772609092,
+      "ext": ".json"
+    },
+    {
+      "path": "schemas/tde_canary_status/v1.0.0.schema.json",
+      "size": 513,
+      "mtime": 1772609077,
+      "ext": ".json"
+    },
+    {
+      "path": "schemas/tde_job_tick/v1.0.0.schema.json",
+      "size": 574,
+      "mtime": 1772609073,
+      "ext": ".json"
+    },
+    {
+      "path": "schemas/tde_release_envelope/v1.0.0.schema.json",
+      "size": 556,
+      "mtime": 1772609083,
+      "ext": ".json"
+    },
+    {
+      "path": "skills-governance.md",
+      "size": 3001,
+      "mtime": 1772048236,
+      "ext": ".md"
+    },
+    {
+      "path": "skills-policy.yaml",
+      "size": 2218,
+      "mtime": 1772048236,
+      "ext": ".yaml"
+    },
+    {
+      "path": "templates/EXPERIMENT_CLOSEOUT_TEMPLATE.md",
+      "size": 741,
+      "mtime": 1772569319,
+      "ext": ".md"
+    },
+    {
+      "path": "templates/OPPORTUNITY_PACKET_TEMPLATE.md",
+      "size": 1093,
+      "mtime": 1772569318,
+      "ext": ".md"
+    },
+    {
+      "path": "templates/STANDARD_CHANGE_PILOT_OUTCOME_TEMPLATE.md",
+      "size": 693,
+      "mtime": 1772610278,
+      "ext": ".md"
+    },
+    {
+      "path": "tools/architecture_fitness_gate.py",
+      "size": 3105,
+      "mtime": 1772129778,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/docs_hygiene_bundle.py",
+      "size": 1207,
+      "mtime": 1772519712,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/evidence_ingest.py",
+      "size": 3975,
+      "mtime": 1772158856,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/gen_inventory.py",
+      "size": 1314,
+      "mtime": 1772609156,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/gen_knowledge_indexes.py",
+      "size": 2884,
+      "mtime": 1772609814,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/markdown_link_check.py",
+      "size": 2771,
+      "mtime": 1772418047,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/openclaw_release_delta_snapshot.py",
+      "size": 3161,
+      "mtime": 1772517959,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/standard_change_policy_check.py",
+      "size": 3482,
+      "mtime": 1772610047,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/task_hygiene_check.py",
+      "size": 1966,
+      "mtime": 1772504466,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/test_markdown_link_check.py",
+      "size": 1190,
+      "mtime": 1772590836,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/test_parser_smoke.py",
+      "size": 1868,
+      "mtime": 1772516732,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/test_task_hygiene_check.py",
+      "size": 1455,
+      "mtime": 1772514311,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/trello_sync.py",
+      "size": 6620,
+      "mtime": 1772158843,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/trello_sync_runner.sh",
+      "size": 181,
+      "mtime": 1771947780,
+      "ext": ".sh"
+    },
+    {
+      "path": "tools/validate_repo.py",
+      "size": 6090,
+      "mtime": 1772610050,
+      "ext": ".py"
+    }
+  ]
+}

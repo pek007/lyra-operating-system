@@ -11,6 +11,13 @@ Question: {{question}}
 Audience: expert operator/architect
 </objective>
 
+<style>
+Assume audience are experts in relevant fields.
+Prioritize technical depth, edge cases, and trade-offs over basic explanation.
+Keep output tightly structured and decision-ready (clear sections, ranked options, explicit recommendation).
+Use concise language inside each section; avoid filler.
+</style>
+
 <scope>
 In-scope: {{in_scope}}
 Out-of-scope: {{out_of_scope}}

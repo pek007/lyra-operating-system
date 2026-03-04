@@ -3,47 +3,172 @@
 Use this until a dedicated work tool is selected.
 
 ## Inbox
-- [ ] TDE-2026-028 | Publish canonical TDE entrypoint index (`os/tde/INDEX.md` or equivalent) linking specs/SOPs/tools and explicit "real vs simulated" status.
-- [ ] TDE-2026-029A | Add atomic/locked TASKS writeback contract + implementation for job tick runner to prevent concurrent lost updates.
-- [ ] TDE-2026-029B | Separate runtime kernel module from test harness (`tools/tde_kernel_slice_tests.py`) to reduce coupling.
-- [ ] TDE-2026-029C | Define delivery boundary for TDE changes (merge vs activation) and start baseline DORA-aligned tracking artifact.
-- [ ] SEC-AUTO-20260227-01 | Restrict Telegram group command senders via `groupAllowFrom` (or per-group `allowFrom`) to remove critical command-invocation exposure.
-- [ ] SEC-AUTO-20260227-02 | Decide and enforce trust-boundary model for multi-user/group usage (separate gateways vs hardened shared runtime sandbox/tool scope).
-- [ ] SEC-AUTO-20260227-03 | Confirm reverse-proxy posture for Control UI; if proxied, set `gateway.trustedProxies`, otherwise explicitly keep local-only.
-- [ ] SEC-AUTO-20260228-01 | Resolve persistent `security.trust_model.multi_user_heuristic` warning: choose single-trust boundary or split to separate gateways/identities for group contexts.
-- [ ] SEC-AUTO-20260228-02 | Resolve persistent `gateway.trusted_proxies_missing` warning: explicitly document local-only UI posture or configure `gateway.trustedProxies` for actual reverse proxy IPs.
-- [ ] IMP-AUTO-20260227-02 | Add smoke tests for `tools/` parsers (task ID extraction + frontmatter parsing) to prevent silent automation regressions.
-- [ ] IMP-AUTO-20260228-01 | Automate daily OpenClaw release-delta evidence snapshot (`openclaw --version/status/update status`) into `knowledge/evidence/` for auditable change tracking.
+- [ ] OPS-2026-046 | Implement Opportunity-to-Execution Engine v1 bootstrap from Deep Research report (signal ledger + opportunity/experiment templates + weekly metrics cadence + first pilot selection).
+  - [x] 2026-03-03 | Stored Deep Research ingest artifact in library: `knowledge/reports/2026-03-03__deepresearch__opportunity-to-execution-engine-for-lyra-openclaw__v1.md`.
+  - [x] 2026-03-03 | Created core artifact structure: `knowledge/friction/`, `knowledge/opportunities/`, `knowledge/experiments/`, `templates/`, `metrics/`.
+  - [x] 2026-03-03 | Added `templates/OPPORTUNITY_PACKET_TEMPLATE.md` and `templates/EXPERIMENT_CLOSEOUT_TEMPLATE.md`.
+  - [x] 2026-03-03 | Added baseline metrics files `metrics/CI_WEEKLY.md` and `metrics/CI_DASHBOARD.md`.
+  - [x] 2026-03-03 | Ran first weekly Layer B synthesis and produced top-3 candidates in `knowledge/reports/WEEKLY_SYNTHESIS__2026-03-03.md`.
+  - [x] 2026-03-03 | Scored candidates with ELS rubric and prepared activation packet for selected pilot `OPP-2026-001` (`knowledge/opportunities/OPP-2026-001__drift-aftercare-standard.md`).
+  - [x] 2026-03-03 | Activated pilot `OPP-2026-001` with rollback + instrumentation and opened closeout artifact `knowledge/experiments/EXP-2026-001__drift-aftercare-standard.md`.
+- [ ] OPS-2026-047 | Execute Drift Aftercare pilot (`OPP-2026-001`) for `IMP-AUTO-20260303-03`, publish 7-day checkpoint evidence, and decide scale/rollback.
+  - [x] 2026-03-03 | Pilot activated as `EXP-2026-001` (status: active_pilot, period: 2026-03-03 to 2026-03-10).
+  - [ ] 2026-03-10 | Publish checkpoint evidence artifact and close with decision (scale/standardize/rollback/retest).
+- [x] OPS-2026-048 | Implement machine-checkable governance bootstrap v0.1 (schema authority + validator entrypoint + inventory/index generation + CI drift checks) from 2026-03-04 deep research blueprint.
+  - [x] 2026-03-04 | Confirmed `schemas/` contract authority for job tick / canary status / release envelope / decision memo metadata (`schemas/_registry.json` + schema files).
+  - [x] 2026-03-04 | Validated and extended `tools/validate_repo.py` as single entrypoint (includes report→decision mapping rule + generated drift checks) and wired with existing `.github/workflows/governance-machine-check.yml`.
+  - [x] 2026-03-04 | Deterministic inventory/index generation enforced via validator run (`tools/gen_inventory.py`, `tools/gen_knowledge_indexes.py`).
+  - [x] 2026-03-04 | Published milestone guide `MILESTONE_0_1_MACHINE_CHECKABLE_GOVERNANCE.md` with pass/fail expectations and non-disruption clause for TDE runtime.
+  - [x] 2026-03-04 | Published closeout note `knowledge/evidence/2026-03-04__ops-2026-048-049-closeout-note.md`.
+- [x] OPS-2026-049 | Operationalize knowledge library systems-of-record by standing up `knowledge/inbox` + `knowledge/decisions` with generated indexes and validation.
+  - [x] 2026-03-04 | Added canonical templates: `knowledge/inbox/INBOX_ENTRY_TEMPLATE_V1.md` and `knowledge/decisions/DECISION_MEMO_TEMPLATE_V1.md`.
+  - [x] 2026-03-04 | Added validator rule: decision-impacting reports (`decision_impact: true`) must map to valid `decision_id` or explicit `no_decision_marker`.
+  - [x] 2026-03-04 | Published baseline generated index artifacts including `knowledge/indexes/report_decision_index.json` and updated manifest.
+- [ ] OPS-2026-050 | Operationalize `STANDARD_CHANGE_CATALOG_V1` into executable promotion flow (registry linkage, WO/CA classification fields, exclusion-trigger checks, pilot guardrails).
+  - [x] 2026-03-04 | Linked catalog/milestone artifacts in `PROCESS_REGISTRY.md`.
+  - [x] 2026-03-04 | Added `change class` + `standard class` routing fields to `WO_TEMPLATE_V1.md` and `CA_TEMPLATE_V1.md`.
+  - [x] 2026-03-04 | Added policy check `tools/standard_change_policy_check.py` and wired `tools/validate_repo.py` to run strict exclusion-trigger guardrail enforcement.
+  - [x] 2026-03-04 | Published 2-week pilot guardrail + audit-sample protocol `STANDARD_CHANGE_PILOT_PROTOCOL_V1.md` (window: 2026-03-04..2026-03-18).
+  - [x] 2026-03-04 | Logged Day-1 audit sample evidence `knowledge/evidence/2026-03-04__standard-change-pilot-day1-audit-sample.md`.
+  - [x] 2026-03-04 | Added pilot outcome template `templates/STANDARD_CHANGE_PILOT_OUTCOME_TEMPLATE.md`.
+  - [ ] 2026-03-18 | Publish pilot outcome evidence and recommendation (keep/expand/rollback).
+- [x] OPS-2026-045 | Shift Continuous Improvement leverage discovery cadence from monthly to weekly and formalize Deep Research handoff workflow (Layer B + Layer C).
+  - [x] 2026-03-03 | Updated `CONTINUOUS_IMPROVEMENT_PROCESS_V1.md` to v1.1 with discovery layers (A daily, B weekly, C weekly via Deep Research), weekly portfolio cleanup, and `IMP-DR-*` conversion rule.
+  - [x] 2026-03-03 | Updated `CRON_SPEC_AUTONOMOUS_GOVERNANCE_SWEEPS.md` with `continuous-improvement:weekly-leverage-handoff` protocol and explicit Layer B/C packet flow to Peter.
+- [x] OPS-2026-044 | Formalize Continuous Improvement as a first-class job role and align daily cron runbook to include library relevance review + improvement backlog execution checks.
+  - [x] 2026-03-03 | Added `JOB-CI-001 — Continuous Improvement Lead` to `JOB_MARKET_MODEL_V1.md` with mission, decision rights, execution profile, escalation triggers, KPIs, assignee model, and review cadence; bumped model version to v1.3.
+  - [x] 2026-03-03 | Updated `CRON_SPEC_AUTONOMOUS_GOVERNANCE_SWEEPS.md` continuous-improvement runbook with explicit library relevance pass and mandatory `TASKS.md` `IMP-AUTO-*` execution-status review (aging/blockers + next-step recommendation).
+  - [x] 2026-03-03 | Updated active-job roster in `AGENTS.md` to include **Continuous Improvement Lead** for runtime-role coherence.
+- [x] OPS-2026-038 | Add missing job record for **Head of Control Tower** to `JOB_MARKET_MODEL_V1.md` (mission, decision rights, execution profile, KPIs, cadence) to align catalog with active runtime jobs in `AGENTS.md`.
+  - [x] 2026-03-03 | Added `JOB-CT-001` record with full schema fields (mission/outcomes, decision rights, execution profile, escalation triggers, KPIs, assignee, cadence) and bumped model version to v1.1; evidence: `knowledge/evidence/2026-03-03__ops-2026-038-head-of-control-tower-job-record-added.md`.
+- [x] OPS-2026-039 | Run job-to-runtime fit scoring (H/M/L criteria from `AGENT_LIFECYCLE_SOP_V1.md`) for all active jobs and publish assignment matrix + rationale in governance docs.
+  - [x] 2026-03-03 | Published initial scoring matrix + rationale in `governance/job-runtime-fit-matrix-2026-03-03.md` covering all active jobs and Stage-2 criteria (C1–C7).
+  - [x] 2026-03-03 | Linked matrix + evidence into `JOB_MARKET_MODEL_V1.md` Governance Cadence artifacts section and captured closeout evidence: `knowledge/evidence/2026-03-03__ops-2026-039-cadence-artifact-linkage-and-closeout.md`.
+- [x] OPS-2026-040 | Define add/change/retire workflow artifact template (proposal + re-score + reassignment + dependency/KPI impact) and link it from `JOB_MARKET_MODEL_V1.md`.
+  - [x] 2026-03-03 | Published `JOB_CHANGE_WORKFLOW_TEMPLATE_V1.md`, linked it from `JOB_MARKET_MODEL_V1.md` Job Change Process + cadence artifacts, and bumped model version to v1.2; evidence: `knowledge/evidence/2026-03-03__ops-2026-040-job-change-workflow-template-and-linkage.md`. 
+- [x] OPS-2026-041 | Decide whether **Auditor** needs a durable independent runtime boundary (persistent profile vs periodic sub-agent session) and document decision with triggers.
+  - [x] 2026-03-03 | Published runtime-boundary decision artifact with explicit reopen/escalation triggers: `governance/auditor-runtime-boundary-decision-2026-03-03.md`; evidence: `knowledge/evidence/2026-03-03__ops-2026-041-auditor-runtime-boundary-decision.md`.
+- [x] OPS-2026-042 | Stand up monthly lifecycle KPI snapshot (`persistent count`, `% jobs without persistent agents`, utilization, cost/latency, retire:create ratio, boundary incidents) with evidence path under `knowledge/evidence/`.
+  - [x] 2026-03-03 | Published initial monthly baseline artifact `governance/job-lifecycle-kpi-snapshot-2026-03.md` (with KPI schema + available baseline values + instrumentation gaps) and logged evidence: `knowledge/evidence/2026-03-03__ops-2026-042-monthly-lifecycle-kpi-baseline-publish.md`.
+  - [x] 2026-03-03 | Added controlled `Incident Tags` taxonomy (`trust_boundary` et al.) to `INCIDENT_LOG.md` and updated KPI snapshot progress section to make boundary-incident counting deterministic; evidence: `knowledge/evidence/2026-03-03__ops-2026-042-incident-tag-taxonomy-added.md`.
+  - [x] 2026-03-03 | Executed board-state closeout (Inbox→Done) after evidence-chain revalidation; evidence: `knowledge/evidence/2026-03-03__ops-2026-042-task-closeout-and-board-normalization.md`.
+- [x] IMP-AUTO-20260302-03 | Harmonize schema contracts across `REGISTRY_SCHEMAS_V1.md` and `DECISION_SCHEMA_V1.md` (decision type enum, naming convention, evidence taxonomy mapping) and publish v1.1 compatibility map.
+  - [x] 2026-03-03 | Published draft compatibility artifact `REGISTRY_DECISION_COMPATIBILITY_MAP_V1_1.md` with explicit enum, naming, and evidence-type mapping rules + fail-closed validation contract for transition-layer implementation; evidence: `knowledge/evidence/2026-03-03__imp-auto-20260302-03-compatibility-map-draft.md`.
+  - [x] 2026-03-03 | Executed schema harmonization step: upgraded `REGISTRY_SCHEMAS_V1.md` to v1.1 canonical examples (`snake_case` + canonical `decision_type` enum), linked compatibility contract, and updated `DECISION_SCHEMA_V1.md` drift section to compatibility/residual-risk state; evidence: `knowledge/evidence/2026-03-03__imp-auto-20260302-03-registry-schema-v1_1-harmonization-step.md`.
+  - [x] 2026-03-03 | Executed completion recheck and board normalization (Inbox closeout + Done-lane entry) after artifact consistency validation; evidence: `knowledge/evidence/2026-03-03__imp-auto-20260302-03-closeout-and-board-normalization.md`.
+- [x] IMP-AUTO-20260303-01 | Wire `tools/task_hygiene_check.py` into cron hygiene bundle so duplicate/malformed open task IDs fail fast before inbox noise compounds.
+  - [x] 2026-03-03 | Added `task_hygiene_check.py` invocation to `continuous-improvement:sweep` runbook in `CRON_SPEC_AUTONOMOUS_GOVERNANCE_SWEEPS.md` and validated current baseline via `python3 tools/task_hygiene_check.py --file TASKS.md` (pass: 22 open tasks checked); evidence: `knowledge/evidence/2026-03-03__imp-auto-20260303-01-cron-hygiene-wire-step.md`.
+  - [x] 2026-03-03 | Executed completion recheck and board-state normalization for `IMP-AUTO-20260303-01` after validating task-hygiene baseline in current workspace state (`python3 tools/task_hygiene_check.py --file TASKS.md` pass: 21 open tasks checked); evidence: `knowledge/evidence/2026-03-03__imp-auto-20260303-01-closeout-and-board-normalization.md`.
+- [x] IMP-AUTO-20260303-02 | Add lightweight tests for `tools/task_hygiene_check.py` (duplicate open ID + malformed IMP-AUTO ID fixtures) to prevent silent lint drift.
+  - [x] 2026-03-03 | Added `tools/test_task_hygiene_check.py` unit scaffold covering duplicate open ID failure, malformed `IMP-AUTO` failure, and valid-ID pass cases; validated with `python3 -m unittest test_task_hygiene_check.py` (3 tests passing). Evidence: `knowledge/evidence/2026-03-03__imp-auto-20260303-02-task-hygiene-tests-added.md`.
+  - [x] 2026-03-03 | Hardened test import path for repo-root execution (`sys.path` bootstrap) and re-validated both invocation modes: `python3 -m unittest tools/test_task_hygiene_check.py` and `(cd tools && python3 -m unittest test_task_hygiene_check.py)` (3/3 passing each). Evidence: `knowledge/evidence/2026-03-03__imp-auto-20260303-02-root-safe-unittest-execution-and-closeout.md`.
+- [x] SEC-AUTO-20260227-01 | Restrict Telegram group command senders via `groupAllowFrom` (or per-group `allowFrom`) to remove critical command-invocation exposure.
+  - [x] 2026-03-03 | Ran preflight config audit and captured redacted evidence showing duplicate canonical-vs-quoted group key posture in Telegram group config (blocking clean policy enforcement); prepared normalization/apply-revalidate next step. Evidence: `knowledge/evidence/2026-03-03__sec-auto-20260227-01-telegram-group-allowfrom-preflight-audit.md`.
+  - [x] 2026-03-03 | Normalized Telegram group config to canonical key + enforced sender allowlist (`allowFrom` + `groupAllowFrom`) and validated doctor warning clearance via `openclaw security audit`; evidence: `knowledge/evidence/2026-03-03__sec-auto-20260227-01-telegram-group-allowfrom-enforcement-and-validation.md`.
+- [x] SEC-AUTO-20260301-01 | Decide and implement trust-boundary model for Telegram/group usage (single trusted operator vs split gateways) to clear `security.trust_model.multi_user_heuristic` warning. (superseded by canonical `SEC-AUTO-20260302-01`)
+- [x] SEC-AUTO-20260301-02 | Confirm Control UI exposure model and either keep explicit local-only posture or configure `gateway.trustedProxies` for actual reverse proxy IPs to clear `gateway.trusted_proxies_missing` warning. (superseded by canonical `SEC-AUTO-20260302-02`)
+- [x] SEC-AUTO-20260227-02 | Decide and enforce trust-boundary model for multi-user/group usage (separate gateways vs hardened shared runtime sandbox/tool scope). (superseded by canonical `SEC-AUTO-20260302-01`)
+- [x] SEC-AUTO-20260227-03 | Confirm reverse-proxy posture for Control UI; if proxied, set `gateway.trustedProxies`, otherwise explicitly keep local-only. (superseded by canonical `SEC-AUTO-20260302-02`)
+- [x] SEC-AUTO-20260228-01 | Resolve persistent `security.trust_model.multi_user_heuristic` warning: choose single-trust boundary or split to separate gateways/identities for group contexts. (superseded by canonical `SEC-AUTO-20260302-01`)
+- [x] SEC-AUTO-20260228-02 | Resolve persistent `gateway.trusted_proxies_missing` warning: explicitly document local-only UI posture or configure `gateway.trustedProxies` for actual reverse proxy IPs. (superseded by canonical `SEC-AUTO-20260302-02`)
+- [x] IMP-AUTO-20260227-02 | Add smoke tests for `tools/` parsers (task ID extraction + frontmatter parsing) to prevent silent automation regressions.
+  - [x] 2026-03-03 | Added parser smoke-test scaffold `tools/test_parser_smoke.py` covering Trello task-ID key extraction (`parse_tasks_md`) and architecture frontmatter list/scalar parsing (`parse_frontmatter`); validated with `python3 -m unittest tools/test_parser_smoke.py` (2/2 passing).
+  - [x] 2026-03-03 | Wired parser smoke tests into `continuous-improvement:sweep` runbook in `CRON_SPEC_AUTONOMOUS_GOVERNANCE_SWEEPS.md` and re-validated suite pass (`python3 -m unittest tools/test_parser_smoke.py`); evidence: `knowledge/evidence/2026-03-03__imp-auto-20260227-02-parser-smoke-tests-cron-bundle-linkage-and-closeout.md`.
+- [x] IMP-AUTO-20260228-01 | Automate daily OpenClaw release-delta evidence snapshot (`openclaw --version/status/update status`) into `knowledge/evidence/` for auditable change tracking.
+  - [x] 2026-03-03 | Added `tools/openclaw_release_delta_snapshot.py` to auto-capture markdown evidence from `openclaw --version`, `openclaw status`, and `openclaw update status`; wired invocation into `CRON_SPEC_AUTONOMOUS_GOVERNANCE_SWEEPS.md` and generated first artifact: `knowledge/evidence/2026-03-03__openclaw-release-delta-snapshot.md`.
+  - [x] 2026-03-03 | Executed completion recheck (`python3 tools/openclaw_release_delta_snapshot.py`) and board-state normalization; evidence: `knowledge/evidence/2026-03-03__imp-auto-20260228-01-closeout-and-board-normalization.md`.
+- [x] IMP-AUTO-20260301-01 | Consolidate duplicate SEC-AUTO trust-boundary/trusted-proxy tasks into canonical items with superseded links to reduce triage noise.
+  - [x] 2026-03-03 | Consolidated duplicate SEC-AUTO intent cluster to canonical work items (`SEC-AUTO-20260302-01` trust boundary, `SEC-AUTO-20260302-02` trusted proxies) and marked six historical duplicates as superseded in Inbox for deterministic triage; evidence: `knowledge/evidence/2026-03-03__imp-auto-20260301-01-sec-auto-duplicate-consolidation.md`.
+- [x] IMP-AUTO-20260301-02 | Add a small docs hygiene CI/cron check bundle (markdown links + duplicate task-ID lint) to catch governance drift early.
+  - [x] 2026-03-03 | Executed baseline validation run for bundle checks in current workspace state (`python3 tools/markdown_link_check.py` + `python3 tools/task_hygiene_check.py --file TASKS.md`), both passing; evidence: `knowledge/evidence/2026-03-03__imp-auto-20260301-02-docs-hygiene-bundle-validation.md`.
+  - [x] 2026-03-03 | Implemented single-command bundle runner `tools/docs_hygiene_bundle.py`, wired `continuous-improvement:sweep` runbook to call it, and validated pass in current workspace state (`python3 tools/docs_hygiene_bundle.py`); evidence: `knowledge/evidence/2026-03-03__imp-auto-20260301-02-docs-hygiene-bundle-script-and-cron-wire.md`.
+  - [x] 2026-03-03 | Executed completion recheck in current workspace state (`python3 tools/docs_hygiene_bundle.py`) and normalized board state for closeout; evidence: `knowledge/evidence/2026-03-03__imp-auto-20260301-02-closeout-and-board-normalization.md`.
+
+- [ ] SEC-AUTO-20260302-01 | Resolve persistent `security.trust_model.multi_user_heuristic` warning by deciding trust boundary (single trusted operator vs split gateways/identities) and tightening sandbox/tool scope if shared access remains.
+  - [x] 2026-03-03 | Refreshed baseline via `openclaw security audit`; warning still reproduces with explicit trigger evidence (`agents.defaults` sandbox/runtime/fs exposure) and sequenced remediation input captured in `knowledge/evidence/2026-03-03__sec-auto-20260302-01-audit-refresh-and-decision-input.md`.
+  - [x] 2026-03-03 | Published decision-draft + executable remediation sequence (single-trust boundary + fail-closed defaults proposal + revalidation criteria) in `knowledge/evidence/2026-03-03__sec-auto-20260302-01-trust-boundary-decision-draft-and-remediation-plan.md`.
+  - [x] 2026-03-03 | Published formal governance decision record (`governance/trust-boundary-decision-record-2026-03-03.md`) with acceptance criteria/reopen triggers; evidence: `knowledge/evidence/2026-03-03__sec-auto-20260302-01-trust-boundary-decision-record-published.md`.
+  - [x] 2026-03-03 | Applied fail-closed filesystem scope hardening (`tools.fs.workspaceOnly=true`) and re-ran `openclaw security audit`; warning persists due to `agents.defaults sandbox=off` runtime exposure, but fs boundary posture improved and captured in `knowledge/evidence/2026-03-03__sec-auto-20260302-01-fs-workspace-boundary-hardening-step.md`.
+  - [x] 2026-03-03 | Applied `agents.defaults.sandbox.mode="all"` via `openclaw config set`, then re-ran `openclaw security audit`; multi-user warning remains but unsandboxed runtime/filesystem default exposure cleared (`no unguarded runtime/process` + `no unguarded runtime/filesystem contexts detected`). Evidence: `knowledge/evidence/2026-03-03__sec-auto-20260302-01-sandbox-default-hardening-step.md`.
+  - [x] 2026-03-03 | Corrected `agents.defaults.sandbox` to canonical object form (`{"mode":"all"}` via `--strict-json`) and re-ran `openclaw security audit`; result normalized to `0 critical · 1 warn · 1 info` with heuristic confirming no unguarded runtime/process or runtime/filesystem contexts. Evidence: `knowledge/evidence/2026-03-03__sec-auto-20260302-01-sandbox-object-hardening-and-audit-normalization.md`.
+- [ ] SEC-AUTO-20260302-02 | Resolve persistent `gateway.trusted_proxies_missing` warning by explicitly documenting local-only Control UI posture or configuring `gateway.trustedProxies` with exact reverse-proxy IPs.
+- [ ] SEC-AUTO-20260303-01 | Enable a safe read-only host-audit path for cron health checks (or documented manual step) to capture PF status on macOS, since `pfctl -s info` currently fails without elevated access in this runtime.
+- [ ] SEC-AUTO-20260304-01 | Resolve recurring `security.trust_model.multi_user_heuristic` warning by finalizing shared-vs-single trust boundary controls for Telegram group contexts (or isolating group traffic to separate gateway identity) and revalidating clean audit baseline.
+- [ ] IMP-AUTO-20260302-01 | Add an automated task-hygiene pass that flags duplicate task intents/IDs in `TASKS.md` to reduce recurring SEC-AUTO inbox noise.
+- [x] IMP-AUTO-20260302-02 | Add lightweight unit tests for `tools/markdown_link_check.py` (code-fence ignore + optional title parsing) to prevent false-positive regressions in cron checks.
+  - [x] 2026-03-04 | Added `tools/test_markdown_link_check.py` covering fenced-code link ignore and optional link-title parsing behavior; validated with `python3 -m unittest tools/test_markdown_link_check.py` (2/2 passing).
+  - [x] 2026-03-04 | Re-ran cron hygiene baseline via `python3 tools/docs_hygiene_bundle.py` after test addition (pass in current workspace state).
+- [ ] IMP-AUTO-20260303-03 | Migrate or normalize legacy registry rows (camelCase + `type1|type2`) through the transition layer and publish a drift-burn-down snapshot to reduce residual schema mismatch risk.
+- [ ] IMP-AUTO-20260304-01 | Wire `tools/test_markdown_link_check.py` into the cron hygiene path (or adjacent CI check) so link-parser behavior regressions fail before scheduled sweeps.
+- [ ] IMP-AUTO-20260304-02 | Add `markdown_link_check.py --changed-only` mode (git-diff scoped) to reduce sweep runtime as the document corpus grows while preserving full-scan fallback.
+- [ ] OPS-2026-043 | Chat Continuity Sprint 2 metrics rollout: define handoff completeness score + stale-context drift signal, then capture first weekly baseline evidence.
 
 ## Triage
 
 ## Active
+- [x] OPS-2026-037 | Execute Chat Continuity Sprint 1 (apply protocol daily, publish first channel-handoff summary, and run first weekly consolidation check).
+  - [x] 2026-03-02 | Published first explicit channel-handoff summary block in `memory/2026-03-02.md` (main ↔ cron autonomous sprint loop context).
+  - [x] 2026-03-02 | Ran first weekly consolidation check across `memory/2026-03-01.md` + `memory/2026-03-02.md`; confirmed canonical artifacts already in place and no missing task/decision capture.
+  - [x] 2026-03-02 | Added auditable Sprint 1 protocol checkpoint evidence file at `knowledge/evidence/2026-03-02__chat-continuity-sprint1-checkpoint.md` and linked required artifacts.
+  - [x] 2026-03-03 | Opened new daily continuity log (`memory/2026-03-03.md`) at midnight boundary and recorded channel-handoff state for cron autonomous loop carry-forward.
+  - [x] 2026-03-03 | Logged autonomous loop continuity checkpoint evidence for highest-priority Active lane execution: `knowledge/evidence/2026-03-03__ops-2026-037-autonomous-loop-continuity-checkpoint.md`.
+  - [x] 2026-03-03 | Published Sprint 1 compliance snapshot (AC coverage + risk note) to confirm continuity protocol remains operational after midnight rollover: `knowledge/evidence/2026-03-03__ops-2026-037-sprint1-compliance-snapshot.md`.
+  - [x] 2026-03-03 | Standardized autonomous-loop checkpoint capture contract in `CHAT_CONTINUITY_PROTOCOL_V1.md` and logged evidence: `knowledge/evidence/2026-03-03__ops-2026-037-autonomous-loop-checkpoint-standard.md`.
+  - [x] 2026-03-03 | Added autonomous-loop priority rotation guardrail (3-run limit before forced rotation/justification) to prevent Active-lane starvation; evidence: `knowledge/evidence/2026-03-03__ops-2026-037-priority-rotation-guardrail.md`.
+  - [x] 2026-03-03 | Ran Sprint 1 exit-readiness review against Project Start Packet acceptance criteria; result: AC met, keep lane Active pending formal closure/rollover decision. Evidence: `knowledge/evidence/2026-03-03__ops-2026-037-sprint1-exit-readiness-review.md`.
+  - [x] 2026-03-03 | Published explicit Sprint 1 closure recommendation artifact (Active→Done + Sprint 2 metrics rollover proposal) to enable clean board-state transition. Evidence: `knowledge/evidence/2026-03-03__ops-2026-037-closure-recommendation.md`.
+  - [x] 2026-03-03 | Converted Sprint 2 continuity-quality proposal into executable backlog item `OPS-2026-043` (Inbox) and logged rollover evidence for traceability. Evidence: `knowledge/evidence/2026-03-03__ops-2026-037-sprint2-rollover-task-capture.md`.
+  - [x] 2026-03-03 | Published closure decision input pack consolidating Sprint 1 completion evidence + explicit approve-now recommendation to unblock Active→Done transition. Evidence: `knowledge/evidence/2026-03-03__ops-2026-037-closure-decision-input-pack.md`.
+  - [x] 2026-03-03 | Prepared Active→Done transition execution note (artifact consistency recheck + single-pass board update plan) to remove residual closure friction in autonomous loop. Evidence: `knowledge/evidence/2026-03-03__ops-2026-037-active-lane-transition-prep.md`.
+  - [x] 2026-03-03 | Executed Sprint 1 board-state closure transition (set task complete and logged Done-lane entry) after evidence consistency check. Evidence: `knowledge/evidence/2026-03-03__ops-2026-037-active-to-done-transition-executed.md`.
+- [x] OPS-2026-020 | Chief Architect job: publish Sprint 3 architecture brief v1 + guardrails pack (job-based, not dedicated agent)
+  - [x] 2026-03-02 | Drafted and published `SPRINT3_ARCHITECTURE_BRIEF_V1.md` with explicit Sprint 3 constraints (read-first, taxonomy governance, DoW subset, redaction, QA evidence path).
+  - [x] 2026-03-02 | Published `SPRINT3_GUARDRAILS_PACK_V1.md` with enforceable Sprint 3 contracts (scope freeze, taxonomy/DoW subset validation, fail-closed redaction, QA pass/fail evidence rules).
+  - [x] 2026-03-03 | Published architecture-to-guardrails traceability matrix confirming Sprint 3 design constraints map cleanly to implemented QA controls and evidence artifacts; output: `knowledge/evidence/2026-03-03__ops-2026-020-architecture-guardrail-traceability-matrix.md`.
+  - [x] 2026-03-03 | Issued formal architecture sign-off recommendation (approve Sprint 3 architecture closure; transition candidate to Done) with consolidated evidence inputs and residual-risk note: `knowledge/evidence/2026-03-03__ops-2026-020-architecture-signoff-recommendation.md`.
+  - [x] 2026-03-03 | Executed Active→Done board-state transition after evidence consistency recheck; logged transition artifact: `knowledge/evidence/2026-03-03__ops-2026-020-active-to-done-transition-executed.md`.
+- [x] OPS-2026-021 | Claude Code supplier run: implement S3 Task Center + Skills Visibility from approved prompt
+  - [x] 2026-03-02 | Implemented governed filter normalization + warn-and-render fallback in `repos/control-panel/apps/api/src/services/taskCenterService.ts` for `domain`/`task_type` (unknown values now emit explicit warnings and are ignored).
+  - [x] 2026-03-02 | Added regression tests in `repos/control-panel/apps/api/__tests__/taskCenterService.test.ts` covering uppercase normalization and unknown-filter warning behavior.
+  - [x] 2026-03-03 | Extended Task Center filter normalization to `area`/`owner`/`priority` for case-insensitive matching and normalized `filters_applied` echo; added regression test in `repos/control-panel/apps/api/__tests__/taskCenterService.test.ts`; validated with `pnpm --filter @control-panel/api test -- taskCenterService.test.ts` (34/34 files, 327/327 tests passing in current suite run).
+  - [x] 2026-03-03 | Aligned Task Center `meta.validation_errors` with full warning surface (`warnings.length`, including DoW subset checks) in `repos/control-panel/apps/api/src/services/taskCenterService.ts`; added regression assertion in `repos/control-panel/apps/api/__tests__/taskCenterService.test.ts`; evidence: `knowledge/evidence/2026-03-03__ops-2026-021-task-center-validation-errors-alignment.md`.
+  - [x] 2026-03-03 | Published implementation-completion review and board-state normalization recommendation (Active→Done candidate) with residual-risk note on lane hygiene; evidence: `knowledge/evidence/2026-03-03__ops-2026-021-implementation-completion-review.md`.
+  - [x] 2026-03-03 | Executed Active→Done board-state transition after evidence consistency recheck; evidence: `knowledge/evidence/2026-03-03__ops-2026-021-active-to-done-transition-executed.md`.
+- [x] OPS-2026-022 | Architecture QA gate (JOB-ARC-001): verify S3 against must constraints (taxonomy, DoW subset, redaction)
+  - [x] 2026-03-02 | Added DoW subset warning enforcement in `repos/control-panel/apps/api/src/services/taskCenterService.ts` (owner + last_update_signal checks) with regression coverage in `repos/control-panel/apps/api/__tests__/taskCenterService.test.ts`.
+  - [x] 2026-03-02 | Captured QA test snapshot evidence (taxonomy + DoW subset + redaction): `knowledge/evidence/2026-03-02__ops-2026-022-qa-gate-test-snapshot.md` (43/43 tests passing across targeted suites).
+  - [x] 2026-03-02 | Captured sample warning/error payload artifact for Task Center + Skills Visibility responses: `knowledge/evidence/2026-03-02__ops-2026-022-sample-response-artifact.md`.
+  - [x] 2026-03-02 | Published formal QA gate verdict + residual risk note: `knowledge/evidence/2026-03-02__ops-2026-022-gate-verdict.md` (decision: PASS; proceed to `OPS-2026-023`).
+  - [x] 2026-03-03 | Executed Active→Done board-state transition after evidence consistency recheck; evidence: `knowledge/evidence/2026-03-03__ops-2026-022-active-to-done-transition-executed.md`.
 
 ## Waiting
+- [ ] OPS-2026-023 | Sprint 3 closeout pack (release notes + tag + vNext backlog update) after QA pass
+  - [x] 2026-03-02 | Drafted and published `SPRINT3_CLOSEOUT_PACK_V1.md` with release-notes draft, tag plan, and proposed vNext backlog promotion set.
+  - [x] 2026-03-02 | Re-validated Control Panel API test baseline via `pnpm --filter @control-panel/api test` (result: 34 files / 326 tests passing) to de-risk closeout execution.
+  - [x] 2026-03-03 | Re-ran `pnpm --filter @control-panel/api test` in current repo state (34/34 files, 326/326 tests passing); evidence: `knowledge/evidence/2026-03-03__ops-2026-023-test-revalidation.md`.
+  - [x] 2026-03-03 | Ran closeout tag-readiness precheck (`git status`, tag existence, evidence artifact presence); result: evidence/tests ready, working tree not clean; evidence: `knowledge/evidence/2026-03-03__ops-2026-023-closeout-tag-readiness-check.md`.
+  - [x] 2026-03-03 | Published command-ready closeout execution checklist (baseline tests, tag/push commands, post-tag board-normalization steps) to reduce execution friction once boundary commit/clean-tree condition is met; evidence: `knowledge/evidence/2026-03-03__ops-2026-023-closeout-execution-checklist-ready.md`.
 
 ## Done
-- [x] TDE-2026-027 | Executed WO-2026-TDE-KERNEL-S16 objective-to-work linkage slice (required linkage fields + deterministic fail-closed validation + evidence artifacts).
-  - [x] 2026-03-04 | Opened WO-2026-TDE-KERNEL-S16 and activated this as current execution slice.
-  - [x] 2026-03-04 | Enforced `objective_id/objective_checkpoint/rationale_trace` in `tools/tde_job_tick_runner.py`, updated contract, and produced S16 pass/failclosed verification artifacts.
-- [x] TDE-2026-026 | Executed WO-2026-TDE-KERNEL-S15 runtime binding-integrity slice (active-binding validation + reauth-on-binding-change fail-closed semantics + evidence artifacts).
-  - [x] 2026-03-04 | Opened WO-2026-TDE-KERNEL-S15 start packet and activated this task as the next micro-sprint.
-  - [x] 2026-03-04 | Implemented runtime binding-integrity enforcement in `tools/tde_job_tick_runner.py` + added active binding registry baseline `os/runtime/tde_active_bindings.json` + produced S15 verification artifacts.
-- [x] TDE-2026-038 | Executed TDE-2026-025 first real-workload end-to-end slice (claimed canonical Active task, applied low-risk idempotent audited write-back to TASKS Waiting lane, emitted deterministic artifact).
-- [x] TDE-2026-037 | Executed TDE-2026-024 real-task ingestion baseline: canary cycle now supports TASKS.md Active-lane parsing with deterministic normalization + fallback metadata in artifact output.
-- [x] TDE-2026-036 | Executed S14 mutation-gateway enforcement baseline (required mutation envelope checks + fail-closed binding validation + pass/fail evidence artifacts).
-- [x] TDE-2026-035 | Opened WO-2026-TDE-KERNEL-S14 and moved mutation-gateway enforcement task (`TDE-2026-032`) to Active.
-- [x] TDE-2026-034 | Executed S13 baseline: published job-tick runtime contract (`os/sops/TDE_JOB_TICK_CONTRACT_V1.md`), implemented isolated runner (`tools/tde_job_tick_runner.py` + cron hook), and generated first run artifact/evidence.
-- [x] TDE-2026-031 | Implemented first isolated cron job-runner loop for one active job (internal delivery mode + bounded WIP pull/claim/progress cycle).
-- [x] TDE-2026-030 | Defined job-tick operational contract (trigger source, job/binding IDs, claim rules, idempotency keys, decision/evidence outputs) for isolated cron execution.
-- [x] TDE-2026-033 | Opened WO-2026-TDE-KERNEL-S13 and moved job-runtime semantics tasks (`TDE-2026-030/031`) to Active.
-- [x] TDE-2026-029 | Opened WO-2026-TDE-KERNEL-S12 and moved real-workload canary integration tasks (`TDE-2026-024/025`) to Active.
-- [x] TDE-2026-022 | Executed WO-2026-TDE-KERNEL-S11 (deterministic activation execution receipt linked to release envelope ID + GO/BLOCKED decision-trace linkage + dual-condition evidence cycle under pre-authorization guardrails).
-- [x] TDE-2026-023 | Opened WO-2026-TDE-KERNEL-S11 for next micro-sprint and activated execution task in Active lane.
-- [x] TDE-2026-021 | Formal acceptance sign-off completed for WO-2026-TDE-KERNEL-S10 (JOB-PROD-001 + JOB-ARC-001, owner pre-authorized).
-- [x] TDE-2026-019 | Executed WO-2026-TDE-KERNEL-S10 (decision-ready release envelope + deterministic activation guard + pre-authorization-safe rollout handoff evidence).
-- [x] TDE-2026-018 | Formal acceptance sign-off completed for WO-2026-TDE-KERNEL-S9 (JOB-PROD-001 + JOB-ARC-001, owner pre-authorized).
-- [x] TDE-2026-020 | Opened WO-2026-TDE-KERNEL-S10 for next micro-sprint and activated execution task in Active lane.
-- [x] TDE-2026-017 | Executed WO-2026-TDE-KERNEL-S9 (automated owner-facing gate packet generation from latest milestone snapshot + guardrail outputs with explicit escalation section; S9 evidence cycle generated; pending formal acceptance).
+- [x] IMP-AUTO-20260301-02 | Add docs hygiene CI/cron check bundle (closed 2026-03-03 after completion recheck via `python3 tools/docs_hygiene_bundle.py` and board-state normalization; evidence: `knowledge/evidence/2026-03-03__imp-auto-20260301-02-closeout-and-board-normalization.md`).
+- [x] IMP-AUTO-20260228-01 | Automate daily OpenClaw release-delta evidence snapshot (closed 2026-03-03 after completion recheck run + board-state normalization; latest artifact refresh validated in `knowledge/evidence/2026-03-03__openclaw-release-delta-snapshot.md`).
+- [x] IMP-AUTO-20260227-02 | Add smoke tests for `tools/` parsers (closed 2026-03-03 after wiring parser smoke suite into cron sweep runbook and re-validating `tools/test_parser_smoke.py`).
+- [x] IMP-AUTO-20260301-01 | Consolidate duplicate SEC-AUTO trust-boundary/trusted-proxy tasks into canonical items (closed 2026-03-03 after superseding six duplicate SEC-AUTO entries to canonical `SEC-AUTO-20260302-01/02` targets).
+- [x] SEC-AUTO-20260227-01 | Restrict Telegram group command senders via `groupAllowFrom`/`allowFrom` (closed 2026-03-03 after canonical group-key normalization, allowlist enforcement, and audit warning clearance validation).
+- [x] IMP-AUTO-20260303-02 | Add lightweight tests for `tools/task_hygiene_check.py` (closed 2026-03-03 after making tests repo-root safe and validating both root/tools unittest invocation paths).
+- [x] IMP-AUTO-20260303-01 | Wire `tools/task_hygiene_check.py` into cron hygiene bundle (closed 2026-03-03 after completion recheck and board-state normalization in current workspace state).
+- [x] IMP-AUTO-20260302-03 | Harmonize registry/decision schema contracts and publish v1.1 compatibility map (closed 2026-03-03 after compatibility-map publish, canonical schema harmonization, and board-state normalization).
+- [x] OPS-2026-042 | Stand up monthly lifecycle KPI snapshot (closed 2026-03-03 after publishing March baseline, hardening incident-tag counting, and executing board-state closeout).
+- [x] OPS-2026-041 | Decide whether Auditor needs a durable independent runtime boundary (closed 2026-03-03 after approving non-persistent independent session/sub-agent mode and publishing explicit trigger gates in `governance/auditor-runtime-boundary-decision-2026-03-03.md`).
+- [x] OPS-2026-040 | Define add/change/retire workflow artifact template and link from `JOB_MARKET_MODEL_V1.md` (closed 2026-03-03 after publishing `JOB_CHANGE_WORKFLOW_TEMPLATE_V1.md`, linking in model, and recording evidence).
+- [x] OPS-2026-039 | Run job-to-runtime fit scoring for all active jobs and publish assignment matrix + rationale in governance docs (closed 2026-03-03 after publishing matrix and linking cadence artifacts in `JOB_MARKET_MODEL_V1.md`).
+- [x] OPS-2026-038 | Add missing Head of Control Tower job record to `JOB_MARKET_MODEL_V1.md` (closed 2026-03-03 after publishing `JOB-CT-001` with full schema fields and version bump to v1.1).
+- [x] OPS-2026-022 | Architecture QA gate (JOB-ARC-001): verify S3 against must constraints (closed 2026-03-03 after QA evidence consistency recheck and board-state transition execution).
+- [x] OPS-2026-021 | Claude Code supplier run: implement S3 Task Center + Skills Visibility from approved prompt (closed 2026-03-03 after evidence consistency recheck and board-state transition execution).
+- [x] OPS-2026-020 | Chief Architect Sprint 3 architecture brief + guardrails pack (closed 2026-03-03 after sign-off recommendation and board-state transition execution).
+- [x] OPS-2026-037 | Execute Chat Continuity Sprint 1 (closed 2026-03-03 after acceptance-criteria evidence pack and board-state transition execution).
+- [x] OPS-2026-035 | Approved Project Start Packet for Chat Continuity Execution Track (`PROJECT_START_PACKET_CHAT_CONTINUITY_V1.md`).
+- [x] OPS-2026-036 | Approved WO-2026-CC-001 and authorized move to Active.
 - [x] Create MODEL_ROUTING_POLICY.md
 - [x] Create WAYS_OF_WORKING_V1.md
 - [x] Create ADR-001_SYSTEMS_OF_RECORD.md
