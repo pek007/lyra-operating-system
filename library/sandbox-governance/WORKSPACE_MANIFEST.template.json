@@ -1,0 +1,17 @@
+{
+  "workspaceLayoutVersion": 1,
+  "requiredRepos": [
+    {
+      "name": "lyra-operating-system",
+      "hostPath": "~/.openclaw/workspace/repos/lyra-operating-system",
+      "sandboxPaths": [
+        "/workspace/repos/lyra-operating-system",
+        "/repos/lyra-operating-system"
+      ],
+      "required": true,
+      "access": "rw"
+    }
+  ],
+  "requiredBinaries": ["openclaw", "git", "python3"],
+  "notes": "Copy to WORKSPACE_MANIFEST.json and adapt per profile (shared contexts should prefer ro)."
+}
