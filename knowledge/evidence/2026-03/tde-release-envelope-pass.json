@@ -77,5 +77,6 @@
     "eligible": true,
     "route": "handoff_to_JOB-PROD-001_and_JOB-ARC-001",
     "nextAction": "Proceed with pre-authorized rollout handoff package."
-  }
+  },
+  "schemaVersion": "1.0.0"
 }

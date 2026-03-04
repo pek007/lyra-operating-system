@@ -66,5 +66,7 @@
   },
   "status": "ok",
   "fail_closed": true,
-  "fail_closed_reason": "REAUTH_REQUIRED_ON_BINDING_CHANGE"
+  "fail_closed_reason": "REAUTH_REQUIRED_ON_BINDING_CHANGE",
+  "artifactType": "tde_job_tick",
+  "schemaVersion": "1.0.0"
 }

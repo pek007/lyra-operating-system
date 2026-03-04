@@ -75,6 +75,7 @@ def build_release_envelope(
 
     envelope_core = {
         "artifactType": "tde_release_envelope",
+        "schemaVersion": "1.0.0",
         "releaseDecision": "READY_FOR_HANDOFF" if handoff_allowed else "BLOCKED_ESCALATION",
         "sourceArtifacts": {
             "milestoneSnapshot": str(snapshot_path),

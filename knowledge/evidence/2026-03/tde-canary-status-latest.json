@@ -29,5 +29,7 @@
     "status": "ok"
   },
   "cleanCycle": true,
-  "consecutiveCleanCycles": 3
+  "consecutiveCleanCycles": 3,
+  "artifactType": "tde_canary_status",
+  "schemaVersion": "1.0.0"
 }

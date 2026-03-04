@@ -79,5 +79,6 @@
     "eligible": false,
     "route": "hold_fail_closed",
     "nextAction": "Escalate evidence packet; no rollout handoff permitted until escalation is cleared."
-  }
+  },
+  "schemaVersion": "1.0.0"
 }

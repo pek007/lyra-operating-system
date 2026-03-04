@@ -38,5 +38,7 @@
   },
   "status": "failed_validation",
   "fail_closed": true,
-  "fail_closed_reason": "missing_objective_linkage_field:objective_id"
+  "fail_closed_reason": "missing_objective_linkage_field:objective_id",
+  "artifactType": "tde_job_tick",
+  "schemaVersion": "1.0.0"
 }

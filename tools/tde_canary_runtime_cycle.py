@@ -178,6 +178,8 @@ def run_cycle(
     clean_streak = prior_streak + 1 if clean_cycle else 0
 
     artifact = {
+        "artifactType": "tde_canary_status",
+        "schemaVersion": "1.0.0",
         "cycleTimestamp": cycle["cycleTimestamp"],
         "triggerSource": cycle["trigger"]["triggerSource"],
         "triggerId": cycle["trigger"]["triggerId"],

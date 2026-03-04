@@ -272,6 +272,8 @@ def run_job_tick(
     if not job_id.strip() or not actor_id.strip() or not session_key.strip() or not tick_id.strip():
         outcomes["failed_validation"] += 1
         artifact = {
+            "artifactType": "tde_job_tick",
+            "schemaVersion": "1.0.0",
             "tick_id": tick_id,
             "trigger_source": trigger_source,
             "timestamp": _iso_now(),
@@ -298,6 +300,8 @@ def run_job_tick(
     elif not binding_id.strip():
         outcomes["failed_validation"] += 1
         artifact = {
+            "artifactType": "tde_job_tick",
+            "schemaVersion": "1.0.0",
             "tick_id": tick_id,
             "trigger_source": trigger_source,
             "timestamp": _iso_now(),
@@ -331,6 +335,8 @@ def run_job_tick(
         if not objective_ok:
             outcomes["failed_validation"] += 1
             artifact = {
+                "artifactType": "tde_job_tick",
+                "schemaVersion": "1.0.0",
                 "tick_id": tick_id,
                 "trigger_source": trigger_source,
                 "timestamp": _iso_now(),
@@ -466,6 +472,8 @@ def run_job_tick(
 
         binding_status = "active" if all(m.get("binding_status") != "mismatch" for m in mutations) else "mismatch"
         artifact = {
+            "artifactType": "tde_job_tick",
+            "schemaVersion": "1.0.0",
             "tick_id": tick_id,
             "trigger_source": trigger_source,
             "timestamp": _iso_now(),

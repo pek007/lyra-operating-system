@@ -42,5 +42,7 @@
   },
   "status": "ok",
   "fail_closed": false,
-  "fail_closed_reason": null
+  "fail_closed_reason": null,
+  "artifactType": "tde_job_tick",
+  "schemaVersion": "1.0.0"
 }
