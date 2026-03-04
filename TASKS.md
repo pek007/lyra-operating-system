@@ -16,12 +16,13 @@ Use this until a dedicated work tool is selected.
 ## Triage
 
 ## Active
-- [ ] TDE-2026-026 | Enforce runtime job-binding checks (`actor/job/session_key` -> active binding object) with high-risk re-authorization on binding change.
-  - [x] 2026-03-04 | Opened WO-2026-TDE-KERNEL-S15 start packet and activated this task as the next micro-sprint.
 
 ## Waiting
 
 ## Done
+- [x] TDE-2026-026 | Executed WO-2026-TDE-KERNEL-S15 runtime binding-integrity slice (active-binding validation + reauth-on-binding-change fail-closed semantics + evidence artifacts).
+  - [x] 2026-03-04 | Opened WO-2026-TDE-KERNEL-S15 start packet and activated this task as the next micro-sprint.
+  - [x] 2026-03-04 | Implemented runtime binding-integrity enforcement in `tools/tde_job_tick_runner.py` + added active binding registry baseline `os/runtime/tde_active_bindings.json` + produced S15 verification artifacts.
 - [x] TDE-2026-038 | Executed TDE-2026-025 first real-workload end-to-end slice (claimed canonical Active task, applied low-risk idempotent audited write-back to TASKS Waiting lane, emitted deterministic artifact).
 - [x] TDE-2026-037 | Executed TDE-2026-024 real-task ingestion baseline: canary cycle now supports TASKS.md Active-lane parsing with deterministic normalization + fallback metadata in artifact output.
 - [x] TDE-2026-036 | Executed S14 mutation-gateway enforcement baseline (required mutation envelope checks + fail-closed binding validation + pass/fail evidence artifacts).

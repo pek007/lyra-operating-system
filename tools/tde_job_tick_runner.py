@@ -58,6 +58,100 @@ def _validate_mutation_envelope(envelope: dict[str, Any]) -> tuple[bool, str | N
     return True, None
 
 
+def _load_active_binding(
+    *,
+    binding_registry_path: Path | None,
+    job_id: str,
+    actor_id: str,
+    session_key: str,
+    fallback_binding_id: str,
+) -> tuple[dict[str, Any], str]:
+    """Return active binding object and provenance.
+
+    Registry format:
+    {
+      "bindings": [
+        {"binding_id":"...", "job_id":"...", "actor_id":"...", "session_key":"...", "status":"active", "binding_epoch":1}
+      ]
+    }
+    """
+    fallback = {
+        "binding_id": fallback_binding_id,
+        "job_id": job_id,
+        "actor_id": actor_id,
+        "session_key": session_key,
+        "status": "active",
+        "binding_epoch": 0,
+    }
+
+    if binding_registry_path is None or not binding_registry_path.exists():
+        return fallback, "fallback_from_cli"
+
+    try:
+        payload = json.loads(binding_registry_path.read_text(encoding="utf-8"))
+    except Exception:
+        return fallback, "fallback_invalid_registry"
+
+    bindings = payload.get("bindings", [])
+    if not isinstance(bindings, list):
+        return fallback, "fallback_invalid_registry"
+
+    # strict resolution for exact runtime context first
+    for b in bindings:
+        if (
+            isinstance(b, dict)
+            and b.get("status", "active") == "active"
+            and b.get("job_id") == job_id
+            and b.get("actor_id") == actor_id
+            and b.get("session_key") == session_key
+        ):
+            return b, "registry_exact"
+
+    # then by job + actor if session rotated
+    for b in bindings:
+        if (
+            isinstance(b, dict)
+            and b.get("status", "active") == "active"
+            and b.get("job_id") == job_id
+            and b.get("actor_id") == actor_id
+        ):
+            return b, "registry_job_actor"
+
+    return fallback, "fallback_not_found"
+
+
+def _validate_binding_integrity(
+    *,
+    active_binding: dict[str, Any],
+    envelope: dict[str, Any],
+    actor_id: str,
+    session_key: str,
+) -> tuple[bool, str | None, bool]:
+    """Validate envelope against active binding object.
+
+    Returns: (ok, reason, reauth_required)
+    """
+    expected_binding_id = str(active_binding.get("binding_id", "")).strip()
+    expected_job_id = str(active_binding.get("job_id", "")).strip()
+    expected_actor_id = str(active_binding.get("actor_id", "")).strip()
+    expected_session_key = str(active_binding.get("session_key", "")).strip()
+
+    if not expected_binding_id or not expected_job_id or not expected_actor_id:
+        return False, "binding_registry_invalid_active_record", False
+
+    if envelope.get("job_id") != expected_job_id:
+        return False, "binding_job_mismatch", True
+
+    if envelope.get("binding_id") != expected_binding_id:
+        return False, "REAUTH_REQUIRED_ON_BINDING_CHANGE", True
+
+    if actor_id != expected_actor_id:
+        return False, "binding_actor_mismatch", True
+
+    if expected_session_key and session_key != expected_session_key:
+        return False, "REAUTH_REQUIRED_ON_BINDING_CHANGE", True
+
+    return True, None, False
 
 
 def _apply_low_risk_writeback(tasks_path: Path, claimed_ids: list[str], tick_id: str) -> dict[str, Any]:
@@ -71,13 +165,10 @@ def _apply_low_risk_writeback(tasks_path: Path, claimed_ids: list[str], tick_id:
     lines = tasks_path.read_text(encoding="utf-8").splitlines()
     sec = None
     active_idx: dict[str, int] = {}
-    waiting_start = None
 
     for i, raw in enumerate(lines):
         if raw.startswith('## '):
             sec = raw.strip()
-            if sec == '## Waiting':
-                waiting_start = i
             continue
         if sec == '## Active':
             m = TASK_LINE_RE.match(raw.strip())
@@ -96,9 +187,8 @@ def _apply_low_risk_writeback(tasks_path: Path, claimed_ids: list[str], tick_id:
     if not moved:
         return {"applied": False, "reason": "no_active_claims_to_move", "moved": []}
 
-    # Build waiting lines with deterministic audit suffix
     waiting_lines = []
-    for task_id, original in moved:
+    for _, original in moved:
         line = original
         if f"[tick:{tick_id}]" not in line:
             line = f"{line} [tick:{tick_id}]"
@@ -106,7 +196,6 @@ def _apply_low_risk_writeback(tasks_path: Path, claimed_ids: list[str], tick_id:
 
     compact = [ln for ln in lines if ln is not None]
 
-    # Re-find waiting section insertion point in compacted content
     insert_at = None
     for i, raw in enumerate(compact):
         if raw.strip() == '## Waiting':
@@ -117,7 +206,6 @@ def _apply_low_risk_writeback(tasks_path: Path, claimed_ids: list[str], tick_id:
         compact.extend(['', '## Waiting'])
         insert_at = len(compact)
 
-    # Insert at top of waiting block preserving order
     compact[insert_at:insert_at] = waiting_lines
     tasks_path.write_text("\n".join(compact) + "\n", encoding='utf-8')
 
@@ -127,6 +215,7 @@ def _apply_low_risk_writeback(tasks_path: Path, claimed_ids: list[str], tick_id:
         "moved": [m[0] for m in moved],
         "targetSection": "Waiting",
     }
+
 
 def run_job_tick(
     *,
@@ -140,6 +229,7 @@ def run_job_tick(
     tasks_path: Path,
     artifact_path: Path,
     writeback_tasks_path: Path | None = None,
+    binding_registry_path: Path | None = None,
 ) -> dict[str, Any]:
     kernel = TDEKernel()
     tasks = _read_tasks(tasks_path, section="Active")
@@ -149,7 +239,16 @@ def run_job_tick(
         "blocked_pending_approval": 0,
         "failed_validation": 0,
         "no_work": 0,
+        "reauth_required": 0,
     }
+
+    active_binding, binding_source = _load_active_binding(
+        binding_registry_path=binding_registry_path,
+        job_id=job_id,
+        actor_id=actor_id,
+        session_key=session_key,
+        fallback_binding_id=binding_id,
+    )
 
     if not job_id.strip() or not actor_id.strip() or not session_key.strip() or not tick_id.strip():
         outcomes["failed_validation"] += 1
@@ -161,6 +260,11 @@ def run_job_tick(
             "binding_id": binding_id,
             "actor_id": actor_id,
             "session_key": session_key,
+            "binding_context": {
+                "active_binding": active_binding,
+                "binding_source": binding_source,
+                "binding_status": "invalid_identity",
+            },
             "claim_limit": max_claim,
             "claimed": [],
             "mutations": [],
@@ -181,6 +285,11 @@ def run_job_tick(
             "binding_id": binding_id,
             "actor_id": actor_id,
             "session_key": session_key,
+            "binding_context": {
+                "active_binding": active_binding,
+                "binding_source": binding_source,
+                "binding_status": "binding_missing",
+            },
             "claim_limit": max_claim,
             "claimed": [],
             "mutations": [],
@@ -230,6 +339,37 @@ def run_job_tick(
                 )
                 continue
 
+            binding_ok, binding_error, reauth_required = _validate_binding_integrity(
+                active_binding=active_binding,
+                envelope=mutation_envelope,
+                actor_id=actor_id,
+                session_key=session_key,
+            )
+            if not binding_ok:
+                if reauth_required:
+                    outcomes["reauth_required"] += 1
+                    status = "reauth_required"
+                else:
+                    outcomes["failed_validation"] += 1
+                    status = "failed_validation"
+                mutations.append(
+                    {
+                        "task_id": item["id"],
+                        "request_id": f"{tick_id}-{index}",
+                        "idempotency_key": idempotency_key,
+                        "status": status,
+                        "fail_closed": True,
+                        "fail_closed_reason": binding_error,
+                        "binding_status": "mismatch",
+                        "required_on_retry": {
+                            "fresh_policy_decision_id": True,
+                            "fresh_idempotency_key": True,
+                        },
+                        "mutation_envelope": mutation_envelope,
+                    }
+                )
+                continue
+
             req = ActionRequest(
                 request_id=f"{tick_id}-{index}",
                 idempotency_key=idempotency_key,
@@ -257,6 +397,7 @@ def run_job_tick(
                     "policy_decision_id": result.get("policy_decision_id"),
                     "audit_link": result.get("audit_link"),
                     "status": status,
+                    "binding_status": "active",
                     "mutation_envelope": {
                         **mutation_envelope,
                         "policy_decision_id": result.get("policy_decision_id"),
@@ -264,11 +405,13 @@ def run_job_tick(
                 }
             )
 
-        writeback = _apply_low_risk_writeback(writeback_tasks_path or tasks_path, [c["id"] for c in claimed], tick_id)
+        executable_claims = [m["task_id"] for m in mutations if m.get("status") in {"executed", "replay"}]
+        writeback = _apply_low_risk_writeback(writeback_tasks_path or tasks_path, executable_claims, tick_id)
 
         if not claimed:
             outcomes["no_work"] += 1
 
+        binding_status = "active" if all(m.get("binding_status") != "mismatch" for m in mutations) else "mismatch"
         artifact = {
             "tick_id": tick_id,
             "trigger_source": trigger_source,
@@ -277,6 +420,11 @@ def run_job_tick(
             "binding_id": binding_id,
             "actor_id": actor_id,
             "session_key": session_key,
+            "binding_context": {
+                "active_binding": active_binding,
+                "binding_source": binding_source,
+                "binding_status": binding_status,
+            },
             "claim_limit": max_claim,
             "claimed": [c["id"] for c in claimed],
             "mutations": mutations,
@@ -286,8 +434,8 @@ def run_job_tick(
             "evidence_outputs": [str(artifact_path)],
             "outcomes": outcomes,
             "status": "ok",
-            "fail_closed": False,
-            "fail_closed_reason": None,
+            "fail_closed": any(m.get("fail_closed") for m in mutations),
+            "fail_closed_reason": next((m.get("fail_closed_reason") for m in mutations if m.get("fail_closed_reason")), None),
         }
 
     artifact_path.parent.mkdir(parents=True, exist_ok=True)
@@ -310,6 +458,7 @@ def main() -> None:
         default="knowledge/evidence/2026-03/tde-job-tick-latest.json",
     )
     parser.add_argument("--writeback-tasks-path", default="TASKS.md")
+    parser.add_argument("--binding-registry-path", default="os/runtime/tde_active_bindings.json")
 
     args = parser.parse_args()
     artifact = run_job_tick(
@@ -323,6 +472,7 @@ def main() -> None:
         tasks_path=Path(args.tasks_path),
         artifact_path=Path(args.artifact_path),
         writeback_tasks_path=Path(args.writeback_tasks_path) if args.writeback_tasks_path else None,
+        binding_registry_path=Path(args.binding_registry_path) if args.binding_registry_path else None,
     )
     print(json.dumps(artifact))
 

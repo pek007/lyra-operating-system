@@ -58,7 +58,7 @@ S12–S14 proved real-workload ingestion and guarded mutation execution. The nex
 GO to S16 only if all acceptance criteria pass with evidence artifacts and no side-effecting execution in mismatch paths.
 
 ## Closure
-- Outcome summary: _Pending_
-- Accepted by: _Pending_
-- Date closed: _Pending_
-- Linked Change Artifact(s): _Pending_
+- Outcome summary: Implemented runtime binding-integrity checks against active binding object (`actor_id`/`job_id`/`session_key`/`binding_id`) in mutation path; binding mismatch now fails closed with explicit `REAUTH_REQUIRED_ON_BINDING_CHANGE` semantics and retry obligations (fresh `policy_decision_id` + fresh `idempotency_key`). Added deterministic evidence for pass + reauth-required + fail-closed mismatch paths.
+- Accepted by: JOB-PROD-001 (execution baseline); JOB-ARC-001 formal sign-off pending
+- Date closed: 2026-03-04
+- Linked Change Artifact(s): `tools/tde_job_tick_runner.py`; `tools/test_s15_binding_integrity.py`; `os/runtime/tde_active_bindings.json`; `os/sops/TDE_JOB_TICK_CONTRACT_V1.md`; `knowledge/evidence/2026-03/tde-job-tick-s15-pass.json`; `knowledge/evidence/2026-03/tde-job-tick-s15-reauth-required.json`; `knowledge/evidence/2026-03/tde-job-tick-s15-failclosed-binding-mismatch.json`; `knowledge/evidence/2026-03/2026-03-04__verification__wo-2026-tde-kernel-s15.md`
