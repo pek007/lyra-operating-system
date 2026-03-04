@@ -187,3 +187,5 @@ Curated external analyses and research notes.
   Source: deepresearch; Ingested from: `telegram attachment deep-research-report_42`
 - `2026-03-04__deepresearch__sprint-16-renewal-analysis-of-the-lyra-openclaw-tde-development-project__v1.md` — **Sprint 16 Renewal Analysis of the Lyra OpenClaw TDE Development Project**
   Source: deepresearch; Ingested from: `telegram attachment deep-research-report_49---9d6fbf6c-ba61-4cb9-a6db-ff2c873a2225.md`
+- `2026-03-04__deepresearch__lyra-openclaw-task-and-decision-engine-project-state-and-gap-closing-roadmap__v1.md` — **Lyra OpenClaw Task & Decision Engine Project State and Gap-Closing Roadmap**
+  Source: deepresearch; Ingested from: `telegram attachment deep-research-report_51---1bd24efb-1568-4975-a419-16d8fe92ab8c.md`
