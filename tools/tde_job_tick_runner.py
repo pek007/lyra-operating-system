@@ -12,7 +12,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from tde_kernel_slice_tests import ActionRequest, TDEKernel
+from tde_kernel import ActionRequest, TDEKernel
 
 TASK_LINE_RE = re.compile(r"^- \[ \] (?P<id>[A-Z0-9-]+) \| (?P<title>.+)$")
 

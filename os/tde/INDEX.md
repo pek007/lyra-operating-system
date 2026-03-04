@@ -11,6 +11,7 @@ Single entrypoint for Task & Decision Engine contracts, runtime tools, tests, an
 - `os/sops/TDE_CANARY_SCHEDULING_CONTRACT_V1.md` — canary trigger and status cycle semantics.
 
 ## Runtime tools
+- `tools/tde_kernel.py` — shared deterministic governance kernel module (runtime import surface).
 - `tools/tde_job_tick_runner.py` — deterministic claim/validate/mutate/writeback loop.
 - `tools/tde_canary_runtime_cycle.py` — canary classification + guardrail cycle.
 - `tools/tde_release_envelope.py` — release gate packet helper.

@@ -23,10 +23,15 @@ jobs:
       - name: Validate review dates
         run: python3 tools/validate_review_dates.py
 
-      - name: Optional thin-slice tests
+      - name: TDE thin-slice tests
+        run: python3 tools/tde_kernel_slice_tests.py
+
+      - name: TDE hardening regressions
         run: |
-          if [ -f tools/tde_kernel_slice_tests.py ]; then
-            python3 tools/tde_kernel_slice_tests.py
-          else
-            echo "No thin-slice test file found; skipping."
-          fi
+          python3 tools/test_s15_binding_integrity.py
+          python3 tools/test_s16_objective_linkage.py
+          python3 tools/test_s17_binding_resolution_failclosed.py
+          python3 tools/test_s18_atomic_writeback.py
+
+      - name: Fail-closed binding guard check
+        run: python3 tools/check_binding_failclosed_guard.py

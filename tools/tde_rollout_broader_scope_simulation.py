@@ -5,7 +5,7 @@ import json
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from tde_kernel_slice_tests import TDEKernel, TriggerContract
+from tde_kernel import TDEKernel, TriggerContract
 
 
 def _write_text(path: Path, content: str) -> None:

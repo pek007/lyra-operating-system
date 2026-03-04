@@ -8,7 +8,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
-from tde_kernel_slice_tests import TDEKernel, TriggerContract
+from tde_kernel import TDEKernel, TriggerContract
 
 
 def _default_items(now: datetime, simulate_clean: bool) -> list[dict[str, Any]]:
