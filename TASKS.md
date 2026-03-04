@@ -25,8 +25,10 @@ Use this until a dedicated work tool is selected.
   - [x] 2026-03-04 | Added validator rule: decision-impacting reports (`decision_impact: true`) must map to valid `decision_id` or explicit `no_decision_marker`.
   - [x] 2026-03-04 | Published baseline generated index artifacts including `knowledge/indexes/report_decision_index.json` and updated manifest.
 - [ ] OPS-2026-050 | Operationalize `STANDARD_CHANGE_CATALOG_V1` into executable promotion flow (registry linkage, WO/CA classification fields, exclusion-trigger checks, pilot guardrails).
-- [ ] OPS-2026-060 | Operationalize trust-boundary architecture Sprint 1 controls (Option A hardening): publish policy record, enforce Telegram group tool/sender constraints, and add mandatory post-change validation bundle output artifact.
+- [x] OPS-2026-060 | Operationalize trust-boundary architecture Sprint 1 controls (Option A hardening): publish policy record, enforce Telegram group tool/sender constraints, and add mandatory post-change validation bundle output artifact.
   - [x] 2026-03-04 | Ingested trust-boundary deep research report into `knowledge/reports/2026-03-04__deepresearch__trust-boundary-architecture-for-openclaw-tde__v1.md` and indexed source.
+  - [x] 2026-03-04 | Published policy record `governance/TRUST_BOUNDARY_POLICY_RECORD_2026-03-04.md` with explicit Option A boundary and reopen triggers.
+  - [x] 2026-03-04 | Added executable validation bundle `tools/openclaw_trust_boundary_validation_bundle.py` and produced evidence artifact `knowledge/evidence/2026-03-04__ops-2026-060-trust-boundary-validation-bundle.json`.
   - [x] 2026-03-04 | Linked catalog/milestone artifacts in `PROCESS_REGISTRY.md`.
   - [x] 2026-03-04 | Added `change class` + `standard class` routing fields to `WO_TEMPLATE_V1.md` and `CA_TEMPLATE_V1.md`.
   - [x] 2026-03-04 | Added policy check `tools/standard_change_policy_check.py` and wired `tools/validate_repo.py` to run strict exclusion-trigger guardrail enforcement.
