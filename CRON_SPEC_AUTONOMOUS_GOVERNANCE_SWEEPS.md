@@ -51,6 +51,7 @@ Design principle: auto-implement only low-risk, uncontroversial changes; route l
 - **Delivery:** Prompt packet sent to Peter for manual Deep Research execution
 - **Intent:** Discover non-obvious, high-leverage improvement opportunities beyond daily hygiene.
 
+<<<<<<< HEAD
 ### 4) `tde:cutover-readiness-daily`
 - **Cron:** `45 6 * * *`
 - **Timezone:** `Europe/Stockholm`
@@ -62,6 +63,28 @@ Design principle: auto-implement only low-risk, uncontroversial changes; route l
 1. `bash tools/tde_daily_readiness_check.sh`
 2. `python3 tools/tde_cutover_alert_check.py`
 3. If alert check fails, emit escalation summary with latest report path.
+
+### 5) `tde:release-guard`
+- **Cron (release window):** `*/15 * * * *`
+- **Cron (non-release baseline, optional):** `5 * * * *`
+- **Session:** local shell/cron hook
+- **Delivery:** writes evidence artifact + non-zero exit on hard failure
+- **Intent:** auto-block release progression when environment/contract/runtime integrity breaks.
+
+**Run command**
+```bash
+cd ~/.openclaw/workspace/repos/lyra-operating-system
+./tools/tde_release_guard_cron_hook.sh
+```
+
+**Hard-block conditions**
+- `openclaw-preflight` fails
+- `tde_kernel_slice_tests` fails
+- runtime binding/objective registries missing
+
+**Warning-only conditions (operator acknowledgment required before scope broadening)**
+- stale canary artifact
+- stalled count warning without hard contract failure
 
 **Runbook in prompt**
 1. Sweep for high-signal, low-controversy improvements across docs/code/structure:
