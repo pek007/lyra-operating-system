@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lyra.local/schemas/decision_memo_metadata/v1.0.0.schema.json",
+  "type": "object",
+  "required": [
+    "decision_id",
+    "title",
+    "date",
+    "status",
+    "owner",
+    "review_date",
+    "context",
+    "options_considered",
+    "decision",
+    "rationale"
+  ],
+  "properties": {
+    "decision_id": { "type": "string", "pattern": "^DEC-[0-9]{4}-[0-9]{4,}$" },
+    "title": { "type": "string", "minLength": 5 },
+    "date": { "type": "string" },
+    "status": { "type": "string" },
+    "owner": { "type": "string", "minLength": 1 },
+    "review_date": { "type": "string" },
+    "context": { "type": "string", "minLength": 1 },
+    "options_considered": { "type": "string", "minLength": 1 },
+    "decision": { "type": "string", "minLength": 1 },
+    "rationale": { "type": "string", "minLength": 1 },
+    "linked_artifacts": { "type": ["array", "null"], "items": { "type": "string" } }
+  },
+  "additionalProperties": true
+}

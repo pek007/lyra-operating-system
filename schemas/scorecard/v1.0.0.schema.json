@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lyra.local/schemas/scorecard/v1.0.0.schema.json",
+  "type": "object",
+  "required": ["run", "summary", "benchmarks"],
+  "properties": {
+    "run": { "type": "object" },
+    "summary": { "type": "object" },
+    "benchmarks": { "type": "array" }
+  },
+  "additionalProperties": true
+}

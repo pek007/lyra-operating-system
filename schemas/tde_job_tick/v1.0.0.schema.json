@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lyra.local/schemas/tde_job_tick/v1.0.0.schema.json",
+  "type": "object",
+  "required": ["artifactType", "schemaVersion", "tick_id", "timestamp", "job_id", "status"],
+  "properties": {
+    "artifactType": { "const": "tde_job_tick" },
+    "schemaVersion": { "const": "1.0.0" },
+    "tick_id": { "type": "string", "minLength": 6 },
+    "timestamp": { "type": "string" },
+    "job_id": { "type": "string", "minLength": 3 },
+    "status": { "type": "string" }
+  },
+  "additionalProperties": true
+}

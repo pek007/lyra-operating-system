@@ -1,0 +1,11 @@
+{
+  "generatedBy": "tools/gen_knowledge_indexes.py",
+  "outputs": [
+    "knowledge/indexes/inbox_index.json",
+    "knowledge/indexes/decisions_index.json"
+  ],
+  "counts": {
+    "inbox": 0,
+    "decisions": 0
+  }
+}
