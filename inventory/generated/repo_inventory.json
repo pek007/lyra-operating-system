@@ -3,15 +3,15 @@
   "generatedBy": "tools/gen_inventory.py",
   "files": [
     {
-      "path": ".DS_Store",
-      "size": 6148,
-      "mtime": 1772372851,
-      "ext": ""
+      "path": ".github/workflows/devsecops-baseline.yml",
+      "size": 731,
+      "mtime": 1772611594,
+      "ext": ".yml"
     },
     {
       "path": ".github/workflows/governance-machine-check.yml",
       "size": 460,
-      "mtime": 1772609131,
+      "mtime": 1772611593,
       "ext": ".yml"
     },
     {
@@ -52,8 +52,8 @@
     },
     {
       "path": "ACCESS_REVIEW_LOG.md",
-      "size": 1607,
-      "mtime": 1772352927,
+      "size": 717,
+      "mtime": 1772610437,
       "ext": ".md"
     },
     {
@@ -65,7 +65,7 @@
     {
       "path": "AGENTS.md",
       "size": 9515,
-      "mtime": 1772544251,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
@@ -93,6 +93,12 @@
       "ext": ".md"
     },
     {
+      "path": "AI_ACT_ROLE_CLASSIFICATION_MEMO_V1.md",
+      "size": 662,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
       "path": "AI_NATIVE_OPERATING_POLICY_V1.md",
       "size": 5030,
       "mtime": 1772301113,
@@ -111,6 +117,12 @@
       "ext": ".md"
     },
     {
+      "path": "AUTHORITY_CHANGE_CONTROL_POLICY_V1.md",
+      "size": 1600,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
       "path": "BOOTSTRAP.md",
       "size": 1470,
       "mtime": 1771872439,
@@ -123,15 +135,9 @@
       "ext": ".md"
     },
     {
-      "path": "BUILD_SPEC_CONTROL_PANEL_MVP.md",
-      "size": 3511,
-      "mtime": 1772007171,
-      "ext": ".md"
-    },
-    {
       "path": "BUSINESS_CASE_THRESHOLD_RESEARCH_PROVIDERS.md",
-      "size": 1667,
-      "mtime": 1771936384,
+      "size": 106,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
@@ -143,37 +149,19 @@
     {
       "path": "CA_TEMPLATE_V1.md",
       "size": 1054,
-      "mtime": 1772610058,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
       "path": "CHAT_CONTINUITY_PROTOCOL_V1.md",
-      "size": 2101,
-      "mtime": 1772495725,
+      "size": 1512,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
       "path": "CHIEF_ARCHITECT_AGENT_SPEC.md",
       "size": 7641,
       "mtime": 1772262998,
-      "ext": ".md"
-    },
-    {
-      "path": "CHIEF_ARCHITECT_GO_NO_GO_2026-02-26.md",
-      "size": 2294,
-      "mtime": 1772129778,
-      "ext": ".md"
-    },
-    {
-      "path": "CHIEF_ARCHITECT_PILOT_CHECKLIST.md",
-      "size": 931,
-      "mtime": 1772263002,
-      "ext": ".md"
-    },
-    {
-      "path": "CLAUDE_CODE_PROMPT_CONTROL_PANEL_MVP.md",
-      "size": 1283,
-      "mtime": 1772007192,
       "ext": ".md"
     },
     {
@@ -203,37 +191,13 @@
     {
       "path": "CONTINUOUS_IMPROVEMENT_PROCESS_V1.md",
       "size": 1834,
-      "mtime": 1772545258,
-      "ext": ".md"
-    },
-    {
-      "path": "CONTROL_PANEL.md",
-      "size": 1173,
-      "mtime": 1771961598,
-      "ext": ".md"
-    },
-    {
-      "path": "CONTROL_PANEL_TERMINATION_ACTION_PLAN_V1.md",
-      "size": 3619,
-      "mtime": 1772298586,
-      "ext": ".md"
-    },
-    {
-      "path": "CONTROL_PANEL_VNEXT_EXECUTION_PLAN.md",
-      "size": 7267,
-      "mtime": 1772092046,
-      "ext": ".md"
-    },
-    {
-      "path": "CONTROL_TOWER_MVP_VIEWS_SPEC.md",
-      "size": 1344,
-      "mtime": 1772005041,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
       "path": "CRON_SPEC_AUTONOMOUS_GOVERNANCE_SWEEPS.md",
       "size": 5888,
-      "mtime": 1772545270,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
@@ -256,8 +220,8 @@
     },
     {
       "path": "DECISION_SCHEMA_V1.md",
-      "size": 6154,
-      "mtime": 1772511342,
+      "size": 5712,
+      "mtime": 1772610437,
       "ext": ".md"
     },
     {
@@ -275,13 +239,19 @@
     {
       "path": "EXECUTIVE_COMMUNICATION_PROTOCOL_V1.md",
       "size": 1047,
-      "mtime": 1772397200,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
       "path": "FINOPS_LITE_POLICY.md",
       "size": 866,
       "mtime": 1771938031,
+      "ext": ".md"
+    },
+    {
+      "path": "GDPR_AI_ACT_COMPLIANCE_BASELINE_V1.md",
+      "size": 976,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
@@ -305,13 +275,7 @@
     {
       "path": "INCIDENT_LOG.md",
       "size": 3329,
-      "mtime": 1772563321,
-      "ext": ".md"
-    },
-    {
-      "path": "INFORMATION_MANAGEMENT_PROCESS_V1.md",
-      "size": 1624,
-      "mtime": 1772375213,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
@@ -322,20 +286,20 @@
     },
     {
       "path": "JOBS_PROCESS_V1.md",
-      "size": 1418,
-      "mtime": 1772375213,
-      "ext": ".md"
-    },
-    {
-      "path": "JOB_CHANGE_WORKFLOW_TEMPLATE_V1.md",
-      "size": 2889,
-      "mtime": 1772507122,
+      "size": 2364,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "JOB_MARKET_MODEL_V1.md",
-      "size": 7571,
-      "mtime": 1772544248,
+      "size": 8560,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "JOB_MEMORY_PORTABILITY_PROCESS_V1.md",
+      "size": 1033,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
@@ -365,13 +329,13 @@
     {
       "path": "MILESTONE_0_1.md",
       "size": 1051,
-      "mtime": 1772609147,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
       "path": "MILESTONE_0_1_MACHINE_CHECKABLE_GOVERNANCE.md",
       "size": 1369,
-      "mtime": 1772609793,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
@@ -429,12 +393,6 @@
       "ext": ".md"
     },
     {
-      "path": "OPERATING_GOVERNANCE_DASHBOARD_V1.md",
-      "size": 3722,
-      "mtime": 1772375769,
-      "ext": ".md"
-    },
-    {
       "path": "OPERATING_SYSTEM_FULL_EXPORT.md",
       "size": 31067,
       "mtime": 1771914611,
@@ -459,21 +417,9 @@
       "ext": ".md"
     },
     {
-      "path": "PROCESS_AUDIT_FUNCTION_V1.md",
-      "size": 761,
-      "mtime": 1772375213,
-      "ext": ".md"
-    },
-    {
-      "path": "PROCESS_LIFECYCLE_PROCESS_V1.md",
-      "size": 1494,
-      "mtime": 1772375213,
-      "ext": ".md"
-    },
-    {
       "path": "PROCESS_REGISTRY.md",
-      "size": 6776,
-      "mtime": 1772610070,
+      "size": 7099,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
@@ -491,7 +437,7 @@
     {
       "path": "PROJECT_START_PACKET_CHAT_CONTINUITY_V1.md",
       "size": 2363,
-      "mtime": 1772393058,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
@@ -509,7 +455,7 @@
     {
       "path": "PROMPT_CHANGELOG.md",
       "size": 2370,
-      "mtime": 1772568142,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
@@ -519,27 +465,15 @@
       "ext": ".md"
     },
     {
-      "path": "REGISTRY_DECISION_COMPATIBILITY_MAP_V1_1.md",
-      "size": 3083,
-      "mtime": 1772510119,
-      "ext": ".md"
-    },
-    {
       "path": "REGISTRY_SCHEMAS_V1.md",
-      "size": 2836,
-      "mtime": 1772511335,
+      "size": 2116,
+      "mtime": 1772610437,
       "ext": ".md"
     },
     {
       "path": "REPO_NAMING_STANDARD_V1.md",
       "size": 847,
       "mtime": 1772182062,
-      "ext": ".md"
-    },
-    {
-      "path": "RESTORE_PROCESS_V1.md",
-      "size": 456,
-      "mtime": 1772375233,
       "ext": ".md"
     },
     {
@@ -555,27 +489,21 @@
       "ext": ".md"
     },
     {
-      "path": "ROLE_BASED_CONTROL_PANEL_V1.md",
-      "size": 3226,
-      "mtime": 1772054543,
+      "path": "ROPA_LITE_V1.md",
+      "size": 507,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "SEC-001_BASELINE_CHECKLIST.md",
-      "size": 1675,
-      "mtime": 1772352934,
+      "size": 1428,
+      "mtime": 1772610437,
       "ext": ".md"
     },
     {
       "path": "SECURITY_ADOPTION_PLAN.md",
       "size": 6014,
       "mtime": 1772086175,
-      "ext": ".md"
-    },
-    {
-      "path": "SECURITY_PROCESS_V1.md",
-      "size": 536,
-      "mtime": 1772375233,
       "ext": ".md"
     },
     {
@@ -609,12 +537,6 @@
       "ext": ".md"
     },
     {
-      "path": "SOFTWARE_DEVELOPMENT_PROCESS_V1.md",
-      "size": 484,
-      "mtime": 1772375233,
-      "ext": ".md"
-    },
-    {
       "path": "SOP-001_INTAKE_TRIAGE.md",
       "size": 2650,
       "mtime": 1772298601,
@@ -623,31 +545,7 @@
     {
       "path": "SOUL.md",
       "size": 2285,
-      "mtime": 1772606592,
-      "ext": ".md"
-    },
-    {
-      "path": "SPRINT3_ARCHITECTURE_BRIEF_V1.md",
-      "size": 5065,
-      "mtime": 1772487963,
-      "ext": ".md"
-    },
-    {
-      "path": "SPRINT3_CLOSEOUT_PACK_V1.md",
-      "size": 3132,
-      "mtime": 1772493331,
-      "ext": ".md"
-    },
-    {
-      "path": "SPRINT3_GUARDRAILS_PACK_V1.md",
-      "size": 2885,
-      "mtime": 1772488530,
-      "ext": ".md"
-    },
-    {
-      "path": "SPRINT3_WEEKLY_CADENCE.md",
-      "size": 354,
-      "mtime": 1772130367,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
@@ -659,13 +557,13 @@
     {
       "path": "STANDARD_CHANGE_CATALOG_V1.md",
       "size": 4747,
-      "mtime": 1772606962,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
       "path": "STANDARD_CHANGE_PILOT_PROTOCOL_V1.md",
       "size": 1549,
-      "mtime": 1772610067,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
@@ -694,14 +592,8 @@
     },
     {
       "path": "TASKS.md",
-      "size": 38033,
-      "mtime": 1772610303,
-      "ext": ".md"
-    },
-    {
-      "path": "TASK_DECISION_MANAGEMENT_PROCESS_V1.md",
-      "size": 721,
-      "mtime": 1772375233,
+      "size": 40384,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
@@ -714,6 +606,12 @@
       "path": "TASK_SYSTEM_POLICY_V1.md",
       "size": 4817,
       "mtime": 1772088373,
+      "ext": ".md"
+    },
+    {
+      "path": "TDE_PROJECT_START_PACKET_V1.md",
+      "size": 3130,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
@@ -735,6 +633,12 @@
       "ext": ".md"
     },
     {
+      "path": "TOOL_EXTERNAL_SERVICE_GOVERNANCE_V1.md",
+      "size": 955,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
       "path": "TRELLO_CONNECTOR_V1.md",
       "size": 1822,
       "mtime": 1771943472,
@@ -747,6 +651,12 @@
       "ext": ".md"
     },
     {
+      "path": "VENDOR_DPA_REGISTER_V1.md",
+      "size": 540,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
       "path": "WAYS_OF_WORKING_V1.md",
       "size": 4462,
       "mtime": 1771881471,
@@ -755,13 +665,109 @@
     {
       "path": "WO-2026-CHAT-CONTINUITY-S1.md",
       "size": 2318,
-      "mtime": 1772393058,
+      "mtime": 1772611593,
+      "ext": ".md"
+    },
+    {
+      "path": "WO-2026-TDE-KERNEL-S1.md",
+      "size": 3199,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "WO-2026-TDE-KERNEL-S10.md",
+      "size": 2191,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "WO-2026-TDE-KERNEL-S11.md",
+      "size": 2439,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "WO-2026-TDE-KERNEL-S12.md",
+      "size": 2868,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "WO-2026-TDE-KERNEL-S13.md",
+      "size": 2189,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "WO-2026-TDE-KERNEL-S14.md",
+      "size": 2390,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "WO-2026-TDE-KERNEL-S15.md",
+      "size": 3987,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "WO-2026-TDE-KERNEL-S16.md",
+      "size": 2534,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "WO-2026-TDE-KERNEL-S2.md",
+      "size": 3072,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "WO-2026-TDE-KERNEL-S3.md",
+      "size": 1938,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "WO-2026-TDE-KERNEL-S4.md",
+      "size": 1660,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "WO-2026-TDE-KERNEL-S5.md",
+      "size": 1913,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "WO-2026-TDE-KERNEL-S6.md",
+      "size": 1726,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "WO-2026-TDE-KERNEL-S7.md",
+      "size": 1898,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "WO-2026-TDE-KERNEL-S8.md",
+      "size": 1547,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "WO-2026-TDE-KERNEL-S9.md",
+      "size": 1618,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "WO_TEMPLATE_V1.md",
       "size": 1165,
-      "mtime": 1772610055,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
@@ -783,6 +789,12 @@
       "ext": ".md"
     },
     {
+      "path": "control/.gitkeep",
+      "size": 0,
+      "mtime": 1772611594,
+      "ext": ""
+    },
+    {
       "path": "docs/architecture/openclaw-agent-deployment-report-2026-02-28.md",
       "size": 20593,
       "mtime": 1772263032,
@@ -791,13 +803,13 @@
     {
       "path": "eval/baselines/2026-03-04__scorecard_baseline__v1.json",
       "size": 400,
-      "mtime": 1772609140,
+      "mtime": 1772611593,
       "ext": ".json"
     },
     {
       "path": "eval/slices/safety_refusal_smoke.v1.yaml",
       "size": 549,
-      "mtime": 1772609136,
+      "mtime": 1772611593,
       "ext": ".yaml"
     },
     {
@@ -807,9 +819,15 @@
       "ext": ".md"
     },
     {
+      "path": "governance/MAIN_SYNC_CONFLICT_RESOLUTION_PLAN_2026-03-04.md",
+      "size": 2784,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
       "path": "governance/PLAN_EXECUTION_PORTFOLIO_2026-03-04.md",
       "size": 3072,
-      "mtime": 1772609530,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
@@ -819,27 +837,9 @@
       "ext": ".md"
     },
     {
-      "path": "governance/auditor-runtime-boundary-decision-2026-03-03.md",
-      "size": 2419,
-      "mtime": 1772507728,
-      "ext": ".md"
-    },
-    {
       "path": "governance/direction-package.md",
       "size": 31820,
       "mtime": 1772303526,
-      "ext": ".md"
-    },
-    {
-      "path": "governance/job-lifecycle-kpi-snapshot-2026-03.md",
-      "size": 2358,
-      "mtime": 1772508925,
-      "ext": ".md"
-    },
-    {
-      "path": "governance/job-runtime-fit-matrix-2026-03-03.md",
-      "size": 2899,
-      "mtime": 1772505937,
       "ext": ".md"
     },
     {
@@ -852,6 +852,18 @@
       "path": "governance/policy-register.md",
       "size": 1291,
       "mtime": 1772301072,
+      "ext": ".md"
+    },
+    {
+      "path": "governance/research/.gitkeep",
+      "size": 0,
+      "mtime": 1772611594,
+      "ext": ""
+    },
+    {
+      "path": "governance/research/business-case-threshold-research-providers.md",
+      "size": 1667,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
@@ -879,15 +891,111 @@
       "ext": ".md"
     },
     {
-      "path": "governance/trust-boundary-decision-record-2026-03-03.md",
-      "size": 1708,
-      "mtime": 1772522124,
+      "path": "integrations/openclaw/prompting-guides/.gitkeep",
+      "size": 0,
+      "mtime": 1772611594,
+      "ext": ""
+    },
+    {
+      "path": "integrations/trello/.gitkeep",
+      "size": 0,
+      "mtime": 1772611594,
+      "ext": ""
+    },
+    {
+      "path": "jobs/JOB-TEMPLATE/HANDOVER.md",
+      "size": 212,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "jobs/JOB-TEMPLATE/JOB.md",
+      "size": 136,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "jobs/JOB-TEMPLATE/MEMORY.md",
+      "size": 99,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "jobs/JOB-TEMPLATE/STATE.md",
+      "size": 151,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/archive/control-panel/ARCHIVE_BOUNDARY_NOTE_V1.md",
+      "size": 891,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/archive/control-panel/BUILD_SPEC_CONTROL_PANEL_MVP.md",
+      "size": 3511,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/archive/control-panel/CHIEF_ARCHITECT_GO_NO_GO_2026-02-26.md",
+      "size": 2294,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/archive/control-panel/CHIEF_ARCHITECT_PILOT_CHECKLIST.md",
+      "size": 931,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/archive/control-panel/CLAUDE_CODE_PROMPT_CONTROL_PANEL_MVP.md",
+      "size": 1283,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/archive/control-panel/CONTROL_PANEL.md",
+      "size": 1173,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/archive/control-panel/CONTROL_PANEL_TERMINATION_ACTION_PLAN_V1.md",
+      "size": 3619,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/archive/control-panel/CONTROL_PANEL_VNEXT_EXECUTION_PLAN.md",
+      "size": 7267,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/archive/control-panel/CONTROL_TOWER_MVP_VIEWS_SPEC.md",
+      "size": 1344,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/archive/control-panel/ROLE_BASED_CONTROL_PANEL_V1.md",
+      "size": 3226,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/archive/control-panel/SPRINT3_WEEKLY_CADENCE.md",
+      "size": 354,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/decisions/DECISION_MEMO_TEMPLATE_V1.md",
       "size": 410,
-      "mtime": 1772609857,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
@@ -903,9 +1011,153 @@
       "ext": ".md"
     },
     {
+      "path": "knowledge/distilled/2026-03-01__checklist__trello-cutover-readiness-v1.md",
+      "size": 1626,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/distilled/2026-03-01__decision-memo__task-decision-engine-project-definition-gate__v1.md",
+      "size": 3434,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/distilled/2026-03-01__decision-memo__task-decision-engine-project-definition-gate__v2.md",
+      "size": 2145,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/distilled/2026-03-01__design__trello-retirement-design-v1.md",
+      "size": 2419,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/distilled/2026-03-01__matrix__tde-mutation-authority-v1.md",
+      "size": 1338,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/distilled/2026-03-01__package__tde-definition-phase-consolidation__v1.md",
+      "size": 3440,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/distilled/2026-03-01__spec__tde-thin-slice-acceptance-tests-v1.md",
+      "size": 1736,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/distilled/2026-03-02__charter__tde-phase-delegation-charter-v1.md",
+      "size": 1127,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/distilled/2026-03-02__gate-note__tde-build-readiness-decision-note-v1.md",
+      "size": 2227,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/distilled/2026-03-02__insight__tde-use-case-anti-stall-autonomous-progress-v1.md",
+      "size": 1299,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/distilled/2026-03-02__matrix__tde-mutation-authority-v2-job-bound.md",
+      "size": 5628,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/distilled/2026-03-02__milestone-packet__tde-kernel-s1-s2-gate-for-job-own-001-v1.md",
+      "size": 1982,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/distilled/2026-03-02__milestone-packet__tde-kernel-s1-s3-gate-for-job-own-001-v1.md",
+      "size": 2355,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/distilled/2026-03-02__packet__tde-kernel-s2-planning-v1.md",
+      "size": 1559,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/distilled/2026-03-02__plan__audit-compliance-uplift-v1.md",
+      "size": 799,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/distilled/2026-03-02__plan__devsecops-maturity-uplift-v1.md",
+      "size": 952,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/distilled/2026-03-02__plan__memory-architecture-improvements-v1.md",
+      "size": 772,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/distilled/2026-03-02__plan__process-as-code-implementation-v1.md",
+      "size": 1292,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/distilled/2026-03-02__plan__tde-build-phase-backlog-sequencing-wip-limited-v1.md",
+      "size": 1450,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/distilled/2026-03-02__plan__tool-external-service-hardening-v1.md",
+      "size": 738,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/distilled/2026-03-02__raci__tde-build-gate-approvals-v1.md",
+      "size": 2130,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/distilled/2026-03-02__spec__job-binding-and-authority-transfer-v1.md",
+      "size": 2542,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/distilled/2026-03-02__use-case__tde-progress-transparency-monitoring-v1.md",
+      "size": 1485,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
       "path": "knowledge/distilled/2026-03-03__prompt-injection__implementable-now-plan__v1.md",
       "size": 2586,
-      "mtime": 1772519074,
+      "mtime": 1772611593,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/distilled/INDEX.md",
+      "size": 1508,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
@@ -933,459 +1185,345 @@
       "ext": ".md"
     },
     {
-      "path": "knowledge/evidence/2026-02/20260226-084004__security_audit.md",
-      "size": 532,
-      "mtime": 1772091604,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-02/20260226-084005__doctor.md",
-      "size": 499,
-      "mtime": 1772091605,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-02/20260227-084004__security_audit.md",
-      "size": 532,
-      "mtime": 1772178004,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-02/20260227-084006__doctor.md",
-      "size": 499,
-      "mtime": 1772178006,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-02/20260228-084004__security_audit.md",
-      "size": 532,
-      "mtime": 1772264404,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-02/20260228-084007__doctor.md",
-      "size": 499,
-      "mtime": 1772264407,
-      "ext": ".md"
-    },
-    {
       "path": "knowledge/evidence/2026-02/prompt-drift-review-template.md",
       "size": 843,
       "mtime": 1772129778,
       "ext": ".md"
     },
     {
-      "path": "knowledge/evidence/2026-03/20260301-084003__security_audit.md",
-      "size": 532,
-      "mtime": 1772350803,
+      "path": "knowledge/evidence/2026-03/2026-03-02__verification__wo-2026-tde-kernel-s1.md",
+      "size": 564,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
-      "path": "knowledge/evidence/2026-03/20260301-084005__doctor.md",
-      "size": 499,
-      "mtime": 1772350805,
+      "path": "knowledge/evidence/2026-03/2026-03-02__verification__wo-2026-tde-kernel-s10.md",
+      "size": 1955,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
-      "path": "knowledge/evidence/2026-03/20260302-084003__security_audit.md",
-      "size": 532,
-      "mtime": 1772437203,
+      "path": "knowledge/evidence/2026-03/2026-03-02__verification__wo-2026-tde-kernel-s11.md",
+      "size": 3027,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
-      "path": "knowledge/evidence/2026-03/20260302-084005__doctor.md",
-      "size": 499,
-      "mtime": 1772437205,
+      "path": "knowledge/evidence/2026-03/2026-03-02__verification__wo-2026-tde-kernel-s2.md",
+      "size": 1584,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
-      "path": "knowledge/evidence/2026-03/20260304-084004__security_audit.md",
-      "size": 532,
-      "mtime": 1772610004,
+      "path": "knowledge/evidence/2026-03/2026-03-02__verification__wo-2026-tde-kernel-s3.md",
+      "size": 2777,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
-      "path": "knowledge/evidence/2026-03/20260304-084006__doctor.md",
-      "size": 499,
-      "mtime": 1772610006,
+      "path": "knowledge/evidence/2026-03/2026-03-02__verification__wo-2026-tde-kernel-s4.md",
+      "size": 1055,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
-      "path": "knowledge/evidence/2026-03/tmp/TASKS_S16_FIXTURE.md",
-      "size": 130,
-      "mtime": 1772607657,
+      "path": "knowledge/evidence/2026-03/2026-03-02__verification__wo-2026-tde-kernel-s5.md",
+      "size": 1571,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
-      "path": "knowledge/evidence/2026-03-02__chat-continuity-sprint1-checkpoint.md",
-      "size": 921,
-      "mtime": 1772487323,
+      "path": "knowledge/evidence/2026-03/2026-03-02__verification__wo-2026-tde-kernel-s6.md",
+      "size": 1459,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
-      "path": "knowledge/evidence/2026-03-02__ops-2026-022-gate-verdict.md",
-      "size": 1627,
-      "mtime": 1772491519,
+      "path": "knowledge/evidence/2026-03/2026-03-02__verification__wo-2026-tde-kernel-s7.md",
+      "size": 1106,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
-      "path": "knowledge/evidence/2026-03-02__ops-2026-022-qa-gate-test-snapshot.md",
-      "size": 1598,
-      "mtime": 1772490347,
+      "path": "knowledge/evidence/2026-03/2026-03-02__verification__wo-2026-tde-kernel-s8.md",
+      "size": 1295,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
-      "path": "knowledge/evidence/2026-03-02__ops-2026-022-sample-response-artifact.md",
-      "size": 3931,
-      "mtime": 1772490986,
+      "path": "knowledge/evidence/2026-03/2026-03-02__verification__wo-2026-tde-kernel-s9.md",
+      "size": 1370,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
-      "path": "knowledge/evidence/2026-03-02__ops-2026-023-closeout-pack-draft-and-test-revalidation.md",
-      "size": 903,
-      "mtime": 1772492135,
+      "path": "knowledge/evidence/2026-03/2026-03-03__verification__tde-2026-024-real-task-ingestion-baseline.md",
+      "size": 1135,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
-      "path": "knowledge/evidence/2026-03-03__imp-auto-20260227-02-parser-smoke-tests-cron-bundle-linkage-and-closeout.md",
-      "size": 893,
-      "mtime": 1772517344,
+      "path": "knowledge/evidence/2026-03/2026-03-03__verification__tde-2026-025-real-workload-writeback-slice.md",
+      "size": 937,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
-      "path": "knowledge/evidence/2026-03-03__imp-auto-20260227-02-parser-smoke-tests-scaffold.md",
-      "size": 917,
-      "mtime": 1772516757,
+      "path": "knowledge/evidence/2026-03/2026-03-03__verification__wo-2026-tde-kernel-s13.md",
+      "size": 1501,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
-      "path": "knowledge/evidence/2026-03-03__imp-auto-20260228-01-closeout-and-board-normalization.md",
-      "size": 1137,
-      "mtime": 1772518525,
+      "path": "knowledge/evidence/2026-03/2026-03-03__verification__wo-2026-tde-kernel-s14.md",
+      "size": 1009,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
-      "path": "knowledge/evidence/2026-03-03__imp-auto-20260228-01-release-delta-snapshot-automation-step.md",
-      "size": 959,
-      "mtime": 1772517999,
+      "path": "knowledge/evidence/2026-03/2026-03-04__verification__wo-2026-tde-kernel-s15.md",
+      "size": 2185,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
-      "path": "knowledge/evidence/2026-03-03__imp-auto-20260301-01-sec-auto-duplicate-consolidation.md",
-      "size": 1395,
-      "mtime": 1772516152,
+      "path": "knowledge/evidence/2026-03/2026-03-04__verification__wo-2026-tde-kernel-s16.md",
+      "size": 1846,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
-      "path": "knowledge/evidence/2026-03-03__imp-auto-20260301-02-closeout-and-board-normalization.md",
-      "size": 733,
-      "mtime": 1772520309,
+      "path": "knowledge/evidence/2026-03/tde-activation-execution-receipt-blocked.json",
+      "size": 1072,
+      "mtime": 1772611594,
+      "ext": ".json"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/tde-activation-execution-receipt-blocked.md",
+      "size": 793,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
-      "path": "knowledge/evidence/2026-03-03__imp-auto-20260301-02-docs-hygiene-bundle-script-and-cron-wire.md",
-      "size": 831,
-      "mtime": 1772519731,
+      "path": "knowledge/evidence/2026-03/tde-activation-execution-receipt-pass.json",
+      "size": 984,
+      "mtime": 1772611594,
+      "ext": ".json"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/tde-activation-execution-receipt-pass.md",
+      "size": 702,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
-      "path": "knowledge/evidence/2026-03-03__imp-auto-20260301-02-docs-hygiene-bundle-validation.md",
-      "size": 1013,
-      "mtime": 1772519110,
+      "path": "knowledge/evidence/2026-03/tde-broader-rollout-checklist.md",
+      "size": 740,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
-      "path": "knowledge/evidence/2026-03-03__imp-auto-20260302-03-closeout-and-board-normalization.md",
-      "size": 1357,
-      "mtime": 1772511921,
+      "path": "knowledge/evidence/2026-03/tde-broader-rollout-expansion-criteria.md",
+      "size": 1127,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
-      "path": "knowledge/evidence/2026-03-03__imp-auto-20260302-03-compatibility-map-draft.md",
-      "size": 819,
-      "mtime": 1772510127,
+      "path": "knowledge/evidence/2026-03/tde-broader-scope-simulated-cycle.json",
+      "size": 3356,
+      "mtime": 1772611594,
+      "ext": ".json"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/tde-canary-cycle-state-threshold-breach.json",
+      "size": 128,
+      "mtime": 1772611594,
+      "ext": ".json"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/tde-canary-cycle-state.json",
+      "size": 125,
+      "mtime": 1772611594,
+      "ext": ".json"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/tde-canary-operational-note.md",
+      "size": 296,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
-      "path": "knowledge/evidence/2026-03-03__imp-auto-20260302-03-registry-schema-v1_1-harmonization-step.md",
-      "size": 1044,
-      "mtime": 1772511348,
+      "path": "knowledge/evidence/2026-03/tde-canary-operational-status-summary.json",
+      "size": 477,
+      "mtime": 1772611594,
+      "ext": ".json"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/tde-canary-operational-summary-state.json",
+      "size": 226,
+      "mtime": 1772611594,
+      "ext": ".json"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/tde-canary-realworkload-latest.json",
+      "size": 752,
+      "mtime": 1772611594,
+      "ext": ".json"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/tde-canary-rollout-readiness-checklist.md",
+      "size": 605,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
-      "path": "knowledge/evidence/2026-03-03__imp-auto-20260303-01-closeout-and-board-normalization.md",
-      "size": 907,
-      "mtime": 1772513746,
+      "path": "knowledge/evidence/2026-03/tde-canary-simulation-3-clean-cycles.json",
+      "size": 1814,
+      "mtime": 1772611594,
+      "ext": ".json"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/tde-canary-status-latest.json",
+      "size": 812,
+      "mtime": 1772611594,
+      "ext": ".json"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/tde-canary-status-threshold-breach.json",
+      "size": 859,
+      "mtime": 1772611594,
+      "ext": ".json"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/tde-job-tick-failclosed.json",
+      "size": 726,
+      "mtime": 1772611594,
+      "ext": ".json"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/tde-job-tick-latest.json",
+      "size": 1094,
+      "mtime": 1772611594,
+      "ext": ".json"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/tde-job-tick-s12-writeback.json",
+      "size": 1695,
+      "mtime": 1772611594,
+      "ext": ".json"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/tde-job-tick-s14-failclosed.json",
+      "size": 736,
+      "mtime": 1772611594,
+      "ext": ".json"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/tde-job-tick-s14-pass.json",
+      "size": 1513,
+      "mtime": 1772611594,
+      "ext": ".json"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/tde-job-tick-s15-failclosed-binding-mismatch.json",
+      "size": 1948,
+      "mtime": 1772611594,
+      "ext": ".json"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/tde-job-tick-s15-pass.json",
+      "size": 1909,
+      "mtime": 1772611594,
+      "ext": ".json"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/tde-job-tick-s15-reauth-required.json",
+      "size": 2026,
+      "mtime": 1772611594,
+      "ext": ".json"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/tde-job-tick-s16-failclosed-objective-linkage.json",
+      "size": 1214,
+      "mtime": 1772611594,
+      "ext": ".json"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/tde-job-tick-s16-pass.json",
+      "size": 2259,
+      "mtime": 1772611594,
+      "ext": ".json"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/tde-milestone-s4-s7-snapshot.json",
+      "size": 2688,
+      "mtime": 1772611594,
+      "ext": ".json"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/tde-owner-gate-packet.json",
+      "size": 1429,
+      "mtime": 1772611594,
+      "ext": ".json"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/tde-owner-gate-packet.md",
+      "size": 647,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
-      "path": "knowledge/evidence/2026-03-03__imp-auto-20260303-01-cron-hygiene-wire-step.md",
-      "size": 1112,
-      "mtime": 1772512571,
+      "path": "knowledge/evidence/2026-03/tde-release-envelope-blocked.json",
+      "size": 2100,
+      "mtime": 1772611594,
+      "ext": ".json"
+    },
+    {
+      "path": "knowledge/evidence/2026-03/tde-release-envelope-blocked.md",
+      "size": 502,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
-      "path": "knowledge/evidence/2026-03-03__imp-auto-20260303-02-root-safe-unittest-execution-and-closeout.md",
-      "size": 1003,
-      "mtime": 1772514321,
-      "ext": ".md"
+      "path": "knowledge/evidence/2026-03/tde-release-envelope-pass.json",
+      "size": 2035,
+      "mtime": 1772611594,
+      "ext": ".json"
     },
     {
-      "path": "knowledge/evidence/2026-03-03__imp-auto-20260303-02-task-hygiene-tests-added.md",
-      "size": 753,
-      "mtime": 1772513165,
+      "path": "knowledge/evidence/2026-03/tde-release-envelope-pass.md",
+      "size": 431,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/evidence/2026-03-03__inc-2026-003__openclaw-sandbox-docker-regression-investigation.md",
       "size": 6223,
-      "mtime": 1772563348,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__openclaw-release-delta-snapshot.md",
-      "size": 10762,
-      "mtime": 1772518508,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__ops-2026-020-active-to-done-transition-executed.md",
-      "size": 970,
-      "mtime": 1772501717,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__ops-2026-020-architecture-guardrail-traceability-matrix.md",
-      "size": 2237,
-      "mtime": 1772499335,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__ops-2026-020-architecture-signoff-recommendation.md",
-      "size": 1672,
-      "mtime": 1772501116,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__ops-2026-021-active-to-done-transition-executed.md",
-      "size": 793,
-      "mtime": 1772504108,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__ops-2026-021-implementation-completion-review.md",
-      "size": 1981,
-      "mtime": 1772503525,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__ops-2026-021-task-center-validation-errors-alignment.md",
-      "size": 1207,
-      "mtime": 1772502952,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__ops-2026-022-active-to-done-transition-executed.md",
-      "size": 827,
-      "mtime": 1772504721,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__ops-2026-023-closeout-execution-checklist-ready.md",
-      "size": 1627,
-      "mtime": 1772510716,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__ops-2026-023-closeout-tag-readiness-check.md",
-      "size": 1333,
-      "mtime": 1772496323,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__ops-2026-023-test-revalidation.md",
-      "size": 737,
-      "mtime": 1772493325,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__ops-2026-037-active-lane-transition-prep.md",
-      "size": 1587,
-      "mtime": 1772499915,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__ops-2026-037-active-to-done-transition-executed.md",
-      "size": 930,
-      "mtime": 1772500527,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__ops-2026-037-autonomous-loop-checkpoint-standard.md",
-      "size": 758,
-      "mtime": 1772495116,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__ops-2026-037-autonomous-loop-continuity-checkpoint.md",
-      "size": 935,
-      "mtime": 1772493920,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__ops-2026-037-closure-decision-input-pack.md",
-      "size": 2323,
-      "mtime": 1772498721,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__ops-2026-037-closure-recommendation.md",
-      "size": 1565,
-      "mtime": 1772497517,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__ops-2026-037-priority-rotation-guardrail.md",
-      "size": 891,
-      "mtime": 1772495721,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__ops-2026-037-sprint1-compliance-snapshot.md",
-      "size": 1203,
-      "mtime": 1772494513,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__ops-2026-037-sprint1-exit-readiness-review.md",
-      "size": 1704,
-      "mtime": 1772496936,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__ops-2026-037-sprint2-rollover-task-capture.md",
-      "size": 1162,
-      "mtime": 1772498142,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__ops-2026-038-head-of-control-tower-job-record-added.md",
-      "size": 930,
-      "mtime": 1772505351,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__ops-2026-039-cadence-artifact-linkage-and-closeout.md",
-      "size": 808,
-      "mtime": 1772506530,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__ops-2026-039-job-runtime-fit-matrix-initial-publish.md",
-      "size": 991,
-      "mtime": 1772505947,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__ops-2026-040-job-change-workflow-template-and-linkage.md",
-      "size": 1092,
-      "mtime": 1772507140,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__ops-2026-041-auditor-runtime-boundary-decision.md",
-      "size": 672,
-      "mtime": 1772507733,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__ops-2026-042-incident-tag-taxonomy-added.md",
-      "size": 1023,
-      "mtime": 1772508931,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__ops-2026-042-monthly-lifecycle-kpi-baseline-publish.md",
-      "size": 743,
-      "mtime": 1772508329,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__ops-2026-042-task-closeout-and-board-normalization.md",
-      "size": 1258,
-      "mtime": 1772509522,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__sec-auto-20260227-01-telegram-group-allowfrom-enforcement-and-validation.md",
-      "size": 1244,
-      "mtime": 1772515555,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__sec-auto-20260227-01-telegram-group-allowfrom-preflight-audit.md",
-      "size": 1563,
-      "mtime": 1772514963,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__sec-auto-20260302-01-audit-refresh-and-decision-input.md",
-      "size": 1949,
-      "mtime": 1772520919,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__sec-auto-20260302-01-fs-workspace-boundary-hardening-step.md",
-      "size": 1279,
-      "mtime": 1772522761,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__sec-auto-20260302-01-sandbox-default-hardening-step.md",
-      "size": 1570,
-      "mtime": 1772523335,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__sec-auto-20260302-01-sandbox-object-hardening-and-audit-normalization.md",
-      "size": 1263,
-      "mtime": 1772553350,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__sec-auto-20260302-01-trust-boundary-decision-draft-and-remediation-plan.md",
-      "size": 1991,
-      "mtime": 1772521522,
-      "ext": ".md"
-    },
-    {
-      "path": "knowledge/evidence/2026-03-03__sec-auto-20260302-01-trust-boundary-decision-record-published.md",
-      "size": 972,
-      "mtime": 1772522131,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
       "path": "knowledge/evidence/2026-03-04__ops-2026-048-049-050-bootstrap-and-non-disruptive-activation.md",
       "size": 1984,
-      "mtime": 1772610082,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
       "path": "knowledge/evidence/2026-03-04__ops-2026-048-049-closeout-note.md",
       "size": 1093,
-      "mtime": 1772610288,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
       "path": "knowledge/evidence/2026-03-04__report47-implementation-recommendations.md",
       "size": 1814,
-      "mtime": 1772606873,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
       "path": "knowledge/evidence/2026-03-04__standard-change-pilot-day1-audit-sample.md",
       "size": 741,
-      "mtime": 1772610282,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
@@ -1403,19 +1541,19 @@
     {
       "path": "knowledge/experiments/EXP-2026-001__drift-aftercare-standard.md",
       "size": 1598,
-      "mtime": 1772569507,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
       "path": "knowledge/inbox/INBOX_ENTRY_TEMPLATE_V1.md",
       "size": 272,
-      "mtime": 1772609793,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
       "path": "knowledge/opportunities/OPP-2026-001__drift-aftercare-standard.md",
       "size": 2820,
-      "mtime": 1772569438,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
@@ -1463,277 +1601,325 @@
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__ai-native-software-delivery-operating-system-diagnostic-and-redesign__v1.md",
       "size": 41016,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__architectures-for-separating-an-operating-system-component-from-a-control-panel-best-pract__v1.md",
       "size": 32848,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__best-practices-for-task-and-decision-management-engines-for-lyra-openclaw__v1.md",
       "size": 33872,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__best-practices-for-task-management-prioritization-kanban-backlog-workflows-decision-proces__v1.md",
       "size": 27678,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__boundary-and-ownership-model-for-gateway-dashboard-and-control-panel__v1.md",
       "size": 21759,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__chief-architect-sub-agent-in-lyra-openclaw-best-practices-system-fit-and-an-implementation__v1.md",
       "size": 22120,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__continuous-action-orchestration-for-lyra-on-openclaw__v1.md",
       "size": 29422,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__continuously-improving-selfimproving-ai-agent-systems-for-lyra-openclaw__v1.md",
       "size": 35838,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__control-panel-task-engine-and-ui-brainstorm-for-the-third-sprint__v1.md",
       "size": 21124,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__decision-memo-task-decision-engine-project-definition-gate-v2__v1.md",
       "size": 14610,
-      "mtime": 1772388259,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__designing-safe-human-like-tooling-for-lyra-in-openclaw__v1.md",
       "size": 27738,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__evaluation-of-the-top-clawhub-skills-for-openclaw__v1.md",
       "size": 43700,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__feasibility-study-for-a-task-and-decision-management-engine-in-lyra-openclaw__v1.md",
       "size": 15822,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__first-version-information-model-for-the-lyra-openclaw-system__v1.md",
       "size": 63335,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__gpt-5-3-codex-in-lyra-openclaw-capabilities-failure-modes-and-a-prompting-md-hygiene-playb__v1.md",
       "size": 20295,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__idempotent-action-contract-patterns-for-agent-tool-execution__v1.md",
       "size": 33717,
-      "mtime": 1772390635,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__improving-memory-and-knowledge-management-for-lyra-on-openclaw__v1.md",
       "size": 24714,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__independent-architecture-review-for-a-localfirst-executive-intelligence-layer__v1.md",
       "size": 21747,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__independent-architecture-review-for-the-localfirst-control-panel-sprint-three__v1.md",
       "size": 18147,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__integrating-markdown-based-os-files-into-an-agent-runtime__v1.md",
       "size": 15976,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__lyra-openclaw-control-panel-architecture-second-opinion__v1.md",
       "size": 19580,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__next-phase-development-process-and-control-panel-design-for-lyra-openclaw__v1.md",
       "size": 22544,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__policy-as-code-decision-rights-for-lyra-tde__v1.md",
       "size": 27558,
-      "mtime": 1772391384,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__post-mortem-on-the-control-panel-project-in-the-lyra-openclaw-system__v1.md",
       "size": 23969,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__pragmatic-expert-level-cybersecurity-recommendations-for-the-openclaw-solution__v1.md",
       "size": 43930,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__prompting-playbooks-for-claude-code-and-openai-deep-research-in-lyra-openclaw__v1.md",
       "size": 23149,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__sprint-5-architecture-review-for-a-local-first-control-panel__v1.md",
       "size": 21177,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__sprint-6-implementation-packet-review-for-os-only-task-service__v1.md",
       "size": 25030,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__sprint-6-review-of-task-service-design-for-a-localfirst-control-panel__v1.md",
       "size": 26650,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__structuring-the-lyra-openclaw-markdown-workspace__v1.md",
       "size": 20900,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__task-and-decision-management-engine-for-lyra-openclaw-job-based-work-orchestration-and-use__v1.md",
       "size": 25795,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__task-management-service-design-brief-for-a-local-first-control-panel__v1.md",
       "size": 30415,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__deepresearch__trello-cutover-playbook-low-risk-migration-to-task-decision-engine__v1.md",
       "size": 30572,
-      "mtime": 1772390689,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__expert-analysis__autonomous-agentic-architectures-an-exhaustive-analysis-of-openclaw-capabilities-replicabl__v1.md",
       "size": 54854,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__guide__openclaw-prompting-guide-for-claude-code__v1.md",
       "size": 23290,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__research__openclaw-direction-package-analysis-and-implementation-recommendation__v1.md",
       "size": 32131,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__research__research-report-ai-agent-deployment-and-jobs-vs-agents-in-openclaw__v1.md",
       "size": 20909,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-01__research__setting-direction-in-a-multi-agent-openclaw-system__v1.md",
       "size": 26318,
-      "mtime": 1772385639,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-02__deepresearch__audit-and-compliance-enhancement-for-lyra-openclaw__v1.md",
+      "size": 27058,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-02__deepresearch__devsecops-maturity-assessment-and-improvement-roadmap-for-lyra-openclaw__v1.md",
+      "size": 32484,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-02__deepresearch__improving-lyra-openclaw-agent-system-processes__v1.md",
+      "size": 27707,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-02__deepresearch__memory-architecture-for-lyra-on-openclaw__v1.md",
+      "size": 27065,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-02__deepresearch__tool-and-external-service-handling-for-lyra-openclaw__v1.md",
+      "size": 37762,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-03__deepresearch__evaluation-and-reliability-framework-for-openclaw-tool-using-agents__v1.md",
       "size": 36173,
-      "mtime": 1772568441,
+      "mtime": 1772611593,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-03__deepresearch__making-jobs-operational-in-lyra__v1.md",
+      "size": 29430,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-03__deepresearch__opportunity-to-execution-engine-for-lyra-openclaw__v1.md",
       "size": 3306,
-      "mtime": 1772569302,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-03__deepresearch__prompt-injection-defenses-and-best-practices__v1.md",
-      "size": 38649,
-      "mtime": 1772525771,
+      "size": 38264,
+      "mtime": 1772611593,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-03__deepresearch__second-opinion-review-of-tde-micro-sprints-and-current-output__v1.md",
+      "size": 21470,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-04__deepresearch__adapting-sprint-practices-to-ai-agent-centric-lyra-openclaw__v1.md",
       "size": 21365,
-      "mtime": 1772606865,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-04__deepresearch__knowledge-library-audit-and-white-spots__v1.md",
       "size": 30849,
-      "mtime": 1772607170,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/2026-03-04__deepresearch__machine-checkable-governance-and-evaluation-bootstrap__v1.md",
       "size": 36857,
-      "mtime": 1772608897,
+      "mtime": 1772611593,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/reports/2026-03-04__deepresearch__sprint-16-renewal-analysis-of-the-lyra-openclaw-tde-development-project__v1.md",
+      "size": 30485,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/INDEX.md",
-      "size": 12485,
-      "mtime": 1772568448,
+      "size": 24414,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
       "path": "knowledge/reports/WEEKLY_SYNTHESIS__2026-03-03.md",
       "size": 3067,
-      "mtime": 1772569423,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
@@ -1745,20 +1931,104 @@
     {
       "path": "memory/2026-03-01.md",
       "size": 873,
-      "mtime": 1772393062,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
-      "path": "memory/2026-03-02.md",
-      "size": 6502,
-      "mtime": 1772491009,
+      "path": "os/adr/.gitkeep",
+      "size": 0,
+      "mtime": 1772611594,
+      "ext": ""
+    },
+    {
+      "path": "os/models/.gitkeep",
+      "size": 0,
+      "mtime": 1772611594,
+      "ext": ""
+    },
+    {
+      "path": "os/models/TDE_KERNEL_SLICE_S1_SPEC.md",
+      "size": 1646,
+      "mtime": 1772611594,
       "ext": ".md"
     },
     {
-      "path": "memory/2026-03-03.md",
-      "size": 18613,
-      "mtime": 1772553366,
+      "path": "os/policies/.gitkeep",
+      "size": 0,
+      "mtime": 1772611594,
+      "ext": ""
+    },
+    {
+      "path": "os/principles/.gitkeep",
+      "size": 0,
+      "mtime": 1772611594,
+      "ext": ""
+    },
+    {
+      "path": "os/runbooks/.gitkeep",
+      "size": 0,
+      "mtime": 1772611594,
+      "ext": ""
+    },
+    {
+      "path": "os/runtime/tde_active_bindings.json",
+      "size": 284,
+      "mtime": 1772611594,
+      "ext": ".json"
+    },
+    {
+      "path": "os/sops/.gitkeep",
+      "size": 0,
+      "mtime": 1772611594,
+      "ext": ""
+    },
+    {
+      "path": "os/sops/TDE_ANTI_STALL_HOOK_V1.md",
+      "size": 2708,
+      "mtime": 1772611594,
       "ext": ".md"
+    },
+    {
+      "path": "os/sops/TDE_CANARY_RUNTIME_WIRING_V1.md",
+      "size": 1011,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "os/sops/TDE_CANARY_SCHEDULING_CONTRACT_V1.md",
+      "size": 1991,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "os/sops/TDE_JOB_TICK_CONTRACT_V1.md",
+      "size": 3963,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "os/standards/.gitkeep",
+      "size": 0,
+      "mtime": 1772611594,
+      "ext": ""
+    },
+    {
+      "path": "os/templates/.gitkeep",
+      "size": 0,
+      "mtime": 1772611594,
+      "ext": ""
+    },
+    {
+      "path": "os/templates/artifact-frontmatter-template.md",
+      "size": 247,
+      "mtime": 1772611594,
+      "ext": ".md"
+    },
+    {
+      "path": "processes/standards/PROCESS_METADATA_SCHEMA_V1.yaml",
+      "size": 812,
+      "mtime": 1772611594,
+      "ext": ".yaml"
     },
     {
       "path": "prompts/claude-code/WO_execute.md",
@@ -1775,19 +2045,19 @@
     {
       "path": "prompts/deep-research/GUIDELINE.md",
       "size": 1456,
-      "mtime": 1772568137,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
       "path": "prompts/deep-research/RO_private.md",
       "size": 1203,
-      "mtime": 1772568131,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
       "path": "prompts/deep-research/RO_public.md",
       "size": 1039,
-      "mtime": 1772568127,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
@@ -1803,9 +2073,9 @@
       "ext": ".md"
     },
     {
-      "path": "repos/.DS_Store",
-      "size": 6148,
-      "mtime": 1772372851,
+      "path": "registries/.gitkeep",
+      "size": 0,
+      "mtime": 1772611594,
       "ext": ""
     },
     {
@@ -3045,6 +3315,12 @@
       "ext": ".yml"
     },
     {
+      "path": "repos/lyra-operating-system/.github/workflows/governance-machine-check.yml",
+      "size": 460,
+      "mtime": 1772611496,
+      "ext": ".yml"
+    },
+    {
       "path": "repos/lyra-operating-system/.gitignore",
       "size": 236,
       "mtime": 1772035686,
@@ -3064,8 +3340,8 @@
     },
     {
       "path": "repos/lyra-operating-system/AGENTS.md",
-      "size": 9485,
-      "mtime": 1772385639,
+      "size": 9515,
+      "mtime": 1772611496,
       "ext": ".md"
     },
     {
@@ -3148,8 +3424,14 @@
     },
     {
       "path": "repos/lyra-operating-system/CA_TEMPLATE_V1.md",
-      "size": 843,
-      "mtime": 1772385639,
+      "size": 1054,
+      "mtime": 1772611496,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/CHAT_CONTINUITY_PROTOCOL_V1.md",
+      "size": 1512,
+      "mtime": 1772611496,
       "ext": ".md"
     },
     {
@@ -3183,9 +3465,15 @@
       "ext": ".md"
     },
     {
+      "path": "repos/lyra-operating-system/CONTINUOUS_IMPROVEMENT_PROCESS_V1.md",
+      "size": 1834,
+      "mtime": 1772611496,
+      "ext": ".md"
+    },
+    {
       "path": "repos/lyra-operating-system/CRON_SPEC_AUTONOMOUS_GOVERNANCE_SWEEPS.md",
-      "size": 2919,
-      "mtime": 1772385639,
+      "size": 5888,
+      "mtime": 1772611496,
       "ext": ".md"
     },
     {
@@ -3225,6 +3513,12 @@
       "ext": ".md"
     },
     {
+      "path": "repos/lyra-operating-system/EXECUTIVE_COMMUNICATION_PROTOCOL_V1.md",
+      "size": 1047,
+      "mtime": 1772611496,
+      "ext": ".md"
+    },
+    {
       "path": "repos/lyra-operating-system/FINOPS_LITE_POLICY.md",
       "size": 866,
       "mtime": 1772035686,
@@ -3256,8 +3550,8 @@
     },
     {
       "path": "repos/lyra-operating-system/INCIDENT_LOG.md",
-      "size": 891,
-      "mtime": 1772035686,
+      "size": 3329,
+      "mtime": 1772611496,
       "ext": ".md"
     },
     {
@@ -3274,8 +3568,8 @@
     },
     {
       "path": "repos/lyra-operating-system/JOB_MARKET_MODEL_V1.md",
-      "size": 3724,
-      "mtime": 1772434581,
+      "size": 8560,
+      "mtime": 1772611496,
       "ext": ".md"
     },
     {
@@ -3306,6 +3600,18 @@
       "path": "repos/lyra-operating-system/METRICS_WEEKLY.md",
       "size": 2627,
       "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/MILESTONE_0_1.md",
+      "size": 1051,
+      "mtime": 1772611496,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/MILESTONE_0_1_MACHINE_CHECKABLE_GOVERNANCE.md",
+      "size": 1369,
+      "mtime": 1772611496,
       "ext": ".md"
     },
     {
@@ -3376,8 +3682,8 @@
     },
     {
       "path": "repos/lyra-operating-system/PROCESS_REGISTRY.md",
-      "size": 5590,
-      "mtime": 1772482664,
+      "size": 7099,
+      "mtime": 1772611496,
       "ext": ".md"
     },
     {
@@ -3390,6 +3696,12 @@
       "path": "repos/lyra-operating-system/PRODUCT_PORTFOLIO_REGISTRY.md",
       "size": 2312,
       "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/PROJECT_START_PACKET_CHAT_CONTINUITY_V1.md",
+      "size": 2363,
+      "mtime": 1772611496,
       "ext": ".md"
     },
     {
@@ -3406,8 +3718,8 @@
     },
     {
       "path": "repos/lyra-operating-system/PROMPT_CHANGELOG.md",
-      "size": 1532,
-      "mtime": 1772385639,
+      "size": 2370,
+      "mtime": 1772611496,
       "ext": ".md"
     },
     {
@@ -3496,14 +3808,26 @@
     },
     {
       "path": "repos/lyra-operating-system/SOUL.md",
-      "size": 1849,
-      "mtime": 1772385639,
+      "size": 2285,
+      "mtime": 1772611496,
       "ext": ".md"
     },
     {
       "path": "repos/lyra-operating-system/SPRINT_ARCHITECTURE_BRIEF_TEMPLATE.md",
       "size": 1150,
       "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/STANDARD_CHANGE_CATALOG_V1.md",
+      "size": 4747,
+      "mtime": 1772611496,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/STANDARD_CHANGE_PILOT_PROTOCOL_V1.md",
+      "size": 1549,
+      "mtime": 1772611496,
       "ext": ".md"
     },
     {
@@ -3532,8 +3856,8 @@
     },
     {
       "path": "repos/lyra-operating-system/TASKS.md",
-      "size": 11472,
-      "mtime": 1772608176,
+      "size": 40384,
+      "mtime": 1772611496,
       "ext": ".md"
     },
     {
@@ -3600,6 +3924,12 @@
       "path": "repos/lyra-operating-system/WAYS_OF_WORKING_V1.md",
       "size": 4462,
       "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/WO-2026-CHAT-CONTINUITY-S1.md",
+      "size": 2318,
+      "mtime": 1772611496,
       "ext": ".md"
     },
     {
@@ -3700,8 +4030,8 @@
     },
     {
       "path": "repos/lyra-operating-system/WO_TEMPLATE_V1.md",
-      "size": 954,
-      "mtime": 1772385639,
+      "size": 1165,
+      "mtime": 1772611496,
       "ext": ".md"
     },
     {
@@ -3735,9 +4065,33 @@
       "ext": ".md"
     },
     {
+      "path": "repos/lyra-operating-system/eval/baselines/2026-03-04__scorecard_baseline__v1.json",
+      "size": 400,
+      "mtime": 1772611496,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/eval/slices/safety_refusal_smoke.v1.yaml",
+      "size": 549,
+      "mtime": 1772611496,
+      "ext": ".yaml"
+    },
+    {
       "path": "repos/lyra-operating-system/evidence-pack-template.md",
       "size": 1317,
       "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/governance/MAIN_SYNC_CONFLICT_RESOLUTION_PLAN_2026-03-04.md",
+      "size": 2784,
+      "mtime": 1772611496,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/governance/PLAN_EXECUTION_PORTFOLIO_2026-03-04.md",
+      "size": 3072,
+      "mtime": 1772611496,
       "ext": ".md"
     },
     {
@@ -3811,6 +4165,12 @@
       "size": 0,
       "mtime": 1772385639,
       "ext": ""
+    },
+    {
+      "path": "repos/lyra-operating-system/inventory/generated/repo_inventory.json",
+      "size": 140388,
+      "mtime": 1772611496,
+      "ext": ".json"
     },
     {
       "path": "repos/lyra-operating-system/jobs/JOB-TEMPLATE/HANDOVER.md",
@@ -3900,6 +4260,12 @@
       "path": "repos/lyra-operating-system/knowledge/archive/control-panel/SPRINT3_WEEKLY_CADENCE.md",
       "size": 354,
       "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/decisions/DECISION_MEMO_TEMPLATE_V1.md",
+      "size": 410,
+      "mtime": 1772611496,
       "ext": ".md"
     },
     {
@@ -4050,6 +4416,12 @@
       "path": "repos/lyra-operating-system/knowledge/distilled/2026-03-02__use-case__tde-progress-transparency-monitoring-v1.md",
       "size": 1485,
       "mtime": 1772439841,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/distilled/2026-03-03__prompt-injection__implementable-now-plan__v1.md",
+      "size": 2586,
+      "mtime": 1772611496,
       "ext": ".md"
     },
     {
@@ -4265,7 +4637,7 @@
     {
       "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-canary-realworkload-latest.json",
       "size": 752,
-      "mtime": 1772609280,
+      "mtime": 1772611496,
       "ext": ".json"
     },
     {
@@ -4283,73 +4655,79 @@
     {
       "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-canary-status-latest.json",
       "size": 812,
-      "mtime": 1772609280,
+      "mtime": 1772611496,
       "ext": ".json"
     },
     {
       "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-canary-status-threshold-breach.json",
       "size": 859,
-      "mtime": 1772609280,
+      "mtime": 1772611496,
       "ext": ".json"
     },
     {
       "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-failclosed.json",
       "size": 726,
-      "mtime": 1772609280,
+      "mtime": 1772611496,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-healthcheck.json",
+      "size": 1375,
+      "mtime": 1772611481,
       "ext": ".json"
     },
     {
       "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-latest.json",
       "size": 1094,
-      "mtime": 1772609280,
+      "mtime": 1772611496,
       "ext": ".json"
     },
     {
       "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-s12-writeback.json",
       "size": 1695,
-      "mtime": 1772609280,
+      "mtime": 1772611496,
       "ext": ".json"
     },
     {
       "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-s14-failclosed.json",
       "size": 736,
-      "mtime": 1772609280,
+      "mtime": 1772611496,
       "ext": ".json"
     },
     {
       "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-s14-pass.json",
       "size": 1513,
-      "mtime": 1772609280,
+      "mtime": 1772611496,
       "ext": ".json"
     },
     {
       "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-s15-failclosed-binding-mismatch.json",
       "size": 1948,
-      "mtime": 1772609280,
+      "mtime": 1772611496,
       "ext": ".json"
     },
     {
       "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-s15-pass.json",
       "size": 1909,
-      "mtime": 1772609280,
+      "mtime": 1772611496,
       "ext": ".json"
     },
     {
       "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-s15-reauth-required.json",
       "size": 2026,
-      "mtime": 1772609280,
+      "mtime": 1772611496,
       "ext": ".json"
     },
     {
       "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-s16-failclosed-objective-linkage.json",
       "size": 1214,
-      "mtime": 1772609280,
+      "mtime": 1772611496,
       "ext": ".json"
     },
     {
       "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-s16-pass.json",
       "size": 2259,
-      "mtime": 1772609280,
+      "mtime": 1772611496,
       "ext": ".json"
     },
     {
@@ -4373,7 +4751,7 @@
     {
       "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-release-envelope-blocked.json",
       "size": 2100,
-      "mtime": 1772609280,
+      "mtime": 1772611496,
       "ext": ".json"
     },
     {
@@ -4385,7 +4763,7 @@
     {
       "path": "repos/lyra-operating-system/knowledge/evidence/2026-03/tde-release-envelope-pass.json",
       "size": 2035,
-      "mtime": 1772609280,
+      "mtime": 1772611496,
       "ext": ".json"
     },
     {
@@ -4395,10 +4773,76 @@
       "ext": ".md"
     },
     {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03-03__inc-2026-003__openclaw-sandbox-docker-regression-investigation.md",
+      "size": 6223,
+      "mtime": 1772611496,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03-04__ops-2026-048-049-050-bootstrap-and-non-disruptive-activation.md",
+      "size": 1984,
+      "mtime": 1772611496,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03-04__ops-2026-048-049-closeout-note.md",
+      "size": 1093,
+      "mtime": 1772611496,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03-04__report47-implementation-recommendations.md",
+      "size": 1814,
+      "mtime": 1772611496,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/evidence/2026-03-04__standard-change-pilot-day1-audit-sample.md",
+      "size": 741,
+      "mtime": 1772611496,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/experiments/EXP-2026-001__drift-aftercare-standard.md",
+      "size": 1598,
+      "mtime": 1772611496,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/inbox/INBOX_ENTRY_TEMPLATE_V1.md",
+      "size": 272,
+      "mtime": 1772611496,
+      "ext": ".md"
+    },
+    {
       "path": "repos/lyra-operating-system/knowledge/indexes/TOPIC_INDEX.md",
       "size": 1536,
       "mtime": 1772035686,
       "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/indexes/decisions_index.json",
+      "size": 196,
+      "mtime": 1772611496,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/indexes/inbox_index.json",
+      "size": 172,
+      "mtime": 1772611496,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/indexes/indexes_manifest.json",
+      "size": 295,
+      "mtime": 1772611496,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/indexes/report_decision_index.json",
+      "size": 15889,
+      "mtime": 1772611496,
+      "ext": ".json"
     },
     {
       "path": "repos/lyra-operating-system/knowledge/indexes/structure-scope-rules.md",
@@ -4410,6 +4854,12 @@
       "path": "repos/lyra-operating-system/knowledge/indexes/workspace-structure-migration-plan-v1.md",
       "size": 996,
       "mtime": 1772385639,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/opportunities/OPP-2026-001__drift-aftercare-standard.md",
+      "size": 2820,
+      "mtime": 1772611496,
       "ext": ".md"
     },
     {
@@ -4713,15 +5163,51 @@
       "ext": ".md"
     },
     {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-03__deepresearch__evaluation-and-reliability-framework-for-openclaw-tool-using-agents__v1.md",
+      "size": 36173,
+      "mtime": 1772611496,
+      "ext": ".md"
+    },
+    {
       "path": "repos/lyra-operating-system/knowledge/reports/2026-03-03__deepresearch__making-jobs-operational-in-lyra__v1.md",
       "size": 29430,
       "mtime": 1772525633,
       "ext": ".md"
     },
     {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-03__deepresearch__opportunity-to-execution-engine-for-lyra-openclaw__v1.md",
+      "size": 3306,
+      "mtime": 1772611496,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-03__deepresearch__prompt-injection-defenses-and-best-practices__v1.md",
+      "size": 38264,
+      "mtime": 1772611496,
+      "ext": ".md"
+    },
+    {
       "path": "repos/lyra-operating-system/knowledge/reports/2026-03-03__deepresearch__second-opinion-review-of-tde-micro-sprints-and-current-output__v1.md",
       "size": 21470,
       "mtime": 1772521571,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-04__deepresearch__adapting-sprint-practices-to-ai-agent-centric-lyra-openclaw__v1.md",
+      "size": 21365,
+      "mtime": 1772611496,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-04__deepresearch__knowledge-library-audit-and-white-spots__v1.md",
+      "size": 30849,
+      "mtime": 1772611496,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/2026-03-04__deepresearch__machine-checkable-governance-and-evaluation-bootstrap__v1.md",
+      "size": 36857,
+      "mtime": 1772611496,
       "ext": ".md"
     },
     {
@@ -4732,14 +5218,26 @@
     },
     {
       "path": "repos/lyra-operating-system/knowledge/reports/INDEX.md",
-      "size": 11954,
-      "mtime": 1772608170,
+      "size": 24414,
+      "mtime": 1772611496,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/knowledge/reports/WEEKLY_SYNTHESIS__2026-03-03.md",
+      "size": 3067,
+      "mtime": 1772611496,
       "ext": ".md"
     },
     {
       "path": "repos/lyra-operating-system/memory/2026-02-23.md",
       "size": 476,
       "mtime": 1772035686,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/memory/2026-03-01.md",
+      "size": 873,
+      "mtime": 1772611496,
       "ext": ".md"
     },
     {
@@ -4851,15 +5349,21 @@
       "ext": ".md"
     },
     {
+      "path": "repos/lyra-operating-system/prompts/deep-research/GUIDELINE.md",
+      "size": 1456,
+      "mtime": 1772611496,
+      "ext": ".md"
+    },
+    {
       "path": "repos/lyra-operating-system/prompts/deep-research/RO_private.md",
-      "size": 900,
-      "mtime": 1772385639,
+      "size": 1203,
+      "mtime": 1772611496,
       "ext": ".md"
     },
     {
       "path": "repos/lyra-operating-system/prompts/deep-research/RO_public.md",
-      "size": 729,
-      "mtime": 1772385639,
+      "size": 1039,
+      "mtime": 1772611496,
       "ext": ".md"
     },
     {
@@ -4887,6 +5391,42 @@
       "ext": ".md"
     },
     {
+      "path": "repos/lyra-operating-system/schemas/_registry.json",
+      "size": 443,
+      "mtime": 1772611496,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/schemas/decision_memo_metadata/v1.0.0.schema.json",
+      "size": 1008,
+      "mtime": 1772611496,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/schemas/scorecard/v1.0.0.schema.json",
+      "size": 363,
+      "mtime": 1772611496,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/schemas/tde_canary_status/v1.0.0.schema.json",
+      "size": 513,
+      "mtime": 1772611496,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/schemas/tde_job_tick/v1.0.0.schema.json",
+      "size": 574,
+      "mtime": 1772611496,
+      "ext": ".json"
+    },
+    {
+      "path": "repos/lyra-operating-system/schemas/tde_release_envelope/v1.0.0.schema.json",
+      "size": 556,
+      "mtime": 1772611496,
+      "ext": ".json"
+    },
+    {
       "path": "repos/lyra-operating-system/skills-governance.md",
       "size": 3001,
       "mtime": 1772385639,
@@ -4899,6 +5439,24 @@
       "ext": ".yaml"
     },
     {
+      "path": "repos/lyra-operating-system/templates/EXPERIMENT_CLOSEOUT_TEMPLATE.md",
+      "size": 741,
+      "mtime": 1772611496,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/templates/OPPORTUNITY_PACKET_TEMPLATE.md",
+      "size": 1093,
+      "mtime": 1772611496,
+      "ext": ".md"
+    },
+    {
+      "path": "repos/lyra-operating-system/templates/STANDARD_CHANGE_PILOT_OUTCOME_TEMPLATE.md",
+      "size": 693,
+      "mtime": 1772611496,
+      "ext": ".md"
+    },
+    {
       "path": "repos/lyra-operating-system/tools/architecture_fitness_gate.py",
       "size": 3105,
       "mtime": 1772385639,
@@ -4908,6 +5466,24 @@
       "path": "repos/lyra-operating-system/tools/evidence_ingest.py",
       "size": 3599,
       "mtime": 1772035686,
+      "ext": ".py"
+    },
+    {
+      "path": "repos/lyra-operating-system/tools/gen_inventory.py",
+      "size": 1314,
+      "mtime": 1772611496,
+      "ext": ".py"
+    },
+    {
+      "path": "repos/lyra-operating-system/tools/gen_knowledge_indexes.py",
+      "size": 2884,
+      "mtime": 1772611496,
+      "ext": ".py"
+    },
+    {
+      "path": "repos/lyra-operating-system/tools/standard_change_policy_check.py",
+      "size": 3482,
+      "mtime": 1772611496,
       "ext": ".py"
     },
     {
@@ -4937,7 +5513,7 @@
     {
       "path": "repos/lyra-operating-system/tools/tde_canary_runtime_cycle.py",
       "size": 8460,
-      "mtime": 1772609258,
+      "mtime": 1772611496,
       "ext": ".py"
     },
     {
@@ -4955,7 +5531,7 @@
     {
       "path": "repos/lyra-operating-system/tools/tde_job_tick_runner.py",
       "size": 19811,
-      "mtime": 1772609255,
+      "mtime": 1772611496,
       "ext": ".py"
     },
     {
@@ -4967,7 +5543,7 @@
     {
       "path": "repos/lyra-operating-system/tools/tde_migrate_artifact_schema_fields.py",
       "size": 1705,
-      "mtime": 1772609277,
+      "mtime": 1772611496,
       "ext": ".py"
     },
     {
@@ -4985,7 +5561,7 @@
     {
       "path": "repos/lyra-operating-system/tools/tde_release_envelope.py",
       "size": 6738,
-      "mtime": 1772609263,
+      "mtime": 1772611496,
       "ext": ".py"
     },
     {
@@ -5031,6 +5607,12 @@
       "ext": ".py"
     },
     {
+      "path": "repos/lyra-operating-system/tools/validate_repo.py",
+      "size": 6090,
+      "mtime": 1772611496,
+      "ext": ".py"
+    },
+    {
       "path": "repos/lyra-operating-system/tools/validate_review_dates.py",
       "size": 1325,
       "mtime": 1772461892,
@@ -5045,37 +5627,37 @@
     {
       "path": "schemas/_registry.json",
       "size": 443,
-      "mtime": 1772609069,
+      "mtime": 1772611593,
       "ext": ".json"
     },
     {
       "path": "schemas/decision_memo_metadata/v1.0.0.schema.json",
       "size": 1008,
-      "mtime": 1772609089,
+      "mtime": 1772611593,
       "ext": ".json"
     },
     {
       "path": "schemas/scorecard/v1.0.0.schema.json",
       "size": 363,
-      "mtime": 1772609092,
+      "mtime": 1772611593,
       "ext": ".json"
     },
     {
       "path": "schemas/tde_canary_status/v1.0.0.schema.json",
       "size": 513,
-      "mtime": 1772609077,
+      "mtime": 1772611593,
       "ext": ".json"
     },
     {
       "path": "schemas/tde_job_tick/v1.0.0.schema.json",
       "size": 574,
-      "mtime": 1772609073,
+      "mtime": 1772611593,
       "ext": ".json"
     },
     {
       "path": "schemas/tde_release_envelope/v1.0.0.schema.json",
       "size": 556,
-      "mtime": 1772609083,
+      "mtime": 1772611593,
       "ext": ".json"
     },
     {
@@ -5093,19 +5675,19 @@
     {
       "path": "templates/EXPERIMENT_CLOSEOUT_TEMPLATE.md",
       "size": 741,
-      "mtime": 1772569319,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
       "path": "templates/OPPORTUNITY_PACKET_TEMPLATE.md",
       "size": 1093,
-      "mtime": 1772569318,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
       "path": "templates/STANDARD_CHANGE_PILOT_OUTCOME_TEMPLATE.md",
       "size": 693,
-      "mtime": 1772610278,
+      "mtime": 1772611593,
       "ext": ".md"
     },
     {
@@ -5115,75 +5697,129 @@
       "ext": ".py"
     },
     {
-      "path": "tools/docs_hygiene_bundle.py",
-      "size": 1207,
-      "mtime": 1772519712,
-      "ext": ".py"
-    },
-    {
       "path": "tools/evidence_ingest.py",
-      "size": 3975,
-      "mtime": 1772158856,
+      "size": 3599,
+      "mtime": 1772610437,
       "ext": ".py"
     },
     {
       "path": "tools/gen_inventory.py",
       "size": 1314,
-      "mtime": 1772609156,
+      "mtime": 1772611593,
       "ext": ".py"
     },
     {
       "path": "tools/gen_knowledge_indexes.py",
       "size": 2884,
-      "mtime": 1772609814,
-      "ext": ".py"
-    },
-    {
-      "path": "tools/markdown_link_check.py",
-      "size": 2771,
-      "mtime": 1772418047,
-      "ext": ".py"
-    },
-    {
-      "path": "tools/openclaw_release_delta_snapshot.py",
-      "size": 3161,
-      "mtime": 1772517959,
+      "mtime": 1772611593,
       "ext": ".py"
     },
     {
       "path": "tools/standard_change_policy_check.py",
       "size": 3482,
-      "mtime": 1772610047,
+      "mtime": 1772611593,
       "ext": ".py"
     },
     {
-      "path": "tools/task_hygiene_check.py",
-      "size": 1966,
-      "mtime": 1772504466,
+      "path": "tools/tde_activation_execution_receipt.py",
+      "size": 6485,
+      "mtime": 1772611594,
       "ext": ".py"
     },
     {
-      "path": "tools/test_markdown_link_check.py",
-      "size": 1190,
-      "mtime": 1772590836,
+      "path": "tools/tde_canary_cron_hook.sh",
+      "size": 197,
+      "mtime": 1772611594,
+      "ext": ".sh"
+    },
+    {
+      "path": "tools/tde_canary_heartbeat_hook.sh",
+      "size": 202,
+      "mtime": 1772611594,
+      "ext": ".sh"
+    },
+    {
+      "path": "tools/tde_canary_operational_summary.py",
+      "size": 6959,
+      "mtime": 1772611594,
       "ext": ".py"
     },
     {
-      "path": "tools/test_parser_smoke.py",
-      "size": 1868,
-      "mtime": 1772516732,
+      "path": "tools/tde_canary_runtime_cycle.py",
+      "size": 8460,
+      "mtime": 1772611594,
       "ext": ".py"
     },
     {
-      "path": "tools/test_task_hygiene_check.py",
-      "size": 1455,
-      "mtime": 1772514311,
+      "path": "tools/tde_canary_simulate_three_clean_cycles.py",
+      "size": 1155,
+      "mtime": 1772611594,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/tde_job_tick_cron_hook.sh",
+      "size": 560,
+      "mtime": 1772611594,
+      "ext": ".sh"
+    },
+    {
+      "path": "tools/tde_job_tick_runner.py",
+      "size": 19811,
+      "mtime": 1772611594,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/tde_kernel_slice_tests.py",
+      "size": 18470,
+      "mtime": 1772611594,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/tde_migrate_artifact_schema_fields.py",
+      "size": 1705,
+      "mtime": 1772611594,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/tde_milestone_snapshot.py",
+      "size": 5887,
+      "mtime": 1772611594,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/tde_owner_gate_packet.py",
+      "size": 5665,
+      "mtime": 1772611594,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/tde_release_envelope.py",
+      "size": 6738,
+      "mtime": 1772611594,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/tde_rollout_broader_scope_simulation.py",
+      "size": 7841,
+      "mtime": 1772611594,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/test_s15_binding_integrity.py",
+      "size": 2979,
+      "mtime": 1772611594,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/test_s16_objective_linkage.py",
+      "size": 2863,
+      "mtime": 1772611594,
       "ext": ".py"
     },
     {
       "path": "tools/trello_sync.py",
-      "size": 6620,
-      "mtime": 1772158843,
+      "size": 6474,
+      "mtime": 1772610437,
       "ext": ".py"
     },
     {
@@ -5193,9 +5829,27 @@
       "ext": ".sh"
     },
     {
+      "path": "tools/validate_compliance_pack.py",
+      "size": 554,
+      "mtime": 1772611594,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/validate_process_metadata.py",
+      "size": 1682,
+      "mtime": 1772611594,
+      "ext": ".py"
+    },
+    {
       "path": "tools/validate_repo.py",
       "size": 6090,
-      "mtime": 1772610050,
+      "mtime": 1772611593,
+      "ext": ".py"
+    },
+    {
+      "path": "tools/validate_review_dates.py",
+      "size": 1325,
+      "mtime": 1772611594,
       "ext": ".py"
     }
   ]

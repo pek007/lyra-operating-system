@@ -288,8 +288,50 @@
       "no_decision_marker": null
     },
     {
+      "path": "knowledge/reports/2026-03-02__deepresearch__audit-and-compliance-enhancement-for-lyra-openclaw__v1.md",
+      "title": "Enhancing Lyra OpenClaw Audit Jobs and Scheduled Reviews for Swedish and EU Compliance",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-02__deepresearch__devsecops-maturity-assessment-and-improvement-roadmap-for-lyra-openclaw__v1.md",
+      "title": "DevSecOps Maturity Assessment and Improvement Roadmap for the Lyra OpenClaw Agent System",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-02__deepresearch__improving-lyra-openclaw-agent-system-processes__v1.md",
+      "title": "Deep research on Lyra OpenClaw agent-system processes",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-02__deepresearch__memory-architecture-for-lyra-on-openclaw__v1.md",
+      "title": "Memory Architecture for Lyra on OpenClaw",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-02__deepresearch__tool-and-external-service-handling-for-lyra-openclaw__v1.md",
+      "title": "Lyra OpenClaw agent system handling of tools and external services",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
       "path": "knowledge/reports/2026-03-03__deepresearch__evaluation-and-reliability-framework-for-openclaw-tool-using-agents__v1.md",
       "title": "Evaluation and reliability framework for OpenClaw tool-using agents",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-03__deepresearch__making-jobs-operational-in-lyra__v1.md",
+      "title": "2026-03-03__deepresearch__making-jobs-operational-in-lyra__v1",
       "decision_impact": false,
       "decision_id": null,
       "no_decision_marker": null
@@ -303,7 +345,14 @@
     },
     {
       "path": "knowledge/reports/2026-03-03__deepresearch__prompt-injection-defenses-and-best-practices__v1.md",
-      "title": "Lyra OpenClaw Prompt-Injection Defenses and Best Practices",
+      "title": "2026-03-03__deepresearch__prompt-injection-defenses-and-best-practices__v1",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-03__deepresearch__second-opinion-review-of-tde-micro-sprints-and-current-output__v1.md",
+      "title": "2026-03-03__deepresearch__second-opinion-review-of-tde-micro-sprints-and-current-output__v1",
       "decision_impact": false,
       "decision_id": null,
       "no_decision_marker": null
@@ -325,6 +374,13 @@
     {
       "path": "knowledge/reports/2026-03-04__deepresearch__machine-checkable-governance-and-evaluation-bootstrap__v1.md",
       "title": "2026-03-04__deepresearch__machine-checkable-governance-and-evaluation-bootstrap__v1",
+      "decision_impact": false,
+      "decision_id": null,
+      "no_decision_marker": null
+    },
+    {
+      "path": "knowledge/reports/2026-03-04__deepresearch__sprint-16-renewal-analysis-of-the-lyra-openclaw-tde-development-project__v1.md",
+      "title": "2026-03-04__deepresearch__sprint-16-renewal-analysis-of-the-lyra-openclaw-tde-development-project__v1",
       "decision_impact": false,
       "decision_id": null,
       "no_decision_marker": null
