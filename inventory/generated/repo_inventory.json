@@ -592,8 +592,8 @@
     },
     {
       "path": "TASKS.md",
-      "size": 40384,
-      "mtime": 1772611594,
+      "size": 40759,
+      "mtime": 1772611680,
       "ext": ".md"
     },
     {
@@ -1518,6 +1518,12 @@
       "path": "knowledge/evidence/2026-03-04__report47-implementation-recommendations.md",
       "size": 1814,
       "mtime": 1772611593,
+      "ext": ".md"
+    },
+    {
+      "path": "knowledge/evidence/2026-03-04__sec-auto-20260302-02-trusted-proxies-posture-validation-and-closeout.md",
+      "size": 1178,
+      "mtime": 1772611675,
       "ext": ".md"
     },
     {
