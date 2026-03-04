@@ -17,6 +17,7 @@ from tde_state_store import connect as state_connect
 from tde_state_store import init_schema as state_init_schema
 from tde_state_store import import_tasks as state_import_tasks
 from tde_state_store import parity_check as state_parity_check
+from tde_state_store import record_shadow_tick as state_record_shadow_tick
 
 TASK_LINE_RE = re.compile(r"^- \[ \] (?P<id>[A-Z0-9-]+) \| (?P<title>.+)$")
 
@@ -316,16 +317,18 @@ def _apply_low_risk_writeback(tasks_path: Path, claimed_ids: list[str], tick_id:
     }
 
 
-def _shadow_state_sync(tasks_path: Path, db_path: Path) -> dict[str, Any]:
+def _shadow_state_sync(tasks_path: Path, db_path: Path, tick_id: str, artifact: dict[str, Any]) -> dict[str, Any]:
     conn = state_connect(db_path)
     state_init_schema(conn)
     imported = state_import_tasks(conn, tasks_path)
     parity = state_parity_check(conn, tasks_path)
+    ledger = state_record_shadow_tick(conn, tick_id, artifact)
     return {
         "enabled": True,
         "db_path": str(db_path),
         "imported": imported,
         "parity": parity,
+        "ledger": ledger,
         "status": "ok" if parity.get("match") else "mismatch",
     }
 
@@ -714,7 +717,7 @@ def run_job_tick(
     if shadow_state_enabled:
         try:
             shadow_db = shadow_state_db_path or Path("os/runtime/tde_state.sqlite")
-            shadow = _shadow_state_sync(tasks_path, shadow_db)
+            shadow = _shadow_state_sync(tasks_path, shadow_db, tick_id, artifact)
             threshold_meta = _shadow_state_evaluate_threshold(
                 shadow.get("status", "error"),
                 shadow_state_alert_path,

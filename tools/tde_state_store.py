@@ -130,6 +130,64 @@ def status_fingerprint(items: list[dict]) -> str:
     return hashlib.sha256(payload.encode()).hexdigest()
 
 
+def _next_event_hash(conn: sqlite3.Connection, payload: dict) -> tuple[str | None, str]:
+    prev = conn.execute("SELECT hash FROM events ORDER BY seq DESC LIMIT 1").fetchone()
+    prev_hash = prev[0] if prev else None
+    raw = json.dumps(payload, sort_keys=True, separators=(",", ":"))
+    base = (prev_hash or "") + raw
+    curr = hashlib.sha256(base.encode()).hexdigest()
+    return prev_hash, curr
+
+
+def record_shadow_tick(conn: sqlite3.Connection, tick_id: str, artifact: dict) -> dict:
+    now = now_iso()
+    with conn:
+        # durable action ledger entry for this tick
+        request_hash = hashlib.sha256(json.dumps(artifact, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+        conn.execute(
+            """
+            INSERT OR REPLACE INTO actions(action_id,idempotency_key,request_hash,state,response_json,created_at,updated_at)
+            VALUES(?,?,?,?,?,?,?)
+            """,
+            (
+                f"shadow:{tick_id}",
+                f"shadow:{tick_id}",
+                request_hash,
+                artifact.get("status", "unknown"),
+                json.dumps({"outcomes": artifact.get("outcomes"), "fail_closed": artifact.get("fail_closed")}),
+                now,
+                now,
+            ),
+        )
+
+        # append event for tick summary
+        summary = {
+            "tick_id": tick_id,
+            "status": artifact.get("status"),
+            "outcomes": artifact.get("outcomes", {}),
+            "claim_count": len(artifact.get("claimed", [])),
+            "mutation_count": len(artifact.get("mutations", [])),
+            "fail_closed": artifact.get("fail_closed", False),
+        }
+        prev_hash, curr_hash = _next_event_hash(conn, summary)
+        conn.execute(
+            """
+            INSERT INTO events(event_id,at,type,payload_json,prev_hash,hash)
+            VALUES(?,?,?,?,?,?)
+            """,
+            (
+                f"evt:{tick_id}:summary",
+                now,
+                "job_tick_summary",
+                json.dumps(summary, separators=(",", ":")),
+                prev_hash,
+                curr_hash,
+            ),
+        )
+
+    return {"action_id": f"shadow:{tick_id}", "event_id": f"evt:{tick_id}:summary"}
+
+
 def parity_check(conn: sqlite3.Connection, tasks_path: Path) -> dict:
     raw_file_items = parse_tasks_md(tasks_path)
     by_id = {row["task_id"]: row for row in raw_file_items}
@@ -154,10 +212,12 @@ def parity_check(conn: sqlite3.Connection, tasks_path: Path) -> dict:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("command", choices=["init", "import-tasks", "export-tasks", "parity"])
+    ap.add_argument("command", choices=["init", "import-tasks", "export-tasks", "parity", "record-shadow-tick"])
     ap.add_argument("--db", default="os/runtime/tde_state.sqlite")
     ap.add_argument("--tasks", default="TASKS.md")
     ap.add_argument("--out", default="os/runtime/TASKS_from_db.md")
+    ap.add_argument("--tick-id", default="shadow-tick")
+    ap.add_argument("--artifact-json", default="{}")
     args = ap.parse_args()
 
     conn = connect(Path(args.db))
@@ -171,6 +231,9 @@ def main() -> None:
         print(json.dumps(export_tasks(conn, Path(args.out))))
     elif args.command == "parity":
         print(json.dumps(parity_check(conn, Path(args.tasks))))
+    elif args.command == "record-shadow-tick":
+        payload = json.loads(args.artifact_json)
+        print(json.dumps(record_shadow_tick(conn, args.tick_id, payload)))
 
 
 if __name__ == "__main__":
