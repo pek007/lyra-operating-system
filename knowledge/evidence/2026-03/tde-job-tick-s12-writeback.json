@@ -1,0 +1,54 @@
+{
+  "tick_id": "job-tick-s12-writeback-20260303-213618",
+  "trigger_source": "cron",
+  "timestamp": "2026-03-03T20:36:19.006276+00:00",
+  "job_id": "JOB-PROD-001",
+  "binding_id": "BIND-JOB-PROD-001-ACTIVE",
+  "actor_id": "lyra",
+  "session_key": "cron:tde-job-runner-s12",
+  "claim_limit": 1,
+  "claimed": [
+    "TDE-2026-025"
+  ],
+  "mutations": [
+    {
+      "task_id": "TDE-2026-025",
+      "request_id": "job-tick-s12-writeback-20260303-213618-0",
+      "idempotency_key": "job-tick-s12-writeback-20260303-213618:TDE-2026-025",
+      "policy_decision_id": "pdr-job-tick-s12-writeback-20260303-213618-0",
+      "audit_link": "audit://tde/job-tick-s12-writeback-20260303-213618-0",
+      "status": "executed",
+      "mutation_envelope": {
+        "job_id": "JOB-PROD-001",
+        "binding_id": "BIND-JOB-PROD-001-ACTIVE",
+        "policy_decision_id": "pdr-job-tick-s12-writeback-20260303-213618-0",
+        "idempotency_key": "job-tick-s12-writeback-20260303-213618:TDE-2026-025",
+        "expected_version": 0
+      }
+    }
+  ],
+  "idempotency_references": [
+    "job-tick-s12-writeback-20260303-213618:TDE-2026-025"
+  ],
+  "writeback": {
+    "applied": true,
+    "reason": null,
+    "moved": [
+      "TDE-2026-025"
+    ],
+    "targetSection": "Waiting"
+  },
+  "decisions": [],
+  "evidence_outputs": [
+    "/Users/lyra/.openclaw/workspace/repos/lyra-operating-system/knowledge/evidence/2026-03/tde-job-tick-s12-writeback.json"
+  ],
+  "outcomes": {
+    "progressed": 1,
+    "blocked_pending_approval": 0,
+    "failed_validation": 0,
+    "no_work": 0
+  },
+  "status": "ok",
+  "fail_closed": false,
+  "fail_closed_reason": null
+}

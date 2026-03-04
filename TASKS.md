@@ -104,8 +104,6 @@ Use this until a dedicated work tool is selected.
 - [ ] OPS-2026-043 | Chat Continuity Sprint 2 metrics rollout: define handoff completeness score + stale-context drift signal, then capture first weekly baseline evidence.
 
 ## Triage
-- [ ] OPS-2026-024 | Sprint 3 kickoff decision: confirm read-first scope freeze (no task write-back in S3)
-- [ ] OPS-2026-025 | Approve S3 workflow taxonomy v1 (domain, area, task_type governed values)
 
 ## Active
 - [x] OPS-2026-037 | Execute Chat Continuity Sprint 1 (apply protocol daily, publish first channel-handoff summary, and run first weekly consolidation check).
@@ -210,3 +208,19 @@ Use this until a dedicated work tool is selected.
 - [x] OPS-2026-033 | Establish strict OpenClaw config change-control + rollback SOP (preview/approval/apply/validate/rollback)
 - [x] OPS-2026-034 | Refine Claude Code prompting system: outcome-oriented schema, explicit modes, stronger verification, and fresh-context recovery rule
 - [x] IMP-AUTO-20260227-01 | Added lightweight markdown link-check script (`tools/markdown_link_check.py`) with cron-safe scope filters.
+- [x] WO-2026-TDE-KERNEL-S1 | Implemented TDE kernel thin-slice scaffolding (T1–T7 acceptance runner + anti-stall heartbeat/cron hook contract + verification evidence).
+- [x] TDE-2026-001 | Formal acceptance sign-off completed for WO-2026-TDE-KERNEL-S1 (JOB-PROD-001 + JOB-ARC-001, owner acknowledged 2026-03-02).
+- [x] TDE-2026-002 | Defined S2 WO and planning packet (`WO-2026-TDE-KERNEL-S2.md`, `knowledge/distilled/2026-03-02__packet__tde-kernel-s2-planning-v1.md`).
+- [x] TDE-2026-003 | Executed kernel-slice S2 planning packet (progress-state model, anti-stall integration, deterministic routing verification tests).
+- [x] TDE-2026-005 | Executed WO-2026-TDE-KERNEL-S2 (heartbeat anti-stall + progress-state classification + routing checks) with S2 evidence artifact.
+- [x] TDE-2026-006 | Executed WO-2026-TDE-KERNEL-S3 (runtime-triggered heartbeat/cron anti-stall checks) with trigger-contract validation, runtime cycle simulation tests, and S3 evidence artifact.
+- [x] TDE-2026-004 | Milestone gate approved GO by JOB-OWN-001 (`knowledge/distilled/2026-03-02__milestone-packet__tde-kernel-s1-s2-gate-for-job-own-001-v1.md`).
+- [x] TDE-2026-007 | Milestone gate approved GO by JOB-OWN-001 (`knowledge/distilled/2026-03-02__milestone-packet__tde-kernel-s1-s3-gate-for-job-own-001-v1.md`).
+- [x] TDE-2026-008 | Executed WO-2026-TDE-KERNEL-S4 (canary runtime wiring + cycle artifact + fail-closed approval route evidence).
+- [x] TDE-2026-009 | Formal acceptance sign-off completed for WO-2026-TDE-KERNEL-S4 (JOB-PROD-001 + JOB-ARC-001, owner pre-authorized).
+- [x] TDE-2026-010 | Executed WO-2026-TDE-KERNEL-S5 (scheduling contract + stable status artifact counts/reasons + stalled-threshold guardrail alert + 3 clean-cycle simulation evidence).
+- [x] TDE-2026-011 | Formal acceptance sign-off completed for WO-2026-TDE-KERNEL-S5 (JOB-PROD-001 + JOB-ARC-001, owner pre-authorized).
+- [x] TDE-2026-013 | Executed WO-2026-TDE-KERNEL-S6 (operational status summary artifact + rollout-readiness checklist + single guardrail operational note + end-to-end cycle evidence).
+- [x] TDE-2026-014 | Executed WO-2026-TDE-KERNEL-S7 (bounded expansion criteria + guardrail-preserving broader rollout checklist + broadened-scope simulated cycle evidence).
+- [x] TDE-2026-015 | Executed WO-2026-TDE-KERNEL-S8 (automated S4-S7 consolidated milestone snapshot + missing/stale artifact reliability checks + S8 evidence artifact).
+- [x] TDE-2026-016 | Formal acceptance sign-off completed for WO-2026-TDE-KERNEL-S8 (JOB-PROD-001 + JOB-ARC-001, owner pre-authorized).

@@ -1,0 +1,44 @@
+schema: process-metadata-v1
+required:
+  - id
+  - type
+  - title
+  - status
+  - owner
+  - created
+  - lastReviewed
+  - nextReview
+  - riskClass
+  - dependencies
+  - controls
+fields:
+  id:
+    type: string
+    pattern: "^[A-Z0-9_-]{3,}$"
+  type:
+    type: enum
+    values: [policy, sop, standard, runbook, template, process, checklist, spec]
+  title:
+    type: string
+  status:
+    type: enum
+    values: [draft, review_requested, approved, published, monitored, revised, deprecated, archived]
+  owner:
+    type: string
+  reviewers:
+    type: list
+    itemType: string
+  created:
+    type: date
+  lastReviewed:
+    type: date_or_null
+  nextReview:
+    type: date
+  riskClass:
+    type: enum
+    values: [low, medium, high, critical]
+  dependencies:
+    type: object
+  controls:
+    type: list
+    itemType: string

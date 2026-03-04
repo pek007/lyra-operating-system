@@ -1,0 +1,13 @@
+# Distilled Outputs Index
+- `2026-03-01__decision-memo__task-decision-engine-project-definition-gate__v1.md` — Decision memo for project-definition gate (Task & Decision Engine).
+- `2026-03-01__decision-memo__task-decision-engine-project-definition-gate__v2.md` — Adopted governing decision memo v2 for definition phase.
+- `2026-03-01__design__trello-retirement-design-v1.md` — State-based Trello retirement design for TDE cutover.
+- `2026-03-01__checklist__trello-cutover-readiness-v1.md` — Repeatable readiness gate checklist for Trello cutover.
+- `2026-03-01__package__tde-definition-phase-consolidation__v1.md` — Consolidated definition-phase package and gate recommendation.
+- `2026-03-01__matrix__tde-mutation-authority-v1.md` — Mutation authority matrix for policy enforcement.
+- `2026-03-01__spec__tde-thin-slice-acceptance-tests-v1.md` — Acceptance test spec for the kernel thin slice.
+- `2026-03-02__plan__process-as-code-implementation-v1.md` — Implement-now plan for process-as-code hardening.
+- `2026-03-02__plan__memory-architecture-improvements-v1.md` — Implement-now plan for memory portability and deterministic write-back.
+- `2026-03-02__plan__devsecops-maturity-uplift-v1.md` — Implement-now DevSecOps maturity uplift plan.
+- `2026-03-02__plan__audit-compliance-uplift-v1.md` — Implement-now plan for GDPR/AI Act audit-compliance uplift.
+- `2026-03-02__plan__tool-external-service-hardening-v1.md` — Implement-now plan to harden tool and external service handling.

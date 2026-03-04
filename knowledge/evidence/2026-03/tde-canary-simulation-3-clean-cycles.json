@@ -1,0 +1,75 @@
+{
+  "result": {
+    "simulatedCycles": 3,
+    "allClean": true,
+    "finalConsecutiveCleanCycles": 3
+  },
+  "cycles": [
+    {
+      "cycleTimestamp": "2026-03-02T18:19:57.551790+00:00",
+      "triggerSource": "cron",
+      "triggerId": "cron-tde-canary-20260302-181957",
+      "evaluatedCount": 2,
+      "counts": {
+        "active": 1,
+        "atRisk": 1,
+        "stalled": 0
+      },
+      "stalledCount": 0,
+      "stallReasonSummary": {},
+      "routes": [],
+      "guardrail": {
+        "stalledAlertThreshold": 1,
+        "thresholdBreached": false,
+        "violations": [],
+        "status": "ok"
+      },
+      "cleanCycle": true,
+      "consecutiveCleanCycles": 1
+    },
+    {
+      "cycleTimestamp": "2026-03-02T18:19:57.552142+00:00",
+      "triggerSource": "cron",
+      "triggerId": "cron-tde-canary-20260302-181957",
+      "evaluatedCount": 2,
+      "counts": {
+        "active": 1,
+        "atRisk": 1,
+        "stalled": 0
+      },
+      "stalledCount": 0,
+      "stallReasonSummary": {},
+      "routes": [],
+      "guardrail": {
+        "stalledAlertThreshold": 1,
+        "thresholdBreached": false,
+        "violations": [],
+        "status": "ok"
+      },
+      "cleanCycle": true,
+      "consecutiveCleanCycles": 2
+    },
+    {
+      "cycleTimestamp": "2026-03-02T18:19:57.552344+00:00",
+      "triggerSource": "cron",
+      "triggerId": "cron-tde-canary-20260302-181957",
+      "evaluatedCount": 2,
+      "counts": {
+        "active": 1,
+        "atRisk": 1,
+        "stalled": 0
+      },
+      "stalledCount": 0,
+      "stallReasonSummary": {},
+      "routes": [],
+      "guardrail": {
+        "stalledAlertThreshold": 1,
+        "thresholdBreached": false,
+        "violations": [],
+        "status": "ok"
+      },
+      "cleanCycle": true,
+      "consecutiveCleanCycles": 3
+    }
+  ]
+}

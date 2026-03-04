@@ -34,9 +34,13 @@ Manage responsibilities as **jobs** that can be assigned to the best execution s
 
 ## Job Change Process
 1. Propose change (new job / changed requirement / retired job)
-2. Re-score execution profile
-3. Re-assign runtime if needed
-4. Update job record + dependencies + KPI target
+2. Run authority diff check (what permissions/obligations/escalations change)
+3. Classify change class (descriptive vs authority-impacting vs boundary/ceiling)
+4. Enforce required approvers per class (see `AUTHORITY_CHANGE_CONTROL_POLICY_V1.md`)
+5. Re-score execution profile
+6. Re-assign runtime if needed
+7. Update job record + dependencies + KPI target
+8. Emit signed audit record of approval + activation
 
 Standard artifact template: `JOB_CHANGE_WORKFLOW_TEMPLATE_V1.md` (captures proposal + re-score + reassignment + dependency/KPI impact).
 
@@ -59,6 +63,18 @@ Standard artifact template: `JOB_CHANGE_WORKFLOW_TEMPLATE_V1.md` (captures propo
 - Mission: independent review of decisions/changes/controls
 - Execution profile: read-heavy, critique-oriented, limited side effects
 - Preferred runtime: separate session or sub-agent with independent prompt profile
+
+### JOB-OWN-001 — System Owner & Final Decision Authority (Human-held)
+- Domain: OS/PX Shared
+- Mission: hold final approval rights for high/critical decisions, boundary changes, and authority-ceiling updates
+- Execution profile: human decision owner (Peter), not delegated to autonomous runtime by default
+- Preferred runtime: N/A (human authority role)
+
+### JOB-PROD-001 — Product Owner
+- Domain: OS/PX Shared
+- Mission: own product acceptance criteria, outcome fitness, and release-readiness decisions at feature/slice level
+- Execution profile: decision-heavy, scope/quality trade-off ownership, low direct side effects
+- Preferred runtime: main agent + structured review sessions
 
 ### JOB-ARC-001 — Chief Architect (Job, not agent)
 - Domain: OS/PX Shared

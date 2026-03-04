@@ -1,0 +1,35 @@
+{
+  "cycleTimestamp": "2026-03-02T18:20:56.432510+00:00",
+  "triggerSource": "cron",
+  "triggerId": "cron-tde-canary-20260302-182056",
+  "evaluatedCount": 2,
+  "counts": {
+    "active": 1,
+    "atRisk": 0,
+    "stalled": 1
+  },
+  "stalledCount": 1,
+  "stallReasonSummary": {
+    "WAITING_APPROVAL": 1
+  },
+  "routes": [
+    {
+      "targetId": "TASK-CANARY-STALE",
+      "route": "escalate",
+      "stallReasonCode": "WAITING_APPROVAL",
+      "requiresApproval": true,
+      "policyGate": "approval_required",
+      "status": "blocked_pending_approval"
+    }
+  ],
+  "guardrail": {
+    "stalledAlertThreshold": 0,
+    "thresholdBreached": true,
+    "violations": [
+      "stalled_threshold_breached:1>0"
+    ],
+    "status": "alert"
+  },
+  "cleanCycle": false,
+  "consecutiveCleanCycles": 0
+}

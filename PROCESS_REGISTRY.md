@@ -74,6 +74,10 @@ Track core processes, standards, and runbooks with review state.
 | governance/PLAN_EXECUTION_PORTFOLIO_2026-03-04.md | Governance Portfolio | Peter/Lyra | Active | 2026-03-04 | 2026-03-11 |
 | MILESTONE_0_1_MACHINE_CHECKABLE_GOVERNANCE.md | Milestone Guide | Peter/Lyra | Active | 2026-03-04 | 2026-03-18 |
 | STANDARD_CHANGE_PILOT_PROTOCOL_V1.md | Pilot Protocol | Peter/Lyra | Active | 2026-03-04 | 2026-03-18 |
+| JOB_MEMORY_PORTABILITY_PROCESS_V1.md | Process | Peter/Lyra | Active | 2026-03-02 | 2026-04-02 |
+| GDPR_AI_ACT_COMPLIANCE_BASELINE_V1.md | Compliance Baseline | Peter/Lyra | Active | 2026-03-02 | 2026-04-02 |
+
+| TOOL_EXTERNAL_SERVICE_GOVERNANCE_V1.md | Governance Policy | Peter/Lyra | Active | 2026-03-02 | 2026-04-02 |
 
 ## Notes
 - Planned items must be tracked in TASKS.md with a target date.

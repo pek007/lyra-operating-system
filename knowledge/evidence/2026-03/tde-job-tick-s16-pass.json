@@ -1,0 +1,79 @@
+{
+  "tick_id": "s16-pass-20260304-1",
+  "trigger_source": "cron",
+  "timestamp": "2026-03-04T07:01:07.866803+00:00",
+  "job_id": "JOB-PROD-001",
+  "binding_id": "BIND-JOB-PROD-001-ACTIVE",
+  "actor_id": "lyra",
+  "session_key": "cron:tde-job-runner-v1",
+  "objective_linkage": {
+    "objective_id": "OBJ-TDE-FOUNDATION",
+    "objective_checkpoint": "S16",
+    "rationale_trace": "trace:s16-objective-linkage"
+  },
+  "binding_context": {
+    "active_binding": {
+      "binding_id": "BIND-JOB-PROD-001-ACTIVE",
+      "job_id": "JOB-PROD-001",
+      "actor_id": "lyra",
+      "session_key": "cron:tde-job-runner-v1",
+      "status": "active",
+      "binding_epoch": 1,
+      "updated_at": "2026-03-04T06:30:00Z"
+    },
+    "binding_source": "registry_exact",
+    "binding_status": "active"
+  },
+  "claim_limit": 1,
+  "claimed": [
+    "TDE-S16-001"
+  ],
+  "mutations": [
+    {
+      "task_id": "TDE-S16-001",
+      "request_id": "s16-pass-20260304-1-0",
+      "idempotency_key": "s16-pass-20260304-1:TDE-S16-001",
+      "policy_decision_id": "pdr-s16-pass-20260304-1-0",
+      "audit_link": "audit://tde/s16-pass-20260304-1-0",
+      "status": "executed",
+      "binding_status": "active",
+      "mutation_envelope": {
+        "job_id": "JOB-PROD-001",
+        "binding_id": "BIND-JOB-PROD-001-ACTIVE",
+        "policy_decision_id": "pdr-s16-pass-20260304-1-0",
+        "idempotency_key": "s16-pass-20260304-1:TDE-S16-001",
+        "expected_version": 0,
+        "objective_linkage": {
+          "objective_id": "OBJ-TDE-FOUNDATION",
+          "objective_checkpoint": "S16",
+          "rationale_trace": "trace:s16-objective-linkage"
+        }
+      }
+    }
+  ],
+  "idempotency_references": [
+    "s16-pass-20260304-1:TDE-S16-001"
+  ],
+  "writeback": {
+    "applied": true,
+    "reason": null,
+    "moved": [
+      "TDE-S16-001"
+    ],
+    "targetSection": "Waiting"
+  },
+  "decisions": [],
+  "evidence_outputs": [
+    "knowledge/evidence/2026-03/tde-job-tick-s16-pass.json"
+  ],
+  "outcomes": {
+    "progressed": 1,
+    "blocked_pending_approval": 0,
+    "failed_validation": 0,
+    "no_work": 0,
+    "reauth_required": 0
+  },
+  "status": "ok",
+  "fail_closed": false,
+  "fail_closed_reason": null
+}
