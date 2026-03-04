@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lyra.local/schemas/observations_index/v1.0.0.schema.json",
+  "type": "object",
+  "required": ["artifactType", "schemaVersion", "entries", "rootHash"],
+  "properties": {
+    "artifactType": { "const": "observations_index" },
+    "schemaVersion": { "const": "1.0.0" },
+    "entries": { "type": "array" },
+    "rootHash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }
+  },
+  "additionalProperties": true
+}

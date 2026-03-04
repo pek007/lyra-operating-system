@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lyra.local/schemas/observation/v1.0.0.schema.json",
+  "type": "object",
+  "required": [
+    "artifactType",
+    "schemaVersion",
+    "observation_id",
+    "observedAt",
+    "source",
+    "integrity",
+    "trust",
+    "redaction",
+    "provenance"
+  ],
+  "properties": {
+    "artifactType": { "const": "observation" },
+    "schemaVersion": { "const": "1.0.0" },
+    "observation_id": { "type": "string", "pattern": "^OBS-[0-9a-f]{16}$" },
+    "observedAt": { "type": "string" },
+    "ingestedAt": { "type": ["string", "null"] },
+    "source": {
+      "type": "object",
+      "required": ["kind", "system", "eventId", "captureMethod"],
+      "properties": {
+        "kind": { "type": "string" },
+        "system": { "type": "string", "minLength": 2 },
+        "instance": { "type": ["string", "null"] },
+        "subject": { "type": ["string", "null"] },
+        "eventId": { "type": "string", "minLength": 1 },
+        "captureMethod": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "content": { "type": ["object", "null"] },
+    "integrity": {
+      "type": "object",
+      "required": ["hashAlgorithm", "canonicalization", "contentHash", "recordHash"],
+      "properties": {
+        "hashAlgorithm": { "const": "sha256" },
+        "canonicalization": { "const": "sorted_json_v1" },
+        "contentHash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+        "recordHash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }
+      },
+      "additionalProperties": true
+    },
+    "trust": {
+      "type": "object",
+      "required": ["level", "sourceClass"],
+      "properties": {
+        "level": { "type": "string", "enum": ["low", "medium", "high", "authoritative"] },
+        "sourceClass": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "redaction": {
+      "type": "object",
+      "required": ["state"],
+      "properties": {
+        "state": { "type": "string", "enum": ["none", "partial", "full"] }
+      },
+      "additionalProperties": true
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["kind", "parents"],
+      "properties": {
+        "kind": { "type": "string", "enum": ["direct", "derived", "aggregated"] },
+        "parents": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["observation_id", "recordHash"],
+            "properties": {
+              "observation_id": { "type": "string", "pattern": "^OBS-[0-9a-f]{16}$" },
+              "recordHash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "evidence": { "type": ["object", "null"] }
+  },
+  "additionalProperties": true
+}

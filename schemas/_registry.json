@@ -13,5 +13,14 @@
   },
   "scorecard": {
     "1.0.0": "schemas/scorecard/v1.0.0.schema.json"
+  },
+  "observation": {
+    "1.0.0": "schemas/observation/v1.0.0.schema.json"
+  },
+  "observation_capture": {
+    "1.0.0": "schemas/observation_capture/v1.0.0.schema.json"
+  },
+  "observations_index": {
+    "1.0.0": "schemas/observations_index/v1.0.0.schema.json"
   }
 }

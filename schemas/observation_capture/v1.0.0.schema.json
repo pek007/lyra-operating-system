@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lyra.local/schemas/observation_capture/v1.0.0.schema.json",
+  "type": "object",
+  "required": ["artifactType", "schemaVersion", "capture_id", "capturedAt", "source", "payload"],
+  "properties": {
+    "artifactType": { "const": "observation_capture" },
+    "schemaVersion": { "const": "1.0.0" },
+    "capture_id": { "type": "string", "minLength": 8 },
+    "capturedAt": { "type": "string" },
+    "source": { "type": "object" },
+    "payload": { "type": "object" },
+    "secretsHint": { "type": ["string", "null"] }
+  },
+  "additionalProperties": true
+}

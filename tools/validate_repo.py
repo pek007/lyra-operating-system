@@ -6,6 +6,7 @@ import subprocess
 import sys
 from datetime import date
 from pathlib import Path
+from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_REGISTRY = ROOT / "schemas/_registry.json"
@@ -148,6 +149,48 @@ def validate_report_decision_mapping() -> list[str]:
     return errs
 
 
+def _load_observations_by_id() -> dict[str, dict[str, Any]]:
+    out: dict[str, dict[str, Any]] = {}
+    for p in sorted((ROOT / "knowledge/observations").rglob("*.json")):
+        try:
+            obj = json.loads(p.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        if obj.get("artifactType") != "observation":
+            continue
+        oid = obj.get("observation_id")
+        if oid:
+            out[oid] = obj
+    return out
+
+
+def validate_evidence_observation_links() -> list[str]:
+    errs: list[str] = []
+    obs = _load_observations_by_id()
+    for p in sorted((ROOT / "knowledge/evidence").rglob("*.json")):
+        try:
+            obj = json.loads(p.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        links = (obj.get("evidence") or {}).get("observations") or []
+        if not isinstance(links, list):
+            errs.append(f"{p}: evidence.observations must be a list")
+            continue
+        for link in links:
+            oid = link.get("observation_id") if isinstance(link, dict) else None
+            rh = link.get("recordHash") if isinstance(link, dict) else None
+            if not oid or not rh:
+                errs.append(f"{p}: invalid observation link entry")
+                continue
+            target = obs.get(oid)
+            if not target:
+                errs.append(f"{p}: observation not found: {oid}")
+                continue
+            if target.get("integrity", {}).get("recordHash") != rh:
+                errs.append(f"{p}: recordHash mismatch for observation {oid}")
+    return errs
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--fix", action="store_true")
@@ -164,6 +207,16 @@ def main() -> int:
     errors.extend(validate_schema_files())
     errors.extend(validate_decision_frontmatter())
     errors.extend(validate_report_decision_mapping())
+    errors.extend(validate_evidence_observation_links())
+
+    try:
+        from observe.validate_observations import validate_observations  # type: ignore
+
+        obs_errors, obs_warnings = validate_observations(json.loads(SCHEMA_REGISTRY.read_text()))
+        errors.extend(obs_errors)
+        messages.extend(obs_warnings)
+    except Exception as e:
+        messages.append(f"WARN: observation validator unavailable ({e})")
 
     if not args.fix:
         errors.extend(
@@ -173,6 +226,7 @@ def main() -> int:
                     ROOT / "knowledge/indexes/inbox_index.json",
                     ROOT / "knowledge/indexes/decisions_index.json",
                     ROOT / "knowledge/indexes/report_decision_index.json",
+                    ROOT / "knowledge/indexes/observations_index.json",
                     ROOT / "knowledge/indexes/indexes_manifest.json",
                 ]
             )

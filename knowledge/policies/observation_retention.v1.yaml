@@ -1,0 +1,13 @@
+version: 1
+defaults:
+  blob_policy: repo_optional
+  max_blob_size_bytes: 5242880
+rules:
+  trello:
+    blob_policy: repo_required
+  git:
+    blob_policy: repo_optional
+  web:
+    blob_policy: repo_optional
+  openclaw:
+    blob_policy: repo_optional

@@ -3,11 +3,14 @@
   "outputs": [
     "knowledge/indexes/inbox_index.json",
     "knowledge/indexes/decisions_index.json",
-    "knowledge/indexes/report_decision_index.json"
+    "knowledge/indexes/report_decision_index.json",
+    "knowledge/indexes/observations_index.json"
   ],
   "counts": {
     "inbox": 1,
     "decisions": 1,
-    "report_decisions": 57
-  }
+    "report_decisions": 59,
+    "observations": 0
+  },
+  "observationRootHash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
 }

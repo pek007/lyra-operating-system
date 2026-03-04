@@ -1,0 +1,22 @@
+version: 1
+sources:
+  trello:
+    allowed_kinds: [task_board_event]
+    default_trust:
+      sourceClass: third_party_api
+      level: high
+  web:
+    allowed_kinds: [web_fetch, web_search]
+    default_trust:
+      sourceClass: web_unpinned
+      level: medium
+  git:
+    allowed_kinds: [local_file_change]
+    default_trust:
+      sourceClass: first_party_logged
+      level: authoritative
+  openclaw:
+    allowed_kinds: [chat_message]
+    default_trust:
+      sourceClass: first_party_logged
+      level: medium
