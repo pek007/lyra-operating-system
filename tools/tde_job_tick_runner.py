@@ -121,12 +121,9 @@ def _load_active_binding(
 ) -> tuple[dict[str, Any], str]:
     """Return active binding object and provenance.
 
-    Registry format:
-    {
-      "bindings": [
-        {"binding_id":"...", "job_id":"...", "actor_id":"...", "session_key":"...", "status":"active", "binding_epoch":1}
-      ]
-    }
+    Enforces lifecycle semantics:
+    - status must be `active`
+    - revoked/expired records are not valid authority
     """
     fallback = {
         "binding_id": fallback_binding_id,
@@ -149,26 +146,43 @@ def _load_active_binding(
     if not isinstance(bindings, list):
         return fallback, "fallback_invalid_registry"
 
+    now = datetime.now(timezone.utc)
+
+    def lifecycle_status(b: dict[str, Any]) -> str:
+        status = str(b.get("status", "active"))
+        if status == "revoked":
+            return "revoked"
+        expires_at = b.get("expires_at")
+        if isinstance(expires_at, str) and expires_at.strip():
+            try:
+                exp = datetime.fromisoformat(expires_at.replace("Z", "+00:00"))
+                if exp <= now:
+                    return "expired"
+            except Exception:
+                return "invalid_expiry"
+        return status
+
     # strict resolution for exact runtime context first
     for b in bindings:
-        if (
-            isinstance(b, dict)
-            and b.get("status", "active") == "active"
-            and b.get("job_id") == job_id
-            and b.get("actor_id") == actor_id
-            and b.get("session_key") == session_key
-        ):
+        if not isinstance(b, dict):
+            continue
+        if b.get("job_id") != job_id or b.get("actor_id") != actor_id or b.get("session_key") != session_key:
+            continue
+        life = lifecycle_status(b)
+        if life == "active":
             return b, "registry_exact"
+        return b, f"registry_exact_{life}"
 
     # then by job + actor if session rotated
     for b in bindings:
-        if (
-            isinstance(b, dict)
-            and b.get("status", "active") == "active"
-            and b.get("job_id") == job_id
-            and b.get("actor_id") == actor_id
-        ):
+        if not isinstance(b, dict):
+            continue
+        if b.get("job_id") != job_id or b.get("actor_id") != actor_id:
+            continue
+        life = lifecycle_status(b)
+        if life == "active":
             return b, "registry_job_actor"
+        return b, f"registry_job_actor_{life}"
 
     return fallback, "fallback_not_found"
 

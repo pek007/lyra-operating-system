@@ -45,6 +45,7 @@ Define deterministic runtime semantics for a job-scoped execution tick so jobs a
   - `objective_id` exists in objective registry
   - `objective_checkpoint` is allowed for the objective (when registry provides an allowlist)
 - Runtime MUST resolve active binding object and validate envelope context.
+- Binding lifecycle semantics are mandatory: only `status=active` and non-expired bindings are valid authority; `revoked`/`expired`/invalid-expiry records are treated as unresolved for mutation paths.
 - For side-effecting mutation paths, unresolved binding registry lookup MUST fail closed (`binding_unresolved_fail_closed`); synthesized/fallback active bindings are not valid authority proof.
 - Runtime MUST resolve active binding object and validate envelope context:
   - `envelope.job_id == active_binding.job_id`
