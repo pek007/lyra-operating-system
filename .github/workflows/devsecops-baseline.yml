@@ -33,6 +33,7 @@ jobs:
           python3 tools/test_s17_binding_resolution_failclosed.py
           python3 tools/test_s18_atomic_writeback.py
           python3 tools/test_s25_binding_lifecycle.py
+          python3 tools/test_s32_shadow_state_write.py
 
       - name: Fail-closed binding guard check
         run: python3 tools/check_binding_failclosed_guard.py

@@ -1,0 +1,104 @@
+{
+  "artifactType": "tde_job_tick",
+  "schemaVersion": "1.0.0",
+  "tick_id": "s32-shadow-20260304-1",
+  "trigger_source": "cron",
+  "timestamp": "2026-03-04T16:40:26.442380+00:00",
+  "job_id": "JOB-PROD-001",
+  "binding_id": "BIND-JOB-PROD-001-ACTIVE",
+  "actor_id": "lyra",
+  "session_key": "cron:tde-job-runner-v1",
+  "objective_linkage": {
+    "objective_id": "OBJ-TDE-FOUNDATION",
+    "objective_checkpoint": "S24",
+    "rationale_trace": "trace:s32-shadow"
+  },
+  "objective_registry_context": {
+    "registry_path": "os/runtime/tde_objectives.json",
+    "registry_loaded": true
+  },
+  "binding_context": {
+    "active_binding": {
+      "binding_id": "BIND-JOB-PROD-001-ACTIVE",
+      "job_id": "JOB-PROD-001",
+      "actor_id": "lyra",
+      "session_key": "cron:tde-job-runner-v1",
+      "status": "active",
+      "binding_epoch": 2,
+      "updated_at": "2026-03-04T09:45:00Z",
+      "expires_at": "2026-12-31T23:59:59+00:00"
+    },
+    "binding_source": "registry_exact",
+    "binding_status": "active"
+  },
+  "claim_limit": 1,
+  "claimed": [
+    "TDE-S32-001"
+  ],
+  "mutations": [
+    {
+      "task_id": "TDE-S32-001",
+      "request_id": "s32-shadow-20260304-1-0",
+      "idempotency_key": "s32-shadow-20260304-1:TDE-S32-001",
+      "policy_decision_id": "pdr-s32-shadow-20260304-1-0",
+      "audit_link": "audit://tde/s32-shadow-20260304-1-0",
+      "status": "executed",
+      "binding_status": "active",
+      "mutation_envelope": {
+        "job_id": "JOB-PROD-001",
+        "binding_id": "BIND-JOB-PROD-001-ACTIVE",
+        "policy_decision_id": "pdr-s32-shadow-20260304-1-0",
+        "idempotency_key": "s32-shadow-20260304-1:TDE-S32-001",
+        "expected_version": 0,
+        "objective_linkage": {
+          "objective_id": "OBJ-TDE-FOUNDATION",
+          "objective_checkpoint": "S24",
+          "rationale_trace": "trace:s32-shadow"
+        }
+      }
+    }
+  ],
+  "idempotency_references": [
+    "s32-shadow-20260304-1:TDE-S32-001"
+  ],
+  "writeback": {
+    "applied": true,
+    "reason": null,
+    "moved": [
+      "TDE-S32-001"
+    ],
+    "targetSection": "Waiting"
+  },
+  "decisions": [],
+  "evidence_outputs": [
+    "knowledge/evidence/2026-03/tde-job-tick-s32-shadow-pass.json"
+  ],
+  "outcomes": {
+    "progressed": 1,
+    "blocked_pending_approval": 0,
+    "failed_validation": 0,
+    "no_work": 0,
+    "reauth_required": 0
+  },
+  "status": "ok",
+  "fail_closed": false,
+  "fail_closed_reason": null,
+  "shadow_state": {
+    "enabled": true,
+    "db_path": "knowledge/evidence/2026-03/tmp/tde_state_shadow.sqlite",
+    "imported": {
+      "imported": 1,
+      "raw_rows": 1
+    },
+    "parity": {
+      "match": true,
+      "file_fingerprint": "2cd47fe8bf568df2e29ce1288076e3382903a1f39ea341142994bad4365ca60c",
+      "db_fingerprint": "2cd47fe8bf568df2e29ce1288076e3382903a1f39ea341142994bad4365ca60c",
+      "file_count": 1,
+      "db_count": 1,
+      "raw_file_rows": 1,
+      "duplicate_rows": 0
+    },
+    "status": "ok"
+  }
+}

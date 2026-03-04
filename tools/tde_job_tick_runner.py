@@ -13,6 +13,10 @@ from pathlib import Path
 from typing import Any
 
 from tde_kernel import ActionRequest, TDEKernel
+from tde_state_store import connect as state_connect
+from tde_state_store import init_schema as state_init_schema
+from tde_state_store import import_tasks as state_import_tasks
+from tde_state_store import parity_check as state_parity_check
 
 TASK_LINE_RE = re.compile(r"^- \[ \] (?P<id>[A-Z0-9-]+) \| (?P<title>.+)$")
 
@@ -312,6 +316,20 @@ def _apply_low_risk_writeback(tasks_path: Path, claimed_ids: list[str], tick_id:
     }
 
 
+def _shadow_state_sync(tasks_path: Path, db_path: Path) -> dict[str, Any]:
+    conn = state_connect(db_path)
+    state_init_schema(conn)
+    imported = state_import_tasks(conn, tasks_path)
+    parity = state_parity_check(conn, tasks_path)
+    return {
+        "enabled": True,
+        "db_path": str(db_path),
+        "imported": imported,
+        "parity": parity,
+        "status": "ok" if parity.get("match") else "mismatch",
+    }
+
+
 def run_job_tick(
     *,
     job_id: str,
@@ -329,6 +347,8 @@ def run_job_tick(
     writeback_tasks_path: Path | None = None,
     binding_registry_path: Path | None = None,
     objective_registry_path: Path | None = None,
+    shadow_state_enabled: bool = False,
+    shadow_state_db_path: Path | None = None,
 ) -> dict[str, Any]:
     kernel = TDEKernel()
     tasks = _read_tasks(tasks_path, section="Active")
@@ -656,6 +676,17 @@ def run_job_tick(
             "fail_closed_reason": next((m.get("fail_closed_reason") for m in mutations if m.get("fail_closed_reason")), None),
         }
 
+    if shadow_state_enabled:
+        try:
+            shadow_db = shadow_state_db_path or Path("os/runtime/tde_state.sqlite")
+            artifact["shadow_state"] = _shadow_state_sync(tasks_path, shadow_db)
+        except Exception as exc:
+            artifact["shadow_state"] = {
+                "enabled": True,
+                "status": "error",
+                "error": str(exc),
+            }
+
     artifact_path.parent.mkdir(parents=True, exist_ok=True)
     artifact_path.write_text(json.dumps(artifact, indent=2) + "\n", encoding="utf-8")
     return artifact
@@ -681,6 +712,8 @@ def main() -> None:
     parser.add_argument("--writeback-tasks-path", default="TASKS.md")
     parser.add_argument("--binding-registry-path", default="os/runtime/tde_active_bindings.json")
     parser.add_argument("--objective-registry-path", default="os/runtime/tde_objectives.json")
+    parser.add_argument("--shadow-state-enabled", action="store_true")
+    parser.add_argument("--shadow-state-db-path", default="os/runtime/tde_state.sqlite")
 
     args = parser.parse_args()
     artifact = run_job_tick(
@@ -699,6 +732,8 @@ def main() -> None:
         writeback_tasks_path=Path(args.writeback_tasks_path) if args.writeback_tasks_path else None,
         binding_registry_path=Path(args.binding_registry_path) if args.binding_registry_path else None,
         objective_registry_path=Path(args.objective_registry_path) if args.objective_registry_path else None,
+        shadow_state_enabled=args.shadow_state_enabled,
+        shadow_state_db_path=Path(args.shadow_state_db_path) if args.shadow_state_db_path else None,
     )
     print(json.dumps(artifact))
 
