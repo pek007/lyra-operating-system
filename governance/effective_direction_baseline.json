@@ -1,0 +1,61 @@
+{
+  "artifactType": "effective_direction_snapshot",
+  "schemaVersion": "1.0.0",
+  "generated_at": "2026-03-05T16:56:19.759773+00:00",
+  "sources": [
+    {
+      "path": "AGENTS.md",
+      "hash": "sha256:f7b5b42737aedaaa95e4d19d50c3af8fbb7e817512987747b433a890bbb694f2",
+      "bytes": 9515,
+      "modified_at": "2026-03-04T08:06:33.163939+00:00"
+    },
+    {
+      "path": "AI_NATIVE_OPERATING_POLICY_V1.md",
+      "hash": "sha256:a4c680885d769e848070b650475c2f4d3d12e3b0fff296691f7cd4c5ec050407",
+      "bytes": 5030,
+      "modified_at": "2026-02-28T17:51:53.253949+00:00"
+    },
+    {
+      "path": "TASK_SYSTEM_POLICY_V1.md",
+      "hash": "sha256:21e8b4394e340f969890468ba99c476bc1587398f0f2f9c44578269e1cab9b78",
+      "bytes": 4817,
+      "modified_at": "2026-02-26T06:46:13.599989+00:00"
+    },
+    {
+      "path": "MODEL_ROUTING_POLICY.md",
+      "hash": "sha256:04c2a0dd6bd767b900c871db8d311ebd0f7dbf07f9ca7471be90c6341db165c3",
+      "bytes": 4501,
+      "modified_at": "2026-02-26T18:16:18.214075+00:00"
+    },
+    {
+      "path": "STANDARD_CHANGE_CATALOG_V1.md",
+      "hash": "sha256:e466b7cd0582caf0585af837ef4b45c90c6b20e9157cbb6b951f7c10a849ad44",
+      "bytes": 4747,
+      "modified_at": "2026-03-04T08:06:33.168668+00:00"
+    },
+    {
+      "path": "ARTIFACT_ACTIVATION_MODEL_V1.md",
+      "hash": "sha256:ad6d3ef20db8fcf6dcc9b0da988c6863a94e84a9a2963da8fc4c4b1060cfc9ea",
+      "bytes": 5497,
+      "modified_at": "2026-02-26T18:16:18.212585+00:00"
+    },
+    {
+      "path": "SOP-001_INTAKE_TRIAGE.md",
+      "hash": "sha256:8720dd7e4408dad97d5479ef4217cb89ed2f6bd641a02a12f4c239bf4bb952eb",
+      "bytes": 2650,
+      "modified_at": "2026-02-28T17:10:01.469134+00:00"
+    },
+    {
+      "path": "DECISION_PRINCIPLES.md",
+      "hash": "sha256:f669d81c1733a05bdbca487363107f207fa49068a7890410ae408567cedbe0da",
+      "bytes": 4406,
+      "modified_at": "2026-02-25T21:27:40.929882+00:00"
+    }
+  ],
+  "source_count": 8,
+  "root_hash": "sha256:f03d046224b271e51600b4df30c16cc942f79b92802a7c764e67c8f7f7272f8b",
+  "notes": [
+    "This is a machine-readable fingerprint of active direction/policy sources.",
+    "It is a compiler output/projection and does not replace source governance documents."
+  ]
+}
