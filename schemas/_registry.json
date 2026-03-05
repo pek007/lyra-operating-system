@@ -25,5 +25,8 @@
   },
   "taskops_work_packet": {
     "1.0.0": "schemas/taskops_work_packet/v1.0.0.schema.json"
+  },
+  "coord_status_event": {
+    "1.0.0": "schemas/coord_status_event/v1.0.0.schema.json"
   }
 }
