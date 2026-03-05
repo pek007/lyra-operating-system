@@ -1,0 +1,12 @@
+handoff_id: "HO-20260305-001"
+from_domain: "os"
+to_domain: "px"
+owner: "Lyra (main agent)"
+purpose: "Transfer boundary spec v1 to PX instance (Vega) for controlled activation"
+classification: "internal"
+created_at: "2026-03-05T18:45:00Z"
+expires_at: null
+source_refs:
+  - "governance/VEGA_PX_INSTANCE_BOUNDARY_SPEC_V1.md"
+checksum: "sha256:39672468bf4055352bd166e873371abcbd28445543048a4754541a8e2267fd07"
+approved_by: "Peter Eklind"

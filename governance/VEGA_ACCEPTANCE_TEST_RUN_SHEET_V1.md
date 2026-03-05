@@ -1,8 +1,8 @@
 # Vega PX Boundary Acceptance Test Run Sheet v1
 
-Run owner: ____________________
-Run date/time (UTC): ____________________
-Environment: ____________________
+Run owner: Lyra (main)
+Run date/time (UTC): 2026-03-05T18:46:00Z
+Environment: OpenClaw local gateway (macOS)
 Agent ID: `px-internal-dev` (Vega)
 
 ## Test objective
@@ -16,24 +16,27 @@ Verify Vega can operate as a true PX instance under Pattern A:
 ## A. Workspace and state isolation
 
 ### A1. Agent identity and workspace
-- [ ] Confirm Vega agent exists and is distinct from main agent
-- [ ] Confirm Vega workspace root is isolated (not Lyra workspace)
-- [ ] Confirm Vega `agentDir` is distinct
+- [x] Confirm Vega agent exists and is distinct from main agent
+- [x] Confirm Vega workspace root is isolated (not Lyra workspace)
+- [x] Confirm Vega `agentDir` is distinct
 
 Evidence:
-- ________________________________________________
+- `openclaw agents list --json`
+- Vega workspace: `/Users/lyra/.openclaw/workspace-px-internal-dev`
+- Vega agentDir: `/Users/lyra/.openclaw/agents/px-internal-dev/agent`
 
-Result: PASS / FAIL
+Result: PASS
 
 ### A2. No Lyra-path dependency in normal operation
-- [ ] Run representative Vega tasks (read/write docs, git status, planning artifacts)
-- [ ] Verify all file paths are inside Vega workspace
-- [ ] Verify no required reads from Lyra workspace paths
+- [x] Run representative Vega tasks (read/write docs, git status, planning artifacts)
+- [x] Verify all file paths are inside Vega workspace (for normal tasks run)
+- [x] Verify no required reads from Lyra workspace paths (for normal tasks run)
 
 Evidence:
-- ________________________________________________
+- Vega self-check run (created/read `acceptance_probe.txt`, git status in Vega workspace)
+- Reported no dependency on `/Users/lyra/.openclaw/workspace` for that normal run
 
-Result: PASS / FAIL
+Result: PASS (normal operation), with boundary caveat captured in E2
 
 ---
 
@@ -44,9 +47,9 @@ Result: PASS / FAIL
 - [ ] Confirm Vega can run normal git operations inside that repo
 
 Evidence:
-- ________________________________________________
+- `ls -la /Users/lyra/.openclaw/workspace-px-internal-dev` shows no `pxs` repo present
 
-Result: PASS / FAIL
+Result: FAIL
 
 ---
 
@@ -58,53 +61,54 @@ Result: PASS / FAIL
 - [ ] Confirm update path requires intentional bump
 
 Evidence:
-- ________________________________________________
+- No platform-core submodule/dependency configuration found yet in Vega workspace
 
-Result: PASS / FAIL
+Result: FAIL
 
 ### C2. No duplicate canonical policy copies
 - [ ] Spot-check canonical shared policy/process docs are dependency-based, not manually duplicated across workspaces
 
 Evidence:
-- ________________________________________________
+- Not verifiable until C1 is implemented
 
-Result: PASS / FAIL
+Result: FAIL
 
 ---
 
 ## D. Context safety and governance injection
 
 ### D1. Bootstrap/context limits
-- [ ] Inspect Vega context report (`/context list` or equivalent)
-- [ ] Confirm governance-critical files are present and not truncated
+- [x] Inspect Vega context report (`/context list` or equivalent)
+- [x] Confirm governance-critical files are present and not truncated
 
 Evidence:
-- ________________________________________________
+- Agent run metadata `injectedWorkspaceFiles` showed injected files with `truncated: false`
 
-Result: PASS / FAIL
+Result: PASS
 
 ---
 
 ## E. Cross-domain handoff enforcement
 
 ### E1. Handoff artifact validation
-- [ ] Create one test handoff using `HANDOFF_ARTIFACT_TEMPLATE_V1.yaml`
-- [ ] Validate required fields: owner, purpose, checksum, approval
-- [ ] Register entry in `HANDOFF_REGISTER_V1.md`
+- [x] Create one test handoff using `HANDOFF_ARTIFACT_TEMPLATE_V1.yaml`
+- [x] Validate required fields: owner, purpose, checksum, approval
+- [x] Register entry in `HANDOFF_REGISTER_V1.md`
 
 Evidence:
-- ________________________________________________
+- `governance/handoffs/HO-20260305-001.yaml`
+- `governance/HANDOFF_REGISTER_V1.md` updated
 
-Result: PASS / FAIL
+Result: PASS
 
 ### E2. No direct cross-domain read by default
 - [ ] Attempt non-handoff cross-domain read (expected denied by policy/process)
 - [ ] Confirm only registered handoff path is used for transfer
 
 Evidence:
-- ________________________________________________
+- Vega test explicitly listed `/Users/lyra/.openclaw/workspace` successfully (read allowed)
 
-Result: PASS / FAIL
+Result: FAIL
 
 ---
 
@@ -116,23 +120,24 @@ Result: PASS / FAIL
 - [ ] Confirm fail-closed behavior on invalid inputs
 
 Evidence:
-- ________________________________________________
+- Not executed in this pass
 
-Result: PASS / FAIL / N/A
+Result: N/A
 
 ---
 
 ## Final gate
 
-Overall result: PASS / FAIL
+Overall result: FAIL
 
 Blocking failures:
-1. ________________________________________________
-2. ________________________________________________
+1. `pxs` repo not present in Vega workspace (B1)
+2. Platform-core pinned dependency not implemented (C1/C2)
+3. Cross-domain read is currently allowed (E2), boundary not enforced
 
-Remediation owner: ____________________
-Target date: ____________________
+Remediation owner: Lyra + Peter
+Target date: 2026-03-06
 
 Approval to activate boundary v1:
 - Sponsor (Peter): ____________________  Date: __________
-- Run owner: ____________________        Date: __________
+- Run owner: Lyra (main)                Date: 2026-03-05

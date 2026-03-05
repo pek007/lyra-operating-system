@@ -13,7 +13,7 @@ Review cadence: weekly
 
 | Date (UTC) | Handoff ID | From | To | Purpose | Classification | Owner | Approved By | Checksum | Expires At | Status | Evidence Ref |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 2026-03-05 | HO-20260305-001 | os | px | Activate boundary model v1 and handoff protocol | internal | Peter / Lyra | Peter | sha256:pending | null | Open | governance/VEGA_PX_INSTANCE_BOUNDARY_SPEC_V1.md |
+| 2026-03-05 | HO-20260305-001 | os | px | Activate boundary model v1 and handoff protocol | internal | Lyra (main agent) | Peter Eklind | sha256:39672468bf4055352bd166e873371abcbd28445543048a4754541a8e2267fd07 | null | Open | governance/handoffs/HO-20260305-001.yaml |
 
 ## Status values
 - Open: available for consumption
