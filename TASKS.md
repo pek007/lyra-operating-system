@@ -37,7 +37,8 @@ Use this until a dedicated work tool is selected.
   - [x] 2026-03-04 | Added canonical templates: `knowledge/inbox/INBOX_ENTRY_TEMPLATE_V1.md` and `knowledge/decisions/DECISION_MEMO_TEMPLATE_V1.md`.
   - [x] 2026-03-04 | Added validator rule: decision-impacting reports (`decision_impact: true`) must map to valid `decision_id` or explicit `no_decision_marker`.
   - [x] 2026-03-04 | Published baseline generated index artifacts including `knowledge/indexes/report_decision_index.json` and updated manifest.
-- [ ] OPS-2026-050 | Operationalize `STANDARD_CHANGE_CATALOG_V1` into executable promotion flow (registry linkage, WO/CA classification fields, exclusion-trigger checks, pilot guardrails).
+- [x] OPS-2026-050 | Operationalize `STANDARD_CHANGE_CATALOG_V1` into executable promotion flow (registry linkage, WO/CA classification fields, exclusion-trigger checks, pilot guardrails).
+  - [x] 2026-03-06 | Published formal operationalization closeout evidence with linked delivery artifacts: `knowledge/evidence/2026-03-06__ops-2026-050-standard-change-operationalization-closeout.md`.
 - [x] OPS-2026-060 | Operationalize trust-boundary architecture Sprint 1 controls (Option A hardening): publish policy record, enforce Telegram group tool/sender constraints, and add mandatory post-change validation bundle output artifact.
   - [x] 2026-03-04 | Ingested trust-boundary deep research report into `knowledge/reports/2026-03-04__deepresearch__trust-boundary-architecture-for-openclaw-tde__v1.md` and indexed source.
   - [x] 2026-03-04 | Published policy record `governance/TRUST_BOUNDARY_POLICY_RECORD_2026-03-04.md` with explicit Option A boundary and reopen triggers.
@@ -48,7 +49,7 @@ Use this until a dedicated work tool is selected.
   - [x] 2026-03-04 | Published 2-week pilot guardrail + audit-sample protocol `STANDARD_CHANGE_PILOT_PROTOCOL_V1.md` (window: 2026-03-04..2026-03-18).
   - [x] 2026-03-04 | Logged Day-1 audit sample evidence `knowledge/evidence/2026-03-04__standard-change-pilot-day1-audit-sample.md`.
   - [x] 2026-03-04 | Added pilot outcome template `templates/STANDARD_CHANGE_PILOT_OUTCOME_TEMPLATE.md`.
-  - [ ] 2026-03-18 | Publish pilot outcome evidence and recommendation (keep/expand/rollback).
+  - [ ] Publish pilot outcome evidence and recommendation (keep/expand/rollback) once sufficient pilot sample is collected (no arbitrary date gate).
 - [x] OPS-2026-045 | Shift Continuous Improvement leverage discovery cadence from monthly to weekly and formalize Deep Research handoff workflow (Layer B + Layer C).
   - [x] 2026-03-03 | Updated `CONTINUOUS_IMPROVEMENT_PROCESS_V1.md` to v1.1 with discovery layers (A daily, B weekly, C weekly via Deep Research), weekly portfolio cleanup, and `IMP-DR-*` conversion rule.
   - [x] 2026-03-03 | Updated `CRON_SPEC_AUTONOMOUS_GOVERNANCE_SWEEPS.md` with `continuous-improvement:weekly-leverage-handoff` protocol and explicit Layer B/C packet flow to Peter.
