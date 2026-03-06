@@ -190,6 +190,7 @@ Use this until a dedicated work tool is selected.
 
 ## Done
 - [x] OPS-2026-065 | S38 scheduled readiness automation wiring (closed 2026-03-04 after adding dedicated cutover-readiness cron hook and updating cron spec/runbook).
+  - [x] 2026-03-06 | Corrected readiness artifact path handling to remove hard-coded dated source and add stable latest alias chain; evidence: `knowledge/evidence/2026-03-06__tde-cutover-readiness-artifact-path-fix.md`.
 - [x] OPS-2026-064 | S37 daily cutover readiness operations (closed 2026-03-04 after adding daily readiness runner and threshold alert guard scripts).
 - [x] OPS-2026-063 | S36 DB canonical cutover readiness gate (closed 2026-03-04 after publishing cutover gate SOP + first readiness NO_GO baseline report).
 - [x] OPS-2026-062 | S35 durable shadow event/action ledger writes (closed 2026-03-04 after persisting per-tick action/event entries in state store and wiring regression coverage).
