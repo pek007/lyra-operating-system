@@ -15,7 +15,7 @@ Use this until a dedicated work tool is selected.
 - [x] SEC-AUTO-20260306-01 | Resolve Telegram allowlist inconsistency (`groupPolicy=allowlist` with empty `groupAllowFrom/allowFrom`) to eliminate silent group-message drops and align channel trust intent with explicit sender controls.
   - [x] 2026-03-06 | Revalidated config consistency (`channels.telegram.groupAllowFrom/allowFrom` and account-level `groupAllowFrom` present for `default` + `vega`) and documented closeout evidence: `knowledge/evidence/2026-03-06__sec-auto-20260306-01-telegram-allowlist-consistency-closeout.md`.
   - [x] 2026-03-06 | Confirmed runtime posture via `openclaw status --all` (both Telegram accounts show `allow:8283124284`) and `openclaw security audit --deep` (no allowlist-empty warning remains).
-- [ ] OPS-2026-046 | Implement Opportunity-to-Execution Engine v1 bootstrap from Deep Research report (signal ledger + opportunity/experiment templates + weekly metrics cadence + first pilot selection).
+- [x] OPS-2026-046 | Implement Opportunity-to-Execution Engine v1 bootstrap from Deep Research report (signal ledger + opportunity/experiment templates + weekly metrics cadence + first pilot selection).
   - [x] 2026-03-03 | Stored Deep Research ingest artifact in library: `knowledge/reports/2026-03-03__deepresearch__opportunity-to-execution-engine-for-lyra-openclaw__v1.md`.
   - [x] 2026-03-03 | Created core artifact structure: `knowledge/friction/`, `knowledge/opportunities/`, `knowledge/experiments/`, `templates/`, `metrics/`.
   - [x] 2026-03-03 | Added `templates/OPPORTUNITY_PACKET_TEMPLATE.md` and `templates/EXPERIMENT_CLOSEOUT_TEMPLATE.md`.
@@ -23,6 +23,7 @@ Use this until a dedicated work tool is selected.
   - [x] 2026-03-03 | Ran first weekly Layer B synthesis and produced top-3 candidates in `knowledge/reports/WEEKLY_SYNTHESIS__2026-03-03.md`.
   - [x] 2026-03-03 | Scored candidates with ELS rubric and prepared activation packet for selected pilot `OPP-2026-001` (`knowledge/opportunities/OPP-2026-001__drift-aftercare-standard.md`).
   - [x] 2026-03-03 | Activated pilot `OPP-2026-001` with rollback + instrumentation and opened closeout artifact `knowledge/experiments/EXP-2026-001__drift-aftercare-standard.md`.
+  - [x] 2026-03-06 | Published bootstrap closeout and explicit transition-to-pilot execution note: `knowledge/evidence/2026-03-06__ops-2026-046-bootstrap-closeout.md`.
 - [ ] OPS-2026-047 | Execute Drift Aftercare pilot (`OPP-2026-001`) for `IMP-AUTO-20260303-03`, publish 7-day checkpoint evidence, and decide scale/rollback.
   - [x] 2026-03-03 | Pilot activated as `EXP-2026-001` (status: active_pilot, period: 2026-03-03 to 2026-03-10).
   - [ ] 2026-03-10 | Publish checkpoint evidence artifact and close with decision (scale/standardize/rollback/retest).
