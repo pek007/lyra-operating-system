@@ -13,17 +13,17 @@ name: <display name>
 mode: persistent|spawned|external-workbench
 mission: <one-line mission>
 owner: <person/role>
-allowedTools: ["web_search", "exec", "read", "write"]
-readScope: ["path/glob"]
-writeScope: ["path/glob"]
-approvalRequiredFor:
+allowed_tools: ["web_search", "exec", "read", "write"]
+read_scope: ["path/glob"]
+write_scope: ["path/glob"]
+approval_required_for:
   - external_send
   - destructive_change
-defaultModelLane: ops|research|build|premium
-handoffTemplate: standard-v1
+default_model_lane: ops|research|build|premium
+handoff_template: standard-v1
 review:
-  lastReviewed: YYYY-MM-DD
-  nextReview: YYYY-MM-DD
+  last_reviewed: YYYY-MM-DD
+  next_review: YYYY-MM-DD
 ```
 
 ## 2) Routing Rule Schema
@@ -32,10 +32,10 @@ id: ROUTE-<slug>
 enabled: true
 priority: 100
 match:
-  taskType: ["ops", "research", "build", "content"]
-  riskLevel: ["low", "medium", "high"]
-  decisionType: ["type1", "type2"]
-  dataClass: ["public", "internal", "confidential"]
+  task_type: ["ops", "research", "build", "content"]
+  risk_level: ["low", "medium", "high"]
+  decision_type: ["approve", "reject", "choose", "escalate", "review"]
+  data_class: ["public", "internal", "confidential"]
 route:
   championModel: <model-ref>
   challengerModel: <model-ref>
@@ -43,11 +43,11 @@ route:
   maxCostTier: low|medium|high
   maxLatencyMs: 120000
 governance:
-  antiThrashWindowDays: 30
-  changeGate: type1-required|normal
+  anti_thrash_window_days: 30
+  change_gate: approval_required|normal
 review:
-  lastReviewed: YYYY-MM-DD
-  nextReview: YYYY-MM-DD
+  last_reviewed: YYYY-MM-DD
+  next_review: YYYY-MM-DD
 ```
 
 ## 3) Evidence Record Schema
@@ -56,14 +56,14 @@ id: EVID-<slug>
 source: doctor|security_audit|restore_test|incident|review
 timestamp: 2026-02-25T08:30:00+01:00
 status: pass|warn|fail
-severitySummary:
+severity_summary:
   critical: 0
   warn: 1
   info: 1
 artifacts:
   - path: <file>
   - path: <file>
-linkedTasks: ["OPS-2026-005"]
+linked_tasks: ["OPS-2026-005"]
 owner: Lyra
 ```
 
@@ -74,12 +74,12 @@ timestamp: 2026-02-25T09:00:00+01:00
 type: policy|config|runbook|routing
 summary: <what changed>
 reason: <why>
-decisionType: type1|type2
+decision_type: approve|reject|choose|escalate|review
 owner: <who>
-rollbackPlan: <how to revert>
-linkedArtifacts:
+rollback_plan: <how to revert>
+linked_artifacts:
   - path: <file>
-linkedTasks:
+linked_tasks:
   - OPS-2026-00X
 ```
 
@@ -90,5 +90,9 @@ linkedTasks:
 - Change records: `knowledge/changes/YYYY-MM/*.md`
 
 ## Version
-- v1.0
-- Date: 2026-02-25
+- v1.1
+- Date: 2026-03-06
+
+## Compatibility Note
+- This document now uses canonical snake_case and decision enums aligned with `DECISION_SCHEMA_V1.md`.
+- Transition-layer migration guidance remains in `REGISTRY_DECISION_COMPATIBILITY_MAP_V1_1.md` for legacy artifacts.
