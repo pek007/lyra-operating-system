@@ -180,12 +180,13 @@ Use this until a dedicated work tool is selected.
   - [x] 2026-03-03 | Executed Active→Done board-state transition after evidence consistency recheck; evidence: `knowledge/evidence/2026-03-03__ops-2026-022-active-to-done-transition-executed.md`.
 
 ## Waiting
-- [ ] OPS-2026-023 | Sprint 3 closeout pack (release notes + tag + vNext backlog update) after QA pass
+- [x] OPS-2026-023 | Sprint 3 closeout pack (release notes + tag + vNext backlog update) after QA pass
   - [x] 2026-03-02 | Drafted and published `SPRINT3_CLOSEOUT_PACK_V1.md` with release-notes draft, tag plan, and proposed vNext backlog promotion set.
   - [x] 2026-03-02 | Re-validated Control Panel API test baseline via `pnpm --filter @control-panel/api test` (result: 34 files / 326 tests passing) to de-risk closeout execution.
   - [x] 2026-03-03 | Re-ran `pnpm --filter @control-panel/api test` in current repo state (34/34 files, 326/326 tests passing); evidence: `knowledge/evidence/2026-03-03__ops-2026-023-test-revalidation.md`.
   - [x] 2026-03-03 | Ran closeout tag-readiness precheck (`git status`, tag existence, evidence artifact presence); result: evidence/tests ready, working tree not clean; evidence: `knowledge/evidence/2026-03-03__ops-2026-023-closeout-tag-readiness-check.md`.
   - [x] 2026-03-03 | Published command-ready closeout execution checklist (baseline tests, tag/push commands, post-tag board-normalization steps) to reduce execution friction once boundary commit/clean-tree condition is met; evidence: `knowledge/evidence/2026-03-03__ops-2026-023-closeout-execution-checklist-ready.md`.
+  - [x] 2026-03-06 | Finalized closeout pack and linked release-notes/tag/vNext state in `SPRINT3_CLOSEOUT_PACK_V1.md`; closure evidence: `knowledge/evidence/2026-03-06__ops-2026-023-sprint3-closeout-pack-finalization.md`.
 
 ## Done
 - [x] OPS-2026-065 | S38 scheduled readiness automation wiring (closed 2026-03-04 after adding dedicated cutover-readiness cron hook and updating cron spec/runbook).
