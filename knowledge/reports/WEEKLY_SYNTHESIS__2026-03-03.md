@@ -1,3 +1,14 @@
+---
+title: "Weekly Synthesis — 2026-03-03"
+date: 2026-03-03
+source: synthesis
+ingest_from: "internal-weekly-layer-b"
+tags: [weekly-synthesis, continuous-improvement]
+decision_relevance: high
+confidence: medium
+status: active-note
+---
+
 # Weekly Synthesis — 2026-03-03
 
 ## Scope

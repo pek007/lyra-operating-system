@@ -201,6 +201,7 @@ def main() -> int:
 
     run([sys.executable, "tools/gen_inventory.py"])
     run([sys.executable, "tools/gen_knowledge_indexes.py"])
+    run([sys.executable, "tools/gen_reports_index.py"])
     run([sys.executable, "tools/standard_change_policy_check.py", "--strict"])
     run([sys.executable, "tools/task_hygiene_check.py", "--file", "TASKS.md"])
     run([sys.executable, "tools/markdown_link_check.py", "--changed-only"])
@@ -245,6 +246,7 @@ def main() -> int:
                     ROOT / "knowledge/indexes/report_decision_index.json",
                     ROOT / "knowledge/indexes/observations_index.json",
                     ROOT / "knowledge/indexes/indexes_manifest.json",
+                    ROOT / "knowledge/reports/INDEX.md",
                 ]
             )
         )
