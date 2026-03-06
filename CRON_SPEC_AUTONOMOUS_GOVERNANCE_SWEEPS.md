@@ -21,10 +21,9 @@ Design principle: auto-implement only low-risk, uncontroversial changes; route l
    - `openclaw security audit --deep`
    - `openclaw update status`
    - `openclaw status --deep`
-2. Run host read-only posture checks:
-   - `lsof -nP -iTCP -sTCP:LISTEN`
-   - `/usr/libexec/ApplicationFirewall/socketfilterfw --getglobalstate`
-   - `pfctl -s info`
+2. Run host read-only posture checks via snapshot script:
+   - `python3 tools/host_readonly_audit_snapshot.py`
+   - If PF status is unavailable in runtime context, follow the script's manual escalation note (`sudo pfctl -s info` on host).
 3. Auto-fix policy:
    - Allowed: `openclaw security audit --fix` (OpenClaw-local safe defaults only)
    - Forbidden (no auto-change): firewall rules, SSH config, network exposure, package install/remove
