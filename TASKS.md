@@ -24,9 +24,9 @@ Use this until a dedicated work tool is selected.
   - [x] 2026-03-03 | Scored candidates with ELS rubric and prepared activation packet for selected pilot `OPP-2026-001` (`knowledge/opportunities/OPP-2026-001__drift-aftercare-standard.md`).
   - [x] 2026-03-03 | Activated pilot `OPP-2026-001` with rollback + instrumentation and opened closeout artifact `knowledge/experiments/EXP-2026-001__drift-aftercare-standard.md`.
   - [x] 2026-03-06 | Published bootstrap closeout and explicit transition-to-pilot execution note: `knowledge/evidence/2026-03-06__ops-2026-046-bootstrap-closeout.md`.
-- [ ] OPS-2026-047 | Execute Drift Aftercare pilot (`OPP-2026-001`) for `IMP-AUTO-20260303-03`, publish 7-day checkpoint evidence, and decide scale/rollback.
-  - [x] 2026-03-03 | Pilot activated as `EXP-2026-001` (status: active_pilot, period: 2026-03-03 to 2026-03-10).
-  - [ ] 2026-03-10 | Publish checkpoint evidence artifact and close with decision (scale/standardize/rollback/retest).
+- [x] OPS-2026-047 | Execute Drift Aftercare pilot (`OPP-2026-001`) for `IMP-AUTO-20260303-03`, publish checkpoint evidence, and decide scale/rollback.
+  - [x] 2026-03-03 | Pilot activated as `EXP-2026-001`.
+  - [x] 2026-03-06 | Published checkpoint/closeout evidence and decided **Standardize**: `knowledge/evidence/2026-03-06__ops-2026-047-drift-aftercare-pilot-closeout.md`.
 - [x] OPS-2026-048 | Implement machine-checkable governance bootstrap v0.1 (schema authority + validator entrypoint + inventory/index generation + CI drift checks) from 2026-03-04 deep research blueprint.
   - [x] 2026-03-04 | Confirmed `schemas/` contract authority for job tick / canary status / release envelope / decision memo metadata (`schemas/_registry.json` + schema files).
   - [x] 2026-03-04 | Validated and extended `tools/validate_repo.py` as single entrypoint (includes report→decision mapping rule + generated drift checks) and wired with existing `.github/workflows/governance-machine-check.yml`.

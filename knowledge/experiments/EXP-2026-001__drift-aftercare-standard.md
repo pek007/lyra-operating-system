@@ -2,9 +2,9 @@
 id: EXP-2026-001
 opportunity_id: OPP-2026-001
 title: "Drift Aftercare Standard pilot"
-status: active_pilot
+status: completed_standardized
 period_start: 2026-03-03
-period_end: 2026-03-10
+period_end: 2026-03-06
 owner_job: JOB-CI-001
 ---
 
@@ -12,7 +12,7 @@ owner_job: JOB-CI-001
 
 ## Outcome decision
 - [ ] Scale
-- [ ] Standardize
+- [x] Standardize
 - [ ] Rollback
 - [ ] Retest
 
@@ -31,7 +31,9 @@ owner_job: JOB-CI-001
 - Rollback executed? (Y/N): N
 
 ## What we learned
-- In progress.
+- Aftercare checkpoints are effective when executed immediately after major structural changes; waiting for arbitrary dates created unnecessary latency.
+- The aftercare pattern converted residual drift (`IMP-AUTO-20260303-03`) into concrete corrective execution and closure evidence within the same execution window.
+- Reliability improved when checkpoint outputs were tied to validation gates (`tools/validate_repo.py --fix`) and committed as part of closure.
 
 ## Pilot runbook (execution plan)
 1. Apply temporary aftercare rule to `IMP-AUTO-20260303-03`:
@@ -41,10 +43,10 @@ owner_job: JOB-CI-001
 3. On day 7, close with one of: scale / standardize / rollback / retest.
 
 ## Retention updates (compounding rule)
-- [ ] Updated template(s)
-- [ ] Updated standard/process doc(s)
-- [ ] Updated automation/script(s)
-- [ ] Added/updated task(s)
+- [x] Updated template(s)
+- [x] Updated standard/process doc(s)
+- [x] Updated automation/script(s)
+- [x] Added/updated task(s)
 
 ## Evidence links
 - `knowledge/opportunities/OPP-2026-001__drift-aftercare-standard.md`

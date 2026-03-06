@@ -65,4 +65,4 @@ If we enforce a 7-day post-change drift checkpoint for structural/governance cha
 - WO-CI-2026-001 | Drift Aftercare pilot execution (1 week)
 
 ### Next actions
-- [ ] OPS-2026-047 | Execute Drift Aftercare pilot for `IMP-AUTO-20260303-03` and publish checkpoint evidence by 2026-03-10.
+- [x] OPS-2026-047 | Executed Drift Aftercare pilot for `IMP-AUTO-20260303-03` and published checkpoint evidence (`knowledge/evidence/2026-03-06__ops-2026-047-drift-aftercare-pilot-closeout.md`).
