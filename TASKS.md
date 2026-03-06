@@ -3,6 +3,13 @@
 Use this until a dedicated work tool is selected.
 
 ## Inbox
+- [x] IMP-AUTO-20260305-01 | Rebuild or retire `tools/docs_hygiene_bundle.py` references in runbooks/validators so cron hygiene runs are executable again (impact: removes silent automation drift from missing command paths).
+  - [x] 2026-03-06 | Restored `tools/docs_hygiene_bundle.py` as a fail-fast wrapper over `task_hygiene_check` + `markdown_link_check --changed-only`; validated with `python3 tools/docs_hygiene_bundle.py`.
+- [ ] IMP-AUTO-20260305-02 | Add a lightweight “referenced script exists” guard for cron/runbook command strings to catch broken tooling pointers before scheduled sweeps fail (impact: fail-fast on operational doc drift).
+- [x] IMP-AUTO-20260306-02 | Add `jsonschema` to the local validation environment (or pin a no-dependency schema validator path) so `tools/validate_repo.py` can enforce artifact schema checks instead of warning-only mode (impact: turns soft schema drift into deterministic failures).
+  - [x] 2026-03-06 | Updated `tools/validate_repo.py` to fail closed when `jsonschema` is unavailable (no more warning-only bypass) and installed local dependencies (`jsonschema`, `pyyaml`) so schema/policy validation runs deterministically; validated with `python3 tools/validate_repo.py --fix` (pass, with non-blocking unknown `artifactType` warnings for `tde_activation_execution_receipt`).
+- [ ] SEC-AUTO-20260305-01 | Revalidate and document accepted residual risk for `security.trust_model.multi_user_heuristic` after nightly audit; either codify explicit acceptance criteria/expiry or define isolation migration plan (separate gateway/identity) if group usage model changes.
+- [ ] SEC-AUTO-20260306-01 | Resolve Telegram allowlist inconsistency (`groupPolicy=allowlist` with empty `groupAllowFrom/allowFrom`) to eliminate silent group-message drops and align channel trust intent with explicit sender controls.
 - [ ] OPS-2026-046 | Implement Opportunity-to-Execution Engine v1 bootstrap from Deep Research report (signal ledger + opportunity/experiment templates + weekly metrics cadence + first pilot selection).
   - [x] 2026-03-03 | Stored Deep Research ingest artifact in library: `knowledge/reports/2026-03-03__deepresearch__opportunity-to-execution-engine-for-lyra-openclaw__v1.md`.
   - [x] 2026-03-03 | Created core artifact structure: `knowledge/friction/`, `knowledge/opportunities/`, `knowledge/experiments/`, `templates/`, `metrics/`.
@@ -108,6 +115,8 @@ Use this until a dedicated work tool is selected.
   - [x] 2026-03-04 | Re-ran cron hygiene baseline via `python3 tools/docs_hygiene_bundle.py` after test addition (pass in current workspace state).
 - [ ] IMP-AUTO-20260303-03 | Migrate or normalize legacy registry rows (camelCase + `type1|type2`) through the transition layer and publish a drift-burn-down snapshot to reduce residual schema mismatch risk.
   - [ ] 2026-03-04 | Daily information-model sweep reflagged residual schema drift: `REGISTRY_SCHEMAS_V1.md` still shows legacy `decisionType` + `type1|type2` examples while `DECISION_SCHEMA_V1.md` canonical enum remains `approve|reject|choose|escalate|review`; add explicit v1.1 harmonized examples and compatibility-map link.
+  - [ ] 2026-03-05 | Reflag confirmed with explicit drift notes now embedded in both schema docs; complete v1.1 harmonization update (canonical snake_case + enum alignment in registry examples) and publish drift burn-down evidence artifact.
+  - [ ] 2026-03-06 | Daily sweep reflagged residual drift in `REGISTRY_SCHEMAS_V1.md`: example fields still use camelCase (`allowedTools`, `approvalRequiredFor`, `decisionType`-style legacy family) while canonical contract remains snake_case in `DECISION_SCHEMA_V1.md`; complete transition-layer normalization and publish burn-down snapshot.
 - [x] IMP-AUTO-20260304-01 | Wire `tools/test_markdown_link_check.py` into the cron hygiene path (or adjacent CI check) so link-parser behavior regressions fail before scheduled sweeps.
   - [x] 2026-03-04 | Added `tools/test_markdown_link_check.py` and wired execution into `.github/workflows/governance-machine-check.yml`; updated cron sweep runbook to include the same unittest gate.
 - [x] IMP-AUTO-20260304-02 | Add `markdown_link_check.py --changed-only` mode (git-diff scoped) to reduce sweep runtime as the document corpus grows while preserving full-scan fallback.

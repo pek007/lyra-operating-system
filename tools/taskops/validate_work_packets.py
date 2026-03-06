@@ -10,8 +10,8 @@ ROOT = Path(__file__).resolve().parents[2]
 def _load_yaml(path: Path) -> dict[str, Any]:
     try:
         import yaml  # type: ignore
-    except Exception:
-        return {}
+    except Exception as e:
+        raise RuntimeError(f"PyYAML unavailable: {e}")
     return yaml.safe_load(path.read_text(encoding="utf-8")) or {}
 
 
@@ -36,8 +36,13 @@ def validate_work_packets(registry: dict[str, Any]) -> tuple[list[str], list[str
         return errors, warnings
     schema = json.loads((ROOT / schema_rel).read_text(encoding="utf-8"))
 
-    sidefx_policy = _load_yaml(ROOT / "knowledge/policies/taskops_side_effect_contracts.v1.yaml")
-    autonomy_policy = _load_yaml(ROOT / "knowledge/policies/taskops_autonomy_policy.v1.yaml")
+    try:
+        sidefx_policy = _load_yaml(ROOT / "knowledge/policies/taskops_side_effect_contracts.v1.yaml")
+        autonomy_policy = _load_yaml(ROOT / "knowledge/policies/taskops_autonomy_policy.v1.yaml")
+    except RuntimeError as e:
+        errors.append(f"taskops policy load failed: {e}")
+        return errors, warnings
+
     surfaces = (sidefx_policy.get("surfaces") or {}) if isinstance(sidefx_policy, dict) else {}
     autonomy_levels = (autonomy_policy.get("autonomy_levels") or {}) if isinstance(autonomy_policy, dict) else {}
 

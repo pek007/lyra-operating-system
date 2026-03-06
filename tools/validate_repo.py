@@ -85,13 +85,16 @@ def validate_decision_frontmatter() -> list[str]:
     return errs
 
 
-def validate_tde_artifacts() -> list[str]:
-    errs = []
-    warnings = []
+def validate_tde_artifacts() -> tuple[list[str], list[str]]:
+    errs: list[str] = []
+    warnings: list[str] = []
     try:
         import jsonschema  # type: ignore
     except Exception:
-        return ["WARN: jsonschema not installed; skipping artifact schema checks."]
+        errs.append(
+            "jsonschema not installed; artifact schema checks are mandatory. Install dependency (e.g., `python3 -m pip install --user jsonschema`)"
+        )
+        return errs, warnings
 
     reg = json.loads(SCHEMA_REGISTRY.read_text())
     for p in sorted((ROOT / "knowledge/evidence").rglob("*.json")):
@@ -119,7 +122,7 @@ def validate_tde_artifacts() -> list[str]:
             jsonschema.validate(obj, schema)
         except Exception as e:
             errs.append(f"{p}: schema validation failed ({e})")
-    return warnings + errs
+    return errs, warnings
 
 
 def validate_report_decision_mapping() -> list[str]:
@@ -205,7 +208,9 @@ def main() -> int:
     errors: list[str] = []
     messages: list[str] = []
 
-    messages.extend(validate_tde_artifacts())
+    artifact_errors, artifact_warnings = validate_tde_artifacts()
+    errors.extend(artifact_errors)
+    messages.extend(artifact_warnings)
     errors.extend(validate_schema_files())
     errors.extend(validate_decision_frontmatter())
     errors.extend(validate_report_decision_mapping())

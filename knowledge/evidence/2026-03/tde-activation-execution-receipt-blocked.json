@@ -2,6 +2,7 @@
   "generatedAt": "2026-03-02T20:44:05.294992+00:00",
   "receiptId": "actrcpt-ed63a673241d3748",
   "artifactType": "tde_activation_execution_receipt",
+  "schemaVersion": "1.0.0",
   "releaseEnvelopeRef": {
     "envelopeId": "env-95c7216a98a2562b",
     "path": "knowledge/evidence/2026-03/tde-release-envelope-blocked.json"

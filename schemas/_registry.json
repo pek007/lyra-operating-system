@@ -28,5 +28,8 @@
   },
   "coord_status_event": {
     "1.0.0": "schemas/coord_status_event/v1.0.0.schema.json"
+  },
+  "tde_activation_execution_receipt": {
+    "1.0.0": "schemas/tde_activation_execution_receipt/v1.0.0.schema.json"
   }
 }

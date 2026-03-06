@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lyra.local/schemas/tde_activation_execution_receipt/v1.0.0.schema.json",
+  "title": "TDE Activation Execution Receipt",
+  "type": "object",
+  "required": [
+    "generatedAt",
+    "receiptId",
+    "artifactType",
+    "schemaVersion",
+    "releaseEnvelopeRef",
+    "decisionTrace",
+    "execution",
+    "policy"
+  ],
+  "properties": {
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "receiptId": { "type": "string", "minLength": 1 },
+    "artifactType": { "const": "tde_activation_execution_receipt" },
+    "schemaVersion": { "const": "1.0.0" },
+    "releaseEnvelopeRef": {
+      "type": "object",
+      "required": ["envelopeId", "path"],
+      "properties": {
+        "envelopeId": { "type": "string", "minLength": 1 },
+        "path": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "decisionTrace": {
+      "type": "object",
+      "required": ["decision", "decisionSource", "rationale", "guardState"],
+      "properties": {
+        "decision": { "type": "string", "minLength": 1 },
+        "decisionSource": { "type": "string", "minLength": 1 },
+        "rationale": { "type": "string", "minLength": 1 },
+        "guardState": {
+          "type": "object",
+          "required": [
+            "status",
+            "handoffAllowed",
+            "escalationDetected",
+            "escalationReasons",
+            "blockOnEscalation",
+            "failClosed"
+          ],
+          "properties": {
+            "status": { "type": "string", "enum": ["pass", "blocked"] },
+            "handoffAllowed": { "type": "boolean" },
+            "escalationDetected": { "type": "boolean" },
+            "escalationReasons": { "type": "array", "items": { "type": "string" } },
+            "blockOnEscalation": { "type": "boolean" },
+            "failClosed": { "type": "boolean" }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "execution": {
+      "type": "object",
+      "required": ["executed", "route", "nextAction"],
+      "properties": {
+        "executed": { "type": "boolean" },
+        "route": { "type": "string", "minLength": 1 },
+        "nextAction": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "policy": {
+      "type": "object",
+      "required": ["preAuthorizationModel", "failClosed"],
+      "properties": {
+        "preAuthorizationModel": { "type": "string", "minLength": 1 },
+        "failClosed": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
