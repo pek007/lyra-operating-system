@@ -131,7 +131,9 @@ Use this until a dedicated work tool is selected.
 - [x] IMP-AUTO-20260304-03 | Backfill canonical frontmatter for legacy `knowledge/reports/*.md` and add deterministic `knowledge/reports/INDEX.md` generator so daily sweeps no longer rely on manual reconstruction.
   - [x] 2026-03-06 | Added canonical frontmatter to legacy `knowledge/reports/WEEKLY_SYNTHESIS__2026-03-03.md` and implemented deterministic index generator `tools/gen_reports_index.py` for `knowledge/reports/INDEX.md`.
   - [x] 2026-03-06 | Wired reports index generation into `tools/validate_repo.py` and drift-check list (`knowledge/reports/INDEX.md`), then validated with `python3 tools/validate_repo.py --fix` (pass).
-- [ ] OPS-2026-043 | Chat Continuity Sprint 2 metrics rollout: define handoff completeness score + stale-context drift signal, then capture first weekly baseline evidence.
+- [x] OPS-2026-043 | Chat Continuity Sprint 2 metrics rollout: define handoff completeness score + stale-context drift signal, then capture first weekly baseline evidence.
+  - [x] 2026-03-06 | Added Sprint 2 metric contract to `CHAT_CONTINUITY_PROTOCOL_V1.md` (HCS + SCD definitions, formulas, thresholds, and evidence artifact contract).
+  - [x] 2026-03-06 | Published first weekly baseline artifact: `knowledge/evidence/2026-03-06__ops-2026-043-chat-continuity-sprint2-weekly-baseline.md`.
 
 - [x] OPS-2026-057 | Implement Durable State Layer v1 for TDE (SQLite event log + action ledger + projected task state) in shadow mode with deterministic parity verification against current task flow.
   - [x] 2026-03-04 | Ingested deep research architecture recommendation into `knowledge/reports/2026-03-04__deepresearch__durable-state-store-strategy-for-tde__v1.md` and added to reports index.

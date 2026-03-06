@@ -45,3 +45,48 @@ When switching channel/thread, start with a compact handoff summary:
 - Real-time: capture during work.
 - Daily: quick consolidation pass.
 - Weekly: promote durable lessons/decisions into canonical docs.
+
+## Sprint 2 metrics (OPS-2026-043)
+
+### 1) Handoff completeness score (HCS)
+Purpose: measure whether handoff summaries are decision-ready.
+
+Scoring per handoff summary (0-4):
+1. Current objective present
+2. Last confirmed decisions present
+3. In-flight tasks present
+4. Immediate next step present
+
+Formula:
+- `HCS = (sum points / (4 * number_of_handoffs)) * 100`
+
+Target:
+- Green >= 85
+- Watch 70-84
+- Red < 70
+
+### 2) Stale-context drift signal (SCD)
+Purpose: detect when active work diverges from documented continuity state.
+
+Definition (weekly):
+- Count notable active items (open tasks/decisions in active execution)
+- Count items missing fresh continuity capture (no update in memory/evidence within 48h)
+
+Formula:
+- `SCD = missing_fresh_items / total_notable_active_items`
+
+Target:
+- Green <= 0.15
+- Watch 0.16-0.30
+- Red > 0.30
+
+### Weekly evidence artifact
+Publish a weekly baseline/checkpoint note at:
+- `knowledge/evidence/YYYY-MM-DD__ops-2026-043-chat-continuity-sprint2-weekly-baseline.md`
+
+Minimum contents:
+- sample window
+- HCS value + denominator
+- SCD value + denominator
+- key gaps detected
+- corrective action for next week
