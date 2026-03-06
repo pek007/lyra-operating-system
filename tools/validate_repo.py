@@ -204,6 +204,7 @@ def main() -> int:
     run([sys.executable, "tools/standard_change_policy_check.py", "--strict"])
     run([sys.executable, "tools/task_hygiene_check.py", "--file", "TASKS.md"])
     run([sys.executable, "tools/markdown_link_check.py", "--changed-only"])
+    run([sys.executable, "tools/referenced_script_guard.py"])
 
     errors: list[str] = []
     messages: list[str] = []
