@@ -43,17 +43,28 @@
 - Why shared (vs duplicate):
 - Support/maintenance owner:
 
-## 8) Operational Controls
+## 8) Product Assembly (Required)
+- Artifact types included (service / skill-pack / policy-pack / schema-pack / ops-pack):
+- Versioning strategy per artifact:
+- Consumer-facing package/version identifier:
+
+## 9) Distribution & Activation (Required)
+- Distribution lane per artifact (daemon/cron, workspace-skills/managed-skills/extraDirs/plugin, submodule/subtree/release):
+- Activation mechanism per artifact:
+- Override precedence and conflict policy:
+
+## 10) Operational Controls
 - Required metrics:
 - Required audit artifacts (WO/CA/ADR):
 - Security controls:
+- Required enforcement gates/checks:
 
-## 9) Commercialization Readiness (if relevant)
+## 11) Commercialization Readiness (if relevant)
 - What blocks external release today:
 - Steps to SaaS readiness:
 - Regulatory/compliance considerations:
 
-## 10) Decision Log
+## 12) Decision Log
 - ADR links:
 - Open decisions:
 - Next review date:

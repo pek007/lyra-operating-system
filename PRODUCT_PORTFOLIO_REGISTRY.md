@@ -8,6 +8,8 @@ Maintain explicit product boundaries across OS and PX initiatives, reduce accide
 2. Products may depend on **Platform/Shared** capabilities, not directly on other products, unless approved by ADR.
 3. Cross-product reuse requires a published interface contract and versioning policy.
 4. Customer-facing/SaaS-candidate products must isolate data, identity, and deployment paths.
+5. Product transfer unit is a **Product Assembly** (one product may include multiple artifact types).
+6. Every product record must declare distribution and activation lanes for each artifact type.
 
 ## Product Record Schema
 - Product ID
@@ -24,6 +26,10 @@ Maintain explicit product boundaries across OS and PX initiatives, reduce accide
 - Allowed Dependencies (Platform only by default)
 - Prohibited Dependencies
 - Public Interfaces (API/events/contracts)
+- Artifacts (`service`, `skill-pack`, `policy-pack`, `schema-pack`, `ops-pack`)
+- Distribution (per artifact: `cron|daemon`, `managed-skills|workspace-skills|extraDirs|plugin`, `submodule|subtree|release`)
+- Activation (how each artifact is enabled at runtime)
+- Enforcement (required checks/gates/evidence)
 - Audit/Compliance Notes
 
 ## Products
@@ -43,6 +49,10 @@ Maintain explicit product boundaries across OS and PX initiatives, reduce accide
 - Allowed Dependencies: Platform/shared libraries with stable interfaces
 - Prohibited Dependencies: Direct runtime dependency on PX product codebases
 - Public Interfaces: To be defined in boundary doc
+- Artifacts: `service` (control-panel runtime), `skill-pack` (operator/runbook guidance), `policy-pack` (change-control + safety policy)
+- Distribution: service=`daemon`; skill-pack=`workspace-skills`; policy-pack=`submodule` (version-pinned)
+- Activation: service via domain-scoped runtime config; skill-pack via workspace load precedence; policy-pack via referenced governance docs/checks
+- Enforcement: evidence pack required for production-bound changes; approval gate for authority/security-impacting changes
 - Audit/Compliance Notes: Must retain WO/CA traceability for all production-bound changes
 
 ## Shared Components Registry (initial)
