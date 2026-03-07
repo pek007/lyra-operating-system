@@ -1,0 +1,41 @@
+assembly_id: A-004
+name: Security Guardrails Assembly
+version: v0.1
+status: candidate
+owner: Peter/Lyra
+value_promise: >-
+  Package practical security controls for prevention, response, and learning so PXS can
+  reduce prompt-injection and operational risk while improving from incidents.
+artifacts:
+  - type: policy-pack
+    path: assemblies/security-guardrails/v0.1/artifacts/policy
+    description: Security control policies and baseline defenses.
+  - type: ops-pack
+    path: assemblies/security-guardrails/v0.1/artifacts/ops-pack
+    description: Checklists, incident flow, and learning-loop routines.
+distribution:
+  lane: git-pinned-dependency
+  details: Use submodule/subtree/release pin in PXS_ASSEMBLY_LOCK.md (interim copy allowed short-term)
+activation:
+  method: checklist-and-runbook-enforced
+  steps:
+    - Install assembly in PXS (pinned preferred; interim copy temporary)
+    - Link prompt-injection and tool-governance checks in PXS workflows
+    - Require incident runbook use for security events
+    - Require post-incident learning entry for medium/high incidents
+  rollback: Revert lockfile to previous stable version and remove assembly references
+enforcement:
+  checks:
+    - prompt-injection procedure present
+    - tool/external service governance policy present
+    - incident runbook present
+    - learning-loop log entry created for simulated incident
+  approval_gate: Required for authority/security-impacting changes
+  evidence_required: true
+compatibility: Works with PXS interim lane and pinned lane
+consumers:
+  - PXS
+links:
+  changelog: assemblies/security-guardrails/v0.1/CHANGELOG.md
+  activation_doc: assemblies/security-guardrails/v0.1/ACTIVATION.md
+  verify_doc: assemblies/security-guardrails/v0.1/VERIFY.md

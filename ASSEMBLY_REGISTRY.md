@@ -53,3 +53,15 @@ Purpose: define versioned Product Assemblies that transfer Lyra OS value into PX
 - **Current Version:** v0.1 (planned)
 - **Consumer(s):** PXS
 - **Compatibility Notes:** aligns with ADR-0001 (repo separation)
+
+## A-004 — Security Guardrails Assembly
+- **Status:** candidate
+- **Owner:** Peter/Lyra
+- **Value Promise:** preventive security controls + response procedures + learning loop to reduce repeated failures.
+- **Artifact Types:** `policy-pack`, `ops-pack`
+- **Distribution Lane:** git-pinned dependency (target) / interim controlled copy-sync (temporary)
+- **Activation Lane:** mandatory references in PXS change flow for prompt/tool/config/risk-impacting work
+- **Enforcement Checks:** injection-defense checklist present, incident runbook present, post-incident learning log updated
+- **Current Version:** v0.1
+- **Consumer(s):** PXS
+- **Compatibility Notes:** compatible with repo separation and assembly lock model
