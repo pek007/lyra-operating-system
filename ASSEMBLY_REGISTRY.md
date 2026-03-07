@@ -1,0 +1,55 @@
+# Assembly Registry v0.1
+
+Purpose: define versioned Product Assemblies that transfer Lyra OS value into PXS with explicit distribution, activation, and enforcement.
+
+## Registry Fields
+- Assembly ID
+- Name
+- Status (`draft` | `candidate` | `stable` | `deprecated`)
+- Owner
+- Value Promise
+- Artifact Types (`service` | `skill-pack` | `policy-pack` | `schema-pack` | `ops-pack`)
+- Distribution Lane
+- Activation Lane
+- Enforcement Checks
+- Current Version
+- Consumer(s)
+- Compatibility Notes
+
+---
+
+## A-001 — TDE Operator Assembly
+- **Status:** draft
+- **Owner:** Peter/Lyra
+- **Value Promise:** deterministic task/decision operating kernel with safe operator procedures.
+- **Artifact Types:** `service`, `skill-pack`, `ops-pack`
+- **Distribution Lane:** service via domain runtime + cron; skill via workspace skills; ops docs via versioned pack
+- **Activation Lane:** domain-scoped config (`domain=px`/`domain=os`) + isolated cron jobs + operator skill enabled
+- **Enforcement Checks:** contract test pass, fail-closed check pass, evidence writeback present
+- **Current Version:** v0.1 (planned)
+- **Consumer(s):** PXS (planned)
+- **Compatibility Notes:** requires separated instance boundary (`os` vs `px`)
+
+## A-002 — Governance Policy Assembly
+- **Status:** candidate
+- **Owner:** Peter/Lyra
+- **Value Promise:** safe authority, tooling, and operating controls packaged for direct PXS adoption.
+- **Artifact Types:** `policy-pack`, `ops-pack`
+- **Distribution Lane:** git-pinned dependency (submodule/subtree/release)
+- **Activation Lane:** referenced in PXS operating docs + mandatory checklist in change workflow
+- **Enforcement Checks:** policy presence check, checklist completion, approval-gate evidence for high-risk changes
+- **Current Version:** v0.1
+- **Consumer(s):** PXS
+- **Compatibility Notes:** no runtime dependency; documentation/governance layer only
+
+## A-003 — Boundary & Portfolio Assembly
+- **Status:** draft
+- **Owner:** Peter/Lyra
+- **Value Promise:** explicit product/instance boundaries to prevent coupling and drift.
+- **Artifact Types:** `policy-pack`, `schema-pack`
+- **Distribution Lane:** git-pinned dependency + template sync
+- **Activation Lane:** required fields in product records and boundary docs
+- **Enforcement Checks:** boundary template completeness check; dependency-policy conformance check
+- **Current Version:** v0.1 (planned)
+- **Consumer(s):** PXS
+- **Compatibility Notes:** aligns with ADR-0001 (repo separation)

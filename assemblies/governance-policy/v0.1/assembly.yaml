@@ -1,0 +1,39 @@
+assembly_id: A-002
+name: Governance Policy Assembly
+version: v0.1
+status: candidate
+owner: Peter/Lyra
+value_promise: >-
+  Package authority, tool/service governance, and operational config controls so PXS can
+  inherit proven operating safeguards quickly.
+artifacts:
+  - type: policy-pack
+    path: assemblies/governance-policy/v0.1/artifacts/policy
+    description: Core governance policies migrated from Lyra OS.
+  - type: ops-pack
+    path: assemblies/governance-policy/v0.1/artifacts/ops-pack
+    description: Activation and checklists for daily use.
+distribution:
+  lane: git-pinned-dependency
+  details: Use submodule/subtree or release copy with version pin in PXS_ASSEMBLY_LOCK.md
+activation:
+  method: docs-and-checklist-enforced
+  steps:
+    - Copy or pin assembly into PXS under docs/assemblies/governance-policy/v0.1
+    - Link activation checklist from PXS operating docs
+    - Require checklist completion for authority/tool/config-impacting changes
+  rollback: Revert assembly version pin and remove checklist references from PXS docs
+enforcement:
+  checks:
+    - policy files present
+    - activation checklist present
+    - evidence reference added for gated changes
+  approval_gate: Required for authority/security-impacting changes
+  evidence_required: true
+compatibility: PXS repo-separation model (ADR-0001) and framework-vs-instance architecture
+consumers:
+  - PXS
+links:
+  changelog: assemblies/governance-policy/v0.1/CHANGELOG.md
+  activation_doc: assemblies/governance-policy/v0.1/ACTIVATION.md
+  verify_doc: assemblies/governance-policy/v0.1/VERIFY.md
