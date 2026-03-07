@@ -30,7 +30,7 @@ Purpose: define versioned Product Assemblies that transfer Lyra OS value into PX
 - **Consumer(s):** PXS (planned)
 - **Compatibility Notes:** requires separated instance boundary (`os` vs `px`)
 
-## A-002 — Governance Policy Assembly
+## A-002 — Governance
 - **Status:** candidate
 - **Owner:** Peter/Lyra
 - **Value Promise:** safe authority, tooling, and operating controls packaged for direct PXS adoption.
@@ -42,7 +42,7 @@ Purpose: define versioned Product Assemblies that transfer Lyra OS value into PX
 - **Consumer(s):** PXS
 - **Compatibility Notes:** no runtime dependency; documentation/governance layer only
 
-## A-003 — Boundary & Portfolio Assembly
+## A-003 — Boundaries
 - **Status:** draft
 - **Owner:** Peter/Lyra
 - **Value Promise:** explicit product/instance boundaries to prevent coupling and drift.
@@ -54,7 +54,7 @@ Purpose: define versioned Product Assemblies that transfer Lyra OS value into PX
 - **Consumer(s):** PXS
 - **Compatibility Notes:** aligns with ADR-0001 (repo separation)
 
-## A-004 — Security Guardrails Assembly
+## A-004 — Security
 - **Status:** candidate
 - **Owner:** Peter/Lyra
 - **Value Promise:** preventive security controls + response procedures + learning loop to reduce repeated failures.
@@ -66,7 +66,7 @@ Purpose: define versioned Product Assemblies that transfer Lyra OS value into PX
 - **Consumer(s):** PXS
 - **Compatibility Notes:** compatible with repo separation and assembly lock model
 
-## A-005 — Continuous Improvement Assembly
+## A-005 — Improvement
 - **Status:** candidate
 - **Owner:** Peter/Lyra
 - **Value Promise:** turns reviews and lessons into repeatable system upgrades with clear cadence, ownership, and evidence.
@@ -78,7 +78,7 @@ Purpose: define versioned Product Assemblies that transfer Lyra OS value into PX
 - **Consumer(s):** PXS
 - **Compatibility Notes:** compatible with assembly lock model and repo separation
 
-## A-006 — DevSecOps Delivery Assembly
+## A-006 — Delivery
 - **Status:** candidate
 - **Owner:** Peter/Lyra
 - **Value Promise:** operationalize secure, testable, evidence-backed delivery for both software and broader system/process changes.
@@ -90,7 +90,7 @@ Purpose: define versioned Product Assemblies that transfer Lyra OS value into PX
 - **Consumer(s):** PXS
 - **Compatibility Notes:** complements security + continuous-improvement assemblies
 
-## A-007 — Prompting & 3PP Operating Assembly
+## A-007 — Prompting & 3PP
 - **Status:** candidate
 - **Owner:** Peter/Lyra
 - **Value Promise:** package prompting strategy, model-routing patterns, and 3PP process guidance into repeatable execution playbooks.
