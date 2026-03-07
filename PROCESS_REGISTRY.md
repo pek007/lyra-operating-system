@@ -79,5 +79,20 @@ Track core processes, standards, and runbooks with review state.
 
 | TOOL_EXTERNAL_SERVICE_GOVERNANCE_V1.md | Governance Policy | Peter/Lyra | Active | 2026-03-02 | 2026-04-02 |
 
+## Process Ownership Mapping (v1)
+
+Ownership model source: `PROCESS_OWNERSHIP_MODEL_V1.md`
+
+| Process/Doc | Owning Product | Ownership Type | Dominant Product | Required Approver(s) |
+|---|---|---|---|---|
+| JOBS_PROCESS_V1.md | P-PLATFORM | platform | - | - |
+| SECURITY_PROCESS_V1.md | P-PLATFORM | platform | - | - |
+| CONTINUOUS_IMPROVEMENT_PROCESS_V1.md | P-PLATFORM | platform | - | - |
+| SOFTWARE_DELIVERY_PROCESS_3PP_OS.md | P-PLATFORM | interface | P-PLATFORM | PXS |
+| TASK_DECISION_MANAGEMENT_PROCESS_V1.md | PXS | product-internal | - | - |
+| OPENCLAW_CONFIG_CHANGE_SOP_V1.md | P-PLATFORM | platform | - | - |
+| TOOL_EXTERNAL_SERVICE_GOVERNANCE_V1.md | P-PLATFORM | platform | - | - |
+
 ## Notes
 - Planned items must be tracked in TASKS.md with a target date.
+- Over time, extend ownership mapping coverage to all active process docs in this registry.
