@@ -1,20 +1,20 @@
 assembly_id: A-007
-name: "Prompting & 3PP"
+name: Interfaces
 version: v0.1
 status: candidate
 owner: Peter/Lyra
 value_promise: >-
-  Transfer practical prompting and 3PP operating know-how into reusable standards that
-  improve output quality, consistency, and model/tool fit.
+  Standardize operational handoff surfaces across human↔agent, agent↔model, and
+  agent↔tool/provider interactions for reliable execution quality.
 artifacts:
   - type: policy-pack
-    path: assemblies/prompting-and-3pp/v0.1/artifacts/policy
+    path: assemblies/interfaces/v0.1/artifacts/policy
     description: Prompting/model-routing/3PP policies.
   - type: ops-pack
-    path: assemblies/prompting-and-3pp/v0.1/artifacts/ops-pack
+    path: assemblies/interfaces/v0.1/artifacts/ops-pack
     description: Prompt contracts and execution checklists.
   - type: skill-pack
-    path: assemblies/prompting-and-3pp/v0.1/artifacts/skill-pack
+    path: assemblies/interfaces/v0.1/artifacts/skill-pack
     description: Agent guidance for model-specific prompting.
 distribution:
   lane: git-pinned-dependency
@@ -35,6 +35,6 @@ enforcement:
   evidence_required: true
 consumers: [PXS]
 links:
-  changelog: assemblies/prompting-and-3pp/v0.1/CHANGELOG.md
-  activation_doc: assemblies/prompting-and-3pp/v0.1/ACTIVATION.md
-  verify_doc: assemblies/prompting-and-3pp/v0.1/VERIFY.md
+  changelog: assemblies/interfaces/v0.1/CHANGELOG.md
+  activation_doc: assemblies/interfaces/v0.1/ACTIVATION.md
+  verify_doc: assemblies/interfaces/v0.1/VERIFY.md

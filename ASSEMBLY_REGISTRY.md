@@ -18,7 +18,7 @@ Purpose: define versioned Product Assemblies that transfer Lyra OS value into PX
 
 ---
 
-## A-001 — TDE Operator Assembly
+## A-001 — Task Management Assembly
 - **Status:** draft
 - **Owner:** Peter/Lyra
 - **Value Promise:** deterministic task/decision operating kernel with safe operator procedures.
@@ -90,14 +90,14 @@ Purpose: define versioned Product Assemblies that transfer Lyra OS value into PX
 - **Consumer(s):** PXS
 - **Compatibility Notes:** complements security + continuous-improvement assemblies
 
-## A-007 — Prompting & 3PP
+## A-007 — Interfaces
 - **Status:** candidate
 - **Owner:** Peter/Lyra
-- **Value Promise:** package prompting strategy, model-routing patterns, and 3PP process guidance into repeatable execution playbooks.
+- **Value Promise:** standardize operational handoff surfaces across human↔agent, agent↔model, and agent↔tool/provider execution.
 - **Artifact Types:** `policy-pack`, `ops-pack`, `skill-pack`
 - **Distribution Lane:** git-pinned dependency (target) / interim controlled copy-sync (temporary)
-- **Activation Lane:** model/prompting references in project start packets and delivery routines
-- **Enforcement Checks:** prompt contract used, model-routing rationale recorded, 3PP workflow checklist completed
+- **Activation Lane:** interface contracts referenced in project start packets and delivery routines
+- **Enforcement Checks:** interface contract used, routing rationale recorded, provider workflow checklist completed
 - **Current Version:** v0.1
 - **Consumer(s):** PXS
 - **Compatibility Notes:** sits on top of governance/security controls
