@@ -65,3 +65,15 @@ Purpose: define versioned Product Assemblies that transfer Lyra OS value into PX
 - **Current Version:** v0.1
 - **Consumer(s):** PXS
 - **Compatibility Notes:** compatible with repo separation and assembly lock model
+
+## A-005 — Continuous Improvement Assembly
+- **Status:** candidate
+- **Owner:** Peter/Lyra
+- **Value Promise:** turns reviews and lessons into repeatable system upgrades with clear cadence, ownership, and evidence.
+- **Artifact Types:** `policy-pack`, `ops-pack`, `skill-pack`
+- **Distribution Lane:** git-pinned dependency (target) / interim controlled copy-sync (temporary)
+- **Activation Lane:** scheduled review cadence + mandatory improvement-log updates for material incidents/retros
+- **Enforcement Checks:** cadence checklist present, improvement log updated, follow-up tasks linked to decisions/work orders
+- **Current Version:** v0.1
+- **Consumer(s):** PXS
+- **Compatibility Notes:** compatible with assembly lock model and repo separation

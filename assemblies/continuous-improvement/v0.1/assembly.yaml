@@ -1,0 +1,44 @@
+assembly_id: A-005
+name: Continuous Improvement Assembly
+version: v0.1
+status: candidate
+owner: Peter/Lyra
+value_promise: >-
+  Operationalize continuous improvement so lessons from execution are converted into
+  concrete controls, process improvements, and prioritized implementation work.
+artifacts:
+  - type: policy-pack
+    path: assemblies/continuous-improvement/v0.1/artifacts/policy
+    description: Improvement policies and guardrails.
+  - type: ops-pack
+    path: assemblies/continuous-improvement/v0.1/artifacts/ops-pack
+    description: Cadence, checklists, and evidence routines.
+  - type: skill-pack
+    path: assemblies/continuous-improvement/v0.1/artifacts/skill-pack
+    description: Agent-facing operating guidance for improvement cycles.
+distribution:
+  lane: git-pinned-dependency
+  details: Use submodule/subtree/release pin in PXS_ASSEMBLY_LOCK.md (interim copy allowed short-term)
+activation:
+  method: cadence-and-checklist-enforced
+  steps:
+    - Install assembly into PXS (pinned preferred)
+    - Link cadence checklist in PXS operating rhythm docs
+    - Require improvement log updates for retros, incidents, and material misses
+    - Require follow-up task linkage for accepted improvements
+  rollback: Revert lockfile to previous stable version and remove references
+enforcement:
+  checks:
+    - continuous-improvement policy files present
+    - cadence checklist present
+    - improvement log has at least one current-cycle entry
+    - follow-up task links recorded
+  approval_gate: Required for authority/security-impacting improvement changes
+  evidence_required: true
+compatibility: Works with PXS interim lane and pinned lane
+consumers:
+  - PXS
+links:
+  changelog: assemblies/continuous-improvement/v0.1/CHANGELOG.md
+  activation_doc: assemblies/continuous-improvement/v0.1/ACTIVATION.md
+  verify_doc: assemblies/continuous-improvement/v0.1/VERIFY.md
