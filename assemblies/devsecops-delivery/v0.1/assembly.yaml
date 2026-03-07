@@ -1,0 +1,40 @@
+assembly_id: A-006
+name: DevSecOps Delivery Assembly
+version: v0.1
+status: candidate
+owner: Peter/Lyra
+value_promise: >-
+  Ensure secure and reliable delivery with explicit quality, security, and evidence gates
+  for software and broader system/process development.
+artifacts:
+  - type: policy-pack
+    path: assemblies/devsecops-delivery/v0.1/artifacts/policy
+    description: DevSecOps governance and delivery policies.
+  - type: ops-pack
+    path: assemblies/devsecops-delivery/v0.1/artifacts/ops-pack
+    description: Checklists and release/change gates.
+  - type: skill-pack
+    path: assemblies/devsecops-delivery/v0.1/artifacts/skill-pack
+    description: Operator guidance for delivery execution.
+distribution:
+  lane: git-pinned-dependency
+  details: Pinned in PXS lockfile; interim copy lane allowed short-term.
+activation:
+  method: gate-driven-delivery
+  steps:
+    - Install assembly in PXS and lock version
+    - Apply delivery gate checklist to release/change flows
+    - Record evidence for each promoted change
+  rollback: Revert to previous locked version and rerun baseline checks
+enforcement:
+  checks:
+    - delivery gate checklist present
+    - evidence artifacts captured
+    - post-release review entry logged
+  approval_gate: Required for high-risk releases and authority-impacting changes
+  evidence_required: true
+consumers: [PXS]
+links:
+  changelog: assemblies/devsecops-delivery/v0.1/CHANGELOG.md
+  activation_doc: assemblies/devsecops-delivery/v0.1/ACTIVATION.md
+  verify_doc: assemblies/devsecops-delivery/v0.1/VERIFY.md

@@ -1,0 +1,40 @@
+assembly_id: A-007
+name: Prompting and 3PP Operating Assembly
+version: v0.1
+status: candidate
+owner: Peter/Lyra
+value_promise: >-
+  Transfer practical prompting and 3PP operating know-how into reusable standards that
+  improve output quality, consistency, and model/tool fit.
+artifacts:
+  - type: policy-pack
+    path: assemblies/prompting-and-3pp/v0.1/artifacts/policy
+    description: Prompting/model-routing/3PP policies.
+  - type: ops-pack
+    path: assemblies/prompting-and-3pp/v0.1/artifacts/ops-pack
+    description: Prompt contracts and execution checklists.
+  - type: skill-pack
+    path: assemblies/prompting-and-3pp/v0.1/artifacts/skill-pack
+    description: Agent guidance for model-specific prompting.
+distribution:
+  lane: git-pinned-dependency
+  details: Pinned in PXS lockfile; interim copy lane allowed short-term.
+activation:
+  method: prompt-contract-and-routing-discipline
+  steps:
+    - Install assembly in PXS and lock version
+    - Require prompt contract usage for major tasks
+    - Record model-routing rationale for non-default model choices
+  rollback: Revert to previous locked version and default prompting baseline
+enforcement:
+  checks:
+    - prompt contract template present
+    - model-routing policy present
+    - 3PP workflow doc referenced in active process
+  approval_gate: Required for risky external 3PP/tooling pattern changes
+  evidence_required: true
+consumers: [PXS]
+links:
+  changelog: assemblies/prompting-and-3pp/v0.1/CHANGELOG.md
+  activation_doc: assemblies/prompting-and-3pp/v0.1/ACTIVATION.md
+  verify_doc: assemblies/prompting-and-3pp/v0.1/VERIFY.md

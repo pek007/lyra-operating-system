@@ -77,3 +77,27 @@ Purpose: define versioned Product Assemblies that transfer Lyra OS value into PX
 - **Current Version:** v0.1
 - **Consumer(s):** PXS
 - **Compatibility Notes:** compatible with assembly lock model and repo separation
+
+## A-006 — DevSecOps Delivery Assembly
+- **Status:** candidate
+- **Owner:** Peter/Lyra
+- **Value Promise:** operationalize secure, testable, evidence-backed delivery for both software and broader system/process changes.
+- **Artifact Types:** `policy-pack`, `ops-pack`, `skill-pack`
+- **Distribution Lane:** git-pinned dependency (target) / interim controlled copy-sync (temporary)
+- **Activation Lane:** required release/change gates in execution workflow
+- **Enforcement Checks:** checklist gates passed, evidence artifacts recorded, post-release review completed
+- **Current Version:** v0.1
+- **Consumer(s):** PXS
+- **Compatibility Notes:** complements security + continuous-improvement assemblies
+
+## A-007 — Prompting & 3PP Operating Assembly
+- **Status:** candidate
+- **Owner:** Peter/Lyra
+- **Value Promise:** package prompting strategy, model-routing patterns, and 3PP process guidance into repeatable execution playbooks.
+- **Artifact Types:** `policy-pack`, `ops-pack`, `skill-pack`
+- **Distribution Lane:** git-pinned dependency (target) / interim controlled copy-sync (temporary)
+- **Activation Lane:** model/prompting references in project start packets and delivery routines
+- **Enforcement Checks:** prompt contract used, model-routing rationale recorded, 3PP workflow checklist completed
+- **Current Version:** v0.1
+- **Consumer(s):** PXS
+- **Compatibility Notes:** sits on top of governance/security controls

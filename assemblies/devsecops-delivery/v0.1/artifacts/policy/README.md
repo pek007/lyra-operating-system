@@ -1,0 +1,7 @@
+# DevSecOps Delivery Policy Pack (A-006 v0.1)
+
+Canonical source files:
+- `SOFTWARE_DELIVERY_PROCESS_3PP_OS.md`
+- `SECURITY_ADOPTION_PLAN.md`
+- `STD-001_DEFINITION_OF_DONE.md`
+- `ARCHITECTURE_REVIEW_REPORT_TEMPLATE.md`
