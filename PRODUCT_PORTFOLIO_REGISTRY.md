@@ -56,12 +56,33 @@ Maintain explicit product boundaries across OS and PX initiatives, reduce accide
 - Enforcement: evidence pack required for production-bound changes; approval gate for authority/security-impacting changes
 - Audit/Compliance Notes: Must retain WO/CA traceability for all production-bound changes
 
-### A-001 to A-005, A-007 (Placeholders)
-- Product IDs: `A-001`, `A-002`, `A-003`, `A-004`, `A-005`, `A-007`
+### A-001 to A-004, A-007 (Placeholders)
+- Product IDs: `A-001`, `A-002`, `A-003`, `A-004`, `A-007`
 - Status: Discovery (metadata pending)
 - Owner: TBD
 - Canonical management path: `products/<product-id>/management/`
 - Notes: Baseline management artifact sets have been instantiated; Product Owners should fill product-specific content.
+
+### A-005
+- Product ID: `A-005`
+- Product Name: Improvement
+- Domain: OS
+- Type: Internal
+- Owner: Lyra
+- Status: Active
+- Revenue Potential: Medium (indirect; capability-enabling)
+- Data Classification: Internal
+- Tenant Model: N/A currently
+- Canonical Repo: `.` (workspace-level product spanning portfolio improvement process, assemblies, and deployment controls)
+- Deployment Boundary: Workspace/process boundary with deployment into PXS via managed assembly consumption
+- Allowed Dependencies: Platform/shared capabilities; approved product management artifacts; PXS assembly lock and deployment docs for consumption state
+- Prohibited Dependencies: Hidden cross-domain reads/writes; undocumented product-specific runtime coupling; authority/security-impacting changes without escalation
+- Public Interfaces: Continuous improvement process, cadence checklist, improvement log conventions, deployment/verification mechanism for improvement assembly
+- Artifacts: `policy-pack`, `ops-pack`, `skill-pack`, `management artifacts`
+- Distribution: policy-pack=`submodule|subtree|release`; ops-pack=`workspace-skills|workspace-docs|assembly`; skill-pack=`workspace-skills|managed-skills`; management artifacts=`workspace`
+- Activation: via product operating cadence, assembly activation in PXS, and linked improvement logs / execution artifacts
+- Enforcement: every accepted improvement requires owner + success signal + review date; authority/security-impacting changes require approval gate; deployment changes require lockfile + evidence updates
+- Audit/Compliance Notes: Improvement owns portfolio-wide process design but does not self-authorize high-risk boundary changes; larger strategic or real-world-consequence changes are surfaced to Peter
 
 ### A-006
 - Product ID: `A-006`
