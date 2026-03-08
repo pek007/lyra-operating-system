@@ -56,12 +56,33 @@ Maintain explicit product boundaries across OS and PX initiatives, reduce accide
 - Enforcement: evidence pack required for production-bound changes; approval gate for authority/security-impacting changes
 - Audit/Compliance Notes: Must retain WO/CA traceability for all production-bound changes
 
-### A-001 to A-004 (Placeholders)
-- Product IDs: `A-001`, `A-002`, `A-003`, `A-004`
+### A-001 to A-003 (Placeholders)
+- Product IDs: `A-001`, `A-002`, `A-003`
 - Status: Discovery (metadata pending)
 - Owner: TBD
 - Canonical management path: `products/<product-id>/management/`
 - Notes: Baseline management artifact sets have been instantiated; Product Owners should fill product-specific content.
+
+### A-004
+- Product ID: `A-004`
+- Product Name: Security
+- Domain: OS
+- Type: Internal
+- Owner: Lyra
+- Status: Active
+- Revenue Potential: Medium (indirect; trust and deployment enabling)
+- Data Classification: Sensitive
+- Tenant Model: Single-customer operational context currently; stronger isolation required before multi-customer packaging
+- Canonical Repo: `.` (workspace-level product spanning security policy, posture, evidence, research conversion, and deployment requirements)
+- Deployment Boundary: Workspace/process boundary with customer impact through PXS deployment posture and security requirements
+- Allowed Dependencies: Platform/shared capabilities, governance records, approved product interfaces, security evidence sources, and security research in the library
+- Prohibited Dependencies: Hidden cross-product coupling, silent trust-boundary/access expansion, unreviewed high-privilege external tooling
+- Public Interfaces: Security requirements, posture summaries, residual-risk decisions, evidence/review outputs, control/policy guidance
+- Artifacts: `policy-pack`, `ops-pack`, `management artifacts`, `evidence artifacts` (current); future `schema-pack` / tooling support possible
+- Distribution: policy-pack=`workspace|submodule|subtree|release`; ops-pack=`workspace|workspace-docs`; management artifacts=`workspace`; evidence artifacts=`cron|workspace-docs`
+- Activation: via product operating cadence, security reviews, evidence generation, and deployment requirements applied to PXS
+- Enforcement: escalation for trust-boundary/credential/access/exposure changes; routine audit evidence; explicit decision records for material risk acceptance
+- Audit/Compliance Notes: Security is an enabling constraint across products; current operating mode assumes internal/single-customer trust posture and requires explicit review before broader externalization
 
 ### A-007
 - Product ID: `A-007`
