@@ -5,11 +5,12 @@ Maintain explicit product boundaries across OS and PX initiatives, reduce accide
 
 ## Portfolio Rules
 1. Treat each initiative as a product with explicit ownership and boundaries.
-2. Products may depend on **Platform/Shared** capabilities, not directly on other products, unless approved by ADR.
-3. Cross-product reuse requires a published interface contract and versioning policy.
-4. Customer-facing/SaaS-candidate products must isolate data, identity, and deployment paths.
-5. Product transfer unit is a **Product Assembly** (one product may include multiple artifact types).
-6. Every product record must declare distribution and activation lanes for each artifact type.
+2. ID convention: external/customer-facing product lines use `A-xxx`; internal control-plane products use `CP-xxx`.
+3. Products may depend on **Platform/Shared** capabilities, not directly on other products, unless approved by ADR.
+4. Cross-product reuse requires a published interface contract and versioning policy.
+5. Customer-facing/SaaS-candidate products must isolate data, identity, and deployment paths.
+6. Product transfer unit is a **Product Assembly** (one product may include multiple artifact types).
+7. Every product record must declare distribution and activation lanes for each artifact type.
 
 ## Product Record Schema
 - Product ID
@@ -55,8 +56,8 @@ Maintain explicit product boundaries across OS and PX initiatives, reduce accide
 - Enforcement: evidence pack required for production-bound changes; approval gate for authority/security-impacting changes
 - Audit/Compliance Notes: Must retain WO/CA traceability for all production-bound changes
 
-### A-002 to A-007 (Placeholders)
-- Product IDs: `A-002`, `A-003`, `A-004`, `A-005`, `A-006`, `A-007`
+### A-001 to A-007 (Placeholders)
+- Product IDs: `A-001`, `A-002`, `A-003`, `A-004`, `A-005`, `A-006`, `A-007`
 - Status: Discovery (metadata pending)
 - Owner: TBD
 - Canonical management path: `products/<product-id>/management/`
