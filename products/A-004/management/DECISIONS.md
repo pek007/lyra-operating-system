@@ -43,3 +43,16 @@ Last updated: 2026-03-08
   - Change logging and escalation behavior
 - Reversal conditions:
   - Revisit if reporting becomes too noisy or too silent to support good oversight
+
+## Decision A-004-D4 — Use a standing PXS security deployment baseline as the posture reference artifact
+- Context: Existing posture information was spread across audit evidence, doctor output, and governance decisions, making review slower and more error-prone.
+- Decision: Maintain a concise product-owned baseline artifact for PXS that summarizes current controls, accepted residual risks, open non-blocking issues, and mandatory review triggers.
+- Trade-offs:
+  - Adds one more artifact to maintain
+  - Significantly improves reviewability, change control, and handoff clarity
+- Impacted artifacts/processes:
+  - `products/A-004/management/PXS_SECURITY_DEPLOYMENT_BASELINE.md`
+  - Security review cadence
+  - Post-change posture refresh process
+- Reversal conditions:
+  - Revisit if a stronger machine-generated source of truth fully replaces the need for a curated baseline

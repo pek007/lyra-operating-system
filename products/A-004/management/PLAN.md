@@ -62,7 +62,7 @@ Last updated: 2026-03-08
     - Residual risk items are linked to evidence/decisions
     - Review trigger for baseline refresh is defined
   - Evidence required:
-    - Baseline artifact under product management or knowledge/evidence path
+    - `products/A-004/management/PXS_SECURITY_DEPLOYMENT_BASELINE.md`
 
 - Initiative ID: A-004-I5
   - Problem: Security work can remain reactive unless research intake and control uplift are turned into a standing product loop.
