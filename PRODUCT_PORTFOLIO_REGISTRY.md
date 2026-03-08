@@ -34,8 +34,8 @@ Maintain explicit product boundaries across OS and PX initiatives, reduce accide
 
 ## Products
 
-### P-001
-- Product ID: `P-001`
+### CP-001
+- Product ID: `CP-001`
 - Product Name: Control Panel
 - Domain: OS
 - Type: Internal (SaaS-candidate potential)
@@ -55,8 +55,8 @@ Maintain explicit product boundaries across OS and PX initiatives, reduce accide
 - Enforcement: evidence pack required for production-bound changes; approval gate for authority/security-impacting changes
 - Audit/Compliance Notes: Must retain WO/CA traceability for all production-bound changes
 
-### P-002 to P-007 (Placeholders)
-- Product IDs: `P-002`, `P-003`, `P-004`, `P-005`, `P-006`, `P-007`
+### A-002 to A-007 (Placeholders)
+- Product IDs: `A-002`, `A-003`, `A-004`, `A-005`, `A-006`, `A-007`
 - Status: Discovery (metadata pending)
 - Owner: TBD
 - Canonical management path: `products/<product-id>/management/`
