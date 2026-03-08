@@ -56,12 +56,33 @@ Maintain explicit product boundaries across OS and PX initiatives, reduce accide
 - Enforcement: evidence pack required for production-bound changes; approval gate for authority/security-impacting changes
 - Audit/Compliance Notes: Must retain WO/CA traceability for all production-bound changes
 
-### A-001 to A-007 (Placeholders)
-- Product IDs: `A-001`, `A-002`, `A-003`, `A-004`, `A-005`, `A-006`, `A-007`
+### A-001 to A-005, A-007 (Placeholders)
+- Product IDs: `A-001`, `A-002`, `A-003`, `A-004`, `A-005`, `A-007`
 - Status: Discovery (metadata pending)
 - Owner: TBD
 - Canonical management path: `products/<product-id>/management/`
 - Notes: Baseline management artifact sets have been instantiated; Product Owners should fill product-specific content.
+
+### A-006
+- Product ID: `A-006`
+- Product Name: Delivery
+- Domain: OS
+- Type: Internal
+- Owner: Lyra
+- Status: Active
+- Revenue Potential: Medium (indirect; capability-enabling)
+- Data Classification: Internal
+- Tenant Model: N/A currently
+- Canonical Repo: `.` (workspace-level product spanning workspace delivery assets and related repos)
+- Deployment Boundary: Workspace/process boundary for software creation, verification, release readiness, and delivery-system improvement
+- Allowed Dependencies: Platform/shared capabilities; approved product-specific repos and workspace assemblies required for delivery work
+- Prohibited Dependencies: Unapproved cross-product runtime coupling; undocumented external delivery dependencies
+- Public Interfaces: Delivery process, gate/checklist artifacts, definition-of-done standards, future delivery-management tooling/interfaces
+- Artifacts: `ops-pack`, `policy-pack`, `tooling/process assets` (current), with future `service` potential for delivery-management surfaces
+- Distribution: ops-pack=`workspace-skills|workspace-docs`; policy-pack=`submodule|subtree|release`; tooling/process assets=`workspace|repo`
+- Activation: via workspace operating docs, product management artifacts, delivery gates/checklists, and future automation or services
+- Enforcement: explicit acceptance criteria, evidence-backed completion, risk-aware review, and escalation for strategic/real-world-consequence changes
+- Audit/Compliance Notes: Delivery owns DevSecOps discipline for capability development; strategic shifts, launches, and real-world consequence actions require Peter involvement
 
 ## Shared Components Registry (initial)
 Use this list for components intended for reuse across products.
