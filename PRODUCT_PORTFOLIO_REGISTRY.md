@@ -56,12 +56,33 @@ Maintain explicit product boundaries across OS and PX initiatives, reduce accide
 - Enforcement: evidence pack required for production-bound changes; approval gate for authority/security-impacting changes
 - Audit/Compliance Notes: Must retain WO/CA traceability for all production-bound changes
 
-### A-001 to A-004, A-007 (Placeholders)
-- Product IDs: `A-001`, `A-002`, `A-003`, `A-004`, `A-007`
+### A-001 to A-004 (Placeholders)
+- Product IDs: `A-001`, `A-002`, `A-003`, `A-004`
 - Status: Discovery (metadata pending)
 - Owner: TBD
 - Canonical management path: `products/<product-id>/management/`
 - Notes: Baseline management artifact sets have been instantiated; Product Owners should fill product-specific content.
+
+### A-007
+- Product ID: `A-007`
+- Product Name: Task Management
+- Domain: OS
+- Type: Internal
+- Owner: Lyra
+- Status: Active
+- Revenue Potential: High (capability-enabling; future productization potential)
+- Data Classification: Internal, with future customer-operational implications through consuming workspaces
+- Tenant Model: N/A currently; should evolve toward multi-tenant-ready interface discipline if externalized
+- Canonical Repo: `.` (workspace-level product spanning TDE, task/decision automation contracts, and delivery mechanisms into consuming workspaces)
+- Deployment Boundary: Workspace/process boundary now; future capability-pack and/or deterministic service boundary for consumer delivery
+- Allowed Dependencies: Platform/shared capabilities; approved governance/process artifacts; explicit downstream integration artifacts for consuming workspaces
+- Prohibited Dependencies: Hidden cross-workspace coupling; undocumented authority escalation; direct consumer-state ownership beyond approved interfaces
+- Public Interfaces: TDE intake/output contracts, job/binding primitives, task/decision evidence artifacts, future capability/service interfaces for consuming workspaces such as `pxs`
+- Artifacts: `ops-pack`, `schema-pack`, `policy-pack`, `management artifacts`, with future `service` and `skill-pack` potential
+- Distribution: ops-pack=`workspace|cron`; schema-pack=`workspace|release`; policy-pack=`workspace|submodule|subtree|release`; management artifacts=`workspace`; future service=`daemon|plugin`
+- Activation: via workspace task/decision operating docs, TDE runtime/job bindings, evidence-backed deployment decisions, and future capability distribution into consuming workspaces
+- Enforcement: TDE production readiness gate, explicit GO decision, evidence-backed cutover, interface/boundary controls, and escalation for material real-world-impact changes
+- Audit/Compliance Notes: Task Management may proceed to full TDE deployment once technical requirements are fulfilled and evidence is recorded; larger deployment decisions and real-world-impacting changes remain visible to Peter
 
 ### A-005
 - Product ID: `A-005`
