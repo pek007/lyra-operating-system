@@ -1,5 +1,5 @@
 # CODEX_PROMPT_CONTRACT_TEMPLATE.md
-Version: 1.1.0
+Version: 1.2.0
 
 ## Mode
 {{mode}}
@@ -24,6 +24,21 @@ Version: 1.1.0
 - Must preserve: {{must_constraints}}
 - Must not: {{must_not_constraints}}
 - Safety boundary: ask before destructive or externally visible actions
+
+## Output contract
+- Return exactly the requested sections, in the requested order.
+- Keep output concise, decision-oriented, and evidence-bearing.
+- If asked for plan/review only, do not silently switch to implementation.
+
+## Tool and dependency discipline
+- Inspect prerequisite files/contracts/tests before acting.
+- Use tools whenever they materially improve correctness or verification.
+- Retry with a different strategy if retrieval or validation returns partial/empty results.
+- Parallelize only independent investigation steps.
+
+## Completeness contract
+- Treat the task as incomplete until requested work, evidence, and handoff items are covered.
+- Mark blocked items explicitly as `[blocked]` with the missing dependency or decision.
 
 ## Verification
 - Reproduce/validate with:

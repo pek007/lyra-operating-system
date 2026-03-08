@@ -16,6 +16,17 @@
 
 ## Entries
 
+### 2026-03-08
+- Template: `prompts/claude-code/WO_execute.md`, `prompts/claude-code/WO_plan.md`, `CODEX_PROMPT_CONTRACT_TEMPLATE.md`, `prompts/deep-research/RO_public.md`, `prompts/deep-research/RO_private.md`, `prompts/deep-research/GUIDELINE.md`
+- Version: 1.2.0 (WO_execute/WO_plan/CODEX contract), 1.1.0 (RO_public/RO_private/GUIDELINE)
+- Change type: MINOR
+- Summary: Added GPT-5.4-native prompt blocks for output contracts, dependency checks, tool persistence, research discipline, and completeness criteria.
+- Rationale: Capture the quality gains of GPT-5.4 by making completion rules, tool-use expectations, and evidence structure more explicit.
+- Expected impact: Better adherence to format, fewer incomplete/tool-light runs, more reliable verification and research outputs, lower verbosity drift.
+- Validation run: Template review against OpenAI GPT-5.4 guidance + local artifact consistency pass; runtime shakedown pending.
+- Owner: Peter + Lyra
+- Rollback plan: Revert templates to previous versions if outputs become too rigid or if useful autonomy drops.
+
 ### 2026-03-03
 - Template: `prompts/deep-research/RO_public.md`, `prompts/deep-research/RO_private.md`, `prompts/deep-research/GUIDELINE.md`
 - Version: 1.0.1 (RO_public/RO_private), 1.0.0 (GUIDELINE)

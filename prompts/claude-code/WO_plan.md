@@ -1,5 +1,5 @@
 # WO_plan.md
-Version: 1.1.0
+Version: 1.2.0
 Lane: Claude Code (Plan)
 
 <mode>
@@ -28,6 +28,23 @@ Why this matters: {{intent}}
 - Respect security and boundary constraints: {{security_constraints}}
 - Prefer the simplest sound approach.
 </constraints>
+
+<output_contract>
+- Return exactly the requested planning sections, in order.
+- Keep the plan concise, explicit, and implementation-ready.
+- Do not mix planning output with implementation output.
+</output_contract>
+
+<dependency_checks>
+- Inspect prerequisite files, contracts, configs, and tests before proposing changes.
+- Do not infer implementation details when the relevant artifact can be inspected directly.
+- Distinguish independent investigations from dependency-linked ones.
+</dependency_checks>
+
+<completeness_contract>
+- Treat the plan as incomplete until current state, file touch list, execution sequence, risks, and verification design are all covered.
+- If a key unknown remains unresolved, mark it [blocked] or [assumption] explicitly.
+</completeness_contract>
 
 <verification_design>
 Define how implementation will be verified:
