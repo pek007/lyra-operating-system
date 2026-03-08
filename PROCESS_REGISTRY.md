@@ -76,6 +76,8 @@ Track core processes, standards, and runbooks with review state.
 | STANDARD_CHANGE_PILOT_PROTOCOL_V1.md | Pilot Protocol | Peter/Lyra | Active | 2026-03-04 | 2026-03-18 |
 | JOB_MEMORY_PORTABILITY_PROCESS_V1.md | Process | Peter/Lyra | Active | 2026-03-02 | 2026-04-02 |
 | GDPR_AI_ACT_COMPLIANCE_BASELINE_V1.md | Compliance Baseline | Peter/Lyra | Active | 2026-03-02 | 2026-04-02 |
+| PRODUCT_WAY_OF_WORKING_PROCESS_V1.md | Product Governance Process | Lyra | Active | 2026-03-08 | Trigger-based |
+| PRODUCT_MANAGEMENT_ARTIFACT_TEMPLATE.md | Product Template Pack | Lyra | Active | 2026-03-08 | Trigger-based |
 
 | TOOL_EXTERNAL_SERVICE_GOVERNANCE_V1.md | Governance Policy | Peter/Lyra | Active | 2026-03-02 | 2026-04-02 |
 
