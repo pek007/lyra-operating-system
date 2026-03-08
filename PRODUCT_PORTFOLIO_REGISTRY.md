@@ -55,6 +55,13 @@ Maintain explicit product boundaries across OS and PX initiatives, reduce accide
 - Enforcement: evidence pack required for production-bound changes; approval gate for authority/security-impacting changes
 - Audit/Compliance Notes: Must retain WO/CA traceability for all production-bound changes
 
+### P-002 to P-007 (Placeholders)
+- Product IDs: `P-002`, `P-003`, `P-004`, `P-005`, `P-006`, `P-007`
+- Status: Discovery (metadata pending)
+- Owner: TBD
+- Canonical management path: `products/<product-id>/management/`
+- Notes: Baseline management artifact sets have been instantiated; Product Owners should fill product-specific content.
+
 ## Shared Components Registry (initial)
 Use this list for components intended for reuse across products.
 
