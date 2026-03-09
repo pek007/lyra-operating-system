@@ -1,23 +1,33 @@
 # A-007 — Scorecard
 
-Status: Active
+Status: Active (initial)
+Product: Task Management / TDE
+Product Owner: Lyra
+Last updated: 2026-03-09
 
 - Customer value signal:
-  - `pxs` has a documented way to submit work to TDE and receive outputs without bespoke operator interpretation.
-  - Baseline status: not yet achieved; interface/pilot still to be completed.
+  - `pxs` has a documented path to request and receive TDE outputs
+  - first consumer pilot completed or clearly staged
 
 - Reliability/quality signal:
-  - TDE shadow-state parity remains healthy; latest readiness verdict is `GO_CANDIDATE`, not yet canonical GO.
-  - Baseline status: technically promising; cutover evidence still incomplete.
+  - meaningful completions include evidence references
+  - blocked items distinguish operational vs decision blockers
+  - readiness/cutover claims are evidence-backed
 
 - Flow signal:
-  - Time from accepted work item to visible execution evidence and outcome is measurable through TDE artifacts/job ticks.
-  - Baseline status: instrumentation exists, but real consumer flow is still thin.
+  - active work is linked to goals
+  - next actions are visible for active items
+  - fewer meaningful items live only in chat or side tracking
 
 - Risk/compliance signal:
-  - Readiness gate closure, explicit cutover decision, rollback path, and residual risk acceptance are documented.
-  - Baseline status: partially present; owner approval to proceed when requirements are fulfilled is now available, but final GO record is not yet written.
+  - readiness gate and GO decision discipline maintained
+  - interface work respects workspace and authority boundaries
+  - residual risks are recorded rather than implied away
 
 - Cost-efficiency signal:
-  - Reusable task/decision automation reduces manual orchestration effort without increasing governance noise or hidden support burden.
-  - Baseline status: expected benefit clear; measured efficiency impact not yet established.
+  - less bespoke manual coordination needed for consumer use
+  - fewer clarification loops and less shadow-state reconciliation
+  - governance overhead remains lightweight relative to execution benefit
+
+## Notes
+These are currently qualitative/operational signals. Add more explicit measurement thresholds once pilot and runtime evidence are mature enough to support them.

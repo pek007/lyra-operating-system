@@ -1,40 +1,46 @@
 # A-007 — Vision
 
 Status: Active
-Product Name: Task Management
+Product: Task Management / TDE
 Product Owner: Lyra
-Primary capability focus: TDE (Task and Decision Engine)
+Last updated: 2026-03-09
 
 ## Mission
-Design, operate, deploy, and continuously improve the Task Management product so Lyra OS can turn requests, tasks, decisions, and recurring work into reliable, auditable execution for internal users and customer workspaces.
+Make task execution and decision handling inside Lyra OS reliable, visible, evidence-backed, and consumable as a product capability.
 
 ## Customers
-- Primary: Peter as sponsor, decision owner for strategic direction, and approval authority for material real-world consequences
-- Primary internal: Lyra OS product owners and operators who need dependable task/decision automation
-- Primary external/current customer: `pxs` as the first consuming workspace for TDE capabilities
-- Secondary: Future product/workspace consumers of reusable task-management capabilities
+### Primary internal customer
+- Lyra OS product owners and operators who need a canonical operating layer for active work, blockers, decisions, and evidence.
 
-## Problems/Jobs
-- Convert intent into executable, trackable task and decision flow
-- Automate recurring work without losing authority boundaries, auditability, or fail-closed behavior
-- Give users/workspaces a predictable way to submit work, monitor status, receive outputs, and handle escalations
-- Reduce ad hoc task handling, hidden state, manual orchestration overhead, and decision drift
-- Make task/deployment state durable enough for production use and reusable across consuming workspaces
-- Provide the delivery path so downstream users can actually consume TDE, not just know it exists
+### First downstream product/customer path
+- `pxs` as the first externalized consumer of TDE capability.
+
+## Problems / Jobs
+The product must solve these jobs:
+- keep active work in a canonical, reviewable operating layer
+- surface real decisions instead of burying them in delay or chat
+- show evidence of progress rather than narrative-only status
+- reduce shadow tracking and coordination drift
+- make TDE usable by downstream consumers through a controlled interface
+- improve operating quality over time through captured friction and learning loops
 
 ## Value Proposition
-Task Management gives Lyra OS a dependable execution substrate for tasks and decisions: clear intake, durable state, authority-aware execution, evidence-backed outcomes, and reusable delivery into consuming workspaces such as `pxs`.
+TDE turns strategic and operational intent into visible, auditable, improvable execution.
 
-In practice, the product owns both:
-- the core TDE capability and its operating controls
-- the consumer-facing interfaces and delivery mechanisms required to make TDE usable
+For operators, it provides clearer control and better decision visibility.
+For downstream consumers, it provides a structured way to request execution and receive status, outcomes, and evidence.
 
 ## Non-goals
-- Owning the business/domain decisions of consuming products
-- Replacing product owners' judgment on priorities, approvals, or commercial choices
-- Building broad workflow software before core execution reliability and interfaces are proven
-- Expanding authority boundaries, runtime permissions, or external integrations without explicit need and governance
-- Declaring deployment success based only on internal technical progress without real consumer usability
+- becoming an ungoverned open-ended mutation layer
+- replacing product judgment with raw automation
+- optimizing internal engine sophistication while consumer usability remains weak
+- treating chat threads or side lists as a sufficient operating system
 
 ## Success Definition (qualitative)
-Task Management is successful when Lyra OS and `pxs` can reliably route meaningful work through TDE using a defined interface; when tasks and decisions are traceable, durable, and fail-closed where needed; when escalation points are clear; and when the product improves continuously without creating hidden operational risk or coupling.
+The product is succeeding when:
+- active work is visible and linked to goals
+- blocked items show whether the issue is operational or decisional
+- meaningful completions include evidence
+- recurring friction becomes improvement work
+- `pxs` can consume TDE through a documented interface
+- the system becomes easier and more reliable to operate over time

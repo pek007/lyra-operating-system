@@ -1,57 +1,82 @@
 # A-007 — Goals
 
 Status: Active
+Product: Task Management / TDE
+Product Owner: Lyra
+Last updated: 2026-03-09
 
-## Goal A-007-G1
-- Outcome: TDE is fully deployed as the canonical Task Management execution path once technical readiness requirements are satisfied.
+## Goal A-007-G1 — Reliable canonical execution state
+- Outcome: TDE is the trusted operational system of record for active task execution state, blockers, decisions, and completion evidence.
+- Why it matters: If active work still lives in chat memory or side lists, execution quality, auditability, and control degrade.
 - Leading indicators:
-  - Production readiness gate items are explicitly tracked and closed
-  - Shadow-state parity remains healthy across the observation window
-  - Production activation evidence artifacts are present and current
+  - Active work represented in canonical TDE state
+  - Blocked work shows explicit blocker type and next path
+  - Meaningful completions include evidence references
 - Lagging indicators:
-  - Canonical cutover decision recorded
-  - TDE runs in live context without rollback-trigger incidents
+  - Reduced shadow-state drift
+  - Fewer ambiguous or ownerless active items
+  - Higher confidence in weekly product reviews
 - Guardrails:
-  - No cutover before readiness controls are met
-  - Real-world-impacting changes remain visible to Peter
-  - Security/trust-boundary warnings are either resolved or explicitly accepted with reopen triggers
-- Owner job role: Task Management Product Owner
+  - Do not declare full health based on narrative status alone
+  - Do not allow chat-only operational state for meaningful work
+- Owner job role: Product Owner
 - Exit criteria:
-  - GO decision recorded with evidence links
-  - Runtime activation executed in intended live context
-  - Rollback path documented and validated
+  - Product Owner can answer weekly review questions directly from TDE-backed state
+  - Meaningful active work is visible, linked, and evidence-backed
 
-## Goal A-007-G2
-- Outcome: `pxs` can consume TDE through a defined and usable product interface.
+## Goal A-007-G2 — Explicit decision visibility and governance quality
+- Outcome: Important product and execution choices are surfaced as explicit decisions rather than buried in operational delay.
+- Why it matters: Hidden decisions create governance debt, slow flow, and weaken escalation quality.
 - Leading indicators:
-  - Intake/output/interface contract documented
-  - At least one controlled consumer pilot path defined
-  - Delivery mechanism for `pxs` identified and documented
+  - Blocked items are classified as operational vs decisional
+  - Decision records exist for meaningful trade-offs and approvals
+  - Decision paths are visible for blocked work
 - Lagging indicators:
-  - `pxs` successfully submits and receives outputs for agreed pilot use cases
-  - Consumer-facing guidance exists and is usable without bespoke explanation
+  - Faster resolution of blocked work
+  - Lower recurrence of vague “stuck” states
+  - Clearer audit trail for product judgments
 - Guardrails:
-  - Preserve workspace and authority boundaries
-  - Prefer versioned/reusable delivery over hidden cross-workspace coupling
-- Owner job role: Task Management Product Owner
+  - Do not treat judgment-dependent blockage as mere waiting
+  - Do not close debate by silence when a real decision is required
+- Owner job role: Product Owner
 - Exit criteria:
-  - Interface contract published
-  - Pilot evidence exists for at least one end-to-end `pxs` use case
-  - Consumption path is repeatable
+  - Meaningful decisional blockers are explicitly represented and reviewable
+  - Product reviews can point to concrete decision records and rationale
 
-## Goal A-007-G3
-- Outcome: Task Management operates with a continuous-improvement loop that reduces friction and increases reliability over time.
+## Goal A-007-G3 — Consumer-usable TDE capability for `pxs`
+- Outcome: The `pxs` workspace can consume TDE through a clear, controlled interface with structured status, output, and evidence.
+- Why it matters: Technical deployment is insufficient if the product cannot be consumed by downstream users/customers.
 - Leading indicators:
-  - Improvement triggers are logged when reliability/usability drift appears
-  - Improvement log is updated through real changes and measured results
-  - Scorecard signals are defined and reviewed during product work
+  - Minimal request/output interface defined
+  - First pilot path selected
+  - Consumer-facing acceptance path and evidence expectations documented
 - Lagging indicators:
-  - Reduced ambiguity in ownership, interfaces, and deployment readiness
-  - Fewer repeated defects or undocumented workarounds in TDE operations
+  - Successful `pxs` pilot execution
+  - Reduced bespoke/manual coordination for consumer use
+  - Confidence that TDE is usable as a product, not only an internal engine
 - Guardrails:
-  - Small reversible changes by default
-  - No automatic high-risk boundary changes through improvement work
-- Owner job role: Task Management Product Owner
+  - Do not create hidden cross-workspace coupling for convenience
+  - Do not equate engine readiness with product readiness
+- Owner job role: Product Owner
 - Exit criteria:
-  - First active improvement loop complete with evidence
-  - Scorecard baselines established for current operating phase
+  - `pxs` can request and receive TDE outputs through a documented interface
+  - Pilot evidence exists and supports broader rollout decisions
+
+## Goal A-007-G4 — Continuous improvement as part of delivery
+- Outcome: TDE product work captures recurring friction, weak interfaces, and quality gaps as first-class improvement work.
+- Why it matters: Without an active learning loop, the product may ship motion without compounding operating quality.
+- Leading indicators:
+  - Improvement items exist for recurring friction
+  - Weekly review cadence is used
+  - Closure includes evidence and standardization where justified
+- Lagging indicators:
+  - Repeated frictions decline over time
+  - Operating reviews become easier and more concrete
+  - Product delivery becomes more reliable with less ad hoc correction
+- Guardrails:
+  - Do not treat improvement as optional side work
+  - Do not over-bureaucratize low-signal observations
+- Owner job role: Product Owner
+- Exit criteria:
+  - Improvement loop is visible in product records
+  - At least one recurring friction has been converted into standard operating practice

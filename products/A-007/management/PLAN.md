@@ -1,108 +1,112 @@
 # A-007 — Plan
 
-Status: Active v1
-Product Name: Security
+Status: Active
+Product: Task Management / TDE
 Product Owner: Lyra
-Last updated: 2026-03-08
+Last updated: 2026-03-09
 
 ## Now
 - Initiative ID: A-007-I1
-  - Problem: Security exists as a role and set of scattered artifacts, but not yet as an activated product with clear ownership and management documents.
-  - Expected outcome: A-007 becomes the canonical operating layer for Security in this workspace.
+  - Title: Activate product-owner operating model for TDE
+  - Problem: TDE product governance exists, but the product’s own goals, decisions, improvement loop, and review posture were not fully instantiated in its management artifacts.
+  - Expected outcome: The TDE product itself operates under explicit goals, active plan, decision visibility, evidence expectations, and continuous-improvement discipline.
   - Dependencies:
-    - Product management template pack
-    - Existing governance/security documents
-    - Existing security evidence and research in the library
+    - `governance/TDE_PRODUCT_OWNER_OPERATING_INSTRUCTION_V1.md`
+    - `governance/TDE_PRODUCT_OWNER_WEEKLY_REVIEW_TEMPLATE_V1.md`
+    - `governance/LYRA_CONTINUOUS_IMPROVEMENT_OPERATING_INSTRUCTION_V1.md`
   - Acceptance criteria:
-    - Vision, Goals, Plan, Decisions, Improvement Log, and Scorecard are populated
-    - Portfolio registry identifies A-007 as Security
-    - Product boundary document is created and linked
+    - Product management artifacts are populated and no longer placeholder-only
+    - Current work is linked to explicit goals
+    - Initial improvement items and decisions are represented in management records
   - Evidence required:
-    - Updated files under `products/A-007/management/`
-    - Updated `PRODUCT_PORTFOLIO_REGISTRY.md`
+    - Updated product management files
+    - Commit history showing activation changes
 
 - Initiative ID: A-007-I2
-  - Problem: Security scope across Lyra OS and PXS is implicit, which creates ambiguity about ownership, deployment scope, and what belongs in the Security product.
-  - Expected outcome: Security boundary is explicit across controls, research, evidence, and deployment obligations.
+  - Title: Define v1 consumer interface for `pxs`
+  - Problem: TDE may be internally capable while still lacking a practical consumer interface for downstream use.
+  - Expected outcome: A minimal, documented request/output interface exists for first `pxs` pilot consumption.
   - Dependencies:
-    - Product boundary template
-    - Current product-portfolio rules
-    - Existing trust-boundary and risk records
+    - `products/A-007/management/INTERFACES.md`
+    - `governance/LYRA_OS_PXS_INTEGRATION_PLAN_V1.md`
+    - Current TDE kernel/runtime constraints
   - Acceptance criteria:
-    - Product boundary document names owned/non-owned domains
-    - PXS deployment/customer scope is explicit
-    - Key interfaces and enforcement expectations are stated
+    - Minimal inbound/outbound contract defined
+    - Transport path for v1 pilot selected
+    - Validation/error semantics identified for first pilot scope
   - Evidence required:
-    - `products/A-007/management/PRODUCT_BOUNDARY.md`
+    - Updated interface documentation
+    - Pilot-ready request/output examples
 
 - Initiative ID: A-007-I3
-  - Problem: Security research and evidence are present, but not yet organized into a current product-level execution agenda.
-  - Expected outcome: Immediate Security priorities reflect the real current posture and known risk themes.
+  - Title: Standardize blocker-to-decision and evidence rules
+  - Problem: Product work quality degrades when blocked items stay vague and completions lack evidence.
+  - Expected outcome: The TDE product uses explicit rules for blocker classification, decision escalation, and minimum completion evidence.
   - Dependencies:
-    - `governance/TRUST_BOUNDARY_POLICY_RECORD_2026-03-04.md`
-    - `governance/GO_RISK_DECISION_2026-03-06.md`
-    - Current security audit evidence and related research
+    - TDE product-owner governance docs
+    - Live examples from current product work
   - Acceptance criteria:
-    - Near-term plan names current risk/posture themes
-    - At least one decision records how Security will operate under the new product model
-    - Scorecard categories reflect actual operating signals
+    - At least one blocker-to-decision rule documented
+    - Minimum evidence rule defined for meaningful completions
+    - Rules applied to at least one live item
   - Evidence required:
-    - Updated `DECISIONS.md`, `SCORECARD.md`, and `IMPROVEMENT_LOG.md`
+    - Decision records
+    - Updated operating docs or management artifacts
+    - Example item showing rule application
 
 ## Next
 - Initiative ID: A-007-I4
-  - Problem: PXS security posture is partially documented through scattered evidence and governance records, but not yet summarized as a product deployment baseline.
-  - Expected outcome: A concise Security deployment baseline exists for PXS, including active controls, accepted residual risks, and verification cadence.
+  - Title: Run first `pxs` consumption pilot
+  - Problem: Product usability remains hypothetical until a downstream consumer uses TDE through the intended interface.
+  - Expected outcome: `pxs` completes a first real pilot use case through the documented TDE interface.
   - Dependencies:
-    - Current evidence files
-    - Product boundary and decision records
-    - PXS deployment docs and lock/state where relevant
+    - I2 complete enough for pilot
+    - Readiness and boundary checks satisfied
   - Acceptance criteria:
-    - Baseline note or deployment artifact exists
-    - Residual risk items are linked to evidence/decisions
-    - Review trigger for baseline refresh is defined
+    - Pilot scenario executed
+    - Outcome payload and evidence returned successfully
+    - Gaps captured as follow-up work rather than left informal
   - Evidence required:
-    - Baseline artifact under product management or knowledge/evidence path
+    - Pilot artifact set
+    - Findings and follow-up list
 
 - Initiative ID: A-007-I5
-  - Problem: Security work can remain reactive unless research intake and control uplift are turned into a standing product loop.
-  - Expected outcome: Security has a lightweight recurring review for research intake, posture drift, and control improvement.
+  - Title: Establish weekly TDE product-owner review cadence
+  - Problem: Product review quality depends too much on ad hoc recollection instead of compact evidence-based inspection.
+  - Expected outcome: Weekly review becomes a normal control loop for goals, active work, blockers, evidence, and improvement capture.
   - Dependencies:
-    - Existing continuous-improvement process
-    - Security research library
-    - Product owner operating cadence
+    - `governance/TDE_PRODUCT_OWNER_WEEKLY_REVIEW_TEMPLATE_V1.md`
   - Acceptance criteria:
-    - Intake/review cadence is documented
-    - Improvement log gets updated from actual triggers
-    - Security research can be triaged into adopt / watch / reject / backlog states
+    - Review template used against current product state
+    - Follow-up actions created from review output
   - Evidence required:
-    - Decision or process note plus first reviewed set of items
+    - Completed weekly review artifact
+    - Updated management files or TDE items from review
 
 ## Later
 - Initiative ID: A-007-I6
-  - Problem: Security assurance still relies heavily on manual interpretation of evidence and config posture.
-  - Expected outcome: Selected security controls and posture checks become more machine-checkable without widening risk.
+  - Title: Harden product-facing compatibility and versioning model
+  - Problem: Broader adoption will become fragile without clearer interface versioning and compatibility expectations.
+  - Expected outcome: Consumers can rely on versioned, understandable interface behavior.
   - Dependencies:
-    - Stable control definitions
-    - Delivery support for automation
-    - Clear evidence contracts
+    - Learning from first pilots
+    - Stabilized request/output contracts
   - Acceptance criteria:
-    - At least one useful control/evidence loop is automated
-    - Automation reduces ambiguity or operator burden
-    - False-positive/noise rate stays acceptable
+    - Compatibility/versioning note published
+    - Change-handling expectations documented
   - Evidence required:
-    - Tooling/code change artifacts and before/after notes
+    - Updated interface spec
+    - Example versioned contract
 
 - Initiative ID: A-007-I7
-  - Problem: Security productization is currently focused on internal and single-customer operation; external scaling would require clearer packaging and commercialization boundaries.
-  - Expected outcome: Security has an explicit readiness view for future multi-customer or SaaS-candidate use.
+  - Title: Strengthen product scorecard with measurable signals
+  - Problem: Product health is still assessed more qualitatively than quantitatively.
+  - Expected outcome: A practical scorecard tracks value, reliability, flow, risk, and efficiency signals for the TDE product.
   - Dependencies:
-    - Product portfolio evolution
-    - Tenant and deployment model decisions
-    - Harder interface contracts and stronger isolation model
+    - More mature runtime and pilot evidence
   - Acceptance criteria:
-    - Readiness gaps are documented
-    - Multi-tenant blockers are explicit
-    - Boundary, data, and deployment requirements are stated before expansion
+    - Scorecard fields populated with real signals
+    - Review cadence linked to scorecard usage
   - Evidence required:
-    - Decision memo or boundary revision
+    - Updated scorecard
+    - At least one review using it
