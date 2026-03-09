@@ -36,14 +36,16 @@ Single entrypoint for Task & Decision Engine contracts, runtime tools, tests, an
 ## Authority and runtime state
 - `os/runtime/tde_active_bindings.json` — active binding registry.
 - `os/runtime/tde_objectives.json` — objective registry (objective IDs/checkpoint allowlists).
-- `TASKS.md` — current canonical task board (temporary kanban SoR).
+- `os/runtime/tde_state.sqlite` — canonical TDE runtime task state store.
+- `os/runtime/TASKS_from_db.md` — human-readable projection generated from canonical DB state.
+- `TASKS.md` — legacy/reference markdown board retained during transition; not canonical runtime state.
 
 ## Evidence surfaces
 - `knowledge/evidence/2026-03/` — sprint verification bundles + machine-readable artifacts.
 - `knowledge/reports/` — external deep research ingests and analyses.
 
 ## Real vs simulated status
-- **Real:** job tick writeback on canonical TASKS board, binding checks, objective linkage checks, fail-closed mutation guards.
+- **Real:** DB-canonical job tick execution, DB-backed writeback, generated runtime board projection, binding checks, objective linkage checks, fail-closed mutation guards.
 - **Simulated/limited:** full multi-job concurrency orchestration, non-local durable execution ledger, production deployment boundary metrics.
 
 ## Change rule

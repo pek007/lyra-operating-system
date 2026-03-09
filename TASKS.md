@@ -1,8 +1,24 @@
-# TASKS.md (Temporary Kanban)
+# TASKS.md (Legacy Reference Board)
 
-Use this until a dedicated work tool is selected.
+This file is no longer the canonical TDE runtime system of record.
+
+Current operating model:
+- Canonical runtime state: `os/runtime/tde_state.sqlite`
+- Runtime board projection: `os/runtime/TASKS_from_db.md`
+- This file: retained as legacy/reference context during transition
 
 ## Inbox
+- [ ] SEC-AUTO-20260309-01 | Resolve or formally re-accept the recurring `security.trust_model.multi_user_heuristic` warning after 2026-03-09 nightly audit; update trust-boundary evidence, expiry, and reopen triggers based on current shared/group exposure and sandbox posture.
+- [ ] SEC-AUTO-20260309-02 | Restore deterministic non-elevated PF posture evidence for nightly audits on Peter’s Mac mini (`/sbin/pfctl -s info` currently returns permission denied in cron runtime) or document an approved fallback proof path so host firewall-state snapshots stop failing closed.
+- [ ] IMP-AUTO-20260308-01 | Add `--no-generated-writes` mode to `tools/validate_repo.py` so cron sweeps can run validation-only without touching volatile generated/evidence artifacts (impact: lower diff noise and safer unattended hygiene runs).
+- [ ] IMP-AUTO-20260308-02 | Introduce a tracked-path allowlist for cron sweep auto-edits (docs/tools only by default) with explicit blocklist for runtime/evidence feeds (impact: prevents incidental churn outside intended maintenance scope).
+- [ ] SEC-AUTO-20260308-01 | Stabilize nightly security-audit evidence collection to avoid privileged-command gaps (`pfctl -s info` permission denied in current runtime): switch cron command set to the existing non-elevated host snapshot path (or equivalent approved fallback), and publish deterministic proof bundle with explicit PF escalation note.
+- [ ] SEC-AUTO-20260307-01 | Reassess and formalize owner-approved disposition for persistent `security.trust_model.multi_user_heuristic` warning (residual risk acceptance refresh vs trust-boundary isolation hardening), including explicit expiry/reopen triggers and validation evidence.
+- [ ] SEC-AUTO-20260307-02 | Restore deterministic host read-only network posture checks for nightly audits (`lsof`/`pfctl` availability in runtime path or approved fallback collector) so listener/PF evidence is complete without policy-violating elevation.
+- [ ] IMP-AUTO-20260307-01 | Add `--staged` / path-scoped mode to `tools/validate_repo.py` so cron sweeps can run low-noise validations without mutating broad generated artifacts (impact: higher signal in autonomous hygiene runs, fewer incidental diffs).
+- [ ] IMP-AUTO-20260307-02 | Add a lightweight tracked-artifact policy for runtime/generated outputs (`os/runtime/*.sqlite*`, periodic evidence snapshots, local clones) and wire it into lint guidance (impact: reduces recurring git-noise and accidental commit risk).
+- [ ] IMP-AUTO-20260307-03 | Normalize `tools/evidence_ingest.py` evidence frontmatter keys to canonical snake_case (`severity_summary`, `linked_tasks`) and add regression coverage so registry schema validation no longer relies on compatibility translation (impact: eliminates recurring schema drift between emitted evidence and `REGISTRY_SCHEMAS_V1.md`).
+  - [ ] 2026-03-08 | Daily information-model sweep reconfirmed residual emitter casing drift (`severitySummary`/`linkedTasks`); task remains open pending ingest-tool normalization + regression test.
 - [x] IMP-AUTO-20260305-01 | Rebuild or retire `tools/docs_hygiene_bundle.py` references in runbooks/validators so cron hygiene runs are executable again (impact: removes silent automation drift from missing command paths).
   - [x] 2026-03-06 | Restored `tools/docs_hygiene_bundle.py` as a fail-fast wrapper over `task_hygiene_check` + `markdown_link_check --changed-only`; validated with `python3 tools/docs_hygiene_bundle.py`.
 - [x] IMP-AUTO-20260305-02 | Add a lightweight “referenced script exists” guard for cron/runbook command strings to catch broken tooling pointers before scheduled sweeps fail (impact: fail-fast on operational doc drift).
