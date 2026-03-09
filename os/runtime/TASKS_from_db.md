@@ -19,7 +19,9 @@
 - [x] OPS-2026-044 | Formalize Continuous Improvement as a first-class job role and align daily cron runbook to include library relevance review + improvement backlog execution checks.
 - [x] OPS-2026-045 | Shift Continuous Improvement leverage discovery cadence from monthly to weekly and formalize Deep Research handoff workflow (Layer B + Layer C).
 - [x] OPS-2026-046 | Implement Opportunity-to-Execution Engine v1 bootstrap from Deep Research report (signal ledger + opportunity/experiment templates + weekly metrics cadence + first pilot selection).
+  <!-- tde:metadata {"activation_rule": "all_predecessors_done", "chain_policy": {"family": "pilot-a", "pilot_enabled": true}, "depends_on": ["OPS-2026-045"], "objective_id": "OBJ-TDE-FOUNDATION", "stage_id": "bootstrap"} -->
 - [x] OPS-2026-047 | Execute Drift Aftercare pilot (`OPP-2026-001`) for `IMP-AUTO-20260303-03`, publish checkpoint evidence, and decide scale/rollback.
+  <!-- tde:metadata {"activation_rule": "all_predecessors_done", "chain_policy": {"family": "pilot-a", "pilot_enabled": true}, "depends_on": ["OPS-2026-046"], "objective_id": "OBJ-TDE-FOUNDATION", "stage_id": "pilot-execution"} -->
 - [x] OPS-2026-048 | Implement machine-checkable governance bootstrap v0.1 (schema authority + validator entrypoint + inventory/index generation + CI drift checks) from 2026-03-04 deep research blueprint.
 - [x] OPS-2026-049 | Operationalize knowledge library systems-of-record by standing up `knowledge/inbox` + `knowledge/decisions` with generated indexes and validation.
 - [x] OPS-2026-050 | Operationalize `STANDARD_CHANGE_CATALOG_V1` into executable promotion flow (registry linkage, WO/CA classification fields, exclusion-trigger checks, pilot guardrails).
@@ -41,6 +43,7 @@
 - [ ] SEC-AUTO-20260307-02 | Restore deterministic host read-only network posture checks for nightly audits (`lsof`/`pfctl` availability in runtime path or approved fallback collector) so listener/PF evidence is complete without policy-violating elevation.
 - [ ] SEC-AUTO-20260308-01 | Stabilize nightly security-audit evidence collection to avoid privileged-command gaps (`pfctl -s info` permission denied in current runtime): switch cron command set to the existing non-elevated host snapshot path (or equivalent approved fallback), and publish deterministic proof bundle with explicit PF escalation note.
 - [ ] SEC-AUTO-20260309-01 | Resolve or formally re-accept the recurring `security.trust_model.multi_user_heuristic` warning after 2026-03-09 nightly audit; update trust-boundary evidence, expiry, and reopen triggers based on current shared/group exposure and sandbox posture.
+  <!-- tde:metadata {"activation_rule": "all_predecessors_done", "chain_policy": {"family": "pilot-a", "pilot_enabled": true}, "depends_on": ["SEC-AUTO-20260309-02"], "objective_id": "OBJ-TDE-FOUNDATION", "stage_id": "risk-disposition"} -->
 - [ ] SEC-AUTO-20260309-02 | Restore deterministic non-elevated PF posture evidence for nightly audits on Peter’s Mac mini (`/sbin/pfctl -s info` currently returns permission denied in cron runtime) or document an approved fallback proof path so host firewall-state snapshots stop failing closed.
 
 ## Triage
@@ -49,6 +52,8 @@
 
 ## Waiting
 - [x] OPS-2026-023 | Sprint 3 closeout pack (release notes + tag + vNext backlog update) after QA pass
+- [ ] TDE-CHAIN-PILOT-03 | Review pilot readiness for broader chaining rollout
+  <!-- tde:metadata {"activated_at": "2026-03-09T16:52:00.234766+00:00", "activated_by": "tick:tde-chain-pilot-20260309-2", "activation_rule": "all_predecessors_done", "chain_policy": {"family": "pilot-a", "pilot_enabled": true}, "depends_on": ["TDE-CHAIN-PILOT-02"], "objective_id": "OBJ-TDE-FOUNDATION", "stage_id": "deployment-readiness-review"} -->
 
 ## Done
 - [x] IMP-AUTO-20260227-01 | Added lightweight markdown link-check script (`tools/markdown_link_check.py`) with cron-safe scope filters.
@@ -118,4 +123,8 @@
 - [x] TDE-2026-014 | Executed WO-2026-TDE-KERNEL-S7 (bounded expansion criteria + guardrail-preserving broader rollout checklist + broadened-scope simulated cycle evidence).
 - [x] TDE-2026-015 | Executed WO-2026-TDE-KERNEL-S8 (automated S4-S7 consolidated milestone snapshot + missing/stale artifact reliability checks + S8 evidence artifact).
 - [x] TDE-2026-016 | Formal acceptance sign-off completed for WO-2026-TDE-KERNEL-S8 (JOB-PROD-001 + JOB-ARC-001, owner pre-authorized).
+- [x] TDE-CHAIN-PILOT-01 | Implement successor readiness promotion engine for TDE pilot
+  <!-- tde:metadata {"chain_policy": {"family": "pilot-a", "pilot_enabled": true}, "objective_id": "OBJ-TDE-FOUNDATION", "stage_id": "implementation"} -->
+- [x] TDE-CHAIN-PILOT-02 | Verify chaining pilot edge coverage and runtime artifact visibility
+  <!-- tde:metadata {"activated_at": "2026-03-09T16:50:26.463991+00:00", "activated_by": "tick:tde-chain-pilot-20260309-1", "activation_rule": "all_predecessors_done", "chain_policy": {"family": "pilot-a", "pilot_enabled": true}, "depends_on": ["TDE-CHAIN-PILOT-01"], "objective_id": "OBJ-TDE-FOUNDATION", "stage_id": "verification"} -->
 - [x] WO-2026-TDE-KERNEL-S1 | Implemented TDE kernel thin-slice scaffolding (T1–T7 acceptance runner + anti-stall heartbeat/cron hook contract + verification evidence).
