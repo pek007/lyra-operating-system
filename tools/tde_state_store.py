@@ -8,9 +8,20 @@ import re
 import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Any
 
 TASK_RE = re.compile(r"^- \[(?P<mark> |x)\] (?P<id>[A-Z][A-Z0-9-]+) \| (?P<title>.+)$")
 SECTIONS = ["Inbox", "Triage", "Active", "Waiting", "Done"]
+SUPPORTED_ACTIVATION_RULES = {"all_predecessors_done"}
+CHAIN_METADATA_KEYS = {
+    "depends_on",
+    "activation_rule",
+    "objective_id",
+    "stage_id",
+    "chain_policy",
+    "activated_by",
+    "activated_at",
+}
 
 
 def now_iso() -> str:
@@ -88,21 +99,88 @@ def parse_tasks_md(path: Path) -> list[dict]:
     return out
 
 
-def import_tasks(conn: sqlite3.Connection, tasks_path: Path) -> dict:
+def _safe_load_metadata(raw: str | None) -> dict[str, Any]:
+    if not raw:
+        return {}
+    try:
+        parsed = json.loads(raw)
+    except Exception:
+        return {}
+    return parsed if isinstance(parsed, dict) else {}
+
+
+def validate_chain_metadata(metadata: dict[str, Any]) -> tuple[bool, str | None]:
+    if not isinstance(metadata, dict):
+        return False, "metadata_not_object"
+
+    chain = {k: metadata.get(k) for k in CHAIN_METADATA_KEYS if k in metadata}
+    if not chain:
+        return True, None
+
+    depends_on = chain.get("depends_on")
+    if depends_on is not None:
+        if not isinstance(depends_on, list) or any(not isinstance(x, str) or not x.strip() for x in depends_on):
+            return False, "invalid_depends_on"
+
+    activation_rule = chain.get("activation_rule")
+    if activation_rule is not None and activation_rule not in SUPPORTED_ACTIVATION_RULES:
+        return False, "unsupported_activation_rule"
+
+    objective_id = chain.get("objective_id")
+    if objective_id is not None and (not isinstance(objective_id, str) or not objective_id.strip()):
+        return False, "invalid_objective_id"
+
+    stage_id = chain.get("stage_id")
+    if stage_id is not None and (not isinstance(stage_id, str) or not stage_id.strip()):
+        return False, "invalid_stage_id"
+
+    chain_policy = chain.get("chain_policy")
+    if chain_policy is not None and not isinstance(chain_policy, dict):
+        return False, "invalid_chain_policy"
+
+    activated_by = chain.get("activated_by")
+    if activated_by is not None and (not isinstance(activated_by, str) or not activated_by.strip()):
+        return False, "invalid_activated_by"
+
+    activated_at = chain.get("activated_at")
+    if activated_at is not None:
+        if not isinstance(activated_at, str) or not activated_at.strip():
+            return False, "invalid_activated_at"
+        try:
+            datetime.fromisoformat(activated_at)
+        except Exception:
+            return False, "invalid_activated_at"
+
+    return True, None
+
+
+def import_tasks(conn: sqlite3.Connection, tasks_path: Path, preserve_metadata: bool = True) -> dict:
     parsed = parse_tasks_md(tasks_path)
     by_id = {row["task_id"]: row for row in parsed}  # last occurrence wins
     now = now_iso()
+    existing_meta: dict[str, str] = {}
+    if preserve_metadata:
+        existing_meta = {
+            tid: meta or "{}"
+            for tid, meta in conn.execute("SELECT task_id, metadata_json FROM tasks").fetchall()
+        }
+
     with conn:
         conn.execute("DELETE FROM tasks")
         for row in by_id.values():
+            metadata_json = existing_meta.get(row["task_id"], "{}")
+            metadata = _safe_load_metadata(metadata_json)
+            ok, reason = validate_chain_metadata(metadata)
+            if not ok:
+                raise ValueError(f"invalid_preserved_metadata:{row['task_id']}:{reason}")
             conn.execute(
                 """
                 INSERT INTO tasks(task_id,title,status,checked,version,source,updated_at,metadata_json)
                 VALUES(?,?,?,?,0,?,?,?)
                 """,
-                (row["task_id"], row["title"], row["status"], row["checked"], str(tasks_path), now, "{}"),
+                (row["task_id"], row["title"], row["status"], row["checked"], str(tasks_path), now, json.dumps(metadata, separators=(",", ":"))),
             )
-    return {"imported": len(by_id), "raw_rows": len(parsed)}
+    return {"imported": len(by_id), "raw_rows": len(parsed), "preserved_metadata": preserve_metadata}
 
 
 def read_tasks(conn: sqlite3.Connection, section: str | None = None) -> list[dict]:
@@ -113,6 +191,7 @@ def read_tasks(conn: sqlite3.Connection, section: str | None = None) -> list[dic
     for tid, title, status, checked, version, updated_at, metadata_json in rows:
         if section and status != section:
             continue
+        metadata = _safe_load_metadata(metadata_json)
         out.append(
             {
                 "task_id": tid,
@@ -121,10 +200,29 @@ def read_tasks(conn: sqlite3.Connection, section: str | None = None) -> list[dic
                 "checked": checked,
                 "version": version,
                 "updated_at": updated_at,
-                "metadata_json": metadata_json or "{}",
+                "metadata": metadata,
+                "metadata_json": json.dumps(metadata, separators=(",", ":")),
             }
         )
     return out
+
+
+def update_task_metadata(conn: sqlite3.Connection, task_id: str, metadata_patch: dict[str, Any], replace: bool = False) -> dict:
+    row = conn.execute("SELECT metadata_json FROM tasks WHERE task_id=?", (task_id,)).fetchone()
+    if not row:
+        raise KeyError(f"task_not_found:{task_id}")
+    current = {} if replace else _safe_load_metadata(row[0])
+    candidate = metadata_patch if replace else {**current, **metadata_patch}
+    ok, reason = validate_chain_metadata(candidate)
+    if not ok:
+        raise ValueError(f"invalid_chain_metadata:{reason}")
+    now = now_iso()
+    with conn:
+        conn.execute(
+            "UPDATE tasks SET metadata_json=?, version=version+1, updated_at=? WHERE task_id=?",
+            (json.dumps(candidate, separators=(",", ":")), now, task_id),
+        )
+    return {"task_id": task_id, "metadata": candidate, "updated_at": now}
 
 
 def apply_low_risk_writeback_db(conn: sqlite3.Connection, claimed_ids: list[str], tick_id: str) -> dict:
@@ -143,10 +241,7 @@ def apply_low_risk_writeback_db(conn: sqlite3.Connection, claimed_ids: list[str]
     moved = []
     with conn:
         for task_id, metadata_json in rows:
-            try:
-                metadata = json.loads(metadata_json or '{}')
-            except Exception:
-                metadata = {}
+            metadata = _safe_load_metadata(metadata_json)
             metadata["last_tick_id"] = tick_id
             history = metadata.get("tick_history") or []
             if tick_id not in history:
@@ -172,13 +267,20 @@ def apply_low_risk_writeback_db(conn: sqlite3.Connection, claimed_ids: list[str]
 
 def export_tasks(conn: sqlite3.Connection, out_path: Path) -> dict:
     rows = conn.execute(
-        "SELECT task_id,title,status,checked FROM tasks ORDER BY status, task_id"
+        "SELECT task_id,title,status,checked,metadata_json FROM tasks ORDER BY status, task_id"
     ).fetchall()
     by = {s: [] for s in SECTIONS}
-    for tid, title, status, checked in rows:
+    metadata_count = 0
+    for tid, title, status, checked, metadata_json in rows:
         mark = "x" if checked else " "
-        if status in by:
-            by[status].append(f"- [{mark}] {tid} | {title}")
+        if status not in by:
+            continue
+        by[status].append(f"- [{mark}] {tid} | {title}")
+        metadata = _safe_load_metadata(metadata_json)
+        chain_metadata = {k: metadata[k] for k in CHAIN_METADATA_KEYS if k in metadata}
+        if chain_metadata:
+            metadata_count += 1
+            by[status].append(f"  <!-- tde:metadata {json.dumps(chain_metadata, sort_keys=True)} -->")
 
     lines = ["# TASKS.md (Generated from tde_state_store)", ""]
     for s in SECTIONS:
@@ -187,7 +289,7 @@ def export_tasks(conn: sqlite3.Connection, out_path: Path) -> dict:
         lines.append("")
 
     out_path.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
-    return {"exported": len(rows), "path": str(out_path)}
+    return {"exported": len(rows), "path": str(out_path), "metadata_projected": metadata_count}
 
 
 def status_fingerprint(items: list[dict]) -> str:
@@ -207,7 +309,6 @@ def _next_event_hash(conn: sqlite3.Connection, payload: dict) -> tuple[str | Non
 def record_shadow_tick(conn: sqlite3.Connection, tick_id: str, artifact: dict) -> dict:
     now = now_iso()
     with conn:
-        # durable action ledger entry for this tick
         request_hash = hashlib.sha256(json.dumps(artifact, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
         conn.execute(
             """
@@ -225,7 +326,6 @@ def record_shadow_tick(conn: sqlite3.Connection, tick_id: str, artifact: dict) -
             ),
         )
 
-        # append event for tick summary
         summary = {
             "tick_id": tick_id,
             "status": artifact.get("status"),
