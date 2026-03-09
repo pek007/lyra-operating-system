@@ -21,6 +21,8 @@ from tde_state_store import record_shadow_tick as state_record_shadow_tick
 from tde_state_store import read_tasks as state_read_tasks
 from tde_state_store import export_tasks as state_export_tasks
 from tde_state_store import apply_low_risk_writeback_db as state_apply_low_risk_writeback_db
+from tde_state_store import apply_ready_promotions as state_apply_ready_promotions
+from tde_chaining import evaluate_ready_promotions
 
 TASK_LINE_RE = re.compile(r"^- \[ \] (?P<id>[A-Z0-9-]+) \| (?P<title>.+)$")
 
@@ -395,13 +397,20 @@ def run_job_tick(
 ) -> dict[str, Any]:
     kernel = TDEKernel()
     canonical_conn = None
+    chaining = {"enabled": canonical_store == "db", "promoted": [], "skipped": [], "applied": {"applied": 0, "task_ids": []}}
     if canonical_store == "db":
         canonical_db = canonical_db_path or Path("os/runtime/tde_state.sqlite")
         canonical_conn = state_connect(canonical_db)
         state_init_schema(canonical_conn)
+        all_tasks = state_read_tasks(canonical_conn)
+        chaining_eval = evaluate_ready_promotions(all_tasks, tick_id=tick_id)
+        chaining["promoted"] = chaining_eval.get("promoted", [])
+        chaining["skipped"] = chaining_eval.get("skipped", [])
+        chaining["applied"] = state_apply_ready_promotions(canonical_conn, chaining["promoted"])
+        all_tasks = state_read_tasks(canonical_conn)
         tasks = [
             {"id": row["task_id"], "title": row["title"], "state": "ready" if row["status"] == "Active" else row["status"].lower()}
-            for row in state_read_tasks(canonical_conn, section="Active")
+            for row in all_tasks if row["status"] == "Active"
         ]
     else:
         tasks = _read_tasks(tasks_path, section="Active")
@@ -729,6 +738,7 @@ def run_job_tick(
             "evidence_outputs": [str(artifact_path)],
             "outcomes": outcomes,
             "status": "ok",
+            "chaining": chaining,
             "fail_closed": any(m.get("fail_closed") for m in mutations),
             "fail_closed_reason": next((m.get("fail_closed_reason") for m in mutations if m.get("fail_closed_reason")), None),
         }

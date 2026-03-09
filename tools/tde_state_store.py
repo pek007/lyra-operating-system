@@ -225,6 +225,30 @@ def update_task_metadata(conn: sqlite3.Connection, task_id: str, metadata_patch:
     return {"task_id": task_id, "metadata": candidate, "updated_at": now}
 
 
+def apply_ready_promotions(conn: sqlite3.Connection, promotions: list[dict[str, Any]]) -> dict[str, Any]:
+    if not promotions:
+        return {"applied": 0, "task_ids": []}
+    now = now_iso()
+    applied = []
+    with conn:
+        for item in promotions:
+            row = conn.execute("SELECT status, metadata_json FROM tasks WHERE task_id=?", (item["task_id"],)).fetchone()
+            if not row:
+                continue
+            status, metadata_json = row
+            if status == "Active" or status == "Done":
+                continue
+            metadata = _safe_load_metadata(metadata_json)
+            metadata["activated_by"] = item.get("activated_by")
+            metadata["activated_at"] = item.get("activated_at") or now
+            conn.execute(
+                "UPDATE tasks SET status='Active', version=version+1, updated_at=?, metadata_json=? WHERE task_id=?",
+                (now, json.dumps(metadata, separators=(",", ":")), item["task_id"]),
+            )
+            applied.append(item["task_id"])
+    return {"applied": len(applied), "task_ids": applied}
+
+
 def apply_low_risk_writeback_db(conn: sqlite3.Connection, claimed_ids: list[str], tick_id: str) -> dict:
     """Canonical DB write-back: move claimed tasks from Active -> Waiting and persist tick metadata."""
     if not claimed_ids:
