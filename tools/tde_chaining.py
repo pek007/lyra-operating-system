@@ -35,6 +35,11 @@ def evaluate_ready_promotions(tasks: list[dict[str, Any]], *, tick_id: str, curr
             skipped.append({"task_id": task["task_id"], "reason": "unsupported_source_status", "status": status})
             continue
 
+        chain_policy = metadata.get("chain_policy") or {}
+        if chain_policy and not chain_policy.get("pilot_enabled", False):
+            skipped.append({"task_id": task["task_id"], "reason": "pilot_not_enabled"})
+            continue
+
         activation_rule = metadata.get("activation_rule", SUPPORTED_ACTIVATION_RULE)
         if activation_rule != SUPPORTED_ACTIVATION_RULE:
             skipped.append({"task_id": task["task_id"], "reason": "unsupported_activation_rule", "activation_rule": activation_rule})

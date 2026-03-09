@@ -33,7 +33,7 @@ class TDEReadyPromotionTest(unittest.TestCase):
             conn = connect(db)
             init_schema(conn)
             import_tasks(conn, tasks)
-            update_task_metadata(conn, "TDE-CHAIN-B", {"depends_on": ["TDE-CHAIN-A"], "activation_rule": "all_predecessors_done", "stage_id": "verify"})
+            update_task_metadata(conn, "TDE-CHAIN-B", {"depends_on": ["TDE-CHAIN-A"], "activation_rule": "all_predecessors_done", "stage_id": "verify", "chain_policy": {"pilot_enabled": True, "family": "pilot-a"}})
 
             artifact = root / "artifact.json"
             result = run_job_tick(
