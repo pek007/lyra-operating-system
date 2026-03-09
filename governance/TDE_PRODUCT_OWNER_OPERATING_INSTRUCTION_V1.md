@@ -170,3 +170,10 @@ All Product Owners should now:
 3. Identify one current blocked item that should be reframed as an explicit decision.
 4. Identify one recurring friction that should become an improvement item.
 5. Use TDE as the default place to inspect active operational state going forward.
+6. Where work is naturally staged and deterministic, consider bounded TDE chaining under the current pilot-enabled rules rather than relying on manual handoff prompting.
+
+## Reference for staged autonomous progression
+For bounded staged handoffs in TDE, see:
+- `os/sops/TDE_CHAINING_CONTRACT_V1.md`
+- `governance/TDE_CHAINING_OPERATING_NOTE_V1.md`
+- `templates/TDE_CHAINED_TASK_TEMPLATE_V1.md`
