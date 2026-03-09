@@ -105,6 +105,71 @@ def import_tasks(conn: sqlite3.Connection, tasks_path: Path) -> dict:
     return {"imported": len(by_id), "raw_rows": len(parsed)}
 
 
+def read_tasks(conn: sqlite3.Connection, section: str | None = None) -> list[dict]:
+    rows = conn.execute(
+        "SELECT task_id,title,status,checked,version,updated_at,metadata_json FROM tasks ORDER BY task_id"
+    ).fetchall()
+    out = []
+    for tid, title, status, checked, version, updated_at, metadata_json in rows:
+        if section and status != section:
+            continue
+        out.append(
+            {
+                "task_id": tid,
+                "title": title,
+                "status": status,
+                "checked": checked,
+                "version": version,
+                "updated_at": updated_at,
+                "metadata_json": metadata_json or "{}",
+            }
+        )
+    return out
+
+
+def apply_low_risk_writeback_db(conn: sqlite3.Connection, claimed_ids: list[str], tick_id: str) -> dict:
+    """Canonical DB write-back: move claimed tasks from Active -> Waiting and persist tick metadata."""
+    if not claimed_ids:
+        return {"applied": False, "reason": "no_tasks_or_no_claims", "moved": []}
+
+    rows = conn.execute(
+        f"SELECT task_id, metadata_json FROM tasks WHERE status='Active' AND task_id IN ({','.join('?' for _ in claimed_ids)})",
+        claimed_ids,
+    ).fetchall()
+    if not rows:
+        return {"applied": False, "reason": "no_active_claims_to_move", "moved": []}
+
+    now = now_iso()
+    moved = []
+    with conn:
+        for task_id, metadata_json in rows:
+            try:
+                metadata = json.loads(metadata_json or '{}')
+            except Exception:
+                metadata = {}
+            metadata["last_tick_id"] = tick_id
+            history = metadata.get("tick_history") or []
+            if tick_id not in history:
+                history = (history + [tick_id])[-10:]
+            metadata["tick_history"] = history
+            conn.execute(
+                """
+                UPDATE tasks
+                SET status='Waiting', version=version+1, updated_at=?, metadata_json=?
+                WHERE task_id=? AND status='Active'
+                """,
+                (now, json.dumps(metadata, separators=(",", ":")), task_id),
+            )
+            moved.append(task_id)
+
+    return {
+        "applied": True,
+        "reason": None,
+        "moved": moved,
+        "targetSection": "Waiting",
+    }
+
+
 def export_tasks(conn: sqlite3.Connection, out_path: Path) -> dict:
     rows = conn.execute(
         "SELECT task_id,title,status,checked FROM tasks ORDER BY status, task_id"

@@ -18,6 +18,9 @@ from tde_state_store import init_schema as state_init_schema
 from tde_state_store import import_tasks as state_import_tasks
 from tde_state_store import parity_check as state_parity_check
 from tde_state_store import record_shadow_tick as state_record_shadow_tick
+from tde_state_store import read_tasks as state_read_tasks
+from tde_state_store import export_tasks as state_export_tasks
+from tde_state_store import apply_low_risk_writeback_db as state_apply_low_risk_writeback_db
 
 TASK_LINE_RE = re.compile(r"^- \[ \] (?P<id>[A-Z0-9-]+) \| (?P<title>.+)$")
 
@@ -383,13 +386,25 @@ def run_job_tick(
     writeback_tasks_path: Path | None = None,
     binding_registry_path: Path | None = None,
     objective_registry_path: Path | None = None,
+    canonical_store: str = "markdown",
+    canonical_db_path: Path | None = None,
     shadow_state_enabled: bool = False,
     shadow_state_db_path: Path | None = None,
     shadow_state_alert_path: Path | None = None,
     shadow_state_mismatch_threshold: int = 3,
 ) -> dict[str, Any]:
     kernel = TDEKernel()
-    tasks = _read_tasks(tasks_path, section="Active")
+    canonical_conn = None
+    if canonical_store == "db":
+        canonical_db = canonical_db_path or Path("os/runtime/tde_state.sqlite")
+        canonical_conn = state_connect(canonical_db)
+        state_init_schema(canonical_conn)
+        tasks = [
+            {"id": row["task_id"], "title": row["title"], "state": "ready" if row["status"] == "Active" else row["status"].lower()}
+            for row in state_read_tasks(canonical_conn, section="Active")
+        ]
+    else:
+        tasks = _read_tasks(tasks_path, section="Active")
     objective_linkage = {
         "objective_id": objective_id,
         "objective_checkpoint": objective_checkpoint,
@@ -675,7 +690,11 @@ def run_job_tick(
             )
 
         executable_claims = [m["task_id"] for m in mutations if m.get("status") in {"executed", "replay"}]
-        writeback = _apply_low_risk_writeback(writeback_tasks_path or tasks_path, executable_claims, tick_id)
+        if canonical_store == "db":
+            writeback = state_apply_low_risk_writeback_db(canonical_conn, executable_claims, tick_id)
+            state_export_tasks(canonical_conn, writeback_tasks_path or tasks_path)
+        else:
+            writeback = _apply_low_risk_writeback(writeback_tasks_path or tasks_path, executable_claims, tick_id)
 
         if not claimed:
             outcomes["no_work"] += 1
@@ -717,7 +736,8 @@ def run_job_tick(
     if shadow_state_enabled:
         try:
             shadow_db = shadow_state_db_path or Path("os/runtime/tde_state.sqlite")
-            shadow = _shadow_state_sync(tasks_path, shadow_db, tick_id, artifact)
+            shadow_source = writeback_tasks_path or tasks_path
+            shadow = _shadow_state_sync(shadow_source, shadow_db, tick_id, artifact)
             threshold_meta = _shadow_state_evaluate_threshold(
                 shadow.get("status", "error"),
                 shadow_state_alert_path,
@@ -759,6 +779,8 @@ def main() -> None:
     parser.add_argument("--writeback-tasks-path", default="TASKS.md")
     parser.add_argument("--binding-registry-path", default="os/runtime/tde_active_bindings.json")
     parser.add_argument("--objective-registry-path", default="os/runtime/tde_objectives.json")
+    parser.add_argument("--canonical-store", choices=["markdown", "db"], default="markdown")
+    parser.add_argument("--canonical-db-path", default="os/runtime/tde_state.sqlite")
     parser.add_argument("--shadow-state-enabled", action="store_true")
     parser.add_argument("--shadow-state-db-path", default="os/runtime/tde_state.sqlite")
     parser.add_argument("--shadow-state-alert-path", default="knowledge/evidence/metrics/tde-shadow-state-alerts.jsonl")
@@ -781,6 +803,8 @@ def main() -> None:
         writeback_tasks_path=Path(args.writeback_tasks_path) if args.writeback_tasks_path else None,
         binding_registry_path=Path(args.binding_registry_path) if args.binding_registry_path else None,
         objective_registry_path=Path(args.objective_registry_path) if args.objective_registry_path else None,
+        canonical_store=args.canonical_store,
+        canonical_db_path=Path(args.canonical_db_path) if args.canonical_db_path else None,
         shadow_state_enabled=args.shadow_state_enabled,
         shadow_state_db_path=Path(args.shadow_state_db_path) if args.shadow_state_db_path else None,
         shadow_state_alert_path=Path(args.shadow_state_alert_path) if args.shadow_state_alert_path else None,

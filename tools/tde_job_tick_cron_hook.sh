@@ -7,6 +7,9 @@ SHADOW_ENABLED="${TDE_SHADOW_STATE_ENABLED:-1}"
 SHADOW_DB_PATH="${TDE_SHADOW_STATE_DB_PATH:-$ROOT_DIR/os/runtime/tde_state.sqlite}"
 SHADOW_ALERT_PATH="${TDE_SHADOW_STATE_ALERT_PATH:-$ROOT_DIR/knowledge/evidence/metrics/tde-shadow-state-alerts.jsonl}"
 SHADOW_MISMATCH_THRESHOLD="${TDE_SHADOW_STATE_MISMATCH_THRESHOLD:-3}"
+CANONICAL_STORE="${TDE_CANONICAL_STATE_STORE:-db}"
+CANONICAL_DB_PATH="${TDE_CANONICAL_DB_PATH:-$ROOT_DIR/os/runtime/tde_state.sqlite}"
+WRITEBACK_TASKS_PATH="${TDE_TASKS_PROJECTION_PATH:-$ROOT_DIR/os/runtime/TASKS_from_db.md}"
 
 CMD=(
   python3 "$ROOT_DIR/tools/tde_job_tick_runner.py"
@@ -17,7 +20,10 @@ CMD=(
   --actor-id "${TDE_ACTOR_ID:-lyra}"
   --max-claim "${TDE_JOB_MAX_CLAIM:-1}"
   --tasks-path "$ROOT_DIR/TASKS.md"
+  --writeback-tasks-path "$WRITEBACK_TASKS_PATH"
   --artifact-path "$ROOT_DIR/knowledge/evidence/2026-03/tde-job-tick-latest.json"
+  --canonical-store "$CANONICAL_STORE"
+  --canonical-db-path "$CANONICAL_DB_PATH"
 )
 
 if [[ "$SHADOW_ENABLED" == "1" ]]; then
