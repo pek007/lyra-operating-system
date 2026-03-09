@@ -116,6 +116,19 @@ At least weekly, each Product Owner should be able to answer:
 
 If these answers are hard to produce, the product is not yet operating cleanly enough.
 
+## Compliance checklist
+Before calling a product/workstream operationally healthy in TDE, a Product Owner should be able to say yes to all of the following:
+- Are the current product goals explicit?
+- Is active work in TDE linked to those goals or outcomes?
+- Does each active item have a clear next action, state, or decision path?
+- Are blocked items clearly marked as operational blockers or decision blockers?
+- Is there visible evidence for meaningful completed work?
+- Are recurring frictions being captured as improvement items?
+- Is there any shadow list or side system that conflicts with TDE state?
+- Has at least one thing been stopped, simplified, automated, or clarified based on recent evidence?
+
+A "no" answer should normally trigger cleanup, clarification, or improvement work.
+
 ## Expected use of TDE for maximum leverage
 TDE should be used to create leverage in five ways:
 
