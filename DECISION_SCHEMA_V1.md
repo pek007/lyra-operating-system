@@ -160,3 +160,12 @@ Create a translator service in transition period; do not parse legacy registries
 3. Evidence freshness and confidence must be explicit.
 4. All write decisions are audited with actor/time/reason.
 5. UI should never silently drop parse/contract errors.
+
+---
+
+## 7) Schema alignment note (2026-03-06)
+- `REGISTRY_SCHEMAS_V1.md` examples are now aligned to canonical snake_case and decision enums.
+- Keep this document as the canonical source for decision naming and enum contract changes.
+- 2026-03-07 daily sweep: no new duplicate decision enums/term aliases detected in this document; drift remains on evidence emitter field casing (`severitySummary`/`linkedTasks`) outside this schema.
+- 2026-03-08 daily sweep: no new duplicate decision enums/term aliases detected; canonical decision contract remains stable and unchanged.
+- 2026-03-09 daily sweep: no new duplicate decision enums, term aliases, or cross-schema contract drift detected; canonical decision contract remains stable, with only the already-tracked external evidence-emitter casing mismatch remaining outside this document.

@@ -96,3 +96,6 @@ linked_tasks:
 ## Compatibility Note
 - This document now uses canonical snake_case and decision enums aligned with `DECISION_SCHEMA_V1.md`.
 - Transition-layer migration guidance remains in `REGISTRY_DECISION_COMPATIBILITY_MAP_V1_1.md` for legacy artifacts.
+- **Drift flag (2026-03-07):** `tools/evidence_ingest.py` still emits `severitySummary` and `linkedTasks` (camelCase), while this schema contract is `severity_summary` and `linked_tasks` (snake_case). Keep transition handling fail-closed and normalize emitter output.
+- **Daily sweep (2026-03-08):** No new duplicate term aliases or enum drift detected in this schema contract; residual emitter casing drift remains open under task `IMP-AUTO-20260307-03`.
+- **Daily sweep (2026-03-09):** No new duplicate term aliases, enum drift, or registry-shape divergence detected in this schema contract; residual emitter casing drift (`severitySummary`/`linkedTasks` -> `severity_summary`/`linked_tasks`) remains the only flagged mismatch and is already tracked under `IMP-AUTO-20260307-03`.

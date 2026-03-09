@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 LINK_RE = re.compile(r"\[[^\]]+\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)")
 URL_RE = re.compile(r"^(https?://|mailto:|tel:)")
+SKIP_PARTS = {".git", "node_modules", "repos"}
 
 
 def strip_code_fences(text: str) -> str:
@@ -37,22 +38,40 @@ def is_ignored(link: str) -> bool:
     return False
 
 
+def _collect_paths_from_git_output(output: str) -> set[Path]:
+    paths: set[Path] = set()
+    for line in output.splitlines():
+        rel = line.strip()
+        if not rel:
+            continue
+        p = ROOT / rel
+        if p.suffix.lower() != ".md" or not p.exists():
+            continue
+        if any(part in SKIP_PARTS for part in p.parts):
+            continue
+        paths.add(p)
+    return paths
+
+
 def changed_markdown_paths() -> list[Path]:
-    cmd = ["git", "diff", "--name-only", "--diff-filter=ACMRTUXB", "HEAD"]
-    out = subprocess.check_output(cmd, cwd=ROOT, text=True)
-    paths = []
-    for line in out.splitlines():
-        p = ROOT / line.strip()
-        if p.suffix.lower() == ".md" and p.exists():
-            paths.append(p)
+    diff_cmd = ["git", "diff", "--name-only", "--diff-filter=ACMRTUXB", "HEAD"]
+    untracked_cmd = ["git", "ls-files", "--others", "--exclude-standard"]
+    try:
+        changed = subprocess.check_output(diff_cmd, cwd=ROOT, text=True)
+        untracked = subprocess.check_output(untracked_cmd, cwd=ROOT, text=True)
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        # No HEAD yet, git unavailable, or git metadata inaccessible: full scan fallback.
+        return all_markdown_paths()
+
+    paths = _collect_paths_from_git_output(changed)
+    paths.update(_collect_paths_from_git_output(untracked))
     return sorted(paths)
 
 
 def all_markdown_paths() -> list[Path]:
-    skip_parts = {".git", "node_modules", "repos"}
     out = []
     for p in ROOT.rglob("*.md"):
-        if any(part in skip_parts for part in p.parts):
+        if any(part in SKIP_PARTS for part in p.parts):
             continue
         out.append(p)
     return sorted(out)

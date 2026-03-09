@@ -29,3 +29,10 @@ Status: Active
 - Trade-offs: Slower decision-making on strategic shifts, but better human oversight where downside matters.
 - Impacted artifacts/processes: Delivery governance, escalation logic, future launch/change decisions.
 - Reversal conditions: Revisit if delegated authority boundaries are changed explicitly.
+
+## Decision A-006-D5
+- Context: Peter explicitly confirmed that Delivery improvements of this kind should be implemented without requiring step-by-step approval.
+- Decision: Default to autonomous execution for Delivery product improvements inside workspace scope, using Peter approval only for strategic, launch, or real-world-consequence decisions.
+- Trade-offs: Faster execution and stronger compounding, with some increased responsibility on Lyra to distinguish operational from strategic changes correctly.
+- Impacted artifacts/processes: Delivery backlog execution, improvement cadence, workspace-level implementation behavior.
+- Reversal conditions: Revisit if Peter changes the delegation model or if operational autonomy creates material coordination issues.

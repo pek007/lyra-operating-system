@@ -195,8 +195,17 @@ def validate_evidence_observation_links() -> list[str]:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--fix", action="store_true")
+    parser = argparse.ArgumentParser(
+        description=(
+            "Validate governance artifacts and generated indexes. "
+            "Note: the current default path regenerates deterministic derivatives before drift checks."
+        )
+    )
+    parser.add_argument(
+        "--fix",
+        action="store_true",
+        help="Regenerate deterministic derivatives and skip the post-generation git drift failure check.",
+    )
     args = parser.parse_args()
 
     run([sys.executable, "tools/gen_inventory.py"])

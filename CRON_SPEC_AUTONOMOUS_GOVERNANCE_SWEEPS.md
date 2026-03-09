@@ -67,7 +67,7 @@ Design principle: auto-implement only low-risk, uncontroversial changes; route l
 1. Sweep for high-signal, low-controversy improvements across docs/code/structure:
    - consistency, clarity, naming, dead links, duplicate guidance, obvious hygiene/refactor items, missing guardrails
    - perform a **library relevance pass** across key knowledge surfaces (`governance/`, top-level process docs, `knowledge/`, `tools/`) to identify older artifacts that became newly relevant due to recent decisions/releases
-   - run `python3 tools/task_hygiene_check.py --file TASKS.md` and `python3 tools/markdown_link_check.py --changed-only` as fail-fast docs/task hygiene gates before proposing doc edits
+   - run `python3 tools/docs_hygiene_bundle.py` as the fail-fast docs/task hygiene gate before proposing doc edits (wraps `task_hygiene_check.py` + `markdown_link_check.py --changed-only`)
    - run `python3 -m unittest tools/test_markdown_link_check.py` to keep link-parser behavior coverage green before automation edits
 2. Perform OpenClaw release-delta check (see `OPENCLAW_RELEASE_DELTA_SOP.md`):
    - capture auditable command snapshot via `python3 tools/openclaw_release_delta_snapshot.py` (writes `knowledge/evidence/YYYY-MM-DD__openclaw-release-delta-snapshot.md`)

@@ -1,6 +1,14 @@
 # Local runtime/state
 .openclaw/
 .restore-tests/
+os/runtime/*.sqlite
+os/runtime/*.sqlite-shm
+os/runtime/*.sqlite-wal
+
+# OS/editor noise
+.DS_Store
+**/.DS_Store
+__pycache__/
 
 # Generated exports
 OPERATING_SYSTEM_FULL_EXPORT*.md
