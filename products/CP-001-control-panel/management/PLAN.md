@@ -24,6 +24,13 @@
   - Evidence required: File paths + task references + decision note.
   - Current implementation artifacts: `MEMORY_IMPLEMENTATION_ROADMAP_V1.md`, `MEMORY_ACTIVATION_MAP_V1.md`
 
+- Initiative ID: CP-I5 Runtime topology design
+  - Problem: Current product handling depends too much on Telegram session context, creating role drift, weak wake-up semantics, and manual cross-session coordination.
+  - Expected outcome: Lyra OS has an explicit runtime topology map with central-vs-dedicated runtime criteria, wake-up strategy by class, and a clear migration path away from session-only product identity.
+  - Dependencies: Decision memo `DEC-2026-015` adopted and reflected in Control Panel governance.
+  - Acceptance criteria: `RUNTIME_TOPOLOGY_MAP_V1.md` published; runtime-topology tasks created; Control Panel artifacts updated to reflect topology work as active design.
+  - Evidence required: Topology map path + decision reference + task references.
+
 ## Later
 - Initiative ID: CP-I3 Quality automation
   - Problem: Manual governance checks are fragile.

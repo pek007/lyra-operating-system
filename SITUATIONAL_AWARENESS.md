@@ -13,10 +13,10 @@ Live context map: where we are now, what changed recently, and what matters next
 - Memory is now being formalized as a cross-system process/capability under Control Panel ownership.
 
 ## Immediate Priorities (next 7 days)
-1. Publish and integrate the initial formal memory process.
+1. Operationalize the newly published runtime topology map and convert it into explicit current-state vs target-state runtime assignments.
 2. Clarify Control Panel product ownership boundaries versus runtime-wide operating responsibility.
 3. Identify where retired `Control Tower` terminology still remains in live artifacts and plan controlled cleanup.
-4. Confirm current live memory retrieval behavior and priority gaps.
+4. Convert memory retrieval baseline improvements into broader but controlled retrieval-scope design.
 
 ## Constraints / Frictions
 - Runtime role and product ownership are not identical; terminology and artifact ownership can drift if not kept explicit.
