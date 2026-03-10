@@ -66,7 +66,7 @@ Last updated: 2026-03-08
   - Evidence required: A-005 management doc updates + linked improvement log entry
 
 ## Later
-- Initiative ID: A-005-I6
+- Initiative ID: A-005-I7
   - Problem: Continuous improvement is not yet instrumented enough for comparative evaluation.
   - Expected outcome: Improvement telemetry and experiment scorecards support champion-challenger learning.
   - Dependencies: `SELF_IMPROVEMENT_LOOP_V1.md`, run-event schema, evaluation harness
@@ -75,7 +75,7 @@ Last updated: 2026-03-08
     - At least one controlled improvement experiment can be evaluated
   - Evidence required: Scorecard + decision log
 
-- Initiative ID: A-005-I7
+- Initiative ID: A-005-I8
   - Problem: Capability deployment to PXS still depends on interim assembly handling.
   - Expected outcome: Stable pinned assembly distribution becomes the default lane.
   - Dependencies: Capability-pack approach, release semantics, PXS consumption model

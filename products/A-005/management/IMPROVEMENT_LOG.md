@@ -67,3 +67,29 @@ Last updated: 2026-03-08
   - `products/A-005/management/GOALS.md`
   - `products/A-005/management/PLAN.md`
   - `products/A-005/management/SCORECARD.md`
+
+## Entry A-005-L4
+- Date: 2026-03-10
+- Trigger: Review of deep research report on autoresearch and Ralph-style automated improvement loops.
+- Observation: The report contains several useful operating patterns for Lyra/OpenClaw, but a full direct implementation would exceed the current safety/maturity level.
+- Hypothesis: Converting the report into an explicit adopt/defer/reject position will help A-005 borrow the right mechanics without importing unnecessary risk.
+- Change made:
+  - Stored the report in the library under `library/self-improvement/`
+  - Added an A-005 note capturing adopt / defer / reject decisions and concrete follow-up actions
+  - Recorded explicit decision to pursue a bounded-v1 approach only
+- Result: We now have a reusable position on automated improvement cycles that is aligned with current guardrails.
+- Decision (adopt/revert/continue-test): Adopt
+- Owner: Lyra
+- Review date: 2026-03-21
+- Linked execution artifact(s):
+  - Decision: `products/A-005/management/DECISIONS.md` (`A-005-D5`)
+  - Guidance note: `products/A-005/management/AUTORESEARCH_ADOPT_DEFER_REJECT_NOTE_2026-03-10.md`
+- Follow-up:
+  - Define protected mutation policy for bounded autonomous improvement
+  - Define minimal experiment record format
+  - Pilot one narrow validation/CI-green loop with hard stop-loss
+- Linked artifacts:
+  - `library/self-improvement/2026-03-10__autoresearch-ralph-loop-report.md`
+  - `products/A-005/management/AUTORESEARCH_ADOPT_DEFER_REJECT_NOTE_2026-03-10.md`
+  - `products/A-005/management/DECISIONS.md`
+  - `products/A-005/management/PLAN.md`

@@ -50,3 +50,16 @@ Last updated: 2026-03-08
   - `INCIDENT_LOG.md`
   - related product/task/decision artifacts created from prevention work
 - Reversal conditions: Revisit only if a better portfolio-wide closed-loop mechanism replaces it with equal or better traceability and prevention effectiveness
+
+## Decision A-005-D5
+- Context: A deep research report on autoresearch and Ralph-style automated improvement loops was reviewed for possible adoption in the Lyra/OpenClaw operating system.
+- Decision: Use the report as a pattern source, not a wholesale implementation blueprint. Adopt bounded externalized-state loops, strict evaluation gates, protected mutation surfaces, and narrow repeat-until-done mechanics for deterministic objectives; defer broad autonomous optimization and reject training loops/indefinite autonomous mutation for the current phase.
+- Trade-offs:
+  - Gain: capture the useful operating patterns without importing excessive autonomy risk
+  - Cost: slower path to full automation and more deliberate implementation sequencing
+  - Risk: under-reaching if we stay too cautious; over-reaching if we skip the bounded-v1 phase
+- Impacted artifacts/processes:
+  - `products/A-005/management/AUTORESEARCH_ADOPT_DEFER_REJECT_NOTE_2026-03-10.md`
+  - `SELF_IMPROVEMENT_LOOP_V1.md`
+  - future bounded-loop implementation under Lyra OS tooling/governance
+- Reversal conditions: Revisit once bounded-v1 loop metrics show safe, repeatable value and the guardrail model has been validated in practice
