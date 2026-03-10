@@ -37,3 +37,12 @@
 - Result: First operating contract for intra-Lyra coordination established; proof case defined.
 - Decision (adopt/revert/continue-test): Continue-test.
 - Follow-up: run the first live Task Management proof case with a real job bundle and capture what needs refinement.
+
+## Entry CP-L5
+- Trigger: Need to determine whether the handoff protocol is merely viable once or actually repeatable enough to adopt provisionally.
+- Observation: The first live Task Management run proved viability; a second bounded run in the same lane was needed to test repeatability and avoid over-reading one success.
+- Hypothesis: Two successful runs in the same lane would justify provisional standardization for same-runtime intra-Lyra handoffs, while still stopping short of broad multi-lane standardization.
+- Change made: Created and ran second repeatability job bundle `jobs/JOB-TM-002/`; updated `INTRA_LYRA_HANDOFF_PROTOCOL_V1.md` with `standardization_scope`; recorded repeatability evidence.
+- Result: Same-lane repeatability established; broader transferability still open.
+- Decision (adopt/revert/continue-test): Adopt provisionally (same-runtime intra-Lyra scope only).
+- Follow-up: run 1-2 live proof cases in other lanes before declaring broad standardization.

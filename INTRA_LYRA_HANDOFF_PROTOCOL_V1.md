@@ -40,6 +40,7 @@ A valid intra-Lyra handoff should include at least:
 - `due_or_timing` (or `none`)
 - `context_refs`
 - `expected_reply`
+- `standardization_scope` (optional; use when evaluating or piloting protocol adoption)
 
 ## Suggested compact format
 ```yaml
@@ -53,6 +54,7 @@ context_refs:
   - "path-or-artifact"
   - "optional session/topic reference"
 expected_reply: "status | result | decision-needed | blocked"
+standardization_scope: "same-lane | same-runtime-multi-lane | broader | none"
 durable_update_required: true | false
 update_target: "jobs/<JOB-ID>/STATE.md | product artifact path | none"
 ```

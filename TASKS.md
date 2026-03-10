@@ -16,7 +16,8 @@ Current operating model:
   - [x] 2026-03-10 | Published `INTRA_LYRA_HANDOFF_PROTOCOL_V1.md` with minimal packet fields, transport rule (`sessions_send`), write-back rule, response contract, and Control Panel / session-lane responsibilities.
   - [x] 2026-03-10 | Published `TASK_MANAGEMENT_PROOF_CASE_V1.md` as the first recommended proof case for the new coordination model.
   - [x] 2026-03-10 | Created real proof-case job bundle `jobs/JOB-TM-001/` and executed the first live Task Management handoff via `sessions_send`; receiving lane returned `result` and updated `jobs/JOB-TM-001/STATE.md`. Evidence: `knowledge/evidence/2026-03-10__ops-2026-073-task-management-proof-case-live-run.md`.
-  - [ ] Next | Decide whether to standardize the protocol across other Lyra lanes now or require 1-2 more live runs first.
+  - [x] 2026-03-10 | Ran second bounded live Task Management proof case (`jobs/JOB-TM-002/`) and confirmed repeatability in the same lane; recommendation from receiving lane: provisionally standardize for same-runtime intra-Lyra handoffs only, and require 1-2 more live runs in different lanes before broader standardization. Evidence: `knowledge/evidence/2026-03-10__ops-2026-073-task-management-repeatability-run.md`.
+  - [ ] Next | Run the next proof case in a different lane (Governance, Delivery, or Security) and then decide whether to standardize beyond the same-runtime/same-context scope.
 - [ ] OPS-2026-070 | Operationalize `MEMORY_PROCESS_V1.md`: validate live memory retrieval behavior, define the first activation-class map for priority memory artifacts, and publish a phased implementation roadmap for agent/session/job/knowledge/coordination memory under Control Panel ownership.
   - [x] 2026-03-10 | Published `MEMORY_IMPLEMENTATION_ROADMAP_V1.md` with phased execution plan.
   - [x] 2026-03-10 | Published `MEMORY_ACTIVATION_MAP_V1.md` with initial activation classes for priority memory-bearing artifacts.
