@@ -12,6 +12,7 @@ Single entrypoint for Task & Decision Engine contracts, runtime tools, tests, an
 - `os/sops/TDE_DB_CANONICAL_CUTOVER_GATE_V1.md` — DB cutover GO/NO-GO gate criteria.
 - `os/sops/TDE_CHAINING_CONTRACT_V1.md` — dependency-aware successor promotion contract for bounded autonomous chaining.
 - `os/sops/TDE_RELEASE_GUARD_SCHEDULING_CONTRACT_V1.md` — release guard cadence + blocking semantics.
+- `governance/TDE_OPERATING_ALIGNMENT_NOTE__MEMORY_HANDOFFS_AND_FRONTIER_PREFLIGHT_V1.md` — operating-layer continuity/handoff alignment note and mandatory frontier-preflight rule.
 
 ## Runtime tools
 - `tools/tde_kernel.py` — shared deterministic governance kernel module (runtime import surface).

@@ -57,6 +57,11 @@ Do not run the product from:
 
 Discussion can happen anywhere. Operational state should not.
 
+For durable job-shaped work:
+- prefer job-bundle continuity over transcript continuity
+- use artifact-backed handoffs when work crosses lanes
+- ensure same-cycle write-back when active durable state changes
+
 ### 3) Make decisions visible
 When progress depends on a real choice, capture it as a decision need, not as vague delay.
 
@@ -163,6 +168,14 @@ They are responsible for turning strategic intent into a controlled execution sy
 
 TDE is the mechanism for doing that.
 
+## Frontier-preflight addition
+Before resuming or extending TDE-related implementation work, Product Owners should first verify:
+1. what the current canonical TDE store is,
+2. what the latest active TDE frontier/phase is,
+3. whether the intended slice is already superseded.
+
+If this is unclear, the next action is frontier reconstruction, not implementation.
+
 ## Immediate implementation guidance
 All Product Owners should now:
 1. Review their active product goals and make sure current work maps to them.
@@ -170,3 +183,4 @@ All Product Owners should now:
 3. Identify one current blocked item that should be reframed as an explicit decision.
 4. Identify one recurring friction that should become an improvement item.
 5. Use TDE as the default place to inspect active operational state going forward.
+6. For durable job-shaped work, ensure continuity lives in job bundles and handoffs carry artifact refs + write-back expectations.
