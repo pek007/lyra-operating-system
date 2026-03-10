@@ -82,3 +82,12 @@
 - Result: First-wave skill implementation concepts are now explicit.
 - Decision (adopt/revert/continue-test): Adopt.
 - Follow-up: decide implementation order and packaging scope, then define the first bounded cron model.
+
+## Entry CP-L10
+- Trigger: Approved sequence to begin skill implementation planning with Control Panel coordination before Governance or Task Management / TDE.
+- Observation: The Control Panel coordination pattern is the most validated and lowest-risk first build candidate because it already has a standardized handoff protocol and multiple live proof cases behind it.
+- Hypothesis: Turning that pattern into an implementation-ready skill spec before packaging work begins will reduce build drift and keep the first skill narrow and practical.
+- Change made: Published `CONTROL_PANEL_COORDINATION_SKILL_SPEC_V1.md` and linked it into the embodiment workstream.
+- Result: First build-target spec for product runtime embodiment is now explicit.
+- Decision (adopt/revert/continue-test): Adopt.
+- Follow-up: decide whether to implement the skill locally first or package it for wider reuse, then draft the actual skill package.
