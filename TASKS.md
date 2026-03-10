@@ -13,7 +13,7 @@ Current operating model:
 - [ ] OPS-2026-068 | Evaluate assignment fit for `JOB-PROD-001 Product Owner` under `AGENT_LIFECYCLE_SOP_V1.md` Stage 2 criteria and decide whether the role remains implicit in the main runtime, becomes an explicitly bound main-session job, or uses a fresh-session/sub-agent review pattern for acceptance decisions; capture triggers and runtime recommendation.
 - [ ] TDE-2026-034 | Execute `WO-2026-TDE-CHAINING-PILOT-V1.md` (DB-canonical bounded chaining pilot for objective-linked continuation).
   - [x] 2026-03-10 | Opened `WO-2026-TDE-CHAINING-PILOT-V1.md` as the next main TDE strategic step after DB-canonical cutover and chaining design/planning work.
-  - [ ] 2026-03-10 | Select the first bounded real pilot workflow family and model canonical dependency metadata.
+  - [x] 2026-03-10 | Selected Pilot family A (`implementation -> verification -> deployment-readiness review`) and published canonical metadata model packet: `knowledge/distilled/2026-03-10__packet__tde-chaining-pilot-selection-and-metadata-model-v1.md`, `knowledge/evidence/2026-03-10__decision-note__tde-chaining-pilot-family-a-selected.md`.
   - [ ] 2026-03-10 | Implement deterministic successor promotion and emit activation evidence in DB-canonical job ticks.
   - [ ] 2026-03-10 | Validate bounded chaining with tests, pilot evidence, and closeout recommendation.
 - [ ] SEC-AUTO-20260309-01 | Resolve or formally re-accept the recurring `security.trust_model.multi_user_heuristic` warning after 2026-03-09 nightly audit; update trust-boundary evidence, expiry, and reopen triggers based on current shared/group exposure and sandbox posture.
