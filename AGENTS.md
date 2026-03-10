@@ -91,6 +91,35 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - When you make a mistake → document it so future-you doesn't repeat it
 - **Text > Brain** 📝
 
+### Memory Operating Model (Keep This Small)
+
+Use the lightest memory source that matches the need:
+
+- **Agent memory** → `SOUL.md`, `USER.md`, `TOOLS.md`, `MEMORY.md`
+  - Use for identity, preferences, durable lessons, and stable operating notes.
+- **Session memory** → recent chat context + `memory/YYYY-MM-DD.md`
+  - Use for recent continuity only; do not treat as authoritative job state.
+- **Job memory** → `jobs/<JOB-ID>/JOB.md`, `STATE.md`, `MEMORY.md`, `HANDOVER.md`
+  - Use when work belongs to a job or may move across sessions/agents.
+- **Knowledge memory** → decisions, distilled knowledge, approved runbooks/process docs
+  - Retrieve selectively when the work needs grounded reusable understanding.
+- **Coordination memory** → situational awareness / handoff artifacts
+  - Use for current cross-context awareness, not long-term memory.
+
+### Where to Look First
+
+- If continuing a **job**, read `jobs/<JOB-ID>/STATE.md` first.
+- If taking over or resuming work from another context, read `jobs/<JOB-ID>/HANDOVER.md`.
+- If answering questions about **Peter**, preferences, or durable lessons in a main/private session, use `MEMORY.md` plus recent daily notes.
+- If working inside a **product lane**, prefer product artifacts + job bundle over thread history alone.
+- If broader recall is needed, retrieve selectively; do not bulk-load large histories by default.
+
+### Job Continuity Rule
+
+- Session/chat history is helpful, but **job bundles are the primary continuity layer for active work**.
+- No active durable job should rely on transcript memory alone.
+- Reassignment or cross-session handoff requires updating `HANDOVER.md` and/or `STATE.md` in the same work cycle when the context would otherwise be lost.
+
 ## Safety
 
 - Don't exfiltrate private data. Ever.
