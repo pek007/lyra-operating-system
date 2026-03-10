@@ -30,6 +30,7 @@
   - Dependencies: Decision memo `DEC-2026-015` adopted and reflected in Control Panel governance.
   - Acceptance criteria: `RUNTIME_TOPOLOGY_MAP_V1.md` published; runtime-topology tasks created; Control Panel artifacts updated to reflect topology work as active design.
   - Evidence required: Topology map path + decision reference + task references.
+  - Current implementation artifacts: `RUNTIME_TOPOLOGY_MAP_V1.md`, `RUNTIME_ASSIGNMENT_MAP_V1.md`
 
 ## Later
 - Initiative ID: CP-I3 Quality automation

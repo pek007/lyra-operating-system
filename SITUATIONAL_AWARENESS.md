@@ -11,6 +11,7 @@ Live context map: where we are now, what changed recently, and what matters next
 - This runtime/ownership arrangement is current-state only and may change over time.
 - The term **Control Tower** has been retired in the operating model and replaced by **Control Panel**.
 - Memory is now being formalized as a cross-system process/capability under Control Panel ownership.
+- A first runtime topology baseline and a first runtime assignment map now exist; current Lyra product lanes remain in the main runtime for now, while Vega remains the reference dedicated-runtime pattern.
 
 ## Immediate Priorities (next 7 days)
 1. Operationalize the newly published runtime topology map and convert it into explicit current-state vs target-state runtime assignments.

@@ -27,3 +27,4 @@
 - Result: First explicit topology baseline established.
 - Decision (adopt/revert/continue-test): Adopt (v1 topology baseline).
 - Follow-up: map current sessions/products to the topology, define the lightweight intra-Lyra handoff protocol, and test at least one real job/product flow under the new coordination model.
+- Additional implementation artifact: `RUNTIME_ASSIGNMENT_MAP_V1.md`.
