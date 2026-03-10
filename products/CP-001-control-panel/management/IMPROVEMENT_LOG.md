@@ -73,3 +73,12 @@
 - Result: First explicit product embodiment baseline established.
 - Decision (adopt/revert/continue-test): Adopt (framework baseline).
 - Follow-up: define first-wave skill concepts and first bounded cron model before considering plugin work.
+
+## Entry CP-L9
+- Trigger: Need to move from product runtime embodiment strategy into bounded implementation concepts before building anything too early or too broadly.
+- Observation: The biggest immediate leverage is in three first-wave skills: Control Panel coordination, Task Management / TDE operator, and Governance VERIFY-cycle.
+- Hypothesis: Writing explicit skill concepts first will reduce implementation drift and help sequence packaging work safely before any plugin-level embodiment.
+- Change made: Published `SKILL_CONCEPTS_FIRST_WAVE_V1.md` and linked it into Control Panel, Task Management, and Governance planning artifacts.
+- Result: First-wave skill implementation concepts are now explicit.
+- Decision (adopt/revert/continue-test): Adopt.
+- Follow-up: decide implementation order and packaging scope, then define the first bounded cron model.
