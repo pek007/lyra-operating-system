@@ -109,3 +109,12 @@
 - Result: Cross-domain delivery package is now prepared on the OS side.
 - Decision (adopt/revert/continue-test): Adopt.
 - Follow-up: deliver/bridge the handoff into PX/Vega and collect the response.
+
+## Entry CP-L13
+- Trigger: Vega returned a formal response to the `pxs` runtime embodiment proposal via the PX outgoing handoff folder.
+- Observation: Vega accepted the proposal but narrowed it usefully: start with one explicit verification pattern, fixed scope, fixed output shape, and no cron at v0.1.
+- Hypothesis: Reflecting that narrower shape back into a PX-local v0.1 test spec will produce a cleaner and more valid first embodiment trial than the broader original proposal.
+- Change made: Recorded the PX response in `knowledge/evidence/2026-03-10__px-response__runtime-embodiment-test-proposal.md` and drafted `PXS_VERIFY_PROCEDURE_TEST_SPEC_V0_1.md`.
+- Result: The next handback to Vega can now be precise and low-ambiguity.
+- Decision (adopt/revert/continue-test): Adopt Vega's narrowing.
+- Follow-up: hand back `PXS_VERIFY_PROCEDURE_TEST_SPEC_V0_1.md` for Vega-side accept/modify and local trial planning.
