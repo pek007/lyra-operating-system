@@ -91,3 +91,12 @@
 - Result: First build-target spec for product runtime embodiment is now explicit.
 - Decision (adopt/revert/continue-test): Adopt.
 - Follow-up: decide whether to implement the skill locally first or package it for wider reuse, then draft the actual skill package.
+
+## Entry CP-L11
+- Trigger: Peter suggested using the `pxs` workspace as a low-disruption proving ground for product runtime embodiment rather than testing everything first inside active Lyra OS work.
+- Observation: `pxs` has a cleaner isolated runtime/workspace boundary and existing governance/cron discipline, which makes it a potentially better environment for bounded embodiment tests than the more entangled central Lyra OS runtime.
+- Hypothesis: A bounded governance-style capability in `pxs` will provide a cleaner signal on packaging/activation quality than starting with a heavier engine-bound capability.
+- Change made: Published `PXS_RUNTIME_EMBODIMENT_TEST_PROPOSAL_V1.md` and opened follow-on task `OPS-2026-077`.
+- Result: A bounded cross-workspace embodiment test proposal now exists.
+- Decision (adopt/revert/continue-test): Continue-test.
+- Follow-up: hand the proposal to Vega and assess whether PX should run the first test as skill-only or skill+cron.
