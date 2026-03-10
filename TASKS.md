@@ -8,6 +8,8 @@ Current operating model:
 - This file: retained as legacy/reference context during transition
 
 ## Inbox
+- [ ] OPS-2026-072 | Define the first runtime-topology map for Lyra OS based on the adopted hybrid model: central Control Panel runtime, selective persistent product/domain runtimes where justified, explicit wake-up strategy (heartbeat vs cron vs direct session messaging), and cross-session handoff pattern.
+- [ ] OPS-2026-073 | Design a lightweight intra-Lyra cross-session handoff protocol that replaces copy-paste as the default coordination method while remaining lighter than the Vega cross-domain handoff model.
 - [ ] OPS-2026-070 | Operationalize `MEMORY_PROCESS_V1.md`: validate live memory retrieval behavior, define the first activation-class map for priority memory artifacts, and publish a phased implementation roadmap for agent/session/job/knowledge/coordination memory under Control Panel ownership.
   - [x] 2026-03-10 | Published `MEMORY_IMPLEMENTATION_ROADMAP_V1.md` with phased execution plan.
   - [x] 2026-03-10 | Published `MEMORY_ACTIVATION_MAP_V1.md` with initial activation classes for priority memory-bearing artifacts.

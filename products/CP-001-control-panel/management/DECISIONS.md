@@ -13,3 +13,10 @@
 - Trade-offs: Adds explicit governance and maintenance overhead, but reduces drift, silent non-usage, continuity loss, and ambiguity about ownership.
 - Impacted artifacts/processes: `MEMORY_PROCESS_V1.md`, `SITUATIONAL_AWARENESS.md`, Control Panel management artifacts, future retrieval/indexing policy, job memory standards, and memory-quality reviews.
 - Reversal conditions: If product ownership and runtime ownership are later split more sharply, re-evaluate whether memory capability ownership should stay in Control Panel or move to a different platform governance product.
+
+## Decision CP-D3
+- Context: The current Lyra operating model relies too heavily on Telegram sessions/channels to hold product identity, which creates role drift, weak wake-up semantics, and manual cross-session coordination. Review of Vega / `pxs` showed stronger patterns around explicit runtime boundaries, structured handoffs, and shared-core governance.
+- Decision: Adopt a hybrid runtime topology target: central Control Panel oversight runtime, selective persistent product/domain runtimes only where durable boundaries are justified, portable job memory as the continuity layer, and native cross-session communication as the default bridge.
+- Trade-offs: Requires clearer runtime mapping and handoff discipline, but avoids both weak session-only identity and premature persistent-agent sprawl.
+- Impacted artifacts/processes: runtime topology design, agent lifecycle decisions, heartbeat/cron execution design, job-memory portability implementation, and future cross-session coordination protocols.
+- Reversal conditions: If the current session/channel model proves sufficient after stronger job memory and coordination mechanisms are implemented, or if a later architecture favors stricter per-product runtime isolation everywhere, revisit the topology choice.
