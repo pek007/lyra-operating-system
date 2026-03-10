@@ -17,7 +17,7 @@ Status: Placeholder
   - Dependencies: `PRODUCT_RUNTIME_EMBODIMENT_FRAMEWORK_V1.md`; `PRODUCT_RUNTIME_EMBODIMENT_MAP_V1.md`; `A-002-I1` progress.
   - Acceptance criteria: Governance embodiment candidate and boundaries are explicit in product artifacts; next implementation step is identified.
   - Evidence required: Product artifact updates + linked follow-on task.
-  - Current implementation artifact: `SKILL_CONCEPTS_FIRST_WAVE_V1.md` (Governance VERIFY-cycle skill concept)
+  - Current implementation artifacts: `SKILL_CONCEPTS_FIRST_WAVE_V1.md` (Governance VERIFY-cycle skill concept); `PRODUCT_CRON_MODEL_V1.md` (Governance VERIFY reminder/review loop candidate)
 
 ## Later
 - Initiative ID: A-002-I3

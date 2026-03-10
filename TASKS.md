@@ -19,6 +19,8 @@ Current operating model:
   - [x] 2026-03-10 | Handed back the narrower PX-local v0.1 verification procedure proposal via `handoffs/HO-20260310-003__os-to-px__verify-procedure-v0-1-proposal.yaml` and bridged both the handoff and payload into PX incoming handoffs.
   - [ ] Next | Await Vega response on adopt/modify/reject, approved slice, evidence path, and trial readiness/blockers.
 - [ ] OPS-2026-076 | Design the first bounded product cron model for Control Panel, Task Management, and Governance: identify what should remain human-triggered, what should become cron-driven, and what output/noise rules must apply.
+  - [x] 2026-03-10 | Published `PRODUCT_CRON_MODEL_V1.md` with bounded cron candidates, output/noise rules, guardrails, and recommended implementation order across Control Panel, Task Management, and Governance.
+  - [ ] Next | Decide whether to implement the first cron candidate (`Task Management anti-stall review`) now or after the first local skill package draft is complete.
 - [ ] OPS-2026-074 | Align Task Management / TDE operating notes with today’s new substrate assumptions: job-bundle continuity, same-cycle write-back, and standardized same-runtime intra-Lyra handoffs where work crosses lanes.
 - [ ] OPS-2026-072 | Define the first runtime-topology map for Lyra OS based on the adopted hybrid model: central Control Panel runtime, selective persistent product/domain runtimes where justified, explicit wake-up strategy (heartbeat vs cron vs direct session messaging), and cross-session handoff pattern.
   - [x] 2026-03-10 | Published `RUNTIME_TOPOLOGY_MAP_V1.md` with current-state topology, target-state model, runtime classification framework, wake-up strategy by class, coordination pattern, and migration path.

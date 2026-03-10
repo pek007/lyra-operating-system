@@ -127,3 +127,13 @@
 - Result: Vega now has the refined v0.1 proposal in PX-local handoff space.
 - Decision (adopt/revert/continue-test): Continue-test.
 - Follow-up: await Vega response on adopt/modify/reject, slice, evidence path, and trial readiness.
+
+## Entry CP-L15
+- Trigger: Need to decide what should become cron-driven across the first three embodied products without creating automation noise or premature cadence loops.
+- Observation: The products now have clearer skill candidates, but cron use was still under-specified and at risk of either overuse or hesitation.
+- Hypothesis: A bounded cron model with explicit output/noise rules and implementation order will let us add recurring loops safely.
+- Change made: Published `PRODUCT_CRON_MODEL_V1.md` and linked it into Control Panel, Task Management, and Governance planning artifacts.
+- Result: First bounded cron model is now explicit; `Task Management anti-stall review` is the leading first cron candidate.
+- Decision (adopt/revert/continue-test): Adopt (design baseline).
+- Follow-up: decide whether to implement the first cron candidate now or after the first local skill package draft is complete.
+
