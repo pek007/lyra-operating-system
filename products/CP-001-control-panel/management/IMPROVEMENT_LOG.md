@@ -137,3 +137,12 @@
 - Decision (adopt/revert/continue-test): Adopt (design baseline).
 - Follow-up: decide whether to implement the first cron candidate now or after the first local skill package draft is complete.
 
+## Entry CP-L16
+- Trigger: Decision to proceed with the first actual local skill package rather than stopping at concept/spec level.
+- Observation: The Control Panel coordination pattern is already sufficiently validated to support a small local skill package with very little implementation complexity.
+- Hypothesis: A compact local skill folder with `SKILL.md` plus a small reference file is enough to start real use and learn before wider packaging.
+- Change made: Created `skills/control-panel-coordination/SKILL.md` and `skills/control-panel-coordination/references/handoff-examples.md`.
+- Result: First local runtime-embodiment package now exists in the workspace.
+- Decision (adopt/revert/continue-test): Continue-test locally.
+- Follow-up: use the skill in real coordination work and then decide whether to keep iterating locally or promote/package it more broadly.
+

@@ -11,7 +11,8 @@ Current operating model:
 - [ ] OPS-2026-075 | Convert the first-wave product runtime embodiment framework into implementation candidates: define the Control Panel coordination skill, Task Management / TDE operator skill, and Governance VERIFY-cycle skill at concept/spec level before any plugin work.
   - [x] 2026-03-10 | Published `SKILL_CONCEPTS_FIRST_WAVE_V1.md` with bounded concept/spec definitions for the first three skills, including trigger, inputs, outputs, escalation conditions, and boundaries.
   - [x] 2026-03-10 | Published `CONTROL_PANEL_COORDINATION_SKILL_SPEC_V1.md` as the first implementation-ready skill spec, defining scope, trigger conditions, inputs/outputs, decision logic, escalation conditions, and implementation boundary.
-  - [ ] Next | Decide whether the Control Panel coordination skill should be implemented first inside this workspace or packaged for wider reuse, then draft the actual skill package.
+  - [x] 2026-03-10 | Drafted the first local skill package under `skills/control-panel-coordination/` with `SKILL.md` and `references/handoff-examples.md`.
+  - [ ] Next | Decide whether to keep iterating the Control Panel coordination skill locally through real use or promote/package it for wider reuse.
 - [ ] OPS-2026-077 | Evaluate `pxs` as a bounded runtime-embodiment proving ground: hand off `PXS_RUNTIME_EMBODIMENT_TEST_PROPOSAL_V1.md` to Vega, assess boundary fit, and determine the smallest viable local capability test (preferably a Governance/VERIFY-style skill, optionally followed by a bounded cron loop).
   - [x] 2026-03-10 | Published `PXS_RUNTIME_EMBODIMENT_TEST_PROPOSAL_V1.md`.
   - [x] 2026-03-10 | Created cross-domain handoff artifact `handoffs/HO-20260310-001__os-to-px__runtime-embodiment-test-proposal.yaml` with checksum + expiry and registered it in `handoffs/HANDOFF_REGISTER.md`.
