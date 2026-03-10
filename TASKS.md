@@ -208,7 +208,6 @@ Current operating model:
   - [x] 2026-03-03 | Executed Active→Done board-state transition after evidence consistency recheck; evidence: `knowledge/evidence/2026-03-03__ops-2026-022-active-to-done-transition-executed.md`.
 
 ## Waiting
-- [ ] TDE-2026-033 | Execute WO-2026-TDE-KERNEL-S26 (controlled cutover readiness packet + bounded live rollout runbook + owner decision packet for first live TDE slice). [tick:s26-canary-pass-20260310-132443]
 - [x] OPS-2026-023 | Sprint 3 closeout pack (release notes + tag + vNext backlog update) after QA pass
   - [x] 2026-03-02 | Drafted and published `SPRINT3_CLOSEOUT_PACK_V1.md` with release-notes draft, tag plan, and proposed vNext backlog promotion set.
   - [x] 2026-03-02 | Re-validated Control Panel API test baseline via `pnpm --filter @control-panel/api test` (result: 34 files / 326 tests passing) to de-risk closeout execution.
@@ -218,8 +217,10 @@ Current operating model:
   - [x] 2026-03-06 | Finalized closeout pack and linked release-notes/tag/vNext state in `SPRINT3_CLOSEOUT_PACK_V1.md`; closure evidence: `knowledge/evidence/2026-03-06__ops-2026-023-sprint3-closeout-pack-finalization.md`.
 
 ## Done
+<<<<<<< HEAD
 - [x] OPS-2026-065 | S38 scheduled readiness automation wiring (closed 2026-03-04 after adding dedicated cutover-readiness cron hook and updating cron spec/runbook).
   - [x] 2026-03-06 | Corrected readiness artifact path handling to remove hard-coded dated source and add stable latest alias chain; evidence: `knowledge/evidence/2026-03-06__tde-cutover-readiness-artifact-path-fix.md`.
+- [x] TDE-2026-033 | Execute WO-2026-TDE-KERNEL-S26 (controlled cutover readiness packet + bounded live rollout runbook + owner decision packet for first live TDE slice). Closed 2026-03-10 as canary proven / expansion held; evidence: `knowledge/evidence/2026-03-10__tde-s26-closeout-note.md`. [tick:s26-canary-pass-20260310-132443]
 - [x] OPS-2026-064 | S37 daily cutover readiness operations (closed 2026-03-04 after adding daily readiness runner and threshold alert guard scripts).
 - [x] OPS-2026-063 | S36 DB canonical cutover readiness gate (closed 2026-03-04 after publishing cutover gate SOP + first readiness NO_GO baseline report).
 - [x] OPS-2026-062 | S35 durable shadow event/action ledger writes (closed 2026-03-04 after persisting per-tick action/event entries in state store and wiring regression coverage).
