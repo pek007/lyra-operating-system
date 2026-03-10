@@ -155,3 +155,12 @@
 - Decision (adopt/revert/continue-test): Adopt (v0.1 standard baseline).
 - Follow-up: decide whether to add cron-backed inbox checks on both sides and what handled-state/archive pattern to use.
 
+## Entry CP-L18
+- Trigger: Need to move the cross-runtime handoff loop from general principle to a first implementable automation shape.
+- Observation: The standard is now clear enough that the next uncertainty is not architecture but implementation scope: where to start, how often to check, and how to prevent duplicates without over-automating.
+- Hypothesis: A one-sided Lyra OS inbox review loop is the safest first cron implementation because it validates pickup/validation/status handling while keeping risk and complexity low.
+- Change made: Published `CROSS_RUNTIME_INBOX_CHECK_CRON_DESIGN_V0_1.md`.
+- Result: First implementable cron design for cross-runtime inbox handling now exists.
+- Decision (adopt/revert/continue-test): Adopt (design baseline).
+- Follow-up: decide whether to implement the OS-side inbox review loop now or after the PX verify trial completes.
+
