@@ -75,6 +75,12 @@ Rollback concepts exist in the repo, but the next decision packet should make ro
 
 Produce a **single execution-ready cutover packet** for one bounded live TDE domain, with explicit gate criteria and rollback posture.
 
+Selected canary domain for S26:
+- `JOB-PROD-001` execution of open `TDE-2026-*` work items in `repos/lyra-operating-system/TASKS.md`
+- repo-local authority only (`TASKS.md` canonical)
+- no Trello/legacy operational authority in scope
+- mutation surface constrained to the already-evidenced low-risk audited writeback path
+
 ## Proposed S26 acceptance criteria
 
 1. A bounded live cutover scope is explicitly declared (domain, objects, authority source, success window).

@@ -20,24 +20,29 @@ The TDE kernel appears sufficiently hardened to justify preparing for bounded li
 - CI/runtime guardrails and activation artifacts exist
 - bounded-rollout thinking already exists in prior evidence/design artifacts
 
+## Selected canary scope
+- Domain: `JOB-PROD-001` TDE-internal kernel work in `repos/lyra-operating-system/TASKS.md`
+- In-scope objects: open task items with IDs beginning `TDE-2026-*`
+- Authority posture: `TASKS.md` canonical for this slice; no Trello/legacy authority in scope
+- Mutation limit: only the already-proven low-risk task-state movement + audit-linked runtime path
+
 ## What still blocks a bounded live GO
-1. Exact canary domain not yet declared in the packet.
-2. Object inventory / mapping proof for the bounded slice not yet consolidated.
-3. Drift and reconciliation thresholds for the live window not yet declared.
-4. Operator runbook was missing before S26 packetization.
-5. Rollback triggers and reconciliation-after-rollback steps were not yet consolidated into one decision path.
+1. Exact open-object inventory / mapping proof for the bounded slice not yet consolidated.
+2. Drift and reconciliation thresholds for the live window not yet declared.
+3. Backup/restore and reconciliation-after-rollback linkage for this exact slice not yet attached.
+4. Operator runbook now exists, but pass/fail thresholds still need to be made explicit.
 
 ## Recommended next action
-Complete S26 artifacts and then make an explicit owner decision on one bounded live rollout slice:
-- GO for bounded slice
+Complete S26 artifacts and then make an explicit owner decision on the selected bounded live rollout slice:
+- GO for `JOB-PROD-001` handling of open `TDE-2026-*` work in `TASKS.md`
 - HOLD for further hardening
 - ROLLBACK / remain on current posture
 
 ## Suggested owner decision standard
 Only approve bounded live GO if all of the following are explicit:
-- bounded domain
-- authority posture
-- in-scope inventory
+- bounded domain (`JOB-PROD-001` TDE-internal kernel work)
+- authority posture (`TASKS.md` canonical; no legacy authority)
+- in-scope inventory (open `TDE-2026-*` objects)
 - drift/reconciliation thresholds
 - rollback path
 - operator runbook

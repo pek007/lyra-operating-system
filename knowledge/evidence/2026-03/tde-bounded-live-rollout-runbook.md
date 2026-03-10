@@ -10,11 +10,11 @@ Provide an operator-ready runbook for the first bounded live TDE rollout window.
 
 ## Preconditions
 Do not start the bounded live rollout until all of the following are explicit:
-- bounded domain named
-- in-scope objects enumerated
-- authority posture declared
+- bounded domain named (`JOB-PROD-001` TDE-internal kernel work in `TASKS.md`)
+- open `TDE-2026-*` object inventory enumerated
+- authority posture declared (`TASKS.md` canonical; no legacy authority in scope)
 - rollback owner and decision route declared
-- reconciliation cadence defined
+- reconciliation cadence defined (per job-tick cycle)
 - rollback triggers defined
 
 ## 1. Preflight
@@ -36,11 +36,12 @@ Possible outcomes:
 
 ## 3. During rollout window
 Check at each cadence cycle:
-1. Did the runtime claim only in-scope work?
+1. Did the runtime claim only open `TDE-2026-*` tasks classified as in-scope?
 2. Did any authority/binding/objective guard fail unexpectedly?
-3. Did any drift/orphan/mapping exception occur?
-4. Did any operator need Trello or another legacy system to complete normal work for the slice?
-5. Did any rollback trigger fire?
+3. Did any out-of-scope task (`OPS-*`, `SEC-*`, `IMP-*`, etc.) get touched or appear eligible?
+4. Did any drift/orphan/mapping exception occur between `TASKS.md` and the cycle evidence artifact?
+5. Could the operator explain current state from `TASKS.md` + evidence artifacts alone, without Trello/legacy reference?
+6. Did any rollback trigger fire?
 
 Record each cycle as:
 - PASS
@@ -53,14 +54,16 @@ Move to **HOLD** if any of the following occur:
 - in-scope inventory becomes uncertain
 - authority source is ambiguous
 - evidence packet is incomplete for a required operational question
-- operator cannot explain current state from TDE artifacts alone
+- operator cannot explain current state from `TASKS.md` + TDE artifacts alone
+- reconciliation remains explainable but not yet consistently clean
 
 ## 5. Rollback triggers
 Execute **ROLLBACK** if any of the following occur:
 - wrong-object mutation or unexplained out-of-scope mutation
+- any non-`TDE-2026-*` task is mutated by the bounded canary flow
 - reconciliation divergence above declared threshold
 - rollback path itself is unclear or cannot be executed safely
-- operator must re-enable uncontrolled dual-write behavior to continue
+- operator must re-introduce legacy authority or uncontrolled dual-write behavior to continue
 - approval/authority boundary is bypassed or weakened
 
 ## 6. Rollback procedure
