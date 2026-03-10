@@ -118,3 +118,12 @@
 - Result: The next handback to Vega can now be precise and low-ambiguity.
 - Decision (adopt/revert/continue-test): Adopt Vega's narrowing.
 - Follow-up: hand back `PXS_VERIFY_PROCEDURE_TEST_SPEC_V0_1.md` for Vega-side accept/modify and local trial planning.
+
+## Entry CP-L14
+- Trigger: Need to turn Vega's accepted narrowing into an actual PX-side decision point rather than stopping at an OS-side draft.
+- Observation: The refined v0.1 spec was useful only if bridged back into PX in the same explicit cross-domain style as the original proposal.
+- Hypothesis: A second formal handoff carrying the narrower VERIFY procedure proposal will make the next PX response cleaner and lower-ambiguity.
+- Change made: Created `handoffs/HO-20260310-003__os-to-px__verify-procedure-v0-1-proposal.yaml`, updated `handoffs/HANDOFF_REGISTER.md`, and bridged the handoff + payload into PX incoming handoffs.
+- Result: Vega now has the refined v0.1 proposal in PX-local handoff space.
+- Decision (adopt/revert/continue-test): Continue-test.
+- Follow-up: await Vega response on adopt/modify/reject, slice, evidence path, and trial readiness.

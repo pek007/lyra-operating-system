@@ -16,10 +16,8 @@ Current operating model:
   - [x] 2026-03-10 | Published `PXS_RUNTIME_EMBODIMENT_TEST_PROPOSAL_V1.md`.
   - [x] 2026-03-10 | Created cross-domain handoff artifact `handoffs/HO-20260310-001__os-to-px__runtime-embodiment-test-proposal.yaml` with checksum + expiry and registered it in `handoffs/HANDOFF_REGISTER.md`.
   - [x] 2026-03-10 | Bridged the handoff artifact and payload into `pxs`, received Vega response (`accept, with slight modification`), and recorded the outcome in `knowledge/evidence/2026-03-10__px-response__runtime-embodiment-test-proposal.md`.
-  - [ ] Next | Hand back the narrower PX-local v0.1 verification procedure proposal (`PXS_VERIFY_PROCEDURE_TEST_SPEC_V0_1.md`) and ask Vega whether to adopt/modify it as the first local embodiment test.
-  - [x] 2026-03-10 | Created cross-domain handoff artifact `handoffs/HO-20260310-001__os-to-px__runtime-embodiment-test-proposal.yaml` with checksum + expiry and registered it in `handoffs/HANDOFF_REGISTER.md`.
-  - [x] 2026-03-10 | Bridged the handoff artifact and payload into `pxs`, received Vega response (`accept, with slight modification`), and recorded the outcome in `knowledge/evidence/2026-03-10__px-response__runtime-embodiment-test-proposal.md`.
-  - [ ] Next | Hand back the narrower PX-local v0.1 verification procedure proposal (`PXS_VERIFY_PROCEDURE_TEST_SPEC_V0_1.md`) and ask Vega whether to adopt/modify it as the first local embodiment test.
+  - [x] 2026-03-10 | Handed back the narrower PX-local v0.1 verification procedure proposal via `handoffs/HO-20260310-003__os-to-px__verify-procedure-v0-1-proposal.yaml` and bridged both the handoff and payload into PX incoming handoffs.
+  - [ ] Next | Await Vega response on adopt/modify/reject, approved slice, evidence path, and trial readiness/blockers.
 - [ ] OPS-2026-076 | Design the first bounded product cron model for Control Panel, Task Management, and Governance: identify what should remain human-triggered, what should become cron-driven, and what output/noise rules must apply.
 - [ ] OPS-2026-074 | Align Task Management / TDE operating notes with today’s new substrate assumptions: job-bundle continuity, same-cycle write-back, and standardized same-runtime intra-Lyra handoffs where work crosses lanes.
 - [ ] OPS-2026-072 | Define the first runtime-topology map for Lyra OS based on the adopted hybrid model: central Control Panel runtime, selective persistent product/domain runtimes where justified, explicit wake-up strategy (heartbeat vs cron vs direct session messaging), and cross-session handoff pattern.
