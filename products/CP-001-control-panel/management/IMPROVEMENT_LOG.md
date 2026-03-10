@@ -55,3 +55,12 @@
 - Result: Initial cross-lane transfer evidence established.
 - Decision (adopt/revert/continue-test): Adopt as default for same-runtime intra-Lyra handoffs; continue-test for broader multi-lane standardization.
 - Follow-up: run one more live proof case in another established lane before calling the protocol broadly standardized across Lyra lanes.
+
+## Entry CP-L7
+- Trigger: Need to determine whether the handoff protocol should remain merely a default-with-evidence pattern or be treated as broadly standardized across same-runtime Lyra lanes.
+- Observation: After same-lane repeatability and Governance transfer evidence, Delivery provided a stronger maturity test because A-006 already has active product-management content and non-placeholder operating artifacts.
+- Hypothesis: If Delivery also executes the bounded artifact-first handoff pattern cleanly, the protocol has enough evidence for broader same-runtime multi-lane standardization.
+- Change made: Created `jobs/JOB-DEL-001/`; ran Delivery transfer proof case; updated `products/A-006/management/SCORECARD.md`; updated `INTRA_LYRA_HANDOFF_PROTOCOL_V1.md` to standardized status for same-runtime intra-Lyra handoffs.
+- Result: Broader same-runtime multi-lane standardization threshold reached.
+- Decision (adopt/revert/continue-test): Adopt.
+- Follow-up: Optionally run a harsher Security confirmation case if we want to test whether stricter lanes need local tightening without changing the base standard.

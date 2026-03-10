@@ -1,6 +1,6 @@
 # INTRA_LYRA_HANDOFF_PROTOCOL_V1.md
 
-Status: Active v1 (provisionally standardized for same-runtime intra-Lyra handoffs)  
+Status: Active v1 (standardized for same-runtime intra-Lyra handoffs)  
 Owner: Lyra via Control Panel  
 Date: 2026-03-10
 
@@ -143,10 +143,10 @@ update_target: "jobs/JOB-TEMPLATE/STATE.md"
 - Duplicating TDE as a chat-layer protocol
 
 ## Current standardization status
-- Default for: same-runtime intra-Lyra handoffs
-- Evidence basis: first live viability, same-lane repeatability, and initial Governance transfer proof case
-- Not yet standardized for: broad multi-lane/general use without further lane testing
+- Standardized for: same-runtime intra-Lyra handoffs across Lyra lanes
+- Evidence basis: first live viability, same-lane repeatability, Governance transfer proof case, and Delivery transfer proof case
+- Not standardized for: cross-runtime or cross-domain handoffs where stronger boundary controls may be needed
 
 ## Version
-- v1.1
+- v1.2
 - Date: 2026-03-10

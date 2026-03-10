@@ -30,3 +30,8 @@ Status: Active
 ## Notes
 - Initial scorecard is intentionally lightweight until evidence collection becomes more systematic.
 - Recommended future evolution: add DORA-aligned trend tracking, verification-debt tracking, and first-pass acceptance rate by work type.
+
+## Baseline note added via delivery proof case
+- Verification/operating-rhythm baseline: Delivery should maintain at least one explicit evidence-backed verification checkpoint per active improvement cycle.
+- Current baseline state: expected by process, but not yet consistently evidenced as a recurring measured pattern.
+- Immediate next target: capture one lightweight baseline artifact tied to the next VERIFY / operating-rhythm review cycle and treat that as the first concrete measurement anchor.
