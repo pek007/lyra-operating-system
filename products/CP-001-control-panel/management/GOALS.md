@@ -15,3 +15,11 @@
 - Guardrails: WIP remains bounded.
 - Owner job role: Product Owner (Control Panel)
 - Exit criteria: Improvement loop is routine and auditable.
+
+## Goal CP-G3
+- Outcome: Establish Memory as a formal, reliable, cross-system capability under Control Panel governance.
+- Leading indicators: Memory scope model published; write-back rules adopted; priority memory artifacts have explicit activation classes.
+- Lagging indicators: Fewer continuity failures, fewer repeated mistakes, better portability across sessions/jobs/runtimes.
+- Guardrails: No broadening of sensitive-memory exposure; memory remains scoped, lean, and auditable.
+- Owner job role: Product Owner (Control Panel)
+- Exit criteria: Memory process is active, reviewed, and reflected in live operating artifacts and recurring practice.

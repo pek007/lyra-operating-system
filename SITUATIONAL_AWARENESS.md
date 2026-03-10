@@ -3,36 +3,40 @@
 ## Purpose
 Live context map: where we are now, what changed recently, and what matters next.
 
-## Current Situation (as of 2026-02-23)
-- Telegram connection was unstable; now restored and paired.
-- Core OS foundation docs are established.
-- Daily 12:00 best-practice brief cron is active.
-- Systems-of-record direction approved (ADR-001 Option C).
-- Work tool final selection/setup remains open.
+## Current Situation (as of 2026-03-10)
+- Product model is now active across Lyra OS.
+- This session is focused on the Product Assembly **Control Panel**.
+- In this session, Lyra is acting as **Product Owner for Control Panel**.
+- At the runtime level, Lyra is currently operating across the Lyra OS workspace; Vega is currently operating across the `pxs` workspace.
+- This runtime/ownership arrangement is current-state only and may change over time.
+- The term **Control Tower** has been retired in the operating model and replaced by **Control Panel**.
+- Memory is now being formalized as a cross-system process/capability under Control Panel ownership.
 
 ## Immediate Priorities (next 7 days)
-1. Implement OPS-2026-007/008/009 for Control Panel MVP foundation.
-2. Run weekly metrics update cadence (Friday).
-3. Monitor Trello sync automation and adjust mapping if drift appears.
-4. Begin phased activation of subagents using v1.1 execution semantics.
+1. Publish and integrate the initial formal memory process.
+2. Clarify Control Panel product ownership boundaries versus runtime-wide operating responsibility.
+3. Identify where retired `Control Tower` terminology still remains in live artifacts and plan controlled cleanup.
+4. Confirm current live memory retrieval behavior and priority gaps.
 
 ## Constraints / Frictions
-- External web search API not configured (limits automated discovery breadth).
-- Model provider diversity not yet implemented.
+- Runtime role and product ownership are not identical; terminology and artifact ownership can drift if not kept explicit.
+- Memory retrieval behavior appears weaker than intended in the current runtime/tool path and needs validation.
+- Legacy terminology and older artifacts may still reflect pre-product-model language.
 
 ## Decisions Recently Made
-- Adopt OS-first approach before full PX framework.
-- Adopt design + decision principles as default doctrine.
-- Approve hybrid systems-of-record architecture.
+- Product ownership in this session is now anchored on the **Control Panel** assembly.
+- `Control Tower` terminology is retired and replaced by `Control Panel`.
+- Lyra continues to operate broadly across Lyra OS for now, but this is situational rather than permanent.
+- Memory should be formalized as a horizontal process/capability, centrally owned through Control Panel governance.
 
 ## Watch Items
-- Credential hygiene and secure handling practices.
-- Process adoption consistency (avoid doc shelfware).
-- Cost/benefit case for paid APIs/services.
+- Terminology drift between old control-tower artifacts and current control-panel model.
+- Memory process adoption quality across agent/session/job/product layers.
+- Risk of silent non-usage: artifacts existing on disk without a live activation path.
 
 ## Update Rule
-- Refresh at least weekly or after major decisions/incidents.
+- Refresh at least weekly or after major decisions, ownership changes, or operating-model shifts.
 
 ## Version
-- v1.0
-- Date: 2026-02-23
+- v1.1
+- Date: 2026-03-10

@@ -16,6 +16,13 @@
   - Acceptance criteria: Adoption checklist used by at least one additional product.
   - Evidence required: Completed checklist + decision notes.
 
+- Initiative ID: CP-I4 Memory capability formalization
+  - Problem: Memory exists across many layers, but without one formal process, ownership model, activation standard, or roadmap.
+  - Expected outcome: Memory becomes a managed Control Panel capability with clear scope, ownership, activation model, and implementation priorities.
+  - Dependencies: Product ownership framing and terminology clarified.
+  - Acceptance criteria: `MEMORY_PROCESS_V1.md` published; `SITUATIONAL_AWARENESS.md` updated; Control Panel management artifacts reflect memory capability ownership; follow-on tasks captured.
+  - Evidence required: File paths + task references + decision note.
+
 ## Later
 - Initiative ID: CP-I3 Quality automation
   - Problem: Manual governance checks are fragile.
