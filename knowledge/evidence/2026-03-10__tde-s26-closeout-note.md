@@ -3,7 +3,7 @@
 Date: 2026-03-10
 Owner: Lyra
 WO: `WO-2026-TDE-KERNEL-S26`
-Status: Closed
+Status: Closed; historical evidence only (superseded as active frontier by DB-canonical TDE cutover and later chaining work)
 
 ## Closeout decision
 Close S26 as **canary proven / expansion held**.
@@ -19,8 +19,9 @@ S26 achieved its purpose:
 - canonical-binding execution path succeeded without out-of-scope mutation
 
 ## Resulting position
-- TDE is now evidenced as safe to continue within the current narrow repo-local canary scope.
-- TDE is **not yet approved for broader rollout expansion** beyond the selected `TDE-2026-*` repo-local kernel slice.
+- This closeout remains valid only as historical evidence for the narrow repo-local markdown-era canary explored in S26.
+- It is **not** the current canonical TDE operating basis.
+- The later canonical direction is DB-canonical runtime state plus post-cutover/chaining work.
 
 ## Residual constraints retained
 - no expansion beyond the current canary scope without new evidence

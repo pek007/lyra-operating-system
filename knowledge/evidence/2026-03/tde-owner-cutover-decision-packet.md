@@ -1,12 +1,15 @@
 # TDE Owner Cutover Decision Packet
 
 Date: 2026-03-10
-Status: Updated after first bounded canary window
+Status: Historical owner packet; superseded as active frontier by DB-canonical TDE cutover and later chaining work
 Owner: Lyra
 Linked WO: `WO-2026-TDE-KERNEL-S26`
 
+## Supersession note
+This packet is retained as historical evidence for the S26 markdown-era bounded canary, but it is superseded as a current decision basis by the DB-canonical TDE direction and later post-cutover/chaining work.
+
 ## Decision required
-Recommended current decision: **GO to continue within the current bounded canary scope; HOLD on any expansion**.
+Historical S26 recommendation at the time: **GO to continue within the current bounded canary scope; HOLD on any expansion**.
 
 ## Why this is the right decision now
 The first bounded live canary window has now been executed. It produced two useful signals:

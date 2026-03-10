@@ -164,14 +164,6 @@ Current operating model:
 ## Triage
 
 ## Active
-  - [x] 2026-03-10 | Published cutover gap assessment and opened `WO-2026-TDE-KERNEL-S26.md`.
-  - [x] 2026-03-10 | Drafted initial S26 artifact set: `knowledge/distilled/2026-03-10__assessment__tde-cutover-gap-and-s26-recommendation-v1.md`, `knowledge/evidence/2026-03/tde-bounded-live-cutover-readiness.md`, `knowledge/evidence/2026-03/tde-bounded-live-rollout-runbook.md`, `knowledge/evidence/2026-03/tde-owner-cutover-decision-packet.md`.
-  - [x] 2026-03-10 | Declared exact bounded canary domain in `knowledge/evidence/2026-03/tde-bounded-live-canary-scope.md` (`JOB-PROD-001` handling of open `TDE-2026-*` work in `TASKS.md`).
-  - [x] 2026-03-10 | Converted HOLD items into explicit canary pass/fail criteria and owner-ready decision framing in S26 packet artifacts.
-  - [x] 2026-03-10 | Enumerated exact open `TDE-2026-*` canary object inventory and attached provenance/orphan check in `knowledge/evidence/2026-03/tde-bounded-live-canary-inventory-and-provenance-check.md`.
-  - [x] 2026-03-10 | Linked slice-specific backup/restore + reconciliation-after-rollback posture in `knowledge/evidence/2026-03/tde-bounded-live-canary-backup-and-rollback-posture.md`.
-  - [x] 2026-03-10 | Executed first bounded live canary window and captured both fail-closed reauth hold and canonical-binding pass in `knowledge/evidence/2026-03/2026-03-10__verification__wo-2026-tde-kernel-s26-first-bounded-live-canary-window.md`.
-  - [ ] 2026-03-10 | Accumulate repeated clean canonical-binding cycles or close S26 with canary-proven / expansion-held recommendation.
 - [x] OPS-2026-037 | Execute Chat Continuity Sprint 1 (apply protocol daily, publish first channel-handoff summary, and run first weekly consolidation check).
   - [x] 2026-03-02 | Published first explicit channel-handoff summary block in `memory/2026-03-02.md` (main ↔ cron autonomous sprint loop context).
   - [x] 2026-03-02 | Ran first weekly consolidation check across `memory/2026-03-01.md` + `memory/2026-03-02.md`; confirmed canonical artifacts already in place and no missing task/decision capture.
@@ -220,7 +212,7 @@ Current operating model:
 <<<<<<< HEAD
 - [x] OPS-2026-065 | S38 scheduled readiness automation wiring (closed 2026-03-04 after adding dedicated cutover-readiness cron hook and updating cron spec/runbook).
   - [x] 2026-03-06 | Corrected readiness artifact path handling to remove hard-coded dated source and add stable latest alias chain; evidence: `knowledge/evidence/2026-03-06__tde-cutover-readiness-artifact-path-fix.md`.
-- [x] TDE-2026-033 | Execute WO-2026-TDE-KERNEL-S26 (controlled cutover readiness packet + bounded live rollout runbook + owner decision packet for first live TDE slice). Closed 2026-03-10 as canary proven / expansion held; evidence: `knowledge/evidence/2026-03-10__tde-s26-closeout-note.md`. [tick:s26-canary-pass-20260310-132443]
+- [x] TDE-2026-033 | Execute WO-2026-TDE-KERNEL-S26 (controlled cutover readiness packet + bounded live rollout runbook + owner decision packet for first live TDE slice). Closed 2026-03-10 as canary proven / expansion held; historical evidence only, superseded by DB-canonical TDE frontier and later chaining work; evidence: `knowledge/evidence/2026-03-10__tde-s26-closeout-note.md`, `knowledge/evidence/2026-03-10__tde-s26-supersession-and-sequence-failure-review.md`, `knowledge/evidence/2026-03-10__error-report__tde-sequence-failure-and-context-loss.md`. [tick:s26-canary-pass-20260310-132443]
 - [x] OPS-2026-064 | S37 daily cutover readiness operations (closed 2026-03-04 after adding daily readiness runner and threshold alert guard scripts).
 - [x] OPS-2026-063 | S36 DB canonical cutover readiness gate (closed 2026-03-04 after publishing cutover gate SOP + first readiness NO_GO baseline report).
 - [x] OPS-2026-062 | S35 durable shadow event/action ledger writes (closed 2026-03-04 after persisting per-tick action/event entries in state store and wiring regression coverage).

@@ -1,9 +1,20 @@
 # TDE Bounded Live Cutover Readiness
 
 Date: 2026-03-10
-Status: Draft readiness assessment for bounded live rollout
+Status: Historical bounded-rollout assessment; superseded as active frontier by DB-canonical TDE cutover and later chaining work
 Owner: Lyra
 Linked WO: `WO-2026-TDE-KERNEL-S26`
+
+## Supersession note
+This artifact remains valid as historical evidence for a markdown-era bounded canary exploration, but it is no longer the canonical TDE frontier.
+
+Current canonical direction is the DB-canonical runtime path documented in:
+- `knowledge/evidence/2026-03-09__tde-db-canonical-cutover-executed.md`
+- `os/tde/INDEX.md`
+- `os/sops/TDE_CHAINING_CONTRACT_V1.md`
+- `governance/TDE_AUTONOMOUS_CHAINING_IMPLEMENTATION_PLAN_V1.md`
+
+Do not use this artifact alone to infer the present TDE architecture or next-step sequence.
 
 ## Proposed bounded rollout scope
 - Domain: **TDE-internal kernel work execution for `JOB-PROD-001` inside `repos/lyra-operating-system/TASKS.md`**
