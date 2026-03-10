@@ -161,6 +161,12 @@ Current operating model:
   - [x] 2026-03-04 | Ingested deep research architecture recommendation into `knowledge/reports/2026-03-04__deepresearch__durable-state-store-strategy-for-tde__v1.md` and added to reports index.
   - [x] 2026-03-04 | Delivered Sprint-1 state layer artifacts (`tools/tde_state_store.py`, `tools/tde_state_parity_check.py`) and verified parity in shadow mode; evidence: `knowledge/evidence/2026-03-04__verification__wo-2026-tde-kernel-s31.md`.
 
+- [ ] TDE-2026-033 | Execute WO-2026-TDE-KERNEL-S26 (controlled cutover readiness packet + bounded live rollout runbook + owner decision packet for first live TDE slice).
+  - [x] 2026-03-10 | Published cutover gap assessment and opened `WO-2026-TDE-KERNEL-S26.md`.
+  - [x] 2026-03-10 | Drafted initial S26 artifact set: `knowledge/distilled/2026-03-10__assessment__tde-cutover-gap-and-s26-recommendation-v1.md`, `knowledge/evidence/2026-03/tde-bounded-live-cutover-readiness.md`, `knowledge/evidence/2026-03/tde-bounded-live-rollout-runbook.md`, `knowledge/evidence/2026-03/tde-owner-cutover-decision-packet.md`.
+  - [ ] 2026-03-10 | Declare exact bounded canary domain + in-scope object inventory.
+  - [ ] 2026-03-10 | Convert HOLD items into explicit pass/fail cutover criteria and owner-ready GO/HOLD/ROLLBACK recommendation.
+
 ## Triage
 
 ## Active
