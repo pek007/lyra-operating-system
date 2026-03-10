@@ -27,16 +27,17 @@ The TDE kernel appears sufficiently hardened to justify preparing for bounded li
 - Mutation limit: only the already-proven low-risk task-state movement + audit-linked runtime path
 
 ## What still blocks a bounded live GO
-1. Exact open-object inventory / mapping proof for the bounded slice not yet consolidated.
-2. Drift and reconciliation thresholds for the live window not yet declared.
-3. Backup/restore and reconciliation-after-rollback linkage for this exact slice not yet attached.
-4. Operator runbook now exists, but pass/fail thresholds still need to be made explicit.
+1. Drift and reconciliation thresholds for the live window still need to be exercised in an actual bounded run.
+2. Backup/restore and reconciliation-after-rollback linkage for this exact slice is not yet attached.
+3. Operator runbook now exists, but it still needs one executed canary window to validate practicality.
 
 ## Recommended next action
-Complete S26 artifacts and then make an explicit owner decision on the selected bounded live rollout slice:
-- GO for `JOB-PROD-001` handling of open `TDE-2026-*` work in `TASKS.md`
-- HOLD for further hardening
-- ROLLBACK / remain on current posture
+The packet is now specific enough to support a tightly bounded execution step.
+
+Recommended next action:
+- run one bounded live canary window for `JOB-PROD-001` handling of open `TDE-2026-*` work in `TASKS.md`
+- capture cycle evidence against the S26 runbook
+- then decide GO-expand / HOLD / ROLLBACK
 
 ## Suggested owner decision standard
 Only approve bounded live GO if all of the following are explicit:

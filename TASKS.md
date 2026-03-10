@@ -166,7 +166,8 @@ Current operating model:
   - [x] 2026-03-10 | Drafted initial S26 artifact set: `knowledge/distilled/2026-03-10__assessment__tde-cutover-gap-and-s26-recommendation-v1.md`, `knowledge/evidence/2026-03/tde-bounded-live-cutover-readiness.md`, `knowledge/evidence/2026-03/tde-bounded-live-rollout-runbook.md`, `knowledge/evidence/2026-03/tde-owner-cutover-decision-packet.md`.
   - [x] 2026-03-10 | Declared exact bounded canary domain in `knowledge/evidence/2026-03/tde-bounded-live-canary-scope.md` (`JOB-PROD-001` handling of open `TDE-2026-*` work in `TASKS.md`).
   - [x] 2026-03-10 | Converted HOLD items into explicit canary pass/fail criteria and owner-ready decision framing in S26 packet artifacts.
-  - [ ] 2026-03-10 | Enumerate exact open `TDE-2026-*` canary object inventory and attach provenance/orphan check.
+  - [x] 2026-03-10 | Enumerated exact open `TDE-2026-*` canary object inventory and attached provenance/orphan check in `knowledge/evidence/2026-03/tde-bounded-live-canary-inventory-and-provenance-check.md`.
+  - [ ] 2026-03-10 | Link slice-specific backup/restore + reconciliation-after-rollback posture and execute first bounded live canary window.
 
 ## Triage
 

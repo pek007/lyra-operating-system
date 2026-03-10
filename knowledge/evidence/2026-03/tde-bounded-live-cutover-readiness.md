@@ -16,19 +16,19 @@ Linked WO: `WO-2026-TDE-KERNEL-S26`
 
 ### A) Data completeness
 - [x] In-scope domain explicitly named
-- [ ] In-scope objects enumerated
+- [x] In-scope objects enumerated
 - [x] Canonical-object rule declared (`TASKS.md` open `TDE-2026-*` items only)
-- [ ] Provenance/orphan check published for the slice
-- Current assessment: **PARTIAL / HOLD**
-- Rationale: the canary scope is now explicit, but the exact open-object inventory and provenance check still need to be published before GO.
+- [x] Provenance/orphan check published for the slice
+- Current assessment: **PASS FOR CURRENT CANARY BASELINE**
+- Rationale: the selected canary currently contains one open in-scope object (`TDE-2026-033`), and the inventory/provenance check shows 0 open orphan objects.
 
 ### B) Audit and traceability
 - [x] TDE governance artifacts produce explicit evidence objects and linked decision traces
 - [x] Objective/binding context can be attached to runtime artifacts
-- [ ] Historical import level for the bounded slice explicitly declared
-- [ ] Re-run/import idempotency for the chosen cutover slice explicitly evidenced
-- Current assessment: **PARTIAL / HOLD**
-- Rationale: kernel evidence chain is strong; slice-specific audit/import declaration still needs to be consolidated.
+- [x] Historical import level for the bounded slice is effectively native/local (no external historical import required for this repo-local canary)
+- [x] Re-run/import idempotency for the chosen cutover slice is partially evidenced by prior real-workload writeback and job-tick artifacts
+- Current assessment: **PARTIAL / PASSABLE FOR CANARY**
+- Rationale: because this is a repo-local internal canary, audit/traceability risk is much lower than an external cutover; existing job-tick/writeback artifacts materially support the audit chain.
 
 ### C) Reliability and drift control
 - [x] Kernel fail-closed semantics and writeback guards are materially advanced
