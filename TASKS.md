@@ -8,6 +8,7 @@ Current operating model:
 - This file: retained as legacy/reference context during transition
 
 ## Inbox
+- [ ] OPS-2026-074 | Align Task Management / TDE operating notes with today’s new substrate assumptions: job-bundle continuity, same-cycle write-back, and standardized same-runtime intra-Lyra handoffs where work crosses lanes.
 - [ ] OPS-2026-072 | Define the first runtime-topology map for Lyra OS based on the adopted hybrid model: central Control Panel runtime, selective persistent product/domain runtimes where justified, explicit wake-up strategy (heartbeat vs cron vs direct session messaging), and cross-session handoff pattern.
   - [x] 2026-03-10 | Published `RUNTIME_TOPOLOGY_MAP_V1.md` with current-state topology, target-state model, runtime classification framework, wake-up strategy by class, coordination pattern, and migration path.
   - [x] 2026-03-10 | Published `RUNTIME_ASSIGNMENT_MAP_V1.md` with explicit current-state vs target-state placement, wake-up model, coordination default, and dedicated-runtime threshold call for the currently visible Lyra OS product/session lanes.

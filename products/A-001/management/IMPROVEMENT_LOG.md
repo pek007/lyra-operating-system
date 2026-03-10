@@ -11,6 +11,15 @@ Status: Placeholder
 - Decision (adopt/revert/continue-test): Continue-test.
 - Follow-up: Run 1-2 additional live proof cases before deciding whether to standardize the protocol more broadly across Lyra lanes.
 
+## Entry A-001-L2
+- Trigger: Need to explain how today’s memory/runtime-topology/handoff changes affect Task Management and TDE specifically.
+- Observation: Today’s work did not change the TDE kernel directly, but it materially improved the operating substrate around TDE by strengthening job continuity, same-runtime handoff discipline, and reducing dependence on thread context as hidden state.
+- Hypothesis: A short TDE-facing operating-impact note will help Task Management/TDE consume the change correctly without confusing operating-model improvements with kernel-contract changes.
+- Change made: Published `knowledge/evidence/2026-03-10__tde-operating-impact-note__memory-runtime-topology-and-handoffs.md`.
+- Result: TDE-facing interpretation of today’s changes is now explicit.
+- Decision (adopt/revert/continue-test): Adopt.
+- Follow-up: reflect the most relevant assumptions into Task Management/TDE operating notes when the next TDE-alignment pass is done.
+
 ## Entry A-001-L1
 - Trigger: Portfolio framework rollout
 - Observation: Product baseline not yet instantiated.
