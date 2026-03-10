@@ -17,3 +17,4 @@
 - Result: Initial memory governance baseline established.
 - Decision (adopt/revert/continue-test): Adopt (v1 baseline).
 - Follow-up: validate live retrieval behavior, define coordination-memory substrate, and clean up remaining live `Control Tower` terminology.
+- Additional implementation artifacts: `MEMORY_IMPLEMENTATION_ROADMAP_V1.md`, `MEMORY_ACTIVATION_MAP_V1.md`.

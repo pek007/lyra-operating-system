@@ -9,6 +9,9 @@ Current operating model:
 
 ## Inbox
 - [ ] OPS-2026-070 | Operationalize `MEMORY_PROCESS_V1.md`: validate live memory retrieval behavior, define the first activation-class map for priority memory artifacts, and publish a phased implementation roadmap for agent/session/job/knowledge/coordination memory under Control Panel ownership.
+  - [x] 2026-03-10 | Published `MEMORY_IMPLEMENTATION_ROADMAP_V1.md` with phased execution plan.
+  - [x] 2026-03-10 | Published `MEMORY_ACTIVATION_MAP_V1.md` with initial activation classes for priority memory-bearing artifacts.
+  - [ ] Next | Validate live retrieval/index behavior and convert the roadmap into an implementation sequence with runtime evidence.
 - [ ] OPS-2026-071 | Clean up retired live `Control Tower` terminology in current operating artifacts where the product-model replacement to `Control Panel` is now authoritative; classify historical/library references separately so historical evidence is preserved without leaving active-governance ambiguity.
 - [ ] IMP-AUTO-20260310-03 | Decide and document bootstrap-file lifecycle (`BOOTSTRAP.md`: delete/archive/intentional-retain) now that identity has been established, so startup hygiene no longer carries an apparently stale first-run artifact (impact: reduces operator ambiguity during sweeps and onboarding checks).
 - [ ] IMP-AUTO-20260310-04 | Reconcile `governance/direction-package.md` with the current compiled runtime charter and active-job set (notably Continuous Improvement Lead and post-bootstrap job naming) or clearly mark it superseded (impact: reduces stale strategic guidance and role-model confusion).

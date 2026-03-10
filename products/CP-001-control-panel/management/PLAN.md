@@ -22,6 +22,7 @@
   - Dependencies: Product ownership framing and terminology clarified.
   - Acceptance criteria: `MEMORY_PROCESS_V1.md` published; `SITUATIONAL_AWARENESS.md` updated; Control Panel management artifacts reflect memory capability ownership; follow-on tasks captured.
   - Evidence required: File paths + task references + decision note.
+  - Current implementation artifacts: `MEMORY_IMPLEMENTATION_ROADMAP_V1.md`, `MEMORY_ACTIVATION_MAP_V1.md`
 
 ## Later
 - Initiative ID: CP-I3 Quality automation
