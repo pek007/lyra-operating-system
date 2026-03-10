@@ -161,17 +161,17 @@ Current operating model:
   - [x] 2026-03-04 | Ingested deep research architecture recommendation into `knowledge/reports/2026-03-04__deepresearch__durable-state-store-strategy-for-tde__v1.md` and added to reports index.
   - [x] 2026-03-04 | Delivered Sprint-1 state layer artifacts (`tools/tde_state_store.py`, `tools/tde_state_parity_check.py`) and verified parity in shadow mode; evidence: `knowledge/evidence/2026-03-04__verification__wo-2026-tde-kernel-s31.md`.
 
-- [ ] TDE-2026-033 | Execute WO-2026-TDE-KERNEL-S26 (controlled cutover readiness packet + bounded live rollout runbook + owner decision packet for first live TDE slice).
+## Triage
+
+## Active
   - [x] 2026-03-10 | Published cutover gap assessment and opened `WO-2026-TDE-KERNEL-S26.md`.
   - [x] 2026-03-10 | Drafted initial S26 artifact set: `knowledge/distilled/2026-03-10__assessment__tde-cutover-gap-and-s26-recommendation-v1.md`, `knowledge/evidence/2026-03/tde-bounded-live-cutover-readiness.md`, `knowledge/evidence/2026-03/tde-bounded-live-rollout-runbook.md`, `knowledge/evidence/2026-03/tde-owner-cutover-decision-packet.md`.
   - [x] 2026-03-10 | Declared exact bounded canary domain in `knowledge/evidence/2026-03/tde-bounded-live-canary-scope.md` (`JOB-PROD-001` handling of open `TDE-2026-*` work in `TASKS.md`).
   - [x] 2026-03-10 | Converted HOLD items into explicit canary pass/fail criteria and owner-ready decision framing in S26 packet artifacts.
   - [x] 2026-03-10 | Enumerated exact open `TDE-2026-*` canary object inventory and attached provenance/orphan check in `knowledge/evidence/2026-03/tde-bounded-live-canary-inventory-and-provenance-check.md`.
-  - [ ] 2026-03-10 | Link slice-specific backup/restore + reconciliation-after-rollback posture and execute first bounded live canary window.
-
-## Triage
-
-## Active
+  - [x] 2026-03-10 | Linked slice-specific backup/restore + reconciliation-after-rollback posture in `knowledge/evidence/2026-03/tde-bounded-live-canary-backup-and-rollback-posture.md`.
+  - [x] 2026-03-10 | Executed first bounded live canary window and captured both fail-closed reauth hold and canonical-binding pass in `knowledge/evidence/2026-03/2026-03-10__verification__wo-2026-tde-kernel-s26-first-bounded-live-canary-window.md`.
+  - [ ] 2026-03-10 | Accumulate repeated clean canonical-binding cycles or close S26 with canary-proven / expansion-held recommendation.
 - [x] OPS-2026-037 | Execute Chat Continuity Sprint 1 (apply protocol daily, publish first channel-handoff summary, and run first weekly consolidation check).
   - [x] 2026-03-02 | Published first explicit channel-handoff summary block in `memory/2026-03-02.md` (main ↔ cron autonomous sprint loop context).
   - [x] 2026-03-02 | Ran first weekly consolidation check across `memory/2026-03-01.md` + `memory/2026-03-02.md`; confirmed canonical artifacts already in place and no missing task/decision capture.
@@ -208,6 +208,7 @@ Current operating model:
   - [x] 2026-03-03 | Executed Active→Done board-state transition after evidence consistency recheck; evidence: `knowledge/evidence/2026-03-03__ops-2026-022-active-to-done-transition-executed.md`.
 
 ## Waiting
+- [ ] TDE-2026-033 | Execute WO-2026-TDE-KERNEL-S26 (controlled cutover readiness packet + bounded live rollout runbook + owner decision packet for first live TDE slice). [tick:s26-canary-pass-20260310-132443]
 - [x] OPS-2026-023 | Sprint 3 closeout pack (release notes + tag + vNext backlog update) after QA pass
   - [x] 2026-03-02 | Drafted and published `SPRINT3_CLOSEOUT_PACK_V1.md` with release-notes draft, tag plan, and proposed vNext backlog promotion set.
   - [x] 2026-03-02 | Re-validated Control Panel API test baseline via `pnpm --filter @control-panel/api test` (result: 34 files / 326 tests passing) to de-risk closeout execution.

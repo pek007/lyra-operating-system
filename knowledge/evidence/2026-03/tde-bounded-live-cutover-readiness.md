@@ -34,17 +34,17 @@ Linked WO: `WO-2026-TDE-KERNEL-S26`
 - [x] Kernel fail-closed semantics and writeback guards are materially advanced
 - [x] Weekly DORA proxy baseline exists
 - [x] Reconciliation cadence for the bounded slice can be defined per job-tick cycle against `TASKS.md` + evidence artifact output
-- [ ] Drift thresholds and pass/fail criteria declared for live rollout
-- [ ] Backup/restore validation tied to cutover slice linked
-- Current assessment: **PARTIAL / HOLD**
-- Rationale: runtime hardening exists and reconciliation anchor is now clear, but the numerical/explicit live thresholds still need to be packetized for operator use.
+- [x] Drift/pass-fail criteria are declared for the canary window
+- [x] Backup/restore validation is linked for the exact slice
+- Current assessment: **PASS FOR FIRST BOUNDED WINDOW**
+- Rationale: the first bounded canary window demonstrated both fail-closed guard behavior and canonical-binding success, with backups captured before execution and no out-of-scope mutation observed.
 
 ### D) Workflow adoption
 - [x] End-to-end TDE governance/runtime path exists for thin slices
-- [ ] Bounded slice can be run day-to-day without operational dependence on legacy board usage being explicitly demonstrated
-- [ ] Per-cycle operator checklist for the rollout window exists
-- Current assessment: **HOLD**
-- Rationale: build evidence is strong, but operator execution readiness is not yet explicit.
+- [x] Bounded slice has now been executed without operational dependence on legacy board usage
+- [x] Per-cycle operator checklist for the rollout window exists
+- Current assessment: **PASS FOR CURRENT CANARY**
+- Rationale: the first bounded live window was executed entirely from `TASKS.md` plus TDE evidence artifacts, confirming practical operator viability for this narrow slice.
 
 ### E) Security and dependency removal
 - [x] Authority boundaries and fail-closed posture are explicit in the kernel direction
@@ -55,15 +55,15 @@ Linked WO: `WO-2026-TDE-KERNEL-S26`
 
 ### F) Rollback readiness
 - [x] Rollback is a defined principle in adjacent operating policies
-- [ ] Numeric or explicit rollback triggers defined for the bounded rollout window
-- [ ] Rollback execution steps documented
-- [ ] Reconciliation-after-rollback steps documented
-- Current assessment: **HOLD**
-- Rationale: rollback philosophy exists, but S26 should make it operationally executable.
+- [x] Explicit rollback triggers are defined for the bounded rollout window
+- [x] Rollback execution steps are documented
+- [x] Reconciliation-after-rollback steps are documented
+- Current assessment: **PASS FOR CURRENT CANARY**
+- Rationale: slice-specific backup/rollback posture is now documented and the first bounded window validated that guard failure produces safe non-mutation behavior.
 
 ## Overall gate outcome
-- Current gate: **HOLD**
-- Meaning: kernel is strong enough to justify cutover packetization, but not yet enough evidence is assembled for bounded live GO.
+- Current gate: **PASS FOR BOUNDED CANARY / HOLD FOR EXPANSION**
+- Meaning: the selected one-object repo-local canary has enough evidence to continue within current scope, but not yet enough evidence exists to justify broader rollout expansion.
 
 ## Proposed pass/fail criteria for the canary window
 

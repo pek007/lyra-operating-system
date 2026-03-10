@@ -1,17 +1,19 @@
 # TDE Owner Cutover Decision Packet
 
 Date: 2026-03-10
-Status: Draft
+Status: Updated after first bounded canary window
 Owner: Lyra
 Linked WO: `WO-2026-TDE-KERNEL-S26`
 
 ## Decision required
-Not yet GO for live cutover.
-
-Recommended current decision: **HOLD pending bounded-scope packet completion**.
+Recommended current decision: **GO to continue within the current bounded canary scope; HOLD on any expansion**.
 
 ## Why this is the right decision now
-The TDE kernel appears sufficiently hardened to justify preparing for bounded live use, but the operational cutover packet is still incomplete. The limiting risk is no longer core governance semantics; it is incomplete cutover clarity for a specific live slice.
+The first bounded live canary window has now been executed. It produced two useful signals:
+- a fail-closed HOLD when session/binding posture was non-canonical
+- a clean PASS when the runtime used the canonical active binding
+
+That means the kernel is no longer only theoretically cutover-ready for this slice; it has now demonstrated safe bounded execution in practice.
 
 ## What is already strong
 - core thin-slice governance path exists
@@ -26,18 +28,17 @@ The TDE kernel appears sufficiently hardened to justify preparing for bounded li
 - Authority posture: `TASKS.md` canonical for this slice; no Trello/legacy authority in scope
 - Mutation limit: only the already-proven low-risk task-state movement + audit-linked runtime path
 
-## What still blocks a bounded live GO
-1. Drift and reconciliation thresholds for the live window still need to be exercised in an actual bounded run.
-2. Backup/restore and reconciliation-after-rollback linkage for this exact slice is not yet attached.
-3. Operator runbook now exists, but it still needs one executed canary window to validate practicality.
+## What still blocks broader rollout
+1. Evidence currently covers only a one-object repo-local canary.
+2. Repeated clean cycles have not yet been accumulated.
+3. Mutation surface has only been validated for the already-proven low-risk writeback path.
+4. No evidence yet supports expansion beyond `TDE-2026-*` repo-local kernel work.
 
 ## Recommended next action
-The packet is now specific enough to support a tightly bounded execution step.
-
 Recommended next action:
-- run one bounded live canary window for `JOB-PROD-001` handling of open `TDE-2026-*` work in `TASKS.md`
-- capture cycle evidence against the S26 runbook
-- then decide GO-expand / HOLD / ROLLBACK
+- continue operating within the current bounded canary scope only
+- collect additional clean cycles using the canonical binding/session posture
+- publish a short closeout note once enough repeated clean cycles exist to decide whether S26 should close as canary-proven but expansion-held, or continue for one more bounded cycle set
 
 ## Suggested owner decision standard
 Only approve bounded live GO if all of the following are explicit:

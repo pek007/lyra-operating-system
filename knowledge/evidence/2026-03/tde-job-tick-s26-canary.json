@@ -1,0 +1,87 @@
+{
+  "artifactType": "tde_job_tick",
+  "schemaVersion": "1.0.0",
+  "tick_id": "s26-canary-20260310-132423",
+  "trigger_source": "cron",
+  "timestamp": "2026-03-10T13:24:23.871183+00:00",
+  "job_id": "JOB-PROD-001",
+  "binding_id": "BIND-JOB-PROD-001-ACTIVE",
+  "actor_id": "lyra",
+  "session_key": "cron:tde-job-runner-s26-canary",
+  "objective_linkage": {
+    "objective_id": "OBJ-TDE-FOUNDATION",
+    "objective_checkpoint": "S24",
+    "rationale_trace": "TDE-2026-033-s26-canary"
+  },
+  "objective_registry_context": {
+    "registry_path": "os/runtime/tde_objectives.json",
+    "registry_loaded": true
+  },
+  "binding_context": {
+    "active_binding": {
+      "binding_id": "BIND-JOB-PROD-001-ACTIVE",
+      "job_id": "JOB-PROD-001",
+      "actor_id": "lyra",
+      "session_key": "cron:tde-job-runner-v1",
+      "status": "active",
+      "binding_epoch": 2,
+      "updated_at": "2026-03-04T09:45:00Z",
+      "expires_at": "2026-12-31T23:59:59+00:00"
+    },
+    "binding_source": "registry_job_actor",
+    "binding_status": "mismatch"
+  },
+  "claim_limit": 1,
+  "claimed": [
+    "TDE-2026-033"
+  ],
+  "mutations": [
+    {
+      "task_id": "TDE-2026-033",
+      "request_id": "s26-canary-20260310-132423-0",
+      "idempotency_key": "s26-canary-20260310-132423:TDE-2026-033",
+      "status": "reauth_required",
+      "fail_closed": true,
+      "fail_closed_reason": "REAUTH_REQUIRED_ON_BINDING_CHANGE",
+      "binding_status": "mismatch",
+      "required_on_retry": {
+        "fresh_policy_decision_id": true,
+        "fresh_idempotency_key": true
+      },
+      "mutation_envelope": {
+        "job_id": "JOB-PROD-001",
+        "binding_id": "BIND-JOB-PROD-001-ACTIVE",
+        "policy_decision_id": "pending:s26-canary-20260310-132423:TDE-2026-033",
+        "idempotency_key": "s26-canary-20260310-132423:TDE-2026-033",
+        "expected_version": 0,
+        "objective_linkage": {
+          "objective_id": "OBJ-TDE-FOUNDATION",
+          "objective_checkpoint": "S24",
+          "rationale_trace": "TDE-2026-033-s26-canary"
+        }
+      }
+    }
+  ],
+  "idempotency_references": [
+    "s26-canary-20260310-132423:TDE-2026-033"
+  ],
+  "writeback": {
+    "applied": false,
+    "reason": "no_tasks_or_no_claims",
+    "moved": []
+  },
+  "decisions": [],
+  "evidence_outputs": [
+    "knowledge/evidence/2026-03/tde-job-tick-s26-canary.json"
+  ],
+  "outcomes": {
+    "progressed": 0,
+    "blocked_pending_approval": 0,
+    "failed_validation": 0,
+    "no_work": 0,
+    "reauth_required": 1
+  },
+  "status": "ok",
+  "fail_closed": true,
+  "fail_closed_reason": "REAUTH_REQUIRED_ON_BINDING_CHANGE"
+}
