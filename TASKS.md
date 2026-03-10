@@ -13,6 +13,9 @@ Current operating model:
   - [x] 2026-03-10 | Published `RUNTIME_ASSIGNMENT_MAP_V1.md` with explicit current-state vs target-state placement, wake-up model, coordination default, and dedicated-runtime threshold call for the currently visible Lyra OS product/session lanes.
   - [ ] Next | Define the lightweight intra-Lyra cross-session handoff protocol and run the first proof case (recommended: Task Management) using real job bundle + direct `sessions_send` coordination rather than copy-paste.
 - [ ] OPS-2026-073 | Design a lightweight intra-Lyra cross-session handoff protocol that replaces copy-paste as the default coordination method while remaining lighter than the Vega cross-domain handoff model.
+  - [x] 2026-03-10 | Published `INTRA_LYRA_HANDOFF_PROTOCOL_V1.md` with minimal packet fields, transport rule (`sessions_send`), write-back rule, response contract, and Control Panel / session-lane responsibilities.
+  - [x] 2026-03-10 | Published `TASK_MANAGEMENT_PROOF_CASE_V1.md` as the first recommended proof case for the new coordination model.
+  - [ ] Next | Stand up one real Task Management job bundle and run the first live proof case using the protocol.
 - [ ] OPS-2026-070 | Operationalize `MEMORY_PROCESS_V1.md`: validate live memory retrieval behavior, define the first activation-class map for priority memory artifacts, and publish a phased implementation roadmap for agent/session/job/knowledge/coordination memory under Control Panel ownership.
   - [x] 2026-03-10 | Published `MEMORY_IMPLEMENTATION_ROADMAP_V1.md` with phased execution plan.
   - [x] 2026-03-10 | Published `MEMORY_ACTIVATION_MAP_V1.md` with initial activation classes for priority memory-bearing artifacts.

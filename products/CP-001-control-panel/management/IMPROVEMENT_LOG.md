@@ -28,3 +28,12 @@
 - Decision (adopt/revert/continue-test): Adopt (v1 topology baseline).
 - Follow-up: map current sessions/products to the topology, define the lightweight intra-Lyra handoff protocol, and test at least one real job/product flow under the new coordination model.
 - Additional implementation artifact: `RUNTIME_ASSIGNMENT_MAP_V1.md`.
+
+## Entry CP-L4
+- Trigger: Need to move from runtime-topology theory into an actually usable coordination pattern across Lyra product/session lanes.
+- Observation: The current missing operational piece is not another architecture document, but a lightweight handoff protocol and a real proof case that replaces copy-paste with native cross-session coordination plus durable write-back.
+- Hypothesis: A deliberately small intra-Lyra handoff protocol, tested first in Task Management, will validate whether the hybrid runtime model can work without creating new persistent runtimes prematurely.
+- Change made: Published `INTRA_LYRA_HANDOFF_PROTOCOL_V1.md` and `TASK_MANAGEMENT_PROOF_CASE_V1.md`.
+- Result: First operating contract for intra-Lyra coordination established; proof case defined.
+- Decision (adopt/revert/continue-test): Continue-test.
+- Follow-up: run the first live Task Management proof case with a real job bundle and capture what needs refinement.
