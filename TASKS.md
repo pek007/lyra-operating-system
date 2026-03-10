@@ -8,6 +8,7 @@ Current operating model:
 - This file: retained as legacy/reference context during transition
 
 ## Inbox
+- [ ] OPS-2026-078 | Establish a stable cross-runtime communication loop for Lyra OS <-> PX: adopt inbox/outbox handoff structure, define pickup cadence and handled-state rules, and decide whether/when to add cron-backed inbox checks on each side.
 - [ ] OPS-2026-075 | Convert the first-wave product runtime embodiment framework into implementation candidates: define the Control Panel coordination skill, Task Management / TDE operator skill, and Governance VERIFY-cycle skill at concept/spec level before any plugin work.
   - [x] 2026-03-10 | Published `SKILL_CONCEPTS_FIRST_WAVE_V1.md` with bounded concept/spec definitions for the first three skills, including trigger, inputs, outputs, escalation conditions, and boundaries.
   - [x] 2026-03-10 | Published `CONTROL_PANEL_COORDINATION_SKILL_SPEC_V1.md` as the first implementation-ready skill spec, defining scope, trigger conditions, inputs/outputs, decision logic, escalation conditions, and implementation boundary.

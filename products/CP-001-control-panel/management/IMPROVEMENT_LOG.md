@@ -146,3 +146,12 @@
 - Decision (adopt/revert/continue-test): Continue-test locally.
 - Follow-up: use the skill in real coordination work and then decide whether to keep iterating locally or promote/package it more broadly.
 
+## Entry CP-L17
+- Trigger: Peter identified that current Lyra<->Vega communication still depends too much on manual bridging and asked whether a heartbeat/inbox-outbox style mechanism should replace that.
+- Observation: Same-runtime coordination now works well, but cross-runtime exchange remains structurally weaker and currently depends on explicit manual bridging despite proper handoff artifacts.
+- Hypothesis: A small cross-runtime inbox/outbox loop standard, with cron-backed pickup as the primary mechanism and heartbeat as awareness support, will create a more stable boundary-respecting communication pattern.
+- Change made: Published `CROSS_RUNTIME_HANDOFF_LOOP_STANDARD_V0_1.md` and opened `OPS-2026-078`.
+- Result: First explicit standard for cross-runtime communication is now documented.
+- Decision (adopt/revert/continue-test): Adopt (v0.1 standard baseline).
+- Follow-up: decide whether to add cron-backed inbox checks on both sides and what handled-state/archive pattern to use.
+

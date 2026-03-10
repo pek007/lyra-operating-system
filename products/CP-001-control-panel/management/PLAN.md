@@ -46,4 +46,4 @@
   - Dependencies: Runtime topology and handoff standardization work completed to baseline.
   - Acceptance criteria: `PRODUCT_RUNTIME_EMBODIMENT_FRAMEWORK_V1.md` and `PRODUCT_RUNTIME_EMBODIMENT_MAP_V1.md` published; first-wave embodiment priorities identified.
   - Evidence required: Framework/map paths + linked follow-on tasks.
-  - Current implementation artifacts: `PRODUCT_RUNTIME_EMBODIMENT_FRAMEWORK_V1.md`, `PRODUCT_RUNTIME_EMBODIMENT_MAP_V1.md`, `SKILL_CONCEPTS_FIRST_WAVE_V1.md`, `CONTROL_PANEL_COORDINATION_SKILL_SPEC_V1.md`, `PRODUCT_CRON_MODEL_V1.md`, `skills/control-panel-coordination/SKILL.md`
+  - Current implementation artifacts: `PRODUCT_RUNTIME_EMBODIMENT_FRAMEWORK_V1.md`, `PRODUCT_RUNTIME_EMBODIMENT_MAP_V1.md`, `SKILL_CONCEPTS_FIRST_WAVE_V1.md`, `CONTROL_PANEL_COORDINATION_SKILL_SPEC_V1.md`, `PRODUCT_CRON_MODEL_V1.md`, `skills/control-panel-coordination/SKILL.md`, `CROSS_RUNTIME_HANDOFF_LOOP_STANDARD_V0_1.md`
