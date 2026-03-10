@@ -403,7 +403,12 @@ def run_job_tick(
         state_init_schema(canonical_conn)
         chaining = {"enabled": True, **state_evaluate_chaining_promotions(canonical_conn, tick_id)}
         tasks = [
-            {"id": row["task_id"], "title": row["title"], "state": "ready" if row["status"] == "Active" else row["status"].lower()}
+            {
+                "id": row["task_id"],
+                "title": row["title"],
+                "state": "ready" if row["status"] == "Active" else row["status"].lower(),
+                "metadata": json.loads(row.get("metadata_json") or "{}"),
+            }
             for row in state_read_tasks(canonical_conn, section="Active")
         ]
     else:
@@ -657,6 +662,7 @@ def run_job_tick(
                 )
                 continue
 
+            requires_approval = bool(item.get("metadata", {}).get("requires_approval", False))
             req = ActionRequest(
                 request_id=f"{tick_id}-{index}",
                 idempotency_key=idempotency_key,
@@ -666,7 +672,8 @@ def run_job_tick(
                 action="task.transition",
                 target_id=item["id"],
                 expected_version=mutation_envelope["expected_version"],
-                risk="low",
+                risk="high" if requires_approval else "low",
+                requires_approval=requires_approval,
             )
             result = kernel.execute(req)
             status = result["status"]

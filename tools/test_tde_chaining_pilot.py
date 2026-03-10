@@ -84,6 +84,58 @@ class TDEChainingPilotTest(unittest.TestCase):
             self.assertEqual(result["promoted"], [])
             self.assertEqual(result["skipped"][0]["reason"], "missing_predecessor")
 
+    def test_approval_gated_successor_promotes_but_does_not_execute(self) -> None:
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            tasks = root / "TASKS.md"
+            tasks.write_text(
+                """# TASKS.md\n\n## Inbox\n\n## Triage\n- [ ] TDE-CHAIN-202 | Approval-gated deployment review\n\n## Active\n\n## Waiting\n\n## Done\n- [x] TDE-CHAIN-201 | Verification complete\n""",
+                encoding="utf-8",
+            )
+            bindings = root / "bindings.json"
+            bindings.write_text(json.dumps({"bindings": [{"binding_id": "BIND-JOB-PROD-001-ACTIVE", "job_id": "JOB-PROD-001", "actor_id": "lyra", "session_key": "cron:tde-job-runner-v1", "status": "active", "binding_epoch": 1}]}), encoding="utf-8")
+            objectives = root / "objectives.json"
+            objectives.write_text(json.dumps({"objectives": [{"objective_id": "OBJ-TDE-FOUNDATION", "allowed_checkpoints": ["S39"]}]}), encoding="utf-8")
+            db = root / "tde_state.sqlite"
+            conn = connect(db)
+            init_schema(conn)
+            import_tasks(conn, tasks)
+            update_task_metadata(conn, "TDE-CHAIN-202", {
+                "depends_on": ["TDE-CHAIN-201"],
+                "activation_rule": "all_predecessors_done",
+                "objective_id": "OBJ-TDE-FOUNDATION",
+                "stage_id": "deploy_readiness_review",
+                "requires_approval": True,
+                "chain_policy": {"family": "pilot_family_a", "pilot_enabled": True, "promotion_cap_class": "bounded_single_successor"},
+            })
+            export_tasks(conn, tasks)
+            artifact = root / "artifact.json"
+            result = run_job_tick(
+                job_id="JOB-PROD-001",
+                binding_id="BIND-JOB-PROD-001-ACTIVE",
+                actor_id="lyra",
+                session_key="cron:tde-job-runner-v1",
+                trigger_source="cron",
+                tick_id="chain-approval-1",
+                max_claim=1,
+                objective_id="OBJ-TDE-FOUNDATION",
+                objective_checkpoint="S39",
+                rationale_trace="chain-approval",
+                tasks_path=tasks,
+                artifact_path=artifact,
+                writeback_tasks_path=tasks,
+                binding_registry_path=bindings,
+                objective_registry_path=objectives,
+                canonical_store="db",
+                canonical_db_path=db,
+            )
+            self.assertEqual(result["status"], "ok")
+            self.assertEqual(result["chaining"]["promoted"][0]["task_id"], "TDE-CHAIN-202")
+            self.assertEqual(result["mutations"][0]["status"], "blocked_pending_approval")
+            self.assertEqual(result["outcomes"]["blocked_pending_approval"], 1)
+            row = conn.execute("SELECT status FROM tasks WHERE task_id='TDE-CHAIN-202'").fetchone()
+            self.assertEqual(row[0], "Active")
+
 
 if __name__ == "__main__":
     unittest.main()
