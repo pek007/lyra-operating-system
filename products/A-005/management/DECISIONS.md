@@ -35,3 +35,18 @@ Last updated: 2026-03-08
   - `pxs/PXS_ASSEMBLY_LOCK.md`
   - `pxs/docs/assemblies/*`
 - Reversal conditions: If pinned-lane packaging proves operationally worse than expected, revisit distribution design with explicit decision packet
+
+## Decision A-005-D4
+- Context: Repeated operational misses and incidents only create portfolio learning if they are consistently written down, linked to action, and verified.
+- Decision: Establish a mandatory incident-to-improvement loop under A-005. For every material error, incident, or repeated near-miss, the operating system must create a written record, define a preventive action, route it into execution, and verify closure. "Recover and move on" is no longer considered a complete response.
+- Trade-offs:
+  - Gain: stronger learning rate, lower recurrence, better traceability, clearer ownership
+  - Cost: more discipline and modest documentation overhead after failures
+  - Risk: process drag if applied to trivial noise instead of material signals
+- Impacted artifacts/processes:
+  - `products/A-005/management/INCIDENT_TO_IMPROVEMENT_LOOP.md`
+  - `products/A-005/management/IMPROVEMENT_LOG.md`
+  - `CONTINUOUS_IMPROVEMENT_PROCESS_V1.md`
+  - `INCIDENT_LOG.md`
+  - related product/task/decision artifacts created from prevention work
+- Reversal conditions: Revisit only if a better portfolio-wide closed-loop mechanism replaces it with equal or better traceability and prevention effectiveness

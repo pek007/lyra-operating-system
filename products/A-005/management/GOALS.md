@@ -48,3 +48,19 @@ Last updated: 2026-03-08
   - Strategic or real-world-consequence changes are surfaced to Peter
 - Owner job role: Improvement Product Owner
 - Exit criteria: Improvement work shows a sustained rhythm and generates visible portfolio learning
+
+## Goal A-005-G4 — Make error-to-prevention a mandatory closed loop
+- Outcome: Material incidents, repeated errors, and meaningful near-misses reliably produce documented records, owned prevention actions, and verified follow-through.
+- Leading indicators:
+  - % of material incidents with written incident/improvement records created within the same operating cycle
+  - % of incident-driven improvements with owner, due/review date, and linked execution artifact
+  - % of automation-amplified failures that also generate containment/guardrail actions
+- Lagging indicators:
+  - Lower recurrence rate for the same root-cause family
+  - Lower manual-recovery burden from previously seen failure modes
+- Guardrails:
+  - Do not over-process trivial noise
+  - Closure requires prevention intent, not only recovery
+  - One-way-door fixes still follow normal escalation/decision rules
+- Owner job role: Improvement Product Owner
+- Exit criteria: The default behavior after failure is capture -> prevention -> verification, and recurrence visibly declines over time

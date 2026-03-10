@@ -15,6 +15,7 @@ Observe friction -> Capture improvement item -> Prioritize -> Pilot small change
 - Small reversible changes by default
 - One-way-door changes require explicit decision packet
 - Every improvement has owner + success signal + review date
+- Material incidents, repeated errors, and meaningful near-misses must follow the A-005 incident-to-improvement loop: written record -> preventive action -> execution routing -> verification
 - Cron-discovered non-trivial items go to `TASKS.md` Inbox with ID format `IMP-AUTO-YYYYMMDD-XX` and one-line impact statement
 - Keep continuous-improvement edits low-risk by default (no automatic changes to security boundaries, credentials, external integrations, or runtime permissions)
 - Weekly Layer C must produce a Deep Research prompt packet with:

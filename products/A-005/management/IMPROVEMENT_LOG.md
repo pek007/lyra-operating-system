@@ -40,3 +40,30 @@ Last updated: 2026-03-08
   - `products/A-005/management/SCORECARD.md`
   - `knowledge/evidence/2026-03/2026-03-08__a-005-verification-baseline-v1.md`
   - `pxs/PXS_ASSEMBLY_LOCK.md`
+
+## Entry A-005-L3
+- Date: 2026-03-10
+- Trigger: Product-owner direction to make error reporting and prevention a formal process under A-005.
+- Observation: The improvement product already defined general continuous-improvement flow, but it did not yet make the post-error closed loop explicit enough: write the record, trigger the right prevention work, and verify closure.
+- Hypothesis: Making the incident-to-improvement loop explicit in A-005 will reduce recurrence, improve traceability, and create the right base for an eventual autonomous self-improvement loop.
+- Change made:
+  - Added canonical `INCIDENT_TO_IMPROVEMENT_LOOP.md` under A-005
+  - Added explicit decision, goal, plan initiative, and scorecard signals for the loop
+- Result: A-005 now formally owns the rule that material failures must become documented prevention work, not just recovery.
+- Decision (adopt/revert/continue-test): Adopt
+- Owner: Lyra
+- Review date: 2026-03-17
+- Linked execution artifact(s):
+  - Decision: `products/A-005/management/DECISIONS.md` (`A-005-D4`)
+  - Plan initiative: `products/A-005/management/PLAN.md` (`A-005-I6`)
+  - Goal: `products/A-005/management/GOALS.md` (`A-005-G4`)
+- Follow-up:
+  - Roll the minimum incident/improvement interface into active products
+  - Add a weekly synthesis artifact for recurring failure classes
+  - Define what parts of the loop can safely become autonomous first
+- Linked artifacts:
+  - `products/A-005/management/INCIDENT_TO_IMPROVEMENT_LOOP.md`
+  - `products/A-005/management/DECISIONS.md`
+  - `products/A-005/management/GOALS.md`
+  - `products/A-005/management/PLAN.md`
+  - `products/A-005/management/SCORECARD.md`
