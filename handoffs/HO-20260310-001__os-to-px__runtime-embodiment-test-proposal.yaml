@@ -1,0 +1,21 @@
+handoff_id: "HO-20260310-001"
+from_domain: "os"
+to_domain: "px"
+owner: "Lyra / Control Panel"
+purpose: "Ask Vega to evaluate a bounded runtime-embodiment test in pxs and propose the smallest viable local test shape under PX boundary rules."
+classification: "internal"
+created_at: "2026-03-10T19:23:16Z"
+expires_at: "2026-03-24T19:23:16Z"
+source_refs:
+  - "PXS_RUNTIME_EMBODIMENT_TEST_PROPOSAL_V1.md"
+checksum: "sha256:77101c03bf4ab680b73c91985e4e08e6fddf956ca443ae4c59097924f37dcabc"
+approved_by: "Peter Eklind / Sponsor"
+notes:
+  - "This is a bounded packaging/activation test proposal, not a product redesign request."
+  - "Lyra OS artifacts are reference input only; Vega should adapt locally and respect PX boundary constraints."
+requested_response:
+  - "accept | reject | modify"
+  - "smallest viable local test"
+  - "skill-only or skill+cron"
+  - "boundary/dependency concerns"
+  - "next recommended step"

@@ -100,3 +100,12 @@
 - Result: A bounded cross-workspace embodiment test proposal now exists.
 - Decision (adopt/revert/continue-test): Continue-test.
 - Follow-up: hand the proposal to Vega and assess whether PX should run the first test as skill-only or skill+cron.
+
+## Entry CP-L12
+- Trigger: Direct same-runtime-style delivery to Vega was not available because no live targetable PX session was exposed from the current runtime.
+- Observation: This confirms that cross-runtime coordination needs an explicit handoff mechanism rather than relying on the same path used inside Lyra OS lanes.
+- Hypothesis: Creating a proper cross-domain handoff artifact now will both respect Vega’s boundary model and reduce future coordination ambiguity.
+- Change made: Created `handoffs/HO-20260310-001__os-to-px__runtime-embodiment-test-proposal.yaml` with checksum/expiry metadata and registered it in `handoffs/HANDOFF_REGISTER.md`.
+- Result: Cross-domain delivery package is now prepared on the OS side.
+- Decision (adopt/revert/continue-test): Adopt.
+- Follow-up: deliver/bridge the handoff into PX/Vega and collect the response.
