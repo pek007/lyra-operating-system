@@ -21,6 +21,7 @@ from tde_state_store import record_shadow_tick as state_record_shadow_tick
 from tde_state_store import read_tasks as state_read_tasks
 from tde_state_store import export_tasks as state_export_tasks
 from tde_state_store import apply_low_risk_writeback_db as state_apply_low_risk_writeback_db
+from tde_state_store import evaluate_chaining_promotions as state_evaluate_chaining_promotions
 
 TASK_LINE_RE = re.compile(r"^- \[ \] (?P<id>[A-Z0-9-]+) \| (?P<title>.+)$")
 
@@ -395,10 +396,12 @@ def run_job_tick(
 ) -> dict[str, Any]:
     kernel = TDEKernel()
     canonical_conn = None
+    chaining = {"enabled": canonical_store == "db", "promoted": [], "skipped": []}
     if canonical_store == "db":
         canonical_db = canonical_db_path or Path("os/runtime/tde_state.sqlite")
         canonical_conn = state_connect(canonical_db)
         state_init_schema(canonical_conn)
+        chaining = {"enabled": True, **state_evaluate_chaining_promotions(canonical_conn, tick_id)}
         tasks = [
             {"id": row["task_id"], "title": row["title"], "state": "ready" if row["status"] == "Active" else row["status"].lower()}
             for row in state_read_tasks(canonical_conn, section="Active")
@@ -720,6 +723,7 @@ def run_job_tick(
                 "binding_source": binding_source,
                 "binding_status": binding_status,
             },
+            "chaining": chaining,
             "claim_limit": max_claim,
             "claimed": [c["id"] for c in claimed],
             "mutations": mutations,

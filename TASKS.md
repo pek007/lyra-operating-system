@@ -14,8 +14,9 @@ Current operating model:
 - [ ] TDE-2026-034 | Execute `WO-2026-TDE-CHAINING-PILOT-V1.md` (DB-canonical bounded chaining pilot for objective-linked continuation).
   - [x] 2026-03-10 | Opened `WO-2026-TDE-CHAINING-PILOT-V1.md` as the next main TDE strategic step after DB-canonical cutover and chaining design/planning work.
   - [x] 2026-03-10 | Selected Pilot family A (`implementation -> verification -> deployment-readiness review`) and published canonical metadata model packet: `knowledge/distilled/2026-03-10__packet__tde-chaining-pilot-selection-and-metadata-model-v1.md`, `knowledge/evidence/2026-03-10__decision-note__tde-chaining-pilot-family-a-selected.md`.
-  - [ ] 2026-03-10 | Implement deterministic successor promotion and emit activation evidence in DB-canonical job ticks.
-  - [ ] 2026-03-10 | Validate bounded chaining with tests, pilot evidence, and closeout recommendation.
+  - [x] 2026-03-10 | Implemented baseline deterministic successor promotion in DB-canonical job ticks and emitted chaining block in tick artifacts (`tools/tde_state_store.py`, `tools/tde_job_tick_runner.py`).
+  - [x] 2026-03-10 | Validated baseline chaining support with focused tests and verification artifact: `tools/test_tde_chaining_pilot.py`, `knowledge/evidence/2026-03-10__verification__tde-chaining-pilot-metadata-and-promotion-baseline.md`.
+  - [ ] 2026-03-10 | Model a full three-stage real pilot chain in canonical DB state and capture real pilot activation evidence/closeout recommendation.
 - [ ] SEC-AUTO-20260309-01 | Resolve or formally re-accept the recurring `security.trust_model.multi_user_heuristic` warning after 2026-03-09 nightly audit; update trust-boundary evidence, expiry, and reopen triggers based on current shared/group exposure and sandbox posture.
 - [ ] SEC-AUTO-20260309-02 | Restore deterministic non-elevated PF posture evidence for nightly audits on Peter’s Mac mini (`/sbin/pfctl -s info` currently returns permission denied in cron runtime) or document an approved fallback proof path so host firewall-state snapshots stop failing closed.
 - [ ] IMP-AUTO-20260308-01 | Add `--no-generated-writes` mode to `tools/validate_repo.py` so cron sweeps can run validation-only without touching volatile generated/evidence artifacts (impact: lower diff noise and safer unattended hygiene runs).

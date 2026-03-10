@@ -127,6 +127,91 @@ def read_tasks(conn: sqlite3.Connection, section: str | None = None) -> list[dic
     return out
 
 
+def update_task_metadata(conn: sqlite3.Connection, task_id: str, metadata: dict, *, merge: bool = True) -> dict:
+    row = conn.execute("SELECT metadata_json FROM tasks WHERE task_id=?", (task_id,)).fetchone()
+    if not row:
+        return {"updated": False, "reason": "task_not_found", "task_id": task_id}
+    current = {}
+    try:
+        current = json.loads(row[0] or "{}")
+    except Exception:
+        current = {}
+    payload = {**current, **metadata} if merge else metadata
+    with conn:
+        conn.execute(
+            "UPDATE tasks SET metadata_json=?, version=version+1, updated_at=? WHERE task_id=?",
+            (json.dumps(payload, separators=(",", ":")), now_iso(), task_id),
+        )
+    return {"updated": True, "task_id": task_id, "metadata": payload}
+
+
+def evaluate_chaining_promotions(conn: sqlite3.Connection, tick_id: str) -> dict:
+    rows = conn.execute(
+        "SELECT task_id,status,metadata_json FROM tasks ORDER BY task_id"
+    ).fetchall()
+    task_map = {}
+    for task_id, status, metadata_json in rows:
+        try:
+            metadata = json.loads(metadata_json or "{}")
+        except Exception:
+            metadata = {}
+        task_map[task_id] = {"status": status, "metadata": metadata}
+
+    promoted = []
+    skipped = []
+    now = now_iso()
+
+    with conn:
+        for task_id, task in task_map.items():
+            status = task["status"]
+            metadata = task["metadata"]
+            depends_on = metadata.get("depends_on")
+            if not depends_on:
+                continue
+            if status in {"Active", "Waiting", "Done"}:
+                continue
+            if not isinstance(depends_on, list) or not all(isinstance(x, str) and x.strip() for x in depends_on):
+                skipped.append({"task_id": task_id, "reason": "malformed_dependency_metadata"})
+                continue
+            activation_rule = metadata.get("activation_rule")
+            if activation_rule not in (None, "all_predecessors_done"):
+                skipped.append({"task_id": task_id, "reason": "unsupported_activation_rule"})
+                continue
+            chain_policy = metadata.get("chain_policy") or {}
+            if not isinstance(chain_policy, dict):
+                skipped.append({"task_id": task_id, "reason": "invalid_chain_policy"})
+                continue
+            if chain_policy.get("pilot_enabled") is False:
+                skipped.append({"task_id": task_id, "reason": "pilot_disabled"})
+                continue
+            missing = [dep for dep in depends_on if dep not in task_map]
+            if missing:
+                skipped.append({"task_id": task_id, "reason": "missing_predecessor", "predecessors": missing})
+                continue
+            incomplete = [dep for dep in depends_on if task_map[dep]["status"] != "Done"]
+            if incomplete:
+                skipped.append({"task_id": task_id, "reason": "predecessors_incomplete", "predecessors": incomplete})
+                continue
+
+            metadata["activated_by"] = {"tick_id": tick_id, "predecessors": depends_on}
+            metadata["activated_at"] = now
+            conn.execute(
+                "UPDATE tasks SET status='Active', version=version+1, updated_at=?, metadata_json=? WHERE task_id=? AND status=?",
+                (now, json.dumps(metadata, separators=(",", ":")), task_id, status),
+            )
+            promoted.append({
+                "task_id": task_id,
+                "from_status": status,
+                "to_status": "Active",
+                "predecessors": depends_on,
+                "activation_rule": activation_rule or "all_predecessors_done",
+                "objective_id": metadata.get("objective_id"),
+                "stage_id": metadata.get("stage_id"),
+            })
+
+    return {"promoted": promoted, "skipped": skipped}
+
+
 def apply_low_risk_writeback_db(conn: sqlite3.Connection, claimed_ids: list[str], tick_id: str) -> dict:
     """Canonical DB write-back: move claimed tasks from Active -> Waiting and persist tick metadata."""
     if not claimed_ids:
@@ -277,12 +362,14 @@ def parity_check(conn: sqlite3.Connection, tasks_path: Path) -> dict:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("command", choices=["init", "import-tasks", "export-tasks", "parity", "record-shadow-tick"])
+    ap.add_argument("command", choices=["init", "import-tasks", "export-tasks", "parity", "record-shadow-tick", "update-metadata", "evaluate-chaining"])
     ap.add_argument("--db", default="os/runtime/tde_state.sqlite")
     ap.add_argument("--tasks", default="TASKS.md")
     ap.add_argument("--out", default="os/runtime/TASKS_from_db.md")
     ap.add_argument("--tick-id", default="shadow-tick")
     ap.add_argument("--artifact-json", default="{}")
+    ap.add_argument("--task-id")
+    ap.add_argument("--metadata-json", default="{}")
     args = ap.parse_args()
 
     conn = connect(Path(args.db))
@@ -299,6 +386,10 @@ def main() -> None:
     elif args.command == "record-shadow-tick":
         payload = json.loads(args.artifact_json)
         print(json.dumps(record_shadow_tick(conn, args.tick_id, payload)))
+    elif args.command == "update-metadata":
+        print(json.dumps(update_task_metadata(conn, str(args.task_id), json.loads(args.metadata_json))))
+    elif args.command == "evaluate-chaining":
+        print(json.dumps(evaluate_chaining_promotions(conn, args.tick_id)))
 
 
 if __name__ == "__main__":
