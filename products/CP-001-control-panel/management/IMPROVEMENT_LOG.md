@@ -64,3 +64,12 @@
 - Result: Broader same-runtime multi-lane standardization threshold reached.
 - Decision (adopt/revert/continue-test): Adopt.
 - Follow-up: Optionally run a harsher Security confirmation case if we want to test whether stricter lanes need local tightening without changing the base standard.
+
+## Entry CP-L8
+- Trigger: Recognition that Products are still too often embodied as documents and session habits rather than packaged runtime capabilities.
+- Observation: Skills, Cron, and Plugins are likely underutilized as product deployment mechanisms; the most immediate leverage is in Skills and Cron, not in plugin-building.
+- Hypothesis: A lightweight runtime-embodiment framework will help products move from documented intent to deployed capability without premature engineering overhead.
+- Change made: Published `PRODUCT_RUNTIME_EMBODIMENT_FRAMEWORK_V1.md` and `PRODUCT_RUNTIME_EMBODIMENT_MAP_V1.md`; identified first-wave embodiment priorities for Control Panel, Task Management, and Governance.
+- Result: First explicit product embodiment baseline established.
+- Decision (adopt/revert/continue-test): Adopt (framework baseline).
+- Follow-up: define first-wave skill concepts and first bounded cron model before considering plugin work.

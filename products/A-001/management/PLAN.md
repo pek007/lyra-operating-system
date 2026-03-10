@@ -12,11 +12,11 @@ Status: Placeholder
 
 ## Next
 - Initiative ID: A-001-I2
-  - Problem: TBD
-  - Expected outcome: TBD
-  - Dependencies: TBD
-  - Acceptance criteria: TBD
-  - Evidence required: TBD
+  - Problem: Task Management / TDE still lacks a packaged runtime embodiment for repeated operating work, which leaves too much execution dependent on documents and manual prompting.
+  - Expected outcome: A first Task Management / TDE operator skill is defined as the primary embodiment candidate for repeated lane work, supported by clear operating assumptions and future cron opportunities.
+  - Dependencies: `PRODUCT_RUNTIME_EMBODIMENT_FRAMEWORK_V1.md`; `PRODUCT_RUNTIME_EMBODIMENT_MAP_V1.md`; TDE operating-impact note.
+  - Acceptance criteria: First embodiment candidate and boundaries are explicit in product artifacts; next implementation step is identified.
+  - Evidence required: Product artifact updates + linked follow-on task.
 
 ## Later
 - Initiative ID: A-001-I3

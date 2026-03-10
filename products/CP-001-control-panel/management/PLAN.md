@@ -39,3 +39,10 @@
   - Dependencies: Stable template usage patterns.
   - Acceptance criteria: Basic validator detects missing required sections.
   - Evidence required: Validator run output + remediation notes.
+
+- Initiative ID: CP-I6 Product runtime embodiment
+  - Problem: Products are documented and increasingly governed, but not yet consistently embodied as deployed capabilities using Skills, Cron, and deeper runtime packaging where appropriate.
+  - Expected outcome: A first product runtime embodiment framework exists, with initial packaging priorities defined for Control Panel, Task Management, and Governance.
+  - Dependencies: Runtime topology and handoff standardization work completed to baseline.
+  - Acceptance criteria: `PRODUCT_RUNTIME_EMBODIMENT_FRAMEWORK_V1.md` and `PRODUCT_RUNTIME_EMBODIMENT_MAP_V1.md` published; first-wave embodiment priorities identified.
+  - Evidence required: Framework/map paths + linked follow-on tasks.
