@@ -1,6 +1,6 @@
 # INTRA_LYRA_HANDOFF_PROTOCOL_V1.md
 
-Status: Active draft v1  
+Status: Active v1 (provisionally standardized for same-runtime intra-Lyra handoffs)  
 Owner: Lyra via Control Panel  
 Date: 2026-03-10
 
@@ -142,6 +142,11 @@ update_target: "jobs/JOB-TEMPLATE/STATE.md"
 - Heavyweight ticketing/queue semantics
 - Duplicating TDE as a chat-layer protocol
 
+## Current standardization status
+- Default for: same-runtime intra-Lyra handoffs
+- Evidence basis: first live viability, same-lane repeatability, and initial Governance transfer proof case
+- Not yet standardized for: broad multi-lane/general use without further lane testing
+
 ## Version
-- v1.0
+- v1.1
 - Date: 2026-03-10

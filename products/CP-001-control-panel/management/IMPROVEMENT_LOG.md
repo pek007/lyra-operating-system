@@ -46,3 +46,12 @@
 - Result: Same-lane repeatability established; broader transferability still open.
 - Decision (adopt/revert/continue-test): Adopt provisionally (same-runtime intra-Lyra scope only).
 - Follow-up: run 1-2 live proof cases in other lanes before declaring broad standardization.
+
+## Entry CP-L6
+- Trigger: Need to move from same-lane repeatability to early cross-lane transfer evidence before treating the handoff protocol as more than a local success pattern.
+- Observation: No clearly active Governance Telegram lane was available for safe direct targeting, so the cleanest honest test was a Governance-focused execution context using the same artifact-first constraints and durable write-back expectations.
+- Hypothesis: If Governance could receive a bounded request, act from referenced artifacts, and produce a scoped result with durable state update, the protocol would have enough evidence to become the default for same-runtime intra-Lyra handoffs.
+- Change made: Created `jobs/JOB-GOV-001/`; ran Governance transfer proof case; updated `products/A-002/management/PLAN.md`; updated `INTRA_LYRA_HANDOFF_PROTOCOL_V1.md` to reflect current standardization status.
+- Result: Initial cross-lane transfer evidence established.
+- Decision (adopt/revert/continue-test): Adopt as default for same-runtime intra-Lyra handoffs; continue-test for broader multi-lane standardization.
+- Follow-up: run one more live proof case in another established lane before calling the protocol broadly standardized across Lyra lanes.
