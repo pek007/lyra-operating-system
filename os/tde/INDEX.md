@@ -13,6 +13,7 @@ Single entrypoint for Task & Decision Engine contracts, runtime tools, tests, an
 - `os/sops/TDE_CHAINING_CONTRACT_V1.md` — dependency-aware successor promotion contract for bounded autonomous chaining.
 - `os/sops/TDE_RELEASE_GUARD_SCHEDULING_CONTRACT_V1.md` — release guard cadence + blocking semantics.
 - `governance/TDE_OPERATING_ALIGNMENT_NOTE__MEMORY_HANDOFFS_AND_FRONTIER_PREFLIGHT_V1.md` — operating-layer continuity/handoff alignment note and mandatory frontier-preflight rule.
+- `governance/TDE_OBJECTIVE_TO_CHAIN_FORMATION_CONTRACT_V1.md` — bounded contract for converting approved objectives into executable chain structures.
 
 ## Runtime tools
 - `tools/tde_kernel.py` — shared deterministic governance kernel module (runtime import surface).

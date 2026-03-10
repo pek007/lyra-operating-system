@@ -14,9 +14,9 @@ Current operating model:
 - [x] TDE-2026-034 | Execute `WO-2026-TDE-CHAINING-PILOT-V1.md` (DB-canonical bounded chaining pilot for objective-linked continuation). Closed 2026-03-10 as bounded chaining proven / expansion held.
 - [ ] TDE-2026-035 | Execute `WO-2026-TDE-OBJECTIVE-TO-CHAIN-FORMATION-V1.md` (define and validate bounded objective-to-chain formation for approved workflow families).
   - [x] 2026-03-10 | Opened `WO-2026-TDE-OBJECTIVE-TO-CHAIN-FORMATION-V1.md` as the next major TDE frontier after bounded chaining proof.
-  - [ ] 2026-03-10 | Define the bounded objective-to-chain formation contract for approved workflow families.
-  - [ ] 2026-03-10 | Model at least one approved objective family into an executable bounded chain template.
-  - [ ] 2026-03-10 | Prepare verification/decision packet for controlled formation pilot readiness.
+  - [x] 2026-03-10 | Defined the bounded objective-to-chain formation contract in `governance/TDE_OBJECTIVE_TO_CHAIN_FORMATION_CONTRACT_V1.md`.
+  - [x] 2026-03-10 | Modeled approved family A into an executable bounded chain template: `knowledge/distilled/2026-03-10__template__tde-objective-to-chain-family-a-v1.md`.
+  - [x] 2026-03-10 | Prepared formation readiness verification/decision packet: `knowledge/evidence/2026-03-10__verification__tde-objective-to-chain-formation-readiness-v1.md`.
   - [x] 2026-03-10 | Opened `WO-2026-TDE-CHAINING-PILOT-V1.md` as the next main TDE strategic step after DB-canonical cutover and chaining design/planning work.
   - [x] 2026-03-10 | Selected Pilot family A (`implementation -> verification -> deployment-readiness review`) and published canonical metadata model packet: `knowledge/distilled/2026-03-10__packet__tde-chaining-pilot-selection-and-metadata-model-v1.md`, `knowledge/evidence/2026-03-10__decision-note__tde-chaining-pilot-family-a-selected.md`.
   - [x] 2026-03-10 | Implemented baseline deterministic successor promotion in DB-canonical job ticks and emitted chaining block in tick artifacts (`tools/tde_state_store.py`, `tools/tde_job_tick_runner.py`).
