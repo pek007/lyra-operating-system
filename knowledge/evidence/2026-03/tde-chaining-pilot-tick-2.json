@@ -1,0 +1,103 @@
+{
+  "artifactType": "tde_job_tick",
+  "schemaVersion": "1.0.0",
+  "tick_id": "chain-pilot-2",
+  "trigger_source": "cron",
+  "timestamp": "2026-03-10T19:31:10.322710+00:00",
+  "job_id": "JOB-PROD-001",
+  "binding_id": "BIND-JOB-PROD-001-ACTIVE",
+  "actor_id": "lyra",
+  "session_key": "cron:tde-job-runner-v1",
+  "objective_linkage": {
+    "objective_id": "OBJ-TDE-FOUNDATION",
+    "objective_checkpoint": "S24",
+    "rationale_trace": "chain-pilot-family-a-stage-2"
+  },
+  "objective_registry_context": {
+    "registry_path": "os/runtime/tde_objectives.json",
+    "registry_loaded": true
+  },
+  "binding_context": {
+    "active_binding": {
+      "binding_id": "BIND-JOB-PROD-001-ACTIVE",
+      "job_id": "JOB-PROD-001",
+      "actor_id": "lyra",
+      "session_key": "cron:tde-job-runner-v1",
+      "status": "active",
+      "binding_epoch": 2,
+      "updated_at": "2026-03-04T09:45:00Z",
+      "expires_at": "2026-12-31T23:59:59+00:00"
+    },
+    "binding_source": "registry_exact",
+    "binding_status": "active"
+  },
+  "chaining": {
+    "enabled": true,
+    "promoted": [
+      {
+        "task_id": "TDE-CHAIN-103",
+        "from_status": "Inbox",
+        "to_status": "Active",
+        "predecessors": [
+          "TDE-CHAIN-102"
+        ],
+        "activation_rule": "all_predecessors_done",
+        "objective_id": "OBJ-TDE-FOUNDATION",
+        "stage_id": "deploy_readiness_review"
+      }
+    ],
+    "skipped": []
+  },
+  "claim_limit": 1,
+  "claimed": [
+    "TDE-CHAIN-103"
+  ],
+  "mutations": [
+    {
+      "task_id": "TDE-CHAIN-103",
+      "request_id": "chain-pilot-2-0",
+      "idempotency_key": "chain-pilot-2:TDE-CHAIN-103",
+      "policy_decision_id": "pdr-chain-pilot-2-0",
+      "audit_link": "audit://tde/chain-pilot-2-0",
+      "status": "executed",
+      "binding_status": "active",
+      "mutation_envelope": {
+        "job_id": "JOB-PROD-001",
+        "binding_id": "BIND-JOB-PROD-001-ACTIVE",
+        "policy_decision_id": "pdr-chain-pilot-2-0",
+        "idempotency_key": "chain-pilot-2:TDE-CHAIN-103",
+        "expected_version": 0,
+        "objective_linkage": {
+          "objective_id": "OBJ-TDE-FOUNDATION",
+          "objective_checkpoint": "S24",
+          "rationale_trace": "chain-pilot-family-a-stage-2"
+        }
+      }
+    }
+  ],
+  "idempotency_references": [
+    "chain-pilot-2:TDE-CHAIN-103"
+  ],
+  "writeback": {
+    "applied": true,
+    "reason": null,
+    "moved": [
+      "TDE-CHAIN-103"
+    ],
+    "targetSection": "Waiting"
+  },
+  "decisions": [],
+  "evidence_outputs": [
+    "knowledge/evidence/2026-03/tde-chaining-pilot-tick-2.json"
+  ],
+  "outcomes": {
+    "progressed": 1,
+    "blocked_pending_approval": 0,
+    "failed_validation": 0,
+    "no_work": 0,
+    "reauth_required": 0
+  },
+  "status": "ok",
+  "fail_closed": false,
+  "fail_closed_reason": null
+}
