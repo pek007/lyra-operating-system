@@ -55,7 +55,7 @@
   - closeout recommendation for expand / hold / rollback
 
 ## Closure
-- Outcome summary:
-- Accepted by:
-- Date closed:
-- Linked Change Artifact(s):
+- Outcome summary: Implemented bounded DB-canonical chaining metadata support and deterministic successor promotion, verified fail-closed behavior for missing predecessors and approval-gated successors, and executed a real three-stage pilot family across multiple ticks. Result: bounded chaining proven, expansion held.
+- Accepted by: JOB-PROD-001
+- Date closed: 2026-03-10
+- Linked Change Artifact(s): `knowledge/distilled/2026-03-10__packet__tde-chaining-pilot-selection-and-metadata-model-v1.md`; `knowledge/evidence/2026-03-10__decision-note__tde-chaining-pilot-family-a-selected.md`; `knowledge/evidence/2026-03-10__verification__tde-chaining-pilot-metadata-and-promotion-baseline.md`; `knowledge/evidence/2026-03/tde-chaining-pilot-tick-1.json`; `knowledge/evidence/2026-03/tde-chaining-pilot-tick-2.json`; `knowledge/evidence/2026-03-10__verification__tde-chaining-pilot-family-a-real-sequence.md`; `knowledge/evidence/2026-03-10__closeout__wo-2026-tde-chaining-pilot-v1.md`; `tools/test_tde_chaining_pilot.py`
