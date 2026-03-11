@@ -53,6 +53,7 @@
 - [x] Add an explicit repo-root confirmation step before future sync / rebase / push actions.
 - [ ] Implement the canonical repo authority rule in ongoing operations and verify it through future sync decisions.
 - [ ] Adopt a lightweight Git sync cadence rule for active code-bearing products.
+- [ ] Assign these remaining corrective actions into the canonical action system instead of the legacy `TASKS.md` reference board.
 
 ## Preventive changes
 - Before any Git sync decision:
@@ -65,8 +66,7 @@
 
 ## Linked artifacts
 - Related tasks:
-  - `OPS-2026-079` — canonical repo authority for active code-bearing products
-  - `OPS-2026-080` — lightweight Git sync cadence rule
+  - none yet assigned into the canonical action system; previous temporary placement in legacy `TASKS.md` was removed
 - Related decisions:
   - none yet; should be added if canonical repo authority becomes a standing architectural decision
 - Related evidence:
@@ -81,6 +81,7 @@
 - canonical repo authority for active code-bearing products is documented
 - future sync operations include explicit repo-root confirmation
 - lightweight Git sync cadence rule is defined
+- remaining corrective actions are assigned into the canonical action system
 - no further Git sync decisions are made against the wrong clone for the same remote
 
 ## Closure note
