@@ -45,9 +45,13 @@ dependencies:
 artifacts:
   product: PRODUCT.md
   vision: 01-identity/VISION.md
+  customer: 01-identity/CUSTOMER.md
   strategy: 02-strategy/STRATEGY.md
   operating_model: 03-operating-model/OPERATING_MODEL.md
+  governance: 03-operating-model/GOVERNANCE.md
+  roadmap: 04-execution/ROADMAP.md
   plan: 04-execution/PLAN.md
+  risks: 04-execution/RISKS.md
   metrics: 05-performance/METRICS.md
   interfaces: 06-architecture/INTERFACES.md
   decisions: 07-decisions/DECISIONS.md

@@ -46,6 +46,8 @@ Maintain explicit product boundaries across OS and PX initiatives, reduce accide
 - Data Classification: Internal → potentially Customer (future)
 - Tenant Model: N/A currently; Multi-tenant-ready target if externalized
 - Canonical Repo: `repos/control-panel`
+- Canonical Product Model Path: `products/control-panel/`
+- Legacy Management Path: `products/CP-001-control-panel/management/`
 - Deployment Boundary: Separate service/runtime from other products
 - Allowed Dependencies: Platform/shared libraries with stable interfaces
 - Prohibited Dependencies: Direct runtime dependency on PX product codebases
@@ -60,8 +62,9 @@ Maintain explicit product boundaries across OS and PX initiatives, reduce accide
 - Product IDs: `A-001`, `A-002`, `A-003`
 - Status: Discovery (metadata pending)
 - Owner: TBD
-- Canonical management path: `products/<product-id>/management/`
-- Notes: Baseline management artifact sets have been instantiated; Product Owners should fill product-specific content.
+- Legacy management path pattern: `products/<product-id>/management/`
+- Canonical Product Model Paths: `products/A-001-thin/`, `products/A-002-thin/`, `products/A-003-thin/`
+- Notes: These remain discovery placeholders. Thin Product-as-Code folders now reserve the canonical future structure without inventing product detail.
 
 ### A-004
 - Product ID: `A-004`
@@ -74,6 +77,8 @@ Maintain explicit product boundaries across OS and PX initiatives, reduce accide
 - Data Classification: Sensitive
 - Tenant Model: Single-customer operational context currently; stronger isolation required before multi-customer packaging
 - Canonical Repo: `.` (workspace-level product spanning security policy, posture, evidence, research conversion, and deployment requirements)
+- Canonical Product Model Path: `products/security/`
+- Legacy Management Path: `products/A-004/management/`
 - Deployment Boundary: Workspace/process boundary with customer impact through PXS deployment posture and security requirements
 - Allowed Dependencies: Platform/shared capabilities, governance records, approved product interfaces, security evidence sources, and security research in the library
 - Prohibited Dependencies: Hidden cross-product coupling, silent trust-boundary/access expansion, unreviewed high-privilege external tooling
@@ -95,6 +100,8 @@ Maintain explicit product boundaries across OS and PX initiatives, reduce accide
 - Data Classification: Internal, with future customer-operational implications through consuming workspaces
 - Tenant Model: N/A currently; should evolve toward multi-tenant-ready interface discipline if externalized
 - Canonical Repo: `.` (workspace-level product spanning TDE, task/decision automation contracts, and delivery mechanisms into consuming workspaces)
+- Canonical Product Model Path: `products/task-management/`
+- Legacy Management Path: `products/A-007/management/`
 - Deployment Boundary: Workspace/process boundary now; future capability-pack and/or deterministic service boundary for consumer delivery
 - Allowed Dependencies: Platform/shared capabilities; approved governance/process artifacts; explicit downstream integration artifacts for consuming workspaces
 - Prohibited Dependencies: Hidden cross-workspace coupling; undocumented authority escalation; direct consumer-state ownership beyond approved interfaces
@@ -116,6 +123,8 @@ Maintain explicit product boundaries across OS and PX initiatives, reduce accide
 - Data Classification: Internal
 - Tenant Model: N/A currently
 - Canonical Repo: `.` (workspace-level product spanning portfolio improvement process, assemblies, and deployment controls)
+- Canonical Product Model Path: `products/improvement/`
+- Legacy Management Path: `products/A-005/management/`
 - Deployment Boundary: Workspace/process boundary with deployment into PXS via managed assembly consumption
 - Allowed Dependencies: Platform/shared capabilities; approved product management artifacts; PXS assembly lock and deployment docs for consumption state
 - Prohibited Dependencies: Hidden cross-domain reads/writes; undocumented product-specific runtime coupling; authority/security-impacting changes without escalation
@@ -137,6 +146,8 @@ Maintain explicit product boundaries across OS and PX initiatives, reduce accide
 - Data Classification: Internal
 - Tenant Model: N/A currently
 - Canonical Repo: `.` (workspace-level product spanning workspace delivery assets and related repos)
+- Canonical Product Model Path: `products/delivery/`
+- Legacy Management Path: `products/A-006/management/`
 - Deployment Boundary: Workspace/process boundary for software creation, verification, release readiness, and delivery-system improvement
 - Allowed Dependencies: Platform/shared capabilities; approved product-specific repos and workspace assemblies required for delivery work
 - Prohibited Dependencies: Unapproved cross-product runtime coupling; undocumented external delivery dependencies
