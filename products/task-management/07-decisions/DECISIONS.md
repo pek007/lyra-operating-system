@@ -24,6 +24,13 @@ Capture the major product decisions that shape Task Management so the product do
 - Decision: The first formal Task Management → `pxs` interface is defined as a documented operating contract in `06-architecture/PXS_CONSUMPTION_INTERFACE.md`, rather than a service or packaged capability boundary.
 - Why it matters: This is the lightest interface shape that removes ambiguity now without forcing premature packaging.
 
+### D-006 — Task Management delivery into `pxs` remains artifact-and-ops-pack based for now
+- Decision: Task Management capability delivery into `pxs` should currently remain centered on workspace artifacts and ops-pack style operating assets, with schema-backed strengthening only where it adds clarity. It should not yet become a plugin or service.
+- Why it matters: This preserves the lightest viable delivery mode while the interface is still stabilizing and avoids premature runtime packaging.
+
+## Related decision artifact
+- `07-decisions/DELIVERY_MODE_DECISION_PXS_V1.md`
+
 ## Next decisions likely needed
 - what evidence threshold should define operational readiness for broader use
 - when the `pxs` interface should evolve from operating-contract form into a stronger packaged or schema-backed interface

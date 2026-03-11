@@ -73,6 +73,7 @@ artifacts:
   interfaces: 06-architecture/INTERFACES.md
   pxs_consumption_interface: 06-architecture/PXS_CONSUMPTION_INTERFACE.md
   decisions: 07-decisions/DECISIONS.md
+  delivery_mode_decision_pxs: 07-decisions/DELIVERY_MODE_DECISION_PXS_V1.md
 
 metrics:
   north_star:

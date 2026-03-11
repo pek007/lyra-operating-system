@@ -40,6 +40,7 @@ Canonical product model artifacts:
 - `06-architecture/INTERFACES.md`
 - `06-architecture/PXS_CONSUMPTION_INTERFACE.md`
 - `07-decisions/DECISIONS.md`
+- `07-decisions/DELIVERY_MODE_DECISION_PXS_V1.md`
 
 ## Current mandate
 - Continuously improve the product
