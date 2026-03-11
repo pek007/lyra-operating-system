@@ -7,4 +7,4 @@
 - improvement process and deployment outputs to products and consuming environments
 
 ## Key boundary rule
-Improvement should enable other products to improve without taking over their day-to-day ownership.
+Improvement should enable other products to improve without taking over their day-to-day ownership or the canonical execution-state role owned by Task Management.

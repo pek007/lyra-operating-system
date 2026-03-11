@@ -1,0 +1,68 @@
+id: A-009
+slug: interfaces
+name: Interfaces
+type: internal
+owner: Lyra
+status: active
+lifecycle: incubation
+
+domain: OS
+purpose: >
+  Define the contracts, packaging rules, and boundary mechanics that let Lyra OS
+  capabilities cross product and workspace boundaries without hidden coupling.
+
+users:
+  primary:
+    - product-owners
+    - pxs-environment
+  secondary:
+    - future consuming workspaces
+
+strategic_role:
+  portfolio_role: enabling
+  linked_company_goals:
+    - build-ai-operating-system
+    - reliable-software-delivery-capability
+
+operating_model:
+  cadence: periodic interface review with explicit boundary updates
+  planning_horizon: rolling 2-6 weeks
+  release_mode: explicit contract and compatibility updates
+  governance_level: medium
+
+dependencies:
+  upstream:
+    - product-models
+    - delivery-capabilities
+    - governance-rules
+  downstream:
+    - pxs-environment
+    - cross-product capability consumers
+  critical_constraints:
+    - no hidden cross-workspace coupling
+    - no interface ambiguity disguised as product flexibility
+
+artifacts:
+  product: PRODUCT.md
+  vision: 01-identity/VISION.md
+  strategy: 02-strategy/STRATEGY.md
+  operating_model: 03-operating-model/OPERATING_MODEL.md
+  plan: 04-execution/PLAN.md
+  metrics: 05-performance/METRICS.md
+  interfaces: 06-architecture/INTERFACES.md
+  decisions: 07-decisions/DECISIONS.md
+
+metrics:
+  north_star:
+    - cross-boundary capability consumption is explicit, stable, and low-friction
+  health:
+    - contract clarity
+    - coupling visibility
+    - consumer usability
+  guardrails:
+    - no undocumented cross-boundary dependencies
+    - versioning/compatibility expectations are explicit
+
+review:
+  review_cadence: monthly
+  last_reviewed: 2026-03-11

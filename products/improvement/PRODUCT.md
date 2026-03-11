@@ -8,17 +8,20 @@
 - Status: `Active`
 
 ## Purpose
-Improvement exists to make continuous improvement a real operating capability across the portfolio: always-on, evidence-backed, low-drag, and safe.
+Improvement exists to own the closed-loop learning and prevention capability of Lyra OS: turning incidents, friction, misses, and review findings into verified improvements across the portfolio.
 
 ## Why this product matters
-Without an explicit improvement product, learning remains irregular and cross-product friction gets lost instead of converted into system gains.
+Without an explicit improvement product, learning remains irregular, prevention logic becomes fragmented, and cross-product friction gets lost instead of being turned into system gains.
 
 ## Scope
 This product includes:
-- portfolio improvement process design
+- closed-loop improvement design across the portfolio
+- incident-to-improvement and review-to-improvement mechanisms
 - improvement logging and cadence patterns
 - deployment of improvement mechanisms into consuming environments
 - guardrails for safe improvement work
+
+This product does not own canonical task/decision state itself; that remains with Task Management. Improvement owns the learning-and-prevention loop that acts on signals from execution.
 
 ## Product model
 Thin v1 product model artifacts:
