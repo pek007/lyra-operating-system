@@ -1,133 +1,83 @@
 # Git Topology and Sync Error Report — 2026-03-11
 
-Status: Active error report
-Owner: Lyra
-Date: 2026-03-11
-
-## Purpose
-Record the Git sync confusion encountered on 2026-03-11, explain the root cause, and define the operational rule needed to avoid recurrence.
+## Header
+- Error ID: `ERR-SYS-2026-03-11-GIT-TOPOLOGY-01`
+- Date: `2026-03-11`
+- Title: `Wrong clone treated as authoritative for Git sync decision`
+- Type: `decision_failure`
+- Scope: `system_level`
+- Owning product or owner: `Lyra / shared system coordination`
+- Affected products/contexts: `Lyra OS`, `Task Management / TDE`, `Control Panel coordination context`, `workspace-root governance/model work`
+- Status: `mitigated`
+- Review / closure date: `2026-03-18`
 
 ## Summary
-A Git sync check in the workspace initially reported that `main` was:
-- ahead by 55
-- behind by 24
+- A Git sync check in the workspace initially reported that `main` was ahead by 55 and behind by 24. This triggered an attempted sync/rebase path under the assumption that the workspace-root clone represented the relevant TDE / Lyra OS repo state. That assumption was wrong: the Task Management channel later verified that the more relevant nested TDE clone at `repos/lyra-operating-system` was actually ahead by 12 and behind by 0.
 
-This triggered an attempted sync/rebase path under the assumption that this represented the active TDE / Lyra OS repo state.
+## Impact
+- Actual impact:
+  - a push attempt from the workspace-root clone failed
+  - a rebase was started in the wrong clone and then aborted
+  - time was lost investigating the wrong Git state for the TDE lineage question
+- Potential impact:
+  - unnecessary or incorrect reconciliation of TDE runtime code
+  - mistaken Git decisions based on the wrong local authority
+  - increased risk of damaging authoritative TDE continuity
 
-That assumption was wrong.
-
-The actual TDE-focused repo inspected in the Task Management channel (`repos/lyra-operating-system`) showed a materially different state:
-- ahead by 12
-- behind by 0
-
-The discrepancy existed because there were multiple local Git clones of the same remote repository active inside the broader workspace.
-
-## What happened
-### Observed workspace-root state
-Repo path:
-- `/Users/lyra/.openclaw/workspace`
-
-Remote:
-- `https://github.com/pek007/lyra-operating-system.git`
-
-Observed divergence:
-- ahead 55
-- behind 24
-
-### Observed nested Lyra OS repo state
-Repo path:
-- `/Users/lyra/.openclaw/workspace/repos/lyra-operating-system`
-
-Remote:
-- `https://github.com/pek007/lyra-operating-system.git`
-
-Observed divergence:
-- ahead 12
-- behind 0
-
-### Additional nested repo
-Repo path:
-- `/Users/lyra/.openclaw/workspace/repos/control-panel`
-
-Remote:
-- `https://github.com/pek007/control-panel.git`
-
-Observed divergence:
-- ahead 2
-- behind 0
+## Detection
+- How was it detected?
+  - the attempted workspace-root push failed
+  - the subsequent rebase hit overlapping TDE runtime conflicts
+  - Task Management then checked the nested `repos/lyra-operating-system` clone directly and found a materially different Git state
+- Detection gap, if any:
+  - the canonical clone for TDE / Lyra OS had not been confirmed before sync action was taken
+  - multiple local clones of the same remote were present without an explicit authority rule
 
 ## Root cause
-The workspace contained more than one local clone of the same GitHub repository (`lyra-operating-system`):
-1. the workspace root itself
-2. `repos/lyra-operating-system`
+- Primary root cause:
+  - the wrong local clone was treated as the relevant authority for a TDE-related Git sync decision
+- Contributing factors:
+  - the workspace root is itself a Git clone of `lyra-operating-system`
+  - a second nested clone exists at `repos/lyra-operating-system`
+  - both point to the same remote but had different local states
+  - there was no explicit canonical-clone rule in active use before the sync action
 
-Both pointed to the same remote, but they were in different local states.
+## Immediate mitigation
+- The rebase was aborted once it became clear the workspace-root divergence was not the correct basis for the TDE lineage question.
+- The relevant nested clone was inspected directly.
+- A corrective Git topology rule was documented.
 
-The initial sync assessment was performed in the workspace-root clone, while the relevant TDE continuity/context work was actually being reasoned about in the nested `repos/lyra-operating-system` clone.
+## Corrective actions
+- [ ] Define and publish a canonical repo map for active code-bearing products.
+- [ ] Use `repos/lyra-operating-system` as the canonical locus for TDE / Lyra OS code reconciliation unless explicitly changed.
+- [ ] Add an explicit repo-root confirmation step before future sync / rebase / push actions.
 
-This created a false operational picture:
-- the Git alarm was real for one clone
-- but not the right clone for the TDE decision path being discussed
+## Preventive changes
+- Before any Git sync decision:
+  1. identify the intended product/repo explicitly
+  2. confirm the active Git root explicitly
+  3. check whether multiple local clones of the same remote exist
+  4. operate only in the canonical clone for that product/repo
+- Increase GitHub sync cadence so large local divergence stacks do not build up unnoticed.
+- Prefer smaller, more frequent pushes for high-signal work.
 
-## Why this was risky
-This topology creates several failure modes:
-- checking the wrong repo and drawing the wrong sync conclusion
-- attempting rebase/push operations in the wrong clone
-- mixing product/model/governance work with code-lineage reconciliation unintentionally
-- making TDE decisions based on an irrelevant Git state
-- increased chance of conflict churn and mistaken recovery actions
+## Linked artifacts
+- Related tasks:
+  - none yet explicitly opened in `TASKS.md` for canonical repo mapping / sync cadence
+- Related decisions:
+  - none yet; should be added if canonical repo authority becomes a standing architectural decision
+- Related evidence:
+  - Git status/fetch output gathered during the failed push / aborted rebase investigation
+  - Task Management channel assessment of `repos/lyra-operating-system` divergence state
+- Related product/shared artifacts:
+  - `PROCESS_OWNERSHIP_AND_COORDINATION_RULE_V1.md`
+  - `ERROR_REPORTING_STANDARD_V1.md`
+  - `GIT_TOPOLOGY_AND_SYNC_ERROR_REPORT_2026-03-11.md` (this artifact)
 
-## Incident details
-An attempted selective push from the workspace-root clone failed because remote `main` had moved.
-A subsequent rebase was started and then aborted after it became clear that:
-- the rebase conflicts were in overlapping TDE runtime files
-- the broader workspace-root divergence was not the correct basis for the TDE lineage question
+## Closure criteria
+- canonical repo authority for active code-bearing products is documented
+- future sync operations include explicit repo-root confirmation
+- no further Git sync decisions are made against the wrong clone for the same remote
 
-The rebase was correctly aborted to avoid unnecessary risk to TDE.
-
-## Corrective finding
-For TDE-specific reconciliation, the more relevant active clone was:
-- `repos/lyra-operating-system`
-
-That clone showed a coherent local continuation branch on top of published `origin/main`, not the larger 55/24 split seen at the workspace root.
-
-## Operational rule going forward
-### Canonical clone rule
-Before any Git sync, rebase, or push decision:
-1. identify the intended product/repo explicitly
-2. confirm the active Git root explicitly
-3. verify whether multiple local clones of the same remote exist
-4. operate only in the canonical clone for that product/repo
-
-### Immediate practical rule
-- TDE / Lyra OS code reconciliation should be handled in `repos/lyra-operating-system` unless explicitly decided otherwise.
-- `repos/control-panel` should be treated as the canonical repo for Control Panel code work.
-- The workspace root should not be assumed to be the authoritative code clone for a product merely because it is the agent workspace.
-
-## Process lesson
-This was not only a Git hygiene issue.
-It was an architectural clarity issue about repo authority.
-
-The lesson is:
-- workspace context is not the same thing as canonical Git authority
-- product/repo identity must be explicit before sync operations
-
-## Preventive actions
-1. Define canonical repo locations for each active code-bearing product.
-2. Record those locations in the relevant product or portfolio artifact.
-3. Before sync/push/rebase, run an explicit repo-root check.
-4. Increase GitHub sync cadence so large divergence stacks do not build up unnoticed.
-5. Prefer smaller, more frequent pushes for high-signal work.
-
-## Follow-up recommendation
-Create a small canonical-repo map / operating note that states, for each active code-bearing product:
-- canonical repo path
-- remote URL
-- whether the workspace root is authoritative or not
-- expected push/update cadence
-
-## Bottom line
-The sync confusion happened because there were multiple local clones of the same remote in different states, and the wrong clone was treated as the relevant authority for the TDE discussion.
-
-The corrective principle is simple:
-**always confirm the canonical clone before making Git sync decisions.**
+## Closure note
+- Initial incident mitigated by aborting the rebase and documenting the corrective rule. Full closure depends on recording canonical repo authority and applying it consistently.
