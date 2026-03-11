@@ -126,18 +126,18 @@ Maintain explicit product boundaries across OS and PX initiatives, reduce accide
 - Revenue Potential: Medium (indirect; capability-enabling)
 - Data Classification: Internal
 - Tenant Model: N/A currently
-- Canonical Repo: `.` (workspace-level product spanning portfolio improvement process, assemblies, and deployment controls)
+- Canonical Repo: `.` (workspace-level product spanning closed-loop improvement process, assemblies, and deployment controls)
 - Canonical Product Model Path: `products/improvement/`
 - Legacy Management Path: `products/A-005/management/`
 - Deployment Boundary: Workspace/process boundary with deployment into PXS via managed assembly consumption
-- Allowed Dependencies: Platform/shared capabilities; approved product management artifacts; PXS assembly lock and deployment docs for consumption state
-- Prohibited Dependencies: Hidden cross-domain reads/writes; undocumented product-specific runtime coupling; authority/security-impacting changes without escalation
-- Public Interfaces: Continuous improvement process, cadence checklist, improvement log conventions, deployment/verification mechanism for improvement assembly
+- Allowed Dependencies: Platform/shared capabilities; approved product management artifacts; PXS assembly lock and deployment docs for consumption state; signals from product reviews, incidents, and execution systems
+- Prohibited Dependencies: Hidden cross-domain reads/writes; undocumented product-specific runtime coupling; authority/security-impacting changes without escalation; implicit takeover of canonical task/decision state from Task Management
+- Public Interfaces: Closed-loop improvement process, incident-to-improvement and review-to-improvement mechanisms, cadence checklist, deployment/verification mechanism for improvement assembly
 - Artifacts: `policy-pack`, `ops-pack`, `skill-pack`, `management artifacts`
 - Distribution: policy-pack=`submodule|subtree|release`; ops-pack=`workspace-skills|workspace-docs|assembly`; skill-pack=`workspace-skills|managed-skills`; management artifacts=`workspace`
 - Activation: via product operating cadence, assembly activation in PXS, and linked improvement logs / execution artifacts
 - Enforcement: every accepted improvement requires owner + success signal + review date; authority/security-impacting changes require approval gate; deployment changes require lockfile + evidence updates
-- Audit/Compliance Notes: Improvement owns portfolio-wide process design but does not self-authorize high-risk boundary changes; larger strategic or real-world-consequence changes are surfaced to Peter
+- Audit/Compliance Notes: Improvement owns the learning/prevention loop across the portfolio but does not own canonical execution state; larger strategic or real-world-consequence changes are surfaced to Peter
 
 ### A-006
 - Product ID: `A-006`
@@ -152,15 +152,59 @@ Maintain explicit product boundaries across OS and PX initiatives, reduce accide
 - Canonical Repo: `.` (workspace-level product spanning workspace delivery assets and related repos)
 - Canonical Product Model Path: `products/delivery/`
 - Legacy Management Path: `products/A-006/management/`
-- Deployment Boundary: Workspace/process boundary for software creation, verification, release readiness, and delivery-system improvement
+- Deployment Boundary: Workspace/process boundary for software creation, verification, packaging, release readiness, and delivery-system improvement
 - Allowed Dependencies: Platform/shared capabilities; approved product-specific repos and workspace assemblies required for delivery work
 - Prohibited Dependencies: Unapproved cross-product runtime coupling; undocumented external delivery dependencies
-- Public Interfaces: Delivery process, gate/checklist artifacts, definition-of-done standards, future delivery-management tooling/interfaces
+- Public Interfaces: Delivery process, gate/checklist artifacts, definition-of-done standards, packaging/release mechanics, future delivery-management tooling/interfaces
 - Artifacts: `ops-pack`, `policy-pack`, `tooling/process assets` (current), with future `service` potential for delivery-management surfaces
 - Distribution: ops-pack=`workspace-skills|workspace-docs`; policy-pack=`submodule|subtree|release`; tooling/process assets=`workspace|repo`
 - Activation: via workspace operating docs, product management artifacts, delivery gates/checklists, and future automation or services
 - Enforcement: explicit acceptance criteria, evidence-backed completion, risk-aware review, and escalation for strategic/real-world-consequence changes
-- Audit/Compliance Notes: Delivery owns DevSecOps discipline for capability development; strategic shifts, launches, and real-world consequence actions require Peter involvement
+- Audit/Compliance Notes: Delivery owns the delivery plane for capability development and is the closest current fit for future convergence with interfaces/integration concerns, but they remain distinct for now; strategic shifts, launches, and real-world consequence actions require Peter involvement
+
+### A-008
+- Product ID: `A-008`
+- Product Name: Governance
+- Domain: OS
+- Type: Internal
+- Owner: Lyra
+- Status: Active
+- Revenue Potential: Medium (indirect; coherence and control enabling)
+- Data Classification: Internal
+- Tenant Model: N/A currently
+- Canonical Repo: `.` (workspace-level product spanning system rules, decision-rights logic, change-control rules, and shared coordination constraints)
+- Canonical Product Model Path: `products/governance/`
+- Deployment Boundary: Workspace/process boundary for system-level rules and cross-product coordination constraints
+- Allowed Dependencies: Governance records, portfolio artifacts, and approved product model inputs
+- Prohibited Dependencies: Product-local day-to-day operating logic, hidden authority duplication, silent boundary-rule conflicts
+- Public Interfaces: Shared rules, decision-rights logic, boundary constraints, change-control rules, and coordination guidance
+- Artifacts: `policy-pack`, `ops-pack`, `management artifacts`
+- Distribution: policy-pack=`workspace|submodule|subtree|release`; ops-pack=`workspace|workspace-docs`; management artifacts=`workspace`
+- Activation: via shared rules, governance reviews, and referenced standards/protocols
+- Enforcement: rule clarity, escalation triggers, and prevention of conflicting sources of authority
+- Audit/Compliance Notes: Governance owns system-level coherence and shared constraints; it should not absorb product-owned operating processes.
+
+### A-009
+- Product ID: `A-009`
+- Product Name: Interfaces
+- Domain: OS
+- Type: Internal
+- Owner: Lyra
+- Status: Active
+- Revenue Potential: Medium (indirect; capability-enabling)
+- Data Classification: Internal
+- Tenant Model: N/A currently
+- Canonical Repo: `.` (workspace-level product spanning contracts, packaging rules, connectors, and OS-to-PXS boundary mechanics)
+- Canonical Product Model Path: `products/interfaces/`
+- Deployment Boundary: Workspace/process boundary for explicit contracts, capability packaging, connectors, and export/import discipline
+- Allowed Dependencies: Product models, delivery capabilities, governance rules, and approved consuming workspaces
+- Prohibited Dependencies: Hidden cross-workspace coupling, residual-bucket scope creep, undocumented compatibility assumptions
+- Public Interfaces: Contracts, schemas, packaging rules, versioning/compatibility expectations, export/import boundary definitions, consumer-facing connector patterns
+- Artifacts: `schema-pack`, `ops-pack`, `policy-pack`, `management artifacts`
+- Distribution: schema-pack=`workspace|release`; ops-pack=`workspace|workspace-docs`; policy-pack=`submodule|subtree|release`; management artifacts=`workspace`
+- Activation: via explicit contracts, packaging rules, and boundary/export conventions applied to consuming workspaces such as `pxs`
+- Enforcement: no undocumented cross-boundary dependencies; explicit compatibility and packaging discipline
+- Audit/Compliance Notes: Interfaces remains distinct for now but is intentionally narrowed to contracts, packaging, connectors, and compatibility logic to avoid residual-bucket ambiguity.
 
 ## Shared Components Registry (initial)
 Use this list for components intended for reuse across products.
@@ -174,6 +218,6 @@ Use this list for components intended for reuse across products.
 - Quarterly commercialization readiness review for SaaS-candidate products
 
 ## Version
-- v1.0
-- Date: 2026-02-27
+- v1.1
+- Date: 2026-03-11
 - Owner: Peter/Lyra
