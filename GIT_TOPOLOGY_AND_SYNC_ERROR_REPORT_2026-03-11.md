@@ -48,9 +48,11 @@
 - A corrective Git topology rule was documented.
 
 ## Corrective actions
-- [ ] Define and publish a canonical repo map for active code-bearing products.
-- [ ] Use `repos/lyra-operating-system` as the canonical locus for TDE / Lyra OS code reconciliation unless explicitly changed.
-- [ ] Add an explicit repo-root confirmation step before future sync / rebase / push actions.
+- [x] Define and publish a canonical repo map for active code-bearing products.
+- [x] Use `repos/lyra-operating-system` as the canonical locus for TDE / Lyra OS code reconciliation unless explicitly changed.
+- [x] Add an explicit repo-root confirmation step before future sync / rebase / push actions.
+- [ ] Implement the canonical repo authority rule in ongoing operations and verify it through future sync decisions.
+- [ ] Adopt a lightweight Git sync cadence rule for active code-bearing products.
 
 ## Preventive changes
 - Before any Git sync decision:
@@ -63,7 +65,8 @@
 
 ## Linked artifacts
 - Related tasks:
-  - none yet explicitly opened in `TASKS.md` for canonical repo mapping / sync cadence
+  - `OPS-2026-079` — canonical repo authority for active code-bearing products
+  - `OPS-2026-080` — lightweight Git sync cadence rule
 - Related decisions:
   - none yet; should be added if canonical repo authority becomes a standing architectural decision
 - Related evidence:
@@ -77,6 +80,7 @@
 ## Closure criteria
 - canonical repo authority for active code-bearing products is documented
 - future sync operations include explicit repo-root confirmation
+- lightweight Git sync cadence rule is defined
 - no further Git sync decisions are made against the wrong clone for the same remote
 
 ## Closure note

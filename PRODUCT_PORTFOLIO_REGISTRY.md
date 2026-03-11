@@ -47,6 +47,7 @@ Maintain explicit product boundaries across OS and PX initiatives, reduce accide
 - Data Classification: Internal → potentially Customer (future)
 - Tenant Model: N/A currently; Multi-tenant-ready target if externalized
 - Canonical Repo: `repos/control-panel`
+- Canonical Repo Authority Source: `CANONICAL_REPO_MAP_V1.md`
 - Canonical Product Model Path: `products/control-panel/`
 - Legacy Management Path: `products/CP-001-control-panel/management/`
 - Deployment Boundary: Separate service/runtime from other products
@@ -78,6 +79,7 @@ Maintain explicit product boundaries across OS and PX initiatives, reduce accide
 - Data Classification: Sensitive
 - Tenant Model: Single-customer operational context currently; stronger isolation required before multi-customer packaging
 - Canonical Repo: `.` (workspace-level product spanning security policy, posture, evidence, research conversion, and deployment requirements)
+- Canonical Repo Authority Source: `CANONICAL_REPO_MAP_V1.md`
 - Canonical Product Model Path: `products/security/`
 - Legacy Management Path: `products/A-004/management/`
 - Deployment Boundary: Workspace/process boundary with customer impact through PXS deployment posture and security requirements
@@ -100,7 +102,8 @@ Maintain explicit product boundaries across OS and PX initiatives, reduce accide
 - Revenue Potential: High (capability-enabling; future productization potential)
 - Data Classification: Internal, with future customer-operational implications through consuming workspaces
 - Tenant Model: N/A currently; should evolve toward multi-tenant-ready interface discipline if externalized
-- Canonical Repo: `.` (workspace-level product spanning TDE, task/decision automation contracts, and delivery mechanisms into consuming workspaces)
+- Canonical Repo: `repos/lyra-operating-system` (authoritative code clone for Lyra OS / TDE reconciliation) plus workspace-level product artifacts for management/distribution
+- Canonical Repo Authority Source: `CANONICAL_REPO_MAP_V1.md`
 - Canonical Product Model Path: `products/task-management/`
 - Legacy Management Path: `products/A-007/management/`
 - Deployment Boundary: Workspace/process boundary now; future capability-pack and/or deterministic service boundary for consumer delivery
