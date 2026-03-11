@@ -1,0 +1,68 @@
+id: A-006
+slug: delivery
+name: Delivery
+type: internal
+owner: Lyra
+status: active
+lifecycle: incubation
+
+domain: OS
+purpose: >
+  Provide the delivery capability that turns product intent into safe, verified,
+  evidence-backed shipped capability.
+
+users:
+  primary:
+    - product-owners
+    - peter
+  secondary:
+    - pxs-environment
+
+strategic_role:
+  portfolio_role: enabling
+  linked_company_goals:
+    - reliable-software-delivery-capability
+    - build-ai-operating-system
+
+operating_model:
+  cadence: recurring delivery review and improvement
+  planning_horizon: rolling 1-6 weeks
+  release_mode: small-batch, evidence-backed delivery
+  governance_level: medium
+
+dependencies:
+  upstream:
+    - governance
+    - shared-platform-capabilities
+    - product-specific-repos
+  downstream:
+    - all-active-products
+    - pxs-environment
+  critical_constraints:
+    - no strategic launches without Peter involvement
+    - maintain verification and traceability discipline
+
+artifacts:
+  product: PRODUCT.md
+  vision: 01-identity/VISION.md
+  strategy: 02-strategy/STRATEGY.md
+  operating_model: 03-operating-model/OPERATING_MODEL.md
+  plan: 04-execution/PLAN.md
+  metrics: 05-performance/METRICS.md
+  interfaces: 06-architecture/INTERFACES.md
+  decisions: 07-decisions/DECISIONS.md
+
+metrics:
+  north_star:
+    - capability moves from idea to safe working state with low friction
+  health:
+    - cycle time
+    - verification quality
+    - release readiness
+  guardrails:
+    - architecture quality
+    - security discipline
+
+review:
+  review_cadence: weekly
+  last_reviewed: 2026-03-11

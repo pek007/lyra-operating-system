@@ -1,0 +1,67 @@
+id: A-005
+slug: improvement
+name: Improvement
+type: internal
+owner: Lyra
+status: active
+lifecycle: incubation
+
+domain: OS
+purpose: >
+  Provide a portfolio-wide improvement operating system that turns recurring
+  friction into evidence-backed change with low drag and safe rollout.
+
+users:
+  primary:
+    - product-owners
+    - peter
+  secondary:
+    - pxs-environment
+
+strategic_role:
+  portfolio_role: enabling
+  linked_company_goals:
+    - build-ai-operating-system
+    - reliable-software-delivery-capability
+
+operating_model:
+  cadence: recurring portfolio improvement loop
+  planning_horizon: rolling 2-6 weeks
+  release_mode: reversible, evidence-backed changes
+  governance_level: medium
+
+dependencies:
+  upstream:
+    - governance
+    - product-management-artifacts
+  downstream:
+    - all-active-products
+    - pxs-environment
+  critical_constraints:
+    - no authority or security boundary changes without escalation
+    - improvement must remain evidence-backed, not theatrical
+
+artifacts:
+  product: PRODUCT.md
+  vision: 01-identity/VISION.md
+  strategy: 02-strategy/STRATEGY.md
+  operating_model: 03-operating-model/OPERATING_MODEL.md
+  plan: 04-execution/PLAN.md
+  metrics: 05-performance/METRICS.md
+  interfaces: 06-architecture/INTERFACES.md
+  decisions: 07-decisions/DECISIONS.md
+
+metrics:
+  north_star:
+    - recurring friction is reliably converted into improvements
+  health:
+    - improvement capture rate
+    - follow-through rate
+    - cross-product reuse
+  guardrails:
+    - safe rollout
+    - owner and review-date discipline
+
+review:
+  review_cadence: weekly
+  last_reviewed: 2026-03-11

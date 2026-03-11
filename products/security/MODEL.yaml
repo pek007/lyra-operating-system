@@ -1,0 +1,67 @@
+id: A-004
+slug: security
+name: Security
+type: internal
+owner: Lyra
+status: active
+lifecycle: incubation
+
+domain: OS
+purpose: >
+  Protect Lyra OS and current customer environments through practical controls,
+  explicit boundaries, and evidence-backed security operations.
+
+users:
+  primary:
+    - peter
+    - product-owners
+  secondary:
+    - pxs-environment
+
+strategic_role:
+  portfolio_role: enabling
+  linked_company_goals:
+    - clear-direction-and-governance
+    - reliable-software-delivery-capability
+
+operating_model:
+  cadence: recurring posture and product reviews
+  planning_horizon: rolling 2-6 weeks
+  release_mode: evidence-backed control and posture changes
+  governance_level: high
+
+dependencies:
+  upstream:
+    - governance
+    - security-evidence-sources
+  downstream:
+    - all-active-products
+    - pxs-environment
+  critical_constraints:
+    - no silent trust-boundary expansion
+    - explicit review for material risk acceptance
+
+artifacts:
+  product: PRODUCT.md
+  vision: 01-identity/VISION.md
+  strategy: 02-strategy/STRATEGY.md
+  operating_model: 03-operating-model/OPERATING_MODEL.md
+  plan: 04-execution/PLAN.md
+  metrics: 05-performance/METRICS.md
+  interfaces: 06-architecture/INTERFACES.md
+  decisions: 07-decisions/DECISIONS.md
+
+metrics:
+  north_star:
+    - important security risks are visible and deliberately managed
+  health:
+    - posture clarity
+    - control coverage
+    - evidence freshness
+  guardrails:
+    - no unreviewed trust-boundary changes
+    - no material silent exposure drift
+
+review:
+  review_cadence: weekly
+  last_reviewed: 2026-03-11

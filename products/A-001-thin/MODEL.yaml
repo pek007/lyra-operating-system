@@ -1,0 +1,35 @@
+id: A-001
+slug: A-001-thin
+name: TBD
+type: TBD
+owner: TBD
+status: discovery
+lifecycle: concept
+
+domain: TBD
+purpose: >
+  Discovery placeholder pending product definition.
+
+users:
+  primary: []
+  secondary: []
+
+strategic_role:
+  portfolio_role: experimental
+  linked_company_goals: []
+
+dependencies:
+  upstream: []
+  downstream: []
+  critical_constraints:
+    - do not infer scope without explicit definition
+
+artifacts:
+  product: PRODUCT.md
+  vision: 01-identity/VISION.md
+  plan: 04-execution/PLAN.md
+  decisions: 07-decisions/DECISIONS.md
+
+review:
+  review_cadence: ad hoc
+  last_reviewed: 2026-03-11
