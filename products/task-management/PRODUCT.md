@@ -27,10 +27,14 @@ This product includes everything related to task and decision management, includ
 Canonical product model artifacts:
 - `MODEL.yaml`
 - `01-identity/VISION.md`
+- `01-identity/CUSTOMER.md`
 - `02-strategy/STRATEGY.md`
 - `02-strategy/DISTRIBUTION_MODEL.md`
 - `03-operating-model/OPERATING_MODEL.md`
+- `03-operating-model/GOVERNANCE.md`
+- `04-execution/ROADMAP.md`
 - `04-execution/PLAN.md`
+- `04-execution/RISKS.md`
 - `05-performance/METRICS.md`
 - `06-architecture/INTERFACES.md`
 - `07-decisions/DECISIONS.md`
