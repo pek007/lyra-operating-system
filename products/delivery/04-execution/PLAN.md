@@ -8,6 +8,6 @@
 ## Current execution order
 1. Define `DELIVERY_UNIT_SCHEMA_V1.yaml` ✅
 2. Define state-transition policy v1 ✅
-3. Define rendered packet templates v1
+3. Define rendered packet templates v1 ✅
 4. Pilot one real TDE slice end to end as a Delivery Unit
 5. Wire deterministic gate checks into TDE flow

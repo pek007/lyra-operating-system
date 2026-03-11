@@ -421,8 +421,10 @@ Adopt Delivery-as-Code as the standard design direction for the Delivery product
 7. wire deterministic gate checks into TDE tick flow
 8. add post-delivery verification and closeout writeback
 
-### Implemented first foundation
-- `DELIVERY_UNIT_SCHEMA_V1.yaml` now defines the canonical Delivery Unit object shape, enums, evidence/decision/exception structures, and baseline state invariants for v1.
+### Implemented foundations
+- `DELIVERY_UNIT_SCHEMA_V1.yaml` defines the canonical Delivery Unit object shape, enums, evidence/decision/exception structures, and baseline state invariants for v1.
+- `../03-operating-model/DELIVERY_STATE_TRANSITION_POLICY_V1.md` defines the allowed lifecycle progression and fail-closed transition rules.
+- `rendered-packets/` defines the first professional rendered output set for Delivery-as-Code v1.
 
 ### Later
 9. support limited successor activation/creation for approved workflow families
