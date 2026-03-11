@@ -1,0 +1,489 @@
+version: 1
+kind: DeliveryUnitSchema
+name: delivery-unit-v1
+status: draft
+owner: Lyra
+updated_at: 2026-03-11
+
+purpose: >-
+  Canonical schema for a Delivery Unit (DU), the smallest governed package of work
+  that should move through the Delivery-as-Code lifecycle with policy-controlled
+  transitions, evidence, approvals, and rendered outputs.
+
+enums:
+  work_type:
+    - software
+    - process
+    - policy
+    - schema
+    - ops
+    - research-backed-change
+    - other
+
+  delivery_mode:
+    - skill
+    - plugin
+    - policy-pack
+    - schema-pack
+    - ops-pack
+    - workspace-artifact
+    - assembly
+    - service
+    - cron-driven-artifact-evidence-loop
+    - other
+
+  risk_class:
+    - low
+    - medium
+    - high
+    - critical
+
+  verification_class:
+    - basic
+    - standard
+    - enhanced
+    - strict
+
+  current_state:
+    - proposed
+    - qualified
+    - planned
+    - in_execution
+    - in_verification
+    - release_recommended
+    - awaiting_approval
+    - approved
+    - released
+    - handed_off
+    - verified_in_use
+    - closed
+    - blocked
+    - retired
+
+  approval_profile:
+    - auto_allowed
+    - owner_required
+    - human_required
+    - dual_control
+
+  decision_type:
+    - scope
+    - architecture
+    - policy
+    - risk_acceptance
+    - release
+    - handoff
+    - exception_approval
+    - other
+
+  exception_type:
+    - scope_deviation
+    - evidence_gap
+    - temporary_control_bypass
+    - dependency_issue
+    - policy_conflict
+    - verification_shortfall
+    - other
+
+  evidence_type:
+    - qualification
+    - planning
+    - implementation
+    - verification
+    - review
+    - risk
+    - approval
+    - release
+    - handoff
+    - post_delivery_verification
+    - retrospective
+    - other
+
+required:
+  - delivery_unit_id
+  - title
+  - product_id
+  - work_type
+  - objective_link
+  - owner
+  - delivery_mode
+  - risk_class
+  - verification_class
+  - current_state
+  - approval_profile
+  - scope_statement
+  - acceptance_criteria
+
+fields:
+  delivery_unit_id:
+    type: string
+    description: Stable canonical identifier for the DU.
+    example: DU-2026-TDE-001
+
+  title:
+    type: string
+    description: Short human-readable name.
+
+  product_id:
+    type: string
+    description: Product owning or sponsoring the DU.
+    example: A-006
+
+  product_name:
+    type: string
+    required: false
+
+  work_type:
+    type: enum
+    values_ref: enums.work_type
+
+  objective_link:
+    type: object
+    required_fields:
+      - type
+      - ref
+    fields:
+      type:
+        type: string
+        description: Objective linkage type such as objective_id, initiative_id, or WO.
+      ref:
+        type: string
+        description: Reference identifier.
+      note:
+        type: string
+        required: false
+
+  owner:
+    type: object
+    required_fields:
+      - id
+      - name
+    fields:
+      id:
+        type: string
+      name:
+        type: string
+      role:
+        type: string
+        required: false
+
+  collaborators:
+    type: array
+    required: false
+    items:
+      type: object
+      required_fields:
+        - id
+        - name
+      fields:
+        id: { type: string }
+        name: { type: string }
+        role: { type: string, required: false }
+
+  delivery_mode:
+    type: enum
+    values_ref: enums.delivery_mode
+
+  risk_class:
+    type: enum
+    values_ref: enums.risk_class
+
+  verification_class:
+    type: enum
+    values_ref: enums.verification_class
+
+  current_state:
+    type: enum
+    values_ref: enums.current_state
+
+  approval_profile:
+    type: enum
+    values_ref: enums.approval_profile
+
+  scope_statement:
+    type: string
+
+  non_goals:
+    type: array
+    required: false
+    items:
+      type: string
+
+  acceptance_criteria:
+    type: array
+    min_items: 1
+    items:
+      type: object
+      required_fields:
+        - id
+        - statement
+      fields:
+        id:
+          type: string
+        statement:
+          type: string
+        validation_method:
+          type: string
+          required: false
+        evidence_type:
+          type: string
+          required: false
+        status:
+          type: string
+          required: false
+
+  dependencies:
+    type: array
+    required: false
+    items:
+      type: object
+      required_fields:
+        - ref
+        - kind
+      fields:
+        ref:
+          type: string
+        kind:
+          type: string
+        relation:
+          type: string
+          required: false
+        status:
+          type: string
+          required: false
+
+  required_evidence:
+    type: array
+    required: false
+    items:
+      type: object
+      required_fields:
+        - evidence_type
+        - related_gate
+      fields:
+        evidence_type:
+          type: enum
+          values_ref: enums.evidence_type
+        related_gate:
+          type: string
+        mandatory:
+          type: boolean
+        validation_rule:
+          type: string
+          required: false
+
+  policy_bindings:
+    type: array
+    required: false
+    items:
+      type: string
+
+  artifact_refs:
+    type: array
+    required: false
+    items:
+      type: object
+      required_fields:
+        - path
+      fields:
+        path:
+          type: string
+        kind:
+          type: string
+          required: false
+        role:
+          type: string
+          required: false
+
+  rendered_outputs:
+    type: array
+    required: false
+    items:
+      type: object
+      required_fields:
+        - kind
+        - path
+      fields:
+        kind:
+          type: string
+        path:
+          type: string
+        generated_from:
+          type: array
+          required: false
+          items:
+            type: string
+
+  decisions:
+    type: array
+    required: false
+    items:
+      type: object
+      required_fields:
+        - decision_id
+        - decision_type
+        - decision_owner
+        - decision
+        - rationale
+        - timestamp
+      fields:
+        decision_id:
+          type: string
+        decision_type:
+          type: enum
+          values_ref: enums.decision_type
+        decision_owner:
+          type: string
+        options_considered:
+          type: array
+          required: false
+          items:
+            type: string
+        decision:
+          type: string
+        rationale:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+        evidence_refs:
+          type: array
+          required: false
+          items:
+            type: string
+
+  exceptions:
+    type: array
+    required: false
+    items:
+      type: object
+      required_fields:
+        - exception_id
+        - exception_type
+        - opened_at
+        - owner
+        - reason
+        - status
+      fields:
+        exception_id:
+          type: string
+        exception_type:
+          type: enum
+          values_ref: enums.exception_type
+        opened_at:
+          type: string
+          format: date-time
+        owner:
+          type: string
+        reason:
+          type: string
+        approved_by:
+          type: string
+          required: false
+        expiry_or_review_date:
+          type: string
+          required: false
+        status:
+          type: string
+        closure_note:
+          type: string
+          required: false
+
+  evidence_records:
+    type: array
+    required: false
+    items:
+      type: object
+      required_fields:
+        - evidence_id
+        - evidence_type
+        - generated_at
+        - producer
+        - related_gate
+        - validation_status
+      fields:
+        evidence_id:
+          type: string
+        evidence_type:
+          type: enum
+          values_ref: enums.evidence_type
+        generated_at:
+          type: string
+          format: date-time
+        producer:
+          type: string
+        artifact_path:
+          type: string
+          required: false
+        summary:
+          type: string
+          required: false
+        related_gate:
+          type: string
+        validation_status:
+          type: string
+        payload_ref:
+          type: string
+          required: false
+
+  timestamps:
+    type: object
+    required: false
+    fields:
+      created_at:
+        type: string
+        format: date-time
+      updated_at:
+        type: string
+        format: date-time
+      target_date:
+        type: string
+        required: false
+      released_at:
+        type: string
+        required: false
+      closed_at:
+        type: string
+        required: false
+
+state_rules:
+  invariants:
+    - No DU may enter planned without scope_statement, acceptance_criteria, risk_class, verification_class, and approval_profile.
+    - No DU may enter in_execution without an objective_link and at least one validation-capable acceptance criterion.
+    - No DU may enter release_recommended without at least one verification evidence record.
+    - No DU may enter approved when approval_profile requires human or dual control and no matching decision record exists.
+    - No DU may enter closed until post-delivery verification is captured or an explicit exception is approved.
+
+profiles:
+  software:
+    minimum_evidence:
+      - planning
+      - implementation
+      - verification
+      - review
+      - release
+  process:
+    minimum_evidence:
+      - planning
+      - implementation
+      - verification
+      - approval
+      - post_delivery_verification
+  policy:
+    minimum_evidence:
+      - planning
+      - risk
+      - approval
+      - release
+  ops:
+    minimum_evidence:
+      - planning
+      - implementation
+      - verification
+      - risk
+      - post_delivery_verification
+
+notes:
+  - This schema defines the canonical object shape, not the full transition policy.
+  - Transition policy should be specified separately in a state-transition policy document.
+  - Rendered packet templates should reference this schema rather than redefining fields.
