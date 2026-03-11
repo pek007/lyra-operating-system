@@ -204,6 +204,9 @@ For internal products, distribution means adoption into real operating environme
 ### Rule 6: product boundaries must stay explicit
 A product may interact with governance, runtime, and other products, but those interfaces should be documented rather than assumed.
 
+### Rule 7: products own their own recurring processes
+Recurring operating processes should normally be owned and defined inside the product model unless they are genuinely cross-product coordination mechanisms. Avoid creating central/shared artifacts that duplicate product-owned process logic.
+
 ## Canonical metadata schema
 `MODEL.yaml` should follow this shape:
 

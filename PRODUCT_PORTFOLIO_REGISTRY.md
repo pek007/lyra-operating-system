@@ -11,6 +11,7 @@ Maintain explicit product boundaries across OS and PX initiatives, reduce accide
 5. Customer-facing/SaaS-candidate products must isolate data, identity, and deployment paths.
 6. Product transfer unit is a **Product Assembly** (one product may include multiple artifact types).
 7. Every product record must declare distribution and activation lanes for each artifact type.
+8. Products own their own recurring operating processes unless the mechanism is genuinely cross-product coordination.
 
 ## Product Record Schema
 - Product ID

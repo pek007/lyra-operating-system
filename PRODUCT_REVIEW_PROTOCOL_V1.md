@@ -182,6 +182,8 @@ This Product Review Protocol sits one level above it:
 - TDE weekly review checks execution cleanliness
 - Product review checks whole-product coherence using the product model plus TDE state
 
+This protocol is a shared coordination mechanism, not a replacement for product-owned internal operating processes.
+
 ## Recommended first use
 Use this protocol first for:
 - Task Management
