@@ -8,10 +8,10 @@
 - Status: `Active`
 
 ## Purpose
-Delivery exists to let Lyra OS build, change, verify, and release capabilities safely, quickly, and with evidence.
+Delivery exists to provide the delivery plane of Lyra OS: letting the system build, change, verify, package, and release capabilities safely, quickly, and with evidence.
 
 ## Why this product matters
-Delivery is the system that turns product intent into working capability. If it is weak, every other product slows down or degrades.
+Delivery is the system that turns product intent into working capability. If it is weak, every other product slows down or degrades. It is also the closest current fit for future convergence with interfaces/integration concerns, even though they remain distinct for now.
 
 ## Scope
 This product includes:

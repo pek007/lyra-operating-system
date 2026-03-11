@@ -9,19 +9,21 @@
 - Primary capability focus: `TDE (Task and Decision Engine)`
 
 ## Purpose
-Task Management exists to provide PX Strategy and downstream consuming workspaces with reliable task and decision management capability. In the current phase, its core responsibility is to make TDE operationally usable, governable, and adoptable.
+Task Management exists to provide the work/execution plane of Lyra OS: canonical task, decision, and evidence management capability for PX Strategy and downstream consuming workspaces. In the current phase, its core responsibility is to make TDE operationally usable, governable, and adoptable.
 
 ## Why this product matters
-This product sits close to the operating-system bottleneck: if tasks and decisions are not visible, traceable, and executable, the rest of the AI operating system will remain fragile. Task Management therefore acts as an enabling product for Phase 1 foundations.
+This product sits close to the operating-system bottleneck: if tasks and decisions are not visible, traceable, and executable, the rest of the AI operating system will remain fragile. Task Management therefore acts as the core work-orchestration product for Phase 1 foundations.
 
 ## Scope
-This product includes everything related to task and decision management, including:
+This product includes everything related to canonical task/decision/evidence state and work orchestration, including:
 - tools
 - processes
 - documents
 - jobs
 - delivery mechanisms toward users/customers
 - downstream enablement for consuming workspaces such as `pxs`
+
+This product does not own the closed-loop improvement/prevention capability itself; that remains with Improvement as a closely linked but distinct product.
 
 ## Product model
 Canonical product model artifacts:

@@ -8,10 +8,10 @@
 - Status: `Active`
 
 ## Purpose
-Security exists to protect Lyra OS, Peter, and current customer environments by making security an owned product capability with explicit boundaries, practical controls, usable guardrails, and evidence-backed risk reduction.
+Security exists to provide the security core of Lyra OS’s control plane: protecting Lyra OS, Peter, and current customer environments through explicit boundaries, practical controls, usable guardrails, and evidence-backed risk reduction.
 
 ## Why this product matters
-Security is an enabling constraint across the portfolio. It must reduce real downside without freezing delivery.
+Security is an enabling constraint across the portfolio. It must reduce real downside without freezing delivery, and it represents one of the strongest current expressions of the broader control-plane function.
 
 ## Scope
 This product includes:
