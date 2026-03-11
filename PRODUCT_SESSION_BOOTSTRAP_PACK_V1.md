@@ -31,8 +31,8 @@ Examples:
 - `Security Owner — Lyra`
 
 ## Product-channel mapping (initial)
-- Control Tower -> Control Panel
-- OS DevSecOps -> Task Management
+- Legacy `Control Tower` session/topic -> `Control Panel`
+- Legacy `OS DevSecOps` session/topic -> `Task Management`
 - New: Governance
 - New: Security
 - New: Improvement

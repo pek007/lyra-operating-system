@@ -1,4 +1,4 @@
-# Prompting and 3PP Policy Pack (A-007 v0.1)
+# Interfaces Policy Pack (A-007 v0.1)
 
 Canonical source files:
 - `SOFTWARE_DELIVERY_PROCESS_3PP_OS.md`

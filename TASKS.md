@@ -8,6 +8,9 @@ Current operating model:
 - This file: retained as legacy/reference context during transition
 
 ## Inbox
+- [ ] IMP-AUTO-20260311-01 | Finish the remaining live `Control Tower` → `Control Panel` terminology cleanup across active governance/runtime docs, explicitly separating historical/library references from current operating language (impact: reduces operator ambiguity without rewriting historical evidence).
+- [ ] SEC-AUTO-20260311-01 | Revalidate and either remediate or explicitly re-accept the recurring `security.trust_model.multi_user_heuristic` warning after the 2026-03-11 nightly audit; focus on whether current Telegram group exposure plus unsandboxed/high-impact contexts (`agents.list.px-internal-dev` with `tools.fs.workspaceOnly=false`, elevated tools enabled, browser control enabled) still matches the intended single-trust-boundary model, and refresh owner, expiry, and reopen triggers.
+- [ ] SEC-AUTO-20260311-02 | Replace raw privileged PF status probing in unattended nightly audits with the approved non-elevated host snapshot/fallback evidence path on Peter’s Mac mini, since `/sbin/pfctl -s info` still returns `Permission denied` in the cron runtime on 2026-03-11.
 - [ ] OPS-2026-078 | Establish a stable cross-runtime communication loop for Lyra OS <-> PX: adopt inbox/outbox handoff structure, define pickup cadence and handled-state rules, and decide whether/when to add cron-backed inbox checks on each side.
   - [x] 2026-03-10 | Published `CROSS_RUNTIME_HANDOFF_LOOP_STANDARD_V0_1.md`.
   - [x] 2026-03-10 | Published `CROSS_RUNTIME_INBOX_CHECK_CRON_DESIGN_V0_1.md` with a first-side-only OS inbox review loop, 30-minute initial cadence, register-status duplicate prevention, and no automatic payload execution.
@@ -68,6 +71,7 @@ Current operating model:
   - [ ] 2026-03-08 | Daily information-model sweep reconfirmed residual emitter casing drift (`severitySummary`/`linkedTasks`); task remains open pending ingest-tool normalization + regression test.
   - [ ] 2026-03-09 | Daily information-model sweep reconfirmed no new schema drift beyond the known evidence-ingest casing mismatch; keep task open, no duplicate follow-on task created.
   - [ ] 2026-03-10 | Daily information-model sweep found no new external-analysis ingest candidates in current workspace inbox/dropzone paths and no new schema drift beyond the known evidence-ingest casing mismatch; keep task open, no duplicate follow-on task created.
+  - [ ] 2026-03-11 | Daily information-model sweep again found no new external-analysis ingest candidates in current workspace inbox/dropzone paths and no new schema drift beyond the known evidence-ingest casing mismatch; keep task open, no duplicate follow-on task created.
 - [x] IMP-AUTO-20260305-01 | Rebuild or retire `tools/docs_hygiene_bundle.py` references in runbooks/validators so cron hygiene runs are executable again (impact: removes silent automation drift from missing command paths).
   - [x] 2026-03-06 | Restored `tools/docs_hygiene_bundle.py` as a fail-fast wrapper over `task_hygiene_check` + `markdown_link_check --changed-only`; validated with `python3 tools/docs_hygiene_bundle.py`.
 - [x] IMP-AUTO-20260305-02 | Add a lightweight “referenced script exists” guard for cron/runbook command strings to catch broken tooling pointers before scheduled sweeps fail (impact: fail-fast on operational doc drift).

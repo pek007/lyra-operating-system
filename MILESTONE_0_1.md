@@ -9,6 +9,7 @@ Scope: non-invasive bootstrap that does **not** modify TDE execution semantics.
 - Deterministic generators:
   - `tools/gen_inventory.py`
   - `tools/gen_knowledge_indexes.py`
+  - `tools/gen_reports_index.py`
 - CI workflow: `.github/workflows/governance-machine-check.yml`
 - Eval skeleton: `eval/slices/safety_refusal_smoke.v1.yaml` + baseline snapshot.
 

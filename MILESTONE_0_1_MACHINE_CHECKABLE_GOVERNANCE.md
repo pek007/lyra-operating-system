@@ -15,7 +15,10 @@ python3 tools/validate_repo.py
    - `inventory/generated/repo_inventory.json`
    - `knowledge/indexes/inbox_index.json`
    - `knowledge/indexes/decisions_index.json`
+   - `knowledge/indexes/report_decision_index.json`
+   - `knowledge/indexes/observations_index.json`
    - `knowledge/indexes/indexes_manifest.json`
+   - `knowledge/reports/INDEX.md`
 2. Validates schema files include `$schema` and `$id`.
 3. Validates evidence JSON artifacts against schema registry (`schemas/_registry.json`) when `artifactType` is present.
 4. Validates decision memo frontmatter in `knowledge/decisions/`.

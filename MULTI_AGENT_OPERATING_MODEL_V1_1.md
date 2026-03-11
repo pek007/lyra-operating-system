@@ -10,7 +10,7 @@ Execution-grade refinement of v1 based on second-opinion review.
 ## Structural Refinements
 
 ### 1) Execution Modes (explicit)
-1. **Persistent agent**: Control Tower (Lyra main), owns global context and decision rights.
+1. **Persistent agent**: Control Panel runtime (Lyra main; formerly "Control Tower"), owns global context and decision rights.
 2. **Spawned subagents (default)**: stateless, task-scoped workers with strict handoff format.
 3. **External workbench lane**: Codex/Deep Research/manual specialist runs treated as formal execution lane with mandatory handoff back into OS artifacts.
 
@@ -51,7 +51,7 @@ Routing follows trigger-based policy:
 - Routing stability (number of model-switch events/month)
 
 ## Immediate Adoption Plan
-1. Keep current Control Tower + role structure.
+1. Keep current Control Panel runtime + role structure.
 2. Implement spawned-subagent default and explicit handoff schema.
 3. Add per-agent permission envelope docs.
 4. Add model routing scorecard + monthly anti-thrash review.

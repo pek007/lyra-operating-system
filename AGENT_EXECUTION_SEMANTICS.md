@@ -4,7 +4,7 @@
 Operational rules for how agents run in the multi-agent model.
 
 ## Modes
-1. **Persistent:** Control Tower (Lyra main)
+1. **Persistent:** Control Panel runtime (Lyra main; formerly "Control Tower")
 2. **Spawned (default):** specialist subagents for scoped tasks
 3. **External workbench:** codex/deep-research/manual runs treated as formal execution lane
 
