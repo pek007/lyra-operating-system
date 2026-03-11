@@ -69,6 +69,7 @@ artifacts:
   plan: 04-execution/PLAN.md
   risks: 04-execution/RISKS.md
   metrics: 05-performance/METRICS.md
+  readiness_scorecard: 05-performance/READINESS_SCORECARD.md
   interfaces: 06-architecture/INTERFACES.md
   pxs_consumption_interface: 06-architecture/PXS_CONSUMPTION_INTERFACE.md
   decisions: 07-decisions/DECISIONS.md

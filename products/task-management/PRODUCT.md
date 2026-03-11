@@ -36,6 +36,7 @@ Canonical product model artifacts:
 - `04-execution/PLAN.md`
 - `04-execution/RISKS.md`
 - `05-performance/METRICS.md`
+- `05-performance/READINESS_SCORECARD.md`
 - `06-architecture/INTERFACES.md`
 - `06-architecture/PXS_CONSUMPTION_INTERFACE.md`
 - `07-decisions/DECISIONS.md`

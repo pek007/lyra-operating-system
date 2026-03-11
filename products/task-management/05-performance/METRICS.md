@@ -25,3 +25,6 @@ Task and decision management capability is reliably usable in `pxs` and within L
 
 ## Current metric maturity
 Metric definitions exist at a directional level. Operational measurement still needs tighter instrumentation and a lightweight scorecard.
+
+## Compact review surface
+Use `05-performance/READINESS_SCORECARD.md` as the compact readiness/health review surface for Task Management / TDE.
