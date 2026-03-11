@@ -1,31 +1,51 @@
 # Task Management Product
 
-Canonical product record: `products/A-007/management/`
-Product ID: `A-007`
-Primary capability focus: TDE (Task and Decision Engine)
+- Product ID: `A-007`
+- Product name: `Task Management`
+- Owner: `Lyra`
+- Domain: `OS`
+- Type: `Internal`
+- Status: `Active`
+- Primary capability focus: `TDE (Task and Decision Engine)`
 
-## Role
-Lyra is the product owner for the Task Management Product in this session/channel.
+## Purpose
+Task Management exists to provide PX Strategy and downstream consuming workspaces with reliable task and decision management capability. In the current phase, its core responsibility is to make TDE operationally usable, governable, and adoptable.
+
+## Why this product matters
+This product sits close to the operating-system bottleneck: if tasks and decisions are not visible, traceable, and executable, the rest of the AI operating system will remain fragile. Task Management therefore acts as an enabling product for Phase 1 foundations.
 
 ## Scope
-This product includes everything related to automating tasks and decision making, including:
+This product includes everything related to task and decision management, including:
 - tools
 - processes
 - documents
 - jobs
 - delivery mechanisms toward users/customers
+- downstream enablement for consuming workspaces such as `pxs`
 
-## Primary responsibility
-- TDE
+## Product model
+Canonical product model artifacts:
+- `MODEL.yaml`
+- `01-identity/VISION.md`
+- `02-strategy/STRATEGY.md`
+- `02-strategy/DISTRIBUTION_MODEL.md`
+- `03-operating-model/OPERATING_MODEL.md`
+- `04-execution/PLAN.md`
+- `05-performance/METRICS.md`
+- `06-architecture/INTERFACES.md`
+- `07-decisions/DECISIONS.md`
 
-## Delivery responsibility
-The product owner is responsible for making sure users/customers can actually consume product output. At present, this specifically includes enabling the `pxs` workspace to use TDE.
-
-## Operating mandate
+## Current mandate
 - Continuously improve the product
 - Act with broad autonomy on normal product work
 - Keep Peter informed on larger decisions
 - Proceed with full TDE deployment once technical requirements are fulfilled and evidence is recorded
 
-## Current context
-Lyra OS work is now divided into 7 products. One product is internal to Lyra OS; the others are aimed at creating value for users/customers.
+## Current focus
+1. Make TDE dependable enough for routine use
+2. Clarify the product interfaces into `pxs`
+3. Improve decision/task traceability and delivery discipline
+4. Create a reusable product model that can later be applied across the product portfolio
+
+## Notes
+Lyra OS work is now divided into 7 products. Task Management is one of the enabling products in that portfolio and currently carries broad responsibility for making task/decision execution work in practice.

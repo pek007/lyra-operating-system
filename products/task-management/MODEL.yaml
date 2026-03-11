@@ -1,0 +1,86 @@
+id: A-007
+slug: task-management
+name: Task Management
+type: internal
+owner: Lyra
+status: active
+lifecycle: incubation
+
+domain: OS
+purpose: >
+  Provide task and decision management capability for Lyra OS and downstream
+  consuming workspaces, with TDE as the primary capability focus.
+
+users:
+  primary:
+    - pxs-workspace
+    - lyra-os
+  secondary:
+    - internal-agents
+
+strategic_role:
+  portfolio_role: enabling
+  linked_company_goals:
+    - build-ai-operating-system
+    - reliable-software-delivery-capability
+    - task-and-decision-management-capability
+
+value_logic:
+  creates_value_by:
+    - increasing task visibility and execution reliability
+    - improving decision traceability and follow-through
+    - enabling downstream workspaces to consume structured task/decision capability
+  captures_value_by:
+    - reducing coordination friction and operating overhead
+    - increasing throughput and quality of execution
+    - creating a reusable capability that may later be productized
+  success_conditions:
+    - TDE is reliable enough for routine operational use
+    - consuming workspaces can adopt the product through clear interfaces
+    - evidence and governance remain proportionate but explicit
+
+operating_model:
+  cadence: weekly product review with continuous improvement between reviews
+  planning_horizon: rolling 2-6 weeks for execution; quarterly for strategic evolution
+  release_mode: iterative, evidence-backed changes
+  governance_level: medium
+
+dependencies:
+  upstream:
+    - governance
+    - lyra-runtime
+    - task-decision-engine-contract
+  downstream:
+    - pxs-environment
+  critical_constraints:
+    - no hidden cross-workspace coupling
+    - material real-world-impact changes remain visible to Peter
+    - deployment decisions require evidence and readiness checks
+
+artifacts:
+  product: PRODUCT.md
+  vision: 01-identity/VISION.md
+  strategy: 02-strategy/STRATEGY.md
+  operating_model: 03-operating-model/OPERATING_MODEL.md
+  distribution_model: 02-strategy/DISTRIBUTION_MODEL.md
+  plan: 04-execution/PLAN.md
+  metrics: 05-performance/METRICS.md
+  interfaces: 06-architecture/INTERFACES.md
+  decisions: 07-decisions/DECISIONS.md
+
+metrics:
+  north_star:
+    - downstream task/decision management is reliably usable in pxs
+  health:
+    - execution reliability
+    - decision traceability
+    - intake-to-completion cycle time
+    - downstream adoption
+  guardrails:
+    - governance compliance
+    - interface clarity
+    - operational safety
+
+review:
+  review_cadence: weekly
+  last_reviewed: 2026-03-11
