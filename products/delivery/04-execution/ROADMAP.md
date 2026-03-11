@@ -1,17 +1,21 @@
 # Roadmap
 
-## Horizon 1 — Operating clarity
-- keep the Delivery product explicit as the canonical shipping system
-- clarify intake, verification, and release-readiness expectations
-- reduce ad hoc execution drift
+## Horizon 1 — Delivery-as-Code foundation
+- approve Delivery-as-Code as the target design direction
+- define Delivery Unit schema v1
+- define state model and policy-controlled transitions
+- pilot one real TDE slice end to end as a Delivery Unit
 
-## Horizon 2 — Baseline scorecard and cadence
-- make flow, quality, risk, and readiness more visible
-- establish a lightweight recurring improvement rhythm
+## Horizon 2 — Evidence and rendered packets
+- define evidence requirements by work type and risk class
+- define rendered packet templates for verification, release/handoff, audit, and post-delivery review
+- reduce manual status/reporting through canonical state rendering
 
-## Horizon 3 — Better controls and automation
-- automate selected delivery controls and evidence loops
-- reduce manual governance burden while preserving quality
+## Horizon 3 — TDE gate automation
+- wire deterministic gate checks into TDE tick flow
+- make release recommendation and approval boundaries explicit
+- add post-delivery verification and closeout writeback
 
-## Horizon 4 — Development-management surface definition
-- define when and how a stronger internal delivery-management surface becomes justified
+## Horizon 4 — Autonomous chain expansion
+- support limited successor activation/creation for approved workflow families
+- generalize Delivery-as-Code beyond TDE into cross-product delivery capability
