@@ -44,7 +44,7 @@
 - This error report was created to retain the lesson explicitly.
 
 ## Corrective actions
-- [ ] Define or point to the canonical action system for shared/system corrective actions.
+- [x] Define or point to the canonical action system for shared/system corrective actions.
 - [ ] Review whether `TASKS.md` still contains signals or references that make it look authoritative despite its legacy disclaimer.
 - [ ] Tighten the closed-loop improvement guidance so action assignment explicitly checks canonical action placement before creating tasks.
 
@@ -55,7 +55,7 @@
 
 ## Linked artifacts
 - Related tasks:
-  - none yet assigned into the canonical action system
+  - shared/system corrective actions should currently live in the owning error report per `SHARED_CORRECTIVE_ACTION_SYSTEM_V1.md`
 - Related decisions:
   - none yet
 - Related evidence:
@@ -71,6 +71,7 @@
 - canonical action placement for shared/system corrective actions is explicit
 - no new corrective actions are added to `TASKS.md` unless its authority is deliberately changed
 - legacy/reference status of `TASKS.md` is no longer easy to misread in practice
+- the closed-loop guidance reflects canonical action placement checks
 
 ## Closure note
 - Initial misuse corrected by removing the new items. Full closure depends on clarifying the canonical action system and reducing the residual ambiguity around `TASKS.md`.

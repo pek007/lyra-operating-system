@@ -66,7 +66,7 @@
 
 ## Linked artifacts
 - Related tasks:
-  - none yet assigned into the canonical action system; previous temporary placement in legacy `TASKS.md` was removed
+  - shared/system corrective actions remain anchored in this error report per `SHARED_CORRECTIVE_ACTION_SYSTEM_V1.md`; previous temporary placement in legacy `TASKS.md` was removed
 - Related decisions:
   - none yet; should be added if canonical repo authority becomes a standing architectural decision
 - Related evidence:
@@ -81,7 +81,7 @@
 - canonical repo authority for active code-bearing products is documented
 - future sync operations include explicit repo-root confirmation
 - lightweight Git sync cadence rule is defined
-- remaining corrective actions are assigned into the canonical action system
+- remaining corrective actions remain clearly anchored in the canonical shared/system corrective-action system
 - no further Git sync decisions are made against the wrong clone for the same remote
 
 ## Closure note

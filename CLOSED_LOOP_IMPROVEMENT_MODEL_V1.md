@@ -75,8 +75,12 @@ A meaningful signal should produce at least one of:
 - explicit error report
 - product-model update requirement
 
+Assignment must also respect canonical action placement:
+- product-local issues -> owning product action system
+- shared/system issues -> owning shared/system error report unless ownership is explicitly transferred or a dedicated shared board is deliberately created
+
 Question:
-What changes now, and who is responsible?
+What changes now, who is responsible, and where is the canonical action anchor?
 
 ### 5. Structural update
 The system should update the correct layer, not just describe the problem.
