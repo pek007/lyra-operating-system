@@ -39,11 +39,9 @@ Current portfolio state is healthy for an early operating standard: the core pro
 
 ### `A-004` — Security
 - Canonical path: `products/security/`
-- Maturity: **Level 3 candidate — near Standard**
-- Validation view: **Pass with gaps**
-- Gaps:
-  - missing explicit `DISTRIBUTION_MODEL.md`
-- Notes: Strong enough to operate with real clarity; one artifact short of the full standard set.
+- Maturity: **Level 3 — Standard**
+- Validation view: **Pass**
+- Notes: Now meets the standard artifact set and can be run with real clarity from its product model.
 
 ### `A-005` — Improvement
 - Canonical path: `products/improvement/`
@@ -53,11 +51,9 @@ Current portfolio state is healthy for an early operating standard: the core pro
 
 ### `A-006` — Delivery
 - Canonical path: `products/delivery/`
-- Maturity: **Level 3 candidate — near Standard**
-- Validation view: **Pass with gaps**
-- Gaps:
-  - missing explicit `DISTRIBUTION_MODEL.md`
-- Notes: Strong enough to operate with real clarity; one artifact short of the full standard set.
+- Maturity: **Level 3 — Standard**
+- Validation view: **Pass**
+- Notes: Now meets the standard artifact set and can be run with real clarity from its product model.
 
 ### `A-007` — Task Management
 - Canonical path: `products/task-management/`
@@ -69,8 +65,7 @@ Current portfolio state is healthy for an early operating standard: the core pro
 The portfolio is currently shaped well:
 - 3 honest placeholders
 - 2 thin active products
-- 2 near-standard products
-- 1 standard reference product
+- 3 standard products
 
 That is a credible early-state maturity profile.
 
