@@ -70,6 +70,7 @@ artifacts:
   risks: 04-execution/RISKS.md
   metrics: 05-performance/METRICS.md
   interfaces: 06-architecture/INTERFACES.md
+  pxs_consumption_interface: 06-architecture/PXS_CONSUMPTION_INTERFACE.md
   decisions: 07-decisions/DECISIONS.md
 
 metrics:

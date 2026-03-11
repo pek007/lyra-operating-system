@@ -40,7 +40,19 @@ Consumes:
 3. Consumer adoption should rely on documented interfaces, not tribal knowledge.
 4. Where possible, prefer stable contracts over chat-history assumptions.
 
+## Named downstream interface
+### `pxs` consumption interface
+Canonical artifact:
+- `06-architecture/PXS_CONSUMPTION_INTERFACE.md`
+
+This interface defines:
+- what `pxs` consumes from Task Management
+- what remains internal to the product
+- consumer obligations
+- provider obligations
+- what evidence makes the interface operationally usable
+
 ## Next interface work
 - map current TDE artifacts to the product interface surface
-- define what `pxs` needs to consume and what remains internal
+- add clearer operational examples for `pxs` usage
 - decide whether a capability-pack or service boundary is the better long-term distribution shape

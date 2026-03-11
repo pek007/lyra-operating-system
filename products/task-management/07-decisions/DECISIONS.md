@@ -20,7 +20,10 @@ Capture the major product decisions that shape Task Management so the product do
 - Decision: Task Management is the first product to receive a fuller Product-as-Code model.
 - Why it matters: This product is close to the operating-system bottleneck and is a good proving ground for a reusable standard.
 
+### D-005 — First formal downstream interface to `pxs` is an operating-contract artifact
+- Decision: The first formal Task Management → `pxs` interface is defined as a documented operating contract in `06-architecture/PXS_CONSUMPTION_INTERFACE.md`, rather than a service or packaged capability boundary.
+- Why it matters: This is the lightest interface shape that removes ambiguity now without forcing premature packaging.
+
 ## Next decisions likely needed
-- what optional artifacts should become mandatory for this product
-- what the formal downstream interface to `pxs` should be
 - what evidence threshold should define operational readiness for broader use
+- when the `pxs` interface should evolve from operating-contract form into a stronger packaged or schema-backed interface

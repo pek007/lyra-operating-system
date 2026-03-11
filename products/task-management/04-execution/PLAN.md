@@ -25,9 +25,9 @@ Rolling near-term plan for the next 2-6 weeks.
 - make it easier to answer whether the product is ready for broader operational use
 
 ## Immediate next steps
-- review this first product model for completeness and usefulness
-- decide whether to add optional artifacts next: `RISKS.md`, `ROADMAP.md`, `GOVERNANCE.md`
-- connect this model more explicitly to existing TDE and portfolio artifacts
+- define and refine the formal Task Management → `pxs` consumption interface
+- create a compact readiness/health scorecard for Task Management / TDE
+- connect the product model more explicitly to readiness evidence and downstream usage
 
 ## Out of scope for now
 - full commercialization packaging
