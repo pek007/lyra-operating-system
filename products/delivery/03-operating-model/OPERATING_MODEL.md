@@ -13,19 +13,13 @@ Delivery is evolving toward **Delivery-as-Code**:
 Primary design reference:
 - `06-architecture/DELIVERY_AS_CODE_DESIGN_V1.md`
 
-## Inbox check rule
-Delivery must treat `08-inbox/` as the interim cross-product intake surface during the inbox-coordination phase.
+## Coordination note
+The interim inbox approach has been superseded.
 
-Check the inbox:
-- when starting active Delivery work,
-- during heartbeat-driven housekeeping when cross-product coordination is active,
-- during weekly product review,
-- before milestone/gate decisions that may depend on another product.
+Current direction:
+- cross-product collaboration should move toward TDE-native assigned work,
+- assignees should be notified/woken when new assigned work enters canonical state,
+- collaboration state should be tracked canonically in TDE rather than through mailbox-style polling.
 
-When an inbox item is present, respond explicitly with one of:
-- accepted
-- rejected
-- deferred
-- clarification-needed
-
-Accepted work must continue in canonical Delivery execution/decision surfaces rather than remaining inbox-only.
+Reference:
+- `TDE_ASSIGNED_WORK_WAKEUP_MODEL_V1.md`

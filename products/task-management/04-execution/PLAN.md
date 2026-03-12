@@ -28,9 +28,10 @@ Rolling near-term plan for the next 2-6 weeks.
 - define and refine the formal Task Management → `pxs` consumption interface
 - create a compact readiness/health scorecard for Task Management / TDE
 - connect the product model more explicitly to readiness evidence and downstream usage
-- issue the first cross-product inbox request to Delivery for the One-Iteration TDE UI Pilot and use it to test interim coordination before TDE-native coordination is ready ✅
+- the interim inbox experiment has been completed and superseded as a primary coordination direction
 - integrate Delivery’s accepted pilot contract into the shared pilot flow by defining the smallest acceptable GUI slice, explicit non-goals, and the initial decision/evidence structure ✅
-- issue a second cross-product request to Delivery asking for the practical Delivery execution process contract that should receive and govern an objective packet for the pilot
+- shift coordination design work toward TDE-native assigned work with assignee wake/notification
+- obtain a Delivery-defined execution process contract through the eventual assigned-work / handoff model rather than extending mailbox-style coordination
 
 ## Out of scope for now
 - full commercialization packaging

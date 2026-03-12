@@ -30,10 +30,9 @@ Capture the major product decisions that shape Task Management so the product do
 
 ### D-007 — Task Management accepts Delivery’s bounded pilot contract as the joint next constraint surface
 - Decision: Task Management accepts Delivery’s bounded contract for the One-Iteration TDE UI Pilot and will use it as the shared constraint surface for the next pilot-design step.
-- Why it matters: This turns the inbox coordination loop into a real cross-product working agreement and forces the pilot to answer the next core questions explicitly: smallest GUI slice, non-goals, and decision/evidence structure.
+- Why it matters: This created a real cross-product working agreement and forced the pilot to answer the next core questions explicitly: smallest GUI slice, non-goals, and decision/evidence structure.
 - References:
   - `products/delivery/04-execution/TDE_UI_PILOT_DELIVERY_CONTRACT_V1.md`
-  - `products/delivery/08-inbox/REQ-20260312-001__from-task-management__tde-ui-pilot-delivery-support.md`
   - `ONE_ITERATION_TDE_UI_PILOT_V1.md`
 
 ## Related decision artifact

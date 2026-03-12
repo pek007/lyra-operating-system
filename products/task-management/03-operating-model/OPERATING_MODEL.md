@@ -42,22 +42,16 @@ Lyra has broad autonomy for normal product work. Escalation is required for larg
 - weekly product review
 - milestone or gate reviews when deployment/readiness decisions are involved
 
-## Inbox check rule
-Task Management must treat `08-inbox/` as the interim cross-product intake surface during the inbox-coordination phase.
+## Coordination note
+The interim inbox approach has been superseded.
 
-Check the inbox:
-- when starting active product work,
-- during heartbeat-driven housekeeping when cross-product coordination is active,
-- during weekly product review,
-- before milestone/gate decisions that may depend on another product.
+Current direction:
+- cross-product collaboration should move toward TDE-native assigned work,
+- assignees should be notified/woken when new assigned work enters canonical state,
+- collaboration state should be tracked canonically in TDE rather than through mailbox-style polling.
 
-When an inbox item is present, respond explicitly with one of:
-- accepted
-- rejected
-- deferred
-- clarification-needed
-
-Accepted work must be reflected into canonical execution/decision surfaces rather than remaining inbox-only.
+Reference:
+- `TDE_ASSIGNED_WORK_WAKEUP_MODEL_V1.md`
 
 ## Operating principle
 The product should improve execution quality without creating unnecessary process burden.
