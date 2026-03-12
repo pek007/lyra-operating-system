@@ -12,3 +12,20 @@ Delivery is evolving toward **Delivery-as-Code**:
 
 Primary design reference:
 - `06-architecture/DELIVERY_AS_CODE_DESIGN_V1.md`
+
+## Inbox check rule
+Delivery must treat `08-inbox/` as the interim cross-product intake surface during the inbox-coordination phase.
+
+Check the inbox:
+- when starting active Delivery work,
+- during heartbeat-driven housekeeping when cross-product coordination is active,
+- during weekly product review,
+- before milestone/gate decisions that may depend on another product.
+
+When an inbox item is present, respond explicitly with one of:
+- accepted
+- rejected
+- deferred
+- clarification-needed
+
+Accepted work must continue in canonical Delivery execution/decision surfaces rather than remaining inbox-only.

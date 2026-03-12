@@ -42,5 +42,22 @@ Lyra has broad autonomy for normal product work. Escalation is required for larg
 - weekly product review
 - milestone or gate reviews when deployment/readiness decisions are involved
 
+## Inbox check rule
+Task Management must treat `08-inbox/` as the interim cross-product intake surface during the inbox-coordination phase.
+
+Check the inbox:
+- when starting active product work,
+- during heartbeat-driven housekeeping when cross-product coordination is active,
+- during weekly product review,
+- before milestone/gate decisions that may depend on another product.
+
+When an inbox item is present, respond explicitly with one of:
+- accepted
+- rejected
+- deferred
+- clarification-needed
+
+Accepted work must be reflected into canonical execution/decision surfaces rather than remaining inbox-only.
+
 ## Operating principle
 The product should improve execution quality without creating unnecessary process burden.
