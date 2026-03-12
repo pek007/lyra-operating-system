@@ -46,6 +46,9 @@ The next useful Task Management-side artifact should define:
 - the initial decision set,
 - the initial evidence expectations from a TDE/product perspective.
 
+Status update:
+- completed in `TDE_UI_PILOT_SMALLEST_SLICE_V1.md`
+
 ## Why this note exists
 Without this alignment step, Delivery’s accepted contract would exist on the Delivery side while Task Management continued operating from a looser or broader pilot concept.
 
