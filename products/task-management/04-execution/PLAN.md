@@ -29,7 +29,8 @@ Rolling near-term plan for the next 2-6 weeks.
 - create a compact readiness/health scorecard for Task Management / TDE
 - connect the product model more explicitly to readiness evidence and downstream usage
 - issue the first cross-product inbox request to Delivery for the One-Iteration TDE UI Pilot and use it to test interim coordination before TDE-native coordination is ready ✅
-- integrate Delivery’s accepted pilot contract into the shared pilot flow by defining the smallest acceptable GUI slice, explicit non-goals, and the initial decision/evidence structure
+- integrate Delivery’s accepted pilot contract into the shared pilot flow by defining the smallest acceptable GUI slice, explicit non-goals, and the initial decision/evidence structure ✅
+- issue a second cross-product request to Delivery asking for the practical Delivery execution process contract that should receive and govern an objective packet for the pilot
 
 ## Out of scope for now
 - full commercialization packaging
