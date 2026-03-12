@@ -5,7 +5,7 @@ Date: 2026-03-12
 From product: Task Management (`A-007`)
 To product: Delivery (`A-006`)
 Requested by: Lyra
-Status: proposed
+Status: accepted
 Urgency: high
 
 ## Purpose
@@ -58,4 +58,44 @@ Then return a bounded Delivery response and, if accepted, reflect the work into 
 - `products/delivery/03-operating-model/OPERATING_MODEL.md`
 
 ## Response section
-_Response pending._
+Response: accepted
+Owner: Lyra (Delivery)
+Rationale: The request is directly aligned with Delivery’s current mandate to improve dependable pathways from intent to shipped capability and to pilot a real TDE slice end to end as a Delivery Unit. A bounded response is feasible now and useful even before the full long-term coordination model exists.
+
+### Delivery response
+#### Smallest viable delivery shape
+Treat the pilot as one bounded Delivery Unit that runs from approved objective -> scoped implementation slice -> verification evidence -> explicit release/readiness decision -> post-pilot review.
+
+#### Minimum acceptable production/release bar
+For this pilot, Delivery recommends that “production” means:
+- deployed in a real runtime/environment,
+- usable for one narrow real operator purpose,
+- backed by an explicit readiness/release decision,
+- reversible or low-blast-radius if the first slice proves weak.
+
+#### Minimum delivery artifact/evidence set
+Delivery recommends the following minimum set:
+1. pilot scope/non-goals record,
+2. one delivery execution packet / unit definition,
+3. implementation evidence,
+4. verification evidence,
+5. release/readiness decision artifact,
+6. post-pilot review note.
+
+#### Main delivery-side early risks / blockers
+- scope inflation before a smallest viable slice is fixed,
+- weak definition of what counts as production,
+- evidence expectations being left too vague,
+- Delivery becoming a passive witness rather than an active gate-owning product.
+
+### Proposed next action
+Create a compact Delivery-side pilot contract artifact that defines:
+- smallest viable delivery shape,
+- minimum production bar,
+- minimum evidence set,
+- early gate questions.
+
+### Canonical continuation refs
+- `products/delivery/04-execution/PLAN.md`
+- `products/delivery/07-decisions/DECISIONS.md`
+- `ONE_ITERATION_TDE_UI_PILOT_V1.md`

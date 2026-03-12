@@ -14,5 +14,9 @@
 
 ## Interim coordination trigger
 - respond to cross-product inbox requests using `08-inbox/` during the interim coordination phase
-- first live request: `08-inbox/REQ-20260312-001__from-task-management__tde-ui-pilot-delivery-support.md`
+- first live request: `08-inbox/REQ-20260312-001__from-task-management__tde-ui-pilot-delivery-support.md` ✅ accepted
 - accepted work must continue in canonical Delivery execution/decision surfaces rather than remain inbox-only
+
+## Pilot continuation
+- define a compact Delivery-side pilot contract for the One-Iteration TDE UI Pilot
+- make explicit the smallest viable delivery shape, minimum production bar, minimum evidence set, and early gate questions
