@@ -28,6 +28,14 @@ Capture the major product decisions that shape Task Management so the product do
 - Decision: Task Management capability delivery into `pxs` should currently remain centered on workspace artifacts and ops-pack style operating assets, with schema-backed strengthening only where it adds clarity. It should not yet become a plugin or service.
 - Why it matters: This preserves the lightest viable delivery mode while the interface is still stabilizing and avoids premature runtime packaging.
 
+### D-007 — Task Management accepts Delivery’s bounded pilot contract as the joint next constraint surface
+- Decision: Task Management accepts Delivery’s bounded contract for the One-Iteration TDE UI Pilot and will use it as the shared constraint surface for the next pilot-design step.
+- Why it matters: This turns the inbox coordination loop into a real cross-product working agreement and forces the pilot to answer the next core questions explicitly: smallest GUI slice, non-goals, and decision/evidence structure.
+- References:
+  - `products/delivery/04-execution/TDE_UI_PILOT_DELIVERY_CONTRACT_V1.md`
+  - `products/delivery/08-inbox/REQ-20260312-001__from-task-management__tde-ui-pilot-delivery-support.md`
+  - `ONE_ITERATION_TDE_UI_PILOT_V1.md`
+
 ## Related decision artifact
 - `07-decisions/DELIVERY_MODE_DECISION_PXS_V1.md`
 
