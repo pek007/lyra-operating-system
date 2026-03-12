@@ -28,6 +28,7 @@ Rolling near-term plan for the next 2-6 weeks.
 - define and refine the formal Task Management → `pxs` consumption interface
 - create a compact readiness/health scorecard for Task Management / TDE
 - connect the product model more explicitly to readiness evidence and downstream usage
+- issue the first cross-product inbox request to Delivery for the One-Iteration TDE UI Pilot and use it to test interim coordination before TDE-native coordination is ready
 
 ## Out of scope for now
 - full commercialization packaging
