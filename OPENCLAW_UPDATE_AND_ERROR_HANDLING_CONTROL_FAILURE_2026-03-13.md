@@ -54,8 +54,8 @@
 - [x] Repair the broken memory-search dependency and verify memory search works again.
 - [x] Create a formal shared/system error report for the incident and the follow-on handling failure.
 - [x] Add an explicit operating rule in `AGENTS.md` to route meaningful incidents through the error process.
-- [ ] Add a lightweight post-update smoke-test checklist covering `openclaw status`, one `memory_search` test, and one Codex/ACP smoke test.
-- [ ] Decide where the canonical recurring update/verification runbook should live.
+- [x] Add a lightweight post-update smoke-test checklist covering `openclaw status`, one `memory_search` test, and one Codex/ACP smoke test.
+- [x] Decide where the canonical recurring update/verification runbook should live (`os/runbooks/OPENCLAW_POST_UPDATE_SMOKE_TEST_CHECKLIST_V1.md`).
 
 ## Preventive changes
 - What should change to reduce recurrence?
@@ -82,6 +82,7 @@
   - `AGENTS.md`
   - `CLOSED_LOOP_IMPROVEMENT_MODEL_V1.md`
   - `ERROR_REPORTING_STANDARD_V1.md`
+  - `os/runbooks/OPENCLAW_POST_UPDATE_SMOKE_TEST_CHECKLIST_V1.md`
   - `memory/2026-03-13.md`
 
 ## Closure criteria
@@ -94,4 +95,5 @@
 ## Closure note
 - Final outcome / verification:
   - Incident mitigated on 2026-03-13 by reinstalling `node-llama-cpp` and confirming working memory search.
-  - Process-level closure remains open until the checklist/runbook control is in place and verified.
+  - The runbook control now exists at `os/runbooks/OPENCLAW_POST_UPDATE_SMOKE_TEST_CHECKLIST_V1.md`.
+  - Process-level closure remains open until the checklist is exercised successfully on a future relevant update or otherwise explicitly verified.
