@@ -42,6 +42,9 @@ If formation says:
 The first integrated workflow entry now exists at:
 - `tools/tde_request_entry.py`
 
+The first durable result artifact for this workflow is defined at:
+- `products/task-management/07-decisions/TDE_REQUEST_ENTRY_RESULT_ARTIFACT_V1.md`
+
 ## Current bounded behavior
 The current v1 workflow supports both major first-branch behaviors:
 - proceed into canonical creation
