@@ -179,8 +179,15 @@ The first embodiment should likely be:
 ## Recommended next follow-on work
 1. Define the first schema for canonical objective creation from a formation record.
 2. Decide whether objective creation should be DB-backed first or file-backed first.
-3. Implement a thin formation-to-task creator for `implementation_verification_readiness` only.
-4. Pilot the mapping on one real request class, likely the first basic TDE GUI attempt.
+3. Pilot the mapping on one real request class, likely the first basic TDE GUI attempt.
+4. Decide whether creation should also emit a dedicated creation artifact beyond DB/objective-registry mutation.
+
+## First thin creator added
+The first thin creator for this mapping now exists at:
+- `tools/tde_formation_creator.py`
+
+Reference formation example:
+- `products/task-management/07-decisions/examples/TDE_INTENT_FORMATION_RECORD_BASIC_GUI_V1.json`
 
 ## Bottom line
 This mapping defines the first safe bridge from:

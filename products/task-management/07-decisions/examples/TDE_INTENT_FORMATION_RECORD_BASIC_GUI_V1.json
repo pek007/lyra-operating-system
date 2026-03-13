@@ -1,0 +1,55 @@
+{
+  "artifactType": "tde_intent_formation_record",
+  "schemaVersion": "1.0.0",
+  "formation_id": "FORM-TDE-GUI-001",
+  "source_type": "chat_request",
+  "source_ref": "telegram:lyra-operations:basic-gui-request",
+  "interpreted_intent": "Create a first basic internal TDE GUI with a bounded, read-heavy scope.",
+  "request_type": "implementation_request",
+  "specificity_level": "medium",
+  "ambiguity_types": [
+    "missing_scope",
+    "missing_quality_bar"
+  ],
+  "actionability_status": "executable_with_assumptions",
+  "assumptions": [
+    "The first version is an internal operator interface.",
+    "The first version is read-heavy rather than fully editable."
+  ],
+  "known_unknowns": [
+    "Which operator actions should be allowed in v1."
+  ],
+  "proposed_objective": {
+    "objective_title": "Create first basic TDE GUI",
+    "objective_summary": "Create a bounded first GUI attempt for TDE using DB-canonical state and staging-first validation.",
+    "objective_id": null
+  },
+  "proposed_success_criteria": [
+    "A first bounded GUI workflow exists and is testable in staging."
+  ],
+  "proposed_workflow_family": "implementation_verification_readiness",
+  "proposed_first_stage_set": [
+    "implementation",
+    "verification",
+    "readiness-review"
+  ],
+  "proposed_first_task_set": [
+    {
+      "task_id": null,
+      "task_title": "Define first bounded TDE GUI scope",
+      "task_summary": "Define the minimum read-heavy operator GUI scope for the first attempt.",
+      "stage_id": "implementation"
+    },
+    {
+      "task_id": null,
+      "task_title": "Verify first TDE GUI scope and constraints",
+      "task_summary": "Verify that the proposed first GUI scope is coherent, safe, and aligned with DB-canonical state.",
+      "stage_id": "verification"
+    }
+  ],
+  "required_clarifications": [],
+  "recommended_next_action": "proceed_with_assumptions",
+  "formation_rationale": "A useful first GUI work system can be formed under explicit assumptions without waiting for full product detail.",
+  "formed_at": "2026-03-13T21:15:00Z",
+  "formed_by_role": "Product Owner"
+}
