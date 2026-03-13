@@ -15,6 +15,7 @@ from typing import Any
 from tde_kernel import ActionRequest, TDEKernel
 from tde_decision_escalation import write_escalation_package
 from tde_decision_policy import validate_task_policy_binding
+from tde_decision_rounds import next_research_round, research_budget_exhausted
 from tde_state_store import connect as state_connect
 from tde_state_store import init_schema as state_init_schema
 from tde_state_store import import_tasks as state_import_tasks
@@ -666,6 +667,7 @@ def run_job_tick(
             idempotency_refs.append(idempotency_key)
 
             requested_outcome = (item.get("metadata") or {}).get("decision_outcome_hint", "continue")
+            source_metadata = item.get("metadata") or {}
             policy_binding = validate_task_policy_binding(
                 item.get("metadata") or {},
                 workspace_root=workspace_root,
@@ -747,17 +749,36 @@ def run_job_tick(
                 continue
 
             research_activation = None
+            forced_escalation_due_to_budget = False
             if requested_outcome == "research_further":
-                status = "research_further"
-                result = {"policy_decision_id": f"policy:{tick_id}:{item['id']}:research_further", "audit_link": None}
-                next_task_id = (item.get("metadata") or {}).get("decision_next_task_id")
-                if canonical_store == "db" and canonical_conn is not None and next_task_id and not dry_run:
-                    research_activation = state_activate_task_db(
-                        canonical_conn,
-                        next_task_id,
-                        activated_by=f"decision:{tick_id}:{item['id']}:research_further",
-                        activated_at=_iso_now(),
-                    )
+                next_round = next_research_round(source_metadata)
+                envelope = policy_binding.get("envelope") if isinstance(policy_binding, dict) else None
+                if research_budget_exhausted(envelope, next_round):
+                    requested_outcome = "escalate"
+                    source_metadata = {**source_metadata, "decision_escalation_reason": "research_budget_exhausted", "decision_research_round": next_round}
+                    forced_escalation_due_to_budget = True
+                    status = "escalate"
+                    result = {"policy_decision_id": f"policy:{tick_id}:{item['id']}:escalate", "audit_link": None}
+                else:
+                    status = "research_further"
+                    result = {"policy_decision_id": f"policy:{tick_id}:{item['id']}:research_further", "audit_link": None}
+                    next_task_id = source_metadata.get("decision_next_task_id")
+                    if canonical_store == "db" and canonical_conn is not None and next_task_id and not dry_run:
+                        research_activation = state_activate_task_db(
+                            canonical_conn,
+                            next_task_id,
+                            activated_by=f"decision:{tick_id}:{item['id']}:research_further",
+                            activated_at=_iso_now(),
+                        )
+                        try:
+                            from tde_state_store import update_task_metadata as state_update_task_metadata
+                            state_update_task_metadata(canonical_conn, item["id"], {"decision_research_round": next_round})
+                            state_update_task_metadata(canonical_conn, next_task_id, {
+                                "decision_reentry_to_task_id": item["id"],
+                                "decision_research_round": next_round,
+                            })
+                        except Exception:
+                            pass
             elif requested_outcome == "escalate":
                 status = "escalate"
                 result = {"policy_decision_id": f"policy:{tick_id}:{item['id']}:escalate", "audit_link": None}
@@ -825,7 +846,8 @@ def run_job_tick(
                         "decision_record_path": decision_record_path,
                         "escalation_package_path": escalation_package_path,
                         "research_activation": research_activation,
-                        "source_metadata": item.get("metadata") or {},
+                        "source_metadata": source_metadata,
+                        "forced_escalation_due_to_budget": forced_escalation_due_to_budget,
                     },
                     "mutation_envelope": {
                         **mutation_envelope,
@@ -855,6 +877,20 @@ def run_job_tick(
                 reentry_outcome = source_metadata.get("decision_reentry_default_outcome", "continue")
                 policy_ref = source_metadata.get("decision_policy_ref")
                 workflow_family = source_metadata.get("workflow_family")
+                next_round = next_research_round(source_metadata)
+                validated_binding = validate_task_policy_binding(
+                    source_metadata,
+                    workspace_root=workspace_root,
+                    expected_outcome=reentry_outcome,
+                ) if policy_ref else {"ok": True}
+                envelope = validated_binding.get("envelope") if isinstance(validated_binding, dict) else None
+                if reentry_outcome == "research_further" and research_budget_exhausted(envelope, next_round):
+                    reentry_outcome = "escalate"
+                    source_metadata = {
+                        **source_metadata,
+                        "decision_escalation_reason": "research_budget_exhausted",
+                        "decision_research_round": next_round,
+                    }
                 synthetic_policy_binding = {
                     "policy_ref": policy_ref,
                     "workflow_family": workflow_family,

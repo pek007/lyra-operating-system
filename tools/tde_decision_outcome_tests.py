@@ -87,6 +87,32 @@ def test_reentry_after_research_completion() -> None:
         assert cont_row[0] == "Active"
 
 
+def test_research_budget_exhaustion_forces_escalation() -> None:
+    with tempfile.TemporaryDirectory() as td:
+        root = Path(td)
+        tasks, bindings, objectives, db = _setup(root, "TDE-RF-BOUNDS-001")
+        conn = connect(db)
+        update_task_metadata(conn, "TDE-RF-BOUNDS-001", {
+            "workflow_family": "implementation_verification_readiness",
+            "decision_policy_ref": POLICY_REF,
+            "decision_outcome_hint": "research_further",
+            "decision_next_task_id": "TDE-RESEARCH-001",
+            "decision_research_round": 1,
+            "decision_escalation_reason": "research_budget_exhausted",
+            "stage_id": "verification",
+        })
+        artifact = root / "artifact-budget.json"
+        result = run_job_tick(
+            job_id="JOB-PROD-001", binding_id="BIND-JOB-PROD-001-ACTIVE", actor_id="lyra", session_key="cron:tde-job-runner-v1",
+            trigger_source="cron", tick_id="rf-budget-1", max_claim=1, objective_id="OBJ-TDE-FOUNDATION", objective_checkpoint="S16",
+            rationale_trace="rf-budget-test", tasks_path=tasks, artifact_path=artifact, writeback_tasks_path=root / "TASKS_from_db.md",
+            binding_registry_path=bindings, objective_registry_path=objectives, canonical_store="db", canonical_db_path=db,
+        )
+        assert result["status"] == "ok"
+        assert result["mutations"][0]["status"] == "escalate"
+        assert result["mutations"][0]["decision_policy"]["escalation_package_path"]
+
+
 def test_escalate() -> None:
     with tempfile.TemporaryDirectory() as td:
         root = Path(td)
@@ -118,5 +144,6 @@ def test_escalate() -> None:
 if __name__ == "__main__":
     test_research_further()
     test_reentry_after_research_completion()
+    test_research_budget_exhaustion_forces_escalation()
     test_escalate()
     print("[PASS] TDE decision outcome tests passed")
