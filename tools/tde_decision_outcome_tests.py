@@ -123,6 +123,58 @@ def test_research_budget_exhaustion_forces_escalation() -> None:
         assert result["mutations"][0]["decision_policy"]["escalation_package_path"]
 
 
+def test_reentry_retry_and_defer_and_block() -> None:
+    # retry
+    with tempfile.TemporaryDirectory() as td:
+        root = Path(td)
+        tasks, bindings, objectives, db = _setup(root, "TDE-RETRY-001")
+        conn = connect(db)
+        update_task_metadata(conn, "TDE-RETRY-001", {
+            "workflow_family": "implementation_verification_readiness",
+            "decision_policy_ref": POLICY_REF,
+            "decision_reentry_to_task_id": "TDE-ORIGIN-RETRY-001",
+            "decision_reentry_default_outcome": "retry",
+            "decision_reentry_next_task_id": "TDE-CONTINUE-001",
+            "stage_id": "verification-research",
+        })
+        result = run_job_tick(job_id="JOB-PROD-001", binding_id="BIND-JOB-PROD-001-ACTIVE", actor_id="lyra", session_key="cron:tde-job-runner-v1", trigger_source="cron", tick_id="retry-1", max_claim=1, objective_id="OBJ-TDE-FOUNDATION", objective_checkpoint="S16", rationale_trace="retry-test", tasks_path=tasks, artifact_path=root/"retry.json", writeback_tasks_path=root/"TASKS_from_db.md", binding_registry_path=bindings, objective_registry_path=objectives, canonical_store="db", canonical_db_path=db)
+        assert result["decisions"][0]["selected_outcome"] == "retry"
+        assert result["decisions"][0]["retry_task_id"] == "TDE-CONTINUE-001"
+        assert conn.execute("SELECT status FROM tasks WHERE task_id='TDE-CONTINUE-001'").fetchone()[0] == "Active"
+
+    # defer
+    with tempfile.TemporaryDirectory() as td:
+        root = Path(td)
+        tasks, bindings, objectives, db = _setup(root, "TDE-DEFER-001")
+        conn = connect(db)
+        update_task_metadata(conn, "TDE-DEFER-001", {
+            "workflow_family": "implementation_verification_readiness",
+            "decision_policy_ref": POLICY_REF,
+            "decision_reentry_to_task_id": "TDE-ORIGIN-DEFER-001",
+            "decision_reentry_default_outcome": "defer",
+            "stage_id": "verification-research",
+        })
+        result = run_job_tick(job_id="JOB-PROD-001", binding_id="BIND-JOB-PROD-001-ACTIVE", actor_id="lyra", session_key="cron:tde-job-runner-v1", trigger_source="cron", tick_id="defer-1", max_claim=1, objective_id="OBJ-TDE-FOUNDATION", objective_checkpoint="S16", rationale_trace="defer-test", tasks_path=tasks, artifact_path=root/"defer.json", writeback_tasks_path=root/"TASKS_from_db.md", binding_registry_path=bindings, objective_registry_path=objectives, canonical_store="db", canonical_db_path=db)
+        assert result["decisions"][0]["selected_outcome"] == "defer"
+        assert result["decisions"][0]["deferred"] is True
+
+    # block
+    with tempfile.TemporaryDirectory() as td:
+        root = Path(td)
+        tasks, bindings, objectives, db = _setup(root, "TDE-BLOCK-001")
+        conn = connect(db)
+        update_task_metadata(conn, "TDE-BLOCK-001", {
+            "workflow_family": "implementation_verification_readiness",
+            "decision_policy_ref": POLICY_REF,
+            "decision_reentry_to_task_id": "TDE-ORIGIN-BLOCK-001",
+            "decision_reentry_default_outcome": "block",
+            "stage_id": "verification-research",
+        })
+        result = run_job_tick(job_id="JOB-PROD-001", binding_id="BIND-JOB-PROD-001-ACTIVE", actor_id="lyra", session_key="cron:tde-job-runner-v1", trigger_source="cron", tick_id="block-1", max_claim=1, objective_id="OBJ-TDE-FOUNDATION", objective_checkpoint="S16", rationale_trace="block-test", tasks_path=tasks, artifact_path=root/"block.json", writeback_tasks_path=root/"TASKS_from_db.md", binding_registry_path=bindings, objective_registry_path=objectives, canonical_store="db", canonical_db_path=db)
+        assert result["decisions"][0]["selected_outcome"] == "block"
+        assert result["decisions"][0]["blocked"] is True
+
+
 def test_escalate() -> None:
     with tempfile.TemporaryDirectory() as td:
         root = Path(td)
@@ -155,5 +207,6 @@ if __name__ == "__main__":
     test_research_further()
     test_reentry_after_research_completion()
     test_research_budget_exhaustion_forces_escalation()
+    test_reentry_retry_and_defer_and_block()
     test_escalate()
     print("[PASS] TDE decision outcome tests passed")

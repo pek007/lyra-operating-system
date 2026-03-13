@@ -49,11 +49,21 @@ def _write_decision_advancement_record(*, artifact_dir: Path, tick_id: str, task
     ts = datetime.now(timezone.utc).strftime('%Y%m%d-%H%M%S')
     workflow_family = policy_binding.get("workflow_family") or metadata.get("workflow_family") or "unknown"
     path = artifact_dir / f"tde-decision-advancement-{task_id.lower()}-{ts}.json"
-    authority_result = "within_policy" if selected_outcome == "continue" else ("insufficient_evidence" if selected_outcome == "research_further" else "requires_escalation")
+    authority_result = {
+        "continue": "within_policy",
+        "research_further": "insufficient_evidence",
+        "escalate": "requires_escalation",
+        "retry": "within_policy",
+        "defer": "within_policy",
+        "block": "blocked",
+    }.get(selected_outcome, "within_policy")
     rationale = {
         "continue": "Autonomous continuation authorized under the referenced decision policy envelope for the continue path.",
         "research_further": "A bounded research-further loop was selected under the referenced decision policy envelope before continuation.",
         "escalate": "The task outcome was escalated to the Ultimate Decision-maker under the referenced decision policy envelope.",
+        "retry": "The task was routed to a bounded retry path under the referenced decision policy envelope.",
+        "defer": "The task was intentionally deferred under the referenced decision policy envelope.",
+        "block": "The task was marked blocked under the referenced decision policy envelope.",
     }.get(selected_outcome, "Decision outcome recorded under the referenced decision policy envelope.")
     record = {
         "artifactType": "tde_decision_advancement_record",
@@ -947,6 +957,46 @@ def run_job_tick(
                         state_update_task_metadata(canonical_conn, origin_task_id, {
                             "decision_claim_blocked": False,
                             "decision_active_research_task_id": None,
+                        })
+                    except Exception:
+                        pass
+                elif reentry_outcome == "retry":
+                    retry_task_id = reentry_metadata.get("decision_reentry_next_task_id") or origin_task_id
+                    activation = state_activate_task_db(
+                        canonical_conn,
+                        retry_task_id,
+                        activated_by=f"decision:{tick_id}:{origin_task_id}:reentry_retry",
+                        activated_at=_iso_now(),
+                    )
+                    action["retry_task_id"] = retry_task_id
+                    action["activation"] = activation
+                    try:
+                        from tde_state_store import update_task_metadata as state_update_task_metadata
+                        state_update_task_metadata(canonical_conn, origin_task_id, {
+                            "decision_claim_blocked": False,
+                            "decision_active_research_task_id": None,
+                        })
+                    except Exception:
+                        pass
+                elif reentry_outcome == "defer":
+                    action["deferred"] = True
+                    try:
+                        from tde_state_store import update_task_metadata as state_update_task_metadata
+                        state_update_task_metadata(canonical_conn, origin_task_id, {
+                            "decision_claim_blocked": True,
+                            "decision_active_research_task_id": None,
+                            "decision_deferred": True,
+                        })
+                    except Exception:
+                        pass
+                elif reentry_outcome == "block":
+                    action["blocked"] = True
+                    try:
+                        from tde_state_store import update_task_metadata as state_update_task_metadata
+                        state_update_task_metadata(canonical_conn, origin_task_id, {
+                            "decision_claim_blocked": True,
+                            "decision_active_research_task_id": None,
+                            "decision_blocked": True,
                         })
                     except Exception:
                         pass
