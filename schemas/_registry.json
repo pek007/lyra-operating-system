@@ -31,5 +31,14 @@
   },
   "tde_activation_execution_receipt": {
     "1.0.0": "schemas/tde_activation_execution_receipt/v1.0.0.schema.json"
+  },
+  "tde_decision_advancement_record": {
+    "1.0.0": "schemas/tde_decision_advancement_record/v1.0.0.schema.json"
+  },
+  "tde_decision_policy_envelope": {
+    "1.0.0": "schemas/tde_decision_policy_envelope/v1.0.0.schema.json"
+  },
+  "tde_decision_escalation_package": {
+    "1.0.0": "schemas/tde_decision_escalation_package/v1.0.0.schema.json"
   }
 }

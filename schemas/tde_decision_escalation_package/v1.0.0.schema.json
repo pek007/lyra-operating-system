@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lyra.local/schemas/tde_decision_escalation_package/v1.0.0.schema.json",
+  "title": "TDE Decision Escalation Package",
+  "type": "object",
+  "required": [
+    "artifactType",
+    "schemaVersion",
+    "decision_id",
+    "task_id",
+    "workflow_family",
+    "from_role",
+    "to_role",
+    "decision_question",
+    "options",
+    "recommended_option_id",
+    "rationale",
+    "evidence_refs",
+    "confidence_score",
+    "risks_tradeoffs",
+    "consequence_of_delay",
+    "would_do_if_delegated",
+    "escalated_at"
+  ],
+  "properties": {
+    "artifactType": { "const": "tde_decision_escalation_package" },
+    "schemaVersion": { "const": "1.0.0" },
+    "decision_id": { "type": "string", "minLength": 1 },
+    "task_id": { "type": "string", "minLength": 1 },
+    "objective_id": { "type": ["string", "null"] },
+    "workflow_family": { "type": "string", "minLength": 1 },
+    "from_role": { "type": "string", "const": "Product Owner" },
+    "to_role": { "type": "string", "const": "Ultimate Decision-maker" },
+    "decision_question": { "type": "string", "minLength": 5 },
+    "context_summary": { "type": ["string", "null"] },
+    "options": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["option_id", "label", "impact_summary"],
+        "properties": {
+          "option_id": { "type": "string", "minLength": 1 },
+          "label": { "type": "string", "minLength": 1 },
+          "impact_summary": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "recommended_option_id": { "type": "string", "minLength": 1 },
+    "rationale": { "type": "string", "minLength": 1 },
+    "evidence_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "confidence_score": { "type": "number", "minimum": 0, "maximum": 1 },
+    "risks_tradeoffs": { "type": "string", "minLength": 1 },
+    "consequence_of_delay": { "type": "string", "minLength": 1 },
+    "would_do_if_delegated": { "type": "string", "minLength": 1 },
+    "escalation_reason": { "type": ["string", "null"] },
+    "escalated_at": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": false
+}

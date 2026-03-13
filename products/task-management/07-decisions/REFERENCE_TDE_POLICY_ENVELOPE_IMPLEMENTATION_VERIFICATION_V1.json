@@ -1,0 +1,56 @@
+{
+  "artifactType": "tde_decision_policy_envelope",
+  "schemaVersion": "1.0.0",
+  "policy_id": "POL-TDE-IMPL-VERIFY-V1",
+  "workflow_family": "implementation_verification_readiness",
+  "stage_family": "delivery_staged_flow",
+  "delegated_role": "Product Owner",
+  "escalation_role": "Ultimate Decision-maker",
+  "allowed_outcomes": [
+    "continue",
+    "branch",
+    "block",
+    "retry",
+    "defer",
+    "research_further"
+  ],
+  "allowed_next_step_types": [
+    "verification",
+    "deployment_readiness_review",
+    "closeout",
+    "improvement_capture"
+  ],
+  "allowed_branching_patterns": [
+    "verification_pass_to_readiness_review",
+    "verification_fail_to_retry_or_improvement_capture"
+  ],
+  "required_evidence_types": [
+    "execution_receipt",
+    "test_result",
+    "verification_note"
+  ],
+  "confidence_threshold": 0.75,
+  "risk_threshold": "medium",
+  "cost_threshold": "low",
+  "write_scope_boundary": [
+    "os/runtime/*",
+    "knowledge/evidence/*",
+    "products/task-management/*"
+  ],
+  "max_autonomous_hops": 2,
+  "retry_limit": 1,
+  "research_budget": {
+    "max_rounds": 1,
+    "max_minutes": 30,
+    "max_tokens": null
+  },
+  "mandatory_escalation_triggers": [
+    "new_workflow_family_required",
+    "external_or_reputational_impact",
+    "architectural_tradeoff_above_medium_risk",
+    "evidence_still_insufficient_after_research",
+    "write_scope_boundary_would_be_crossed"
+  ],
+  "enabled": true,
+  "notes": "Reference-only pilot envelope for the first staged implementation -> verification -> readiness family."
+}

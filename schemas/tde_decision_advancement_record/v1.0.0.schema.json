@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lyra.local/schemas/tde_decision_advancement_record/v1.0.0.schema.json",
+  "title": "TDE Decision Advancement Record",
+  "type": "object",
+  "required": [
+    "artifactType",
+    "schemaVersion",
+    "decision_id",
+    "task_id",
+    "workflow_family",
+    "proposing_role",
+    "escalation_role",
+    "recommended_outcome",
+    "selected_outcome",
+    "authority_check_result",
+    "evidence_refs",
+    "decision_rationale",
+    "decided_at",
+    "decided_by_role"
+  ],
+  "properties": {
+    "artifactType": { "const": "tde_decision_advancement_record" },
+    "schemaVersion": { "const": "1.0.0" },
+    "decision_id": { "type": "string", "minLength": 1 },
+    "task_id": { "type": "string", "minLength": 1 },
+    "objective_id": { "type": ["string", "null"] },
+    "workflow_family": { "type": "string", "minLength": 1 },
+    "stage_id": { "type": ["string", "null"] },
+    "proposing_role": { "type": "string", "const": "Product Owner" },
+    "escalation_role": { "type": "string", "const": "Ultimate Decision-maker" },
+    "recommended_outcome": {
+      "type": "string",
+      "enum": [
+        "continue",
+        "branch",
+        "block",
+        "escalate",
+        "complete_stop",
+        "retry",
+        "defer",
+        "research_further"
+      ]
+    },
+    "selected_outcome": {
+      "type": "string",
+      "enum": [
+        "continue",
+        "branch",
+        "block",
+        "escalate",
+        "complete_stop",
+        "retry",
+        "defer",
+        "research_further"
+      ]
+    },
+    "recommended_next_task_id": { "type": ["string", "null"] },
+    "recommended_branch_id": { "type": ["string", "null"] },
+    "research_required": { "type": "boolean" },
+    "confidence_score": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+    "evidence_refs": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 1
+    },
+    "authority_check_result": {
+      "type": "string",
+      "enum": ["within_policy", "requires_escalation", "blocked", "insufficient_evidence"]
+    },
+    "escalation_reason": { "type": ["string", "null"] },
+    "decision_rationale": { "type": "string", "minLength": 1 },
+    "policy_envelope_ref": { "type": ["string", "null"] },
+    "decision_trace_ref": { "type": ["string", "null"] },
+    "decided_at": { "type": "string", "format": "date-time" },
+    "decided_by_role": { "type": "string", "minLength": 1 }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "selected_outcome": { "const": "escalate" } },
+        "required": ["selected_outcome"]
+      },
+      "then": {
+        "required": ["escalation_reason"]
+      }
+    },
+    {
+      "if": {
+        "properties": { "selected_outcome": { "const": "research_further" } },
+        "required": ["selected_outcome"]
+      },
+      "then": {
+        "properties": { "research_required": { "const": true } },
+        "required": ["research_required"]
+      }
+    }
+  ],
+  "additionalProperties": false
+}

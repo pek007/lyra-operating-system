@@ -38,8 +38,9 @@ Capture the major product decisions that shape Task Management so the product do
 ## Related decision artifacts
 - `07-decisions/DELIVERY_MODE_DECISION_PXS_V1.md`
 - `07-decisions/TDE_DECISION_TO_ADVANCEMENT_POLICY_V1.md`
+- `07-decisions/REFERENCE_TDE_POLICY_ENVELOPE_IMPLEMENTATION_VERIFICATION_V1.json`
 
 ## Next decisions likely needed
 - what evidence threshold should define operational readiness for broader use
 - when the `pxs` interface should evolve from operating-contract form into a stronger packaged or schema-backed interface
-- how the decision-to-advancement policy should be expressed in schema/runtime form for workflow-family delegation
+- how the new decision-to-advancement schemas should be embodied in runtime and which workflow family should pilot them first

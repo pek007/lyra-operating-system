@@ -305,11 +305,25 @@ A minimal decision-to-advancement record could include:
 6. The system must fail closed when authority, evidence, or policy alignment is unclear.
 
 ## Recommended next follow-on work
-1. Define the v1 decision outcome enum contract in schema form.
-2. Define a policy-envelope schema for workflow-family delegation.
-3. Map Product Owner and Ultimate Decision-maker into the broader role model.
-4. Specify the escalation package contract.
-5. Identify the first workflow family to pilot with explicit `research_further` support.
+1. Map Product Owner and Ultimate Decision-maker into the broader role model.
+2. Identify the first workflow family to pilot with explicit `research_further` support.
+3. Add validation examples and one reference policy envelope artifact.
+4. Decide whether `risk_threshold` and `cost_threshold` should remain coarse enums or move to richer typed contracts.
+5. Wire these schemas into the runtime decision/chaining path.
+
+## Machine-readable contracts added
+The first v1 schema set for this policy is now defined in:
+- `schemas/tde_decision_advancement_record/v1.0.0.schema.json`
+- `schemas/tde_decision_policy_envelope/v1.0.0.schema.json`
+- `schemas/tde_decision_escalation_package/v1.0.0.schema.json`
+
+These cover:
+- the per-step decision record,
+- the workflow-family delegation envelope,
+- and the Product Owner -> Ultimate Decision-maker escalation package.
+
+A first reference envelope is also added at:
+- `products/task-management/07-decisions/REFERENCE_TDE_POLICY_ENVELOPE_IMPLEMENTATION_VERIFICATION_V1.json`
 
 ## Bottom line
 The missing bridge is real.
