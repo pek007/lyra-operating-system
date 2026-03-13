@@ -1,0 +1,51 @@
+{
+  "artifactType": "tde_intent_formation_record",
+  "schemaVersion": "1.0.0",
+  "formation_id": "FORM-TELEGRAM-LYRA-OPERATIONS-INTERNAL-TOOL-V",
+  "source_type": "chat_request",
+  "source_ref": "telegram:lyra-operations:internal-tool-vague-request",
+  "formed_at": "2026-03-13T20:32:04Z",
+  "formed_by_role": "Product Owner",
+  "formation_rationale": "The request is meaningful but too underspecified for professional assumption-based execution. Original request: Build an internal tool",
+  "interpreted_intent": "Create an internal tool, but the intended scope and user need are still too underspecified for clean execution-ready formation.",
+  "request_type": "implementation_request",
+  "specificity_level": "low",
+  "ambiguity_types": [
+    "missing_scope",
+    "missing_success_criteria",
+    "missing_audience_consumer"
+  ],
+  "actionability_status": "needs_clarification",
+  "assumptions": [],
+  "known_unknowns": [
+    "Who the internal tool is for.",
+    "What the primary user workflow is.",
+    "What counts as a successful first version."
+  ],
+  "proposed_objective": {
+    "objective_title": "Clarify internal tool request",
+    "objective_summary": "Clarify the intended audience, workflow, and scope for the requested internal tool before canonical work creation.",
+    "objective_id": null
+  },
+  "proposed_success_criteria": [
+    "The internal tool request is clarified enough to form bounded canonical work."
+  ],
+  "proposed_workflow_family": "implementation_verification_readiness",
+  "proposed_first_stage_set": [
+    "implementation"
+  ],
+  "proposed_first_task_set": [
+    {
+      "task_id": null,
+      "task_title": "Clarify internal tool intent",
+      "task_summary": "Clarify the intended audience, workflow, and first-version boundary for the requested internal tool.",
+      "stage_id": "implementation"
+    }
+  ],
+  "required_clarifications": [
+    "Who is the primary user of the internal tool?",
+    "What is the main workflow or job the tool should support?",
+    "What should the first version definitely include or exclude?"
+  ],
+  "recommended_next_action": "ask_clarifying_questions"
+}
