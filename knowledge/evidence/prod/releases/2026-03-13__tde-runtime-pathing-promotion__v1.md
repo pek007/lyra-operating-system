@@ -94,9 +94,14 @@ Reason:
 - this should be treated as a follow-up hardening item rather than immediate rollback material
 
 ## Required follow-up
-1. Add a true dry-run / no-mutate verification mode for `tde_job_tick_runner.py`
-2. Use that mode for future production-adjacent verification checks
-3. Rehearse rollback execution on a narrow candidate when practical
+1. Use the new dry-run / no-mutate verification mode for future production-adjacent verification checks
+2. Rehearse rollback execution on a narrow candidate when practical
+
+## Follow-up status
+The first hardening follow-up has now been implemented:
+- `tde_job_tick_runner.py` supports `--dry-run`
+- dry-run mode suppresses chaining promotion mutation, claims, writeback, and shadow-state mutation
+- focused test coverage added for no-mutate verification behavior
 
 ## Bottom line
 The first real narrow promotion is complete.

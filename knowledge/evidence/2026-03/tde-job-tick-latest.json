@@ -1,9 +1,9 @@
 {
   "artifactType": "tde_job_tick",
   "schemaVersion": "1.0.0",
-  "tick_id": "job-tick-20260313-152023",
+  "tick_id": "job-tick-20260313-152918",
   "trigger_source": "cron",
-  "timestamp": "2026-03-13T15:20:23.456670+00:00",
+  "timestamp": "2026-03-13T15:29:18.936490+00:00",
   "job_id": "JOB-PROD-001",
   "binding_id": "BIND-JOB-PROD-001-ACTIVE",
   "actor_id": "lyra",
@@ -37,7 +37,7 @@
   "idempotency_references": [],
   "writeback": {
     "applied": false,
-    "reason": "no_tasks_or_no_claims",
+    "reason": "dry_run_no_mutation",
     "moved": []
   },
   "decisions": [],
@@ -52,23 +52,10 @@
     "reauth_required": 0
   },
   "status": "ok",
+  "dry_run": true,
   "chaining": {
     "enabled": true,
-    "promoted": [
-      {
-        "task_id": "TDE-CHAIN-PILOT-03",
-        "from_status": "Waiting",
-        "to_status": "Active",
-        "depends_on": [
-          "TDE-CHAIN-PILOT-02"
-        ],
-        "activation_rule": "all_predecessors_done",
-        "objective_id": "OBJ-TDE-FOUNDATION",
-        "stage_id": "deployment-readiness-review",
-        "activated_by": "tick:job-tick-20260313-152023",
-        "activated_at": "2026-03-13T15:20:23.453971+00:00"
-      }
-    ],
+    "promoted": [],
     "skipped": [
       {
         "task_id": "OPS-2026-046",
@@ -98,38 +85,17 @@
       }
     ],
     "applied": {
-      "applied": 1,
-      "task_ids": [
-        "TDE-CHAIN-PILOT-03"
-      ]
-    }
+      "applied": 0,
+      "task_ids": [],
+      "reason": "dry_run_no_mutation"
+    },
+    "dry_run": true
   },
   "fail_closed": false,
   "fail_closed_reason": null,
   "shadow_state": {
     "enabled": true,
-    "db_path": "os/runtime/tde_state.sqlite",
-    "imported": {
-      "imported": 113,
-      "raw_rows": 113,
-      "preserved_metadata": true
-    },
-    "parity": {
-      "match": true,
-      "file_fingerprint": "118e6561d0f576d913a02bdf6588f608ef3574f33ecca195fbebc884cdcfe1cf",
-      "db_fingerprint": "118e6561d0f576d913a02bdf6588f608ef3574f33ecca195fbebc884cdcfe1cf",
-      "file_count": 113,
-      "db_count": 113,
-      "raw_file_rows": 113,
-      "duplicate_rows": 0
-    },
-    "ledger": {
-      "action_id": "shadow:job-tick-20260313-152023",
-      "event_id": "evt:job-tick-20260313-152023:summary"
-    },
-    "status": "ok",
-    "threshold_exceeded": false,
-    "consecutive_failures": 0,
-    "alert_path": "knowledge/evidence/metrics/tde-shadow-state-alerts.jsonl"
+    "status": "skipped",
+    "reason": "dry_run_no_mutation"
   }
 }

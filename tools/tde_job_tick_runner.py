@@ -429,10 +429,11 @@ def run_job_tick(
     shadow_state_db_path: Path | None = None,
     shadow_state_alert_path: Path | None = None,
     shadow_state_mismatch_threshold: int = 3,
+    dry_run: bool = False,
 ) -> dict[str, Any]:
     kernel = TDEKernel()
     canonical_conn = None
-    chaining = {"enabled": canonical_store == "db", "promoted": [], "skipped": [], "applied": {"applied": 0, "task_ids": []}}
+    chaining = {"enabled": canonical_store == "db", "promoted": [], "skipped": [], "applied": {"applied": 0, "task_ids": []}, "dry_run": dry_run}
     if canonical_store == "db":
         canonical_db = canonical_db_path or Path("os/runtime/tde_state.sqlite")
         canonical_conn = state_connect(canonical_db)
@@ -441,8 +442,11 @@ def run_job_tick(
         chaining_eval = evaluate_ready_promotions(all_tasks, tick_id=tick_id)
         chaining["promoted"] = chaining_eval.get("promoted", [])
         chaining["skipped"] = chaining_eval.get("skipped", [])
-        chaining["applied"] = state_apply_ready_promotions(canonical_conn, chaining["promoted"])
-        all_tasks = state_read_tasks(canonical_conn)
+        if dry_run:
+            chaining["applied"] = {"applied": 0, "task_ids": [], "reason": "dry_run_no_mutation"}
+        else:
+            chaining["applied"] = state_apply_ready_promotions(canonical_conn, chaining["promoted"])
+            all_tasks = state_read_tasks(canonical_conn)
         tasks = [
             {
                 "id": row["task_id"],
@@ -587,6 +591,8 @@ def run_job_tick(
 
         ready = [t for t in tasks if t.get("state") == "ready"]
         claimed = ready[: max(0, max_claim)]
+        if dry_run:
+            claimed = []
 
         binding_proven = binding_source in {"registry_exact", "registry_job_actor"}
         if claimed and not binding_proven:
@@ -786,7 +792,9 @@ def run_job_tick(
             )
 
         executable_claims = [m["task_id"] for m in mutations if m.get("status") in {"executed", "replay"}]
-        if canonical_store == "db":
+        if dry_run:
+            writeback = {"applied": False, "reason": "dry_run_no_mutation", "moved": []}
+        elif canonical_store == "db":
             writeback = state_apply_low_risk_writeback_db(canonical_conn, executable_claims, tick_id)
             state_export_tasks(canonical_conn, writeback_tasks_path or tasks_path)
         else:
@@ -825,6 +833,7 @@ def run_job_tick(
             "evidence_outputs": [str(artifact_path), *decision_artifacts],
             "outcomes": outcomes,
             "status": "ok",
+            "dry_run": dry_run,
             "chaining": chaining,
             "fail_closed": any(m.get("fail_closed") for m in mutations),
             "fail_closed_reason": next((m.get("fail_closed_reason") for m in mutations if m.get("fail_closed_reason")), None),
@@ -832,16 +841,23 @@ def run_job_tick(
 
     if shadow_state_enabled:
         try:
-            shadow_db = shadow_state_db_path or Path("os/runtime/tde_state.sqlite")
-            shadow_source = writeback_tasks_path or tasks_path
-            shadow = _shadow_state_sync(shadow_source, shadow_db, tick_id, artifact)
-            threshold_meta = _shadow_state_evaluate_threshold(
-                shadow.get("status", "error"),
-                shadow_state_alert_path,
-                shadow_state_mismatch_threshold,
-            )
-            shadow.update(threshold_meta)
-            artifact["shadow_state"] = shadow
+            if dry_run:
+                artifact["shadow_state"] = {
+                    "enabled": True,
+                    "status": "skipped",
+                    "reason": "dry_run_no_mutation",
+                }
+            else:
+                shadow_db = shadow_state_db_path or Path("os/runtime/tde_state.sqlite")
+                shadow_source = writeback_tasks_path or tasks_path
+                shadow = _shadow_state_sync(shadow_source, shadow_db, tick_id, artifact)
+                threshold_meta = _shadow_state_evaluate_threshold(
+                    shadow.get("status", "error"),
+                    shadow_state_alert_path,
+                    shadow_state_mismatch_threshold,
+                )
+                shadow.update(threshold_meta)
+                artifact["shadow_state"] = shadow
         except Exception as exc:
             threshold_meta = _shadow_state_evaluate_threshold("error", shadow_state_alert_path, shadow_state_mismatch_threshold)
             artifact["shadow_state"] = {
@@ -883,6 +899,7 @@ def main() -> None:
     parser.add_argument("--shadow-state-db-path", default=None)
     parser.add_argument("--shadow-state-alert-path", default=None)
     parser.add_argument("--shadow-state-mismatch-threshold", type=int, default=3)
+    parser.add_argument("--dry-run", action="store_true")
 
     args = parser.parse_args()
     env = args.env
@@ -931,6 +948,7 @@ def main() -> None:
         shadow_state_db_path=shadow_state_db_path,
         shadow_state_alert_path=shadow_state_alert_path,
         shadow_state_mismatch_threshold=args.shadow_state_mismatch_threshold,
+        dry_run=args.dry_run,
     )
     print(json.dumps(artifact))
 
