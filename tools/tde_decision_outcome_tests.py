@@ -72,6 +72,9 @@ def test_reentry_after_research_completion() -> None:
             "decision_reentry_to_task_id": "TDE-ORIGIN-001",
             "decision_reentry_default_outcome": "continue",
             "decision_reentry_next_task_id": "TDE-CONTINUE-001",
+            "decision_reentry_confidence_score": 0.82,
+            "decision_reentry_evidence_refs": ["knowledge/evidence/test-research-note.md"],
+            "decision_reentry_rationale": "Research resolved the ambiguity enough to continue.",
             "stage_id": "verification-research",
         })
         artifact = root / "artifact-reentry.json"
@@ -87,6 +90,11 @@ def test_reentry_after_research_completion() -> None:
         assert result["decisions"][0]["selected_outcome"] == "continue"
         cont_row = conn.execute("SELECT status FROM tasks WHERE task_id='TDE-CONTINUE-001'").fetchone()
         assert cont_row[0] == "Active"
+        record_path = result["decisions"][0]["decision_record_path"]
+        payload = json.loads(Path(record_path).read_text(encoding="utf-8"))
+        assert payload["confidence_score"] == 0.82
+        assert payload["evidence_refs"] == ["knowledge/evidence/test-research-note.md"]
+        assert payload["decision_rationale"] == "Research resolved the ambiguity enough to continue."
 
 
 def test_research_budget_exhaustion_forces_escalation() -> None:

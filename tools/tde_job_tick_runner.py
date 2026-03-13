@@ -67,16 +67,16 @@ def _write_decision_advancement_record(*, artifact_dir: Path, tick_id: str, task
         "escalation_role": "Ultimate Decision-maker",
         "recommended_outcome": selected_outcome,
         "selected_outcome": selected_outcome,
-        "recommended_next_task_id": metadata.get("decision_next_task_id"),
+        "recommended_next_task_id": metadata.get("decision_next_task_id") or metadata.get("decision_reentry_next_task_id"),
         "recommended_branch_id": metadata.get("decision_branch_id"),
         "research_required": selected_outcome == "research_further",
-        "confidence_score": None,
-        "evidence_refs": [],
+        "confidence_score": metadata.get("decision_confidence_score"),
+        "evidence_refs": metadata.get("decision_evidence_refs") or [],
         "authority_check_result": authority_result,
         "escalation_reason": metadata.get("decision_escalation_reason") if selected_outcome == "escalate" else None,
-        "decision_rationale": rationale,
+        "decision_rationale": metadata.get("decision_rationale") or rationale,
         "policy_envelope_ref": policy_binding.get("policy_ref"),
-        "decision_trace_ref": None,
+        "decision_trace_ref": metadata.get("decision_trace_ref"),
         "decided_at": _iso_now(),
         "decided_by_role": "Product Owner",
     }
@@ -891,16 +891,23 @@ def run_job_tick(
                 policy_ref = source_metadata.get("decision_policy_ref")
                 workflow_family = source_metadata.get("workflow_family")
                 next_round = next_research_round(source_metadata)
+                reentry_metadata = {
+                    **source_metadata,
+                    "decision_confidence_score": source_metadata.get("decision_reentry_confidence_score", source_metadata.get("decision_confidence_score")),
+                    "decision_evidence_refs": source_metadata.get("decision_reentry_evidence_refs", source_metadata.get("decision_evidence_refs") or []),
+                    "decision_rationale": source_metadata.get("decision_reentry_rationale", source_metadata.get("decision_rationale")),
+                    "decision_trace_ref": source_metadata.get("decision_reentry_trace_ref", source_metadata.get("decision_trace_ref")),
+                }
                 validated_binding = validate_task_policy_binding(
-                    source_metadata,
+                    reentry_metadata,
                     workspace_root=workspace_root,
                     expected_outcome=reentry_outcome,
                 ) if policy_ref else {"ok": True}
                 envelope = validated_binding.get("envelope") if isinstance(validated_binding, dict) else None
                 if reentry_outcome == "research_further" and research_budget_exhausted(envelope, next_round):
                     reentry_outcome = "escalate"
-                    source_metadata = {
-                        **source_metadata,
+                    reentry_metadata = {
+                        **reentry_metadata,
                         "decision_escalation_reason": "research_budget_exhausted",
                         "decision_research_round": next_round,
                     }
@@ -913,7 +920,7 @@ def run_job_tick(
                     tick_id=tick_id,
                     task_id=origin_task_id,
                     objective_id=objective_id,
-                    metadata=source_metadata,
+                    metadata=reentry_metadata,
                     policy_binding=synthetic_policy_binding,
                     selected_outcome=reentry_outcome,
                 )
@@ -925,7 +932,7 @@ def run_job_tick(
                     "decision_record_path": record_path,
                 }
                 if reentry_outcome == "continue":
-                    next_task_id = source_metadata.get("decision_reentry_next_task_id")
+                    next_task_id = reentry_metadata.get("decision_reentry_next_task_id")
                     if next_task_id:
                         activation = state_activate_task_db(
                             canonical_conn,
@@ -949,7 +956,7 @@ def run_job_tick(
                         tick_id=tick_id,
                         task_id=origin_task_id,
                         objective_id=objective_id,
-                        metadata=source_metadata,
+                        metadata=reentry_metadata,
                         workflow_family=workflow_family,
                     )
                     decision_artifacts.append(esc_path)
