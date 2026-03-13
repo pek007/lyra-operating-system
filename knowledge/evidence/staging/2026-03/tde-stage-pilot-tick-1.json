@@ -1,0 +1,118 @@
+{
+  "artifactType": "tde_job_tick",
+  "schemaVersion": "1.0.0",
+  "tick_id": "job-tick-20260313-160108",
+  "trigger_source": "cron",
+  "timestamp": "2026-03-13T16:01:08.368883+00:00",
+  "job_id": "JOB-PROD-001",
+  "binding_id": "BIND-JOB-PROD-001-ACTIVE",
+  "actor_id": "lyra",
+  "session_key": "cron:tde-job-runner-v1",
+  "objective_linkage": {
+    "objective_id": "OBJ-TDE-FOUNDATION",
+    "objective_checkpoint": "S16",
+    "rationale_trace": "TDE-2026-027-objective-linkage"
+  },
+  "objective_registry_context": {
+    "registry_path": "os/runtime/staging/tde_objectives.json",
+    "registry_loaded": true
+  },
+  "binding_context": {
+    "active_binding": {
+      "binding_id": "BIND-JOB-PROD-001-ACTIVE",
+      "job_id": "JOB-PROD-001",
+      "actor_id": "lyra",
+      "session_key": "cron:tde-job-runner-v1",
+      "status": "active",
+      "binding_epoch": 1,
+      "updated_at": "2026-03-13T15:50:00Z",
+      "expires_at": "2026-12-31T23:59:59+00:00"
+    },
+    "binding_source": "registry_exact",
+    "binding_status": "active"
+  },
+  "claim_limit": 1,
+  "claimed": [
+    "TDE-STAGE-ORIGIN-001"
+  ],
+  "mutations": [
+    {
+      "task_id": "TDE-STAGE-ORIGIN-001",
+      "request_id": "job-tick-20260313-160108-0",
+      "idempotency_key": "job-tick-20260313-160108:TDE-STAGE-ORIGIN-001",
+      "policy_decision_id": "policy:job-tick-20260313-160108:TDE-STAGE-ORIGIN-001:research_further",
+      "audit_link": null,
+      "status": "research_further",
+      "binding_status": "active",
+      "decision_policy": {
+        "policy_ref": "products/task-management/07-decisions/REFERENCE_TDE_POLICY_ENVELOPE_IMPLEMENTATION_VERIFICATION_V1.json",
+        "resolved_path": "/Users/lyra/.openclaw/workspace/products/task-management/07-decisions/REFERENCE_TDE_POLICY_ENVELOPE_IMPLEMENTATION_VERIFICATION_V1.json",
+        "workflow_family": "implementation_verification_readiness",
+        "expected_outcome": "research_further",
+        "decision_record_path": "knowledge/evidence/staging/2026-03/tde-decision-advancement-tde-stage-origin-001-20260313-160108.json",
+        "escalation_package_path": null,
+        "research_activation": {
+          "applied": true,
+          "reason": null,
+          "task_id": "TDE-STAGE-RESEARCH-001",
+          "activated_at": "2026-03-13T16:01:08.367354+00:00"
+        },
+        "source_metadata": {
+          "workflow_family": "implementation_verification_readiness",
+          "decision_policy_ref": "products/task-management/07-decisions/REFERENCE_TDE_POLICY_ENVELOPE_IMPLEMENTATION_VERIFICATION_V1.json",
+          "decision_outcome_hint": "research_further",
+          "decision_next_task_id": "TDE-STAGE-RESEARCH-001",
+          "decision_branch_id": "verification_mixed_signals",
+          "stage_id": "verification"
+        },
+        "forced_escalation_due_to_budget": false
+      },
+      "mutation_envelope": {
+        "job_id": "JOB-PROD-001",
+        "binding_id": "BIND-JOB-PROD-001-ACTIVE",
+        "policy_decision_id": "policy:job-tick-20260313-160108:TDE-STAGE-ORIGIN-001:research_further",
+        "idempotency_key": "job-tick-20260313-160108:TDE-STAGE-ORIGIN-001",
+        "expected_version": 0,
+        "objective_linkage": {
+          "objective_id": "OBJ-TDE-FOUNDATION",
+          "objective_checkpoint": "S16",
+          "rationale_trace": "TDE-2026-027-objective-linkage"
+        }
+      }
+    }
+  ],
+  "idempotency_references": [
+    "job-tick-20260313-160108:TDE-STAGE-ORIGIN-001"
+  ],
+  "writeback": {
+    "applied": false,
+    "reason": "no_tasks_or_no_claims",
+    "moved": []
+  },
+  "decisions": [],
+  "evidence_outputs": [
+    "knowledge/evidence/staging/2026-03/tde-stage-pilot-tick-1.json",
+    "knowledge/evidence/staging/2026-03/tde-decision-advancement-tde-stage-origin-001-20260313-160108.json"
+  ],
+  "outcomes": {
+    "progressed": 1,
+    "blocked_pending_approval": 0,
+    "failed_validation": 0,
+    "no_work": 0,
+    "reauth_required": 0
+  },
+  "status": "ok",
+  "dry_run": false,
+  "chaining": {
+    "enabled": true,
+    "promoted": [],
+    "skipped": [],
+    "applied": {
+      "applied": 0,
+      "task_ids": []
+    },
+    "dry_run": false
+  },
+  "fail_closed": false,
+  "fail_closed_reason": null
+}
