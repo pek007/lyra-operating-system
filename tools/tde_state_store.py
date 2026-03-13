@@ -18,6 +18,8 @@ CHAIN_METADATA_KEYS = {
     "activation_rule",
     "objective_id",
     "stage_id",
+    "workflow_family",
+    "decision_policy_ref",
     "chain_policy",
     "activated_by",
     "activated_at",
@@ -133,6 +135,14 @@ def validate_chain_metadata(metadata: dict[str, Any]) -> tuple[bool, str | None]
     stage_id = chain.get("stage_id")
     if stage_id is not None and (not isinstance(stage_id, str) or not stage_id.strip()):
         return False, "invalid_stage_id"
+
+    workflow_family = chain.get("workflow_family")
+    if workflow_family is not None and (not isinstance(workflow_family, str) or not workflow_family.strip()):
+        return False, "invalid_workflow_family"
+
+    decision_policy_ref = chain.get("decision_policy_ref")
+    if decision_policy_ref is not None and (not isinstance(decision_policy_ref, str) or not decision_policy_ref.strip()):
+        return False, "invalid_decision_policy_ref"
 
     chain_policy = chain.get("chain_policy")
     if chain_policy is not None and not isinstance(chain_policy, dict):

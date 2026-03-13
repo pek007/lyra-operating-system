@@ -13,6 +13,7 @@ from pathlib import Path
 from typing import Any
 
 from tde_kernel import ActionRequest, TDEKernel
+from tde_decision_policy import validate_task_policy_binding
 from tde_state_store import connect as state_connect
 from tde_state_store import init_schema as state_init_schema
 from tde_state_store import import_tasks as state_import_tasks
@@ -409,7 +410,12 @@ def run_job_tick(
         chaining["applied"] = state_apply_ready_promotions(canonical_conn, chaining["promoted"])
         all_tasks = state_read_tasks(canonical_conn)
         tasks = [
-            {"id": row["task_id"], "title": row["title"], "state": "ready" if row["status"] == "Active" else row["status"].lower()}
+            {
+                "id": row["task_id"],
+                "title": row["title"],
+                "state": "ready" if row["status"] == "Active" else row["status"].lower(),
+                "metadata": row.get("metadata") or {},
+            }
             for row in all_tasks if row["status"] == "Active"
         ]
     else:
@@ -603,10 +609,36 @@ def run_job_tick(
 
         mutations: list[dict[str, Any]] = []
         idempotency_refs: list[str] = []
+        workspace_root = Path.cwd()
 
         for index, item in enumerate(claimed):
             idempotency_key = f"{tick_id}:{item['id']}"
             idempotency_refs.append(idempotency_key)
+
+            policy_binding = validate_task_policy_binding(
+                item.get("metadata") or {},
+                workspace_root=workspace_root,
+                expected_outcome="continue",
+            ) if canonical_store == "db" and (item.get("metadata") or {}).get("workflow_family") else {"ok": True}
+            if not policy_binding.get("ok", False):
+                outcomes["failed_validation"] += 1
+                mutations.append(
+                    {
+                        "task_id": item["id"],
+                        "request_id": f"{tick_id}-{index}",
+                        "idempotency_key": idempotency_key,
+                        "status": "failed_validation",
+                        "fail_closed": True,
+                        "fail_closed_reason": policy_binding.get("reason"),
+                        "decision_policy": {
+                            "policy_ref": policy_binding.get("policy_ref"),
+                            "resolved_path": policy_binding.get("resolved_path"),
+                            "workflow_family": policy_binding.get("workflow_family"),
+                            "expected_outcome": "continue",
+                        },
+                    }
+                )
+                continue
 
             mutation_envelope = {
                 "job_id": job_id,
@@ -691,6 +723,12 @@ def run_job_tick(
                     "audit_link": result.get("audit_link"),
                     "status": status,
                     "binding_status": "active",
+                    "decision_policy": {
+                        "policy_ref": policy_binding.get("policy_ref"),
+                        "resolved_path": policy_binding.get("resolved_path"),
+                        "workflow_family": policy_binding.get("workflow_family"),
+                        "expected_outcome": "continue",
+                    },
                     "mutation_envelope": {
                         **mutation_envelope,
                         "policy_decision_id": result.get("policy_decision_id"),
