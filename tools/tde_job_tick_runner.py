@@ -825,6 +825,7 @@ def run_job_tick(
                         "decision_record_path": decision_record_path,
                         "escalation_package_path": escalation_package_path,
                         "research_activation": research_activation,
+                        "source_metadata": item.get("metadata") or {},
                     },
                     "mutation_envelope": {
                         **mutation_envelope,
@@ -841,6 +842,64 @@ def run_job_tick(
             state_export_tasks(canonical_conn, writeback_tasks_path or tasks_path)
         else:
             writeback = _apply_low_risk_writeback(writeback_tasks_path or tasks_path, executable_claims, tick_id)
+
+        reentry_actions: list[dict[str, Any]] = []
+        if canonical_store == "db" and canonical_conn is not None and not dry_run:
+            for mutation in mutations:
+                if mutation.get("status") not in {"executed", "replay"}:
+                    continue
+                source_metadata = ((mutation.get("decision_policy") or {}).get("source_metadata") or {})
+                origin_task_id = source_metadata.get("decision_reentry_to_task_id")
+                if not origin_task_id:
+                    continue
+                reentry_outcome = source_metadata.get("decision_reentry_default_outcome", "continue")
+                policy_ref = source_metadata.get("decision_policy_ref")
+                workflow_family = source_metadata.get("workflow_family")
+                synthetic_policy_binding = {
+                    "policy_ref": policy_ref,
+                    "workflow_family": workflow_family,
+                }
+                record_path = _write_decision_advancement_record(
+                    artifact_dir=decision_artifact_dir,
+                    tick_id=tick_id,
+                    task_id=origin_task_id,
+                    objective_id=objective_id,
+                    metadata=source_metadata,
+                    policy_binding=synthetic_policy_binding,
+                    selected_outcome=reentry_outcome,
+                )
+                decision_artifacts.append(record_path)
+                action: dict[str, Any] = {
+                    "origin_task_id": origin_task_id,
+                    "reentry_from_task_id": mutation.get("task_id"),
+                    "selected_outcome": reentry_outcome,
+                    "decision_record_path": record_path,
+                }
+                if reentry_outcome == "continue":
+                    next_task_id = source_metadata.get("decision_reentry_next_task_id")
+                    if next_task_id:
+                        activation = state_activate_task_db(
+                            canonical_conn,
+                            next_task_id,
+                            activated_by=f"decision:{tick_id}:{origin_task_id}:reentry_continue",
+                            activated_at=_iso_now(),
+                        )
+                        action["next_task_id"] = next_task_id
+                        action["activation"] = activation
+                elif reentry_outcome == "escalate":
+                    esc_path = write_escalation_package(
+                        artifact_dir=decision_artifact_dir,
+                        tick_id=tick_id,
+                        task_id=origin_task_id,
+                        objective_id=objective_id,
+                        metadata=source_metadata,
+                        workflow_family=workflow_family,
+                    )
+                    decision_artifacts.append(esc_path)
+                    action["escalation_package_path"] = esc_path
+                reentry_actions.append(action)
+            if reentry_actions:
+                state_export_tasks(canonical_conn, writeback_tasks_path or tasks_path)
 
         if not claimed:
             outcomes["no_work"] += 1
@@ -871,7 +930,7 @@ def run_job_tick(
             "mutations": mutations,
             "idempotency_references": idempotency_refs,
             "writeback": writeback,
-            "decisions": [],
+            "decisions": reentry_actions,
             "evidence_outputs": [str(artifact_path), *decision_artifacts],
             "outcomes": outcomes,
             "status": "ok",

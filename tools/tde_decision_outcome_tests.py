@@ -14,7 +14,7 @@ POLICY_REF = "products/task-management/07-decisions/REFERENCE_TDE_POLICY_ENVELOP
 def _setup(root: Path, task_id: str) -> tuple[Path, Path, Path, Path]:
     tasks = root / "TASKS.md"
     tasks.write_text(
-        f"""# TASKS.md\n\n## Inbox\n\n## Triage\n\n## Active\n- [ ] {task_id} | Pilot task\n\n## Waiting\n- [ ] TDE-RESEARCH-001 | Research follow-up\n\n## Done\n""",
+        f"""# TASKS.md\n\n## Inbox\n\n## Triage\n\n## Active\n- [ ] {task_id} | Pilot task\n\n## Waiting\n- [ ] TDE-RESEARCH-001 | Research follow-up\n- [ ] TDE-CONTINUE-001 | Continue after research\n\n## Done\n""",
         encoding="utf-8",
     )
     bindings = root / "bindings.json"
@@ -59,6 +59,34 @@ def test_research_further() -> None:
         assert research_row[0] == "Active"
 
 
+def test_reentry_after_research_completion() -> None:
+    with tempfile.TemporaryDirectory() as td:
+        root = Path(td)
+        tasks, bindings, objectives, db = _setup(root, "TDE-RESEARCH-DONE-001")
+        conn = connect(db)
+        update_task_metadata(conn, "TDE-RESEARCH-DONE-001", {
+            "workflow_family": "implementation_verification_readiness",
+            "decision_policy_ref": POLICY_REF,
+            "decision_reentry_to_task_id": "TDE-ORIGIN-001",
+            "decision_reentry_default_outcome": "continue",
+            "decision_reentry_next_task_id": "TDE-CONTINUE-001",
+            "stage_id": "verification-research",
+        })
+        artifact = root / "artifact-reentry.json"
+        result = run_job_tick(
+            job_id="JOB-PROD-001", binding_id="BIND-JOB-PROD-001-ACTIVE", actor_id="lyra", session_key="cron:tde-job-runner-v1",
+            trigger_source="cron", tick_id="reentry-1", max_claim=1, objective_id="OBJ-TDE-FOUNDATION", objective_checkpoint="S16",
+            rationale_trace="reentry-test", tasks_path=tasks, artifact_path=artifact, writeback_tasks_path=root / "TASKS_from_db.md",
+            binding_registry_path=bindings, objective_registry_path=objectives, canonical_store="db", canonical_db_path=db,
+        )
+        assert result["status"] == "ok"
+        assert result["mutations"][0]["status"] in {"executed", "replay"}
+        assert result["decisions"][0]["origin_task_id"] == "TDE-ORIGIN-001"
+        assert result["decisions"][0]["selected_outcome"] == "continue"
+        cont_row = conn.execute("SELECT status FROM tasks WHERE task_id='TDE-CONTINUE-001'").fetchone()
+        assert cont_row[0] == "Active"
+
+
 def test_escalate() -> None:
     with tempfile.TemporaryDirectory() as td:
         root = Path(td)
@@ -89,5 +117,6 @@ def test_escalate() -> None:
 
 if __name__ == "__main__":
     test_research_further()
+    test_reentry_after_research_completion()
     test_escalate()
     print("[PASS] TDE decision outcome tests passed")
