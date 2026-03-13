@@ -83,6 +83,10 @@ Rollback steps:
 - rollback confirmation (if rollback used)
 - incident entry (if degraded behavior occurred)
 
+## TDE runtime note
+For TDE/OpenClaw runtime-path behavior changes (for example `tde_job_tick_runner.py`, `tde_state_store.py`, chaining or decision-policy enforcement), also apply the environment/promotion discipline in:
+- `TDE_ENVIRONMENT_AND_PROMOTION_MODEL_V1.md`
+
 ## Version
 - v1.0
 - Date: 2026-02-28

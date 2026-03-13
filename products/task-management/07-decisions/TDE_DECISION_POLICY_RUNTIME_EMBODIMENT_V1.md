@@ -257,3 +257,7 @@ For v1 runtime embodiment, the right move is simple:
 - and let the tick runner enforce the delegation envelope.
 
 That gives TDE a concrete first embodiment of the D-layer without overbuilding the runtime.
+
+## Environment / release note
+This runtime embodiment should now be governed under the environment-separation model defined in:
+- `TDE_ENVIRONMENT_AND_PROMOTION_MODEL_V1.md`
