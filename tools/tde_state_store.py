@@ -412,22 +412,27 @@ def parity_check(conn: sqlite3.Connection, tasks_path: Path) -> dict:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("command", choices=["init", "import-tasks", "export-tasks", "parity", "record-shadow-tick"])
-    ap.add_argument("--db", default="os/runtime/tde_state.sqlite")
+    ap.add_argument("--env", choices=["dev", "staging", "prod"], default=None)
+    ap.add_argument("--db", default=None)
     ap.add_argument("--tasks", default="TASKS.md")
-    ap.add_argument("--out", default="os/runtime/TASKS_from_db.md")
+    ap.add_argument("--out", default=None)
     ap.add_argument("--tick-id", default="shadow-tick")
     ap.add_argument("--artifact-json", default="{}")
     args = ap.parse_args()
 
-    conn = connect(Path(args.db))
+    env = args.env
+    db_path = args.db or (f"os/runtime/{env}/tde_state.sqlite" if env else "os/runtime/tde_state.sqlite")
+    out_path = args.out or (f"os/runtime/{env}/TASKS_from_db.md" if env else "os/runtime/TASKS_from_db.md")
+
+    conn = connect(Path(db_path))
     init_schema(conn)
 
     if args.command == "init":
-        print(json.dumps({"status": "ok", "db": args.db}))
+        print(json.dumps({"status": "ok", "db": db_path, "env": env}))
     elif args.command == "import-tasks":
         print(json.dumps(import_tasks(conn, Path(args.tasks))))
     elif args.command == "export-tasks":
-        print(json.dumps(export_tasks(conn, Path(args.out))))
+        print(json.dumps(export_tasks(conn, Path(out_path))))
     elif args.command == "parity":
         print(json.dumps(parity_check(conn, Path(args.tasks))))
     elif args.command == "record-shadow-tick":

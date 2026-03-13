@@ -105,6 +105,11 @@ After wrapper-based staging is proven, add first-class environment flags/default
 - `tde_state_store.py`
 - `tde_job_tick_cron_hook.sh`
 
+Status update:
+- `tde_job_tick_runner.py` now supports `--env dev|staging|prod`
+- `tde_state_store.py` now supports `--env dev|staging|prod`
+- `tde_job_tick_cron_hook.sh` now requires explicit `TDE_ENV=dev|staging|prod`
+
 ### Step 3 — migrate surrounding evidence emitters
 Move adjacent TDE evidence-producing scripts to environment-scoped outputs.
 
@@ -169,6 +174,15 @@ Observed result:
 
 Key evidence path:
 - `knowledge/evidence/staging/2026-03/tde-job-tick-latest.json`
+
+## Native environment-resolution proof
+The core runtime scripts have also now been exercised directly in staging mode without relying only on the cron hook wrapper:
+- `python3 tools/tde_state_store.py init --env staging`
+- `python3 tools/tde_job_tick_runner.py --env staging --canonical-store db --shadow-state-enabled`
+
+Result:
+- native environment path resolution worked as intended
+- staging DB/evidence/registry paths were used automatically
 
 ## Bottom line
 The first professionalizing move is not a giant refactor.

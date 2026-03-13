@@ -858,6 +858,7 @@ def run_job_tick(
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run one deterministic TDE job tick")
+    parser.add_argument("--env", choices=["dev", "staging", "prod"], default=None)
     parser.add_argument("--job-id", default="JOB-PROD-001")
     parser.add_argument("--binding-id", default="BIND-JOB-PROD-001-ACTIVE")
     parser.add_argument("--actor-id", default="lyra")
@@ -871,19 +872,43 @@ def main() -> None:
     parser.add_argument("--tasks-path", default="TASKS.md")
     parser.add_argument(
         "--artifact-path",
-        default="knowledge/evidence/2026-03/tde-job-tick-latest.json",
+        default=None,
     )
-    parser.add_argument("--writeback-tasks-path", default="TASKS.md")
-    parser.add_argument("--binding-registry-path", default="os/runtime/tde_active_bindings.json")
-    parser.add_argument("--objective-registry-path", default="os/runtime/tde_objectives.json")
+    parser.add_argument("--writeback-tasks-path", default=None)
+    parser.add_argument("--binding-registry-path", default=None)
+    parser.add_argument("--objective-registry-path", default=None)
     parser.add_argument("--canonical-store", choices=["markdown", "db"], default="markdown")
-    parser.add_argument("--canonical-db-path", default="os/runtime/tde_state.sqlite")
+    parser.add_argument("--canonical-db-path", default=None)
     parser.add_argument("--shadow-state-enabled", action="store_true")
-    parser.add_argument("--shadow-state-db-path", default="os/runtime/tde_state.sqlite")
-    parser.add_argument("--shadow-state-alert-path", default="knowledge/evidence/metrics/tde-shadow-state-alerts.jsonl")
+    parser.add_argument("--shadow-state-db-path", default=None)
+    parser.add_argument("--shadow-state-alert-path", default=None)
     parser.add_argument("--shadow-state-mismatch-threshold", type=int, default=3)
 
     args = parser.parse_args()
+    env = args.env
+    if env:
+        period = datetime.now(timezone.utc).strftime('%Y-%m')
+        runtime_root = Path(f"os/runtime/{env}")
+        evidence_root = Path(f"knowledge/evidence/{env}")
+        evidence_period_dir = evidence_root / period
+        evidence_root.mkdir(parents=True, exist_ok=True)
+        evidence_period_dir.mkdir(parents=True, exist_ok=True)
+        metrics_dir = evidence_root / "metrics"
+        metrics_dir.mkdir(parents=True, exist_ok=True)
+    else:
+        runtime_root = Path("os/runtime")
+        evidence_root = Path("knowledge/evidence")
+        evidence_period_dir = Path("knowledge/evidence/2026-03")
+        metrics_dir = evidence_root / "metrics"
+
+    artifact_path = Path(args.artifact_path) if args.artifact_path else (evidence_period_dir / "tde-job-tick-latest.json")
+    writeback_tasks_path = Path(args.writeback_tasks_path) if args.writeback_tasks_path else (runtime_root / "TASKS_from_db.md" if env else Path("TASKS.md"))
+    binding_registry_path = Path(args.binding_registry_path) if args.binding_registry_path else (runtime_root / "tde_active_bindings.json")
+    objective_registry_path = Path(args.objective_registry_path) if args.objective_registry_path else (runtime_root / "tde_objectives.json")
+    canonical_db_path = Path(args.canonical_db_path) if args.canonical_db_path else (runtime_root / "tde_state.sqlite")
+    shadow_state_db_path = Path(args.shadow_state_db_path) if args.shadow_state_db_path else canonical_db_path
+    shadow_state_alert_path = Path(args.shadow_state_alert_path) if args.shadow_state_alert_path else (metrics_dir / "tde-shadow-state-alerts.jsonl")
+
     artifact = run_job_tick(
         job_id=args.job_id,
         binding_id=args.binding_id,
@@ -896,15 +921,15 @@ def main() -> None:
         objective_checkpoint=args.objective_checkpoint,
         rationale_trace=args.rationale_trace,
         tasks_path=Path(args.tasks_path),
-        artifact_path=Path(args.artifact_path),
-        writeback_tasks_path=Path(args.writeback_tasks_path) if args.writeback_tasks_path else None,
-        binding_registry_path=Path(args.binding_registry_path) if args.binding_registry_path else None,
-        objective_registry_path=Path(args.objective_registry_path) if args.objective_registry_path else None,
+        artifact_path=artifact_path,
+        writeback_tasks_path=writeback_tasks_path,
+        binding_registry_path=binding_registry_path,
+        objective_registry_path=objective_registry_path,
         canonical_store=args.canonical_store,
-        canonical_db_path=Path(args.canonical_db_path) if args.canonical_db_path else None,
+        canonical_db_path=canonical_db_path,
         shadow_state_enabled=args.shadow_state_enabled,
-        shadow_state_db_path=Path(args.shadow_state_db_path) if args.shadow_state_db_path else None,
-        shadow_state_alert_path=Path(args.shadow_state_alert_path) if args.shadow_state_alert_path else None,
+        shadow_state_db_path=shadow_state_db_path,
+        shadow_state_alert_path=shadow_state_alert_path,
         shadow_state_mismatch_threshold=args.shadow_state_mismatch_threshold,
     )
     print(json.dumps(artifact))
