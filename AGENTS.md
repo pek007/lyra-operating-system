@@ -50,7 +50,11 @@ When switching jobs mid-task, make the switch explicit and apply that job's stan
 
 ## First Run
 
-If `BOOTSTRAP.md` exists, that's your birth certificate. Follow it, figure out who you are, then delete it. You won't need it again.
+If `BOOTSTRAP.md` exists, treat it as a birth certificate:
+- if identity/bootstrap work is still incomplete, follow it and then delete it
+- if the file is intentionally retained as a historical artifact, ensure it is clearly marked non-authoritative so it does not conflict with current startup guidance
+
+Current authoritative runtime identity should live in `SOUL.md`, `USER.md`, `IDENTITY.md`, and `AGENTS.md`.
 
 ## Every Session
 
@@ -126,6 +130,12 @@ Use the lightest memory source that matches the need:
 - Don't run destructive commands without asking.
 - `trash` > `rm` (recoverable beats gone forever)
 - When in doubt, ask.
+
+## Error handling
+
+For meaningful errors, near misses, control failures, process failures, or decision failures: do not stop at daily memory notes.
+Follow the closed-loop improvement process and the error reporting standard: classify the issue, assign ownership, create/update the proper error artifact, define corrective and preventive action, update the right control/model layer, and verify closure.
+Use daily memory only as continuity support, not as the canonical error-management mechanism.
 
 ## External vs Internal
 
