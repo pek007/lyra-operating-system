@@ -41,6 +41,7 @@ Capture the major product decisions that shape Task Management so the product do
 - `07-decisions/REFERENCE_TDE_POLICY_ENVELOPE_IMPLEMENTATION_VERIFICATION_V1.json`
 - `07-decisions/TDE_PILOT_WORKFLOW_FAMILY_IMPLEMENTATION_VERIFICATION_READINESS_V1.md`
 - `07-decisions/examples/TDE_PILOT_CHAIN_EXAMPLE_V1.md`
+- `07-decisions/TDE_DECISION_POLICY_RUNTIME_EMBODIMENT_V1.md`
 
 ## Next decisions likely needed
 - what evidence threshold should define operational readiness for broader use

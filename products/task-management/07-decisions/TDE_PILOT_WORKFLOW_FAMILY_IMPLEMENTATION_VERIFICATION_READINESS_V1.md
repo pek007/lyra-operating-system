@@ -288,10 +288,13 @@ This family is ready for first practical pilot use when:
 - no step relies on transcript memory alone to determine what happens next
 
 ## Recommended immediate next implementation slice
-1. Decide whether `decision_policy_ref` should become the canonical metadata key in task/runtime state.
-2. Wire runtime validation so a chain cannot auto-advance without a valid policy envelope reference.
-3. Add schema-validated example artifacts to automated tests.
-4. Bind one real pilot chain in canonical TDE state.
+1. Wire runtime validation so a chain cannot auto-advance without a valid policy envelope reference.
+2. Add schema-validated example artifacts to automated tests.
+3. Bind one real pilot chain in canonical TDE state.
+4. Decide whether any decision outcomes should map to distinct runtime routes beyond the first v1 enforcement path.
+
+Runtime embodiment decision recorded in:
+- `products/task-management/07-decisions/TDE_DECISION_POLICY_RUNTIME_EMBODIMENT_V1.md`
 
 ## Reference example pack added
 The first example pack for this workflow family now includes:
