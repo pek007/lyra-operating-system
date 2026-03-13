@@ -228,14 +228,18 @@ This policy feeds into later layers:
 6. The output of intake/formation must be durable and auditable, not just conversational.
 
 ## Suggested next follow-on work
-1. Define the first workflow-family mapping from formation output into canonical objective/task creation.
-2. Decide where this shaping layer lives in runtime architecture (Task Management, Interfaces, or a dedicated formation service inside TDE).
-3. Pilot the capability on one real request class, such as "build a basic TDE GUI".
-4. Decide whether formation should output only a formation record first, or also create canonical objective/task artifacts in the same cycle.
+1. Decide where this shaping layer lives in runtime architecture (Task Management, Interfaces, or a dedicated formation service inside TDE).
+2. Pilot the capability on one real request class, such as "build a basic TDE GUI".
+3. Decide whether formation should output only a formation record first, or also create canonical objective/task artifacts in the same cycle.
+4. Implement the thin v1 creator for the first approved family.
 
 ## Machine-readable contract added
 The first v1 schema for the intent intake / formation artifact is now defined in:
 - `schemas/tde_intent_formation_record/v1.0.0.schema.json`
+
+## First creation mapping added
+The first workflow-family mapping from formation output into canonical objective/task creation is now defined in:
+- `products/task-management/07-decisions/TDE_FORMATION_TO_CANONICAL_CREATION_MAPPING_V1.md`
 
 ## Bottom line
 The next missing TDE layer is not just more execution logic.
