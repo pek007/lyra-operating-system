@@ -32,6 +32,40 @@ def _iso_now() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
+def _write_decision_advancement_record(*, artifact_dir: Path, tick_id: str, task_id: str, objective_id: str | None, metadata: dict[str, Any], policy_binding: dict[str, Any]) -> str:
+    artifact_dir.mkdir(parents=True, exist_ok=True)
+    ts = datetime.now(timezone.utc).strftime('%Y%m%d-%H%M%S')
+    workflow_family = policy_binding.get("workflow_family") or metadata.get("workflow_family") or "unknown"
+    path = artifact_dir / f"tde-decision-advancement-{task_id.lower()}-{ts}.json"
+    record = {
+        "artifactType": "tde_decision_advancement_record",
+        "schemaVersion": "1.0.0",
+        "decision_id": f"DEC-{tick_id}-{task_id}",
+        "task_id": task_id,
+        "objective_id": objective_id,
+        "workflow_family": workflow_family,
+        "stage_id": metadata.get("stage_id"),
+        "proposing_role": "Product Owner",
+        "escalation_role": "Ultimate Decision-maker",
+        "recommended_outcome": "continue",
+        "selected_outcome": "continue",
+        "recommended_next_task_id": None,
+        "recommended_branch_id": None,
+        "research_required": False,
+        "confidence_score": None,
+        "evidence_refs": [],
+        "authority_check_result": "within_policy",
+        "escalation_reason": None,
+        "decision_rationale": "Autonomous continuation authorized under the referenced decision policy envelope for the continue path.",
+        "policy_envelope_ref": policy_binding.get("policy_ref"),
+        "decision_trace_ref": None,
+        "decided_at": _iso_now(),
+        "decided_by_role": "Product Owner",
+    }
+    path.write_text(json.dumps(record, indent=2) + "\n", encoding="utf-8")
+    return str(path)
+
+
 def _read_tasks(tasks_path: Path, section: str = "Active") -> list[dict[str, Any]]:
     if not tasks_path.exists():
         return []
@@ -609,7 +643,9 @@ def run_job_tick(
 
         mutations: list[dict[str, Any]] = []
         idempotency_refs: list[str] = []
+        decision_artifacts: list[str] = []
         workspace_root = Path.cwd()
+        decision_artifact_dir = artifact_path.parent
 
         for index, item in enumerate(claimed):
             idempotency_key = f"{tick_id}:{item['id']}"
@@ -714,6 +750,18 @@ def run_job_tick(
                 outcomes["blocked_pending_approval"] += 1
             else:
                 outcomes["failed_validation"] += 1
+            decision_record_path = None
+            if status in {"executed", "replay"} and policy_binding.get("policy_ref"):
+                decision_record_path = _write_decision_advancement_record(
+                    artifact_dir=decision_artifact_dir,
+                    tick_id=tick_id,
+                    task_id=item["id"],
+                    objective_id=objective_id,
+                    metadata=item.get("metadata") or {},
+                    policy_binding=policy_binding,
+                )
+                decision_artifacts.append(decision_record_path)
+
             mutations.append(
                 {
                     "task_id": item["id"],
@@ -728,6 +776,7 @@ def run_job_tick(
                         "resolved_path": policy_binding.get("resolved_path"),
                         "workflow_family": policy_binding.get("workflow_family"),
                         "expected_outcome": "continue",
+                        "decision_record_path": decision_record_path,
                     },
                     "mutation_envelope": {
                         **mutation_envelope,
@@ -773,7 +822,7 @@ def run_job_tick(
             "idempotency_references": idempotency_refs,
             "writeback": writeback,
             "decisions": [],
-            "evidence_outputs": [str(artifact_path)],
+            "evidence_outputs": [str(artifact_path), *decision_artifacts],
             "outcomes": outcomes,
             "status": "ok",
             "chaining": chaining,
