@@ -1,9 +1,9 @@
 {
   "artifactType": "tde_job_tick",
   "schemaVersion": "1.0.0",
-  "tick_id": "job-tick-20260304-165800",
+  "tick_id": "job-tick-20260313-152023",
   "trigger_source": "cron",
-  "timestamp": "2026-03-04T16:58:00.206814+00:00",
+  "timestamp": "2026-03-13T15:20:23.456670+00:00",
   "job_id": "JOB-PROD-001",
   "binding_id": "BIND-JOB-PROD-001-ACTIVE",
   "actor_id": "lyra",
@@ -42,7 +42,7 @@
   },
   "decisions": [],
   "evidence_outputs": [
-    "/Users/lyra/.openclaw/workspace/knowledge/evidence/2026-03/tde-job-tick-latest.json"
+    "knowledge/evidence/2026-03/tde-job-tick-latest.json"
   ],
   "outcomes": {
     "progressed": 0,
@@ -52,27 +52,84 @@
     "reauth_required": 0
   },
   "status": "ok",
+  "chaining": {
+    "enabled": true,
+    "promoted": [
+      {
+        "task_id": "TDE-CHAIN-PILOT-03",
+        "from_status": "Waiting",
+        "to_status": "Active",
+        "depends_on": [
+          "TDE-CHAIN-PILOT-02"
+        ],
+        "activation_rule": "all_predecessors_done",
+        "objective_id": "OBJ-TDE-FOUNDATION",
+        "stage_id": "deployment-readiness-review",
+        "activated_by": "tick:job-tick-20260313-152023",
+        "activated_at": "2026-03-13T15:20:23.453971+00:00"
+      }
+    ],
+    "skipped": [
+      {
+        "task_id": "OPS-2026-046",
+        "reason": "predecessors_not_done",
+        "incomplete": [
+          "OPS-2026-045"
+        ]
+      },
+      {
+        "task_id": "OPS-2026-047",
+        "reason": "predecessors_not_done",
+        "incomplete": [
+          "OPS-2026-046"
+        ]
+      },
+      {
+        "task_id": "SEC-AUTO-20260309-01",
+        "reason": "predecessors_not_done",
+        "incomplete": [
+          "SEC-AUTO-20260309-02"
+        ]
+      },
+      {
+        "task_id": "TDE-CHAIN-PILOT-02",
+        "reason": "terminal_status",
+        "status": "Done"
+      }
+    ],
+    "applied": {
+      "applied": 1,
+      "task_ids": [
+        "TDE-CHAIN-PILOT-03"
+      ]
+    }
+  },
   "fail_closed": false,
   "fail_closed_reason": null,
   "shadow_state": {
     "enabled": true,
-    "db_path": "/Users/lyra/.openclaw/workspace/os/runtime/tde_state.sqlite",
+    "db_path": "os/runtime/tde_state.sqlite",
     "imported": {
-      "imported": 90,
-      "raw_rows": 107
+      "imported": 113,
+      "raw_rows": 113,
+      "preserved_metadata": true
     },
     "parity": {
       "match": true,
-      "file_fingerprint": "72264aa9d91ef0874b1e839c273f041d654b749b2c7a9bad6569568e432f509d",
-      "db_fingerprint": "72264aa9d91ef0874b1e839c273f041d654b749b2c7a9bad6569568e432f509d",
-      "file_count": 90,
-      "db_count": 90,
-      "raw_file_rows": 107,
-      "duplicate_rows": 17
+      "file_fingerprint": "118e6561d0f576d913a02bdf6588f608ef3574f33ecca195fbebc884cdcfe1cf",
+      "db_fingerprint": "118e6561d0f576d913a02bdf6588f608ef3574f33ecca195fbebc884cdcfe1cf",
+      "file_count": 113,
+      "db_count": 113,
+      "raw_file_rows": 113,
+      "duplicate_rows": 0
+    },
+    "ledger": {
+      "action_id": "shadow:job-tick-20260313-152023",
+      "event_id": "evt:job-tick-20260313-152023:summary"
     },
     "status": "ok",
     "threshold_exceeded": false,
     "consecutive_failures": 0,
-    "alert_path": "/Users/lyra/.openclaw/workspace/knowledge/evidence/metrics/tde-shadow-state-alerts.jsonl"
+    "alert_path": "knowledge/evidence/metrics/tde-shadow-state-alerts.jsonl"
   }
 }
