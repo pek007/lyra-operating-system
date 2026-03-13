@@ -98,6 +98,9 @@ First dry-run checklist rehearsal recorded at:
 The first consolidated staging validation packet for the bounded research/re-entry slice is:
 - `knowledge/evidence/staging/releases/2026-03-13__tde-bounded-research-reentry-release-packet__v1.md`
 
+The first explicit promotion-candidate packet for that slice is:
+- `knowledge/evidence/staging/releases/2026-03-13__tde-bounded-research-reentry-promotion-candidate__v1.md`
+
 ## Bottom line
 No TDE runtime-path change should move into production-adjacent or production use without:
 - explicit candidate identity,
