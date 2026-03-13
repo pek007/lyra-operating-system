@@ -1,0 +1,92 @@
+{
+  "artifactType": "tde_job_tick",
+  "schemaVersion": "1.0.0",
+  "tick_id": "job-tick-20260313-144557",
+  "trigger_source": "cron",
+  "timestamp": "2026-03-13T14:45:57.622232+00:00",
+  "job_id": "JOB-PROD-001",
+  "binding_id": "BIND-JOB-PROD-001-ACTIVE",
+  "actor_id": "lyra",
+  "session_key": "cron:tde-job-runner-v1",
+  "objective_linkage": {
+    "objective_id": "OBJ-TDE-FOUNDATION",
+    "objective_checkpoint": "S16",
+    "rationale_trace": "TDE-2026-027-objective-linkage"
+  },
+  "objective_registry_context": {
+    "registry_path": "/Users/lyra/.openclaw/workspace/os/runtime/staging/tde_objectives.json",
+    "registry_loaded": true
+  },
+  "binding_context": {
+    "active_binding": {
+      "binding_id": "BIND-JOB-PROD-001-ACTIVE",
+      "job_id": "JOB-PROD-001",
+      "actor_id": "lyra",
+      "session_key": "cron:tde-job-runner-v1",
+      "status": "active",
+      "binding_epoch": 1,
+      "updated_at": "2026-03-13T15:50:00Z",
+      "expires_at": "2026-12-31T23:59:59+00:00"
+    },
+    "binding_source": "registry_exact",
+    "binding_status": "active"
+  },
+  "claim_limit": 1,
+  "claimed": [],
+  "mutations": [],
+  "idempotency_references": [],
+  "writeback": {
+    "applied": false,
+    "reason": "no_tasks_or_no_claims",
+    "moved": []
+  },
+  "decisions": [],
+  "evidence_outputs": [
+    "/Users/lyra/.openclaw/workspace/knowledge/evidence/staging/2026-03/tde-job-tick-latest.json"
+  ],
+  "outcomes": {
+    "progressed": 0,
+    "blocked_pending_approval": 0,
+    "failed_validation": 0,
+    "no_work": 1,
+    "reauth_required": 0
+  },
+  "status": "ok",
+  "chaining": {
+    "enabled": true,
+    "promoted": [],
+    "skipped": [],
+    "applied": {
+      "applied": 0,
+      "task_ids": []
+    }
+  },
+  "fail_closed": false,
+  "fail_closed_reason": null,
+  "shadow_state": {
+    "enabled": true,
+    "db_path": "/Users/lyra/.openclaw/workspace/os/runtime/staging/tde_state.sqlite",
+    "imported": {
+      "imported": 134,
+      "raw_rows": 134,
+      "preserved_metadata": true
+    },
+    "parity": {
+      "match": true,
+      "file_fingerprint": "eb382d28a783023a15c8c7a3ff332fe7ccdeee94f0e4717a7ac02f0767bd6692",
+      "db_fingerprint": "eb382d28a783023a15c8c7a3ff332fe7ccdeee94f0e4717a7ac02f0767bd6692",
+      "file_count": 134,
+      "db_count": 134,
+      "raw_file_rows": 134,
+      "duplicate_rows": 0
+    },
+    "ledger": {
+      "action_id": "shadow:job-tick-20260313-144557",
+      "event_id": "evt:job-tick-20260313-144557:summary"
+    },
+    "status": "ok",
+    "threshold_exceeded": false,
+    "consecutive_failures": 0,
+    "alert_path": "/Users/lyra/.openclaw/workspace/knowledge/evidence/staging/metrics/tde-shadow-state-alerts.jsonl"
+  }
+}

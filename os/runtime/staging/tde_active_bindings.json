@@ -1,0 +1,14 @@
+{
+  "bindings": [
+    {
+      "binding_id": "BIND-JOB-PROD-001-ACTIVE",
+      "job_id": "JOB-PROD-001",
+      "actor_id": "lyra",
+      "session_key": "cron:tde-job-runner-v1",
+      "status": "active",
+      "binding_epoch": 1,
+      "updated_at": "2026-03-13T15:50:00Z",
+      "expires_at": "2026-12-31T23:59:59+00:00"
+    }
+  ]
+}

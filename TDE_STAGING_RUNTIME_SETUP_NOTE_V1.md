@@ -151,10 +151,24 @@ python3 tools/tde_job_tick_runner.py \
 ```
 
 ## Immediate next implementation tasks
-1. Add `.gitkeep` or seed artifacts where needed under staging dirs.
-2. Create one staging cron/wrapper note under `os/config/staging/cron/`.
-3. Make `tde_job_tick_cron_hook.sh` capable of explicit staging invocation without fallback ambiguity.
-4. Run one staging-only end-to-end tick and publish evidence under `knowledge/evidence/staging/...`.
+1. Add environment-aware path flags/default helpers to `tde_job_tick_runner.py` and `tde_state_store.py`.
+2. Migrate the next ring of TDE evidence emitters away from legacy `knowledge/evidence/2026-03/...` defaults.
+3. Define the first staging promotion checklist.
+4. Decide whether staging should use seeded synthetic objectives/tasks or a curated production mirror for future validation cycles.
+
+## Initial staging proof
+A first staging-only end-to-end tick has now been run with:
+- isolated staging DB
+- isolated staging objectives/bindings
+- staging artifact output under `knowledge/evidence/staging/2026-03/`
+
+Observed result:
+- run completed successfully
+- no work was claimed (`no_work = 1`)
+- no production-adjacent DB/objective/binding/evidence path was targeted by the hook
+
+Key evidence path:
+- `knowledge/evidence/staging/2026-03/tde-job-tick-latest.json`
 
 ## Bottom line
 The first professionalizing move is not a giant refactor.

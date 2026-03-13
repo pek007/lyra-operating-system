@@ -1,0 +1,145 @@
+# TASKS.md (Generated from tde_state_store)
+
+## Inbox
+- [x] IMP-AUTO-20260302-01 | Add an automated task-hygiene pass that flags duplicate task intents/IDs in `TASKS.md` to reduce recurring SEC-AUTO inbox noise.
+- [x] IMP-AUTO-20260302-02 | Add lightweight unit tests for `tools/markdown_link_check.py` (code-fence ignore + optional title parsing) to prevent false-positive regressions in cron checks.
+- [x] IMP-AUTO-20260303-03 | Migrate or normalize legacy registry rows (camelCase + `type1|type2`) through the transition layer and publish a drift-burn-down snapshot to reduce residual schema mismatch risk.
+- [x] IMP-AUTO-20260304-01 | Wire `tools/test_markdown_link_check.py` into the cron hygiene path (or adjacent CI check) so link-parser behavior regressions fail before scheduled sweeps.
+- [x] IMP-AUTO-20260304-02 | Add `markdown_link_check.py --changed-only` mode (git-diff scoped) to reduce sweep runtime as the document corpus grows while preserving full-scan fallback.
+- [x] IMP-AUTO-20260304-03 | Backfill canonical frontmatter for legacy `knowledge/reports/*.md` and add deterministic `knowledge/reports/INDEX.md` generator so daily sweeps no longer rely on manual reconstruction.
+- [x] IMP-AUTO-20260305-01 | Rebuild or retire `tools/docs_hygiene_bundle.py` references in runbooks/validators so cron hygiene runs are executable again (impact: removes silent automation drift from missing command paths).
+- [x] IMP-AUTO-20260305-02 | Add a lightweight “referenced script exists” guard for cron/runbook command strings to catch broken tooling pointers before scheduled sweeps fail (impact: fail-fast on operational doc drift).
+- [x] IMP-AUTO-20260306-02 | Add `jsonschema` to the local validation environment (or pin a no-dependency schema validator path) so `tools/validate_repo.py` can enforce artifact schema checks instead of warning-only mode (impact: turns soft schema drift into deterministic failures).
+- [ ] IMP-AUTO-20260307-01 | Add `--staged` / path-scoped mode to `tools/validate_repo.py` so cron sweeps can run low-noise validations without mutating broad generated artifacts (impact: higher signal in autonomous hygiene runs, fewer incidental diffs).
+- [ ] IMP-AUTO-20260307-02 | Add a lightweight tracked-artifact policy for runtime/generated outputs (`os/runtime/*.sqlite*`, periodic evidence snapshots, local clones) and wire it into lint guidance (impact: reduces recurring git-noise and accidental commit risk).
+- [ ] IMP-AUTO-20260307-03 | Normalize `tools/evidence_ingest.py` evidence frontmatter keys to canonical snake_case (`severity_summary`, `linked_tasks`) and add regression coverage so registry schema validation no longer relies on compatibility translation (impact: eliminates recurring schema drift between emitted evidence and `REGISTRY_SCHEMAS_V1.md`).
+- [ ] IMP-AUTO-20260308-01 | Add `--no-generated-writes` mode to `tools/validate_repo.py` so cron sweeps can run validation-only without touching volatile generated/evidence artifacts (impact: lower diff noise and safer unattended hygiene runs).
+- [ ] IMP-AUTO-20260308-02 | Introduce a tracked-path allowlist for cron sweep auto-edits (docs/tools only by default) with explicit blocklist for runtime/evidence feeds (impact: prevents incidental churn outside intended maintenance scope).
+- [ ] IMP-AUTO-20260310-03 | Decide and document bootstrap-file lifecycle (`BOOTSTRAP.md`: delete/archive/intentional-retain) now that identity has been established, so startup hygiene no longer carries an apparently stale first-run artifact (impact: reduces operator ambiguity during sweeps and onboarding checks).
+- [ ] IMP-AUTO-20260310-04 | Reconcile `governance/direction-package.md` with the current compiled runtime charter and active-job set (notably Continuous Improvement Lead and post-bootstrap job naming) or clearly mark it superseded (impact: reduces stale strategic guidance and role-model confusion).
+- [ ] IMP-AUTO-20260311-01 | Finish the remaining live `Control Tower` → `Control Panel` terminology cleanup across active governance/runtime docs, explicitly separating historical/library references from current operating language (impact: reduces operator ambiguity without rewriting historical evidence).
+- [x] OPS-2026-043 | Chat Continuity Sprint 2 metrics rollout: define handoff completeness score + stale-context drift signal, then capture first weekly baseline evidence.
+- [x] OPS-2026-044 | Formalize Continuous Improvement as a first-class job role and align daily cron runbook to include library relevance review + improvement backlog execution checks.
+- [x] OPS-2026-045 | Shift Continuous Improvement leverage discovery cadence from monthly to weekly and formalize Deep Research handoff workflow (Layer B + Layer C).
+- [x] OPS-2026-046 | Implement Opportunity-to-Execution Engine v1 bootstrap from Deep Research report (signal ledger + opportunity/experiment templates + weekly metrics cadence + first pilot selection).
+- [x] OPS-2026-047 | Execute Drift Aftercare pilot (`OPP-2026-001`) for `IMP-AUTO-20260303-03`, publish checkpoint evidence, and decide scale/rollback.
+- [x] OPS-2026-048 | Implement machine-checkable governance bootstrap v0.1 (schema authority + validator entrypoint + inventory/index generation + CI drift checks) from 2026-03-04 deep research blueprint.
+- [x] OPS-2026-049 | Operationalize knowledge library systems-of-record by standing up `knowledge/inbox` + `knowledge/decisions` with generated indexes and validation.
+- [x] OPS-2026-050 | Operationalize `STANDARD_CHANGE_CATALOG_V1` into executable promotion flow (registry linkage, WO/CA classification fields, exclusion-trigger checks, pilot guardrails).
+- [x] OPS-2026-057 | Implement Durable State Layer v1 for TDE (SQLite event log + action ledger + projected task state) in shadow mode with deterministic parity verification against current task flow.
+- [x] OPS-2026-060 | Operationalize trust-boundary architecture Sprint 1 controls (Option A hardening): publish policy record, enforce Telegram group tool/sender constraints, and add mandatory post-change validation bundle output artifact.
+- [ ] OPS-2026-066 | Weekly jobs review: reconcile active-job roster and catalog naming/binding drift across `AGENTS.md` and `JOB_MARKET_MODEL_V1.md` (notably `Developer` vs `JOB-ENG-001 Software Developer`, and missing explicit `JOB-PROD-001` runtime listing); publish corrected active-job roster/source-of-truth note and classify any authority-impacting deltas under `JOBS_PROCESS_V1.md`.
+- [ ] OPS-2026-067 | Rebuild missing weekly job-lifecycle evidence chain referenced by `JOB_MARKET_MODEL_V1.md` (job-runtime fit matrix and Auditor runtime-boundary decision artifact) or update the model to point at the current canonical artifact set; publish auditable linkage in `governance/` so weekly reviews are reproducible.
+- [ ] OPS-2026-068 | Evaluate assignment fit for `JOB-PROD-001 Product Owner` under `AGENT_LIFECYCLE_SOP_V1.md` Stage 2 criteria and decide whether the role remains implicit in the main runtime, becomes an explicitly bound main-session job, or uses a fresh-session/sub-agent review pattern for acceptance decisions; capture triggers and runtime recommendation.
+- [ ] OPS-2026-069 | Publish a fail-safe OpenClaw update runbook for this host/runtime after the 2026-03-09 outage: identify the active LaunchAgent binary/package path before any update, distinguish git vs npm/pnpm install mode, define preflight checks and explicit no-restart-until-path-confirmed rule, and add post-update verification so future upgrades do not take down the gateway accidentally.
+- [ ] OPS-2026-070 | Operationalize `MEMORY_PROCESS_V1.md`: validate live memory retrieval behavior, define the first activation-class map for priority memory artifacts, and publish a phased implementation roadmap for agent/session/job/knowledge/coordination memory under Control Panel ownership.
+- [ ] OPS-2026-071 | Clean up retired live `Control Tower` terminology in current operating artifacts where the product-model replacement to `Control Panel` is now authoritative; classify historical/library references separately so historical evidence is preserved without leaving active-governance ambiguity.
+- [ ] OPS-2026-072 | Define the first runtime-topology map for Lyra OS based on the adopted hybrid model: central Control Panel runtime, selective persistent product/domain runtimes where justified, explicit wake-up strategy (heartbeat vs cron vs direct session messaging), and cross-session handoff pattern.
+- [ ] OPS-2026-073 | Design a lightweight intra-Lyra cross-session handoff protocol that replaces copy-paste as the default coordination method while remaining lighter than the Vega cross-domain handoff model.
+- [ ] OPS-2026-074 | Align Task Management / TDE operating notes with today’s new substrate assumptions: job-bundle continuity, same-cycle write-back, and standardized same-runtime intra-Lyra handoffs where work crosses lanes.
+- [ ] OPS-2026-075 | Convert the first-wave product runtime embodiment framework into implementation candidates: define the Control Panel coordination skill, Task Management / TDE operator skill, and Governance VERIFY-cycle skill at concept/spec level before any plugin work.
+- [ ] OPS-2026-076 | Design the first bounded product cron model for Control Panel, Task Management, and Governance: identify what should remain human-triggered, what should become cron-driven, and what output/noise rules must apply.
+- [ ] OPS-2026-077 | Evaluate `pxs` as a bounded runtime-embodiment proving ground: hand off `PXS_RUNTIME_EMBODIMENT_TEST_PROPOSAL_V1.md` to Vega, assess boundary fit, and determine the smallest viable local capability test (preferably a Governance/VERIFY-style skill, optionally followed by a bounded cron loop).
+- [ ] OPS-2026-078 | Establish a stable cross-runtime communication loop for Lyra OS <-> PX: adopt inbox/outbox handoff structure, define pickup cadence and handled-state rules, and decide whether/when to add cron-backed inbox checks on each side.
+- [x] SEC-AUTO-20260227-02 | Decide and enforce trust-boundary model for multi-user/group usage (separate gateways vs hardened shared runtime sandbox/tool scope). (superseded by canonical `SEC-AUTO-20260302-01`)
+- [x] SEC-AUTO-20260227-03 | Confirm reverse-proxy posture for Control UI; if proxied, set `gateway.trustedProxies`, otherwise explicitly keep local-only. (superseded by canonical `SEC-AUTO-20260302-02`)
+- [x] SEC-AUTO-20260228-01 | Resolve persistent `security.trust_model.multi_user_heuristic` warning: choose single-trust boundary or split to separate gateways/identities for group contexts. (superseded by canonical `SEC-AUTO-20260302-01`)
+- [x] SEC-AUTO-20260228-02 | Resolve persistent `gateway.trusted_proxies_missing` warning: explicitly document local-only UI posture or configure `gateway.trustedProxies` for actual reverse proxy IPs. (superseded by canonical `SEC-AUTO-20260302-02`)
+- [x] SEC-AUTO-20260301-01 | Decide and implement trust-boundary model for Telegram/group usage (single trusted operator vs split gateways) to clear `security.trust_model.multi_user_heuristic` warning. (superseded by canonical `SEC-AUTO-20260302-01`)
+- [x] SEC-AUTO-20260301-02 | Confirm Control UI exposure model and either keep explicit local-only posture or configure `gateway.trustedProxies` for actual reverse proxy IPs to clear `gateway.trusted_proxies_missing` warning. (superseded by canonical `SEC-AUTO-20260302-02`)
+- [x] SEC-AUTO-20260302-01 | Resolve persistent `security.trust_model.multi_user_heuristic` warning by deciding trust boundary (single trusted operator vs split gateways/identities) and tightening sandbox/tool scope if shared access remains.
+- [x] SEC-AUTO-20260302-02 | Resolve persistent `gateway.trusted_proxies_missing` warning by explicitly documenting local-only Control UI posture or configuring `gateway.trustedProxies` with exact reverse-proxy IPs.
+- [x] SEC-AUTO-20260303-01 | Enable a safe read-only host-audit path for cron health checks (or documented manual step) to capture PF status on macOS, since `pfctl -s info` currently fails without elevated access in this runtime.
+- [x] SEC-AUTO-20260304-01 | Resolve recurring `security.trust_model.multi_user_heuristic` warning by finalizing shared-vs-single trust boundary controls for Telegram group contexts (or isolating group traffic to separate gateway identity) and revalidating clean audit baseline.
+- [x] SEC-AUTO-20260305-01 | Revalidate and document accepted residual risk for `security.trust_model.multi_user_heuristic` after nightly audit; either codify explicit acceptance criteria/expiry or define isolation migration plan (separate gateway/identity) if group usage model changes.
+- [x] SEC-AUTO-20260306-01 | Resolve Telegram allowlist inconsistency (`groupPolicy=allowlist` with empty `groupAllowFrom/allowFrom`) to eliminate silent group-message drops and align channel trust intent with explicit sender controls.
+- [ ] SEC-AUTO-20260307-01 | Reassess and formalize owner-approved disposition for persistent `security.trust_model.multi_user_heuristic` warning (residual risk acceptance refresh vs trust-boundary isolation hardening), including explicit expiry/reopen triggers and validation evidence.
+- [ ] SEC-AUTO-20260307-02 | Restore deterministic host read-only network posture checks for nightly audits (`lsof`/`pfctl` availability in runtime path or approved fallback collector) so listener/PF evidence is complete without policy-violating elevation.
+- [ ] SEC-AUTO-20260308-01 | Stabilize nightly security-audit evidence collection to avoid privileged-command gaps (`pfctl -s info` permission denied in current runtime): switch cron command set to the existing non-elevated host snapshot path (or equivalent approved fallback), and publish deterministic proof bundle with explicit PF escalation note.
+- [ ] SEC-AUTO-20260309-01 | Resolve or formally re-accept the recurring `security.trust_model.multi_user_heuristic` warning after 2026-03-09 nightly audit; update trust-boundary evidence, expiry, and reopen triggers based on current shared/group exposure and sandbox posture.
+- [ ] SEC-AUTO-20260309-02 | Restore deterministic non-elevated PF posture evidence for nightly audits on Peter’s Mac mini (`/sbin/pfctl -s info` currently returns permission denied in cron runtime) or document an approved fallback proof path so host firewall-state snapshots stop failing closed.
+- [ ] SEC-AUTO-20260310-01 | Revalidate and either remediate or explicitly re-accept the recurring `security.trust_model.multi_user_heuristic` warning after the 2026-03-10 nightly audit; focus on current unsandboxed/shared-exposure signals (notably `agents.list.px-internal-dev` with `tools.fs.workspaceOnly=false`) and refresh owner, expiry, and reopen triggers.
+- [ ] SEC-AUTO-20260310-02 | Replace raw `pfctl -s info` in unattended nightly security audits with the approved non-elevated host snapshot path (or equivalent documented fallback evidence bundle), since direct PF reads still fail with `Permission denied` in the cron runtime on 2026-03-10.
+- [ ] SEC-AUTO-20260311-01 | Revalidate and either remediate or explicitly re-accept the recurring `security.trust_model.multi_user_heuristic` warning after the 2026-03-11 nightly audit; focus on whether current Telegram group exposure plus unsandboxed/high-impact contexts (`agents.list.px-internal-dev` with `tools.fs.workspaceOnly=false`, elevated tools enabled, browser control enabled) still matches the intended single-trust-boundary model, and refresh owner, expiry, and reopen triggers.
+- [ ] SEC-AUTO-20260311-02 | Replace raw privileged PF status probing in unattended nightly audits with the approved non-elevated host snapshot/fallback evidence path on Peter’s Mac mini, since `/sbin/pfctl -s info` still returns `Permission denied` in the cron runtime on 2026-03-11.
+- [ ] SEC-AUTO-20260312-01 | Revalidate and either remediate or explicitly re-accept the recurring `security.trust_model.multi_user_heuristic` warning after the 2026-03-12 nightly audit; confirm whether current Telegram group exposure plus unsandboxed/high-impact contexts (notably `agents.defaults`, `agents.list.main`, and `agents.list.px-internal-dev` with `tools.fs.workspaceOnly=false`) still fits the intended single-trust-boundary model, and refresh owner, expiry, and reopen triggers.
+- [ ] SEC-AUTO-20260312-02 | Replace raw privileged PF status probing in unattended nightly audits with the approved non-elevated host snapshot/fallback evidence path on Peter’s Mac mini, since `/sbin/pfctl -s info` still returns `Permission denied` in the cron runtime on 2026-03-12.
+- [ ] SEC-AUTO-20260313-01 | Revalidate and either remediate or explicitly re-accept the recurring `security.trust_model.multi_user_heuristic` warning after the 2026-03-13 nightly audit; confirm whether current Telegram group exposure plus unsandboxed/high-impact contexts (notably `agents.defaults`, `agents.list.main`, and `agents.list.px-internal-dev` with `tools.fs.workspaceOnly=false`) still fits the intended single-trust-boundary model, and refresh owner, expiry, and reopen triggers.
+- [ ] SEC-AUTO-20260313-02 | Replace raw privileged PF status probing in unattended nightly audits with the approved non-elevated host snapshot/fallback evidence path on Peter’s Mac mini, since `/sbin/pfctl -s info` still returns `Permission denied` in the cron runtime on 2026-03-13.
+
+## Triage
+
+## Active
+
+## Waiting
+- [x] OPS-2026-023 | Sprint 3 closeout pack (release notes + tag + vNext backlog update) after QA pass
+
+## Done
+- [x] IMP-AUTO-20260227-01 | Added lightweight markdown link-check script (`tools/markdown_link_check.py`) with cron-safe scope filters.
+- [x] IMP-AUTO-20260227-02 | Add smoke tests for `tools/` parsers (closed 2026-03-03 after wiring parser smoke suite into cron sweep runbook and re-validating `tools/test_parser_smoke.py`).
+- [x] IMP-AUTO-20260228-01 | Automate daily OpenClaw release-delta evidence snapshot (closed 2026-03-03 after completion recheck run + board-state normalization; latest artifact refresh validated in `knowledge/evidence/2026-03-03__openclaw-release-delta-snapshot.md`).
+- [x] IMP-AUTO-20260301-01 | Consolidate duplicate SEC-AUTO trust-boundary/trusted-proxy tasks into canonical items (closed 2026-03-03 after superseding six duplicate SEC-AUTO entries to canonical `SEC-AUTO-20260302-01/02` targets).
+- [x] IMP-AUTO-20260301-02 | Add docs hygiene CI/cron check bundle (closed 2026-03-03 after completion recheck via `python3 tools/docs_hygiene_bundle.py` and board-state normalization; evidence: `knowledge/evidence/2026-03-03__imp-auto-20260301-02-closeout-and-board-normalization.md`).
+- [x] IMP-AUTO-20260302-03 | Harmonize registry/decision schema contracts and publish v1.1 compatibility map (closed 2026-03-03 after compatibility-map publish, canonical schema harmonization, and board-state normalization).
+- [x] IMP-AUTO-20260303-01 | Wire `tools/task_hygiene_check.py` into cron hygiene bundle (closed 2026-03-03 after completion recheck and board-state normalization in current workspace state).
+- [x] IMP-AUTO-20260303-02 | Add lightweight tests for `tools/task_hygiene_check.py` (closed 2026-03-03 after making tests repo-root safe and validating both root/tools unittest invocation paths).
+- [x] OPS-2026-004 | Harden state-dir permissions (`chmod 700 /Users/lyra/.openclaw`)
+- [x] OPS-2026-005 | Clean ineffective denyCommands entries and re-audit
+- [x] OPS-2026-007 | Define machine-readable registry schemas (agent/routing/evidence/change)
+- [x] OPS-2026-008 | Implement evidence ingestion job (doctor/security -> knowledge evidence entries)
+- [x] OPS-2026-009 | Build Control Tower MVP views spec (Now/Next/Watch/Change)
+- [x] OPS-2026-010 | Wire evidence ingestion into daily hygiene flow
+- [x] OPS-2026-012 | Schedule weekly OpenClaw release delta review
+- [x] OPS-2026-013 | Enable embeddings-backed memory indexing (OpenAI embeddings active)
+- [x] OPS-2026-016 | Implement autonomous security + continuous-improvement governance sweeps (cron + guardrails + docs)
+- [x] OPS-2026-017 | Implement cadence governance policy (throughput-first planning + cadence floor guardrails)
+- [x] OPS-2026-020 | Chief Architect Sprint 3 architecture brief + guardrails pack (closed 2026-03-03 after sign-off recommendation and board-state transition execution).
+- [x] OPS-2026-021 | Claude Code supplier run: implement S3 Task Center + Skills Visibility from approved prompt (closed 2026-03-03 after evidence consistency recheck and board-state transition execution).
+- [x] OPS-2026-022 | Architecture QA gate (JOB-ARC-001): verify S3 against must constraints (closed 2026-03-03 after QA evidence consistency recheck and board-state transition execution).
+- [x] OPS-2026-026 | Adopt AI-native operating policy v1 + WO/CA templates and wire into SOP/DoD/process registry
+- [x] OPS-2026-027 | Establish product portfolio setup (registry, boundary template, repo naming standard, dependency rule)
+- [x] OPS-2026-028 | Add OpenClaw release-delta tracking SOP and integrate into daily continuous-improvement sweep
+- [x] OPS-2026-029 | Implement agent lifecycle SOP + internal job market model; supersede Chief Architect agent plan in favor of Chief Architect job
+- [x] OPS-2026-030 | Implement Control Panel post-mortem process hardening (start gate, decision-first MVP, data/system ownership contracts, supplier WIP/evidence rules)
+- [x] OPS-2026-031 | Implement system-level direction package (governance layer + runtime mapping) from ChatGPT 5.2 Pro analysis
+- [x] OPS-2026-032 | Ingest Claude direction package, deploy compiled runtime charter into AGENTS.md, and align SOUL/USER with non-duplication rule
+- [x] OPS-2026-033 | Establish strict OpenClaw config change-control + rollback SOP (preview/approval/apply/validate/rollback)
+- [x] OPS-2026-034 | Refine Claude Code prompting system: outcome-oriented schema, explicit modes, stronger verification, and fresh-context recovery rule
+- [x] OPS-2026-035 | Approved Project Start Packet for Chat Continuity Execution Track (`PROJECT_START_PACKET_CHAT_CONTINUITY_V1.md`).
+- [x] OPS-2026-036 | Approved WO-2026-CC-001 and authorized move to Active.
+- [x] OPS-2026-037 | Execute Chat Continuity Sprint 1 (closed 2026-03-03 after acceptance-criteria evidence pack and board-state transition execution).
+- [x] OPS-2026-038 | Add missing Head of Control Tower job record to `JOB_MARKET_MODEL_V1.md` (closed 2026-03-03 after publishing `JOB-CT-001` with full schema fields and version bump to v1.1).
+- [x] OPS-2026-039 | Run job-to-runtime fit scoring for all active jobs and publish assignment matrix + rationale in governance docs (closed 2026-03-03 after publishing matrix and linking cadence artifacts in `JOB_MARKET_MODEL_V1.md`).
+- [x] OPS-2026-040 | Define add/change/retire workflow artifact template and link from `JOB_MARKET_MODEL_V1.md` (closed 2026-03-03 after publishing `JOB_CHANGE_WORKFLOW_TEMPLATE_V1.md`, linking in model, and recording evidence).
+- [x] OPS-2026-041 | Decide whether Auditor needs a durable independent runtime boundary (closed 2026-03-03 after approving non-persistent independent session/sub-agent mode and publishing explicit trigger gates in `governance/auditor-runtime-boundary-decision-2026-03-03.md`).
+- [x] OPS-2026-042 | Stand up monthly lifecycle KPI snapshot (closed 2026-03-03 after publishing March baseline, hardening incident-tag counting, and executing board-state closeout).
+- [x] OPS-2026-051 | S26 trust-boundary closure and stability revalidation (closed 2026-03-04 with single-trust-boundary acceptance and explicit reopen triggers; evidence: `knowledge/evidence/2026-03-04__sec-auto-20260304-01-s26-closeout-single-trust-boundary.md`).
+- [x] OPS-2026-052 | S27 sandbox reliability guardrail (closed 2026-03-04 after adding sandbox preflight script + SOP/checklist controls; evidence: `knowledge/evidence/2026-03-04__ops-reliability-s27-sandbox-guardrail.md`).
+- [x] OPS-2026-053 | S28 DORA rollup enhancement (closed 2026-03-04 after upgrading `tools/tde_dora_rollup.py` to emit per-slice lead/failure/recovery proxies and refreshing `knowledge/evidence/metrics/TDE_DORA_WEEKLY.md`).
+- [x] OPS-2026-054 | S29 DORA rework-rate automation (closed 2026-03-04 after adding commit-to-slice linkage and automatic rework-rate proxy in `tools/tde_dora_rollup.py`).
+- [x] OPS-2026-055 | S30 lead-time fidelity upgrade (closed 2026-03-04 after adding first-commit→first-activation lead-time proxy to `tools/tde_dora_rollup.py` and weekly metric output).
+- [x] OPS-2026-056 | Published TDE production readiness gate v1 (`TDE_PRODUCTION_READINESS_GATE_V1.md`) with strict GO/NO-GO controls.
+- [x] OPS-2026-058 | S32 shadow-state integration in job tick (closed 2026-03-04 after adding optional DB shadow sync flags, parity block emission, dedicated regression test, and CI wiring).
+- [x] OPS-2026-059 | S33 shadow comparator thresholding (closed 2026-03-04 after adding consecutive mismatch/error threshold tracking + alert log support in job tick shadow mode).
+- [x] OPS-2026-061 | S34 scheduled dual-run shadow path (closed 2026-03-04 after enabling shadow-state controls in cron hook with env-based rollback switch).
+- [x] OPS-2026-062 | S35 durable shadow event/action ledger writes (closed 2026-03-04 after persisting per-tick action/event entries in state store and wiring regression coverage).
+- [x] OPS-2026-063 | S36 DB canonical cutover readiness gate (closed 2026-03-04 after publishing cutover gate SOP + first readiness NO_GO baseline report).
+- [x] OPS-2026-064 | S37 daily cutover readiness operations (closed 2026-03-04 after adding daily readiness runner and threshold alert guard scripts).
+- [x] OPS-2026-065 | S38 scheduled readiness automation wiring (closed 2026-03-04 after adding dedicated cutover-readiness cron hook and updating cron spec/runbook).
+- [x] SEC-AUTO-20260227-01 | Restrict Telegram group command senders via `groupAllowFrom`/`allowFrom` (closed 2026-03-03 after canonical group-key normalization, allowlist enforcement, and audit warning clearance validation).
+- [x] TDE-2026-001 | Formal acceptance sign-off completed for WO-2026-TDE-KERNEL-S1 (JOB-PROD-001 + JOB-ARC-001, owner acknowledged 2026-03-02).
+- [x] TDE-2026-002 | Defined S2 WO and planning packet (`WO-2026-TDE-KERNEL-S2.md`, `knowledge/distilled/2026-03-02__packet__tde-kernel-s2-planning-v1.md`).
+- [x] TDE-2026-003 | Executed kernel-slice S2 planning packet (progress-state model, anti-stall integration, deterministic routing verification tests).
+- [x] TDE-2026-004 | Milestone gate approved GO by JOB-OWN-001 (`knowledge/distilled/2026-03-02__milestone-packet__tde-kernel-s1-s2-gate-for-job-own-001-v1.md`).
+- [x] TDE-2026-005 | Executed WO-2026-TDE-KERNEL-S2 (heartbeat anti-stall + progress-state classification + routing checks) with S2 evidence artifact.
+- [x] TDE-2026-006 | Executed WO-2026-TDE-KERNEL-S3 (runtime-triggered heartbeat/cron anti-stall checks) with trigger-contract validation, runtime cycle simulation tests, and S3 evidence artifact.
+- [x] TDE-2026-007 | Milestone gate approved GO by JOB-OWN-001 (`knowledge/distilled/2026-03-02__milestone-packet__tde-kernel-s1-s3-gate-for-job-own-001-v1.md`).
+- [x] TDE-2026-008 | Executed WO-2026-TDE-KERNEL-S4 (canary runtime wiring + cycle artifact + fail-closed approval route evidence).
+- [x] TDE-2026-009 | Formal acceptance sign-off completed for WO-2026-TDE-KERNEL-S4 (JOB-PROD-001 + JOB-ARC-001, owner pre-authorized).
+- [x] TDE-2026-010 | Executed WO-2026-TDE-KERNEL-S5 (scheduling contract + stable status artifact counts/reasons + stalled-threshold guardrail alert + 3 clean-cycle simulation evidence).
+- [x] TDE-2026-011 | Formal acceptance sign-off completed for WO-2026-TDE-KERNEL-S5 (JOB-PROD-001 + JOB-ARC-001, owner pre-authorized).
+- [x] TDE-2026-013 | Executed WO-2026-TDE-KERNEL-S6 (operational status summary artifact + rollout-readiness checklist + single guardrail operational note + end-to-end cycle evidence).
+- [x] TDE-2026-014 | Executed WO-2026-TDE-KERNEL-S7 (bounded expansion criteria + guardrail-preserving broader rollout checklist + broadened-scope simulated cycle evidence).
+- [x] TDE-2026-015 | Executed WO-2026-TDE-KERNEL-S8 (automated S4-S7 consolidated milestone snapshot + missing/stale artifact reliability checks + S8 evidence artifact).
+- [x] TDE-2026-016 | Formal acceptance sign-off completed for WO-2026-TDE-KERNEL-S8 (JOB-PROD-001 + JOB-ARC-001, owner pre-authorized).
+- [x] WO-2026-TDE-KERNEL-S1 | Implemented TDE kernel thin-slice scaffolding (T1–T7 acceptance runner + anti-stall heartbeat/cron hook contract + verification evidence).
