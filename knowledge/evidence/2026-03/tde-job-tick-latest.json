@@ -1,9 +1,9 @@
 {
   "artifactType": "tde_job_tick",
   "schemaVersion": "1.0.0",
-  "tick_id": "job-tick-20260313-152918",
+  "tick_id": "job-tick-20260313-182814",
   "trigger_source": "cron",
-  "timestamp": "2026-03-13T15:29:18.936490+00:00",
+  "timestamp": "2026-03-13T18:28:14.145765+00:00",
   "job_id": "JOB-PROD-001",
   "binding_id": "BIND-JOB-PROD-001-ACTIVE",
   "actor_id": "lyra",
@@ -31,7 +31,7 @@
     "binding_source": "registry_exact",
     "binding_status": "active"
   },
-  "claim_limit": 0,
+  "claim_limit": 1,
   "claimed": [],
   "mutations": [],
   "idempotency_references": [],
