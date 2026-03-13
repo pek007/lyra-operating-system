@@ -229,9 +229,9 @@ This policy feeds into later layers:
 
 ## Suggested next follow-on work
 1. Decide where this shaping layer lives in runtime architecture (Task Management, Interfaces, or a dedicated formation service inside TDE).
-2. Pilot the capability on one real request class, such as "build a basic TDE GUI".
-3. Decide whether formation should output only a formation record first, or also create canonical objective/task artifacts in the same cycle.
-4. Implement the thin v1 creator for the first approved family.
+2. Decide whether formation should output only a formation record first, or also create canonical objective/task artifacts in the same cycle.
+3. Expand beyond the initial small request-class table toward a more general shaping layer.
+4. Decide when to introduce clarification dialogues for partially specified requests instead of assumption-first formation.
 
 ## Machine-readable contract added
 The first v1 schema for the intent intake / formation artifact is now defined in:
@@ -240,6 +240,17 @@ The first v1 schema for the intent intake / formation artifact is now defined in
 ## First creation mapping added
 The first workflow-family mapping from formation output into canonical objective/task creation is now defined in:
 - `products/task-management/07-decisions/TDE_FORMATION_TO_CANONICAL_CREATION_MAPPING_V1.md`
+
+## First thin intake runtime added
+A first thin request-class-based intake utility now exists at:
+- `tools/tde_intent_intake.py`
+
+Current supported request classes:
+- `basic_tde_gui`
+- `internal_tool`
+- `runtime_hardening`
+- `research_request`
+- `review_audit_request`
 
 ## Bottom line
 The next missing TDE layer is not just more execution logic.

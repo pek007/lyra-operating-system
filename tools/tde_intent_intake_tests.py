@@ -5,21 +5,27 @@ import json
 import tempfile
 from pathlib import Path
 
-from tde_intent_intake import detect_request_class, form_basic_gui_request
+from tde_intent_intake import detect_request_class, REQUEST_CLASS_TABLE
 from tde_formation_creator import create_from_formation
 
 
 def run_tests() -> None:
     assert detect_request_class('Create a basic GUI for TDE') == 'basic_tde_gui'
-    assert detect_request_class('Investigate database performance') is None
+    assert detect_request_class('Build an internal tool for TDE operators') == 'internal_tool'
+    assert detect_request_class('Do runtime hardening for TDE') == 'runtime_hardening'
+    assert detect_request_class('Research the best approach for staging') == 'research_request'
+    assert detect_request_class('Review the TDE runtime promotion process') == 'review_audit_request'
+    assert detect_request_class('Plan a picnic') is None
 
-    formation = form_basic_gui_request(
+    for request_class, fn in REQUEST_CLASS_TABLE.items():
+        formation = fn(request_text=f'test request for {request_class}', source_ref=f'telegram:test:{request_class}')
+        assert formation['artifactType'] == 'tde_intent_formation_record'
+        assert formation['proposed_workflow_family'] == 'implementation_verification_readiness'
+
+    formation = REQUEST_CLASS_TABLE['basic_tde_gui'](
         request_text='Create a basic GUI for TDE',
         source_ref='telegram:test:gui',
     )
-    assert formation['artifactType'] == 'tde_intent_formation_record'
-    assert formation['proposed_workflow_family'] == 'implementation_verification_readiness'
-
     with tempfile.TemporaryDirectory() as td:
         root = Path(td)
         formation_path = root / 'formation.json'
