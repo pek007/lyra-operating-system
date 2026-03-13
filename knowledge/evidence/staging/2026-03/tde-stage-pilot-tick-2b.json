@@ -1,0 +1,134 @@
+{
+  "artifactType": "tde_job_tick",
+  "schemaVersion": "1.0.0",
+  "tick_id": "job-tick-20260313-161038",
+  "trigger_source": "cron",
+  "timestamp": "2026-03-13T16:10:38.523972+00:00",
+  "job_id": "JOB-PROD-001",
+  "binding_id": "BIND-JOB-PROD-001-ACTIVE",
+  "actor_id": "lyra",
+  "session_key": "cron:tde-job-runner-v1",
+  "objective_linkage": {
+    "objective_id": "OBJ-TDE-FOUNDATION",
+    "objective_checkpoint": "S16",
+    "rationale_trace": "TDE-2026-027-objective-linkage"
+  },
+  "objective_registry_context": {
+    "registry_path": "os/runtime/staging/tde_objectives.json",
+    "registry_loaded": true
+  },
+  "binding_context": {
+    "active_binding": {
+      "binding_id": "BIND-JOB-PROD-001-ACTIVE",
+      "job_id": "JOB-PROD-001",
+      "actor_id": "lyra",
+      "session_key": "cron:tde-job-runner-v1",
+      "status": "active",
+      "binding_epoch": 1,
+      "updated_at": "2026-03-13T15:50:00Z",
+      "expires_at": "2026-12-31T23:59:59+00:00"
+    },
+    "binding_source": "registry_exact",
+    "binding_status": "active"
+  },
+  "claim_limit": 1,
+  "claimed": [
+    "TDE-STAGE-RESEARCH-001"
+  ],
+  "mutations": [
+    {
+      "task_id": "TDE-STAGE-RESEARCH-001",
+      "request_id": "job-tick-20260313-161038-0",
+      "idempotency_key": "job-tick-20260313-161038:TDE-STAGE-RESEARCH-001",
+      "policy_decision_id": "pdr-job-tick-20260313-161038-0",
+      "audit_link": "audit://tde/job-tick-20260313-161038-0",
+      "status": "executed",
+      "binding_status": "active",
+      "decision_policy": {
+        "policy_ref": "products/task-management/07-decisions/REFERENCE_TDE_POLICY_ENVELOPE_IMPLEMENTATION_VERIFICATION_V1.json",
+        "resolved_path": "/Users/lyra/.openclaw/workspace/products/task-management/07-decisions/REFERENCE_TDE_POLICY_ENVELOPE_IMPLEMENTATION_VERIFICATION_V1.json",
+        "workflow_family": "implementation_verification_readiness",
+        "expected_outcome": "continue",
+        "decision_record_path": "knowledge/evidence/staging/2026-03/tde-decision-advancement-tde-stage-research-001-20260313-161038.json",
+        "escalation_package_path": null,
+        "research_activation": null,
+        "source_metadata": {
+          "workflow_family": "implementation_verification_readiness",
+          "decision_policy_ref": "products/task-management/07-decisions/REFERENCE_TDE_POLICY_ENVELOPE_IMPLEMENTATION_VERIFICATION_V1.json",
+          "decision_reentry_to_task_id": "TDE-STAGE-ORIGIN-001",
+          "decision_reentry_default_outcome": "continue",
+          "decision_reentry_next_task_id": "TDE-STAGE-CONTINUE-001",
+          "stage_id": "verification-research",
+          "activated_by": "decision:job-tick-20260313-161038:TDE-STAGE-ORIGIN-001:research_further",
+          "activated_at": "2026-03-13T16:10:38.477612+00:00",
+          "decision_research_round": 1
+        },
+        "forced_escalation_due_to_budget": false
+      },
+      "mutation_envelope": {
+        "job_id": "JOB-PROD-001",
+        "binding_id": "BIND-JOB-PROD-001-ACTIVE",
+        "policy_decision_id": "pdr-job-tick-20260313-161038-0",
+        "idempotency_key": "job-tick-20260313-161038:TDE-STAGE-RESEARCH-001",
+        "expected_version": 0,
+        "objective_linkage": {
+          "objective_id": "OBJ-TDE-FOUNDATION",
+          "objective_checkpoint": "S16",
+          "rationale_trace": "TDE-2026-027-objective-linkage"
+        }
+      }
+    }
+  ],
+  "idempotency_references": [
+    "job-tick-20260313-161038:TDE-STAGE-RESEARCH-001"
+  ],
+  "writeback": {
+    "applied": true,
+    "reason": null,
+    "moved": [
+      "TDE-STAGE-RESEARCH-001"
+    ],
+    "targetSection": "Waiting"
+  },
+  "decisions": [
+    {
+      "origin_task_id": "TDE-STAGE-ORIGIN-001",
+      "reentry_from_task_id": "TDE-STAGE-RESEARCH-001",
+      "selected_outcome": "continue",
+      "decision_record_path": "knowledge/evidence/staging/2026-03/tde-decision-advancement-tde-stage-origin-001-20260313-161038.json",
+      "next_task_id": "TDE-STAGE-CONTINUE-001",
+      "activation": {
+        "applied": true,
+        "reason": null,
+        "task_id": "TDE-STAGE-CONTINUE-001",
+        "activated_at": "2026-03-13T16:10:38.523510+00:00"
+      }
+    }
+  ],
+  "evidence_outputs": [
+    "knowledge/evidence/staging/2026-03/tde-stage-pilot-tick-2b.json",
+    "knowledge/evidence/staging/2026-03/tde-decision-advancement-tde-stage-research-001-20260313-161038.json",
+    "knowledge/evidence/staging/2026-03/tde-decision-advancement-tde-stage-origin-001-20260313-161038.json"
+  ],
+  "outcomes": {
+    "progressed": 1,
+    "blocked_pending_approval": 0,
+    "failed_validation": 0,
+    "no_work": 0,
+    "reauth_required": 0
+  },
+  "status": "ok",
+  "dry_run": false,
+  "chaining": {
+    "enabled": true,
+    "promoted": [],
+    "skipped": [],
+    "applied": {
+      "applied": 0,
+      "task_ids": []
+    },
+    "dry_run": false
+  },
+  "fail_closed": false,
+  "fail_closed_reason": null
+}

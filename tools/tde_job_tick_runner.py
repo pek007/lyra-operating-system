@@ -31,6 +31,15 @@ from tde_chaining import evaluate_ready_promotions
 TASK_LINE_RE = re.compile(r"^- \[ \] (?P<id>[A-Z0-9-]+) \| (?P<title>.+)$")
 
 
+def _is_claimable_task(task: dict[str, Any]) -> bool:
+    if task.get("state") != "ready":
+        return False
+    metadata = task.get("metadata") or {}
+    if metadata.get("decision_claim_blocked") is True:
+        return False
+    return True
+
+
 def _iso_now() -> str:
     return datetime.now(timezone.utc).isoformat()
 
@@ -598,7 +607,7 @@ def run_job_tick(
             artifact_path.write_text(json.dumps(artifact, indent=2) + "\n", encoding="utf-8")
             return artifact
 
-        ready = [t for t in tasks if t.get("state") == "ready"]
+        ready = [t for t in tasks if _is_claimable_task(t)]
         claimed = ready[: max(0, max_claim)]
         if dry_run:
             claimed = []
@@ -772,7 +781,11 @@ def run_job_tick(
                         )
                         try:
                             from tde_state_store import update_task_metadata as state_update_task_metadata
-                            state_update_task_metadata(canonical_conn, item["id"], {"decision_research_round": next_round})
+                            state_update_task_metadata(canonical_conn, item["id"], {
+                                "decision_research_round": next_round,
+                                "decision_claim_blocked": True,
+                                "decision_active_research_task_id": next_task_id,
+                            })
                             state_update_task_metadata(canonical_conn, next_task_id, {
                                 "decision_reentry_to_task_id": item["id"],
                                 "decision_research_round": next_round,
@@ -922,6 +935,14 @@ def run_job_tick(
                         )
                         action["next_task_id"] = next_task_id
                         action["activation"] = activation
+                    try:
+                        from tde_state_store import update_task_metadata as state_update_task_metadata
+                        state_update_task_metadata(canonical_conn, origin_task_id, {
+                            "decision_claim_blocked": False,
+                            "decision_active_research_task_id": None,
+                        })
+                    except Exception:
+                        pass
                 elif reentry_outcome == "escalate":
                     esc_path = write_escalation_package(
                         artifact_dir=decision_artifact_dir,
@@ -933,6 +954,14 @@ def run_job_tick(
                     )
                     decision_artifacts.append(esc_path)
                     action["escalation_package_path"] = esc_path
+                    try:
+                        from tde_state_store import update_task_metadata as state_update_task_metadata
+                        state_update_task_metadata(canonical_conn, origin_task_id, {
+                            "decision_claim_blocked": False,
+                            "decision_active_research_task_id": None,
+                        })
+                    except Exception:
+                        pass
                 reentry_actions.append(action)
             if reentry_actions:
                 state_export_tasks(canonical_conn, writeback_tasks_path or tasks_path)

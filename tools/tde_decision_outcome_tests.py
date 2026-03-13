@@ -57,6 +57,8 @@ def test_research_further() -> None:
         assert result["mutations"][0]["decision_policy"]["research_activation"]["applied"] is True
         research_row = conn.execute("SELECT status FROM tasks WHERE task_id='TDE-RESEARCH-001'").fetchone()
         assert research_row[0] == "Active"
+        origin_meta = conn.execute("SELECT metadata_json FROM tasks WHERE task_id='TDE-RF-001'").fetchone()[0]
+        assert '"decision_claim_blocked":true' in origin_meta
 
 
 def test_reentry_after_research_completion() -> None:

@@ -70,15 +70,15 @@
 ## Triage
 
 ## Active
+- [ ] TDE-STAGE-CONTINUE-001 | Pilot continue task
+  <!-- tde:metadata {"activated_at": "2026-03-13T16:10:38.523510+00:00", "activated_by": "decision:job-tick-20260313-161038:TDE-STAGE-ORIGIN-001:reentry_continue", "decision_policy_ref": "products/task-management/07-decisions/REFERENCE_TDE_POLICY_ENVELOPE_IMPLEMENTATION_VERIFICATION_V1.json", "stage_id": "readiness-review", "workflow_family": "implementation_verification_readiness"} -->
 - [ ] TDE-STAGE-ORIGIN-001 | Pilot origin task
   <!-- tde:metadata {"decision_policy_ref": "products/task-management/07-decisions/REFERENCE_TDE_POLICY_ENVELOPE_IMPLEMENTATION_VERIFICATION_V1.json", "stage_id": "verification", "workflow_family": "implementation_verification_readiness"} -->
-- [ ] TDE-STAGE-RESEARCH-001 | Pilot research task
-  <!-- tde:metadata {"activated_at": "2026-03-13T16:01:08.367354+00:00", "activated_by": "decision:job-tick-20260313-160108:TDE-STAGE-ORIGIN-001:research_further", "decision_policy_ref": "products/task-management/07-decisions/REFERENCE_TDE_POLICY_ENVELOPE_IMPLEMENTATION_VERIFICATION_V1.json", "stage_id": "verification-research", "workflow_family": "implementation_verification_readiness"} -->
 
 ## Waiting
 - [x] OPS-2026-023 | Sprint 3 closeout pack (release notes + tag + vNext backlog update) after QA pass
-- [ ] TDE-STAGE-CONTINUE-001 | Pilot continue task
-  <!-- tde:metadata {"decision_policy_ref": "products/task-management/07-decisions/REFERENCE_TDE_POLICY_ENVELOPE_IMPLEMENTATION_VERIFICATION_V1.json", "stage_id": "readiness-review", "workflow_family": "implementation_verification_readiness"} -->
+- [ ] TDE-STAGE-RESEARCH-001 | Pilot research task
+  <!-- tde:metadata {"activated_at": "2026-03-13T16:10:38.477612+00:00", "activated_by": "decision:job-tick-20260313-161038:TDE-STAGE-ORIGIN-001:research_further", "decision_policy_ref": "products/task-management/07-decisions/REFERENCE_TDE_POLICY_ENVELOPE_IMPLEMENTATION_VERIFICATION_V1.json", "stage_id": "verification-research", "workflow_family": "implementation_verification_readiness"} -->
 
 ## Done
 - [x] IMP-AUTO-20260227-01 | Added lightweight markdown link-check script (`tools/markdown_link_check.py`) with cron-safe scope filters.
