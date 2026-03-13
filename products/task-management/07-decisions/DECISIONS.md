@@ -35,9 +35,11 @@ Capture the major product decisions that shape Task Management so the product do
   - `products/delivery/04-execution/TDE_UI_PILOT_DELIVERY_CONTRACT_V1.md`
   - `ONE_ITERATION_TDE_UI_PILOT_V1.md`
 
-## Related decision artifact
+## Related decision artifacts
 - `07-decisions/DELIVERY_MODE_DECISION_PXS_V1.md`
+- `07-decisions/TDE_DECISION_TO_ADVANCEMENT_POLICY_V1.md`
 
 ## Next decisions likely needed
 - what evidence threshold should define operational readiness for broader use
 - when the `pxs` interface should evolve from operating-contract form into a stronger packaged or schema-backed interface
+- how the decision-to-advancement policy should be expressed in schema/runtime form for workflow-family delegation
