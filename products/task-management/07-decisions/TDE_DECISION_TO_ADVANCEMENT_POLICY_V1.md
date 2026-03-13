@@ -325,6 +325,9 @@ These cover:
 A first reference envelope is also added at:
 - `products/task-management/07-decisions/REFERENCE_TDE_POLICY_ENVELOPE_IMPLEMENTATION_VERIFICATION_V1.json`
 
+The first concrete pilot workflow-family mapping is defined at:
+- `products/task-management/07-decisions/TDE_PILOT_WORKFLOW_FAMILY_IMPLEMENTATION_VERIFICATION_READINESS_V1.md`
+
 ## Bottom line
 The missing bridge is real.
 
