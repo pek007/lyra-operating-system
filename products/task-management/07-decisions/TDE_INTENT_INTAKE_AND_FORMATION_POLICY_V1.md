@@ -257,6 +257,13 @@ Current clarification-mode behavior:
 - with explicit `required_clarifications`
 - and canonical creation correctly refuses to proceed from non-execution-ready formation records
 
+## First integrated request-entry workflow added
+The first higher-level request-entry workflow is now defined in:
+- `products/task-management/07-decisions/TDE_REQUEST_ENTRY_WORKFLOW_V1.md`
+
+And implemented in:
+- `tools/tde_request_entry.py`
+
 ## Bottom line
 The next missing TDE layer is not just more execution logic.
 It is the ability to turn human intent into a professionally useful first work system.
