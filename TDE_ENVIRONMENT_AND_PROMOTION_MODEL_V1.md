@@ -312,11 +312,14 @@ Create a TDE-specific promote/rollback checklist and release packet.
 Restrict live production changes to promoted candidates only.
 
 ## Minimum artifacts to add next
-1. Environment naming/path convention
-2. Staging runtime setup note
-3. TDE runtime promotion checklist
-4. TDE runtime rollback checklist
-5. Optional release-envelope template for runtime changes
+1. Staging runtime setup note
+2. TDE runtime promotion checklist
+3. TDE runtime rollback checklist
+4. Optional release-envelope template for runtime changes
+
+## Naming/path convention added
+The first concrete environment naming/path convention is now defined in:
+- `TDE_ENVIRONMENT_PATH_CONVENTION_V1.md`
 
 ## Bottom line
 Yes, we are currently working in a live production-adjacent environment.

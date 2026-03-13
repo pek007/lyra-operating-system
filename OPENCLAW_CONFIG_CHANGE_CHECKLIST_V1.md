@@ -20,6 +20,11 @@
 - [ ] Channel health verified
 - [ ] Affected workflow tested
 
+## TDE runtime path discipline
+- [ ] If this change affects TDE runtime behavior, confirm target environment (`dev`|`staging`|`prod`)
+- [ ] Confirm DB/objective/binding/evidence paths are environment-scoped per `TDE_ENVIRONMENT_PATH_CONVENTION_V1.md`
+- [ ] Confirm no cron-enabled environment is pointing at a shared runtime DB/path
+
 ## If something goes wrong
 - [ ] Restore backup
 - [ ] Restart gateway
