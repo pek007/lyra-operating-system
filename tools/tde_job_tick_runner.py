@@ -13,6 +13,7 @@ from pathlib import Path
 from typing import Any
 
 from tde_kernel import ActionRequest, TDEKernel
+from tde_decision_escalation import write_escalation_package
 from tde_decision_policy import validate_task_policy_binding
 from tde_state_store import connect as state_connect
 from tde_state_store import init_schema as state_init_schema
@@ -32,11 +33,17 @@ def _iso_now() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
-def _write_decision_advancement_record(*, artifact_dir: Path, tick_id: str, task_id: str, objective_id: str | None, metadata: dict[str, Any], policy_binding: dict[str, Any]) -> str:
+def _write_decision_advancement_record(*, artifact_dir: Path, tick_id: str, task_id: str, objective_id: str | None, metadata: dict[str, Any], policy_binding: dict[str, Any], selected_outcome: str = "continue") -> str:
     artifact_dir.mkdir(parents=True, exist_ok=True)
     ts = datetime.now(timezone.utc).strftime('%Y%m%d-%H%M%S')
     workflow_family = policy_binding.get("workflow_family") or metadata.get("workflow_family") or "unknown"
     path = artifact_dir / f"tde-decision-advancement-{task_id.lower()}-{ts}.json"
+    authority_result = "within_policy" if selected_outcome == "continue" else ("insufficient_evidence" if selected_outcome == "research_further" else "requires_escalation")
+    rationale = {
+        "continue": "Autonomous continuation authorized under the referenced decision policy envelope for the continue path.",
+        "research_further": "A bounded research-further loop was selected under the referenced decision policy envelope before continuation.",
+        "escalate": "The task outcome was escalated to the Ultimate Decision-maker under the referenced decision policy envelope.",
+    }.get(selected_outcome, "Decision outcome recorded under the referenced decision policy envelope.")
     record = {
         "artifactType": "tde_decision_advancement_record",
         "schemaVersion": "1.0.0",
@@ -47,16 +54,16 @@ def _write_decision_advancement_record(*, artifact_dir: Path, tick_id: str, task
         "stage_id": metadata.get("stage_id"),
         "proposing_role": "Product Owner",
         "escalation_role": "Ultimate Decision-maker",
-        "recommended_outcome": "continue",
-        "selected_outcome": "continue",
-        "recommended_next_task_id": None,
-        "recommended_branch_id": None,
-        "research_required": False,
+        "recommended_outcome": selected_outcome,
+        "selected_outcome": selected_outcome,
+        "recommended_next_task_id": metadata.get("decision_next_task_id"),
+        "recommended_branch_id": metadata.get("decision_branch_id"),
+        "research_required": selected_outcome == "research_further",
         "confidence_score": None,
         "evidence_refs": [],
-        "authority_check_result": "within_policy",
-        "escalation_reason": None,
-        "decision_rationale": "Autonomous continuation authorized under the referenced decision policy envelope for the continue path.",
+        "authority_check_result": authority_result,
+        "escalation_reason": metadata.get("decision_escalation_reason") if selected_outcome == "escalate" else None,
+        "decision_rationale": rationale,
         "policy_envelope_ref": policy_binding.get("policy_ref"),
         "decision_trace_ref": None,
         "decided_at": _iso_now(),
@@ -657,10 +664,11 @@ def run_job_tick(
             idempotency_key = f"{tick_id}:{item['id']}"
             idempotency_refs.append(idempotency_key)
 
+            requested_outcome = (item.get("metadata") or {}).get("decision_outcome_hint", "continue")
             policy_binding = validate_task_policy_binding(
                 item.get("metadata") or {},
                 workspace_root=workspace_root,
-                expected_outcome="continue",
+                expected_outcome=requested_outcome,
             ) if canonical_store == "db" and (item.get("metadata") or {}).get("workflow_family") else {"ok": True}
             if not policy_binding.get("ok", False):
                 outcomes["failed_validation"] += 1
@@ -676,7 +684,7 @@ def run_job_tick(
                             "policy_ref": policy_binding.get("policy_ref"),
                             "resolved_path": policy_binding.get("resolved_path"),
                             "workflow_family": policy_binding.get("workflow_family"),
-                            "expected_outcome": "continue",
+                            "expected_outcome": requested_outcome,
                         },
                     }
                 )
@@ -737,27 +745,37 @@ def run_job_tick(
                 )
                 continue
 
-            req = ActionRequest(
-                request_id=f"{tick_id}-{index}",
-                idempotency_key=idempotency_key,
-                intent_hash=f"job-tick-progress:{item['id']}",
-                actor=actor_id,
-                job=job_id,
-                action="task.transition",
-                target_id=item["id"],
-                expected_version=mutation_envelope["expected_version"],
-                risk="low",
-            )
-            result = kernel.execute(req)
-            status = result["status"]
+            if requested_outcome == "research_further":
+                status = "research_further"
+                result = {"policy_decision_id": f"policy:{tick_id}:{item['id']}:research_further", "audit_link": None}
+            elif requested_outcome == "escalate":
+                status = "escalate"
+                result = {"policy_decision_id": f"policy:{tick_id}:{item['id']}:escalate", "audit_link": None}
+            else:
+                req = ActionRequest(
+                    request_id=f"{tick_id}-{index}",
+                    idempotency_key=idempotency_key,
+                    intent_hash=f"job-tick-progress:{item['id']}",
+                    actor=actor_id,
+                    job=job_id,
+                    action="task.transition",
+                    target_id=item["id"],
+                    expected_version=mutation_envelope["expected_version"],
+                    risk="low",
+                )
+                result = kernel.execute(req)
+                status = result["status"]
             if status in {"executed", "replay"}:
                 outcomes["progressed"] += 1
             elif status == "blocked_pending_approval":
                 outcomes["blocked_pending_approval"] += 1
+            elif status in {"research_further", "escalate"}:
+                outcomes["progressed"] += 1
             else:
                 outcomes["failed_validation"] += 1
             decision_record_path = None
-            if status in {"executed", "replay"} and policy_binding.get("policy_ref"):
+            escalation_package_path = None
+            if status in {"executed", "replay", "research_further", "escalate"} and policy_binding.get("policy_ref"):
                 decision_record_path = _write_decision_advancement_record(
                     artifact_dir=decision_artifact_dir,
                     tick_id=tick_id,
@@ -765,13 +783,25 @@ def run_job_tick(
                     objective_id=objective_id,
                     metadata=item.get("metadata") or {},
                     policy_binding=policy_binding,
+                    selected_outcome=requested_outcome,
                 )
                 decision_artifacts.append(decision_record_path)
+                if status == "escalate":
+                    escalation_package_path = write_escalation_package(
+                        artifact_dir=decision_artifact_dir,
+                        tick_id=tick_id,
+                        task_id=item["id"],
+                        objective_id=objective_id,
+                        metadata=item.get("metadata") or {},
+                        workflow_family=policy_binding.get("workflow_family"),
+                    )
+                    decision_artifacts.append(escalation_package_path)
 
+            request_id = f"{tick_id}-{index}"
             mutations.append(
                 {
                     "task_id": item["id"],
-                    "request_id": req.request_id,
+                    "request_id": request_id,
                     "idempotency_key": idempotency_key,
                     "policy_decision_id": result.get("policy_decision_id"),
                     "audit_link": result.get("audit_link"),
@@ -781,8 +811,9 @@ def run_job_tick(
                         "policy_ref": policy_binding.get("policy_ref"),
                         "resolved_path": policy_binding.get("resolved_path"),
                         "workflow_family": policy_binding.get("workflow_family"),
-                        "expected_outcome": "continue",
+                        "expected_outcome": requested_outcome,
                         "decision_record_path": decision_record_path,
+                        "escalation_package_path": escalation_package_path,
                     },
                     "mutation_envelope": {
                         **mutation_envelope,

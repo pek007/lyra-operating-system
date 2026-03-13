@@ -135,7 +135,7 @@ def validate_task_policy_binding(metadata: dict[str, Any], *, workspace_root: Pa
         }
 
     allowed = envelope.get("allowed_outcomes") or []
-    if expected_outcome not in allowed:
+    if expected_outcome != "escalate" and expected_outcome not in allowed:
         return {
             "ok": False,
             "reason": "decision_outcome_not_authorized",
