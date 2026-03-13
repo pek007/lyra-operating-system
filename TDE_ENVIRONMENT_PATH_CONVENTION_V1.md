@@ -241,13 +241,25 @@ Until path cutover is complete:
 5. Legacy unscoped paths are transitional only and must not be treated as the long-term standard.
 
 ## Immediate next implementation targets
-1. Create the directory skeleton for `dev`, `staging`, and `prod` under:
-   - `os/runtime/`
-   - `os/config/`
-   - `knowledge/evidence/`
-2. Add environment-aware path flags to TDE runtime scripts.
-3. Stand up `staging` first.
-4. Keep `prod` on legacy paths until staging proves stable.
+1. Add environment-aware path flags to TDE runtime scripts.
+2. Stand up `staging` first.
+3. Keep `prod` on legacy paths until staging proves stable.
+4. Create the first staging-only end-to-end validation run.
+
+## Initial embodiment status
+The first directory skeleton now exists for:
+- `os/runtime/dev/`
+- `os/runtime/staging/`
+- `os/runtime/prod/`
+- `os/config/dev/cron/`
+- `os/config/staging/cron/`
+- `os/config/prod/cron/`
+- `knowledge/evidence/dev/`
+- `knowledge/evidence/staging/`
+- `knowledge/evidence/prod/`
+
+The first staging setup note is defined in:
+- `TDE_STAGING_RUNTIME_SETUP_NOTE_V1.md`
 
 ## Bottom line
 This convention gives us a concrete near-term separation model without requiring a full multi-repo or multi-host setup immediately.
