@@ -23,6 +23,7 @@ from tde_state_store import record_shadow_tick as state_record_shadow_tick
 from tde_state_store import read_tasks as state_read_tasks
 from tde_state_store import export_tasks as state_export_tasks
 from tde_state_store import apply_low_risk_writeback_db as state_apply_low_risk_writeback_db
+from tde_state_store import activate_task_db as state_activate_task_db
 from tde_state_store import apply_ready_promotions as state_apply_ready_promotions
 from tde_chaining import evaluate_ready_promotions
 
@@ -745,9 +746,18 @@ def run_job_tick(
                 )
                 continue
 
+            research_activation = None
             if requested_outcome == "research_further":
                 status = "research_further"
                 result = {"policy_decision_id": f"policy:{tick_id}:{item['id']}:research_further", "audit_link": None}
+                next_task_id = (item.get("metadata") or {}).get("decision_next_task_id")
+                if canonical_store == "db" and canonical_conn is not None and next_task_id and not dry_run:
+                    research_activation = state_activate_task_db(
+                        canonical_conn,
+                        next_task_id,
+                        activated_by=f"decision:{tick_id}:{item['id']}:research_further",
+                        activated_at=_iso_now(),
+                    )
             elif requested_outcome == "escalate":
                 status = "escalate"
                 result = {"policy_decision_id": f"policy:{tick_id}:{item['id']}:escalate", "audit_link": None}
@@ -814,6 +824,7 @@ def run_job_tick(
                         "expected_outcome": requested_outcome,
                         "decision_record_path": decision_record_path,
                         "escalation_package_path": escalation_package_path,
+                        "research_activation": research_activation,
                     },
                     "mutation_envelope": {
                         **mutation_envelope,

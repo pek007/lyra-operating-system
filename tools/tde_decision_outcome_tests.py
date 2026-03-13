@@ -14,7 +14,7 @@ POLICY_REF = "products/task-management/07-decisions/REFERENCE_TDE_POLICY_ENVELOP
 def _setup(root: Path, task_id: str) -> tuple[Path, Path, Path, Path]:
     tasks = root / "TASKS.md"
     tasks.write_text(
-        f"""# TASKS.md\n\n## Inbox\n\n## Triage\n\n## Active\n- [ ] {task_id} | Pilot task\n\n## Waiting\n\n## Done\n""",
+        f"""# TASKS.md\n\n## Inbox\n\n## Triage\n\n## Active\n- [ ] {task_id} | Pilot task\n\n## Waiting\n- [ ] TDE-RESEARCH-001 | Research follow-up\n\n## Done\n""",
         encoding="utf-8",
     )
     bindings = root / "bindings.json"
@@ -54,6 +54,9 @@ def test_research_further() -> None:
         assert result["status"] == "ok"
         assert result["mutations"][0]["status"] == "research_further"
         assert result["mutations"][0]["decision_policy"]["decision_record_path"]
+        assert result["mutations"][0]["decision_policy"]["research_activation"]["applied"] is True
+        research_row = conn.execute("SELECT status FROM tasks WHERE task_id='TDE-RESEARCH-001'").fetchone()
+        assert research_row[0] == "Active"
 
 
 def test_escalate() -> None:
