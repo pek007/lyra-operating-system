@@ -131,18 +131,30 @@ def _to_markdown(receipt: dict[str, Any]) -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Generate deterministic activation execution receipt from latest release envelope")
+    parser.add_argument("--env", choices=["dev", "staging", "prod"], default=None)
     parser.add_argument("--envelope-path", default=None, help="Explicit envelope JSON path; if omitted, latest matching file is used")
-    parser.add_argument("--envelope-glob", default="knowledge/evidence/2026-03/tde-release-envelope-*.json")
-    parser.add_argument("--output-json", default="knowledge/evidence/2026-03/tde-activation-execution-receipt.json")
-    parser.add_argument("--output-md", default="knowledge/evidence/2026-03/tde-activation-execution-receipt.md")
+    parser.add_argument("--envelope-glob", default=None)
+    parser.add_argument("--output-json", default=None)
+    parser.add_argument("--output-md", default=None)
     args = parser.parse_args()
 
-    envelope_path = _resolve_latest_envelope(args.envelope_path, args.envelope_glob)
+    if args.env:
+        period = datetime.now(timezone.utc).strftime('%Y-%m')
+        evidence_dir = Path(f"knowledge/evidence/{args.env}/{period}")
+        envelope_glob = args.envelope_glob or str(evidence_dir / "tde-release-envelope-*.json")
+        output_json = Path(args.output_json) if args.output_json else evidence_dir / "tde-activation-execution-receipt.json"
+        output_md = Path(args.output_md) if args.output_md else evidence_dir / "tde-activation-execution-receipt.md"
+    else:
+        envelope_glob = args.envelope_glob or "knowledge/evidence/2026-03/tde-release-envelope-*.json"
+        output_json = Path(args.output_json or "knowledge/evidence/2026-03/tde-activation-execution-receipt.json")
+        output_md = Path(args.output_md or "knowledge/evidence/2026-03/tde-activation-execution-receipt.md")
+
+    envelope_path = _resolve_latest_envelope(args.envelope_path, envelope_glob)
     envelope = _read_json(envelope_path)
     receipt = build_receipt(envelope, envelope_path)
 
-    out_json = Path(args.output_json)
-    out_md = Path(args.output_md)
+    out_json = output_json
+    out_md = output_md
     out_json.parent.mkdir(parents=True, exist_ok=True)
     out_json.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
     out_md.write_text(_to_markdown(receipt), encoding="utf-8")

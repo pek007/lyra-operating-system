@@ -132,16 +132,24 @@ def build_snapshot(evidence_dir: Path, stale_after_hours: int) -> dict[str, Any]
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Generate consolidated TDE milestone snapshot from S4-S7 artifacts")
-    parser.add_argument("--evidence-dir", default="knowledge/evidence/2026-03")
+    parser.add_argument("--env", choices=["dev", "staging", "prod"], default=None)
+    parser.add_argument("--evidence-dir", default=None)
     parser.add_argument("--stale-after-hours", type=int, default=24)
     parser.add_argument(
         "--output-path",
-        default="knowledge/evidence/2026-03/tde-milestone-s4-s7-snapshot.json",
+        default=None,
     )
     args = parser.parse_args()
 
-    snapshot = build_snapshot(Path(args.evidence_dir), stale_after_hours=args.stale_after_hours)
-    output_path = Path(args.output_path)
+    if args.env:
+        period = datetime.now(timezone.utc).strftime('%Y-%m')
+        evidence_dir = Path(args.evidence_dir) if args.evidence_dir else Path(f"knowledge/evidence/{args.env}/{period}")
+        output_path = Path(args.output_path) if args.output_path else evidence_dir / "tde-milestone-s4-s7-snapshot.json"
+    else:
+        evidence_dir = Path(args.evidence_dir or "knowledge/evidence/2026-03")
+        output_path = Path(args.output_path or "knowledge/evidence/2026-03/tde-milestone-s4-s7-snapshot.json")
+
+    snapshot = build_snapshot(evidence_dir, stale_after_hours=args.stale_after_hours)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(snapshot, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"snapshotPath": str(output_path), "integrity": snapshot["integrity"]}))

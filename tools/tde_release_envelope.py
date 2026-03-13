@@ -140,15 +140,26 @@ def _to_markdown(envelope: dict[str, Any]) -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build deterministic TDE release envelope with activation guard")
-    parser.add_argument("--snapshot-path", default="knowledge/evidence/2026-03/tde-milestone-s4-s7-snapshot.json")
-    parser.add_argument("--owner-packet-path", default="knowledge/evidence/2026-03/tde-owner-gate-packet.json")
-    parser.add_argument("--output-json", default="knowledge/evidence/2026-03/tde-release-envelope.json")
-    parser.add_argument("--output-md", default="knowledge/evidence/2026-03/tde-release-envelope.md")
+    parser.add_argument("--env", choices=["dev", "staging", "prod"], default=None)
+    parser.add_argument("--snapshot-path", default=None)
+    parser.add_argument("--owner-packet-path", default=None)
+    parser.add_argument("--output-json", default=None)
+    parser.add_argument("--output-md", default=None)
     parser.add_argument("--force-escalation-reason", default=None)
     args = parser.parse_args()
 
-    snapshot_path = Path(args.snapshot_path)
-    owner_packet_path = Path(args.owner_packet_path)
+    if args.env:
+        period = datetime.now(timezone.utc).strftime('%Y-%m')
+        evidence_dir = Path(f"knowledge/evidence/{args.env}/{period}")
+        snapshot_path = Path(args.snapshot_path) if args.snapshot_path else evidence_dir / "tde-milestone-s4-s7-snapshot.json"
+        owner_packet_path = Path(args.owner_packet_path) if args.owner_packet_path else evidence_dir / "tde-owner-gate-packet.json"
+        output_json = Path(args.output_json) if args.output_json else evidence_dir / "tde-release-envelope.json"
+        output_md = Path(args.output_md) if args.output_md else evidence_dir / "tde-release-envelope.md"
+    else:
+        snapshot_path = Path(args.snapshot_path or "knowledge/evidence/2026-03/tde-milestone-s4-s7-snapshot.json")
+        owner_packet_path = Path(args.owner_packet_path or "knowledge/evidence/2026-03/tde-owner-gate-packet.json")
+        output_json = Path(args.output_json or "knowledge/evidence/2026-03/tde-release-envelope.json")
+        output_md = Path(args.output_md or "knowledge/evidence/2026-03/tde-release-envelope.md")
     snapshot = _read_json(snapshot_path)
     owner_packet = _read_json(owner_packet_path)
 
@@ -160,8 +171,8 @@ def main() -> None:
         forced_escalation_reason=args.force_escalation_reason,
     )
 
-    out_json = Path(args.output_json)
-    out_md = Path(args.output_md)
+    out_json = output_json
+    out_md = output_md
     out_json.parent.mkdir(parents=True, exist_ok=True)
     out_json.write_text(json.dumps(envelope, indent=2) + "\n", encoding="utf-8")
     out_md.write_text(_to_markdown(envelope), encoding="utf-8")

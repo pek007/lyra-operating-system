@@ -156,10 +156,10 @@ python3 tools/tde_job_tick_runner.py \
 ```
 
 ## Immediate next implementation tasks
-1. Add environment-aware path flags/default helpers to `tde_job_tick_runner.py` and `tde_state_store.py`.
-2. Migrate the next ring of TDE evidence emitters away from legacy `knowledge/evidence/2026-03/...` defaults.
-3. Define the first staging promotion checklist.
-4. Decide whether staging should use seeded synthetic objectives/tasks or a curated production mirror for future validation cycles.
+1. Define the first staging promotion checklist.
+2. Decide whether staging should use seeded synthetic objectives/tasks or a curated production mirror for future validation cycles.
+3. Extend environment-aware pathing to the remaining canary/simulation/reporting scripts.
+4. Reduce legacy unscoped path usage in release/cutover documentation and helper scripts.
 
 ## Initial staging proof
 A first staging-only end-to-end tick has now been run with:
@@ -183,6 +183,21 @@ The core runtime scripts have also now been exercised directly in staging mode w
 Result:
 - native environment path resolution worked as intended
 - staging DB/evidence/registry paths were used automatically
+
+## Next-ring environment-resolution proof
+The next ring of TDE evidence/release scripts now also supports `--env dev|staging|prod`:
+- `tools/tde_milestone_snapshot.py`
+- `tools/tde_owner_gate_packet.py`
+- `tools/tde_release_envelope.py`
+- `tools/tde_activation_execution_receipt.py`
+
+A first staging-path proof has been run for:
+- `python3 tools/tde_milestone_snapshot.py --env staging`
+
+Result:
+- output landed in `knowledge/evidence/staging/2026-03/tde-milestone-s4-s7-snapshot.json`
+- path resolution worked as intended
+- artifact integrity correctly reflected the copied staging evidence set
 
 ## Bottom line
 The first professionalizing move is not a giant refactor.

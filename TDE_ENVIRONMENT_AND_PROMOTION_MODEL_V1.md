@@ -305,6 +305,12 @@ Stand up a staging TDE/OpenClaw runtime with:
 - isolated cron/tick hooks
 - isolated evidence directory
 
+Status update:
+- staging runtime root exists
+- staging-only tick path has been proven
+- core TDE runtime scripts support `--env`
+- next-ring release/evidence scripts support `--env`
+
 ### Phase 3 — Promotion contract
 Create a TDE-specific promote/rollback checklist and release packet.
 

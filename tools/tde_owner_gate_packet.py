@@ -121,22 +121,36 @@ def _to_markdown(packet: dict[str, Any]) -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Generate owner-facing TDE gate packet from latest milestone snapshot")
-    parser.add_argument("--snapshot-path", default="knowledge/evidence/2026-03/tde-milestone-s4-s7-snapshot.json")
-    parser.add_argument("--s4-status-path", default="knowledge/evidence/2026-03/tde-canary-status-latest.json")
-    parser.add_argument("--s7-cycle-path", default="knowledge/evidence/2026-03/tde-broader-scope-simulated-cycle.json")
-    parser.add_argument("--output-json", default="knowledge/evidence/2026-03/tde-owner-gate-packet.json")
-    parser.add_argument("--output-md", default="knowledge/evidence/2026-03/tde-owner-gate-packet.md")
+    parser.add_argument("--env", choices=["dev", "staging", "prod"], default=None)
+    parser.add_argument("--snapshot-path", default=None)
+    parser.add_argument("--s4-status-path", default=None)
+    parser.add_argument("--s7-cycle-path", default=None)
+    parser.add_argument("--output-json", default=None)
+    parser.add_argument("--output-md", default=None)
     args = parser.parse_args()
 
-    snapshot_path = Path(args.snapshot_path)
+    if args.env:
+        period = datetime.now(timezone.utc).strftime('%Y-%m')
+        evidence_dir = Path(f"knowledge/evidence/{args.env}/{period}")
+        snapshot_path = Path(args.snapshot_path) if args.snapshot_path else evidence_dir / "tde-milestone-s4-s7-snapshot.json"
+        s4_status_path = Path(args.s4_status_path) if args.s4_status_path else evidence_dir / "tde-canary-status-latest.json"
+        s7_cycle_path = Path(args.s7_cycle_path) if args.s7_cycle_path else evidence_dir / "tde-broader-scope-simulated-cycle.json"
+        output_json = Path(args.output_json) if args.output_json else evidence_dir / "tde-owner-gate-packet.json"
+        output_md = Path(args.output_md) if args.output_md else evidence_dir / "tde-owner-gate-packet.md"
+    else:
+        snapshot_path = Path(args.snapshot_path or "knowledge/evidence/2026-03/tde-milestone-s4-s7-snapshot.json")
+        s4_status_path = Path(args.s4_status_path or "knowledge/evidence/2026-03/tde-canary-status-latest.json")
+        s7_cycle_path = Path(args.s7_cycle_path or "knowledge/evidence/2026-03/tde-broader-scope-simulated-cycle.json")
+        output_json = Path(args.output_json or "knowledge/evidence/2026-03/tde-owner-gate-packet.json")
+        output_md = Path(args.output_md or "knowledge/evidence/2026-03/tde-owner-gate-packet.md")
     snapshot = _read_json(snapshot_path)
-    s4_status = _read_json(Path(args.s4_status_path))
-    s7_cycle = _read_json(Path(args.s7_cycle_path))
+    s4_status = _read_json(s4_status_path)
+    s7_cycle = _read_json(s7_cycle_path)
 
     packet = build_packet(snapshot, snapshot_path, s4_status=s4_status, s7_cycle=s7_cycle)
 
-    json_path = Path(args.output_json)
-    md_path = Path(args.output_md)
+    json_path = output_json
+    md_path = output_md
     json_path.parent.mkdir(parents=True, exist_ok=True)
     json_path.write_text(json.dumps(packet, indent=2) + "\n", encoding="utf-8")
     md_path.write_text(_to_markdown(packet), encoding="utf-8")
