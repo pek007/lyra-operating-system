@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lyra.local/schemas/tde_intent_formation_record/v1.0.0.schema.json",
+  "title": "TDE Intent Formation Record",
+  "type": "object",
+  "required": [
+    "artifactType",
+    "schemaVersion",
+    "formation_id",
+    "source_type",
+    "source_ref",
+    "interpreted_intent",
+    "request_type",
+    "specificity_level",
+    "actionability_status",
+    "assumptions",
+    "known_unknowns",
+    "proposed_objective",
+    "proposed_success_criteria",
+    "proposed_workflow_family",
+    "proposed_first_stage_set",
+    "proposed_first_task_set",
+    "required_clarifications",
+    "recommended_next_action",
+    "formed_at",
+    "formed_by_role"
+  ],
+  "properties": {
+    "artifactType": { "const": "tde_intent_formation_record" },
+    "schemaVersion": { "const": "1.0.0" },
+    "formation_id": { "type": "string", "minLength": 1 },
+    "source_type": {
+      "type": "string",
+      "enum": ["chat_request", "document_request", "api_request", "manual_entry"]
+    },
+    "source_ref": { "type": "string", "minLength": 1 },
+    "interpreted_intent": { "type": "string", "minLength": 5 },
+    "request_type": {
+      "type": "string",
+      "enum": [
+        "aspiration",
+        "objective_request",
+        "initiative_request",
+        "implementation_request",
+        "bug_fix_request",
+        "decision_request",
+        "review_audit_request",
+        "research_request"
+      ]
+    },
+    "specificity_level": {
+      "type": "string",
+      "enum": ["high", "medium", "low"]
+    },
+    "ambiguity_types": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "missing_scope",
+          "missing_constraints",
+          "missing_quality_bar",
+          "missing_environment_release_expectations",
+          "missing_audience_consumer",
+          "missing_authority_risk_posture",
+          "missing_success_criteria"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "actionability_status": {
+      "type": "string",
+      "enum": [
+        "executable_now",
+        "executable_with_assumptions",
+        "needs_clarification",
+        "needs_strategic_framing_first"
+      ]
+    },
+    "assumptions": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "known_unknowns": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "proposed_objective": {
+      "type": "object",
+      "required": ["objective_title", "objective_summary"],
+      "properties": {
+        "objective_title": { "type": "string", "minLength": 3 },
+        "objective_summary": { "type": "string", "minLength": 5 },
+        "objective_id": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "proposed_success_criteria": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "proposed_workflow_family": { "type": "string", "minLength": 1 },
+    "proposed_first_stage_set": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "proposed_first_task_set": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["task_title", "task_summary"],
+        "properties": {
+          "task_id": { "type": ["string", "null"] },
+          "task_title": { "type": "string", "minLength": 3 },
+          "task_summary": { "type": "string", "minLength": 5 },
+          "stage_id": { "type": ["string", "null"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "required_clarifications": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "recommended_next_action": {
+      "type": "string",
+      "enum": [
+        "proceed_directly",
+        "proceed_with_assumptions",
+        "ask_clarifying_questions",
+        "escalate_for_strategic_framing"
+      ]
+    },
+    "formation_rationale": { "type": ["string", "null"] },
+    "formed_at": { "type": "string", "format": "date-time" },
+    "formed_by_role": { "type": "string", "const": "Product Owner" }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "recommended_next_action": { "const": "ask_clarifying_questions" } },
+        "required": ["recommended_next_action"]
+      },
+      "then": {
+        "properties": { "required_clarifications": { "minItems": 1 } },
+        "required": ["required_clarifications"]
+      }
+    }
+  ],
+  "additionalProperties": false
+}

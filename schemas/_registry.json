@@ -40,5 +40,8 @@
   },
   "tde_decision_escalation_package": {
     "1.0.0": "schemas/tde_decision_escalation_package/v1.0.0.schema.json"
+  },
+  "tde_intent_formation_record": {
+    "1.0.0": "schemas/tde_intent_formation_record/v1.0.0.schema.json"
   }
 }
