@@ -17,15 +17,34 @@ def run_tests() -> None:
     assert detect_request_class('Review the TDE runtime promotion process') == 'review_audit_request'
     assert detect_request_class('Plan a picnic') is None
 
-    for request_class, fn in REQUEST_CLASS_TABLE.items():
-        formation = fn(request_text=f'test request for {request_class}', source_ref=f'telegram:test:{request_class}')
-        assert formation['artifactType'] == 'tde_intent_formation_record'
-        assert formation['proposed_workflow_family'] == 'implementation_verification_readiness'
-
-    formation = REQUEST_CLASS_TABLE['basic_tde_gui'](
+    gui_formation = REQUEST_CLASS_TABLE['basic_tde_gui'](
         request_text='Create a basic GUI for TDE',
         source_ref='telegram:test:gui',
     )
+    assert gui_formation['recommended_next_action'] == 'proceed_with_assumptions'
+
+    internal_tool_formation = REQUEST_CLASS_TABLE['internal_tool'](
+        request_text='Build an internal tool',
+        source_ref='telegram:test:internal-tool',
+    )
+    assert internal_tool_formation['recommended_next_action'] == 'ask_clarifying_questions'
+    assert len(internal_tool_formation['required_clarifications']) == 3
+
+    scoped_internal_tool = REQUEST_CLASS_TABLE['internal_tool'](
+        request_text='Build an internal tool for TDE operators dashboard',
+        source_ref='telegram:test:internal-tool-scoped',
+    )
+    assert scoped_internal_tool['recommended_next_action'] == 'proceed_with_assumptions'
+
+    for request_class, fn in REQUEST_CLASS_TABLE.items():
+        sample_text = 'test request for ' + request_class
+        if request_class == 'internal_tool':
+            sample_text = 'Build an internal tool for TDE operators dashboard'
+        formation = fn(request_text=sample_text, source_ref=f'telegram:test:{request_class}')
+        assert formation['artifactType'] == 'tde_intent_formation_record'
+        assert formation['proposed_workflow_family'] == 'implementation_verification_readiness'
+
+    formation = gui_formation
     with tempfile.TemporaryDirectory() as td:
         root = Path(td)
         formation_path = root / 'formation.json'

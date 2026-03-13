@@ -67,6 +67,40 @@ def form_basic_gui_request(*, request_text: str, source_ref: str) -> dict[str, A
 
 def form_internal_tool_request(*, request_text: str, source_ref: str) -> dict[str, Any]:
     base = _base_record(source_ref=source_ref, request_text=request_text)
+    text = request_text.lower()
+    if 'for ' not in text and 'scope' not in text and 'dashboard' not in text:
+        return {
+            **base,
+            "interpreted_intent": "Create an internal tool, but the intended scope and user need are still too underspecified for clean execution-ready formation.",
+            "request_type": "implementation_request",
+            "specificity_level": "low",
+            "ambiguity_types": ["missing_scope", "missing_success_criteria", "missing_audience_consumer"],
+            "actionability_status": "needs_clarification",
+            "assumptions": [],
+            "known_unknowns": [
+                "Who the internal tool is for.",
+                "What the primary user workflow is.",
+                "What counts as a successful first version."
+            ],
+            "proposed_objective": {
+                "objective_title": "Clarify internal tool request",
+                "objective_summary": "Clarify the intended audience, workflow, and scope for the requested internal tool before canonical work creation.",
+                "objective_id": None
+            },
+            "proposed_success_criteria": ["The internal tool request is clarified enough to form bounded canonical work."],
+            "proposed_workflow_family": "implementation_verification_readiness",
+            "proposed_first_stage_set": ["implementation"],
+            "proposed_first_task_set": [
+                {"task_id": None, "task_title": "Clarify internal tool intent", "task_summary": "Clarify the intended audience, workflow, and first-version boundary for the requested internal tool.", "stage_id": "implementation"}
+            ],
+            "required_clarifications": [
+                "Who is the primary user of the internal tool?",
+                "What is the main workflow or job the tool should support?",
+                "What should the first version definitely include or exclude?"
+            ],
+            "recommended_next_action": "ask_clarifying_questions",
+            "formation_rationale": f"The request is meaningful but too underspecified for professional assumption-based execution. Original request: {request_text}",
+        }
     return {
         **base,
         "interpreted_intent": "Create a bounded internal tool with a staging-first, implementation/verification flow.",

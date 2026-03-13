@@ -252,6 +252,11 @@ Current supported request classes:
 - `research_request`
 - `review_audit_request`
 
+Current clarification-mode behavior:
+- the intake layer can now emit `recommended_next_action = ask_clarifying_questions`
+- with explicit `required_clarifications`
+- and canonical creation correctly refuses to proceed from non-execution-ready formation records
+
 ## Bottom line
 The next missing TDE layer is not just more execution logic.
 It is the ability to turn human intent into a professionally useful first work system.
