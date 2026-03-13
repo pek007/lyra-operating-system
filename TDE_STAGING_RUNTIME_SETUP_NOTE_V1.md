@@ -156,10 +156,14 @@ python3 tools/tde_job_tick_runner.py \
 ```
 
 ## Immediate next implementation tasks
-1. Define the first staging promotion checklist.
-2. Decide whether staging should use seeded synthetic objectives/tasks or a curated production mirror for future validation cycles.
-3. Extend environment-aware pathing to the remaining canary/simulation/reporting scripts.
-4. Reduce legacy unscoped path usage in release/cutover documentation and helper scripts.
+1. Decide whether staging should use seeded synthetic objectives/tasks or a curated production mirror for future validation cycles.
+2. Extend environment-aware pathing to the remaining canary/simulation/reporting scripts.
+3. Reduce legacy unscoped path usage in release/cutover documentation and helper scripts.
+4. Run the first checklist-driven staging-to-production-adjacent promotion rehearsal.
+
+Promotion discipline now defined in:
+- `TDE_RUNTIME_PROMOTION_CHECKLIST_V1.md`
+- `TDE_RUNTIME_PROMOTE_ROLLBACK_SOP_V1.md`
 
 ## Initial staging proof
 A first staging-only end-to-end tick has now been run with:

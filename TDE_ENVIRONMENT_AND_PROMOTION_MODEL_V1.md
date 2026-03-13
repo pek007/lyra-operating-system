@@ -318,9 +318,15 @@ Create a TDE-specific promote/rollback checklist and release packet.
 Restrict live production changes to promoted candidates only.
 
 ## Minimum artifacts to add next
-1. TDE runtime promotion checklist
-2. TDE runtime rollback checklist
-3. Optional release-envelope template for runtime changes
+1. Optional release-envelope template for runtime changes
+
+## Promotion checklist added
+The first TDE runtime promotion checklist is now defined in:
+- `TDE_RUNTIME_PROMOTION_CHECKLIST_V1.md`
+
+## Promote / rollback SOP added
+The first TDE runtime promote/rollback SOP is now defined in:
+- `TDE_RUNTIME_PROMOTE_ROLLBACK_SOP_V1.md`
 
 ## Naming/path convention added
 The first concrete environment naming/path convention is now defined in:

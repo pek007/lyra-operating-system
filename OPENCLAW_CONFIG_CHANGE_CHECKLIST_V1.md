@@ -24,6 +24,7 @@
 - [ ] If this change affects TDE runtime behavior, confirm target environment (`dev`|`staging`|`prod`)
 - [ ] Confirm DB/objective/binding/evidence paths are environment-scoped per `TDE_ENVIRONMENT_PATH_CONVENTION_V1.md`
 - [ ] Confirm no cron-enabled environment is pointing at a shared runtime DB/path
+- [ ] If this is a TDE runtime-path change, also apply `TDE_RUNTIME_PROMOTION_CHECKLIST_V1.md`
 
 ## If something goes wrong
 - [ ] Restore backup
