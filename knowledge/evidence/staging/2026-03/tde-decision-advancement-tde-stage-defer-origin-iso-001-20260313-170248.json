@@ -1,0 +1,27 @@
+{
+  "artifactType": "tde_decision_advancement_record",
+  "schemaVersion": "1.0.0",
+  "decision_id": "DEC-stage-defer-iso-2-TDE-STAGE-DEFER-ORIGIN-ISO-001",
+  "task_id": "TDE-STAGE-DEFER-ORIGIN-ISO-001",
+  "objective_id": "OBJ-TDE-FOUNDATION",
+  "workflow_family": "implementation_verification_readiness",
+  "stage_id": "verification-research",
+  "proposing_role": "Product Owner",
+  "escalation_role": "Ultimate Decision-maker",
+  "recommended_outcome": "defer",
+  "selected_outcome": "defer",
+  "recommended_next_task_id": "TDE-STAGE-DEFER-FOLLOW-ISO-001",
+  "recommended_branch_id": null,
+  "research_required": false,
+  "confidence_score": 0.74,
+  "evidence_refs": [
+    "knowledge/evidence/staging/2026-03/tde-stage-defer-research-note.md"
+  ],
+  "authority_check_result": "within_policy",
+  "escalation_reason": null,
+  "decision_rationale": "Research indicates defer is the best next move.",
+  "policy_envelope_ref": "products/task-management/07-decisions/REFERENCE_TDE_POLICY_ENVELOPE_IMPLEMENTATION_VERIFICATION_V1.json",
+  "decision_trace_ref": null,
+  "decided_at": "2026-03-13T17:02:48.167208+00:00",
+  "decided_by_role": "Product Owner"
+}
