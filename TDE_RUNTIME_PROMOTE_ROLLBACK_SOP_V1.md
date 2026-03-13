@@ -84,6 +84,10 @@ Rollback steps:
 - verification result after rollback
 - prevention/fix-forward note
 
+## Rehearsal note
+First dry-run checklist/SOP rehearsal recorded at:
+- `knowledge/evidence/staging/releases/2026-03-13__tde-runtime-promotion-rehearsal__v1.md`
+
 ## Bottom line
 Promotion is not just "the code seems OK".
 For TDE runtime changes, promotion means:

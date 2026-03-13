@@ -90,6 +90,10 @@ Record before or at promotion:
 - Expected impact:
 - Post-promote verification result:
 
+## Rehearsal note
+First dry-run checklist rehearsal recorded at:
+- `knowledge/evidence/staging/releases/2026-03-13__tde-runtime-promotion-rehearsal__v1.md`
+
 ## Bottom line
 No TDE runtime-path change should move into production-adjacent or production use without:
 - explicit candidate identity,
