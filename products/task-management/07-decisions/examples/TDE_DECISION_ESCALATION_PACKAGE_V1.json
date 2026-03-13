@@ -1,0 +1,36 @@
+{
+  "artifactType": "tde_decision_escalation_package",
+  "schemaVersion": "1.0.0",
+  "decision_id": "DEC-TDE-PILOT-0003",
+  "task_id": "TDE-PILOT-READY-001",
+  "objective_id": "OBJ-TDE-DECISION-ADVANCEMENT-PILOT",
+  "workflow_family": "implementation_verification_readiness",
+  "from_role": "Product Owner",
+  "to_role": "Ultimate Decision-maker",
+  "decision_question": "Should the verified change proceed despite an architecture trade-off that exceeds the delegated Product Owner risk boundary?",
+  "context_summary": "Implementation and verification are complete, but readiness review surfaced a non-trivial architectural trade-off affecting the next operating step.",
+  "options": [
+    {
+      "option_id": "opt_proceed_now",
+      "label": "Proceed with the current design",
+      "impact_summary": "Fastest path, but accepts the architecture trade-off now and may create follow-up cleanup work."
+    },
+    {
+      "option_id": "opt_adjust_then_proceed",
+      "label": "Adjust the design before proceeding",
+      "impact_summary": "Reduces architectural risk but adds delay and some rework before the next operating step."
+    }
+  ],
+  "recommended_option_id": "opt_adjust_then_proceed",
+  "rationale": "The Product Owner recommends adjustment first because the trade-off exceeds the delegated medium-risk boundary and would otherwise create avoidable system debt.",
+  "evidence_refs": [
+    "knowledge/evidence/2026-03-13__pilot-readiness-review.md",
+    "knowledge/evidence/2026-03-13__pilot-architecture-tradeoff-note.md"
+  ],
+  "confidence_score": 0.77,
+  "risks_tradeoffs": "Proceeding now saves time but increases architecture debt and future correction cost. Adjusting first slows delivery but keeps the system cleaner and better aligned with guardrails.",
+  "consequence_of_delay": "Delay is acceptable in the short term, but the chain remains paused until a decision is made.",
+  "would_do_if_delegated": "Adjust the design before proceeding, then rerun readiness review.",
+  "escalation_reason": "architectural_tradeoff_above_medium_risk",
+  "escalated_at": "2026-03-13T15:00:00+01:00"
+}

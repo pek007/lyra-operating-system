@@ -288,13 +288,17 @@ This family is ready for first practical pilot use when:
 - no step relies on transcript memory alone to determine what happens next
 
 ## Recommended immediate next implementation slice
-1. Create a concrete example chain in canonical TDE state using this family.
-2. Produce one example `tde_decision_advancement_record` for each of:
-   - `continue`
-   - `research_further`
-   - `escalate`
-3. Decide where the family/policy reference lives in task metadata or runtime binding.
-4. Wire runtime validation so a chain cannot auto-advance without a valid policy envelope reference.
+1. Decide whether `decision_policy_ref` should become the canonical metadata key in task/runtime state.
+2. Wire runtime validation so a chain cannot auto-advance without a valid policy envelope reference.
+3. Add schema-validated example artifacts to automated tests.
+4. Bind one real pilot chain in canonical TDE state.
+
+## Reference example pack added
+The first example pack for this workflow family now includes:
+- `products/task-management/07-decisions/examples/TDE_DECISION_ADVANCEMENT_RECORD_CONTINUE_V1.json`
+- `products/task-management/07-decisions/examples/TDE_DECISION_ADVANCEMENT_RECORD_RESEARCH_FURTHER_V1.json`
+- `products/task-management/07-decisions/examples/TDE_DECISION_ESCALATION_PACKAGE_V1.json`
+- `products/task-management/07-decisions/examples/TDE_PILOT_CHAIN_EXAMPLE_V1.md`
 
 ## Bottom line
 This pilot family is the first practical embodiment of the new D-layer.

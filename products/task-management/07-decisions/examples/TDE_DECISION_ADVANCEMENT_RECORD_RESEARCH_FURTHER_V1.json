@@ -1,0 +1,28 @@
+{
+  "artifactType": "tde_decision_advancement_record",
+  "schemaVersion": "1.0.0",
+  "decision_id": "DEC-TDE-PILOT-0002",
+  "task_id": "TDE-PILOT-VERIFY-001",
+  "objective_id": "OBJ-TDE-DECISION-ADVANCEMENT-PILOT",
+  "workflow_family": "implementation_verification_readiness",
+  "stage_id": "verification",
+  "proposing_role": "Product Owner",
+  "escalation_role": "Ultimate Decision-maker",
+  "recommended_outcome": "research_further",
+  "selected_outcome": "research_further",
+  "recommended_next_task_id": "TDE-PILOT-RESEARCH-001",
+  "recommended_branch_id": "verification_mixed_signals",
+  "research_required": true,
+  "confidence_score": 0.58,
+  "evidence_refs": [
+    "knowledge/evidence/2026-03-13__pilot-verification-mixed-results.md",
+    "knowledge/evidence/2026-03-13__pilot-runtime-observation.md"
+  ],
+  "authority_check_result": "insufficient_evidence",
+  "escalation_reason": null,
+  "decision_rationale": "Verification produced mixed signals and confidence is below the family threshold. One bounded research loop is allowed by policy and may resolve the ambiguity before escalation is needed.",
+  "policy_envelope_ref": "products/task-management/07-decisions/REFERENCE_TDE_POLICY_ENVELOPE_IMPLEMENTATION_VERIFICATION_V1.json",
+  "decision_trace_ref": "products/task-management/07-decisions/TDE_PILOT_WORKFLOW_FAMILY_IMPLEMENTATION_VERIFICATION_READINESS_V1.md#research_further-behavior-in-this-family",
+  "decided_at": "2026-03-13T14:55:00+01:00",
+  "decided_by_role": "Product Owner"
+}

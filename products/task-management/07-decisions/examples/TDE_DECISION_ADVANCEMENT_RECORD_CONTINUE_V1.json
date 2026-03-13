@@ -1,0 +1,28 @@
+{
+  "artifactType": "tde_decision_advancement_record",
+  "schemaVersion": "1.0.0",
+  "decision_id": "DEC-TDE-PILOT-0001",
+  "task_id": "TDE-PILOT-IMPL-001",
+  "objective_id": "OBJ-TDE-DECISION-ADVANCEMENT-PILOT",
+  "workflow_family": "implementation_verification_readiness",
+  "stage_id": "implementation",
+  "proposing_role": "Product Owner",
+  "escalation_role": "Ultimate Decision-maker",
+  "recommended_outcome": "continue",
+  "selected_outcome": "continue",
+  "recommended_next_task_id": "TDE-PILOT-VERIFY-001",
+  "recommended_branch_id": null,
+  "research_required": false,
+  "confidence_score": 0.91,
+  "evidence_refs": [
+    "knowledge/evidence/2026-03-13__pilot-implementation-receipt.md",
+    "knowledge/evidence/2026-03-13__pilot-implementation-validation-note.md"
+  ],
+  "authority_check_result": "within_policy",
+  "escalation_reason": null,
+  "decision_rationale": "Implementation completed with sufficient evidence and no open blocker. Verification is the approved deterministic next step within the pilot family envelope.",
+  "policy_envelope_ref": "products/task-management/07-decisions/REFERENCE_TDE_POLICY_ENVELOPE_IMPLEMENTATION_VERIFICATION_V1.json",
+  "decision_trace_ref": "products/task-management/07-decisions/TDE_PILOT_WORKFLOW_FAMILY_IMPLEMENTATION_VERIFICATION_READINESS_V1.md#transition-a--implementation---verification",
+  "decided_at": "2026-03-13T14:50:00+01:00",
+  "decided_by_role": "Product Owner"
+}
