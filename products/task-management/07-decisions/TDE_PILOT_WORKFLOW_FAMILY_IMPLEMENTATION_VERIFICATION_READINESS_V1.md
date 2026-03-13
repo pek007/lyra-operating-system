@@ -229,6 +229,20 @@ The Product Owner must re-run the gate and choose one of:
 
 If evidence is still insufficient after the bounded research loop, default to `escalate`.
 
+### Current runtime-supported re-entry outcomes
+The bounded runtime implementation for this pilot family now supports:
+- `continue`
+- `retry`
+- `defer`
+- `block`
+- `escalate`
+
+Current runtime behavior also includes:
+- parking the origin task as non-claimable while the research child is active
+- un-parking the origin after re-entry resolution
+- propagating confidence/evidence/rationale from the research task into the re-entry decision record
+- forcing escalation when the research budget is exhausted
+
 ## Policy envelope for this family
 Canonical reference artifact:
 - `products/task-management/07-decisions/REFERENCE_TDE_POLICY_ENVELOPE_IMPLEMENTATION_VERIFICATION_V1.json`

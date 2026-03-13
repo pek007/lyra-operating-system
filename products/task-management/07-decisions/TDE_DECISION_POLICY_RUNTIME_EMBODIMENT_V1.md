@@ -209,6 +209,22 @@ Every out-of-envelope case that needs Peter should produce a `tde_decision_escal
 - policy envelope ref
 - escalation package ref when applicable
 
+### Current bounded runtime-supported outcome set
+The bounded runtime embodiment now supports:
+- `continue`
+- `research_further`
+- `escalate`
+- `retry` (re-entry path)
+- `defer` (re-entry path)
+- `block` (re-entry path)
+
+The current runtime embodiment also supports:
+- bounded research successor activation
+- origin-task parking / non-claimable behavior while research is active
+- recursive re-entry after research completion
+- research budget enforcement with forced escalation on exhaustion
+- confidence/evidence/rationale propagation into re-entry decision records
+
 ## Minimal fail-closed reasons to standardize
 Recommend standard reason strings for v1:
 - `decision_policy_ref_missing`

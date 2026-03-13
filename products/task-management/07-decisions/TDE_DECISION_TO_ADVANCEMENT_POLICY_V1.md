@@ -139,11 +139,13 @@ One of the canonical decision outcomes is selected.
 ### Step 5: Runtime action
 Depending on the selected outcome, the runtime:
 - activates the next task
-- creates a bounded research/evaluation task
+- creates or activates a bounded research/evaluation task
+- re-enters the originating decision after bounded research completes
 - marks the work blocked
 - emits an escalation package
 - marks the chain complete
 - schedules retry or deferral
+- may temporarily park an origin task as non-claimable while a bounded research child is active
 
 ### Step 6: Decision logging
 The decision and rationale are recorded so progression is explainable and auditable.
@@ -215,6 +217,13 @@ A research loop should return:
 After research completes, D runs again.
 Research does not itself authorize continuation unless the resulting reevaluation passes the same authority gates.
 
+In runtime terms, the current bounded implementation supports:
+- activating a bounded research successor,
+- parking the origin task as non-claimable while research is active,
+- re-entering the originating decision after research completion,
+- propagating confidence/evidence/rationale into the re-entry decision record,
+- and forcing escalation when the research budget is exhausted.
+
 ## Example progression pattern
 ### Example A — straightforward continuation
 1. Execution step finishes successfully.
@@ -273,6 +282,9 @@ A bounded implementation is enough if it supports:
 - decision logging with rationale and evidence refs
 - escalation packaging to the Ultimate Decision-maker
 - reevaluation after bounded research
+- bounded research loop budget enforcement
+- origin-task parking / non-claimable behavior during active research
+- re-entry outcomes covering at least `continue`, `retry`, `defer`, `block`, and `escalate`
 
 ## Suggested canonical fields
 A minimal decision-to-advancement record could include:

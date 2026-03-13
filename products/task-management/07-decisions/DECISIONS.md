@@ -48,4 +48,4 @@ Capture the major product decisions that shape Task Management so the product do
 ## Next decisions likely needed
 - what evidence threshold should define operational readiness for broader use
 - when the `pxs` interface should evolve from operating-contract form into a stronger packaged or schema-backed interface
-- how the new decision-to-advancement schemas should be embodied in runtime and which workflow family should pilot them first
+- when and how the bounded research/re-entry loop should be promoted from staging into production-adjacent use
