@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lyra.local/schemas/tde_assignment_packet/v1.0.0.schema.json",
+  "title": "TDE Assignment Packet",
+  "type": "object",
+  "required": [
+    "artifactType",
+    "schemaVersion",
+    "assignment_id",
+    "source_system",
+    "source_reference",
+    "submitted_at",
+    "submitted_by",
+    "title",
+    "summary",
+    "requested_action",
+    "priority_hint",
+    "workspace_scope",
+    "product_scope",
+    "related_entities",
+    "evidence_links",
+    "assignment_owner_role"
+  ],
+  "properties": {
+    "artifactType": { "const": "tde_assignment_packet" },
+    "schemaVersion": { "const": "1.0.0" },
+    "assignment_id": { "type": "string", "minLength": 1 },
+    "source_system": { "type": "string", "minLength": 1 },
+    "source_reference": { "type": "string", "minLength": 1 },
+    "submitted_at": { "type": "string", "format": "date-time" },
+    "submitted_by": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 3 },
+    "summary": { "type": "string", "minLength": 5 },
+    "requested_action": { "type": "string", "minLength": 5 },
+    "priority_hint": { "type": "string", "enum": ["low", "medium", "high", "critical", "unspecified"] },
+    "workspace_scope": { "type": "string", "minLength": 1 },
+    "product_scope": { "oneOf": [{ "type": "string", "minLength": 1 }, { "type": "null" }] },
+    "related_entities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["entity_type", "entity_ref"],
+        "properties": {
+          "entity_type": { "type": "string", "minLength": 1 },
+          "entity_ref": { "type": "string", "minLength": 1 },
+          "relationship": { "type": ["string", "null"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "evidence_links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind", "ref"],
+        "properties": {
+          "kind": { "type": "string", "minLength": 1 },
+          "ref": { "type": "string", "minLength": 1 },
+          "note": { "type": ["string", "null"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "assignment_owner_role": { "type": "string", "minLength": 1 },
+    "runner_binding_required": { "type": "boolean" },
+    "objective_id": { "type": ["string", "null"] },
+    "decision_policy_ref": { "type": ["string", "null"] },
+    "workflow_family": { "type": ["string", "null"] },
+    "metadata": { "type": "object" }
+  },
+  "additionalProperties": false
+}

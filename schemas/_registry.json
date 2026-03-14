@@ -55,5 +55,8 @@
   },
   "tde_error_report": {
     "1.0.0": "schemas/tde_error_report/v1.0.0.schema.json"
+  },
+  "tde_assignment_packet": {
+    "1.0.0": "schemas/tde_assignment_packet/v1.0.0.schema.json"
   }
 }

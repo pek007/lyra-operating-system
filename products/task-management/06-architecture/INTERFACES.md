@@ -83,6 +83,15 @@ This interface/policy bridge defines:
 - why error reporting and TDE action tracking are distinct but linked layers
 - the first adapter path from error reports into canonical TDE intake packets
 
+### TDE assignment acceptance contract
+Canonical artifact:
+- `06-architecture/TDE_ASSIGNMENT_ACCEPTANCE_CONTRACT_V1.md`
+
+This contract defines:
+- why direct task insertion is not assignment success
+- the first explicit acceptance states returned to a producer
+- the thin runtime path by which a producer can know whether TDE actually accepted operational responsibility
+
 ## Next interface work
 - map current TDE artifacts to the product interface surface
 - extend intake ingest beyond the first `signal` path
