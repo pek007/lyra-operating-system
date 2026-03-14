@@ -7,7 +7,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from tde_state_store import connect, init_schema, update_task_metadata
+from tde_decision_escalation import write_escalation_package
+from tde_state_store import connect, init_schema, read_tasks, update_task_metadata, activate_task_db
+from tde_chaining import evaluate_ready_promotions
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_REGISTRY = ROOT / "schemas/_registry.json"
@@ -100,7 +102,62 @@ def build_closure_record(
     }
 
 
-def close_task(*, closure_record: dict[str, Any], db_path: Path) -> dict[str, Any]:
+def _close_followup_actions(*, conn: Any, closure_record: dict[str, Any], task_metadata: dict[str, Any], artifact_dir: Path | None) -> dict[str, Any]:
+    feedback_outcome = closure_record["feedback_outcome"]
+    followup_refs = closure_record.get("followup_refs", []) or []
+    actions: dict[str, Any] = {
+        "followup_refs": followup_refs,
+        "activated_followups": [],
+        "ready_promotions": [],
+        "escalation_package_path": None,
+        "improvement_refs": [],
+    }
+
+    if feedback_outcome == "close_and_chain":
+        for ref in followup_refs:
+            activation = activate_task_db(
+                conn,
+                ref,
+                activated_by=f"closure:{closure_record['closure_id']}:followup",
+                activated_at=_iso_now(),
+            )
+            actions["activated_followups"].append(activation)
+
+        tasks = read_tasks(conn)
+        chaining_eval = evaluate_ready_promotions(tasks, tick_id=closure_record["closure_id"])
+        for promo in chaining_eval.get("promoted", []):
+            activation = activate_task_db(
+                conn,
+                promo["task_id"],
+                activated_by=promo["activated_by"],
+                activated_at=promo["activated_at"],
+            )
+            actions["ready_promotions"].append(activation)
+
+    elif feedback_outcome == "close_and_escalate":
+        if artifact_dir is None:
+            raise ValidationError("artifact_dir_required_for_escalation")
+        actions["escalation_package_path"] = write_escalation_package(
+            artifact_dir=artifact_dir,
+            tick_id=closure_record["closure_id"],
+            task_id=closure_record["task_id"],
+            objective_id=closure_record.get("objective_id"),
+            metadata={
+                **task_metadata,
+                "decision_rationale": closure_record["next_recommendation"],
+                "decision_evidence_refs": closure_record["evidence_refs"],
+                "decision_context_summary": closure_record["result_summary"],
+            },
+            workflow_family=task_metadata.get("workflow_family"),
+        )
+
+    elif feedback_outcome in {"close_and_improve", "close_as_error"}:
+        actions["improvement_refs"] = followup_refs
+
+    return actions
+
+
+def close_task(*, closure_record: dict[str, Any], db_path: Path, artifact_dir: Path | None = None) -> dict[str, Any]:
     _validate_against_schema(
         payload=closure_record,
         artifact_type="tde_task_closure_record",
@@ -117,6 +174,13 @@ def close_task(*, closure_record: dict[str, Any], db_path: Path) -> dict[str, An
     ).fetchone()
     if not task_row:
         raise ValidationError(f"task_not_found:{closure_record['task_id']}")
+    _, _, metadata_json = task_row
+    try:
+        task_metadata = json.loads(metadata_json or "{}")
+    except Exception:
+        task_metadata = {}
+    if not isinstance(task_metadata, dict):
+        task_metadata = {}
 
     status_target = TASK_STATUS_MAP[closure_record["closure_state"]]
     metadata_patch = {
@@ -134,6 +198,7 @@ def close_task(*, closure_record: dict[str, Any], db_path: Path) -> dict[str, An
 
     update_task_metadata(conn, closure_record["task_id"], metadata_patch)
     now = _iso_now()
+    followup_actions: dict[str, Any]
     with conn:
         conn.execute(
             "UPDATE tasks SET status=?, checked=?, updated_at=? WHERE task_id=?",
@@ -155,11 +220,18 @@ def close_task(*, closure_record: dict[str, Any], db_path: Path) -> dict[str, An
                 now,
             ),
         )
+        followup_actions = _close_followup_actions(
+            conn=conn,
+            closure_record=closure_record,
+            task_metadata=task_metadata,
+            artifact_dir=artifact_dir,
+        )
         event_payload = {
             "task_id": closure_record["task_id"],
             "closure_id": closure_record["closure_id"],
             "closure_state": closure_record["closure_state"],
             "feedback_outcome": closure_record["feedback_outcome"],
+            "followup_actions": followup_actions,
         }
         conn.execute(
             "INSERT INTO events(event_id,at,type,payload_json,prev_hash,hash) VALUES(?,?,?,?,?,?)",
@@ -179,6 +251,7 @@ def close_task(*, closure_record: dict[str, Any], db_path: Path) -> dict[str, An
         "closure_state": closure_record["closure_state"],
         "feedback_outcome": closure_record["feedback_outcome"],
         "db_status": status_target,
+        "followup_actions": followup_actions,
     }
 
 
@@ -195,6 +268,7 @@ def main() -> None:
     ap.add_argument("--followup-ref", action="append", default=[])
     ap.add_argument("--objective-id", default=None)
     ap.add_argument("--db-path", default="os/runtime/staging/tde_state.sqlite")
+    ap.add_argument("--artifact-dir", default=None)
     ap.add_argument("--out", default=None)
     args = ap.parse_args()
 
@@ -210,7 +284,11 @@ def main() -> None:
         objective_id=args.objective_id,
         followup_refs=args.followup_ref,
     )
-    result = close_task(closure_record=closure_record, db_path=Path(args.db_path))
+    result = close_task(
+        closure_record=closure_record,
+        db_path=Path(args.db_path),
+        artifact_dir=Path(args.artifact_dir) if args.artifact_dir else None,
+    )
     if args.out:
         out = Path(args.out)
         out.parent.mkdir(parents=True, exist_ok=True)

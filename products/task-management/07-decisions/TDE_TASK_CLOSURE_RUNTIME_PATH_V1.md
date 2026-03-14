@@ -22,6 +22,12 @@ The v1 path:
 4. updates task metadata with closure information
 5. updates task runtime status according to closure state
 6. emits a task-closed event record
+7. applies bounded automatic follow-up for selected feedback outcomes
+
+Current bounded automatic follow-up support:
+- `close_and_chain` -> activate explicit follow-up refs and apply ready-promotion checks
+- `close_and_escalate` -> create escalation package artifact
+- `close_and_improve` / `close_as_error` -> preserve follow-up refs for the owning improvement/error path without auto-creating those artifacts yet
 
 ## Current status mapping
 Current v1 runtime mapping is:

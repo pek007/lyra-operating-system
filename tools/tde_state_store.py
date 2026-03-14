@@ -157,7 +157,7 @@ def validate_chain_metadata(metadata: dict[str, Any]) -> tuple[bool, str | None]
         if not isinstance(activated_at, str) or not activated_at.strip():
             return False, "invalid_activated_at"
         try:
-            datetime.fromisoformat(activated_at)
+            datetime.fromisoformat(activated_at.replace("Z", "+00:00"))
         except Exception:
             return False, "invalid_activated_at"
 
