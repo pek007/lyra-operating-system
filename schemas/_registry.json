@@ -43,5 +43,8 @@
   },
   "tde_intent_formation_record": {
     "1.0.0": "schemas/tde_intent_formation_record/v1.0.0.schema.json"
+  },
+  "tde_intake_packet": {
+    "1.0.0": "schemas/tde_intake_packet/v1.0.0.schema.json"
   }
 }

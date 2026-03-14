@@ -35,6 +35,7 @@ This artifact exists to make the downstream consumption path explicit enough tha
 - active work should not depend on transcript reconstruction alone
 - important follow-through should be inspectable by another operator or agent
 - the consumer workspace should provide a usable local operating package front door so these expectations are discoverable in local context
+- when `pxs` needs Task Management/TDE intake behavior, it should rely on the product-owned intake contract rather than inventing workspace-local intake semantics
 
 Current first-pass local workspace operating package examples in `pxs` now include:
 - `WORKSPACE_PROFILE.md`

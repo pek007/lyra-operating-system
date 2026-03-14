@@ -52,7 +52,20 @@ This interface defines:
 - provider obligations
 - what evidence makes the interface operationally usable
 
+## Named intake interface
+### TDE intake interface contract
+Canonical artifact:
+- `06-architecture/TDE_INTAKE_INTERFACE_CONTRACT_V1.md`
+
+This interface defines:
+- the canonical intake surface for TDE
+- the intake classes accepted by Task Management
+- producer adapter expectations
+- validation and persistence expectations
+- how local process discovery should point to product-owned intake behavior without duplicating it
+
 ## Next interface work
 - map current TDE artifacts to the product interface surface
+- add a formal machine schema for the intake contract
 - add clearer operational examples for `pxs` usage
 - decide whether a capability-pack or service boundary is the better long-term distribution shape

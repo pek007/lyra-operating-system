@@ -1,0 +1,187 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lyra.local/schemas/tde_intake_packet/v1.0.0.schema.json",
+  "title": "TDE Intake Packet",
+  "type": "object",
+  "required": [
+    "artifactType",
+    "schemaVersion",
+    "intake_id",
+    "intake_class",
+    "source_system",
+    "source_type",
+    "source_reference",
+    "submitted_at",
+    "submitted_by",
+    "title",
+    "summary",
+    "body",
+    "priority_hint",
+    "workspace_scope",
+    "product_scope",
+    "related_entities",
+    "evidence_links",
+    "proposed_action"
+  ],
+  "properties": {
+    "artifactType": { "const": "tde_intake_packet" },
+    "schemaVersion": { "const": "1.0.0" },
+    "intake_id": { "type": "string", "minLength": 1 },
+    "intake_class": {
+      "type": "string",
+      "enum": ["direction", "decision", "work", "signal", "incident"]
+    },
+    "source_system": { "type": "string", "minLength": 1 },
+    "source_type": {
+      "type": "string",
+      "enum": [
+        "manual_entry",
+        "chat_message",
+        "document",
+        "report",
+        "automation",
+        "api",
+        "import"
+      ]
+    },
+    "source_reference": { "type": "string", "minLength": 1 },
+    "submitted_at": { "type": "string", "format": "date-time" },
+    "submitted_by": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 3 },
+    "summary": { "type": "string", "minLength": 5 },
+    "body": {
+      "oneOf": [
+        { "type": "string", "minLength": 1 },
+        { "type": "object" },
+        { "type": "array" }
+      ]
+    },
+    "priority_hint": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical", "unspecified"]
+    },
+    "workspace_scope": { "type": "string", "minLength": 1 },
+    "product_scope": {
+      "oneOf": [
+        { "type": "string", "minLength": 1 },
+        { "type": "null" }
+      ]
+    },
+    "related_entities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["entity_type", "entity_ref"],
+        "properties": {
+          "entity_type": { "type": "string", "minLength": 1 },
+          "entity_ref": { "type": "string", "minLength": 1 },
+          "relationship": { "type": ["string", "null"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "evidence_links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind", "ref"],
+        "properties": {
+          "kind": { "type": "string", "minLength": 1 },
+          "ref": { "type": "string", "minLength": 1 },
+          "note": { "type": ["string", "null"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "proposed_action": {
+      "oneOf": [
+        { "type": "string", "minLength": 1 },
+        { "type": "null" }
+      ]
+    },
+    "desired_outcome": { "type": ["string", "null"] },
+    "decision_question": { "type": ["string", "null"] },
+    "requested_action": { "type": ["string", "null"] },
+    "success_signal": { "type": ["string", "null"] },
+    "signal_types": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["status", "blocker", "risk", "confidence_change", "priority_proposal", "telemetry"]
+      },
+      "uniqueItems": true
+    },
+    "incident_summary": { "type": ["string", "null"] },
+    "impact_summary": { "type": ["string", "null"] },
+    "severity_hint": {
+      "oneOf": [
+        { "type": "string", "enum": ["sev0", "sev1", "sev2", "sev3", "unknown"] },
+        { "type": "null" }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "intake_class": { "const": "direction" } },
+        "required": ["intake_class"]
+      },
+      "then": {
+        "required": ["desired_outcome"],
+        "properties": {
+          "desired_outcome": { "type": "string", "minLength": 5 }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "intake_class": { "const": "decision" } },
+        "required": ["intake_class"]
+      },
+      "then": {
+        "required": ["decision_question"],
+        "properties": {
+          "decision_question": { "type": "string", "minLength": 5 }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "intake_class": { "const": "work" } },
+        "required": ["intake_class"]
+      },
+      "then": {
+        "required": ["requested_action"],
+        "properties": {
+          "requested_action": { "type": "string", "minLength": 5 }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "intake_class": { "const": "signal" } },
+        "required": ["intake_class"]
+      },
+      "then": {
+        "required": ["signal_types"],
+        "properties": {
+          "signal_types": { "minItems": 1 }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "intake_class": { "const": "incident" } },
+        "required": ["intake_class"]
+      },
+      "then": {
+        "required": ["incident_summary", "impact_summary"],
+        "properties": {
+          "incident_summary": { "type": "string", "minLength": 5 },
+          "impact_summary": { "type": "string", "minLength": 5 }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}
