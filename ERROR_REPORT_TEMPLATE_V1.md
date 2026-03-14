@@ -56,4 +56,5 @@ Use this template for meaningful incidents, near misses, control failures, proce
 ---
 
 ## Structured pipeline note
-When the issue requires corrective or preventive action, also emit a structured `tde_error_report` JSON artifact and route it through the TDE error-report pipeline so the corrective path exists canonically in TDE rather than only in prose.
+When the issue requires corrective or preventive action, route the markdown report through the TDE error-report pipeline so it is converted into a structured `tde_error_report` JSON artifact and then into canonical TDE intake.
+The process should not rely on prose alone for corrective-action follow-through.
