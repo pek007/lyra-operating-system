@@ -1,16 +1,21 @@
 # Risks
 
-### R-001 — Ad hoc execution drift
-- Description: Delivery work may still bypass clear intake, verification, or release-readiness expectations.
-- Consequence: Hidden work, rework, and lower reliability.
-- Mitigation: Keep the operating model explicit and tied to real work.
+### R-001 — Verification debt through thin activation/evidence practice
+- Description: Delivery may look mature in documentation while real activation, verification, and evidence capture remain weak or inconsistent.
+- Consequence: False confidence, hidden delivery risk, and poor learning.
+- Mitigation: Run a real pilot, require evidence packs, and strengthen fail-closed verification behavior.
 
-### R-002 — Process weight
-- Description: Delivery controls may become too heavy relative to the current scale.
-- Consequence: Slower throughput and avoidance behavior.
-- Mitigation: Use risk-aware gates and small-batch discipline rather than blanket ceremony.
+### R-002 — Drift through interim copy distribution
+- Description: Temporary interim-copy lanes can create silent divergence between Lyra OS and consuming workspaces if provenance and removal are weak.
+- Consequence: Two delivery systems, unclear authority, and hidden work.
+- Mitigation: Use a strict interim copy protocol and migrate to pinned-lane distribution as soon as practical.
 
-### R-003 — Weak measurement
-- Description: Delivery health can remain anecdotal if scorecarding stays thin.
-- Consequence: Slow learning and poor prioritization of delivery improvements.
-- Mitigation: Strengthen lightweight scorecarding and evidence loops over time.
+### R-003 — Gate ambiguity
+- Description: Delivery gates can become operator-specific interpretation rather than a compiled contract.
+- Consequence: Inconsistent quality bar, weak comparability, and enforcement drift.
+- Mitigation: Define risk classes, required evidence outputs, pass/fail logic, and machine-checkable hooks.
+
+### R-004 — Security or authority regression under delivery pressure
+- Description: Release/change pressure can weaken proper review of security or authority-impacting changes.
+- Consequence: Higher downside changes pass without proportionate scrutiny.
+- Mitigation: Keep medium/high change classes tied to explicit review, stop-the-line triggers, and escalation expectations.

@@ -9,8 +9,9 @@
 1. Define `DELIVERY_UNIT_SCHEMA_V1.yaml` ✅
 2. Define state-transition policy v1 ✅
 3. Define rendered packet templates v1 ✅
-4. Pilot one real TDE slice end to end as a Delivery Unit
-5. Wire deterministic gate checks into TDE flow
+4. Run one real Delivery v0.1 pilot end to end and publish the evidence pack
+5. Upgrade the Delivery gate from checklist to contract and add at least one machine-checkable validation hook
+6. Run the first low-noise weekly Delivery scorecard snapshot and review
 
 ## Coordination transition
 - the interim inbox experiment produced useful learning but is now superseded
