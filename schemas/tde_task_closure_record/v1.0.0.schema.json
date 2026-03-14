@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lyra.local/schemas/tde_task_closure_record/v1.0.0.schema.json",
+  "title": "TDE Task Closure Record",
+  "type": "object",
+  "required": [
+    "artifactType",
+    "schemaVersion",
+    "closure_id",
+    "task_id",
+    "closure_state",
+    "result_summary",
+    "evidence_refs",
+    "outcome_vs_expected",
+    "next_recommendation",
+    "feedback_outcome",
+    "friction_flags",
+    "evaluated_at",
+    "evaluated_by_role"
+  ],
+  "properties": {
+    "artifactType": { "const": "tde_task_closure_record" },
+    "schemaVersion": { "const": "1.0.0" },
+    "closure_id": { "type": "string", "minLength": 1 },
+    "task_id": { "type": "string", "minLength": 1 },
+    "objective_id": { "type": ["string", "null"] },
+    "closure_state": {
+      "type": "string",
+      "enum": ["Done", "Blocked", "Deferred", "Escalated"]
+    },
+    "result_summary": { "type": "string", "minLength": 1 },
+    "evidence_refs": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 1
+    },
+    "outcome_vs_expected": { "type": "string", "minLength": 1 },
+    "next_recommendation": { "type": "string", "minLength": 1 },
+    "feedback_outcome": {
+      "type": "string",
+      "enum": [
+        "close_clean",
+        "close_and_chain",
+        "close_and_improve",
+        "close_and_escalate",
+        "close_as_error"
+      ]
+    },
+    "friction_flags": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "followup_refs": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "evaluated_at": { "type": "string", "format": "date-time" },
+    "evaluated_by_role": { "type": "string", "const": "Product Owner" }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "feedback_outcome": { "const": "close_clean" } },
+        "required": ["feedback_outcome"]
+      },
+      "then": {
+        "properties": { "closure_state": { "const": "Done" } }
+      }
+    },
+    {
+      "if": {
+        "properties": { "feedback_outcome": { "const": "close_and_chain" } },
+        "required": ["feedback_outcome"]
+      },
+      "then": {
+        "properties": { "closure_state": { "const": "Done" } }
+      }
+    },
+    {
+      "if": {
+        "properties": { "feedback_outcome": { "const": "close_and_escalate" } },
+        "required": ["feedback_outcome"]
+      },
+      "then": {
+        "properties": { "closure_state": { "enum": ["Done", "Escalated"] } }
+      }
+    },
+    {
+      "if": {
+        "properties": { "feedback_outcome": { "const": "close_as_error" } },
+        "required": ["feedback_outcome"]
+      },
+      "then": {
+        "properties": { "closure_state": { "enum": ["Blocked", "Escalated"] } }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

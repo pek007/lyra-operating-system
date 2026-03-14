@@ -49,5 +49,8 @@
   },
   "tde_po_nightly_report": {
     "1.0.0": "schemas/tde_po_nightly_report/v1.0.0.schema.json"
+  },
+  "tde_task_closure_record": {
+    "1.0.0": "schemas/tde_task_closure_record/v1.0.0.schema.json"
   }
 }
