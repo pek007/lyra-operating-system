@@ -64,6 +64,16 @@ This interface defines:
 - validation and persistence expectations
 - how local process discovery should point to product-owned intake behavior without duplicating it
 
+### TDE PO nightly report adapter contract
+Canonical artifact:
+- `06-architecture/TDE_PO_NIGHTLY_REPORT_ADAPTER_CONTRACT_V1.md`
+
+This interface defines:
+- the first real upstream producer adapter for nightly product-owner reporting
+- how Control Panel / nightly report signals become canonical TDE `signal` intake packets
+- validation expectations for both source report and canonical intake packet
+- provenance and enrichment rules for the producer chain
+
 ## Next interface work
 - map current TDE artifacts to the product interface surface
 - add a formal machine schema for the intake contract
