@@ -1,0 +1,68 @@
+{
+  "artifactType": "tde_intake_packet",
+  "schemaVersion": "1.0.0",
+  "intake_id": "intake:error:ERR-2026-03-14-CP-TDE-SILENT-LIMBO",
+  "intake_class": "work",
+  "source_system": "tde_error_report_adapter",
+  "source_type": "document",
+  "source_reference": "/Users/lyra/.openclaw/workspace/products/task-management/errors/ERR-2026-03-14-control-panel-assignment-silent-limbo.md",
+  "submitted_at": "2026-03-14T20:44:32Z",
+  "submitted_by": "A-007",
+  "title": "Corrective action from error report: Control Panel assignment entered TDE state without visible execution pickup or feedback",
+  "summary": "Control Panel pushed `TASK-20260314-VEGA-PXS-BOUNDARY-PASS` into canonical TDE DB state, but the assignment did not produce visible intake trace, execution pickup, or feedback to the producer. From the operator perspective, the assignment entered silent limbo.",
+  "body": {
+    "error_id": "ERR-2026-03-14-CP-TDE-SILENT-LIMBO",
+    "error_type": "process_failure",
+    "scope": "cross_product",
+    "summary": "Control Panel pushed `TASK-20260314-VEGA-PXS-BOUNDARY-PASS` into canonical TDE DB state, but the assignment did not produce visible intake trace, execution pickup, or feedback to the producer. From the operator perspective, the assignment entered silent limbo.",
+    "impact": {
+      "actual_impact": "The proof-of-concept assignment path is not operationally trustworthy. A task can appear to be accepted while nothing observable happens next.",
+      "potential_impact": "Future Control Panel \u2192 TDE pushes could be silently lost in practice, bypass canonical intake, or stall without any feedback loop, reducing trust in TDE as the execution system of record."
+    },
+    "detection_method": "Manual investigation after Peter asked how the Control Panel POC assignment went.",
+    "root_cause": "The Control Panel POC appears to have written directly into `os/runtime/tde_state.sqlite` task state instead of using the canonical TDE intake/ingest path, so insertion success was mistaken for operational acceptance.",
+    "contributing_factors": [
+      "active runtime DB lacks the newer intake/closure tables; runtime path split between `os/runtime/tde_state.sqlite` and `os/runtime/staging/tde_state.sqlite`; no explicit producer feedback contract for accepted/no-runner/binding-missing conditions."
+    ],
+    "immediate_mitigation": "Investigated the inserted task directly in canonical DB state, confirmed silent-limbo failure mode, created this error artifact, and routed corrective work into canonical TDE form via the error-report pipeline.",
+    "corrective_actions": [
+      "Create a canonical Control Panel assignment adapter that produces TDE intake packets rather than direct task-state writes.",
+      "Add assignment acceptance/result feedback states (`accepted`, `accepted_no_runner`, `accepted_pending_binding`, `started`, `blocked`, `completed`, `rejected`) and return them to Control Panel.",
+      "Unify active runtime DB targeting and remove or explicitly govern the `os/runtime` vs `os/runtime/staging` split for assignment/execution paths.",
+      "Add observability so a task inserted without runner pickup or intake trace becomes a visible failure signal rather than silent limbo."
+    ],
+    "preventive_changes": "Treat Control Panel \u2192 TDE assignment as a governed interface with canonical intake, explicit execution-ownership checks, fail-closed feedback, and deterministic runtime pathing. Direct state insertion should not count as assignment success.",
+    "status": "open",
+    "adapted_at": "2026-03-14T20:44:32Z"
+  },
+  "priority_hint": "high",
+  "workspace_scope": "lyra-os-root",
+  "product_scope": "A-007",
+  "related_entities": [
+    {
+      "entity_type": "owner_scope",
+      "entity_ref": "A-007",
+      "relationship": "owning_scope"
+    },
+    {
+      "entity_type": "tde_item",
+      "entity_ref": "TASK-20260314-VEGA-PXS-BOUNDARY-PASS",
+      "relationship": "related_task"
+    }
+  ],
+  "evidence_links": [
+    {
+      "kind": "error_report",
+      "ref": "/Users/lyra/.openclaw/workspace/products/task-management/errors/ERR-2026-03-14-control-panel-assignment-silent-limbo.md",
+      "note": "ERR-2026-03-14-CP-TDE-SILENT-LIMBO"
+    },
+    {
+      "kind": "evidence",
+      "ref": "governance/VEGA_ACCEPTANCE_TEST_RUN_SHEET_V1.md",
+      "note": null
+    }
+  ],
+  "proposed_action": "route_error_corrective_action",
+  "requested_action": "Create a canonical Control Panel assignment adapter that produces TDE intake packets rather than direct task-state writes.; Add assignment acceptance/result feedback states (`accepted`, `accepted_no_runner`, `accepted_pending_binding`, `started`, `blocked`, `completed`, `rejected`) and return them to Control Panel.; Unify active runtime DB targeting and remove or explicitly govern the `os/runtime` vs `os/runtime/staging` split for assignment/execution paths.; Add observability so a task inserted without runner pickup or intake trace becomes a visible failure signal rather than silent limbo.",
+  "success_signal": "Treat Control Panel \u2192 TDE assignment as a governed interface with canonical intake, explicit execution-ownership checks, fail-closed feedback, and deterministic runtime pathing. Direct state insertion should not count as assignment success."
+}
