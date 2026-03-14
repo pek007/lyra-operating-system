@@ -1,6 +1,7 @@
 # Current Plan
 
 ## Current objectives
-1. Clarify the OS -> PXS capability export boundary.
-2. Make interface contracts and packaging rules more explicit.
-3. Reduce the risk that Interfaces becomes a residual product with unclear ownership.
+1. Resolve Interfaces identity, scope, and ownership boundaries.
+2. Make the Interfaces assembly real, self-consistent, and consumable.
+3. Run one downstream consumption pilot with evidence and one preventive drift guard.
+4. Keep export scope and provider-vs-standard ownership explicit.
