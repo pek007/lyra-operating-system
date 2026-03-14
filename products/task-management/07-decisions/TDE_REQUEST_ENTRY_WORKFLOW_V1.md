@@ -24,12 +24,15 @@ A raw request, such as:
 - `Build an internal tool`
 
 ### Step 1 — Intake
-TDE classifies the request into a bounded request class.
+TDE classifies the request into a bounded request class and forms a canonical `tde_intake_packet`.
 
-### Step 2 — Formation
-TDE creates a `tde_intent_formation_record`.
+### Step 2 — Validation
+TDE validates the intake packet against the registered schema before continuing.
 
-### Step 3 — Branch
+### Step 3 — Formation
+TDE creates a `tde_intent_formation_record` and validates it against the registered schema.
+
+### Step 4 — Branch
 If formation says:
 - `proceed_directly` or `proceed_with_assumptions`
   - create canonical objective/task artifacts
