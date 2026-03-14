@@ -9,6 +9,7 @@ Related:
 - `os/sops/TDE_CHAINING_CONTRACT_V1.md`
 - `governance/TDE_PRODUCT_OWNER_OPERATING_INSTRUCTION_V1.md`
 - `DECISION_SCHEMA_V1.md`
+- `products/task-management/07-decisions/TDE_TASK_CLOSURE_AND_FEEDBACK_POLICY_V1.md`
 
 ## Purpose
 Define the missing bridge between:

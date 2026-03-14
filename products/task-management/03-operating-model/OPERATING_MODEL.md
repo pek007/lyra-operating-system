@@ -23,6 +23,11 @@ Task Management operates as an enabling product with continuous improvement betw
 - improve product artifacts, process, or tooling
 - verify that reliability increased
 
+### Task closure and feedback
+- task completion should not be treated as a dead end
+- meaningful task endings should feed evidence, follow-up, chaining, escalation, or improvement capture as appropriate
+- use the product-owned closure/feedback policy to decide how finished or stopped work should update the system
+
 ### 2. Adoption loop
 - identify what a downstream user/workspace needs to consume the product
 - clarify interfaces and operating expectations
