@@ -52,3 +52,8 @@ Use this template for meaningful incidents, near misses, control failures, proce
 
 ## Closure note
 - Final outcome / verification:
+
+---
+
+## Structured pipeline note
+When the issue requires corrective or preventive action, also emit a structured `tde_error_report` JSON artifact and route it through the TDE error-report pipeline so the corrective path exists canonically in TDE rather than only in prose.

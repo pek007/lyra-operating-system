@@ -106,6 +106,9 @@ Every error report should produce at least one of:
 
 If it produces none of these, it is probably not yet an effective operational error report.
 
+For issues that require corrective or preventive work, that action path should be created or updated in canonical TDE form rather than remaining only in prose.
+Use the Task Management product-owned error-to-corrective-action bridge and structured error-report pipeline where applicable.
+
 ## Relationship to Product-as-Code
 Error reports do not replace product models.
 They should feed product models by causing updates where needed.
