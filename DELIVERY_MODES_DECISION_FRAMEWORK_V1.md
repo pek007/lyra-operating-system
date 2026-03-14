@@ -30,6 +30,9 @@ The goal is to choose the delivery mode that best fits:
 A delivery mode is not the product.
 It is a vehicle for distributing and activating a product capability.
 
+A delivery choice is also not complete until the consumer-side operating shape is clear.
+If a capability is delivered into a downstream workspace, the decision should account for what that workspace must receive or instantiate as part of its local operating package.
+
 Always choose delivery mode **after** clarifying:
 1. product purpose
 2. consumer/interface
@@ -42,7 +45,8 @@ Use this order:
 2. **Interface** — what does the consumer actually need?
 3. **Distribution model** — how should the capability reach the consumer?
 4. **Delivery mode** — what vehicle best implements that distribution?
-5. **Activation** — how is it turned on in runtime?
+5. **Workspace operating package** — what must exist in the consumer's local operating environment for this delivery to be usable and governable?
+6. **Activation** — how is it turned on in runtime?
 
 ## Delivery mode options
 
@@ -362,6 +366,7 @@ When choosing a delivery mode, capture:
 - capability being delivered
 - target consumer(s)
 - chosen delivery mode(s)
+- workspace operating package implications for the consumer
 - rejected alternatives
 - why this mode fits now
 - what would trigger a future mode change

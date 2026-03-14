@@ -31,6 +31,15 @@ A product is a managed system consisting of:
 - interface model
 - decision memory
 
+Products are the producer-side unit in the architecture.
+They define capabilities, interfaces, and delivery choices.
+Downstream workspaces are the consumer-side unit of local operation.
+Those workspaces should be treated as Workspace Operating Packages: local assembled environments that make consumed product capabilities usable through explicit sources of truth, process discovery, and operating routes.
+
+Product-as-Code should therefore be read together with:
+- delivery-mode selection for how capabilities are distributed
+- workspace operating package design for how capabilities are actually consumed in a local scope
+
 ## Standard folder structure
 Each product should live at:
 `products/<slug>/`
@@ -126,6 +135,7 @@ Purpose:
 Purpose:
 - define how the product gets adopted or consumed
 - for internal products, this means enablement/adoption/distribution into consuming environments
+- make explicit what a downstream workspace must receive or instantiate in order to consume the product coherently, including any required workspace-package implications
 
 ### 7. `03-operating-model/OPERATING_MODEL.md`
 Purpose:
@@ -206,6 +216,9 @@ A product may interact with governance, runtime, and other products, but those i
 
 ### Rule 7: products own their own recurring processes
 Recurring operating processes should normally be owned and defined inside the product model unless they are genuinely cross-product coordination mechanisms. Avoid creating central/shared artifacts that duplicate product-owned process logic.
+
+### Rule 8: product distribution must account for workspace consumption
+A product is not fully specified if it defines capability and delivery mode but leaves the downstream workspace operating package implicit. Product models should make clear what local consumer-side artifacts, routes, or package components are required for successful adoption and operation.
 
 ## Canonical metadata schema
 `MODEL.yaml` should follow this shape:

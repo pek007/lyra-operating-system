@@ -186,6 +186,10 @@ review:
 
 ## Distribution mechanisms
 - ...
+
+## Workspace consumption requirements
+- What must a downstream workspace receive, adopt, or instantiate locally?
+- Are there required operating-package artifacts, local front doors, or adopted assemblies?
 ```
 
 ## `03-operating-model/OPERATING_MODEL.md`
