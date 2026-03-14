@@ -105,6 +105,19 @@ This is the lightest mode that still preserves:
 
 It also aligns with the existing explicit decision that the first formal `pxs` interface should be an operating-contract artifact rather than a premature packaged/runtime boundary.
 
+## Workspace operating package implications
+Current delivery into `pxs` requires a consumer-side local operating package, not just provider-side product artifacts.
+
+At minimum, the consumer workspace should expose:
+- workspace profile / authority boundary
+- source-of-truth map
+- process discovery front door
+- task system of record
+- decision/escalation path
+- error/incident handling path
+
+This keeps Task Management consumption from collapsing back into hidden thread-memory dependence.
+
 ## Activation path
 Task Management capability is currently activated in `pxs` through:
 - explicit operating rules
@@ -112,6 +125,7 @@ Task Management capability is currently activated in `pxs` through:
 - TDE-related contracts
 - readiness and review discipline
 - visible owner/review loop expectations
+- a minimum local workspace operating package in the consumer scope
 
 ## Evidence of success expected
 This decision is working if:

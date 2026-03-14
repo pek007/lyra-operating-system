@@ -34,6 +34,15 @@ This artifact exists to make the downstream consumption path explicit enough tha
 - decision-relevant work should link to rationale or decision records
 - active work should not depend on transcript reconstruction alone
 - important follow-through should be inspectable by another operator or agent
+- the consumer workspace should provide a usable local operating package front door so these expectations are discoverable in local context
+
+Current first-pass local workspace operating package examples in `pxs` now include:
+- `WORKSPACE_PROFILE.md`
+- `SOURCE_OF_TRUTH.md`
+- `PROCESS_DISCOVERY_INDEX.md`
+- `TASK_SYSTEM_OF_RECORD.md`
+- `DECISION_AND_ESCALATION.md`
+- `ERROR_AND_INCIDENT_HANDLING.md`
 
 ### 3. Management-layer interface
 `pxs` consumes these management expectations:
@@ -54,6 +63,7 @@ For the interface to work, `pxs` must:
 2. keep meaningful work linked to explicit outcomes where possible
 3. surface blockers and decisions explicitly enough to be reviewable
 4. avoid creating shadow operational systems that conflict with the consumed Task Management layer
+5. maintain enough local workspace operating package structure that task, decision, process, and error routes are explicit in the consumer scope
 
 ## Provider obligations for Task Management
 Task Management must:
