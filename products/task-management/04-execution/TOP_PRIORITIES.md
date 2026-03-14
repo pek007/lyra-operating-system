@@ -5,22 +5,22 @@ Last updated: 2026-03-14
 Owner: Product Owner / Control Tower
 
 ## Priority 1
-**Title:** Make TDE deployment/readiness status easier to assess and act on
-**Why this matters now:** Task Management is structurally strong, but readiness is still easier to describe than to judge quickly from current evidence.
-**Current status:** Active high-leverage priority with explicit scorecard and readiness artifacts already in place.
-**Next concrete step:** Strengthen compact evidence and readiness judgment so current-state assessment becomes faster and less interpretive.
-**Links:** `products/task-management/04-execution/PLAN.md`, `products/task-management/05-performance/READINESS_SCORECARD.md`, `products/task-management/05-performance/METRICS.md`
+**Title:** Close the Vega/PXS boundary readiness gap and rerun it to PASS
+**Why this matters now:** The strongest current blocker to downstream Task Management consumption is not TDE internals but the failing Vega/PXS boundary readiness conditions that make safe, repeatable consumption impossible.
+**Current status:** Acceptance evidence currently shows blocking failures: `pxs` repo placement missing, pinned dependency not implemented, and cross-domain reads still allowed.
+**Next concrete step:** treat the Vega/PXS acceptance failures as the top active gating dependency, close the failing conditions, and rerun the boundary acceptance sheet to PASS with evidence.
+**Links:** `products/task-management/04-execution/PLAN.md`, `products/task-management/04-execution/RISKS.md`, `governance/VEGA_ACCEPTANCE_TEST_RUN_SHEET_V1.md`, `products/task-management/06-architecture/PXS_CONSUMPTION_INTERFACE.md`
 
 ## Priority 2
-**Title:** Improve the path for `pxs` to consume Task Management capability
-**Why this matters now:** Downstream consumability is one of the clearest tests of whether the product is becoming operationally real rather than just well-modeled.
-**Current status:** First formal consumption interface exists and the `pxs` workspace package has been bootstrapped, but evidence of low-friction real use is still limited.
-**Next concrete step:** Produce clearer proof points and execution evidence that `pxs` can consume Task Management with minimal extra explanation.
-**Links:** `products/task-management/04-execution/PLAN.md`, `products/task-management/06-architecture/PXS_CONSUMPTION_INTERFACE.md`, `products/task-management/05-performance/READINESS_SCORECARD.md`
+**Title:** Deliver a minimal executable `pxs` consumption contract with schemas and worked examples
+**Why this matters now:** A taxonomy of intended interaction is useful, but downstream consumption will stay soft until the interface becomes an explicit executable contract.
+**Current status:** First-pass consumption interface exists, but it still lacks minimal request/response schemas, compatibility/versioning clarity, and worked examples.
+**Next concrete step:** upgrade the `pxs` consumption interface from descriptive contract to minimal executable contract with request/response expectations, validation/error semantics, explicit transport choice, and 2–3 worked examples.
+**Links:** `products/task-management/04-execution/PLAN.md`, `products/task-management/06-architecture/PXS_CONSUMPTION_INTERFACE.md`, `products/task-management/02-strategy/DISTRIBUTION_MODEL.md`
 
 ## Priority 3
-**Title:** Clarify and maintain the product boundary between Task Management, governance, and downstream workspaces
-**Why this matters now:** TDE can only scale coherently if authority boundaries stay explicit and hidden coupling is reduced.
-**Current status:** Boundary work is active and materially advanced, but still important as workspace-package and delivery-mode logic grows.
-**Next concrete step:** Keep provider/consumer boundaries explicit in the product model and in downstream workspace operating packages.
-**Links:** `products/task-management/04-execution/PLAN.md`, `products/task-management/03-operating-model/GOVERNANCE.md`, `products/task-management/07-decisions/DELIVERY_MODE_DECISION_PXS_V1.md`
+**Title:** Stabilize and prove the canonical substrate that `pxs` will consume
+**Why this matters now:** Downstream consumers should not be built atop a canonical state transition that is still only described or provisionally evidenced.
+**Current status:** Readiness mechanisms are strong, and cutover evidence is promising, but the canonical-state proof path still needs explicit closed-loop decision completion.
+**Next concrete step:** complete the DB-cutover observation/decision path with explicit GO/NO-GO evidence and keep readiness claims tied to current proof rather than only to description.
+**Links:** `products/task-management/04-execution/PLAN.md`, `products/task-management/05-performance/READINESS_SCORECARD.md`, `products/task-management/05-performance/METRICS.md`

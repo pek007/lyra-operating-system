@@ -4,10 +4,10 @@
 Rolling near-term plan for the next 2-6 weeks.
 
 ## Current objectives
-1. Establish the first working Product-as-Code model for Task Management.
-2. Clarify the product boundary between Task Management, governance, and downstream workspaces.
-3. Make TDE deployment/readiness status easier to assess and act on.
-4. Improve the path for `pxs` to consume Task Management capability.
+1. Close the Vega/PXS boundary readiness gap and rerun it to PASS.
+2. Deliver a minimal executable `pxs` consumption contract with schemas and worked examples.
+3. Stabilize and prove the canonical substrate that `pxs` will consume.
+4. Keep Task Management product boundaries explicit while the downstream consumption path hardens.
 
 ## Current workstreams
 ### Workstream 1: Product model foundation

@@ -11,6 +11,8 @@ Task and decision management capability is reliably usable in `pxs` and within L
 - decision traceability: important decisions are recorded with rationale and follow-through links
 - intake-to-completion cycle time: meaningful work moves with less friction
 - downstream adoption: consuming workspaces can use the capability without bespoke rescue work
+- Vega/PXS boundary acceptance pass rate for Task Management consumption prerequisites
+- % current readiness claims backed by explicit GO/NO-GO evidence rather than provisional narrative
 
 ## Supporting signals
 - fewer blocked items caused by unclear ownership or missing context

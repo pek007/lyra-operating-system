@@ -5,30 +5,30 @@ Track the current risks that could prevent Task Management from becoming a relia
 
 ## Current risks
 
-### R-001 — Scope sprawl
-- Description: The product may absorb adjacent coordination, governance, or delivery problems without a clear boundary.
-- Consequence: The product becomes fuzzy, hard to operate, and difficult to improve.
-- Mitigation: Keep product interfaces explicit; distinguish Task Management from general operating-system work.
+### R-001 — Vega/PXS boundary readiness failure blocks safe downstream consumption
+- Description: The current acceptance evidence shows blocking failures in the Vega/PXS boundary model, including cross-domain reads still being allowed.
+- Consequence: downstream consumption can become unsafe, ad hoc, or coupled across domains.
+- Mitigation: treat boundary readiness as a first-class gating dependency and rerun the acceptance sheet to PASS with evidence.
 
-### R-002 — Implicit downstream interfaces
-- Description: `pxs` consumption may depend on tribal knowledge or workspace-specific assumptions instead of explicit contracts.
-- Consequence: Adoption stays fragile and non-repeatable.
-- Mitigation: Formalize downstream interface requirements and document what is internal versus consumable.
+### R-002 — Readiness description can outrun readiness evidence
+- Description: Task Management has strong readiness language and gates, but downstream confidence weakens if canonical-state claims remain provisional or insufficiently evidenced.
+- Consequence: consumers build on a moving or ambiguously proven substrate.
+- Mitigation: keep readiness tied to explicit evidence, decision records, and compact review surfaces.
 
-### R-003 — Governance drag
-- Description: Governance artifacts may accumulate faster than practical value.
-- Consequence: The product becomes heavy and discourages use.
-- Mitigation: Keep controls proportionate to risk; require each artifact to support a real decision or control need.
+### R-003 — Downstream consumption remains softer than the internal product model suggests
+- Description: The product model can become elegant while the `pxs` consumption contract still lacks executable schemas/examples and explicit transport semantics.
+- Consequence: consumer adoption remains bespoke and fragile.
+- Mitigation: make the consumption contract executable, versioned, and example-backed.
 
-### R-004 — Readiness ambiguity
-- Description: It may remain hard to tell whether TDE is actually ready for broader operational use.
-- Consequence: Either premature deployment or stalled progress.
-- Mitigation: Tie product health and roadmap more explicitly to the readiness gate and evidence artifacts.
+### R-004 — Boundary blur between product and coordination layers
+- Description: Task Management can unintentionally absorb responsibilities that belong to governance, delivery, or workspace-local operating structures.
+- Consequence: hidden coupling, unclear ownership, and weaker product discipline.
+- Mitigation: keep provider/consumer boundaries explicit while the downstream consumption path hardens.
 
 ### R-005 — Shadow operating state
 - Description: Important active work may continue to live in chat or side lists rather than the canonical operating substrate.
-- Consequence: Lost visibility, weak traceability, and degraded control.
-- Mitigation: Continue reinforcing TDE as the system of record for active product work.
+- Consequence: lost visibility, weak traceability, and degraded control.
+- Mitigation: continue reinforcing TDE as the system of record for active product work.
 
 ## Risk posture
-Current risk posture is manageable, but the main failure mode is not catastrophic breakage; it is slow drift into ambiguity, hidden coupling, and process weight.
+Current risk posture is manageable, but the strongest immediate blocker is the unsafe or incomplete downstream consumption path rather than TDE core mechanics alone.

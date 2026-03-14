@@ -93,11 +93,19 @@ This interface should be considered operationally usable when:
 - the exact system-of-record mechanics for `pxs` still need clearer operational examples
 - readiness is still easier to describe than measure compactly
 - the boundary between product-internal model sophistication and consumer-required simplicity still needs discipline
+- the minimal executable request/response schema set is not yet defined
+- compatibility/versioning semantics are not yet explicit enough
+- downstream use remains blocked by the current Vega/PXS boundary readiness failures
 
 ## Next likely interface evolution
-Possible future shapes:
+Near-term expected shape:
+- minimal schema-backed request/response contract with validation/error semantics
+- explicit transport choice consistent with the OS→PXS integration boundary
+- worked examples for the first pilot path
+
+Possible later shapes:
 - clearer capability-pack style distribution
-- a more explicit schema-backed task/decision contract
+- fuller schema-backed task/decision contract
 - a service boundary for consumer interaction if/when justified
 
-For now, the correct interface is a documented operating contract with explicit reviewability and evidence expectations.
+For now, the correct interface is a documented operating contract that should be tightened into a minimal executable contract before real downstream consumption claims are treated as proven.
