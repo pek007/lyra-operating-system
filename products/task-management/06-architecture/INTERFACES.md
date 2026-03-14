@@ -76,6 +76,6 @@ This interface defines:
 
 ## Next interface work
 - map current TDE artifacts to the product interface surface
-- add a formal machine schema for the intake contract
+- extend intake ingest beyond the first `signal` path
 - add clearer operational examples for `pxs` usage
 - decide whether a capability-pack or service boundary is the better long-term distribution shape
