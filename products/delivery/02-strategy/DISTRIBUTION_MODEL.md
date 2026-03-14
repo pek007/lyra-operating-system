@@ -23,6 +23,16 @@ Delivery is distributed through:
 - cross-product delivery support
 - future tooling or service surfaces if needed
 
+## Workspace consumption requirements
+For a downstream workspace such as `pxs`, Delivery distribution should include enough local operating-package structure that delivery expectations are usable in local context rather than remaining implicit.
+
+At minimum, consuming workspaces should make explicit:
+- local source-of-truth and process-discovery front doors
+- local task system of record
+- local decision/escalation path when delivery choices require review or approval
+- local error/incident handling path when verification or release failures occur
+- any adopted delivery/process artifacts relevant to the consumer scope
+
 ## Activation model
 Delivery is active when:
 - work is running through explicit intake, implementation, verification, and readiness paths

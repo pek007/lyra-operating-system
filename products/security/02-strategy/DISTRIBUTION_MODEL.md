@@ -23,6 +23,16 @@ Security is distributed through:
 - product-facing guidance and escalation signals
 - future reusable control packs or schema-backed security contracts if warranted
 
+## Workspace consumption requirements
+For a downstream workspace such as `pxs`, Security distribution should not stop at shipping control artifacts.
+The consumer workspace should also have enough local operating-package structure to make the adopted security posture discoverable and actionable.
+
+At minimum, consuming workspaces should make explicit:
+- local source-of-truth and process-discovery front doors
+- local error/incident handling path
+- local decision/escalation path for exceptions or residual-risk implications
+- any adopted security baseline or boundary artifacts relevant to that workspace
+
 ## Activation model
 Security becomes active in a consuming context when:
 - relevant requirements or controls are adopted
