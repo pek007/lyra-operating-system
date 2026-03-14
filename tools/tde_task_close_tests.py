@@ -59,7 +59,41 @@ def run_tests() -> None:
         assert successor_row is not None
         assert successor_row[0] == "Active"
 
-        blocked = build_closure_record(
+        improve = build_closure_record(
+            task_id=successor_id,
+            closure_state="Done",
+            result_summary="Work completed but exposed interface friction.",
+            evidence_refs=["evidence/interface-friction.md"],
+            outcome_vs_expected="The task finished, but the path was rougher than intended.",
+            next_recommendation="Create an improvement follow-up in Task Management.",
+            feedback_outcome="close_and_improve",
+            friction_flags=["interface_ambiguity"],
+            objective_id=created["objective_id"],
+            followup_refs=["IMPROVE-A-007-001"],
+        )
+        improve_result = close_task(closure_record=improve, db_path=root / "tde_state.sqlite", artifact_dir=root / "artifacts")
+        improve_path = improve_result["followup_actions"]["improvement_artifact_path"]
+        assert improve_path
+        assert Path(improve_path).exists()
+
+        error = build_closure_record(
+            task_id=successor_id,
+            closure_state="Blocked",
+            result_summary="Execution revealed a process/control failure.",
+            evidence_refs=["evidence/control-failure.md"],
+            outcome_vs_expected="Task could not complete under the intended control path.",
+            next_recommendation="Open error report and assign corrective action.",
+            feedback_outcome="close_as_error",
+            friction_flags=["control_failure"],
+            objective_id=created["objective_id"],
+            followup_refs=["CORRECTIVE-ACTION-001"],
+        )
+        error_result = close_task(closure_record=error, db_path=root / "tde_state.sqlite", artifact_dir=root / "artifacts")
+        error_path = error_result["followup_actions"]["error_report_path"]
+        assert error_path
+        assert Path(error_path).exists()
+
+        escalated = build_closure_record(
             task_id=successor_id,
             closure_state="Escalated",
             result_summary="Cannot proceed without a higher-level scope decision.",
@@ -70,7 +104,7 @@ def run_tests() -> None:
             friction_flags=["scope_tradeoff"],
             objective_id=created["objective_id"],
         )
-        esc_result = close_task(closure_record=blocked, db_path=root / "tde_state.sqlite", artifact_dir=root / "artifacts")
+        esc_result = close_task(closure_record=escalated, db_path=root / "tde_state.sqlite", artifact_dir=root / "artifacts")
         esc_path = esc_result["followup_actions"]["escalation_package_path"]
         assert esc_path
         assert Path(esc_path).exists()

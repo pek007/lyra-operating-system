@@ -27,7 +27,8 @@ The v1 path:
 Current bounded automatic follow-up support:
 - `close_and_chain` -> activate explicit follow-up refs and apply ready-promotion checks
 - `close_and_escalate` -> create escalation package artifact
-- `close_and_improve` / `close_as_error` -> preserve follow-up refs for the owning improvement/error path without auto-creating those artifacts yet
+- `close_and_improve` -> create a lightweight improvement follow-up artifact in the owning product/runtime path
+- `close_as_error` -> create a lightweight error report artifact aligned to the error-reporting standard
 
 ## Current status mapping
 Current v1 runtime mapping is:

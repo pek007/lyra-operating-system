@@ -86,7 +86,7 @@ def build_closure_record(
     return {
         "artifactType": "tde_task_closure_record",
         "schemaVersion": "1.0.0",
-        "closure_id": f"CLOSE-{task_id}-{datetime.now(timezone.utc).strftime('%Y%m%d-%H%M%S')}",
+        "closure_id": f"CLOSE-{task_id}-{datetime.now(timezone.utc).strftime('%Y%m%d-%H%M%S-%f')}",
         "task_id": task_id,
         "objective_id": objective_id,
         "closure_state": closure_state,
@@ -102,6 +102,135 @@ def build_closure_record(
     }
 
 
+def _slug(text: str) -> str:
+    out = ''.join(c.lower() if c.isalnum() else '-' for c in text)
+    while '--' in out:
+        out = out.replace('--', '-')
+    return out.strip('-')[:80] or 'item'
+
+
+def _write_improvement_note(*, artifact_dir: Path, closure_record: dict[str, Any]) -> str:
+    artifact_dir.mkdir(parents=True, exist_ok=True)
+    path = artifact_dir / f"tde-improvement-{_slug(closure_record['task_id'])}-{_slug(closure_record['closure_id'])}.md"
+    body = f"""# TDE Improvement Follow-up
+
+- Source task: {closure_record['task_id']}
+- Closure ID: {closure_record['closure_id']}
+- Objective ID: {closure_record.get('objective_id')}
+- Feedback outcome: {closure_record['feedback_outcome']}
+- Evaluated at: {closure_record['evaluated_at']}
+
+## Summary
+{closure_record['result_summary']}
+
+## Outcome vs expected
+{closure_record['outcome_vs_expected']}
+
+## Recommended next action
+{closure_record['next_recommendation']}
+
+## Friction flags
+"""
+    flags = closure_record.get("friction_flags", []) or []
+    if flags:
+        body += ''.join(f"- {flag}\n" for flag in flags)
+    else:
+        body += "- none recorded\n"
+    body += "\n## Evidence refs\n"
+    body += ''.join(f"- {ref}\n" for ref in closure_record.get("evidence_refs", []))
+    body += "\n## Follow-up refs\n"
+    followups = closure_record.get("followup_refs", []) or []
+    if followups:
+        body += ''.join(f"- {ref}\n" for ref in followups)
+    else:
+        body += "- none\n"
+    path.write_text(body, encoding="utf-8")
+    return str(path)
+
+
+def _write_error_report(*, artifact_dir: Path, closure_record: dict[str, Any]) -> str:
+    artifact_dir.mkdir(parents=True, exist_ok=True)
+    error_id = f"ERR-{closure_record['task_id']}-{datetime.now(timezone.utc).strftime('%Y%m%d-%H%M%S')}"
+    path = artifact_dir / f"{error_id}.md"
+    evidence = closure_record.get("evidence_refs", []) or []
+    followups = closure_record.get("followup_refs", []) or []
+    body = f"""# Error Report
+
+## Header
+- Error ID: {error_id}
+- Date: {closure_record['evaluated_at'][:10]}
+- Title: TDE task closure error follow-up for {closure_record['task_id']}
+- Type: process_failure
+- Scope: product_local
+- Owning product or owner: A-007 / Task Management
+- Affected products/contexts: Task Management / TDE runtime
+- Status: open
+- Review / closure date: TBD
+
+## Summary
+- What happened?
+  - {closure_record['result_summary']}
+
+## Impact
+- Actual impact:
+  - Task ended with closure outcome `{closure_record['feedback_outcome']}` and requires error-path handling.
+- Potential impact:
+  - Recurrence could degrade TDE execution reliability and follow-through.
+
+## Detection
+- How was it detected?
+  - Structured task closure evaluation in TDE.
+- Detection gap, if any:
+  - TBD
+
+## Root cause
+- Primary root cause:
+  - TBD
+- Contributing factors:
+"""
+    flags = closure_record.get("friction_flags", []) or []
+    if flags:
+        body += ''.join(f"  - {flag}\n" for flag in flags)
+    else:
+        body += "  - TBD\n"
+    body += f"""
+
+## Immediate mitigation
+- What was done immediately?
+  - Task closure was recorded and routed into the formal error path.
+
+## Corrective actions
+"""
+    if followups:
+        body += ''.join(f"- [ ] {ref}\n" for ref in followups)
+    else:
+        body += "- [ ] Define corrective action\n"
+    body += f"""
+
+## Preventive changes
+- What should change to reduce recurrence?
+  - {closure_record['next_recommendation']}
+
+## Linked artifacts
+- Related tasks: {', '.join(followups) if followups else 'none'}
+- Related decisions: none
+- Related evidence: {', '.join(evidence) if evidence else 'none'}
+- Related product/shared artifacts: {closure_record['closure_id']}
+
+## Closure criteria
+- What must be true before this is considered closed?
+  - Corrective action assigned
+  - Relevant control/model updated
+  - Verification path defined
+
+## Closure note
+- Final outcome / verification:
+  - TBD
+"""
+    path.write_text(body, encoding="utf-8")
+    return str(path)
+
+
 def _close_followup_actions(*, conn: Any, closure_record: dict[str, Any], task_metadata: dict[str, Any], artifact_dir: Path | None) -> dict[str, Any]:
     feedback_outcome = closure_record["feedback_outcome"]
     followup_refs = closure_record.get("followup_refs", []) or []
@@ -111,6 +240,8 @@ def _close_followup_actions(*, conn: Any, closure_record: dict[str, Any], task_m
         "ready_promotions": [],
         "escalation_package_path": None,
         "improvement_refs": [],
+        "improvement_artifact_path": None,
+        "error_report_path": None,
     }
 
     if feedback_outcome == "close_and_chain":
@@ -151,8 +282,23 @@ def _close_followup_actions(*, conn: Any, closure_record: dict[str, Any], task_m
             workflow_family=task_metadata.get("workflow_family"),
         )
 
-    elif feedback_outcome in {"close_and_improve", "close_as_error"}:
+    elif feedback_outcome == "close_and_improve":
+        if artifact_dir is None:
+            raise ValidationError("artifact_dir_required_for_improvement")
         actions["improvement_refs"] = followup_refs
+        actions["improvement_artifact_path"] = _write_improvement_note(
+            artifact_dir=artifact_dir,
+            closure_record=closure_record,
+        )
+
+    elif feedback_outcome == "close_as_error":
+        if artifact_dir is None:
+            raise ValidationError("artifact_dir_required_for_error")
+        actions["improvement_refs"] = followup_refs
+        actions["error_report_path"] = _write_error_report(
+            artifact_dir=artifact_dir,
+            closure_record=closure_record,
+        )
 
     return actions
 
