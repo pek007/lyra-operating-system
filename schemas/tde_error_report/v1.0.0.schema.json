@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lyra.local/schemas/tde_error_report/v1.0.0.schema.json",
+  "title": "TDE Error Report",
+  "type": "object",
+  "required": [
+    "artifactType",
+    "schemaVersion",
+    "error_id",
+    "date",
+    "title",
+    "type",
+    "scope",
+    "owning_product_or_owner",
+    "affected_products_contexts",
+    "summary",
+    "impact",
+    "detection_method",
+    "root_cause",
+    "corrective_actions",
+    "preventive_changes",
+    "status",
+    "source_reference"
+  ],
+  "properties": {
+    "artifactType": { "const": "tde_error_report" },
+    "schemaVersion": { "const": "1.0.0" },
+    "error_id": { "type": "string", "minLength": 1 },
+    "date": { "type": "string", "format": "date" },
+    "title": { "type": "string", "minLength": 3 },
+    "type": {
+      "type": "string",
+      "enum": ["incident", "near_miss", "control_failure", "process_failure", "decision_failure"]
+    },
+    "scope": {
+      "type": "string",
+      "enum": ["product_local", "cross_product", "system_level"]
+    },
+    "owning_product_or_owner": { "type": "string", "minLength": 1 },
+    "affected_products_contexts": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 1
+    },
+    "summary": { "type": "string", "minLength": 5 },
+    "impact": {
+      "type": "object",
+      "required": ["actual_impact", "potential_impact"],
+      "properties": {
+        "actual_impact": { "type": "string", "minLength": 1 },
+        "potential_impact": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "detection_method": { "type": "string", "minLength": 1 },
+    "root_cause": { "type": "string", "minLength": 1 },
+    "contributing_factors": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "immediate_mitigation": { "type": ["string", "null"] },
+    "corrective_actions": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 1
+    },
+    "preventive_changes": { "type": "string", "minLength": 1 },
+    "linked_artifacts": {
+      "type": "object",
+      "properties": {
+        "related_tasks": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "related_decisions": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "related_evidence": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "related_product_shared_artifacts": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+      },
+      "additionalProperties": false
+    },
+    "status": { "type": "string", "enum": ["open", "mitigated", "closed"] },
+    "review_closure_date": { "type": ["string", "null"], "format": "date" },
+    "source_reference": { "type": "string", "minLength": 1 },
+    "priority_hint": {
+      "oneOf": [
+        { "type": "string", "enum": ["low", "medium", "high", "critical", "unspecified"] },
+        { "type": "null" }
+      ]
+    }
+  },
+  "additionalProperties": false
+}

@@ -74,6 +74,15 @@ This interface defines:
 - validation expectations for both source report and canonical intake packet
 - provenance and enrichment rules for the producer chain
 
+### TDE error-to-corrective-action policy
+Canonical artifact:
+- `06-architecture/TDE_ERROR_TO_CORRECTIVE_ACTION_POLICY_V1.md`
+
+This interface/policy bridge defines:
+- how structured error/control reports connect to canonical TDE corrective action
+- why error reporting and TDE action tracking are distinct but linked layers
+- the first adapter path from error reports into canonical TDE intake packets
+
 ## Next interface work
 - map current TDE artifacts to the product interface surface
 - extend intake ingest beyond the first `signal` path

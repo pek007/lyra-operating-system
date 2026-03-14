@@ -151,10 +151,48 @@ def _signal_triage(packet: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def _work_triage(packet: dict[str, Any]) -> dict[str, Any]:
+    related_entities = packet.get("related_entities") if isinstance(packet.get("related_entities"), list) else []
+    linked_refs = sorted({str(e.get("entity_ref")) for e in related_entities if isinstance(e, dict) and e.get("entity_type") == "tde_item" and e.get("entity_ref")})
+    if linked_refs:
+        return {
+            "triage_outcome": "update_existing",
+            "reason": "linked_tde_work_present",
+            "linked_refs": linked_refs,
+        }
+    return {
+        "triage_outcome": "create_work",
+        "reason": "bounded_corrective_work_packet",
+        "linked_refs": [],
+    }
+
+
+def _decision_triage(packet: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "triage_outcome": "create_decision",
+        "reason": "decision_intake_packet",
+        "linked_refs": [],
+    }
+
+
+def _incident_triage(packet: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "triage_outcome": "create_incident",
+        "reason": "incident_intake_packet",
+        "linked_refs": [],
+    }
+
+
 def _triage(packet: dict[str, Any]) -> dict[str, Any]:
     intake_class = packet.get("intake_class")
     if intake_class == "signal":
         return _signal_triage(packet)
+    if intake_class == "work":
+        return _work_triage(packet)
+    if intake_class == "decision":
+        return _decision_triage(packet)
+    if intake_class == "incident":
+        return _incident_triage(packet)
     raise ValidationError(f"unsupported_intake_class:{intake_class}")
 
 
