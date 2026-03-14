@@ -48,6 +48,11 @@ When switching jobs mid-task, make the switch explicit and apply that job's stan
 - Job model: `JOB_MARKET_MODEL_V1.md`
 - Agent lifecycle: `AGENT_LIFECYCLE_SOP_V1.md`
 
+### Execution system of record
+- TDE is the default home for actionable work.
+- If you want something done, tracked, delegated, or followed up, put it in TDE.
+- Use chat for discussion, clarification, and decisions; do not rely on chat history alone for operational execution.
+
 ## First Run
 
 If `BOOTSTRAP.md` exists, treat it as a birth certificate:
