@@ -89,11 +89,13 @@ High-level assessment:
 - any decision to broaden `pxs` or add another customer environment
 
 ## Current recommendation
-Maintain operational GO under the current trusted-boundary model, but prioritize one targeted review next:
-- verify whether `px-internal-dev` still needs broader filesystem scope than the main trusted boundary
+Maintain operational GO under the current trusted-boundary model only while prioritizing the highest-risk active remediation next:
+- enforce and re-verify the OS↔PXS boundary so cross-domain reads are not allowed by default in the Vega/PXS context
+- then verify whether `px-internal-dev` still needs broader filesystem scope than the main trusted boundary
 
 ## Linked references
 - `governance/TRUST_BOUNDARY_POLICY_RECORD_2026-03-04.md`
 - `governance/GO_RISK_DECISION_2026-03-06.md`
+- `governance/VEGA_ACCEPTANCE_TEST_RUN_SHEET_V1.md`
 - `knowledge/evidence/latest-security-audit.json`
 - `knowledge/evidence/latest-doctor.txt`
