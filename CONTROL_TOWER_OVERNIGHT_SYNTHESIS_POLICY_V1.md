@@ -15,11 +15,12 @@ Control Tower decides cross-product overnight execution priorities.
 
 ## Inputs
 Control Tower overnight synthesis should use:
-- the current nightly product-owner reports
+- the current product-owner nightly synthesis deltas
 - current `TOP_PRIORITIES.md` artifacts for active products
 - current TDE execution state
-- current known blockers, risks, and readiness signals
+- current known blockers, risks, opportunities, and readiness signals
 - current strategic phase and portfolio bottleneck
+- product-local artifact updates only when exceptions or major deltas require them
 
 ## Main questions
 Control Tower should answer:
@@ -56,7 +57,8 @@ Selection should avoid:
 ## Product-owner vs Control-Tower roles
 ### Product Owner
 - maintains product-local priorities
-- reports product-local truth
+- maintains product-local research artifacts and doctrine
+- evaluates product-local truth inside the relevant product context
 - recommends next actions
 
 ### Control Tower
@@ -64,14 +66,15 @@ Selection should avoid:
 - resolves local-priority collisions
 - selects overnight execution priorities
 - decides what should enter or change in TDE now
+- consumes compact deltas rather than raw product-local reasoning by default
 
 ## Required synthesis output
 A valid overnight synthesis note should contain:
 - portfolio bottleneck
 - selected overnight priorities (1-3)
+- the few material changes that matter at portfolio level
 - what was activated/updated in TDE
-- what was done immediately
-- what remains blocked
+- what remains blocked or requires decision
 - what may require Peter before 07:00
 
 ## Relationship to TDE

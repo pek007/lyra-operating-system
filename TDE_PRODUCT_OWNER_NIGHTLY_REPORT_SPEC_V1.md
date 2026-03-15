@@ -5,22 +5,23 @@ Owner: Task Management / Control Tower
 Date: 2026-03-14
 
 ## Purpose
-Define the canonical nightly report artifact for product-owner reporting in the TDE operating model.
+Define the canonical nightly synthesis delta artifact for product-owner reporting in the TDE operating model.
 
 This spec exists to bridge:
-- refreshed product priorities in code
-- executive nightly reporting
+- product-local artifact updates in code
+- compact executive overnight synthesis
 - canonical TDE signal intake
 
-It ensures that nightly product-owner reporting is not merely a chat prompt pattern, but a structured operating artifact that can be validated, transformed, and consumed by Task Management.
+It ensures that overnight product-owner reporting is not merely a chat prompt pattern, but a structured operating artifact derived from the product's own canonical model and research system.
 
 ## Core principle
-A nightly product-owner report should be:
+A nightly product-owner synthesis should be:
 1. grounded in the full product stack
-2. based on the current `TOP_PRIORITIES.md`
-3. produced as a canonical structured report artifact
-4. rendered into a human-readable summary as a projection
-5. treated operationally as `signal`, not automatically as `work`
+2. derived from current canonical product artifacts, not freeform narration
+3. able to reflect product-local research deltas where relevant
+4. produced as a canonical structured synthesis artifact
+5. rendered into a human-readable summary only as a projection
+6. treated operationally as `signal`, not automatically as `work`
 
 ## Relationship to other artifacts
 This spec should be read together with:
@@ -33,19 +34,22 @@ This spec should be read together with:
 
 ## Canonical workflow
 The intended nightly product-owner chain is:
-1. Product Owner reviews the full product stack
-2. Product Owner refreshes `TOP_PRIORITIES.md` if needed
-3. Product Owner emits a canonical nightly report artifact
-4. Human-readable executive summary is rendered from that artifact
-5. Adapter translates the report into a canonical `tde_intake_packet`
-6. TDE triages the packet under `intake_class = signal`
-7. Control Tower decides whether any signal should become work/decision/action
+1. Product Owner reviews the full product stack and relevant research artifacts
+2. Product Owner updates product-local canonical artifacts if understanding or direction changed
+3. Product Owner refreshes `TOP_PRIORITIES.md` if needed
+4. Product Owner emits a canonical nightly synthesis artifact capturing only material deltas
+5. Human-readable executive summary is rendered from that artifact
+6. Adapter translates the synthesis into a canonical `tde_intake_packet`
+7. TDE triages the packet under `intake_class = signal`
+8. Control Tower decides whether any signal should become work/decision/action
 
 ## Canonical source precedence
-The nightly report should use this source precedence:
-1. `TOP_PRIORITIES.md` as the canonical source of current top priorities
-2. full product model as supporting context
-3. current TDE/execution state as current-state evidence
+The nightly synthesis should use this source precedence:
+1. canonical product artifacts updated in this run
+2. `TOP_PRIORITIES.md` as the canonical source of current top priorities
+3. full product model as supporting context
+4. current TDE/execution state as current-state evidence
+5. product-local research artifacts where relevant
 
 If `TOP_PRIORITIES.md` is missing or stale, the report must say so explicitly.
 It must not silently replace the codified source of truth unless the run is explicitly performing a priority-refresh update first.
@@ -64,50 +68,57 @@ A nightly product-owner report should review at minimum:
 - current `04-execution/TOP_PRIORITIES.md`
 - current TDE/execution reality
 
-## Canonical report content
-A valid nightly product-owner report should contain:
-- report id
+## Canonical synthesis content
+A valid nightly product-owner synthesis should contain:
+- synthesis id
 - product id / product name
 - product owner
-- report date
-- overall health
+- synthesis date
 - short executive summary
+- material changes since last run
 - current top priorities (from code)
-- key blockers
-- key risks
+- key blockers or constraints
+- key risks or opportunities
+- product-local research delta, if any
 - proposed next actions
 - evidence links / supporting references where relevant
 - indication of whether priorities were refreshed in this run
 
 ## Recommended semantic fields
-Recommended fields for the canonical report object:
+Recommended fields for the canonical synthesis object:
 - `artifactType`
 - `schemaVersion`
-- `reportId`
+- `synthesisId`
 - `productId`
 - `productName`
 - `productOwner`
-- `reportDate`
-- `overallHealth`
+- `synthesisDate`
 - `summary`
+- `materialChanges`
 - `topPriorities`
-- `blockers`
-- `risks`
+- `constraints`
+- `risksOrOpportunities`
+- `researchDelta`
 - `proposedTdeActions`
 - `priorityRefreshStatus`
 - `evidenceLinks`
 - `sourceReferences`
 
-## Health scale
-Recommended health values:
-- `green`
-- `yellow`
-- `red`
+## State expression rule
+Avoid human-style color coding.
 
-Interpretation:
-- `green` = healthy enough, no major execution concern
-- `yellow` = meaningful weakness/blocker/risk present
-- `red` = materially blocked, degraded, or requiring rapid attention
+Use short explicit language instead, for example:
+- `on_track`
+- `needs_decision`
+- `blocked_externally`
+- `under_investigation`
+- `plan_changed`
+- `execution_in_progress`
+- `evidence_weak`
+- `risk_rising`
+- `ready_for_review`
+
+The purpose is to communicate the actual state in words rather than compressing it into color symbolism.
 
 ## Priority refresh field
 The nightly report should explicitly state one of:
@@ -119,13 +130,14 @@ The nightly report should explicitly state one of:
 This makes it visible whether the code-based priority surface is actually current.
 
 ## Human-readable summary projection
-The executive Telegram summary should be derived from the canonical report object.
+The executive summary should be derived from the canonical synthesis object.
 
 Recommended concise structure:
-- product name + overall health
+- product name
 - one-line summary
-- top 3 priorities
-- main blocker/risk
+- material change or no-material-change marker
+- top 1-3 priorities only if materially relevant
+- main blocker/risk/opportunity in words
 - recommended overnight next action
 
 This summary is a projection, not the canonical source.
@@ -154,11 +166,12 @@ Invalid report objects must fail closed rather than silently entering TDE.
 
 ## Anti-patterns
 Avoid:
-- making Telegram output the only source of the nightly report
-- treating nightly reporting as a hidden priority-setting mechanism
+- making chat output the only source of the nightly synthesis
+- treating overnight reporting as a hidden priority-setting mechanism
 - silently inferring priorities when codified priorities exist
-- converting every nightly report into work automatically
+- converting every nightly synthesis into work automatically
 - losing blocker/risk meaning during transformation
+- pushing product-local research reasoning into the main Control Tower context by default
 
 ## Minimum implementation expectation
 A compliant nightly runtime should:

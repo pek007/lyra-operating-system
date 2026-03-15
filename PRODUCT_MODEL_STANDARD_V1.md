@@ -80,6 +80,8 @@ products/<slug>/
 
 Optional extensions may add more files, but the core structure should remain stable.
 
+A product that requires ongoing domain learning may add an `08-research/` layer governed by `PRODUCT_RESEARCH_SYSTEM_STANDARD_V1.md`.
+
 ## Mandatory artifacts
 Every PX product should have these artifacts.
 
