@@ -106,9 +106,12 @@ Result: PASS
 - [ ] Confirm only registered handoff path is used for transfer
 
 Evidence:
-- Vega test explicitly listed `/Users/lyra/.openclaw/workspace` successfully (read allowed)
+- Original 2026-03-05 check: Vega test explicitly listed `/Users/lyra/.openclaw/workspace` successfully (read allowed)
+- 2026-03-15 config hardening: `px-internal-dev.tools.fs.workspaceOnly=true` is now enforced for filesystem tools
+- However `px-internal-dev` still has `sandbox.mode=off` plus gateway `exec` with `security=full` and `ask=off`, so cross-domain host reads remain operationally possible via shell execution even after the filesystem-tool narrowing
+- Post-change validation artifact: `products/task-management/04-execution/VEGA_PXS_BOUNDARY_POST_CHANGE_VALIDATION_2026-03-15.md`
 
-Result: FAIL
+Result: FAIL (improved but not yet deny-by-default across the full runtime surface)
 
 ---
 
