@@ -1,0 +1,176 @@
+{
+  "artifactType": "product_owner_nightly_synthesis",
+  "schemaVersion": "1.0",
+  "synthesisId": "po-nightly-delivery-2026-03-15",
+  "productId": "A-006",
+  "productName": "Delivery",
+  "productOwner": "Lyra",
+  "synthesisDate": "2026-03-15",
+  "summary": "Delivery remains strategically coherent and its codified top priorities still match the current product stack, but the strongest gaps are still proof-of-operation gaps: the Delivery-as-Code foundations are in place, yet the first real end-to-end pilot evidence pack, contract-grade gate logic, and operational scorecard/review loop are not yet visibly complete.",
+  "materialChanges": [
+    {
+      "type": "product_model_update",
+      "text": "Delivery now has a canonical 08-research layer with domain map, radar, deep-dive index, doctrine, implications, and sources."
+    },
+    {
+      "type": "decision_update",
+      "text": "Delivery explicitly adopted an artifact-first research model with broad radar and bounded deep dives."
+    },
+    {
+      "type": "execution_state",
+      "text": "No material improvement yet in the top proof gap: one full inspectable Delivery v0.1 pilot evidence pack is still not visible in the reviewed product stack."
+    }
+  ],
+  "topPriorities": [
+    {
+      "rank": 1,
+      "title": "Run one real Delivery v0.1 pilot end to end and publish the evidence pack",
+      "state": "under_investigation",
+      "whyThisMattersNow": "Delivery only becomes credible as a shipping system when one real or representative change has moved through activation, gate use, evidence capture, rollback discipline, and explicit pass/fail outcome.",
+      "currentStatus": "Still current. PRODUCT.md, PLAN.md, RISKS.md, the Delivery research implementation memo, and the assembly ACTIVATION/VERIFY docs all keep the first real pilot and canonical evidence pack as the highest-value next proof step.",
+      "nextConcreteStep": "Select one bounded Delivery v0.1 pilot in a consuming environment, run the full ACTIVATION and VERIFY path, and publish one inspectable evidence pack covering lane used, scope, gate applied, evidence captured, rollback notes, and verdict."
+    },
+    {
+      "rank": 2,
+      "title": "Upgrade the Delivery gate from checklist to contract",
+      "state": "execution_in_progress",
+      "whyThisMattersNow": "Delivery reliability depends on gates being deterministic, risk-aware, and evidence-backed rather than dependent on operator interpretation.",
+      "currentStatus": "Still current. The strategy, governance posture, state-transition policy, risks, metrics, and VERIFY baseline all point to gate ambiguity as the next major control-quality weakness after basic scaffolding.",
+      "nextConcreteStep": "Convert the current checklist into a risk-classed contract with explicit required checks, evidence outputs, pass/fail logic, and at least one machine-checkable validation hook tied to the existing policy/governance path."
+    },
+    {
+      "rank": 3,
+      "title": "Make Delivery measurement and review operational, not aspirational",
+      "state": "on_track",
+      "whyThisMattersNow": "Delivery will not compound as a product unless weekly scorecards and reviews produce recurring evidence and concrete improvement decisions instead of remaining an intent surface.",
+      "currentStatus": "Still current. METRICS.md and PLAN.md define the direction, but no clear product-local evidence in the reviewed stack shows the first low-noise weekly scorecard snapshot and review loop are already operating.",
+      "nextConcreteStep": "Define the minimal weekly scorecard snapshot, run the first real review, and record one concrete improvement follow-through from the result."
+    }
+  ],
+  "constraints": [
+    {
+      "id": "C-001",
+      "title": "No inspectable first real Delivery v0.1 pilot evidence pack is yet visible in the reviewed product stack",
+      "impact": "Prevents Delivery from proving that its activation, verification, rollback, and evidence model works in a real consuming environment rather than only in design artifacts.",
+      "evidence": [
+        "products/delivery/04-execution/PLAN.md",
+        "products/delivery/04-execution/TOP_PRIORITIES.md",
+        "products/delivery/04-execution/IMPLEMENT_NOW_FROM_RESEARCH_2026-03-14.md",
+        "assemblies/devsecops-delivery/v0.1/ACTIVATION.md",
+        "assemblies/devsecops-delivery/v0.1/VERIFY.md"
+      ]
+    },
+    {
+      "id": "C-002",
+      "title": "Delivery gate semantics are still stronger in policy/design intent than in contract-grade executable validation",
+      "impact": "Leaves gate application vulnerable to interpretation drift and weakens comparability, enforcement, and confidence in release-readiness judgments.",
+      "evidence": [
+        "products/delivery/04-execution/RISKS.md#R-003",
+        "products/delivery/03-operating-model/GOVERNANCE.md",
+        "products/delivery/03-operating-model/DELIVERY_STATE_TRANSITION_POLICY_V1.md"
+      ]
+    }
+  ],
+  "risksOrOpportunities": [
+    {
+      "id": "R-001",
+      "title": "Verification debt through thin activation/evidence practice",
+      "state": "risk_rising"
+    },
+    {
+      "id": "R-003",
+      "title": "Gate ambiguity",
+      "state": "execution_in_progress"
+    },
+    {
+      "id": "R-004",
+      "title": "Security or authority regression under delivery pressure",
+      "state": "needs_decision"
+    },
+    {
+      "id": "O-001",
+      "title": "Artifact-first research layer can make Delivery learning cumulative and easier to synthesize",
+      "state": "ready_for_review"
+    }
+  ],
+  "researchDelta": {
+    "summary": "Delivery adopted a broad domain map and radar with three bounded deep-dive themes: end-to-end Delivery v0.1 proof, gate contract hardening, and delivery scorecard/review operationalization.",
+    "artifactUpdates": [
+      "products/delivery/08-research/RESEARCH_MODEL.yaml",
+      "products/delivery/08-research/DOMAIN_MAP.md",
+      "products/delivery/08-research/RADAR.md",
+      "products/delivery/08-research/DEEP_DIVE_INDEX.md",
+      "products/delivery/08-research/DOCTRINE.md",
+      "products/delivery/08-research/IMPLICATIONS.md",
+      "products/delivery/08-research/SOURCES.md",
+      "products/delivery/07-decisions/DECISIONS.md#D-004"
+    ]
+  },
+  "proposedTdeActions": [
+    {
+      "type": "signal",
+      "title": "Prioritize one real bounded Delivery v0.1 pilot with canonical evidence-pack output",
+      "why": "This is the clearest bottleneck between Delivery's documented design and credible operational proof."
+    },
+    {
+      "type": "signal",
+      "title": "Define the next contract-grade gate increment with machine-checkable validation",
+      "why": "This closes the main control-quality gap between checklist guidance and policy-backed, reproducible release/readiness judgment."
+    },
+    {
+      "type": "signal",
+      "title": "Use the new Delivery research layer to broaden surveillance while keeping only three active deep dives",
+      "why": "This tests whether artifact-first research improves signal quality without polluting Control Tower context."
+    }
+  ],
+  "priorityRefreshStatus": "unchanged",
+  "priorityRefreshNote": "Reviewed the full Delivery product stack against products/delivery/04-execution/TOP_PRIORITIES.md. Current priorities remain aligned with canonical product artifacts and the new 08-research layer; no refresh was needed in this run.",
+  "evidenceLinks": [
+    "products/delivery/PRODUCT.md",
+    "products/delivery/MODEL.yaml",
+    "products/delivery/01-identity/VISION.md",
+    "products/delivery/02-strategy/STRATEGY.md",
+    "products/delivery/03-operating-model/OPERATING_MODEL.md",
+    "products/delivery/03-operating-model/GOVERNANCE.md",
+    "products/delivery/03-operating-model/DELIVERY_STATE_TRANSITION_POLICY_V1.md",
+    "products/delivery/04-execution/ROADMAP.md",
+    "products/delivery/04-execution/PLAN.md",
+    "products/delivery/04-execution/RISKS.md",
+    "products/delivery/04-execution/TOP_PRIORITIES.md",
+    "products/delivery/05-performance/METRICS.md",
+    "products/delivery/06-architecture/INTERFACES.md",
+    "products/delivery/06-architecture/DELIVERY_AS_CODE_DESIGN_V1.md",
+    "products/delivery/07-decisions/DECISIONS.md",
+    "products/delivery/08-research/RESEARCH_MODEL.yaml",
+    "products/delivery/08-research/DOMAIN_MAP.md",
+    "products/delivery/08-research/DOCTRINE.md",
+    "products/delivery/08-research/IMPLICATIONS.md",
+    "assemblies/devsecops-delivery/v0.1/ACTIVATION.md",
+    "assemblies/devsecops-delivery/v0.1/VERIFY.md"
+  ],
+  "sourceReferences": {
+    "canonicalTopPriorities": "products/delivery/04-execution/TOP_PRIORITIES.md",
+    "supportingProductArtifacts": [
+      "products/delivery/PRODUCT.md",
+      "products/delivery/MODEL.yaml",
+      "products/delivery/01-identity/VISION.md",
+      "products/delivery/02-strategy/STRATEGY.md",
+      "products/delivery/03-operating-model/OPERATING_MODEL.md",
+      "products/delivery/03-operating-model/GOVERNANCE.md",
+      "products/delivery/04-execution/ROADMAP.md",
+      "products/delivery/04-execution/PLAN.md",
+      "products/delivery/04-execution/RISKS.md",
+      "products/delivery/05-performance/METRICS.md",
+      "products/delivery/06-architecture/INTERFACES.md",
+      "products/delivery/07-decisions/DECISIONS.md",
+      "products/delivery/08-research/DOCTRINE.md",
+      "products/delivery/08-research/IMPLICATIONS.md"
+    ],
+    "currentStateEvidence": [
+      "products/delivery/04-execution/IMPLEMENT_NOW_FROM_RESEARCH_2026-03-14.md",
+      "products/delivery/04-execution/TDE_UI_PILOT_DELIVERY_CONTRACT_V1.md",
+      "assemblies/devsecops-delivery/v0.1/ACTIVATION.md",
+      "assemblies/devsecops-delivery/v0.1/VERIFY.md"
+    ]
+  }
+}

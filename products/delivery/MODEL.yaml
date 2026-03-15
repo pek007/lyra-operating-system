@@ -56,6 +56,13 @@ artifacts:
   metrics: 05-performance/METRICS.md
   interfaces: 06-architecture/INTERFACES.md
   decisions: 07-decisions/DECISIONS.md
+  research_model: 08-research/RESEARCH_MODEL.yaml
+  research_domain_map: 08-research/DOMAIN_MAP.md
+  research_radar: 08-research/RADAR.md
+  research_deep_dive_index: 08-research/DEEP_DIVE_INDEX.md
+  research_doctrine: 08-research/DOCTRINE.md
+  research_implications: 08-research/IMPLICATIONS.md
+  research_sources: 08-research/SOURCES.md
 
 metrics:
   north_star:

@@ -1,0 +1,61 @@
+product_id: A-006
+product_name: Delivery
+owner: Lyra
+status: active
+
+broad_domains:
+  - delivery-as-code-architecture-and-controls
+  - verification-and-release-readiness-design
+  - evidence-packaging-traceability-and-auditability
+  - gate-contracts-policy-binding-and-state-transitions
+  - deployment-and-rollout-patterns-for-consuming-environments
+  - rollback-recovery-and-change-safety
+  - delivery-metrics-review-loops-and-improvement-systems
+  - developer-agent-and-runtime-collaboration-models
+  - supply-chain-and-build-pipeline-risk-relevant-to-delivery
+  - external-practices-material-to-ai-native-software-delivery
+
+priority_themes:
+  - end-to-end-delivery-v0-1-pilot-proof
+  - gate-contract-hardening
+  - delivery-scorecard-and-review-operationalization
+
+watch_sources:
+  internal:
+    - products/delivery/**
+    - assemblies/devsecops-delivery/**
+    - governance/**
+    - knowledge/evidence/**
+    - knowledge/reports/**
+    - docs/**
+  external_priority_classes:
+    - official-openclaw-and-runtime-documentation
+    - primary-vendor-delivery-and-security-documentation
+    - standards-and-frameworks
+    - high-quality-engineering-and-release-reliability-research
+    - curated-industry-watch
+
+review_cadence:
+  radar: daily
+  deep_dive: weekly
+  doctrine: weekly
+  domain_map: monthly
+
+deep_dive_limit: 3
+
+promotion_rules:
+  - materially_changes_architecture_controls_roadmap_or_operating_posture
+  - indicates_rising_risk_or_major_opportunity
+  - conflicts_with_current_doctrine
+  - affects_live_decision_or_blocker
+  - repeated_weak_signals_form_a_meaningful_pattern
+
+artifact_paths:
+  domain_map: 08-research/DOMAIN_MAP.md
+  radar: 08-research/RADAR.md
+  deep_dive_index: 08-research/DEEP_DIVE_INDEX.md
+  doctrine: 08-research/DOCTRINE.md
+  implications: 08-research/IMPLICATIONS.md
+  sources: 08-research/SOURCES.md
+
+last_reviewed_at: 2026-03-15

@@ -1,6 +1,10 @@
 # Operating Model
 
-Delivery runs as a repeatable flow from intake through implementation, verification, release/handoff, and post-delivery learning, while continuously improving the delivery system itself.
+Delivery runs as a repeatable flow from intake through implementation, verification, release/handoff, post-delivery learning, and an artifact-first research layer, while continuously improving the delivery system itself.
+
+## Research operating stance
+Delivery should maintain broad awareness across the relevant delivery surface while concentrating depth in a few currently decision-relevant themes.
+Research should update canonical product artifacts and implications rather than accumulate as freeform notes.
 
 ## Current design direction
 Delivery is evolving toward **Delivery-as-Code**:

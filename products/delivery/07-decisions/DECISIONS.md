@@ -15,3 +15,7 @@
 - References:
   - `products/delivery/04-execution/TDE_UI_PILOT_DELIVERY_CONTRACT_V1.md`
   - `ONE_ITERATION_TDE_UI_PILOT_V1.md`
+
+### D-004 — Delivery adopts an artifact-first research layer with broad radar and bounded deep dives
+- Decision: Delivery adopts `08-research/` as a canonical product layer, using a broad domain map and radar for awareness plus a limited set of active deep dives for detailed analysis. Research is valid only when it updates doctrine, implications, decisions, plans, controls, or other canonical product artifacts.
+- Why it matters: This makes Delivery learning cumulative, keeps the product broad enough to avoid blind spots, preserves context separation from Control Tower, and prevents research from degrading into prompt theater or low-signal reporting.
