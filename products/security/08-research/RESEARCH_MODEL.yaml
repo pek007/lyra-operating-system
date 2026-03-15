@@ -1,0 +1,60 @@
+product_id: A-004
+product_name: Security
+owner: Lyra
+status: active
+
+broad_domains:
+  - openclaw-security-architecture-and-controls
+  - agent-runtime-isolation-and-trust-boundaries
+  - identity-auth-and-secret-handling
+  - tool-permission-and-execution-safety
+  - model-risk-prompt-injection-and-output-misuse
+  - browser-node-and-device-attack-surfaces
+  - dependency-and-supply-chain-security
+  - deployment-posture-for-local-vps-and-tailnet-setups
+  - monitoring-logging-auditability-and-incident-response
+  - external-cyber-developments-material-to-ai-agent-environments
+
+priority_themes:
+  - os-pxs-boundary-enforcement
+  - tool-and-evidence-execution-surface-hardening
+  - ai-agent-runtime-and-tool-abuse-controls
+
+watch_sources:
+  internal:
+    - products/security/**
+    - governance/**
+    - knowledge/evidence/**
+    - knowledge/reports/**
+    - docs/**
+  external_priority_classes:
+    - official-openclaw-and-runtime-documentation
+    - primary-vendor-security-documentation
+    - standards-and-frameworks
+    - high-quality-security-research
+    - curated-industry-watch
+
+review_cadence:
+  radar: daily
+  deep_dive: weekly
+  doctrine: weekly
+  domain_map: monthly
+
+deep_dive_limit: 3
+
+promotion_rules:
+  - materially_changes_architecture_controls_roadmap_or_operating_posture
+  - indicates_rising_risk_or_major_opportunity
+  - conflicts_with_current_doctrine
+  - affects_live_decision_or_blocker
+  - repeated_weak_signals_form_a_meaningful_pattern
+
+artifact_paths:
+  domain_map: 08-research/DOMAIN_MAP.md
+  radar: 08-research/RADAR.md
+  deep_dive_index: 08-research/DEEP_DIVE_INDEX.md
+  doctrine: 08-research/DOCTRINE.md
+  implications: 08-research/IMPLICATIONS.md
+  sources: 08-research/SOURCES.md
+
+last_reviewed_at: 2026-03-15

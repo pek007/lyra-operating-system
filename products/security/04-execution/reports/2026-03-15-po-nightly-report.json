@@ -1,0 +1,178 @@
+{
+  "artifactType": "product_owner_nightly_synthesis",
+  "schemaVersion": "1.0",
+  "synthesisId": "po-nightly-security-2026-03-15",
+  "productId": "A-004",
+  "productName": "Security",
+  "productOwner": "Lyra",
+  "synthesisDate": "2026-03-15",
+  "summary": "Security remains strategically coherent and its codified top priorities still match the product stack, but the main gap remains unchanged: the OS↔PXS boundary is declared more strongly than it is enforced in runtime evidence, while tool/evidence hardening and reproducible posture-to-enforcement loops remain incomplete.",
+  "materialChanges": [
+    {
+      "type": "product_model_update",
+      "text": "Security now has a canonical 08-research layer with domain map, radar, deep-dive index, doctrine, implications, and sources."
+    },
+    {
+      "type": "decision_update",
+      "text": "Security explicitly adopted an artifact-first research model with broad radar and bounded deep dives."
+    },
+    {
+      "type": "execution_state",
+      "text": "No material improvement yet in the top execution risk: OS↔PXS boundary enforcement remains the strongest live control gap."
+    }
+  ],
+  "topPriorities": [
+    {
+      "rank": 1,
+      "title": "Enforce the OS↔PXS boundary as a real control",
+      "state": "under_investigation",
+      "whyThisMattersNow": "The strongest current security risk remains cross-domain blast radius beyond the declared architecture boundary.",
+      "currentStatus": "Still current. Product plan, risks, boundary artifact, deployment baseline, and Vega acceptance evidence all continue to point to boundary enforcement failure as the highest-risk live gap.",
+      "nextConcreteStep": "Close the current cross-domain read FAIL, align Vega/PX boundary enforcement to the declared model, and re-run the acceptance boundary test to PASS with committed evidence."
+    },
+    {
+      "rank": 2,
+      "title": "Harden the tool and evidence execution surfaces that function as policy-enforcement points",
+      "state": "execution_in_progress",
+      "whyThisMattersNow": "Security intent is weakest where enforcement still depends on sharp procedural execution paths rather than deterministic hardened controls.",
+      "currentStatus": "Still current. Risks, plan, and the adoption plan all keep shell-based execution removal, pinned command/environment assumptions, and security-critical tooling hardening as the next major control-quality step after boundary enforcement.",
+      "nextConcreteStep": "Remove shell-based evidence/tool execution paths, pin command and environment assumptions, and verify those surfaces as security-critical controls."
+    },
+    {
+      "rank": 3,
+      "title": "Close the posture → evidence → enforcement loop for PXS consumption",
+      "state": "on_track",
+      "whyThisMattersNow": "Security posture only becomes trustworthy for a consuming environment when baseline claims, evidence, and promotion checks are reproducible and narrow.",
+      "currentStatus": "Still current. Metrics, interfaces, risks, and the deployment baseline all show that reproducible evidence and explicit security-impacting promotion checks are not yet tight enough.",
+      "nextConcreteStep": "Move baseline-critical references toward committed or reproducible evidence, run one full Security Guardrails VERIFY cycle with recorded evidence, and define the minimum promotion checks for security-impacting PXS changes."
+    }
+  ],
+  "constraints": [
+    {
+      "id": "C-001",
+      "title": "OS↔PXS cross-domain reads are still allowed in acceptance evidence",
+      "impact": "Prevents Security from claiming that the declared boundary is a real enforced control and leaves the largest current blast-radius gap open.",
+      "evidence": [
+        "products/security/04-execution/RISKS.md#R-001",
+        "products/security/06-architecture/BOUNDARY.md",
+        "products/security/05-performance/PXS_DEPLOYMENT_BASELINE.md",
+        "governance/VEGA_ACCEPTANCE_TEST_RUN_SHEET_V1.md#E2"
+      ]
+    },
+    {
+      "id": "C-002",
+      "title": "Posture-critical evidence is not yet consistently committed/reproducible",
+      "impact": "Limits auditability, baseline trustworthiness, and the ability to gate promotions with narrow, replayable security evidence.",
+      "evidence": [
+        "products/security/04-execution/RISKS.md#R-003",
+        "products/security/05-performance/METRICS.md",
+        "products/security/05-performance/PXS_DEPLOYMENT_BASELINE.md",
+        "products/security/06-architecture/INTERFACES.md"
+      ]
+    }
+  ],
+  "risksOrOpportunities": [
+    {
+      "id": "R-001",
+      "title": "OS↔PXS boundary is not yet enforced as a real control",
+      "state": "risk_rising"
+    },
+    {
+      "id": "R-002",
+      "title": "High-risk execution surfaces remain procedural rather than hardened",
+      "state": "execution_in_progress"
+    },
+    {
+      "id": "R-003",
+      "title": "Posture evidence is not always reproducible from committed artifacts",
+      "state": "needs_decision"
+    },
+    {
+      "id": "O-001",
+      "title": "Artifact-first research layer can make Security learning cumulative and easier to synthesize",
+      "state": "ready_for_review"
+    }
+  ],
+  "researchDelta": {
+    "summary": "Security adopted a broad domain map and radar with three bounded deep-dive themes: OS↔PXS boundary enforcement, tool/evidence execution-surface hardening, and AI-agent runtime/tool-abuse controls.",
+    "artifactUpdates": [
+      "products/security/08-research/RESEARCH_MODEL.yaml",
+      "products/security/08-research/DOMAIN_MAP.md",
+      "products/security/08-research/RADAR.md",
+      "products/security/08-research/DEEP_DIVE_INDEX.md",
+      "products/security/08-research/DOCTRINE.md",
+      "products/security/08-research/IMPLICATIONS.md",
+      "products/security/08-research/SOURCES.md",
+      "products/security/07-decisions/DECISIONS.md#D-005"
+    ]
+  },
+  "proposedTdeActions": [
+    {
+      "type": "signal",
+      "title": "Prioritize closure of the Vega/PXS boundary enforcement fail",
+      "why": "This remains the clearest highest-risk gap between declared Security architecture and actual enforced runtime behavior."
+    },
+    {
+      "type": "signal",
+      "title": "Harden evidence/tool execution paths as explicit security controls",
+      "why": "The next strongest leverage point is removing procedural shell/path assumptions at policy-enforcement surfaces."
+    },
+    {
+      "type": "signal",
+      "title": "Use the new Security research layer to broaden surveillance while keeping only three active deep dives",
+      "why": "This tests whether artifact-first research improves signal quality without polluting Control Tower context."
+    }
+  ],
+  "priorityRefreshStatus": "unchanged",
+  "priorityRefreshNote": "Reviewed full product stack against products/security/04-execution/TOP_PRIORITIES.md. Current priorities remain aligned with canonical product artifacts and the new 08-research layer; no refresh was needed in this run.",
+  "evidenceLinks": [
+    "products/security/PRODUCT.md",
+    "products/security/MODEL.yaml",
+    "products/security/01-identity/VISION.md",
+    "products/security/02-strategy/STRATEGY.md",
+    "products/security/03-operating-model/OPERATING_MODEL.md",
+    "products/security/03-operating-model/GOVERNANCE.md",
+    "products/security/04-execution/PLAN.md",
+    "products/security/04-execution/RISKS.md",
+    "products/security/04-execution/TOP_PRIORITIES.md",
+    "products/security/05-performance/METRICS.md",
+    "products/security/05-performance/PXS_DEPLOYMENT_BASELINE.md",
+    "products/security/06-architecture/BOUNDARY.md",
+    "products/security/06-architecture/INTERFACES.md",
+    "products/security/07-decisions/DECISIONS.md",
+    "products/security/08-research/RESEARCH_MODEL.yaml",
+    "products/security/08-research/DOMAIN_MAP.md",
+    "products/security/08-research/DOCTRINE.md",
+    "products/security/08-research/IMPLICATIONS.md",
+    "SECURITY_ADOPTION_PLAN.md",
+    "governance/TRUST_BOUNDARY_POLICY_RECORD_2026-03-04.md",
+    "governance/GO_RISK_DECISION_2026-03-06.md",
+    "governance/VEGA_ACCEPTANCE_TEST_RUN_SHEET_V1.md"
+  ],
+  "sourceReferences": {
+    "canonicalTopPriorities": "products/security/04-execution/TOP_PRIORITIES.md",
+    "supportingProductArtifacts": [
+      "products/security/PRODUCT.md",
+      "products/security/MODEL.yaml",
+      "products/security/01-identity/VISION.md",
+      "products/security/02-strategy/STRATEGY.md",
+      "products/security/03-operating-model/OPERATING_MODEL.md",
+      "products/security/03-operating-model/GOVERNANCE.md",
+      "products/security/04-execution/PLAN.md",
+      "products/security/04-execution/RISKS.md",
+      "products/security/05-performance/METRICS.md",
+      "products/security/06-architecture/BOUNDARY.md",
+      "products/security/06-architecture/INTERFACES.md",
+      "products/security/07-decisions/DECISIONS.md",
+      "products/security/08-research/DOCTRINE.md",
+      "products/security/08-research/IMPLICATIONS.md"
+    ],
+    "currentStateEvidence": [
+      "products/security/05-performance/PXS_DEPLOYMENT_BASELINE.md",
+      "SECURITY_ADOPTION_PLAN.md",
+      "governance/TRUST_BOUNDARY_POLICY_RECORD_2026-03-04.md",
+      "governance/GO_RISK_DECISION_2026-03-06.md",
+      "governance/VEGA_ACCEPTANCE_TEST_RUN_SHEET_V1.md"
+    ]
+  }
+}

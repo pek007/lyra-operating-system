@@ -37,3 +37,10 @@ Product model artifacts:
 - `06-architecture/INTERFACES.md`
 - `06-architecture/BOUNDARY.md`
 - `07-decisions/DECISIONS.md`
+- `08-research/RESEARCH_MODEL.yaml`
+- `08-research/DOMAIN_MAP.md`
+- `08-research/RADAR.md`
+- `08-research/DEEP_DIVE_INDEX.md`
+- `08-research/DOCTRINE.md`
+- `08-research/IMPLICATIONS.md`
+- `08-research/SOURCES.md`
