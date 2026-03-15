@@ -9,6 +9,10 @@ from typing import Any
 
 from tde_formation_creator import create_from_formation
 
+DEFAULT_DB_PATH = 'os/runtime/tde_state.sqlite'
+DEFAULT_OBJECTIVES_PATH = 'os/runtime/tde_objectives.json'
+DEFAULT_TASKS_PROJECTION_PATH = 'os/runtime/TASKS_from_db.md'
+
 
 def _slug(text: str) -> str:
     chars = [c if c.isalnum() else '-' for c in text.upper()]
@@ -251,9 +255,9 @@ def main() -> None:
     ap.add_argument('--source-ref', required=True)
     ap.add_argument('--formation-out', required=True)
     ap.add_argument('--create-canonical', action='store_true')
-    ap.add_argument('--db-path', default='os/runtime/staging/tde_state.sqlite')
-    ap.add_argument('--objectives-path', default='os/runtime/staging/tde_objectives.json')
-    ap.add_argument('--tasks-projection-path', default='os/runtime/staging/TASKS_from_db.md')
+    ap.add_argument('--db-path', default=DEFAULT_DB_PATH)
+    ap.add_argument('--objectives-path', default=DEFAULT_OBJECTIVES_PATH)
+    ap.add_argument('--tasks-projection-path', default=DEFAULT_TASKS_PROJECTION_PATH)
     args = ap.parse_args()
 
     request_class = detect_request_class(args.request_text)

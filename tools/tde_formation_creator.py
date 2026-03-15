@@ -12,6 +12,9 @@ from tde_state_store import connect, export_tasks, init_schema, update_task_meta
 POLICY_REF = "products/task-management/07-decisions/REFERENCE_TDE_POLICY_ENVELOPE_IMPLEMENTATION_VERIFICATION_V1.json"
 ALLOWED_ACTIONS = {"proceed_directly", "proceed_with_assumptions"}
 ALLOWED_FAMILY = "implementation_verification_readiness"
+DEFAULT_DB_PATH = "os/runtime/tde_state.sqlite"
+DEFAULT_OBJECTIVES_PATH = "os/runtime/tde_objectives.json"
+DEFAULT_TASKS_PROJECTION_PATH = "os/runtime/TASKS_from_db.md"
 
 
 def _load_json(path: Path) -> dict[str, Any]:
@@ -131,9 +134,9 @@ def create_from_formation(*, formation_path: Path, db_path: Path, objectives_pat
 def main() -> None:
     ap = argparse.ArgumentParser(description="Create canonical TDE objective/tasks from a formation record")
     ap.add_argument("--formation-path", required=True)
-    ap.add_argument("--db-path", default="os/runtime/staging/tde_state.sqlite")
-    ap.add_argument("--objectives-path", default="os/runtime/staging/tde_objectives.json")
-    ap.add_argument("--tasks-projection-path", default="os/runtime/staging/TASKS_from_db.md")
+    ap.add_argument("--db-path", default=DEFAULT_DB_PATH)
+    ap.add_argument("--objectives-path", default=DEFAULT_OBJECTIVES_PATH)
+    ap.add_argument("--tasks-projection-path", default=DEFAULT_TASKS_PROJECTION_PATH)
     args = ap.parse_args()
     result = create_from_formation(
         formation_path=Path(args.formation_path),

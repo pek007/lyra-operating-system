@@ -20,6 +20,7 @@ TASK_STATUS_MAP = {
     "Deferred": "Waiting",
     "Escalated": "Waiting",
 }
+DEFAULT_DB_PATH = "os/runtime/tde_state.sqlite"
 
 
 class ValidationError(RuntimeError):
@@ -413,7 +414,7 @@ def main() -> None:
     ap.add_argument("--friction-flag", action="append", default=[])
     ap.add_argument("--followup-ref", action="append", default=[])
     ap.add_argument("--objective-id", default=None)
-    ap.add_argument("--db-path", default="os/runtime/staging/tde_state.sqlite")
+    ap.add_argument("--db-path", default=DEFAULT_DB_PATH)
     ap.add_argument("--artifact-dir", default=None)
     ap.add_argument("--out", default=None)
     args = ap.parse_args()

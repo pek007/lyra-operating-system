@@ -16,6 +16,9 @@ DEFAULT_INTAKE_SCHEMA_KEY = "tde_intake_packet"
 DEFAULT_INTAKE_SCHEMA_VERSION = "1.0.0"
 DEFAULT_WORKSPACE_SCOPE = "lyra-os-root"
 DEFAULT_PRODUCT_SCOPE = "A-007"
+DEFAULT_DB_PATH = "os/runtime/tde_state.sqlite"
+DEFAULT_OBJECTIVES_PATH = "os/runtime/tde_objectives.json"
+DEFAULT_TASKS_PROJECTION_PATH = "os/runtime/TASKS_from_db.md"
 
 
 class ValidationError(RuntimeError):
@@ -182,9 +185,9 @@ def main() -> None:
     ap.add_argument("--result-out", default=None)
     ap.add_argument("--workspace-scope", default=DEFAULT_WORKSPACE_SCOPE)
     ap.add_argument("--product-scope", default=DEFAULT_PRODUCT_SCOPE)
-    ap.add_argument("--db-path", default="os/runtime/staging/tde_state.sqlite")
-    ap.add_argument("--objectives-path", default="os/runtime/staging/tde_objectives.json")
-    ap.add_argument("--tasks-projection-path", default="os/runtime/staging/TASKS_from_db.md")
+    ap.add_argument("--db-path", default=DEFAULT_DB_PATH)
+    ap.add_argument("--objectives-path", default=DEFAULT_OBJECTIVES_PATH)
+    ap.add_argument("--tasks-projection-path", default=DEFAULT_TASKS_PROJECTION_PATH)
     args = ap.parse_args()
 
     result = run_request_entry(

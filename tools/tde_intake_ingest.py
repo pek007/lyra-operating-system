@@ -313,7 +313,7 @@ def ingest_packet(*, packet: dict[str, Any], db_path: Path) -> dict[str, Any]:
 def main() -> None:
     ap = argparse.ArgumentParser(description="Ingest a canonical TDE intake packet")
     ap.add_argument("--packet-path", required=True)
-    ap.add_argument("--db-path", default="os/runtime/staging/tde_state.sqlite")
+    ap.add_argument("--db-path", default=DEFAULT_DB_PATH)
     args = ap.parse_args()
 
     packet = json.loads(Path(args.packet_path).read_text(encoding="utf-8"))
