@@ -275,6 +275,17 @@ def activate_task_db(conn: sqlite3.Connection, task_id: str, *, activated_by: st
             "UPDATE tasks SET status='Active', version=version+1, updated_at=?, metadata_json=? WHERE task_id=?",
             (now, json.dumps(metadata, separators=(",", ":")), task_id),
         )
+        record_event(
+            conn,
+            event_id=f"evt:task-activated:{task_id}:{now}",
+            at=now,
+            event_type="task_activated",
+            payload={
+                "task_id": task_id,
+                "activated_by": activated_by,
+                "activated_at": now,
+            },
+        )
     return {"applied": True, "reason": None, "task_id": task_id, "activated_at": now}
 
 
@@ -307,6 +318,18 @@ def apply_low_risk_writeback_db(conn: sqlite3.Connection, claimed_ids: list[str]
                 WHERE task_id=? AND status='Active'
                 """,
                 (now, json.dumps(metadata, separators=(",", ":")), task_id),
+            )
+            record_event(
+                conn,
+                event_id=f"evt:task-writeback:{task_id}:{tick_id}",
+                at=now,
+                event_type="task_progressed",
+                payload={
+                    "task_id": task_id,
+                    "tick_id": tick_id,
+                    "new_status": "Waiting",
+                    "reason": "claimed_by_job_tick",
+                },
             )
             moved.append(task_id)
 
@@ -357,6 +380,25 @@ def _next_event_hash(conn: sqlite3.Connection, payload: dict) -> tuple[str | Non
     base = (prev_hash or "") + raw
     curr = hashlib.sha256(base.encode()).hexdigest()
     return prev_hash, curr
+
+
+def record_event(conn: sqlite3.Connection, *, event_id: str, at: str, event_type: str, payload: dict[str, Any]) -> dict[str, Any]:
+    prev_hash, curr_hash = _next_event_hash(conn, payload)
+    conn.execute(
+        """
+        INSERT OR REPLACE INTO events(event_id,at,type,payload_json,prev_hash,hash)
+        VALUES(?,?,?,?,?,?)
+        """,
+        (
+            event_id,
+            at,
+            event_type,
+            json.dumps(payload, separators=(",", ":")),
+            prev_hash,
+            curr_hash,
+        ),
+    )
+    return {"event_id": event_id, "type": event_type, "at": at}
 
 
 def record_shadow_tick(conn: sqlite3.Connection, tick_id: str, artifact: dict) -> dict:
