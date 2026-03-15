@@ -45,7 +45,8 @@ def run_tests() -> None:
         assert accepted["task_id"] == "TASK-20260314-TEST-ASSIGNMENT"
 
         duplicate = accept_assignment(packet=_packet(), db_path=db)
-        assert duplicate["status"] == "duplicate"
+        assert duplicate["acceptance_state"] == "duplicate"
+        assert duplicate["reason_code"] == "duplicate_assignment_id"
 
         no_runner = accept_assignment(packet=_packet(assignment_id="TASK-NO-RUNNER", objective_id=None, runner_binding_required=False), db_path=db)
         assert no_runner["acceptance_state"] == "accepted_no_runner"
