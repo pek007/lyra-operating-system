@@ -49,11 +49,29 @@
 ## Triage
 
 ## Active
+- [ ] TASK-20260315-CP-TDE-ASSIGNMENT-ACCEPTANCE | Close the Control Panel to TDE assignment acceptance and silent-limbo gap
+  <!-- tde:metadata {"decision_policy_ref": "products/task-management/06-architecture/TDE_ASSIGNMENT_ACCEPTANCE_CONTRACT_V1.md", "objective_id": "OBJ-TDE-FOUNDATION", "workflow_family": "overnight-control-tower"} -->
+- [ ] TDE-CHAIN-PILOT-03 | Review pilot readiness for broader chaining rollout
+  <!-- tde:metadata {"activated_at": "2026-03-13T15:20:23.453971+00:00", "activated_by": "tick:job-tick-20260313-152023", "activation_rule": "all_predecessors_done", "chain_policy": {"family": "pilot-a", "pilot_enabled": true}, "depends_on": ["TDE-CHAIN-PILOT-02"], "objective_id": "OBJ-TDE-FOUNDATION", "stage_id": "deployment-readiness-review"} -->
+- [ ] TDE-FORM-FORM-AS-CODE-ROLLOUT-DELIVERY-2026-03-15-001 | Define bounded runtime hardening scope
+  <!-- tde:metadata {"decision_policy_ref": "products/task-management/07-decisions/REFERENCE_TDE_POLICY_ENVELOPE_IMPLEMENTATION_VERIFICATION_V1.json", "objective_id": "OBJ-FORM-FORM-AS-CODE-ROLLOUT-DELIVERY-2026-03-15", "stage_id": "implementation", "workflow_family": "implementation_verification_readiness"} -->
+- [ ] TDE-FORM-FORM-AS-CODE-ROLLOUT-INTERFACES-2026-03-15-001 | Define research scope and question
+  <!-- tde:metadata {"decision_policy_ref": "products/task-management/07-decisions/REFERENCE_TDE_POLICY_ENVELOPE_IMPLEMENTATION_VERIFICATION_V1.json", "objective_id": "OBJ-FORM-FORM-AS-CODE-ROLLOUT-INTERFACES-2026-03-15", "stage_id": "implementation", "workflow_family": "implementation_verification_readiness"} -->
+- [ ] TDE-FORM-FORM-AS-CODE-ROLLOUT-SECURITY-2026-03-15-001 | Define bounded runtime hardening scope
+  <!-- tde:metadata {"decision_policy_ref": "products/task-management/07-decisions/REFERENCE_TDE_POLICY_ENVELOPE_IMPLEMENTATION_VERIFICATION_V1.json", "objective_id": "OBJ-FORM-FORM-AS-CODE-ROLLOUT-SECURITY-2026-03-15", "stage_id": "implementation", "workflow_family": "implementation_verification_readiness"} -->
+- [ ] TDE-FORM-FORM-AS-CODE-ROLLOUT-TASK-MANAGEMENT-2026-03--001 | Define review/audit scope
+  <!-- tde:metadata {"decision_policy_ref": "products/task-management/07-decisions/REFERENCE_TDE_POLICY_ENVELOPE_IMPLEMENTATION_VERIFICATION_V1.json", "objective_id": "OBJ-FORM-FORM-AS-CODE-ROLLOUT-TASK-MANAGEMENT-2026-03-", "stage_id": "implementation", "workflow_family": "implementation_verification_readiness"} -->
 
 ## Waiting
 - [x] OPS-2026-023 | Sprint 3 closeout pack (release notes + tag + vNext backlog update) after QA pass
-- [ ] TDE-CHAIN-PILOT-03 | Review pilot readiness for broader chaining rollout
-  <!-- tde:metadata {"activated_at": "2026-03-09T16:52:00.234766+00:00", "activated_by": "tick:tde-chain-pilot-20260309-2", "activation_rule": "all_predecessors_done", "chain_policy": {"family": "pilot-a", "pilot_enabled": true}, "depends_on": ["TDE-CHAIN-PILOT-02"], "objective_id": "OBJ-TDE-FOUNDATION", "stage_id": "deployment-readiness-review"} -->
+- [ ] TDE-FORM-FORM-AS-CODE-ROLLOUT-DELIVERY-2026-03-15-002 | Verify runtime hardening scope and safety
+  <!-- tde:metadata {"decision_policy_ref": "products/task-management/07-decisions/REFERENCE_TDE_POLICY_ENVELOPE_IMPLEMENTATION_VERIFICATION_V1.json", "objective_id": "OBJ-FORM-FORM-AS-CODE-ROLLOUT-DELIVERY-2026-03-15", "stage_id": "verification", "workflow_family": "implementation_verification_readiness"} -->
+- [ ] TDE-FORM-FORM-AS-CODE-ROLLOUT-INTERFACES-2026-03-15-002 | Verify research framing and output expectations
+  <!-- tde:metadata {"decision_policy_ref": "products/task-management/07-decisions/REFERENCE_TDE_POLICY_ENVELOPE_IMPLEMENTATION_VERIFICATION_V1.json", "objective_id": "OBJ-FORM-FORM-AS-CODE-ROLLOUT-INTERFACES-2026-03-15", "stage_id": "verification", "workflow_family": "implementation_verification_readiness"} -->
+- [ ] TDE-FORM-FORM-AS-CODE-ROLLOUT-SECURITY-2026-03-15-002 | Verify runtime hardening scope and safety
+  <!-- tde:metadata {"decision_policy_ref": "products/task-management/07-decisions/REFERENCE_TDE_POLICY_ENVELOPE_IMPLEMENTATION_VERIFICATION_V1.json", "objective_id": "OBJ-FORM-FORM-AS-CODE-ROLLOUT-SECURITY-2026-03-15", "stage_id": "verification", "workflow_family": "implementation_verification_readiness"} -->
+- [ ] TDE-FORM-FORM-AS-CODE-ROLLOUT-TASK-MANAGEMENT-2026-03--002 | Verify review/audit framing
+  <!-- tde:metadata {"decision_policy_ref": "products/task-management/07-decisions/REFERENCE_TDE_POLICY_ENVELOPE_IMPLEMENTATION_VERIFICATION_V1.json", "objective_id": "OBJ-FORM-FORM-AS-CODE-ROLLOUT-TASK-MANAGEMENT-2026-03-", "stage_id": "verification", "workflow_family": "implementation_verification_readiness"} -->
 
 ## Done
 - [x] IMP-AUTO-20260227-01 | Added lightweight markdown link-check script (`tools/markdown_link_check.py`) with cron-safe scope filters.

@@ -3,8 +3,75 @@
     {
       "objective_id": "OBJ-TDE-FOUNDATION",
       "owner": "JOB-PROD-001",
-      "allowed_checkpoints": ["S15", "S16", "S17", "S18", "S19", "S20", "S21", "S22", "S23", "S24"],
+      "allowed_checkpoints": [
+        "S15",
+        "S16",
+        "S17",
+        "S18",
+        "S19",
+        "S20",
+        "S21",
+        "S22",
+        "S23",
+        "S24"
+      ],
       "kpi": "safe_autonomous_progress"
+    },
+    {
+      "objective_id": "OBJ-FORM-FORM-AS-CODE-ROLLOUT-SECURITY-2026-03-15",
+      "owner": "A-007",
+      "title": "Harden TDE runtime behavior",
+      "summary": "Implement a bounded hardening slice for TDE/OpenClaw runtime behavior.",
+      "workflow_family": "implementation_verification_readiness",
+      "success_criteria": [
+        "A bounded runtime hardening slice is implemented and validated in staging."
+      ],
+      "formation_id": "FORM-AS-CODE-ROLLOUT-SECURITY-2026-03-15",
+      "created_with_assumptions": true,
+      "creation_mapping_version": "v1",
+      "created_at": "2026-03-15T16:35:46.227614+00:00"
+    },
+    {
+      "objective_id": "OBJ-FORM-FORM-AS-CODE-ROLLOUT-DELIVERY-2026-03-15",
+      "owner": "A-007",
+      "title": "Harden TDE runtime behavior",
+      "summary": "Implement a bounded hardening slice for TDE/OpenClaw runtime behavior.",
+      "workflow_family": "implementation_verification_readiness",
+      "success_criteria": [
+        "A bounded runtime hardening slice is implemented and validated in staging."
+      ],
+      "formation_id": "FORM-AS-CODE-ROLLOUT-DELIVERY-2026-03-15",
+      "created_with_assumptions": true,
+      "creation_mapping_version": "v1",
+      "created_at": "2026-03-15T16:35:55.633194+00:00"
+    },
+    {
+      "objective_id": "OBJ-FORM-FORM-AS-CODE-ROLLOUT-INTERFACES-2026-03-15",
+      "owner": "A-007",
+      "title": "Conduct bounded research task",
+      "summary": "Run a bounded research slice and capture a professionally useful first result.",
+      "workflow_family": "implementation_verification_readiness",
+      "success_criteria": [
+        "A bounded research result is produced and can be reviewed."
+      ],
+      "formation_id": "FORM-AS-CODE-ROLLOUT-INTERFACES-2026-03-15",
+      "created_with_assumptions": true,
+      "creation_mapping_version": "v1",
+      "created_at": "2026-03-15T16:36:01.565005+00:00"
+    },
+    {
+      "objective_id": "OBJ-FORM-FORM-AS-CODE-ROLLOUT-TASK-MANAGEMENT-2026-03-",
+      "owner": "A-007",
+      "title": "Conduct bounded review or audit",
+      "summary": "Run a bounded review/audit slice and capture findings clearly.",
+      "workflow_family": "implementation_verification_readiness",
+      "success_criteria": [
+        "A bounded review/audit result is produced with useful findings."
+      ],
+      "formation_id": "FORM-AS-CODE-ROLLOUT-TASK-MANAGEMENT-2026-03-",
+      "created_with_assumptions": true,
+      "creation_mapping_version": "v1",
+      "created_at": "2026-03-15T16:36:07.074954+00:00"
     }
   ]
 }
