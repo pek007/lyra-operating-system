@@ -78,27 +78,105 @@ def _acceptance_state(packet: dict[str, Any]) -> tuple[str, str | None]:
     return "accepted", None
 
 
-def accept_assignment(*, packet: dict[str, Any], db_path: Path) -> dict[str, Any]:
-    _validate_against_schema(payload=packet, artifact_type="tde_assignment_packet", schema_version=str(packet["schemaVersion"]))
+def _result_payload(*, assignment_id: str, acceptance_state: str, task_id: str | None, reason_code: str | None, message: str, now: str) -> dict[str, Any]:
+    return {
+        "assignment_id": assignment_id,
+        "acceptance_state": acceptance_state,
+        "task_id": task_id,
+        "reason_code": reason_code,
+        "message": message,
+        "created_at": now,
+        "updated_at": now,
+    }
 
+
+def _persist_assignment_result(
+    conn: Any,
+    *,
+    assignment_id: str,
+    packet_hash: str,
+    packet: dict[str, Any],
+    acceptance_state: str,
+    result: dict[str, Any],
+    now: str,
+) -> None:
+    conn.execute(
+        "INSERT INTO assignment_packets(assignment_id,packet_hash,packet_json,acceptance_state,result_json,created_at,updated_at) VALUES(?,?,?,?,?,?,?)",
+        (
+            assignment_id,
+            packet_hash,
+            json.dumps(packet, separators=(",", ":")),
+            acceptance_state,
+            json.dumps(result, separators=(",", ":")),
+            now,
+            now,
+        ),
+    )
+
+
+def accept_assignment(*, packet: dict[str, Any], db_path: Path) -> dict[str, Any]:
     conn = connect(db_path)
     init_schema(conn)
     _ensure_assignment_schema(conn)
 
+    assignment_id = str(packet.get("assignment_id") or "")
+    now = _iso_now()
     packet_hash = _packet_hash(packet)
-    existing = conn.execute(
-        "SELECT packet_hash, result_json FROM assignment_packets WHERE assignment_id=?",
-        (packet["assignment_id"],),
-    ).fetchone()
-    if existing:
-        existing_hash, result_json = existing
-        if existing_hash != packet_hash:
-            raise ValidationError(f"idempotency_conflict:{packet['assignment_id']}")
-        return {"assignment_id": packet["assignment_id"], "status": "duplicate", **json.loads(result_json)}
+
+    if assignment_id:
+        existing = conn.execute(
+            "SELECT packet_hash, result_json FROM assignment_packets WHERE assignment_id=?",
+            (assignment_id,),
+        ).fetchone()
+        if existing:
+            existing_hash, result_json = existing
+            if existing_hash != packet_hash:
+                raise ValidationError(f"idempotency_conflict:{assignment_id}")
+            existing_result = json.loads(result_json)
+            return {
+                "assignment_id": assignment_id,
+                "acceptance_state": "duplicate",
+                "task_id": existing_result.get("task_id"),
+                "reason_code": "duplicate_assignment_id",
+                "message": "Assignment already accepted with identical content.",
+                "created_at": existing_result.get("created_at", now),
+                "updated_at": now,
+            }
+
+    try:
+        _validate_against_schema(payload=packet, artifact_type="tde_assignment_packet", schema_version=str(packet["schemaVersion"]))
+    except Exception as exc:
+        reason_code = str(exc)
+        if assignment_id:
+            result = _result_payload(
+                assignment_id=assignment_id,
+                acceptance_state="rejected_invalid_assignment",
+                task_id=None,
+                reason_code=reason_code,
+                message="Assignment packet rejected because schema or validation checks failed.",
+                now=now,
+            )
+            with conn:
+                _persist_assignment_result(
+                    conn,
+                    assignment_id=assignment_id,
+                    packet_hash=packet_hash,
+                    packet=packet,
+                    acceptance_state="rejected_invalid_assignment",
+                    result=result,
+                    now=now,
+                )
+        else:
+            raise
+        return result
 
     task_id = _derive_task_id(packet)
     state, reason = _acceptance_state(packet)
-    now = _iso_now()
+    message_map = {
+        "accepted": "Assignment accepted for normal TDE pickup.",
+        "accepted_no_runner": "Assignment accepted, but no runner/execution path is currently available.",
+        "accepted_pending_binding": "Assignment accepted, but required binding or policy context is incomplete.",
+    }
     metadata = {
         "assignment_id": packet["assignment_id"],
         "assignment_source_system": packet["source_system"],
@@ -130,23 +208,22 @@ def accept_assignment(*, packet: dict[str, Any], db_path: Path) -> dict[str, Any
                     json.dumps(metadata, separators=(",", ":")),
                 ),
             )
-        result = {
-            "acceptance_state": state,
-            "reason": reason,
-            "task_id": task_id,
-            "accepted_at": now,
-        }
-        conn.execute(
-            "INSERT INTO assignment_packets(assignment_id,packet_hash,packet_json,acceptance_state,result_json,created_at,updated_at) VALUES(?,?,?,?,?,?,?)",
-            (
-                packet["assignment_id"],
-                packet_hash,
-                json.dumps(packet, separators=(",", ":")),
-                state,
-                json.dumps(result, separators=(",", ":")),
-                now,
-                now,
-            ),
+        result = _result_payload(
+            assignment_id=packet["assignment_id"],
+            acceptance_state=state,
+            task_id=task_id,
+            reason_code=reason,
+            message=message_map.get(state, "Assignment processed."),
+            now=now,
+        )
+        _persist_assignment_result(
+            conn,
+            assignment_id=packet["assignment_id"],
+            packet_hash=packet_hash,
+            packet=packet,
+            acceptance_state=state,
+            result=result,
+            now=now,
         )
         event_payload = {
             "assignment_id": packet["assignment_id"],
@@ -166,7 +243,7 @@ def accept_assignment(*, packet: dict[str, Any], db_path: Path) -> dict[str, Any
                 hashlib.sha256(json.dumps(event_payload, sort_keys=True, separators=(",", ":")).encode()).hexdigest(),
             ),
         )
-    return {"assignment_id": packet["assignment_id"], "status": "accepted", **result}
+    return result
 
 
 def main() -> None:
