@@ -30,6 +30,20 @@ Control Tower should answer:
 4. Which signals should be recorded but not promoted into action?
 5. What, if anything, may require Peter in the morning?
 
+## Verify before surface rule (added 2026-03-17, ERR-2026-03-17-E2-STALE-SURFACE)
+When a carried-forward decision item has a named canonical artifact (acceptance sheet, decision record, etc.):
+- Read the artifact before surfacing the item as open to Peter.
+- Do not carry forward the prior-cycle's open/closed label without verification.
+- Uncertainty ("confirm whether this was resolved") is a trigger to check the artifact, not a reason to escalate.
+
+When a decision is cheap to verify and the artifact is known, the cost of not verifying is always higher than the cost of reading it.
+
+Corollary for daytime decisions: when a material decision is made and recorded in a canonical artifact during the day, append a `DECISION_CLOSED:` handoff note to `memory/YYYY-MM-DD.md`:
+```
+DECISION_CLOSED: <topic> → <outcome> — artifact: <path>
+```
+This creates an unambiguous pickup signal for the overnight synthesis cycle.
+
 ## Promotion rule
 A nightly product-owner report should not automatically become work.
 It should first be treated as signal.

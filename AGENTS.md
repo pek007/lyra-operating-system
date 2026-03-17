@@ -108,6 +108,13 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 
 ### Memory Operating Model (Keep This Small)
 
+#### Daytime decision handoff (added 2026-03-17, ERR-2026-03-17-E2-STALE-SURFACE)
+When a material decision is made and recorded in a canonical artifact during the day, append a structured one-liner to `memory/YYYY-MM-DD.md`:
+```
+DECISION_CLOSED: <topic> → <outcome> — artifact: <path>
+```
+This ensures overnight synthesis can verify resolution without scanning all artifacts. Uncertainty is not a reason to re-escalate — it is a trigger to check the named artifact.
+
 Use the lightest memory source that matches the need:
 
 - **Agent memory** → `SOUL.md`, `USER.md`, `TOOLS.md`, `MEMORY.md`
