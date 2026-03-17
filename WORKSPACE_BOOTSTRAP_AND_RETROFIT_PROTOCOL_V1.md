@@ -189,12 +189,16 @@ This means the protocol should ask:
 A bootstrap or retrofit review should produce:
 - workspace assessed
 - products/capabilities consumed
+- workspace enablement capabilities required/instantiated
 - existing package artifacts
 - missing package artifacts
 - changes applied now
 - remaining gaps
 - readiness status
 - next recommended actions
+
+## Canonical enablement pattern reference
+Use `WORKSPACE_ENABLEMENT_PATTERN_V1.md` as the first canonical pattern for turning downstream capability consumption into a repeatable enablement package rather than bespoke workspace glue.
 
 ## Suggested first use case
 Use `pxs` as the first retrofit case.

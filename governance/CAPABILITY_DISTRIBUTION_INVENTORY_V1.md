@@ -337,6 +337,9 @@ For each capability relevant to `pxs`, answer:
 ### Next step 3 — prove domain-local task capability in `pxs`
 This is the most important downstream proof point still missing.
 
+### Next step 4 — promote workspace enablement into canonical patterns
+Use `WORKSPACE_ENABLEMENT_PATTERN_V1.md` and the bootstrap/retrofit protocol to turn downstream-consumer scaffolding into reusable Lyra OS enablement capability rather than leaving it as `pxs`-specific local glue.
+
 ---
 
 ## Initial conclusion
