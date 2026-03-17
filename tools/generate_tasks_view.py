@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-generate_tasks_view.py — Generate TASKS.md from tde_state.sqlite.
+generate_tasks_view.py — Generate the TDE task projection from tde_state.sqlite.
 
 Usage:
     python3 tools/generate_tasks_view.py [--db PATH] [--out PATH] [--no-done]
 
-TASKS.md is a generated artifact. Do not edit it manually.
+The projection is a generated artifact. Do not edit it manually.
 Edit source data via TDE tools or direct DB writes.
 """
 
@@ -16,7 +16,7 @@ import sqlite3
 from pathlib import Path
 
 DEFAULT_DB = Path(__file__).parent.parent / "os/runtime/tde_state.sqlite"
-DEFAULT_OUT = Path(__file__).parent.parent / "TASKS.md"
+DEFAULT_OUT = Path(__file__).parent.parent / "os/runtime/TASKS_from_db.md"
 
 # Canonical status ordering and display labels
 STATUS_ORDER = ["Inbox", "Triage", "Active", "Waiting", "Done"]
@@ -73,7 +73,7 @@ def bucket_tasks(tasks: list[dict]) -> dict[str, list[dict]]:
 
 def render(buckets: dict[str, list[dict]], include_done: bool, generated_at: str) -> str:
     lines = [
-        "# TASKS.md",
+        "# TASKS_from_db.md",
         "",
         "> **Generated artifact** — do not edit manually.",
         f"> Source: `os/runtime/tde_state.sqlite` | Generated: {generated_at}",
@@ -108,9 +108,9 @@ def render(buckets: dict[str, list[dict]], include_done: bool, generated_at: str
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Generate TASKS.md from TDE SQLite state.")
+    parser = argparse.ArgumentParser(description="Generate TDE task projection from TDE SQLite state.")
     parser.add_argument("--db", type=Path, default=DEFAULT_DB, help="Path to tde_state.sqlite")
-    parser.add_argument("--out", type=Path, default=DEFAULT_OUT, help="Output path for TASKS.md")
+    parser.add_argument("--out", type=Path, default=DEFAULT_OUT, help="Output path for generated task projection")
     parser.add_argument("--no-done", action="store_true", help="Omit Done section from output")
     parser.add_argument("--stdout", action="store_true", help="Print to stdout instead of file")
     args = parser.parse_args()

@@ -225,7 +225,7 @@ def main() -> None:
         default="knowledge/evidence/2026-03/tde-canary-cycle-state.json",
     )
     parser.add_argument("--simulate-clean", action="store_true")
-    parser.add_argument("--tasks-path", default="TASKS.md")
+    parser.add_argument("--tasks-path", default="os/runtime/TASKS_from_db.md")
     args = parser.parse_args()
 
     artifact = run_cycle(

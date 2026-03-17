@@ -99,5 +99,5 @@ Ownership model source: `PROCESS_OWNERSHIP_MODEL_V1.md`
 | TOOL_EXTERNAL_SERVICE_GOVERNANCE_V1.md | P-PLATFORM | platform | - | - |
 
 ## Notes
-- Planned items must be tracked in TASKS.md with a target date.
+- Planned items must be tracked in canonical TDE state with a target date (human-readable projection: `os/runtime/TASKS_from_db.md`).
 - Over time, extend ownership mapping coverage to all active process docs in this registry.

@@ -51,8 +51,8 @@ def check(file_path: Path) -> list[str]:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Check TASKS.md hygiene")
-    ap.add_argument("--file", default="TASKS.md")
+    ap = argparse.ArgumentParser(description="Check generated TDE task projection hygiene")
+    ap.add_argument("--file", default="os/runtime/TASKS_from_db.md")
     args = ap.parse_args()
 
     path = Path(args.file)
@@ -67,7 +67,7 @@ def main() -> int:
             print(f"- {e}")
         return 1
 
-    print("OK: TASKS.md open-task IDs and intents are unique")
+    print("OK: generated TDE task projection open-task IDs and intents are unique")
     return 0
 
 

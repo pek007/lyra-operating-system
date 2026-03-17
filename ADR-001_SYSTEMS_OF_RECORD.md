@@ -109,8 +109,8 @@ Suggested implementation:
 
 ## Initial Tooling Suggestion (v1)
 - **Knowledge:** current workspace Git repo (already active)
-- **Work:** start with a simple kanban tool you already use or can adopt quickly
-- If undecided this week, use a temporary `TASKS.md` kanban in repo for 7 days, then migrate.
+- **Work:** canonical TDE state (`os/runtime/tde_state.sqlite`) with generated projection at `os/runtime/TASKS_from_db.md`
+- Historical note: an early temporary `TASKS.md` kanban was considered as a short-lived transition surface, but it is no longer authoritative.
 
 ## Decision Required
 Please choose one:

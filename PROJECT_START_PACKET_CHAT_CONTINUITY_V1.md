@@ -29,7 +29,7 @@ Ensure high-signal chat outcomes are reliably captured into durable workspace ar
 - Material security/privacy risk identified from stored summaries that cannot be mitigated with process controls.
 
 ## 6) Boundary Summary
-- System of record: Workspace docs (`memory/YYYY-MM-DD.md`, `TASKS.md`, governance/process docs).
+- System of record: Workspace docs (`memory/YYYY-MM-DD.md`, governance/process docs) plus canonical TDE state (`os/runtime/tde_state.sqlite`) with generated projection at `os/runtime/TASKS_from_db.md`. 
 - Derived view scope: Compact handoff summaries and status blocks in chat.
 - Out of scope: External CRM/PM integrations in v1.
 

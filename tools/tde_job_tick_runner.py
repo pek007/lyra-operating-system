@@ -1108,7 +1108,7 @@ def main() -> None:
     parser.add_argument("--objective-id", default="OBJ-TDE-FOUNDATION")
     parser.add_argument("--objective-checkpoint", default="S16")
     parser.add_argument("--rationale-trace", default="TDE-2026-027-objective-linkage")
-    parser.add_argument("--tasks-path", default="TASKS.md")
+    parser.add_argument("--tasks-path", default="os/runtime/TASKS_from_db.md")
     parser.add_argument(
         "--artifact-path",
         default=None,
@@ -1142,7 +1142,7 @@ def main() -> None:
         metrics_dir = evidence_root / "metrics"
 
     artifact_path = Path(args.artifact_path) if args.artifact_path else (evidence_period_dir / "tde-job-tick-latest.json")
-    writeback_tasks_path = Path(args.writeback_tasks_path) if args.writeback_tasks_path else (runtime_root / "TASKS_from_db.md" if env else Path("TASKS.md"))
+    writeback_tasks_path = Path(args.writeback_tasks_path) if args.writeback_tasks_path else (runtime_root / "TASKS_from_db.md")
     binding_registry_path = Path(args.binding_registry_path) if args.binding_registry_path else (runtime_root / "tde_active_bindings.json")
     objective_registry_path = Path(args.objective_registry_path) if args.objective_registry_path else (runtime_root / "tde_objectives.json")
     canonical_db_path = Path(args.canonical_db_path) if args.canonical_db_path else (runtime_root / "tde_state.sqlite")

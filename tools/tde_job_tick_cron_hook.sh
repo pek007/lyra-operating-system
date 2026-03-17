@@ -39,7 +39,7 @@ CMD=(
   --binding-id "${TDE_JOB_BINDING_ID:-BIND-JOB-PROD-001-ACTIVE}"
   --actor-id "${TDE_ACTOR_ID:-lyra}"
   --max-claim "${TDE_JOB_MAX_CLAIM:-1}"
-  --tasks-path "$ROOT_DIR/TASKS.md"
+  --tasks-path "$WRITEBACK_TASKS_PATH"
   --writeback-tasks-path "$WRITEBACK_TASKS_PATH"
   --artifact-path "$ARTIFACT_PATH"
   --binding-registry-path "$BINDING_REGISTRY_PATH"

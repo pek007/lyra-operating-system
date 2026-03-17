@@ -16,7 +16,7 @@ Preserve key decisions and context from live chats so work can continue across c
 ## Where it is stored
 - **Daily raw log:** `memory/YYYY-MM-DD.md`
 - **Curated long-term memory (main/private sessions only):** `MEMORY.md`
-- **Operational tasks:** `TASKS.md`
+- **Operational tasks:** canonical TDE state (`os/runtime/tde_state.sqlite`) and generated projection (`os/runtime/TASKS_from_db.md`)
 - **Formal decisions/process updates:** relevant `*_V1.md` or governance docs
 
 ## Capture rule

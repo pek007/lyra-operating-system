@@ -150,8 +150,8 @@ def ensure_labels(client: TrelloClient, board_id: str, apply: bool):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Sync TASKS.md -> Trello board")
-    ap.add_argument("--from", dest="from_path", default="TASKS.md", help="Path to TASKS markdown")
+    ap = argparse.ArgumentParser(description="Sync TDE task projection -> Trello board")
+    ap.add_argument("--from", dest="from_path", default="os/runtime/TASKS_from_db.md", help="Path to generated TDE task projection markdown")
     ap.add_argument("--apply", action="store_true", help="Apply changes (default dry-run)")
     ap.add_argument("--ensure-labels", action="store_true", help="Ensure standard labels exist")
     args = ap.parse_args()

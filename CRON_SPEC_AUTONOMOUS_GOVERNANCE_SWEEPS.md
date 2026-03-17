@@ -32,7 +32,7 @@ Design principle: auto-implement only low-risk, uncontroversial changes; route l
    - Needs review
    - Backlog candidates (severity/rationale/owner)
 5. Backlog behavior:
-   - Append larger items to `TASKS.md` Inbox with ID format: `SEC-AUTO-YYYYMMDD-XX`
+   - Add larger items to canonical TDE intake / DB-backed task flow with ID format: `SEC-AUTO-YYYYMMDD-XX` (projection: `os/runtime/TASKS_from_db.md`)
 6. Escalation line:
    - Include: `For remediation workflow, run skill: healthcheck`
 
@@ -57,7 +57,7 @@ Design principle: auto-implement only low-risk, uncontroversial changes; route l
    - detect new versions (`openclaw update status`)
    - identify meaningful capability changes
    - convert into applied improvements or backlog tasks
-3. Review `TASKS.md` improvement execution status:
+3. Review canonical TDE improvement execution status (use DB/projection, not legacy `TASKS.md`):
    - check open `IMP-AUTO-*` items for stale aging/blockers
    - propose reprioritization or decomposition when execution stalls
    - ensure at least one concrete next-step recommendation is included when open improvement work exists
@@ -69,7 +69,7 @@ Design principle: auto-implement only low-risk, uncontroversial changes; route l
    - Risks/assumptions
    - Next best action
 7. Backlog behavior:
-   - Append non-trivial items to `TASKS.md` Inbox with ID format: `IMP-AUTO-YYYYMMDD-XX`
+   - Add non-trivial items to canonical TDE intake / DB-backed task flow with ID format: `IMP-AUTO-YYYYMMDD-XX`
 
 ### 3) `continuous-improvement:weekly-leverage-handoff`
 - **Cadence:** Weekly (paired with Layer B synthesis)
@@ -97,7 +97,7 @@ Design principle: auto-implement only low-risk, uncontroversial changes; route l
    - pilotable experiment design (1-2 week reversible test)
    - risk and disconfirming signals
 3. Send packet to Peter in concise, copy-paste-ready format.
-4. On return of Deep Research output, convert accepted opportunities to `TASKS.md` Inbox with ID format `IMP-DR-YYYYMMDD-XX`, each with owner, impact hypothesis, and next action.
+4. On return of Deep Research output, convert accepted opportunities into canonical TDE work items with ID format `IMP-DR-YYYYMMDD-XX`, each with owner, impact hypothesis, and next action.
 5. Explicitly log rejected opportunities with rationale to avoid rediscovery loops.
 
 ---

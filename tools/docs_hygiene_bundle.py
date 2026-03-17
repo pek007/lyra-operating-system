@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 COMMANDS = [
-    ["python3", "tools/task_hygiene_check.py", "--file", "TASKS.md"],
+    ["python3", "tools/task_hygiene_check.py", "--file", "os/runtime/TASKS_from_db.md"],
     ["python3", "tools/markdown_link_check.py", "--changed-only"],
 ]
 

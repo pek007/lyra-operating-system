@@ -19,7 +19,7 @@ Ensure new OpenClaw versions are consistently translated into actionable improve
    - Classify impact: `none | low | medium | high`
 4. Generate actions:
    - Low-risk configuration/doc updates may be auto-applied.
-   - Non-trivial changes must be added to `TASKS.md` Inbox as `IMP-AUTO-YYYYMMDD-XX`.
+   - Non-trivial changes must be added to canonical TDE work intake as `IMP-AUTO-YYYYMMDD-XX` (projection: `os/runtime/TASKS_from_db.md`).
 5. Close loop:
    - If actions were created, include owner, expected impact, and validation signal.
 
