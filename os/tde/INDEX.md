@@ -11,17 +11,25 @@ Single entrypoint for Task & Decision Engine contracts, runtime tools, tests, an
 - `os/sops/TDE_CANARY_SCHEDULING_CONTRACT_V1.md` — canary trigger and status cycle semantics.
 - `os/sops/TDE_DB_CANONICAL_CUTOVER_GATE_V1.md` — DB cutover GO/NO-GO gate criteria.
 - `os/sops/TDE_CHAINING_CONTRACT_V1.md` — dependency-aware successor promotion contract for bounded autonomous chaining.
+- `os/sops/TDE_RELEASE_GUARD_SCHEDULING_CONTRACT_V1.md` — release guard cadence + blocking semantics.
+- `governance/TDE_OPERATING_ALIGNMENT_NOTE__MEMORY_HANDOFFS_AND_FRONTIER_PREFLIGHT_V1.md` — operating-layer continuity/handoff alignment note and mandatory frontier-preflight rule.
+- `governance/TDE_OBJECTIVE_TO_CHAIN_FORMATION_CONTRACT_V1.md` — bounded contract for converting approved objectives into executable chain structures.
 
 ## Runtime tools
 - `tools/tde_kernel.py` — shared deterministic governance kernel module (runtime import surface).
 - `tools/tde_job_tick_runner.py` — deterministic claim/validate/mutate/writeback loop.
 - `tools/tde_canary_runtime_cycle.py` — canary classification + guardrail cycle.
 - `tools/tde_release_envelope.py` — release gate packet helper.
+- `tools/tde-release-guard.sh` — release readiness/recovery guard bundle (preflight + contract + runtime checks).
 - `tools/tde_state_store.py` — durable state shadow store bootstrap (SQLite init/import/export/parity primitives).
 - `tools/tde_cutover_readiness_report.py` — cutover readiness verdict emitter (GO/NO-GO baseline).
 - `tools/tde_daily_readiness_check.sh` — daily readiness report refresh + dated archive step.
 - `tools/tde_cutover_alert_check.py` — alert guard for readiness regression thresholds.
 - `tools/tde_state_parity_check.py` — shadow parity verifier between canonical TASKS parse and DB projection.
+
+## Release recovery runbooks
+- `os/runbooks/TDE_RELEASE_FAILURE_MODES_AND_CONSEQUENCES_V1.md`
+- `os/runbooks/TDE_RELEASE_RECOVERY_PLAYBOOK_V1.md`
 
 ## Verification tests
 - `tools/tde_kernel_slice_tests.py`

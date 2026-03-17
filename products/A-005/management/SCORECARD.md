@@ -11,6 +11,8 @@ Last updated: 2026-03-08
 ## Reliability / quality signal
 - % of improvement items with owner, review date, and success signal
 - Recurrence count of top repeated failure patterns
+- % of material incidents/repeated near-misses with documented preventive action
+- % of incident-driven prevention actions verified closed
 
 ## Flow signal
 - Median days from observation to logged improvement item

@@ -40,3 +40,56 @@ Last updated: 2026-03-08
   - `products/A-005/management/SCORECARD.md`
   - `knowledge/evidence/2026-03/2026-03-08__a-005-verification-baseline-v1.md`
   - `pxs/PXS_ASSEMBLY_LOCK.md`
+
+## Entry A-005-L3
+- Date: 2026-03-10
+- Trigger: Product-owner direction to make error reporting and prevention a formal process under A-005.
+- Observation: The improvement product already defined general continuous-improvement flow, but it did not yet make the post-error closed loop explicit enough: write the record, trigger the right prevention work, and verify closure.
+- Hypothesis: Making the incident-to-improvement loop explicit in A-005 will reduce recurrence, improve traceability, and create the right base for an eventual autonomous self-improvement loop.
+- Change made:
+  - Added canonical `INCIDENT_TO_IMPROVEMENT_LOOP.md` under A-005
+  - Added explicit decision, goal, plan initiative, and scorecard signals for the loop
+- Result: A-005 now formally owns the rule that material failures must become documented prevention work, not just recovery.
+- Decision (adopt/revert/continue-test): Adopt
+- Owner: Lyra
+- Review date: 2026-03-17
+- Linked execution artifact(s):
+  - Decision: `products/A-005/management/DECISIONS.md` (`A-005-D4`)
+  - Plan initiative: `products/A-005/management/PLAN.md` (`A-005-I6`)
+  - Goal: `products/A-005/management/GOALS.md` (`A-005-G4`)
+- Follow-up:
+  - Roll the minimum incident/improvement interface into active products
+  - Add a weekly synthesis artifact for recurring failure classes
+  - Define what parts of the loop can safely become autonomous first
+- Linked artifacts:
+  - `products/A-005/management/INCIDENT_TO_IMPROVEMENT_LOOP.md`
+  - `products/A-005/management/DECISIONS.md`
+  - `products/A-005/management/GOALS.md`
+  - `products/A-005/management/PLAN.md`
+  - `products/A-005/management/SCORECARD.md`
+
+## Entry A-005-L4
+- Date: 2026-03-10
+- Trigger: Review of deep research report on autoresearch and Ralph-style automated improvement loops.
+- Observation: The report contains several useful operating patterns for Lyra/OpenClaw, but a full direct implementation would exceed the current safety/maturity level.
+- Hypothesis: Converting the report into an explicit adopt/defer/reject position will help A-005 borrow the right mechanics without importing unnecessary risk.
+- Change made:
+  - Stored the report in the library under `library/self-improvement/`
+  - Added an A-005 note capturing adopt / defer / reject decisions and concrete follow-up actions
+  - Recorded explicit decision to pursue a bounded-v1 approach only
+- Result: We now have a reusable position on automated improvement cycles that is aligned with current guardrails.
+- Decision (adopt/revert/continue-test): Adopt
+- Owner: Lyra
+- Review date: 2026-03-21
+- Linked execution artifact(s):
+  - Decision: `products/A-005/management/DECISIONS.md` (`A-005-D5`)
+  - Guidance note: `products/A-005/management/AUTORESEARCH_ADOPT_DEFER_REJECT_NOTE_2026-03-10.md`
+- Follow-up:
+  - Define protected mutation policy for bounded autonomous improvement
+  - Define minimal experiment record format
+  - Pilot one narrow validation/CI-green loop with hard stop-loss
+- Linked artifacts:
+  - `library/self-improvement/2026-03-10__autoresearch-ralph-loop-report.md`
+  - `products/A-005/management/AUTORESEARCH_ADOPT_DEFER_REJECT_NOTE_2026-03-10.md`
+  - `products/A-005/management/DECISIONS.md`
+  - `products/A-005/management/PLAN.md`

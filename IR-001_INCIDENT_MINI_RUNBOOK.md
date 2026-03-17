@@ -53,6 +53,17 @@ Applies to OpenClaw runtime, channels, credentials, data handling, and automatio
 - Remove/restrict access where possible
 - Document exactly what may have been exposed
 
+### D) TDE release/deployment degradation
+- Freeze rollout progression (no broaden-scope steps)
+- Run fail-closed preflight:
+  - `cd ~/.openclaw/workspace/repos/lyra-operating-system`
+  - `./tools/openclaw-preflight.sh --repo lyra-operating-system`
+- Run contract integrity check:
+  - `python3 tools/tde_kernel_slice_tests.py`
+- Run release guard bundle:
+  - `./tools/tde-release-guard.sh`
+- If preflight or contract checks fail: classify `ENVIRONMENT_MISMATCH` or contract failure, block release, and open incident task immediately.
+
 ## Recovery
 - Restore normal operations in controlled steps
 - Verify core paths:

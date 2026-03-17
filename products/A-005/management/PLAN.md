@@ -55,8 +55,18 @@ Last updated: 2026-03-08
     - Top recurring patterns are tracked across weeks
   - Evidence required: First weekly synthesis artifact
 
-## Later
 - Initiative ID: A-005-I6
+  - Problem: Errors and incidents do not yet have a mandatory closed-loop requirement from record to prevention to verification.
+  - Expected outcome: Every material incident/repeated near-miss follows a standard A-005 incident-to-improvement loop with required outputs and routing rules.
+  - Dependencies: `INCIDENT_LOG.md`, `CONTINUOUS_IMPROVEMENT_PROCESS_V1.md`, product management artifacts, task/decision handling
+  - Acceptance criteria:
+    - Canonical loop document exists under A-005
+    - Required outputs and closure criteria are defined
+    - Trigger rules for prevention work and containment actions are explicit
+  - Evidence required: A-005 management doc updates + linked improvement log entry
+
+## Later
+- Initiative ID: A-005-I7
   - Problem: Continuous improvement is not yet instrumented enough for comparative evaluation.
   - Expected outcome: Improvement telemetry and experiment scorecards support champion-challenger learning.
   - Dependencies: `SELF_IMPROVEMENT_LOOP_V1.md`, run-event schema, evaluation harness
@@ -65,7 +75,7 @@ Last updated: 2026-03-08
     - At least one controlled improvement experiment can be evaluated
   - Evidence required: Scorecard + decision log
 
-- Initiative ID: A-005-I7
+- Initiative ID: A-005-I8
   - Problem: Capability deployment to PXS still depends on interim assembly handling.
   - Expected outcome: Stable pinned assembly distribution becomes the default lane.
   - Dependencies: Capability-pack approach, release semantics, PXS consumption model

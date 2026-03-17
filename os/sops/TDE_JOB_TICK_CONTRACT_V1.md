@@ -82,6 +82,14 @@ Escalate to decision queue when:
 - Approval is required for route/action
 - Binding/authority drift is detected
 - Canonical source quality is insufficient for safe mutation
+- Frontier/canonical-store status is unclear before a resumed implementation path
+
+## Operating alignment note
+This contract may rely on the improved Lyra OS memory/handoff substrate for continuity and coordination, but only under the following boundaries:
+- durable job-shaped work should prefer job-bundle continuity over transcript continuity
+- artifact-backed handoffs are preferred for same-runtime coordination
+- coordination/handoff state is not canonical execution state
+- canonical authority for mutation remains the current TDE runtime store and contract surface
 
 ## Verification Hooks (S13)
 - Add unit tests for input validation + fail-closed behavior
