@@ -200,6 +200,11 @@ A bootstrap or retrofit review should produce:
 ## Canonical enablement pattern reference
 Use `WORKSPACE_ENABLEMENT_PATTERN_V1.md` as the first canonical pattern for turning downstream capability consumption into a repeatable enablement package rather than bespoke workspace glue.
 
+Use `WORKSPACE_ENABLEMENT_COMPONENT_MODEL_V1.md` to distinguish:
+- default core workspace enablement outputs
+- capability-specific enablement components
+- true workspace-local adaptations
+
 ## Suggested first use case
 Use `pxs` as the first retrofit case.
 Goals:

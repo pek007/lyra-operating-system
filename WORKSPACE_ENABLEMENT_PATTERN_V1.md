@@ -158,6 +158,11 @@ It is proven when a downstream workspace can actually use it through a repeatabl
 
 Bootstrap and retrofit should treat missing downstream-consumption components as missing enablement capability instances.
 
+Use `WORKSPACE_ENABLEMENT_COMPONENT_MODEL_V1.md` to decide whether a needed component belongs in:
+- core workspace enablement
+- capability-specific enablement
+- workspace-local adaptation
+
 That means the protocol should ask not only:
 - what product capabilities are consumed here?
 
