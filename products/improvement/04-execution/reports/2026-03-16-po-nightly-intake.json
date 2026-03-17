@@ -1,0 +1,38 @@
+{
+  "artifactType": "tde_intake_packet",
+  "schemaVersion": "1.0.0",
+  "intakeId": "intake:improvement:po-nightly:2026-03-16",
+  "intakeClass": "signal",
+  "sourceReport": "products/improvement/04-execution/reports/2026-03-16-po-nightly-report.json",
+  "sourceSynthesisId": "po-nightly-improvement-2026-03-16",
+  "productId": "A-005",
+  "productName": "Improvement",
+  "synthesisDate": "2026-03-16T00:20:00+01:00",
+  "overallHealth": "execution_in_progress",
+  "priorityRefreshStatus": "updated",
+  "signalItems": [
+    {
+      "rank": 1,
+      "signal": "Convert ERR-2026-03-15-ARCHIVED-REPO-MISUSE into a linked TDE improvement execution artifact — first live test of P3 minimum improvement interface.",
+      "urgency": "high"
+    },
+    {
+      "rank": 2,
+      "signal": "Define canonical improvement execution substrate in TDE terms (queue ID, linkage rules, intake format) and update improvement runbooks.",
+      "urgency": "high"
+    },
+    {
+      "rank": 3,
+      "signal": "Begin planning A-005 pinned-lane implementation into PXS with installed-version truth and rollback semantics.",
+      "urgency": "medium"
+    },
+    {
+      "rank": 4,
+      "signal": "Reconcile IMPROVEMENT_LOG structural path (A-005/management/ → products/improvement/) for status-truth alignment.",
+      "urgency": "low"
+    }
+  ],
+  "topBlocker": "No canonical TDE improvement execution substrate defined; improvement work and conversion remain multi-surface and non-traceable.",
+  "topRisk": "Portfolio is generating improvement signals (error reports, process gaps) faster than they are being converted into owned execution artifacts — compound drift risk rising.",
+  "note": "Signal only. Promotion into work, decisions, or no-action should happen after Control Tower triage."
+}

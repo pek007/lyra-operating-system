@@ -1,0 +1,116 @@
+{
+  "artifactType": "tde_po_nightly_report",
+  "schemaVersion": "1.0.0",
+  "report_id": "po-nightly-task-management-2026-03-15",
+  "report_date": "2026-03-15",
+  "product_id": "A-007",
+  "product_name": "Task Management",
+  "product_owner": "Lyra",
+  "overall_health": "yellow",
+  "summary": "Task Management remains strategically well-shaped and governable, but downstream operational readiness is still constrained by the Vega/PXS boundary failure, an only-partially-executable PXS consumption contract, and unresolved proof/feedback gaps in the canonical operating substrate. TOP_PRIORITIES.md was reviewed against the current product stack and remains aligned with the strongest current bottlenecks, so no priority refresh change was required in this run.",
+  "top_priorities": [
+    "Close the Vega/PXS boundary readiness gap and rerun it to PASS.",
+    "Deliver a minimal executable pxs consumption contract with schemas, explicit transport semantics, and worked examples.",
+    "Stabilize and prove the canonical substrate that pxs will consume, including explicit GO/NO-GO evidence on the DB-cutover proof path."
+  ],
+  "blockers": [
+    {
+      "title": "Vega/PXS boundary readiness remains a hard gate for safe downstream consumption",
+      "blocker_type": "operational",
+      "next_step": "Close the failing boundary conditions and rerun the acceptance sheet to PASS with evidence.",
+      "linked_tde_id": "TASK-20260314-VEGA-PXS-BOUNDARY-PASS"
+    },
+    {
+      "title": "Control Panel to TDE assignment path is not yet operationally trustworthy because insertion can occur without explicit acceptance or runner pickup",
+      "blocker_type": "operational",
+      "next_step": "Treat assignment acceptance and visibility as required interface work: route assignments through canonical intake, return explicit acceptance states, and eliminate silent limbo.",
+      "linked_tde_id": null
+    }
+  ],
+  "risks": [
+    {
+      "title": "R-001 Vega/PXS boundary readiness failure blocks safe downstream consumption",
+      "impact": "Downstream Task Management consumption remains unsafe, ad hoc, or coupled across domains until the boundary acceptance conditions pass.",
+      "mitigation": "Keep boundary readiness as the top gating dependency and rerun acceptance to PASS with evidence."
+    },
+    {
+      "title": "R-002 Readiness description can outrun readiness evidence",
+      "impact": "Consumers may build on a substrate whose readiness is described more strongly than it is currently proven.",
+      "mitigation": "Keep readiness claims tied to explicit GO/NO-GO evidence, decision records, and compact review surfaces."
+    },
+    {
+      "title": "R-003 Downstream consumption remains softer than the internal product model suggests",
+      "impact": "Adoption in pxs stays bespoke and fragile if schemas, compatibility/versioning semantics, and examples remain under-specified.",
+      "mitigation": "Upgrade the consumption interface into a minimal executable contract with validation and worked examples."
+    },
+    {
+      "title": "R-005 Shadow operating state / silent limbo path",
+      "impact": "Producers can mistake task insertion for operational acceptance, degrading trust in TDE as the execution system of record.",
+      "mitigation": "Use the assignment acceptance contract and canonical intake path so acceptance, no-runner, and binding failures are explicit."
+    }
+  ],
+  "proposed_tde_actions": [
+    "Triage the Vega/PXS boundary PASS dependency as the top active signal for downstream consumption readiness.",
+    "Prioritize the minimal executable pxs consumption contract as the next interface-hardening step.",
+    "Create or update TDE work to close the Control Panel assignment acceptance / silent-limbo gap before treating producer-side pushes as reliable.",
+    "Maintain a visible readiness-evidence path for the canonical substrate, including explicit DB-cutover GO/NO-GO closure."
+  ],
+  "priority_refresh_status": "unchanged",
+  "evidence_links": [
+    {
+      "kind": "priority_source",
+      "ref": "products/task-management/04-execution/TOP_PRIORITIES.md",
+      "note": "Reviewed as the canonical source of current priorities; no update required."
+    },
+    {
+      "kind": "plan",
+      "ref": "products/task-management/04-execution/PLAN.md",
+      "note": "Current objectives and immediate next steps still support the codified top three priorities."
+    },
+    {
+      "kind": "risk_register",
+      "ref": "products/task-management/04-execution/RISKS.md",
+      "note": "Confirms the strongest blocker is the unsafe/incomplete downstream consumption path, especially Vega/PXS boundary readiness."
+    },
+    {
+      "kind": "readiness_scorecard",
+      "ref": "products/task-management/05-performance/READINESS_SCORECARD.md",
+      "note": "Overall readiness remains Yellow-Green with major gaps in compact readiness judgment and practical downstream consumption proof."
+    },
+    {
+      "kind": "interface_contract",
+      "ref": "products/task-management/06-architecture/PXS_CONSUMPTION_INTERFACE.md",
+      "note": "Shows downstream use is still blocked by current Vega/PXS boundary failures and lacks a minimal executable schema-backed contract."
+    },
+    {
+      "kind": "error_report",
+      "ref": "products/task-management/errors/ERR-2026-03-14-control-panel-assignment-silent-limbo.md",
+      "note": "Current execution reality added an operational trust gap around assignment acceptance and silent limbo."
+    },
+    {
+      "kind": "assignment_contract",
+      "ref": "products/task-management/06-architecture/TDE_ASSIGNMENT_ACCEPTANCE_CONTRACT_V1.md",
+      "note": "Confirms that direct task-state insertion does not count as assignment success and defines the needed acceptance states."
+    }
+  ],
+  "source_references": [
+    "products/task-management/PRODUCT.md",
+    "products/task-management/MODEL.yaml",
+    "products/task-management/01-identity/VISION.md",
+    "products/task-management/02-strategy/STRATEGY.md",
+    "products/task-management/03-operating-model/OPERATING_MODEL.md",
+    "products/task-management/03-operating-model/GOVERNANCE.md",
+    "products/task-management/04-execution/PLAN.md",
+    "products/task-management/04-execution/RISKS.md",
+    "products/task-management/04-execution/TOP_PRIORITIES.md",
+    "products/task-management/05-performance/METRICS.md",
+    "products/task-management/05-performance/READINESS_SCORECARD.md",
+    "products/task-management/06-architecture/INTERFACES.md",
+    "products/task-management/06-architecture/PXS_CONSUMPTION_INTERFACE.md",
+    "products/task-management/06-architecture/TDE_ASSIGNMENT_ACCEPTANCE_CONTRACT_V1.md",
+    "products/task-management/07-decisions/DECISIONS.md",
+    "products/task-management/04-execution/IMPLEMENT_NOW_FROM_RESEARCH_2026-03-14.md",
+    "products/task-management/errors/ERR-2026-03-14-control-panel-assignment-silent-limbo.md"
+  ],
+  "source_reference": "products/task-management/04-execution/nightly-reports/2026-03-15-po-nightly-report.json"
+}

@@ -1,0 +1,39 @@
+{
+  "artifactType": "tde_intake_packet",
+  "schemaVersion": "1.0.0",
+  "intake_id": "OPS-2026-066",
+  "intake_class": "work",
+  "source_system": "jobs-review",
+  "source_type": "report",
+  "source_reference": "weekly-jobs-review-2026-03-16",
+  "submitted_at": "2026-03-17T02:10:00Z",
+  "submitted_by": "Lyra/Control Tower",
+  "title": "Validate JOB-CI-001 cron delivery model against OpenClaw 2026.3.11 breaking change",
+  "summary": "OpenClaw 2026.3.11 removed agent-send from isolated cron jobs. JOB-CI-001 execution profile may be affected. Needs validation and profile update if broken.",
+  "body": "Jobs Review (2026-03-16) flagged that JOB-CI-001 cron delivery model may be affected by OpenClaw 2026.3.11 breaking change: isolated cron jobs can no longer perform ad-hoc agent sends. Validation required: (1) check if JOB-CI-001 uses isolated-cron agent-sends; (2) if yes, apply fix (announce delivery with channel/webhook output); (3) run smoke test; (4) update cron post-update smoke checklist to include cron delivery validation.",
+  "priority_hint": "medium",
+  "workspace_scope": "lyra-os",
+  "product_scope": "improvement",
+  "related_entities": [
+    {
+      "entity_type": "job",
+      "entity_ref": "JOB-CI-001"
+    },
+    {
+      "entity_type": "release",
+      "entity_ref": "openclaw-2026.3.11"
+    }
+  ],
+  "evidence_links": [
+    {
+      "kind": "daily_memory",
+      "ref": "memory/2026-03-16.md"
+    },
+    {
+      "kind": "evidence_snapshot",
+      "ref": "knowledge/evidence/2026-03/2026-03-16__openclaw-release-delta-snapshot.md"
+    }
+  ],
+  "requested_action": "Validate and update JOB-CI-001 cron delivery model for OpenClaw 2026.3.11 compliance; run smoke test; update checklist.",
+  "proposed_action": "Validate and update JOB-CI-001 cron delivery model for OpenClaw 2026.3.11 compliance; run smoke test; update checklist."
+}

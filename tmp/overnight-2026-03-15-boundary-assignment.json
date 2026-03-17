@@ -1,0 +1,36 @@
+{
+  "artifactType": "tde_assignment_packet",
+  "schemaVersion": "1.0.0",
+  "assignment_id": "TASK-20260314-VEGA-PXS-BOUNDARY-PASS",
+  "source_system": "control_tower_overnight_synthesis",
+  "source_reference": "products/task-management/04-execution/nightly-reports/2026-03-15-po-nightly-report.json",
+  "submitted_at": "2026-03-15T00:35:00Z",
+  "submitted_by": "Lyra",
+  "title": "Make Vega/PXS boundary PASS so downstream pxs consumption can proceed safely",
+  "summary": "Control Tower re-affirmed the Vega/PXS boundary PASS item as the strongest current portfolio bottleneck because Security and Task Management both report it as the gating dependency for safe downstream consumption.",
+  "requested_action": "Drive the boundary remediation path to PASS by closing the known fail conditions and rerunning the acceptance sheet with committed evidence.",
+  "priority_hint": "critical",
+  "workspace_scope": "lyra-os",
+  "product_scope": "A-007",
+  "related_entities": [
+    {"entity_type": "product", "entity_ref": "A-007", "relationship": "primary_owner"},
+    {"entity_type": "product", "entity_ref": "A-004", "relationship": "co-driving_signal"},
+    {"entity_type": "artifact", "entity_ref": "governance/VEGA_ACCEPTANCE_TEST_RUN_SHEET_V1.md", "relationship": "gate"}
+  ],
+  "evidence_links": [
+    {"kind": "report", "ref": "products/task-management/04-execution/nightly-reports/2026-03-15-po-nightly-report.json", "note": "Task Management nightly report"},
+    {"kind": "report", "ref": "products/security/04-execution/reports/2026-03-15-po-nightly-report.json", "note": "Security nightly report"},
+    {"kind": "artifact", "ref": "governance/VEGA_ACCEPTANCE_TEST_RUN_SHEET_V1.md", "note": "Canonical acceptance fail evidence"},
+    {"kind": "artifact", "ref": "products/security/06-architecture/BOUNDARY.md", "note": "Declared boundary model"}
+  ],
+  "assignment_owner_role": "Control Tower",
+  "runner_binding_required": false,
+  "objective_id": "OBJ-TDE-FOUNDATION",
+  "decision_policy_ref": "CONTROL_TOWER_OVERNIGHT_SYNTHESIS_POLICY_V1.md",
+  "workflow_family": "overnight-control-tower",
+  "metadata": {
+    "control_tower_selected_priority": 1,
+    "portfolio_bottleneck": "unsafe and incompletely enforced downstream consumption boundary",
+    "next_required_outcome": "acceptance sheet rerun to PASS with committed evidence"
+  }
+}

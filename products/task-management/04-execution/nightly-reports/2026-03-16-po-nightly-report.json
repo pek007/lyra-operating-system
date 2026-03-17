@@ -1,0 +1,238 @@
+{
+  "artifactType": "tde_po_nightly_report",
+  "schemaVersion": "1.0.0",
+  "synthesisId": "po-nightly-task-management-2026-03-16",
+  "productId": "A-007",
+  "productName": "Task Management",
+  "productOwner": "Lyra",
+  "synthesisDate": "2026-03-16",
+  "overallHealth": "yellow",
+  "summary": "Task Management made meaningful substrate progress on 2026-03-15: TDE runtime pathing hardened, post-acceptance progression traces added, assignment-acceptance thin-slice plan defined, and the Vega/PXS filesystem-tool boundary tightened. However, the two headline blockers remain open: the Vega/PXS boundary E2 condition is still FAIL (exec-based cross-domain access remains open despite fs-tool narrowing), and the assignment acceptance thin-slice has a plan but no implementation yet. Downstream pxs consumption is still blocked. TOP_PRIORITIES.md was reviewed against the full product stack, found substantively valid but with stale P3 status text; Priority 3 status note updated to reflect 2026-03-15 execution progress. Priority ordering unchanged.",
+  "materialChanges": [
+    {
+      "change": "TDE runtime pathing hardened: core TDE tools now default to canonical runtime paths (os/runtime/tde_state.sqlite); active/staging split no longer occurs by default.",
+      "significance": "Reduces silent cross-path reliability risk that was flagged in the prior report blocker list.",
+      "evidence": "products/task-management/04-execution/TDE_RUNTIME_PATHING_HARDENING_NOTE_2026-03-15.md"
+    },
+    {
+      "change": "Post-acceptance progression traces added: task_activated and task_progressed events now emitted, making accepted assignments visible beyond the initial acceptance event.",
+      "significance": "Closes the observability gap identified in the ERR-2026-03-14 silent-limbo error report.",
+      "evidence": "products/task-management/04-execution/TDE_POST_ACCEPTANCE_PROGRESSION_TRACE_NOTE_2026-03-15.md"
+    },
+    {
+      "change": "Assignment limbo detector (tools/tde_assignment_limbo_check.py) implemented. Silent-limbo condition is now a first-class detectable state.",
+      "significance": "Prevents future silent-limbo failures from requiring manual forensic investigation.",
+      "evidence": "products/task-management/04-execution/TDE_ASSIGNMENT_LIMBO_DETECTION_NOTE_2026-03-15.md"
+    },
+    {
+      "change": "Vega/PXS filesystem-tool boundary enforcement applied: px-internal-dev no longer has fs.workspaceOnly=false override.",
+      "significance": "Partial boundary progress. Convenience cross-workspace fs reads removed. However E2 is still FAIL because exec-based cross-domain access remains open.",
+      "evidence": "products/task-management/04-execution/VEGA_PXS_BOUNDARY_POST_CHANGE_VALIDATION_2026-03-15.md"
+    },
+    {
+      "change": "Assignment acceptance thin-slice plan published. First executable slice scoped: explicit acceptance states returned and persisted, five canonical acceptance outcomes defined.",
+      "significance": "Plan is ready but implementation not yet executed. Trust gap from silent limbo remains open at the implementation layer.",
+      "evidence": "products/task-management/04-execution/TDE_ASSIGNMENT_ACCEPTANCE_THIN_SLICE_PLAN_2026-03-15.md"
+    },
+    {
+      "change": "PXS access surface baseline documented: explicit record of what px-internal-dev had before and after enforcement, and what gap classes to expect.",
+      "significance": "Enables fast triage of capability-delivery gaps as they surface under enforced boundary.",
+      "evidence": "products/task-management/04-execution/PXS_ACCESS_SURFACE_BASELINE_2026-03-15.md"
+    }
+  ],
+  "topPriorities": [
+    {
+      "rank": 1,
+      "title": "Close the Vega/PXS boundary readiness gap and rerun it to PASS",
+      "status": "execution_in_progress",
+      "current_state": "Filesystem-tool surface narrowed. E2 (exec-based cross-domain read) still FAIL. Boundary is tighter but not fully enforced. Acceptance sheet has not yet been rerun to PASS.",
+      "next_concrete_step": "Decide whether E2 acceptance requires exec/sandbox tightening or a narrowed acceptance claim; apply the chosen path and rerun the acceptance sheet with committed evidence.",
+      "linkedTasks": ["TASK-20260314-VEGA-PXS-BOUNDARY-PASS"],
+      "refs": [
+        "products/task-management/04-execution/VEGA_PXS_BOUNDARY_POST_CHANGE_VALIDATION_2026-03-15.md",
+        "governance/VEGA_ACCEPTANCE_TEST_RUN_SHEET_V1.md"
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "Deliver a minimal executable pxs consumption contract with schemas and worked examples",
+      "status": "needs_decision",
+      "current_state": "Operating-contract artifact exists. Executable schema-backed layer, transport semantics, and worked examples not yet delivered. Priority 1 boundary work is a prerequisite.",
+      "next_concrete_step": "Once P1 boundary is resolved, upgrade the pxs consumption interface from descriptive to minimal executable contract with request/response schemas, versioning, and 2-3 worked examples.",
+      "linkedTasks": [],
+      "refs": [
+        "products/task-management/06-architecture/PXS_CONSUMPTION_INTERFACE.md",
+        "products/task-management/02-strategy/DISTRIBUTION_MODEL.md"
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "Stabilize and prove the canonical substrate that pxs will consume",
+      "status": "execution_in_progress",
+      "current_state": "Meaningful progress 2026-03-15: runtime pathing hardened, progression traces added, limbo detector implemented, assignment acceptance thin-slice plan ready. Implementation of acceptance slice not yet executed. DB-cutover GO/NO-GO decision path still open.",
+      "next_concrete_step": "Implement the assignment acceptance thin-slice (tools/tde_assignment_accept.py returning explicit acceptance states with canonical persistence); then close the DB-cutover decision path with explicit GO/NO-GO evidence.",
+      "linkedTasks": ["TASK-20260315-CP-TDE-ASSIGNMENT-ACCEPTANCE"],
+      "refs": [
+        "products/task-management/04-execution/TDE_ASSIGNMENT_ACCEPTANCE_THIN_SLICE_PLAN_2026-03-15.md",
+        "products/task-management/05-performance/READINESS_SCORECARD.md"
+      ]
+    }
+  ],
+  "constraints": [
+    {
+      "title": "Vega/PXS E2 boundary enforcement is still FAIL despite fs-tool narrowing",
+      "constraintType": "operational",
+      "detail": "exec-based cross-domain access (sandbox.mode=off, exec.host=gateway, exec.security=full) remains open. Boundary is not fully enforced. E2 acceptance condition cannot be marked PASS until this is resolved or the acceptance statement is narrowed with explicit rationale.",
+      "nextStep": "Decide E2 scope: sandbox/exec tightening vs narrowed claim. Apply and rerun acceptance sheet."
+    },
+    {
+      "title": "Assignment acceptance trust gap: thin-slice plan exists but implementation is outstanding",
+      "constraintType": "operational",
+      "detail": "producers can still mistake raw task-state insertion for operational acceptance. The thin-slice plan defines the correct fix path, but tools/tde_assignment_accept.py has not yet been updated to return explicit acceptance states.",
+      "nextStep": "Execute the thin-slice implementation as the next coding step."
+    },
+    {
+      "title": "Downstream pxs consumption remains blocked by open boundary and incomplete executable contract",
+      "constraintType": "dependency",
+      "detail": "Neither the boundary gate (P1) nor the executable interface (P2) is closed. pxs consumption remains soft and unsafe.",
+      "nextStep": "Sequence: close P1 boundary, then advance P2 interface."
+    }
+  ],
+  "risksOrOpportunities": [
+    {
+      "id": "R-001",
+      "title": "Vega/PXS boundary readiness failure blocks safe downstream consumption",
+      "type": "risk",
+      "trend": "risk_rising",
+      "detail": "Partial improvement achieved but full enforcement still outstanding. Each day without full closure increases the risk that consumption work proceeds against an unsafe foundation.",
+      "mitigation": "Treat E2 resolution as the single highest-priority gating action."
+    },
+    {
+      "id": "R-002",
+      "title": "Readiness description outrunning readiness evidence",
+      "type": "risk",
+      "trend": "on_track",
+      "detail": "No regression. Runtime pathing hardening and progression traces improve evidence quality. Claim-to-evidence gap is narrowing.",
+      "mitigation": "Continue tying each new readiness claim to explicit artifacts and GO/NO-GO decision records."
+    },
+    {
+      "id": "R-003",
+      "title": "Downstream consumption softer than product model suggests",
+      "type": "risk",
+      "trend": "on_track",
+      "detail": "No regression; no new progress on the executable contract layer. Still depends on P1 boundary closure.",
+      "mitigation": "Keep as the explicit P2 next step after P1."
+    },
+    {
+      "id": "R-005",
+      "title": "Shadow operating state / silent limbo",
+      "type": "risk",
+      "trend": "on_track",
+      "detail": "Materially improved: limbo is now detectable and progression traces are emitted. Trust gap remains at the acceptance implementation layer.",
+      "mitigation": "Execute assignment acceptance thin-slice implementation."
+    },
+    {
+      "id": "OPP-001",
+      "title": "Execution substrate now has observable post-acceptance state",
+      "type": "opportunity",
+      "trend": "on_track",
+      "detail": "With progression traces and limbo detection in place, TDE now has the minimal observability scaffold needed to move confidently toward broader operational use without silent-failure risk.",
+      "mitigation": "Capitalize by completing the acceptance implementation slice and then running controlled end-to-end tests."
+    }
+  ],
+  "researchDelta": "No new product-local research artifacts produced in this run. 2026-03-15 execution produced six new operational artifacts (hardening note, trace note, limbo note, access surface baseline, thin-slice plan, post-change validation). These are now reflected in the updated P3 status in TOP_PRIORITIES.md.",
+  "proposedTdeActions": [
+    {
+      "action": "Triage E2 boundary decision as highest-priority gating signal: sandbox/exec restriction vs narrowed acceptance claim. Assign to Security/Task Management co-owned decision.",
+      "intakeClass": "signal",
+      "urgency": "high"
+    },
+    {
+      "action": "Promote assignment acceptance thin-slice implementation to next active work item. tools/tde_assignment_accept.py update to return explicit acceptance states with canonical persistence.",
+      "intakeClass": "signal",
+      "urgency": "high"
+    },
+    {
+      "action": "Refresh governance/VEGA_ACCEPTANCE_TEST_RUN_SHEET_V1.md to accurately reflect B1/C1/C2 current state and updated E2 fail reason (exec-based, not just fs-tool).",
+      "intakeClass": "signal",
+      "urgency": "medium"
+    },
+    {
+      "action": "After P1 boundary closure, create explicit TDE task for P2 executable pxs contract upgrade (request/response schemas, transport, worked examples).",
+      "intakeClass": "signal",
+      "urgency": "low"
+    }
+  ],
+  "priorityRefreshStatus": "updated",
+  "priorityRefreshNote": "Priority ordering unchanged. P3 status text updated to reflect 2026-03-15 execution progress (runtime pathing hardened, progression traces added, limbo detector implemented, thin-slice plan ready). TOP_PRIORITIES.md last-updated date refreshed to 2026-03-16.",
+  "evidenceLinks": [
+    {
+      "kind": "priority_source",
+      "ref": "products/task-management/04-execution/TOP_PRIORITIES.md",
+      "note": "Reviewed as canonical source. P3 status text updated; priority ordering confirmed unchanged."
+    },
+    {
+      "kind": "plan",
+      "ref": "products/task-management/04-execution/PLAN.md",
+      "note": "Current objectives align with codified top three priorities. No plan-level changes needed."
+    },
+    {
+      "kind": "risk_register",
+      "ref": "products/task-management/04-execution/RISKS.md",
+      "note": "R-001 boundary risk remains highest-impact. R-005 shadow-state risk materially improved by new observability work."
+    },
+    {
+      "kind": "readiness_scorecard",
+      "ref": "products/task-management/05-performance/READINESS_SCORECARD.md",
+      "note": "Overall Yellow-Green. Execution visibility improving. Downstream consumability still Yellow due to open boundary and incomplete executable contract."
+    },
+    {
+      "kind": "execution_artifact",
+      "ref": "products/task-management/04-execution/VEGA_PXS_BOUNDARY_POST_CHANGE_VALIDATION_2026-03-15.md",
+      "note": "Confirms fs-tool boundary improved but E2 remains FAIL due to unrestricted exec path."
+    },
+    {
+      "kind": "execution_artifact",
+      "ref": "products/task-management/04-execution/TDE_ASSIGNMENT_ACCEPTANCE_THIN_SLICE_PLAN_2026-03-15.md",
+      "note": "First executable slice scoped for assignment acceptance trust repair."
+    },
+    {
+      "kind": "execution_artifact",
+      "ref": "products/task-management/04-execution/TDE_RUNTIME_PATHING_HARDENING_NOTE_2026-03-15.md",
+      "note": "Core TDE tools now default to canonical runtime paths. Active/staging split eliminated from defaults."
+    },
+    {
+      "kind": "execution_artifact",
+      "ref": "products/task-management/04-execution/TDE_POST_ACCEPTANCE_PROGRESSION_TRACE_NOTE_2026-03-15.md",
+      "note": "Post-acceptance traces added; silent limbo now has canonical observability."
+    },
+    {
+      "kind": "previous_report",
+      "ref": "products/task-management/04-execution/nightly-reports/2026-03-15-po-nightly-report.json",
+      "note": "Prior nightly report for delta comparison."
+    }
+  ],
+  "sourceReferences": [
+    "products/task-management/PRODUCT.md",
+    "products/task-management/MODEL.yaml",
+    "products/task-management/01-identity/VISION.md",
+    "products/task-management/02-strategy/STRATEGY.md",
+    "products/task-management/03-operating-model/OPERATING_MODEL.md",
+    "products/task-management/03-operating-model/GOVERNANCE.md",
+    "products/task-management/04-execution/PLAN.md",
+    "products/task-management/04-execution/RISKS.md",
+    "products/task-management/04-execution/TOP_PRIORITIES.md",
+    "products/task-management/05-performance/METRICS.md",
+    "products/task-management/05-performance/READINESS_SCORECARD.md",
+    "products/task-management/06-architecture/INTERFACES.md",
+    "products/task-management/06-architecture/PXS_CONSUMPTION_INTERFACE.md",
+    "products/task-management/07-decisions/DECISIONS.md",
+    "products/task-management/04-execution/VEGA_PXS_BOUNDARY_POST_CHANGE_VALIDATION_2026-03-15.md",
+    "products/task-management/04-execution/TDE_ASSIGNMENT_ACCEPTANCE_THIN_SLICE_PLAN_2026-03-15.md",
+    "products/task-management/04-execution/TDE_RUNTIME_PATHING_HARDENING_NOTE_2026-03-15.md",
+    "products/task-management/04-execution/TDE_POST_ACCEPTANCE_PROGRESSION_TRACE_NOTE_2026-03-15.md",
+    "products/task-management/04-execution/TDE_ASSIGNMENT_LIMBO_DETECTION_NOTE_2026-03-15.md",
+    "products/task-management/04-execution/PXS_ACCESS_SURFACE_BASELINE_2026-03-15.md",
+    "products/task-management/04-execution/nightly-reports/2026-03-15-po-nightly-report.json"
+  ]
+}

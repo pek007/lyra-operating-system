@@ -1,0 +1,52 @@
+{
+  "artifactType": "tde_intent_formation_record",
+  "schemaVersion": "1.0.0",
+  "formation_id": "FORM-AS-CODE-ROLLOUT-INTERFACES-2026-03-15",
+  "source_type": "chat_request",
+  "source_ref": "as-code-rollout-interfaces-2026-03-15",
+  "formed_at": "2026-03-15T16:36:01Z",
+  "formed_by_role": "Product Owner",
+  "formation_rationale": "A bounded research work system can be formed under explicit assumptions. Original request: Research and define the shared As-Code Contract Pack for Lyra OS and PXS, including shared schemas or schema fragments, shared taxonomy, and a minimal mapping between PXS execution objects and Lyra OS artifact types.",
+  "interpreted_intent": "Conduct bounded research and produce a professionally useful first result.",
+  "request_type": "research_request",
+  "specificity_level": "medium",
+  "ambiguity_types": [
+    "missing_success_criteria"
+  ],
+  "actionability_status": "executable_with_assumptions",
+  "assumptions": [
+    "The first output should be a bounded research result rather than a full implementation."
+  ],
+  "known_unknowns": [
+    "Exact depth required for the research result."
+  ],
+  "proposed_objective": {
+    "objective_title": "Conduct bounded research task",
+    "objective_summary": "Run a bounded research slice and capture a professionally useful first result.",
+    "objective_id": null
+  },
+  "proposed_success_criteria": [
+    "A bounded research result is produced and can be reviewed."
+  ],
+  "proposed_workflow_family": "implementation_verification_readiness",
+  "proposed_first_stage_set": [
+    "implementation",
+    "verification"
+  ],
+  "proposed_first_task_set": [
+    {
+      "task_id": null,
+      "task_title": "Define research scope and question",
+      "task_summary": "Define the bounded question and success criteria for the research task.",
+      "stage_id": "implementation"
+    },
+    {
+      "task_id": null,
+      "task_title": "Verify research framing and output expectations",
+      "task_summary": "Verify that the research framing is coherent and reviewable.",
+      "stage_id": "verification"
+    }
+  ],
+  "required_clarifications": [],
+  "recommended_next_action": "proceed_with_assumptions"
+}

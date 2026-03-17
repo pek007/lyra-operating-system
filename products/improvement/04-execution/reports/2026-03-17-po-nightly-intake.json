@@ -1,0 +1,43 @@
+{
+  "artifactType": "tde_intake_packet",
+  "schemaVersion": "1.0.0",
+  "intakeId": "intake-improvement-2026-03-17",
+  "sourceReport": "po-nightly-improvement-2026-03-17",
+  "intakeClass": "signal",
+  "productId": "A-005",
+  "productName": "Improvement",
+  "intakeDate": "2026-03-17T01:20:00+01:00",
+  "signals": [
+    {
+      "signalId": "SIG-IMP-2026-03-17-001",
+      "title": "Close IMP-ERR-20260315-ARCHIVED-REPO-MISUSE-01 — corrective actions done",
+      "priority": "high",
+      "rationale": "First P3 test case ready for closure. Corrective actions complete; TDE task remains open."
+    },
+    {
+      "signalId": "SIG-IMP-2026-03-17-002",
+      "title": "Define canonical improvement TDE substrate (queue ID, linkage rules, intake format)",
+      "priority": "high",
+      "rationale": "P1 core blocker. Jobs Review signals (JOB-CI-001, JOB-SEC-001) are ready test cases as soon as substrate exists."
+    },
+    {
+      "signalId": "SIG-IMP-2026-03-17-003",
+      "title": "Route JOB-CI-001 and JOB-SEC-001 signals through canonical improvement intake",
+      "priority": "medium",
+      "rationale": "Bounded, concrete signals from Jobs Review. Good P1/P3 validation candidates."
+    },
+    {
+      "signalId": "SIG-IMP-2026-03-17-004",
+      "title": "Begin planning A-005 pinned-lane implementation into PXS",
+      "priority": "medium",
+      "rationale": "P2 passively accumulating drift risk."
+    },
+    {
+      "signalId": "SIG-IMP-2026-03-17-005",
+      "title": "Advance or close IMP-AUTO-20260315-01 (PROCESS_REGISTRY missing source file)",
+      "priority": "low",
+      "rationale": "No progress noted since creation."
+    }
+  ],
+  "priorityRefreshStatus": "updated"
+}

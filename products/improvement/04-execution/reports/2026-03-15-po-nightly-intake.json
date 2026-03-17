@@ -1,0 +1,154 @@
+{
+  "artifactType": "tde_intake_packet",
+  "schemaVersion": "1.0.0",
+  "intake_id": "intake:A-005:2026-03-15:po-nightly-improvement-2026-03-15",
+  "intake_class": "signal",
+  "source_system": "tde_po_nightly_report_adapter",
+  "source_type": "report",
+  "source_reference": "products/improvement/04-execution/reports/2026-03-15-po-nightly-report.json",
+  "submitted_at": "2026-03-15T00:21:26Z",
+  "submitted_by": "Lyra",
+  "title": "Nightly PO report: Improvement (2026-03-15)",
+  "summary": "Improvement remains strategically coherent and its codified top priorities still match the full product stack, but health stays yellow because the product's main gaps are still execution-integrity gaps: improvement work can still leak across non-canonical tracking surfaces, pinned-lane deployment into PXS is not yet the lived mechanism, and minimum product-side incident-to-improvement conversion is still not explicit enough across active products.",
+  "body": {
+    "report_id": "po-nightly-improvement-2026-03-15",
+    "report_date": "2026-03-15",
+    "product_id": "A-005",
+    "product_name": "Improvement",
+    "product_owner": "Lyra",
+    "overall_health": "yellow",
+    "top_priorities": [
+      "Converge improvement execution into one canonical TDE-first system of record.",
+      "Ship A-005 into PXS through a pinned lane with version truth, rollback, and verification semantics.",
+      "Roll out the minimum improvement interface across active products, starting with mandatory incident-to-improvement conversion."
+    ],
+    "blockers": [
+      {
+        "title": "Improvement execution reality is still split between canonical intent and legacy/generated surfaces",
+        "blocker_type": "operational",
+        "next_step": "Define and enforce canonical TDE queue/ID/linkage expectations for improvement work and remove legacy routing dependencies from improvement runbooks/specs.",
+        "linked_tde_id": null
+      },
+      {
+        "title": "Pinned-lane distribution into PXS is still not the active installed path",
+        "blocker_type": "operational",
+        "next_step": "Make the pinned lane operational with machine-checkable installed-version truth, explicit rollback behavior, and a verification pass that closes the interim-copy drift gap.",
+        "linked_tde_id": null
+      }
+    ],
+    "risks": [
+      {
+        "title": "Improvement execution state is split across multiple systems of record",
+        "impact": "Weak traceability, inconsistent ownership, poor metrics, and slower automation-safe improvement loops.",
+        "mitigation": "Make improvement intake and follow-through TDE-first and remove legacy routing dependencies."
+      },
+      {
+        "title": "Deployment drift between Lyra OS and consuming workspaces",
+        "impact": "Silent drift, unclear installed state, and weak confidence in downstream adoption.",
+        "mitigation": "Implement a pinned lane with machine-checkable installed-version truth and explicit rollback/verification behavior."
+      },
+      {
+        "title": "Improvement signals do not convert reliably into owned execution",
+        "impact": "Recurring friction remains narrative instead of compounding learning.",
+        "mitigation": "Deploy a minimum improvement interface across active products and make incident-to-improvement conversion mandatory for material cases."
+      },
+      {
+        "title": "Status truth drifts inside the improvement product itself",
+        "impact": "The improvement product undermines trust in its own control loop if scorecards, logs, and operational summaries diverge from verified evidence.",
+        "mitigation": "Reconcile product-local status artifacts against verified evidence and keep automation/reporting surfaces integrity-safe."
+      }
+    ],
+    "proposed_tde_actions": [
+      "Treat convergence to one canonical TDE-first improvement execution substrate as the primary overnight signal because it remains the strongest bottleneck to evidence-backed improvement operation.",
+      "Prioritize making the A-005 pinned deployment lane real in PXS with installed-version truth, rollback semantics, and verification evidence.",
+      "Define and deploy the minimum improvement interface across active products, including mandatory incident-to-improvement conversion for material cases.",
+      "Reconcile improvement product-local status surfaces so reporting, risks, and evidence remain internally consistent."
+    ],
+    "control_panel_priority": null,
+    "adapted_at": "2026-03-15T00:21:26Z"
+  },
+  "priority_hint": "medium",
+  "workspace_scope": "lyra-os",
+  "product_scope": "A-005",
+  "related_entities": [
+    {
+      "entity_type": "product",
+      "entity_ref": "A-005",
+      "relationship": "reported_product"
+    }
+  ],
+  "evidence_links": [
+    {
+      "kind": "artifact",
+      "ref": "products/improvement/PRODUCT.md",
+      "note": "Product charter and scope."
+    },
+    {
+      "kind": "artifact",
+      "ref": "products/improvement/MODEL.yaml",
+      "note": "Product metadata, dependencies, and review cadence."
+    },
+    {
+      "kind": "artifact",
+      "ref": "products/improvement/01-identity/VISION.md",
+      "note": "Outcome direction."
+    },
+    {
+      "kind": "artifact",
+      "ref": "products/improvement/02-strategy/STRATEGY.md",
+      "note": "Strategic choices."
+    },
+    {
+      "kind": "artifact",
+      "ref": "products/improvement/03-operating-model/OPERATING_MODEL.md",
+      "note": "Closed-loop operating model."
+    },
+    {
+      "kind": "artifact",
+      "ref": "products/improvement/04-execution/PLAN.md",
+      "note": "Current objectives."
+    },
+    {
+      "kind": "artifact",
+      "ref": "products/improvement/04-execution/RISKS.md",
+      "note": "Current risk baseline."
+    },
+    {
+      "kind": "artifact",
+      "ref": "products/improvement/04-execution/TOP_PRIORITIES.md",
+      "note": "Canonical current priorities reviewed in this run."
+    },
+    {
+      "kind": "artifact",
+      "ref": "products/improvement/04-execution/IMPLEMENT_NOW_FROM_RESEARCH_2026-03-14.md",
+      "note": "Immediate implementation set matches current top priority pattern and adds status-truth reconciliation as a near-term follow-through item."
+    },
+    {
+      "kind": "artifact",
+      "ref": "products/improvement/05-performance/METRICS.md",
+      "note": "Health/north-star definition."
+    },
+    {
+      "kind": "artifact",
+      "ref": "products/improvement/06-architecture/INTERFACES.md",
+      "note": "Minimum product-side improvement interface and workspace-package implication."
+    },
+    {
+      "kind": "artifact",
+      "ref": "products/improvement/07-decisions/DECISIONS.md",
+      "note": "Boundary with Task Management."
+    },
+    {
+      "kind": "artifact",
+      "ref": "memory/2026-03-14.md",
+      "note": "Recent execution evidence including new product-priority standards, workspace-package rollout, and overnight reporting cadence setup."
+    }
+  ],
+  "proposed_action": "triage_nightly_po_signal",
+  "signal_types": [
+    "status",
+    "blocker",
+    "risk",
+    "priority_proposal"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "artifactType": "tde_intent_formation_record",
+  "schemaVersion": "1.0.0",
+  "formation_id": "FORM-AS-CODE-ROLLOUT-TASK-MANAGEMENT-2026-03-",
+  "source_type": "chat_request",
+  "source_ref": "as-code-rollout-task-management-2026-03-15",
+  "formed_at": "2026-03-15T16:36:07Z",
+  "formed_by_role": "Product Owner",
+  "formation_rationale": "A bounded review/audit work system can be formed under explicit assumptions. Original request: Research and define the execution-side mapping for the as-code rollout: map the shared As-Code Contract Pack into TDE intake classes, evidence expectations, state transitions, and the smallest auditable execution-bridge MVP between PXS exports and Lyra OS intake.",
+  "interpreted_intent": "Conduct a bounded review/audit and return findings in a professional structure.",
+  "request_type": "review_audit_request",
+  "specificity_level": "medium",
+  "ambiguity_types": [
+    "missing_scope"
+  ],
+  "actionability_status": "executable_with_assumptions",
+  "assumptions": [
+    "The first review/audit pass should be bounded and evidence-oriented."
+  ],
+  "known_unknowns": [
+    "The exact review depth expected in v1."
+  ],
+  "proposed_objective": {
+    "objective_title": "Conduct bounded review or audit",
+    "objective_summary": "Run a bounded review/audit slice and capture findings clearly.",
+    "objective_id": null
+  },
+  "proposed_success_criteria": [
+    "A bounded review/audit result is produced with useful findings."
+  ],
+  "proposed_workflow_family": "implementation_verification_readiness",
+  "proposed_first_stage_set": [
+    "implementation",
+    "verification"
+  ],
+  "proposed_first_task_set": [
+    {
+      "task_id": null,
+      "task_title": "Define review/audit scope",
+      "task_summary": "Define the bounded scope for the review or audit task.",
+      "stage_id": "implementation"
+    },
+    {
+      "task_id": null,
+      "task_title": "Verify review/audit framing",
+      "task_summary": "Verify that the review or audit framing is coherent and useful.",
+      "stage_id": "verification"
+    }
+  ],
+  "required_clarifications": [],
+  "recommended_next_action": "proceed_with_assumptions"
+}

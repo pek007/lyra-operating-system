@@ -1,0 +1,25 @@
+{
+  "artifactType": "tde_intake_packet",
+  "schemaVersion": "1.0.0",
+  "intake_id": "INTAKE-as-code-rollout-task-management-2026-03-15",
+  "intake_class": "work",
+  "source_system": "tde_request_entry",
+  "source_type": "manual_entry",
+  "source_reference": "as-code-rollout-task-management-2026-03-15",
+  "submitted_at": "2026-03-15T16:36:07Z",
+  "submitted_by": "Lyra",
+  "title": "Research and define the execution-side mapping for the as-code rollout: map the shared As-Code Contract Pack into TDE in",
+  "summary": "Research and define the execution-side mapping for the as-code rollout: map the shared As-Code Contract Pack into TDE intake classes, evidence expectations, state transitions, and the smallest auditable execution-bridge MVP between PXS exports and Lyra OS intake.",
+  "body": {
+    "request_text": "Research and define the execution-side mapping for the as-code rollout: map the shared As-Code Contract Pack into TDE intake classes, evidence expectations, state transitions, and the smallest auditable execution-bridge MVP between PXS exports and Lyra OS intake.",
+    "request_class": "review_audit_request"
+  },
+  "priority_hint": "unspecified",
+  "workspace_scope": "lyra-os-root",
+  "product_scope": "A-001",
+  "related_entities": [],
+  "evidence_links": [],
+  "proposed_action": "run_intent_formation",
+  "requested_action": "Research and define the execution-side mapping for the as-code rollout: map the shared As-Code Contract Pack into TDE intake classes, evidence expectations, state transitions, and the smallest auditable execution-bridge MVP between PXS exports and Lyra OS intake.",
+  "success_signal": null
+}

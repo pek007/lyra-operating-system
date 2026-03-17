@@ -1,0 +1,179 @@
+{
+  "artifactType": "tde_po_nightly_report",
+  "schemaVersion": "1.0.0",
+  "synthesisId": "po-nightly-improvement-2026-03-17",
+  "synthesisDate": "2026-03-17T01:20:00+01:00",
+  "productId": "A-005",
+  "productName": "Improvement",
+  "productOwner": "Lyra",
+  "overallHealth": "execution_in_progress",
+  "summary": "Improvement remains strategically coherent and correctly ordered. The overnight 2026-03-16 execution cycle advanced P3 meaningfully: IMP-ERR-20260315-ARCHIVED-REPO-MISUSE-01 was created in TDE, corrective actions were implemented (CANONICAL_REPO_MAP_V1.md v1.1 published with pre-edit authority gate and archived-repo lifecycle rules), and the error report was closed. This is genuine P3 progress — the first incident-to-improvement conversion is partially complete. However, the TDE task itself remains open and the minimum improvement interface has not been formally deployed across the product portfolio. P1 (canonical TDE substrate) and P2 (pinned-lane distribution) remain unstarted with no new completion evidence. The Jobs Review (2026-03-16) added new improvement-eligible signals (JOB-CI-001 cron delivery constraint, JOB-SEC-001 stale-finding SLA gap) that are circulating without a canonical intake mechanism — reinforcing P1 urgency.",
+  "materialChanges": [
+    "P3 test case (IMP-ERR-20260315-ARCHIVED-REPO-MISUSE-01) advanced: corrective actions implemented in CANONICAL_REPO_MAP_V1.md v1.1 (pre-edit authority gate, lifecycle status per repo, archived-repo usage rules). Error report closed. TDE task created and open — not yet closed.",
+    "Jobs Review (2026-03-16) generated new improvement-relevant signals: JOB-CI-001 cron delivery constraint from OpenClaw 2026.3.11 breaking change; JOB-SEC-001 stale-finding SLA gap (SEC-AUTO-20260307-01 and SEC-AUTO-20260309-02 both 9+ days open); proof-case retirement candidates; SEC finding disposition. None routed through canonical improvement intake — reinforcing P1 gap.",
+    "OpenClaw release delta review (2026-03-16) closed: system on 2026.3.13. ACP auth restoration (ERR-2026-03-14-OPENCLAW-ACP-BACKEND) still open — no improvement artifact linked to it.",
+    "Vega/PXS boundary: B1, C1, C2 cleared. E2 still FAIL, pending Peter's morning decision on exec/sandbox scope. Not an Improvement product blocker but carries portfolio risk that could generate Improvement work if the decision outcome is complex.",
+    "IMP-AUTO-20260315-01 (PROCESS_REGISTRY missing source-of-truth file) remains open — no progress noted in overnight logs.",
+    "No changes to PLAN.md, VISION.md, STRATEGY.md, OPERATING_MODEL.md, INTERFACES.md, or DECISIONS.md since last report."
+  ],
+  "topPriorities": [
+    {
+      "rank": 1,
+      "title": "Converge improvement execution into one canonical TDE-first system of record",
+      "status": "execution_in_progress",
+      "why": "Improvement cannot be evidence-backed, comparable, or safely automatable if work still leaks into multiple tracking surfaces. Jobs Review (2026-03-16) added new improvement-eligible signals with no canonical intake mechanism. Each new signal without a defined substrate further fragments the improvement backlog.",
+      "nextStep": "Define the canonical improvement execution substrate in TDE terms (queue ID, linkage rules, intake format); update improvement runbooks to use that substrate; remove legacy routing dependencies for improvement work.",
+      "linkedTdeId": null,
+      "progressSinceLastReport": "no_change"
+    },
+    {
+      "rank": 2,
+      "title": "Ship A-005 into PXS through a pinned lane with version truth, rollback, and verification semantics",
+      "status": "execution_in_progress",
+      "why": "Pinned-lane distribution is still not the lived mechanism. Interim-copy lanes in use. Vega/PXS boundary work (2026-03-16) addressed access topology, not A-005 assembly delivery. Drift risk accumulates passively.",
+      "nextStep": "Implement the pinned lane as an operational path with machine-checkable installed-version truth, explicit rollback behavior, and a verification pass that closes the interim-drift gap.",
+      "linkedTdeId": null,
+      "progressSinceLastReport": "no_change"
+    },
+    {
+      "rank": 3,
+      "title": "Roll out the minimum improvement interface across active products, starting with mandatory incident-to-improvement conversion",
+      "status": "execution_in_progress",
+      "why": "P3 test case is partially done: corrective actions implemented, error report closed. TDE task open but not yet closed. Minimum interface not deployed. New signals from Jobs Review still not routed through any canonical intake. Conversion discipline remains inconsistent.",
+      "nextStep": "Close IMP-ERR-20260315-ARCHIVED-REPO-MISUSE-01 in TDE as the first complete incident-to-improvement conversion; then formalize and deploy the minimum product-side improvement interface across active products.",
+      "linkedTdeId": "IMP-ERR-20260315-ARCHIVED-REPO-MISUSE-01",
+      "progressSinceLastReport": "partial_progress"
+    }
+  ],
+  "constraints": [
+    "Improvement must remain evidence-backed, not theatrical — no churn without material cause.",
+    "No authority or security boundary changes without escalation.",
+    "Improvement does not own canonical task/decision state — that boundary with Task Management must be preserved."
+  ],
+  "risksOrOpportunities": [
+    {
+      "id": "R-001",
+      "title": "Improvement execution state is split across multiple systems of record",
+      "trend": "risk_rising",
+      "note": "Jobs Review (2026-03-16) added 4 new improvement-relevant ops tasks without a canonical intake mechanism. Each new signal further fragments the backlog. Risk rising."
+    },
+    {
+      "id": "R-002",
+      "title": "Deployment drift between Lyra OS and consuming workspaces",
+      "trend": "stable",
+      "note": "No change since last report. Interim-copy lanes still in use. Pinned-lane work has not advanced."
+    },
+    {
+      "id": "R-003",
+      "title": "Improvement signals do not convert reliably into owned execution",
+      "trend": "stable_improving",
+      "note": "P3 test case partial progress is genuine signal. Corrective actions done; TDE task created. Trend improves slightly from last cycle but not yet closed. Jobs Review signals (JOB-CI-001, JOB-SEC-001) still not routed through canonical intake."
+    },
+    {
+      "id": "R-004",
+      "title": "Status truth drifts inside the improvement product itself",
+      "trend": "stable",
+      "note": "No new structural drift detected. IMPROVEMENT_LOG path divergence from prior reports not confirmed resolved."
+    },
+    {
+      "id": "OPP-001",
+      "title": "As-code contract pack work opens a natural Improvement interface extension",
+      "trend": "opportunity",
+      "note": "Remains a future opportunity; no new intake."
+    },
+    {
+      "id": "OPP-002",
+      "title": "Jobs Review signals represent the first real-world stress test for canonical improvement intake",
+      "trend": "opportunity",
+      "note": "JOB-CI-001 and JOB-SEC-001 gaps are bounded, concrete, and ready to route through a canonical intake as soon as one exists. Good test surface for P1 substrate design."
+    }
+  ],
+  "researchDelta": "No new Improvement-specific research intake in this cycle. As-code uplift plan from 2026-03-15 remains the last relevant research delta.",
+  "proposedTdeActions": [
+    {
+      "action": "Close IMP-ERR-20260315-ARCHIVED-REPO-MISUSE-01 in TDE — corrective actions are done; mark complete as the first end-to-end incident-to-improvement conversion.",
+      "class": "signal",
+      "priority": "high",
+      "rationale": "Closes the P3 live test case cleanly. Sets the precedent for future conversion discipline."
+    },
+    {
+      "action": "Define the canonical improvement execution substrate in TDE terms (queue ID, linkage rules, intake format) and update improvement runbooks.",
+      "class": "signal",
+      "priority": "high",
+      "rationale": "P1 core blocker. Jobs Review signals are ready to stress-test it as soon as it exists."
+    },
+    {
+      "action": "Route JOB-CI-001 cron delivery constraint and JOB-SEC-001 stale-finding SLA gap through the canonical improvement intake as P1 first real test cases (after P1 substrate is defined).",
+      "class": "signal",
+      "priority": "medium",
+      "rationale": "These are concrete, bounded signals from the Jobs Review. Routing them canonically validates P1 and advances P3 portfolio-wide rollout."
+    },
+    {
+      "action": "Begin planning the A-005 pinned-lane implementation into PXS.",
+      "class": "signal",
+      "priority": "medium",
+      "rationale": "P2. No new pressure but interim-copy drift risk accumulates passively."
+    },
+    {
+      "action": "Advance IMP-AUTO-20260315-01 (PROCESS_REGISTRY missing source-of-truth file) — no progress noted since creation.",
+      "class": "signal",
+      "priority": "low",
+      "rationale": "Open improvement item with no recent progress. Should be routed or closed."
+    }
+  ],
+  "priorityRefreshStatus": "updated",
+  "priorityRefreshNote": "TOP_PRIORITIES.md date advanced to 2026-03-17. P3 next step updated to reflect partial progress (corrective actions done, TDE task open but not closed) and new signals from Jobs Review (2026-03-16). P1 next step updated to note Jobs Review signals as a ready stress-test surface. P2 unchanged. No structural reordering — current priority order remains correct.",
+  "evidenceLinks": [
+    {
+      "ref": "products/improvement/04-execution/TOP_PRIORITIES.md",
+      "note": "Canonical priority source — refreshed in this run."
+    },
+    {
+      "ref": "products/improvement/PRODUCT.md",
+      "note": "Product charter and scope."
+    },
+    {
+      "ref": "products/improvement/MODEL.yaml",
+      "note": "Product metadata. Last reviewed 2026-03-11."
+    },
+    {
+      "ref": "products/improvement/04-execution/PLAN.md",
+      "note": "Current execution objectives — unchanged."
+    },
+    {
+      "ref": "products/improvement/04-execution/RISKS.md",
+      "note": "Risk baseline — unchanged."
+    },
+    {
+      "ref": "products/improvement/06-architecture/INTERFACES.md",
+      "note": "Minimum product-side improvement interface definition."
+    },
+    {
+      "ref": "products/improvement/07-decisions/DECISIONS.md",
+      "note": "Boundary decisions D-001, D-002."
+    },
+    {
+      "ref": "TASKS.md:IMP-ERR-20260315-ARCHIVED-REPO-MISUSE-01",
+      "note": "P3 test case: TDE task open, corrective actions done, error report closed."
+    },
+    {
+      "ref": "CANONICAL_REPO_MAP_V1.md v1.1",
+      "note": "Corrective action artifact from P3 test case — pre-edit authority gate, lifecycle status, archived-repo rules."
+    },
+    {
+      "ref": "memory/2026-03-16.md",
+      "note": "Overnight execution context: P3 corrective actions done; TASK-20260315-CP-TDE-ASSIGNMENT-ACCEPTANCE done; Jobs Review (4 new ops tasks flagged); OpenClaw release delta closed."
+    },
+    {
+      "ref": "memory/2026-03-17.md",
+      "note": "Interfaces PO nightly report completed (priority unchanged, zero execution progress 2 days)."
+    },
+    {
+      "ref": "products/improvement/04-execution/reports/2026-03-16-po-nightly-report.json",
+      "note": "Previous nightly report for delta comparison."
+    }
+  ],
+  "sourceReferences": [
+    "products/improvement/04-execution/reports/2026-03-17-po-nightly-report.json"
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "artifactType": "po_nightly_synthesis",
+  "schemaVersion": "1.0",
+  "synthesisId": "delivery-po-nightly-2026-03-16",
+  "productId": "A-006",
+  "productName": "Delivery",
+  "productOwner": "Lyra",
+  "synthesisDate": "2026-03-16T00:10:00+01:00",
+  "overallHealth": "on_track",
+  "summary": "Delivery product is directionally sound and conceptually mature. Strategic foundation (Delivery-as-Code, schema, state policy, rendered packets) is in place. Execution gap persists: the three top priorities — running a real pilot end-to-end, upgrading the gate to a contract, and making measurement operational — remain open and unstarted. No material change since 2026-03-14 nightly pass. Overnight context from 2026-03-15 confirms Delivery signals were recognized but deprioritised against Vega/PXS boundary and TDE assignment-substrate work. No new completions or blockers to record.",
+  "materialChanges": "none",
+  "topPriorities": [
+    {
+      "rank": 1,
+      "title": "Run one real Delivery v0.1 pilot end to end and publish the evidence pack",
+      "status": "execution_in_progress",
+      "note": "Core scaffolding in place; activation and verification path still thin. No execution started on the pilot itself as of this run.",
+      "nextStep": "Select one representative Delivery v0.1 pilot in PXS, run the full VERIFY path, produce canonical evidence pack.",
+      "links": [
+        "products/delivery/04-execution/PLAN.md",
+        "assemblies/devsecops-delivery/v0.1/ACTIVATION.md",
+        "assemblies/devsecops-delivery/v0.1/VERIFY.md",
+        "products/delivery/04-execution/TDE_UI_PILOT_DELIVERY_CONTRACT_V1.md"
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "Upgrade the Delivery gate from checklist to contract",
+      "status": "execution_in_progress",
+      "note": "Gate intent exists; current language is too thin to function as a compiled contract. Risk R-003 (gate ambiguity) remains live.",
+      "nextStep": "Expand gate into a risk-classed contract with required checks, evidence outputs, pass/fail logic, and at least one machine-checkable validation hook.",
+      "links": [
+        "products/delivery/04-execution/PLAN.md",
+        "products/delivery/04-execution/RISKS.md",
+        "products/delivery/05-performance/METRICS.md",
+        "assemblies/devsecops-delivery/v0.1/VERIFY.md"
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "Make Delivery measurement and review operational, not aspirational",
+      "status": "execution_in_progress",
+      "note": "Metric intent is clear in METRICS.md. No baseline or real weekly review cadence has been run. Scorecard remains conceptual.",
+      "nextStep": "Define minimal low-noise weekly scorecard snapshot, run first real weekly review, record one concrete follow-through improvement.",
+      "links": [
+        "products/delivery/04-execution/PLAN.md",
+        "products/delivery/05-performance/METRICS.md",
+        "products/delivery/04-execution/RISKS.md"
+      ]
+    }
+  ],
+  "constraints": [
+    "No strategic launches without Peter involvement (MODEL.yaml critical_constraint).",
+    "Maintain verification and traceability discipline across all consuming products.",
+    "Delivery owns the shipping system, not the full strategy of every product it serves (INTERFACES.md boundary rule).",
+    "Overnight context: Delivery signals deprioritised on 2026-03-15 in favour of Vega/PXS boundary and TDE assignment-substrate work — capacity allocation may continue to constrain Delivery-side execution starts."
+  ],
+  "risksOrOpportunities": [
+    {
+      "id": "R-001",
+      "label": "Verification debt through thin activation/evidence practice",
+      "severity": "high",
+      "trend": "stable",
+      "note": "Core risk. Evidence gap will widen if pilot is not started. Mitigant: pilot execution + evidence pack is P1."
+    },
+    {
+      "id": "R-002",
+      "label": "Drift through interim copy distribution",
+      "severity": "medium",
+      "trend": "stable",
+      "note": "Interim inbox model superseded per PLAN.md and OPERATING_MODEL.md. Migration toward TDE-native assigned work is the correct direction but not yet operationalised."
+    },
+    {
+      "id": "R-003",
+      "label": "Gate ambiguity",
+      "severity": "high",
+      "trend": "stable",
+      "note": "Gate is still checklist/interpretive. Risk rises with every delivery unit run before contract upgrade (P2) is done."
+    },
+    {
+      "id": "R-004",
+      "label": "Security/authority regression under delivery pressure",
+      "severity": "medium",
+      "trend": "stable",
+      "note": "Current governance posture is medium. No specific delivery-pressure events noted in this pass."
+    }
+  ],
+  "researchDelta": "none — no research artifacts updated or surfaced in this run.",
+  "proposedTdeActions": [
+    {
+      "type": "signal",
+      "description": "Delivery P1 (pilot) has been open and unstarted since at least 2026-03-14. Recommend scheduling a time-boxed execution start on the TDE UI Pilot delivery contract as the first concrete pilot attempt. Candidate for next overnight execution cycle or explicit Peter allocation.",
+      "urgency": "medium"
+    },
+    {
+      "type": "signal",
+      "description": "R-003 gate-ambiguity risk is live: consider converting P2 (gate-to-contract) into a tracked TDE work item so it is not deferred indefinitely in favour of cross-product execution work.",
+      "urgency": "medium"
+    },
+    {
+      "type": "signal",
+      "description": "P3 (scorecard/review) requires a first baseline run. Consider scheduling as a sub-task within the next weekly review cycle rather than a standalone block.",
+      "urgency": "low"
+    }
+  ],
+  "priorityRefreshStatus": "unchanged",
+  "priorityRefreshRationale": "Full product stack review completed. PLAN.md execution order (steps 6, 7, 8) aligns with P1, P2, P3. No completions, priority collapses, or emerging risks since 2026-03-14 update. Priorities remain correctly ordered and grounded. No update to TOP_PRIORITIES.md required.",
+  "evidenceLinks": [
+    "products/delivery/04-execution/TOP_PRIORITIES.md",
+    "products/delivery/04-execution/PLAN.md",
+    "products/delivery/04-execution/RISKS.md",
+    "products/delivery/05-performance/METRICS.md",
+    "products/delivery/PRODUCT.md",
+    "products/delivery/MODEL.yaml",
+    "products/delivery/01-identity/VISION.md",
+    "products/delivery/02-strategy/STRATEGY.md",
+    "products/delivery/03-operating-model/OPERATING_MODEL.md",
+    "products/delivery/03-operating-model/GOVERNANCE.md",
+    "products/delivery/06-architecture/INTERFACES.md",
+    "products/delivery/07-decisions/DECISIONS.md",
+    "products/delivery/04-execution/TDE_UI_PILOT_DELIVERY_CONTRACT_V1.md",
+    "products/delivery/04-execution/ROADMAP.md",
+    "memory/2026-03-15.md"
+  ],
+  "sourceReferences": [
+    "PRODUCT_OWNER_DAILY_PRIORITY_REFRESH_PROTOCOL_V1.md",
+    "TDE_PRODUCT_OWNER_NIGHTLY_REPORT_SPEC_V1.md"
+  ]
+}

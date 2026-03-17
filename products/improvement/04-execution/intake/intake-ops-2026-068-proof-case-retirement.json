@@ -1,0 +1,41 @@
+{
+  "artifactType": "tde_intake_packet",
+  "schemaVersion": "1.0.0",
+  "intake_id": "OPS-2026-068",
+  "intake_class": "improvement",
+  "source_system": "jobs-review",
+  "source_type": "report",
+  "source_reference": "weekly-jobs-review-2026-03-16",
+  "submitted_at": "2026-03-17T02:05:00Z",
+  "submitted_by": "Lyra/Control Tower",
+  "title": "Retire completed proof-case job bundles (JOB-TM-001/002, JOB-DEL-001, JOB-GOV-001) and standardize intra-Lyra handoff protocol",
+  "summary": "4 proof-case job bundles are complete but not archived. The intra-Lyra handoff protocol has not been formally standardized as a governance artifact. Both gaps need closing.",
+  "body": "Jobs Review (2026-03-16) identified: JOB-TM-001, JOB-TM-002, JOB-DEL-001, JOB-GOV-001 are all done proof-case bundles in the jobs/ directory but are not in the canonical job registry and have not been archived. The handoff protocol (how completed job bundles are handed off within Lyra OS) has not been formalized as a governance artifact. Required: (1) archive the 4 done proof-case bundles (move to jobs/archive/ or add done status + archive marker); (2) formally standardize the intra-Lyra job handoff protocol as a governance artifact (HANDOFF_PROTOCOL_V1.md or equivalent); (3) add completed jobs to a canonical done-registry or index so they remain findable without polluting the active jobs/ directory.",
+  "priority_hint": "low",
+  "workspace_scope": "lyra-os",
+  "product_scope": "governance,improvement",
+  "related_entities": [
+    {
+      "type": "job",
+      "id": "JOB-TM-001"
+    },
+    {
+      "type": "job",
+      "id": "JOB-TM-002"
+    },
+    {
+      "type": "job",
+      "id": "JOB-DEL-001"
+    },
+    {
+      "type": "job",
+      "id": "JOB-GOV-001"
+    }
+  ],
+  "evidence_links": [
+    "memory/2026-03-16.md#L10:00"
+  ],
+  "proposed_action": "triage_and_assign",
+  "desired_outcome": "Proof-case bundles archived; intra-Lyra handoff protocol published as governance artifact.",
+  "success_signal": "jobs/ directory contains only active/active-pending bundles; archived bundles discoverable via index; handoff protocol in governance/."
+}

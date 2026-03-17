@@ -1,9 +1,9 @@
 {
   "artifactType": "tde_job_tick",
   "schemaVersion": "1.0.0",
-  "tick_id": "job-tick-20260313-144557",
+  "tick_id": "job-tick-20260313-145045",
   "trigger_source": "cron",
-  "timestamp": "2026-03-13T14:45:57.622232+00:00",
+  "timestamp": "2026-03-13T14:50:45.727742+00:00",
   "job_id": "JOB-PROD-001",
   "binding_id": "BIND-JOB-PROD-001-ACTIVE",
   "actor_id": "lyra",
@@ -14,7 +14,7 @@
     "rationale_trace": "TDE-2026-027-objective-linkage"
   },
   "objective_registry_context": {
-    "registry_path": "/Users/lyra/.openclaw/workspace/os/runtime/staging/tde_objectives.json",
+    "registry_path": "os/runtime/staging/tde_objectives.json",
     "registry_loaded": true
   },
   "binding_context": {
@@ -42,7 +42,7 @@
   },
   "decisions": [],
   "evidence_outputs": [
-    "/Users/lyra/.openclaw/workspace/knowledge/evidence/staging/2026-03/tde-job-tick-latest.json"
+    "knowledge/evidence/staging/2026-03/tde-job-tick-latest.json"
   ],
   "outcomes": {
     "progressed": 0,
@@ -65,7 +65,7 @@
   "fail_closed_reason": null,
   "shadow_state": {
     "enabled": true,
-    "db_path": "/Users/lyra/.openclaw/workspace/os/runtime/staging/tde_state.sqlite",
+    "db_path": "os/runtime/staging/tde_state.sqlite",
     "imported": {
       "imported": 134,
       "raw_rows": 134,
@@ -81,12 +81,12 @@
       "duplicate_rows": 0
     },
     "ledger": {
-      "action_id": "shadow:job-tick-20260313-144557",
-      "event_id": "evt:job-tick-20260313-144557:summary"
+      "action_id": "shadow:job-tick-20260313-145045",
+      "event_id": "evt:job-tick-20260313-145045:summary"
     },
     "status": "ok",
     "threshold_exceeded": false,
     "consecutive_failures": 0,
-    "alert_path": "/Users/lyra/.openclaw/workspace/knowledge/evidence/staging/metrics/tde-shadow-state-alerts.jsonl"
+    "alert_path": "knowledge/evidence/staging/metrics/tde-shadow-state-alerts.jsonl"
   }
 }

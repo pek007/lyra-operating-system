@@ -1,0 +1,27 @@
+{
+  "artifactType": "tde_request_entry_result",
+  "schemaVersion": "1.0.0",
+  "recorded_at": "2026-03-15T16:35:46Z",
+  "request_text": "Runtime hardening for the as-code rollout: harden GitHub Actions baseline across Lyra OS and PXS, define the minimum workflow-security standard, and identify the first evidence artifact classes that require tighter schema strictness.",
+  "source_ref": "as-code-rollout-security-2026-03-15",
+  "request_class": "runtime_hardening",
+  "intake_class": "work",
+  "intake_validation": "passed",
+  "formation_validation": "passed",
+  "formation_id": "FORM-AS-CODE-ROLLOUT-SECURITY-2026-03-15",
+  "recommended_next_action": "proceed_with_assumptions",
+  "required_clarifications": [],
+  "intake_packet_path": "tmp/tde/as-code-security-intake.json",
+  "formation_path": "tmp/tde/as-code-security-formation.json",
+  "canonical_creation": {
+    "formation_id": "FORM-AS-CODE-ROLLOUT-SECURITY-2026-03-15",
+    "objective_id": "OBJ-FORM-FORM-AS-CODE-ROLLOUT-SECURITY-2026-03-15",
+    "created_tasks": [
+      "TDE-FORM-FORM-AS-CODE-ROLLOUT-SECURITY-2026-03-15-001",
+      "TDE-FORM-FORM-AS-CODE-ROLLOUT-SECURITY-2026-03-15-002"
+    ],
+    "workflow_family": "implementation_verification_readiness",
+    "tasks_projection_path": "os/runtime/TASKS_from_db.md",
+    "objectives_path": "os/runtime/tde_objectives.json"
+  }
+}

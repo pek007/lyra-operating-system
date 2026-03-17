@@ -8,8 +8,8 @@
 - Scope: system_level
 - Owning product or owner: Task Management + operating model / repo-governance
 - Affected products/contexts: Task Management, TDE implementation flow, repo authority discipline, archived `repos/control-panel` POC
-- Status: mitigated
-- Review / closure date:
+- Status: closed
+- Review / closure date: 2026-03-16
 
 ## Summary
 - What happened? After implementing the TDE assignment-acceptance thin slice in the canonical runtime tool (`tools/tde_assignment_accept.py`), the next follow-on step aligned a producer adapter in `repos/control-panel`. That repo was then recognized as the retired/archived Control Panel POC rather than an active canonical implementation lane. The work was technically useful as contract proof, but it should not have been treated as forward-path implementation without first verifying repo authority/status.
@@ -47,9 +47,12 @@
   - Preserved the canonical runtime-side TDE fix already made in the main workspace.
 
 ## Corrective actions
-- [ ] Add an explicit pre-edit repo-authority check to meaningful implementation work when multiple possible repos/surfaces exist.
-- [ ] Document active / archived / reference repo status in a single canonical repo-authority map or equivalent product-governance artifact.
-- [ ] Update TDE/product implementation workflow guidance so archived repos can be used for learning/reuse inspection but not treated as forward implementation lanes without an explicit restart/revival decision.
+- [x] Add an explicit pre-edit repo-authority check to meaningful implementation work when multiple possible repos/surfaces exist.
+  - Done 2026-03-16: Pre-edit authority gate added to `CANONICAL_REPO_MAP_V1.md` v1.1 (mandatory check — archived repos require formal restart decision before any code lands).
+- [x] Document active / archived / reference repo status in a single canonical repo-authority map or equivalent product-governance artifact.
+  - Done 2026-03-16: `CANONICAL_REPO_MAP_V1.md` v1.1 adds lifecycle status column (Active/Archived), quick-status lookup table, and clear permitted-use rules per repo.
+- [x] Update TDE/product implementation workflow guidance so archived repos can be used for learning/reuse inspection but not treated as forward implementation lanes without an explicit restart/revival decision.
+  - Done 2026-03-16: Archived repos section in `CANONICAL_REPO_MAP_V1.md` v1.1 documents permitted uses (inspect/reuse extraction) and NOT-permitted uses (implementation without restart decision). Restart criteria link preserved.
 
 ## Preventive changes
 - What should change to reduce recurrence?
@@ -81,3 +84,4 @@
 - Final outcome / verification:
   - Temporary archived-repo edits were reverted on 2026-03-15 after detection.
   - No further forward-path implementation should proceed in `repos/control-panel` unless a restart decision is made.
+  - 2026-03-16 (overnight execution): All three corrective actions implemented via `CANONICAL_REPO_MAP_V1.md` v1.1 — pre-edit authority gate, lifecycle status per repo, and clear archived-repo usage rules with restart-decision requirement. Error report closed.

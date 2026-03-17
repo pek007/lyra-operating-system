@@ -1,0 +1,186 @@
+{
+  "artifactType": "tde_product_owner_nightly_report",
+  "schemaVersion": "v1",
+  "reportId": "interfaces-po-nightly-2026-03-16",
+  "productId": "A-009",
+  "productName": "Interfaces",
+  "productOwner": "Lyra",
+  "reportDate": "2026-03-16",
+  "generatedAt": "2026-03-16T00:15:00Z",
+  "intakeClass": "signal",
+  "overallHealth": "yellow",
+  "summary": "Interfaces is strategically sound but still not execution-ready. The 2026-03-15 PLAN.md update added meaningful new scope: an as-code contract pack between Lyra OS and PXS. This is a material change that elevates Priority 2 and was reflected in a TOP_PRIORITIES refresh. Two structural blockers remain open from yesterday: broken assembly metadata links and no closed-loop downstream verification evidence. The as-code rollout adds surface area that compounds the verification gap if not addressed concurrently.",
+  "materialChanges": [
+    {
+      "type": "plan_changed",
+      "detail": "PLAN.md updated on 2026-03-15 (commit a33ac35) to add objective 4: Define the shared As-Code Contract Pack between Lyra OS and PXS, with sub-focus on shared schemas, shared enums/taxonomy, and PXS execution object mapping. This is a meaningful scope expansion within Priority 2 that was not yet reflected in TOP_PRIORITIES.",
+      "source": "products/interfaces/04-execution/PLAN.md"
+    }
+  ],
+  "topPriorities": [
+    {
+      "rank": 1,
+      "title": "Resolve Interfaces identity, scope, and ownership boundaries",
+      "status": "on_track",
+      "whyThisMattersNow": "Strategic guardrail. Charter is narrowed and documented; requires ongoing enforcement particularly as new as-code scope is added to the plan.",
+      "nextConcreteStep": "Keep ownership stance explicit — especially as provider-specific vs. cross-cutting contract surfaces are distinguished in the as-code rollout.",
+      "links": [
+        "products/interfaces/04-execution/PLAN.md",
+        "products/interfaces/06-architecture/INTERFACES.md",
+        "products/interfaces/07-decisions/DECISIONS.md"
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "Make the Interfaces assembly real, self-consistent, and consumable — including as-code contract pack",
+      "status": "execution_in_progress",
+      "whyThisMattersNow": "Assembly has known broken metadata links. As-code rollout is newly added to the plan but not yet started. Both must be resolved before Priority 3 can close.",
+      "nextConcreteStep": "(a) Correct assembly.yaml metadata links; (b) scope the minimal shared As-Code Contract Pack surface between Lyra OS and PXS.",
+      "links": [
+        "products/interfaces/04-execution/PLAN.md",
+        "assemblies/prompting-and-3pp/v0.1/assembly.yaml",
+        "assemblies/prompting-and-3pp/v0.1/ACTIVATION.md",
+        "assemblies/prompting-and-3pp/v0.1/VERIFY.md"
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "Run one downstream consumption pilot with evidence and one preventive drift guard",
+      "status": "needs_decision",
+      "whyThisMattersNow": "Evidence path is not closed. VERIFY contains unchecked criteria; no linked workflow evidence is surfaced. As-code rollout adds new surface that requires verification discipline.",
+      "nextConcreteStep": "Require one real workflow evidence link in VERIFY; enforce changelog-plus-verification drift guard for meaningful contract changes.",
+      "links": [
+        "products/interfaces/04-execution/PLAN.md",
+        "products/interfaces/05-performance/METRICS.md",
+        "assemblies/prompting-and-3pp/v0.1/VERIFY.md"
+      ]
+    }
+  ],
+  "blockers": [
+    {
+      "title": "Assembly metadata/documentation path inconsistency — unresolved from yesterday",
+      "detail": "assembly.yaml links changelog/activation/verify to missing `assemblies/interfaces/v0.1/*` paths; real files live at `assemblies/prompting-and-3pp/v0.1/*`. This weakens installability and auditability and is a direct blocker for Priority 2.",
+      "severity": "medium",
+      "age_days": 2,
+      "evidence": [
+        "assemblies/prompting-and-3pp/v0.1/assembly.yaml",
+        "assemblies/prompting-and-3pp/v0.1/ACTIVATION.md",
+        "assemblies/prompting-and-3pp/v0.1/VERIFY.md"
+      ]
+    },
+    {
+      "title": "No closed-loop downstream verification evidence — unresolved from yesterday",
+      "detail": "VERIFY.md defines the required evidence but no completed workflow evidence link or pass outcome exists in the reviewed stack. Priority 3 cannot be called done without this.",
+      "severity": "medium",
+      "age_days": 2,
+      "evidence": [
+        "assemblies/prompting-and-3pp/v0.1/VERIFY.md",
+        "products/interfaces/05-performance/METRICS.md"
+      ]
+    },
+    {
+      "title": "As-code contract pack not yet started",
+      "detail": "PLAN.md now includes defining the shared As-Code Contract Pack between Lyra OS and PXS, but no artifact, scoping work, or execution evidence exists for this objective. This is newly introduced scope as of 2026-03-15.",
+      "severity": "low",
+      "age_days": 0,
+      "evidence": [
+        "products/interfaces/04-execution/PLAN.md"
+      ]
+    }
+  ],
+  "risksOrOpportunities": [
+    {
+      "title": "As-code rollout expands the verification surface prematurely",
+      "type": "risk",
+      "detail": "Adding as-code contract scope (schemas, enums, PXS object mapping) before the assembly metadata blocker is fixed and before one downstream verification pass exists risks compounding the current evidence gap.",
+      "level": "medium",
+      "source": "products/interfaces/04-execution/PLAN.md + products/interfaces/04-execution/RISKS.md"
+    },
+    {
+      "title": "Assembly packaging is not self-consistent",
+      "type": "risk",
+      "detail": "Broken assembly links are persistent (now 2 days old). Every day without correction weakens the assembly as a real export surface and undermines migration readiness.",
+      "level": "high",
+      "source": "products/interfaces/04-execution/RISKS.md#R-002"
+    },
+    {
+      "title": "Promotion gate remains too thin",
+      "type": "risk",
+      "detail": "Without one real downstream workflow and linked verification evidence, the product cannot demonstrate behavioral value or control drift credibly.",
+      "level": "high",
+      "source": "products/interfaces/04-execution/RISKS.md#R-003"
+    },
+    {
+      "title": "As-code rollout alignment opportunity",
+      "type": "opportunity",
+      "detail": "The plan update to include as-code contract pack work aligns Interfaces with the broader OS-wide as-code direction (also reflected in Delivery and Security plans in the same commit). If executed, this could make Interfaces a genuine enabler for reliable cross-repo exchange rather than just a policy/packaging product.",
+      "level": "medium",
+      "source": "products/interfaces/04-execution/PLAN.md (commit a33ac35)"
+    }
+  ],
+  "researchDelta": "No new product-local research in this run. The 2026-03-14 research artifact (IMPLEMENT_NOW_FROM_RESEARCH_2026-03-14.md) remains the last formal research input. Material new input is the 2026-03-15 PLAN.md update adding as-code rollout focus.",
+  "proposedTdeActions": [
+    {
+      "type": "signal",
+      "title": "Fix assembly.yaml broken documentation links — this is a quick and concrete unblock",
+      "why": "Same blocker as yesterday. Correct the three broken link paths. This is a sub-30-minute execution task that would unblock assembly auditability and Priority 2."
+    },
+    {
+      "type": "signal",
+      "title": "Scope the minimal As-Code Contract Pack surface before building it",
+      "why": "PLAN.md now requires this objective. Scoping first keeps the contract surface minimal and prevents premature expansion. Identify the shortest path: one shared schema fragment or enum as a starting point."
+    },
+    {
+      "type": "signal",
+      "title": "Close the downstream verification evidence loop",
+      "why": "Priority 3 is blocked by missing evidence. Identify one real workflow, record evidence link, achieve a VERIFY PASS or PARTIAL outcome. This is the key product value demonstration."
+    }
+  ],
+  "priorityRefreshStatus": "updated",
+  "priorityRefreshNotes": "TOP_PRIORITIES.md updated in this run. Material change: the 2026-03-15 PLAN.md update (commit a33ac35) added objective 4 — Define the shared As-Code Contract Pack between Lyra OS and PXS — with explicit sub-focus on shared schemas, enums/taxonomy, and PXS execution object mapping. Priority 2 title and content updated to incorporate this. Priority 1 and 3 retained with minor wording tightening. Update is logged at 2026-03-16.",
+  "evidenceLinks": [
+    "products/interfaces/04-execution/TOP_PRIORITIES.md",
+    "products/interfaces/PRODUCT.md",
+    "products/interfaces/MODEL.yaml",
+    "products/interfaces/01-identity/VISION.md",
+    "products/interfaces/02-strategy/STRATEGY.md",
+    "products/interfaces/03-operating-model/OPERATING_MODEL.md",
+    "products/interfaces/04-execution/PLAN.md",
+    "products/interfaces/04-execution/RISKS.md",
+    "products/interfaces/04-execution/IMPLEMENT_NOW_FROM_RESEARCH_2026-03-14.md",
+    "products/interfaces/05-performance/METRICS.md",
+    "products/interfaces/06-architecture/INTERFACES.md",
+    "products/interfaces/07-decisions/DECISIONS.md",
+    "assemblies/prompting-and-3pp/v0.1/assembly.yaml",
+    "assemblies/prompting-and-3pp/v0.1/ACTIVATION.md",
+    "assemblies/prompting-and-3pp/v0.1/VERIFY.md",
+    "assemblies/prompting-and-3pp/v0.1/CHANGELOG.md",
+    "products/interfaces/04-execution/reports/2026-03-15-nightly-report.json"
+  ],
+  "sourceReferences": [
+    {
+      "path": "products/interfaces/04-execution/TOP_PRIORITIES.md",
+      "role": "canonical current priorities (refreshed this run)"
+    },
+    {
+      "path": "products/interfaces/04-execution/PLAN.md",
+      "role": "primary driver of this run's priority refresh — as-code rollout added 2026-03-15"
+    },
+    {
+      "path": "products/interfaces/04-execution/RISKS.md",
+      "role": "risk baseline"
+    },
+    {
+      "path": "assemblies/prompting-and-3pp/v0.1/assembly.yaml",
+      "role": "direct execution evidence for package consistency gap"
+    },
+    {
+      "path": "assemblies/prompting-and-3pp/v0.1/VERIFY.md",
+      "role": "direct evidence for verification maturity and gaps"
+    },
+    {
+      "path": "products/interfaces/04-execution/reports/2026-03-15-nightly-report.json",
+      "role": "prior night baseline for delta comparison"
+    }
+  ]
+}

@@ -1,4 +1,7 @@
 # OpenClaw Direction Package: Analysis and Implementation Recommendation
+> Historical analysis artifact. The live compiled runtime charter now lives primarily in `AGENTS.md` plus current governance artifacts in the workspace root and `governance/`.
+> Use this document as design provenance, not as the current operational source of truth.
+
 **Prepared for:** PX Strategy AI System
 **Date:** 2026-02-28
 **Purpose:** Establish system-level direction to resolve agent drift and enable outcome-oriented operation

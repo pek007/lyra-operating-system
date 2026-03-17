@@ -1,0 +1,45 @@
+{
+  "artifactType": "tde_intake_packet",
+  "schemaVersion": "1.0.0",
+  "intake_id": "intake:governance:2026-03-15:assembly-packaging-decision",
+  "intake_class": "decision",
+  "source_system": "control_tower_overnight_synthesis",
+  "source_type": "report",
+  "source_reference": "products/governance/04-execution/reports/2026-03-15-po-nightly-report.json",
+  "submitted_at": "2026-03-15T00:35:00Z",
+  "submitted_by": "Lyra",
+  "title": "Decide the Governance assembly v0.1 packaging and consumability stance",
+  "summary": "Governance reports that assembly consumability remains under-specified, which should be resolved as an explicit decision rather than drift as ambient packaging ambiguity.",
+  "body": {
+    "overall_health": "yellow",
+    "summary": "Packaging and consumability decision remains under-specified.",
+    "blockers": [
+      {
+        "title": "Governance assembly consumability decision remains under-specified",
+        "blocker_type": "decision"
+      }
+    ],
+    "risks": [
+      {
+        "title": "Governance assembly remains scaffolded rather than truly consumable",
+        "level": "high"
+      }
+    ],
+    "proposed_tde_actions": [
+      "Make the packaging/consumability stance explicit so verification and downstream consumption can align to one chosen model."
+    ]
+  },
+  "priority_hint": "medium",
+  "workspace_scope": "lyra-os",
+  "product_scope": "A-008",
+  "related_entities": [
+    {"entity_type": "product", "entity_ref": "A-008", "relationship": "owner"}
+  ],
+  "evidence_links": [
+    {"kind": "report", "ref": "products/governance/04-execution/reports/2026-03-15-po-nightly-report.json", "note": "Nightly PO report"},
+    {"kind": "artifact", "ref": "assemblies/governance-policy/v0.1/assembly.yaml", "note": "Assembly definition"},
+    {"kind": "artifact", "ref": "assemblies/governance-policy/v0.1/VERIFY.md", "note": "Verification surface"}
+  ],
+  "proposed_action": "triage_governance_assembly_packaging_decision",
+  "decision_question": "What packaging and consumability model should Governance assembly v0.1 explicitly adopt so downstream verification and maintenance are coherent?"
+}

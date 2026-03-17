@@ -1,0 +1,163 @@
+{
+  "artifactType": "tde_po_nightly_report",
+  "schemaVersion": "1.0.0",
+  "synthesisId": "po-nightly-improvement-2026-03-16",
+  "synthesisDate": "2026-03-16T00:20:00+01:00",
+  "productId": "A-005",
+  "productName": "Improvement",
+  "productOwner": "Lyra",
+  "overallHealth": "execution_in_progress",
+  "summary": "Improvement remains strategically coherent and correctly pointed at its outcome. All three top priorities still hold after reviewing the full stack. Health upgrades marginally from yellow/static to execution_in_progress: the surrounding portfolio is clearly generating improvement-relevant signals (error reports, boundary gaps, process misses), and those signals are partially surfacing in the right artifacts. However, the core Improvement product gap remains: those signals are not yet reliably converting into linked TDE execution artifacts through a minimum improvement interface. P3 now has live evidence (ERR-2026-03-15-ARCHIVED-REPO-MISUSE) that makes the conversion gap concrete and testable. P1 and P2 remain unchanged with no new completion evidence.",
+  "materialChanges": [
+    "TOP_PRIORITIES.md refreshed: date advanced to 2026-03-16; P3 next concrete step sharpened with live evidence from ERR-2026-03-15-ARCHIVED-REPO-MISUSE as the first concrete test case for incident-to-improvement conversion.",
+    "Portfolio generated significant improvement-relevant signals on 2026-03-15: ERR-2026-03-15-ARCHIVED-REPO-MISUSE filed but not yet linked to TDE improvement artifact (live P3 gap); IMP-AUTO-20260315-01 opened for PROCESS_REGISTRY missing source-of-truth file (P3 gap); Vega/PXS boundary post-change validation confirmed E2 still FAIL (improvement signal for Security product interface).",
+    "As-code environment uplift deep research distilled (2026-03-15): implies future Improvement work will engage with shared contract packs and quality-gate enforcement — downstream opportunity not yet in scope.",
+    "No changes to PLAN.md, VISION.md, STRATEGY.md, OPERATING_MODEL.md, INTERFACES.md, or DECISIONS.md since last report.",
+    "Previous night's report: po-nightly-improvement-2026-03-15. Priorities unchanged in structure; P3 sharpened with live evidence."
+  ],
+  "topPriorities": [
+    {
+      "rank": 1,
+      "title": "Converge improvement execution into one canonical TDE-first system of record",
+      "status": "execution_in_progress",
+      "why": "Improvement cannot be evidence-backed, comparable, or safely automatable if work still leaks into multiple tracking surfaces. No new completion evidence since last report.",
+      "nextStep": "Remove legacy routing dependencies for improvement work; define canonical improvement queue/ID/linkage expectations in TDE terms; update improvement runbooks/specs to use that substrate consistently.",
+      "linkedTdeId": null
+    },
+    {
+      "rank": 2,
+      "title": "Ship A-005 into PXS through a pinned lane with version truth, rollback, and verification semantics",
+      "status": "execution_in_progress",
+      "why": "Pinned-lane distribution is still not the lived mechanism. The Vega/PXS boundary narrowing from 2026-03-15 addressed the access-surface topology but not the A-005 assembly delivery mechanism specifically.",
+      "nextStep": "Implement the pinned lane as an operational path with machine-checkable installed-version truth, explicit rollback behavior, and a verification pass that closes the interim-drift gap.",
+      "linkedTdeId": null
+    },
+    {
+      "rank": 3,
+      "title": "Roll out the minimum improvement interface across active products, starting with mandatory incident-to-improvement conversion",
+      "status": "needs_decision",
+      "why": "ERR-2026-03-15-ARCHIVED-REPO-MISUSE is live evidence of the gap: a material error report was filed but has not been converted into a linked TDE improvement artifact. P3 now has a concrete test case.",
+      "nextStep": "Define and deploy the minimum product-side improvement interface; use ERR-2026-03-15-ARCHIVED-REPO-MISUSE as the first end-to-end conversion test into a linked TDE improvement artifact.",
+      "linkedTdeId": null
+    }
+  ],
+  "constraints": [
+    "Improvement must remain evidence-backed, not theatrical — no churn without material cause.",
+    "No authority or security boundary changes without escalation.",
+    "Improvement does not own canonical task/decision state — that boundary with Task Management must be preserved."
+  ],
+  "risksOrOpportunities": [
+    {
+      "id": "R-001",
+      "title": "Improvement execution state is split across multiple systems of record",
+      "trend": "risk_rising",
+      "note": "Portfolio is actively generating improvement signals; without TDE-first routing, those signals accumulate as narrative artifacts without linked execution. Compound risk grows with each new material incident or miss."
+    },
+    {
+      "id": "R-002",
+      "title": "Deployment drift between Lyra OS and consuming workspaces",
+      "trend": "stable",
+      "note": "No change since last report. Interim-copy lanes still in use. Pinned-lane work has not advanced."
+    },
+    {
+      "id": "R-003",
+      "title": "Improvement signals do not convert reliably into owned execution",
+      "trend": "risk_rising",
+      "note": "ERR-2026-03-15-ARCHIVED-REPO-MISUSE + IMP-AUTO-20260315-01 are concrete 2026-03-15 examples of signals that exist but have not been converted into owned improvement execution artifacts with TDE linkage."
+    },
+    {
+      "id": "R-004",
+      "title": "Status truth drifts inside the improvement product itself",
+      "trend": "stable",
+      "note": "IMPROVEMENT_LOG entries in A-005/management/ still reference the old folder structure. Product canonical path is products/improvement/. Structural divergence persists."
+    },
+    {
+      "id": "OPP-001",
+      "title": "As-code contract pack work opens a natural Improvement interface extension",
+      "trend": "opportunity",
+      "note": "2026-03-15 deep research distilled plan for as-code environment uplift includes shared schemas and quality gates. Improvement could co-design the improvement-signal exchange contract as part of that initiative when ready."
+    }
+  ],
+  "researchDelta": "2026-03-15 as-code environment uplift deep research noted. Relevant to future Improvement interface design (shared contract packs, enforcement gates). No Improvement-specific research intake in this cycle.",
+  "proposedTdeActions": [
+    {
+      "action": "Convert ERR-2026-03-15-ARCHIVED-REPO-MISUSE into a linked TDE improvement execution artifact as the first live test of P3 minimum improvement interface.",
+      "class": "signal",
+      "priority": "high",
+      "rationale": "Gives P3 a concrete, bounded scope to test the conversion pipeline end-to-end."
+    },
+    {
+      "action": "Define the canonical improvement execution substrate in TDE terms: queue ID, linkage rules, intake format — and update improvement runbooks accordingly.",
+      "class": "signal",
+      "priority": "high",
+      "rationale": "P1 blocker. Without a defined canonical substrate, all other improvement loops remain advisory."
+    },
+    {
+      "action": "Begin planning the A-005 pinned-lane implementation into PXS with defined installed-version truth and rollback semantics.",
+      "class": "signal",
+      "priority": "medium",
+      "rationale": "P2. No new pressure today, but the interim-copy gap continues to accumulate drift risk."
+    },
+    {
+      "action": "Reconcile A-005 IMPROVEMENT_LOG structural path (A-005/management/ → products/improvement/) to keep status-truth aligned.",
+      "class": "signal",
+      "priority": "low",
+      "rationale": "R-004. Low urgency but contributes to internal consistency."
+    }
+  ],
+  "priorityRefreshStatus": "updated",
+  "priorityRefreshNote": "TOP_PRIORITIES.md date advanced to 2026-03-16. P3 next concrete step sharpened with live ERR-2026-03-15-ARCHIVED-REPO-MISUSE evidence. P1 and P2 unchanged. No structural reordering required.",
+  "evidenceLinks": [
+    {
+      "ref": "products/improvement/04-execution/TOP_PRIORITIES.md",
+      "note": "Canonical priority source — refreshed in this run."
+    },
+    {
+      "ref": "products/improvement/PRODUCT.md",
+      "note": "Product charter and scope."
+    },
+    {
+      "ref": "products/improvement/MODEL.yaml",
+      "note": "Product metadata and review cadence. Last reviewed 2026-03-11."
+    },
+    {
+      "ref": "products/improvement/04-execution/PLAN.md",
+      "note": "Current execution objectives — unchanged."
+    },
+    {
+      "ref": "products/improvement/04-execution/RISKS.md",
+      "note": "Risk baseline — unchanged."
+    },
+    {
+      "ref": "products/improvement/06-architecture/INTERFACES.md",
+      "note": "Minimum product-side improvement interface definition."
+    },
+    {
+      "ref": "products/improvement/07-decisions/DECISIONS.md",
+      "note": "Boundary decisions D-001, D-002."
+    },
+    {
+      "ref": "ARCHIVED_REPO_MISUSE_ERROR_REPORT_2026-03-15.md",
+      "note": "Live P3 evidence: material incident filed but not yet converted into linked TDE improvement execution artifact."
+    },
+    {
+      "ref": "memory/2026-03-15.md",
+      "note": "Overnight execution context: IMP-AUTO-20260315-01 (PROCESS_REGISTRY missing source file) opened; boundary remediation progression; information model sweep results."
+    },
+    {
+      "ref": "products/task-management/04-execution/VEGA_PXS_BOUNDARY_POST_CHANGE_VALIDATION_2026-03-15.md",
+      "note": "Boundary narrowing landed (fs surface) but E2 still FAIL — exec/sandbox path remains. Improvement-relevant signal for Security interface."
+    },
+    {
+      "ref": "knowledge/distilled/2026-03-15__plan__as-code-environment-uplift-for-lyra-os-and-pxs__v1.md",
+      "note": "Future opportunity: shared contract packs and quality gates could extend improvement interface design."
+    },
+    {
+      "ref": "products/improvement/04-execution/reports/2026-03-15-po-nightly-report.json",
+      "note": "Previous nightly report for delta comparison."
+    }
+  ],
+  "sourceReferences": [
+    "products/improvement/04-execution/reports/2026-03-16-po-nightly-report.json"
+  ]
+}

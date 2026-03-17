@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-03-12T05:45:16.468830+00:00",
+  "gate": "TDE_DB_CANONICAL_CUTOVER_GATE_V1",
+  "verdict": "GO_CANDIDATE",
+  "checks": {
+    "parity_consecutive_failures": 0,
+    "parity_threshold": 3,
+    "parity_ok": true,
+    "latest_shadow_status": "ok",
+    "actions_count": 2,
+    "events_count": 2
+  },
+  "evidence": {
+    "report_date": "2026-03-12",
+    "previous_report": "knowledge/evidence/metrics/2026-03-06__tde-db-cutover-readiness-report-v1.json"
+  },
+  "note": "GO_CANDIDATE is preliminary and requires observation-window completion + explicit owner approval."
+}

@@ -1,0 +1,25 @@
+{
+  "artifactType": "tde_intake_packet",
+  "schemaVersion": "1.0.0",
+  "intake_id": "INTAKE-as-code-rollout-interfaces-2026-03-15",
+  "intake_class": "work",
+  "source_system": "tde_request_entry",
+  "source_type": "manual_entry",
+  "source_reference": "as-code-rollout-interfaces-2026-03-15",
+  "submitted_at": "2026-03-15T16:36:01Z",
+  "submitted_by": "Lyra",
+  "title": "Research and define the shared As-Code Contract Pack for Lyra OS and PXS, including shared schemas or schema fragments, ",
+  "summary": "Research and define the shared As-Code Contract Pack for Lyra OS and PXS, including shared schemas or schema fragments, shared taxonomy, and a minimal mapping between PXS execution objects and Lyra OS artifact types.",
+  "body": {
+    "request_text": "Research and define the shared As-Code Contract Pack for Lyra OS and PXS, including shared schemas or schema fragments, shared taxonomy, and a minimal mapping between PXS execution objects and Lyra OS artifact types.",
+    "request_class": "research_request"
+  },
+  "priority_hint": "unspecified",
+  "workspace_scope": "lyra-os-root",
+  "product_scope": "A-007",
+  "related_entities": [],
+  "evidence_links": [],
+  "proposed_action": "run_intent_formation",
+  "requested_action": "Research and define the shared As-Code Contract Pack for Lyra OS and PXS, including shared schemas or schema fragments, shared taxonomy, and a minimal mapping between PXS execution objects and Lyra OS artifact types.",
+  "success_signal": null
+}

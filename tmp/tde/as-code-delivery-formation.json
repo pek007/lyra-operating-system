@@ -1,0 +1,54 @@
+{
+  "artifactType": "tde_intent_formation_record",
+  "schemaVersion": "1.0.0",
+  "formation_id": "FORM-AS-CODE-ROLLOUT-DELIVERY-2026-03-15",
+  "source_type": "chat_request",
+  "source_ref": "as-code-rollout-delivery-2026-03-15",
+  "formed_at": "2026-03-15T16:35:55Z",
+  "formed_by_role": "Product Owner",
+  "formation_rationale": "A bounded runtime hardening work system can be formed under explicit assumptions. Original request: Runtime hardening for the as-code rollout: add repo-integrity gates for merge markers and fail-fast hygiene checks, and replace placeholder PXS quality gates with real enforceable checks.",
+  "interpreted_intent": "Harden TDE/OpenClaw runtime behavior with bounded implementation, verification, and readiness steps.",
+  "request_type": "implementation_request",
+  "specificity_level": "medium",
+  "ambiguity_types": [
+    "missing_scope"
+  ],
+  "actionability_status": "executable_with_assumptions",
+  "assumptions": [
+    "Hardening work should remain internal and staging-first.",
+    "Changes should preserve promotion/rollback discipline."
+  ],
+  "known_unknowns": [
+    "Exact hardening boundary for this request."
+  ],
+  "proposed_objective": {
+    "objective_title": "Harden TDE runtime behavior",
+    "objective_summary": "Implement a bounded hardening slice for TDE/OpenClaw runtime behavior.",
+    "objective_id": null
+  },
+  "proposed_success_criteria": [
+    "A bounded runtime hardening slice is implemented and validated in staging."
+  ],
+  "proposed_workflow_family": "implementation_verification_readiness",
+  "proposed_first_stage_set": [
+    "implementation",
+    "verification",
+    "readiness-review"
+  ],
+  "proposed_first_task_set": [
+    {
+      "task_id": null,
+      "task_title": "Define bounded runtime hardening scope",
+      "task_summary": "Define the exact hardening slice to implement.",
+      "stage_id": "implementation"
+    },
+    {
+      "task_id": null,
+      "task_title": "Verify runtime hardening scope and safety",
+      "task_summary": "Verify that the hardening slice is safe and professionally controlled.",
+      "stage_id": "verification"
+    }
+  ],
+  "required_clarifications": [],
+  "recommended_next_action": "proceed_with_assumptions"
+}

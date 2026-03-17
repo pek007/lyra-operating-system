@@ -1,0 +1,152 @@
+{
+  "artifactType": "tde_product_owner_nightly_report",
+  "schemaVersion": "v1",
+  "reportId": "interfaces-po-nightly-2026-03-15",
+  "productId": "A-009",
+  "productName": "Interfaces",
+  "productOwner": "Lyra",
+  "reportDate": "2026-03-15",
+  "generatedAt": "2026-03-15T00:15:00Z",
+  "intakeClass": "signal",
+  "overallHealth": "yellow",
+  "summary": "Interfaces is strategically pointed in the right direction and the codified priorities remain current, but health stays yellow because the assembly package is still not fully self-consistent or promotion-ready: assembly metadata contains broken documentation links, and downstream activation/verification evidence is still incomplete.",
+  "topPriorities": [
+    {
+      "rank": 1,
+      "title": "Resolve Interfaces identity, scope, and ownership boundaries",
+      "whyThisMattersNow": "Interfaces cannot function as a stable product if it collides with provider-owned interface artifacts or remains ambiguous about what it actually owns.",
+      "currentStatus": "Still current. Product, strategy, interfaces, risks, and decisions all reinforce the narrowed charter: cross-cutting standards, packaging, connectors, and change-governance discipline rather than ownership of every provider interface.",
+      "nextConcreteStep": "Keep the ownership stance explicit anywhere Interfaces is referenced, especially when boundary issues arise in downstream workspaces or other products.",
+      "links": [
+        "products/interfaces/04-execution/TOP_PRIORITIES.md",
+        "products/interfaces/06-architecture/INTERFACES.md",
+        "products/interfaces/07-decisions/DECISIONS.md",
+        "products/interfaces/04-execution/RISKS.md"
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "Make the Interfaces assembly real, self-consistent, and consumable",
+      "whyThisMattersNow": "Verification and pinned-lane migration are not meaningful if the assembly package itself is path-broken or under-specified.",
+      "currentStatus": "Still current and confirmed by evidence. The assembly exists, but assembly.yaml still points its changelog/activation/verify links at missing `assemblies/interfaces/v0.1/*` paths while the real files live under `assemblies/prompting-and-3pp/v0.1/*`.",
+      "nextConcreteStep": "Correct assembly metadata/documentation references and keep the packaged artifact set, install path, and verification surface internally consistent.",
+      "links": [
+        "products/interfaces/04-execution/TOP_PRIORITIES.md",
+        "products/interfaces/04-execution/RISKS.md",
+        "assemblies/prompting-and-3pp/v0.1/assembly.yaml",
+        "assemblies/prompting-and-3pp/v0.1/ACTIVATION.md",
+        "assemblies/prompting-and-3pp/v0.1/VERIFY.md"
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "Run one downstream consumption pilot with evidence and one preventive drift guard",
+      "whyThisMattersNow": "Interfaces only becomes valuable when one real workflow proves the contracts improve execution quality and one preventive control reduces silent drift.",
+      "currentStatus": "Still current. Verify/activation expectations are stronger than before, but the evidence path is not yet closed: VERIFY still contains unchecked criteria and no linked workflow evidence is surfaced in the product stack reviewed here.",
+      "nextConcreteStep": "Require one real workflow evidence link in verification and enforce the changelog-plus-verification drift guard for meaningful interface-contract changes.",
+      "links": [
+        "products/interfaces/04-execution/TOP_PRIORITIES.md",
+        "products/interfaces/05-performance/METRICS.md",
+        "assemblies/prompting-and-3pp/v0.1/VERIFY.md",
+        "assemblies/prompting-and-3pp/v0.1/ACTIVATION.md"
+      ]
+    }
+  ],
+  "blockers": [
+    {
+      "title": "Assembly metadata/documentation path inconsistency",
+      "detail": "assembly.yaml links to missing `assemblies/interfaces/v0.1/CHANGELOG.md`, `ACTIVATION.md`, and `VERIFY.md` paths, which weakens installability and auditability.",
+      "severity": "medium",
+      "evidence": [
+        "assemblies/prompting-and-3pp/v0.1/assembly.yaml",
+        "assemblies/prompting-and-3pp/v0.1/ACTIVATION.md",
+        "assemblies/prompting-and-3pp/v0.1/VERIFY.md"
+      ]
+    },
+    {
+      "title": "No closed-loop downstream verification evidence in reviewed stack",
+      "detail": "The current verification artifact defines the required evidence but does not show a completed workflow evidence link or pass outcome in the reviewed materials.",
+      "severity": "medium",
+      "evidence": [
+        "assemblies/prompting-and-3pp/v0.1/VERIFY.md",
+        "assemblies/prompting-and-3pp/v0.1/ACTIVATION.md",
+        "products/interfaces/05-performance/METRICS.md"
+      ]
+    }
+  ],
+  "risks": [
+    {
+      "title": "Identity and ownership collision",
+      "detail": "Interfaces could still drift back into a residual bucket or collide with provider-owned interfaces if the narrowed charter is not maintained.",
+      "level": "medium",
+      "source": "products/interfaces/04-execution/RISKS.md#R-001"
+    },
+    {
+      "title": "Assembly packaging remains not fully self-consistent",
+      "detail": "Broken or inconsistent assembly links reduce credibility of the package as a real export surface and undermine pinned-lane migration readiness.",
+      "level": "high",
+      "source": "products/interfaces/04-execution/RISKS.md#R-002"
+    },
+    {
+      "title": "Promotion gate remains too thin",
+      "detail": "Without one real downstream workflow and linked verification evidence, the product cannot demonstrate behavioral value or control drift credibly.",
+      "level": "high",
+      "source": "products/interfaces/04-execution/RISKS.md#R-003"
+    }
+  ],
+  "proposedTdeActions": [
+    {
+      "type": "signal",
+      "title": "Treat Interfaces assembly self-consistency as the immediate overnight focus",
+      "why": "Priority 2 is validated by direct evidence of broken links in the current assembly surface."
+    },
+    {
+      "type": "signal",
+      "title": "Require a real downstream verification evidence path before promotion claims",
+      "why": "Priority 3 remains open and directly tied to product value and drift prevention."
+    },
+    {
+      "type": "signal",
+      "title": "Keep Interfaces charter bounded to standards/packaging/connectors",
+      "why": "Priority 1 remains the strategic guardrail preventing scope creep and ownership confusion."
+    }
+  ],
+  "priorityRefreshStatus": "unchanged",
+  "priorityRefreshNotes": "Reviewed PRODUCT.md, MODEL.yaml, VISION, STRATEGY, OPERATING_MODEL, PLAN, RISKS, METRICS, INTERFACES, DECISIONS, current TOP_PRIORITIES, and referenced assembly artifacts. TOP_PRIORITIES.md remains aligned with the stack; no refresh update was required in this run.",
+  "evidenceLinks": [
+    "products/interfaces/04-execution/TOP_PRIORITIES.md",
+    "products/interfaces/PRODUCT.md",
+    "products/interfaces/MODEL.yaml",
+    "products/interfaces/01-identity/VISION.md",
+    "products/interfaces/02-strategy/STRATEGY.md",
+    "products/interfaces/03-operating-model/OPERATING_MODEL.md",
+    "products/interfaces/04-execution/PLAN.md",
+    "products/interfaces/04-execution/RISKS.md",
+    "products/interfaces/04-execution/IMPLEMENT_NOW_FROM_RESEARCH_2026-03-14.md",
+    "products/interfaces/05-performance/METRICS.md",
+    "products/interfaces/06-architecture/INTERFACES.md",
+    "products/interfaces/07-decisions/DECISIONS.md",
+    "assemblies/prompting-and-3pp/v0.1/assembly.yaml",
+    "assemblies/prompting-and-3pp/v0.1/ACTIVATION.md",
+    "assemblies/prompting-and-3pp/v0.1/VERIFY.md",
+    "assemblies/prompting-and-3pp/v0.1/CHANGELOG.md"
+  ],
+  "sourceReferences": [
+    {
+      "path": "products/interfaces/04-execution/TOP_PRIORITIES.md",
+      "role": "canonical current priorities"
+    },
+    {
+      "path": "products/interfaces/04-execution/RISKS.md",
+      "role": "risk baseline"
+    },
+    {
+      "path": "assemblies/prompting-and-3pp/v0.1/assembly.yaml",
+      "role": "direct execution evidence for package consistency"
+    },
+    {
+      "path": "assemblies/prompting-and-3pp/v0.1/VERIFY.md",
+      "role": "direct evidence for verification maturity and gaps"
+    }
+  ]
+}

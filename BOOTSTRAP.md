@@ -1,4 +1,15 @@
-# BOOTSTRAP.md - Hello, World
+# BOOTSTRAP.md - Historical Artifact
+
+> Historical first-run artifact only. Identity/bootstrap work is already complete in this workspace.
+> Current authoritative runtime identity lives in `SOUL.md`, `USER.md`, `IDENTITY.md`, and `AGENTS.md`.
+> Keep this file only as origin context; do not treat it as an active startup instruction.
+
+## Archived original bootstrap text
+
+The original first-run prompt is retained below purely for provenance. It is intentionally non-authoritative.
+
+<details>
+<summary>Show archived bootstrap text</summary>
 
 _You just woke up. Time to figure out who you are._
 
@@ -53,3 +64,5 @@ Delete this file. You don't need a bootstrap script anymore — you're you now.
 ---
 
 _Good luck out there. Make it count._
+
+</details>

@@ -1,0 +1,148 @@
+{
+  "artifactType": "po_nightly_synthesis",
+  "schemaVersion": "1.0",
+  "synthesisId": "delivery-po-nightly-2026-03-17",
+  "productId": "A-006",
+  "productName": "Delivery",
+  "productOwner": "Lyra",
+  "synthesisDate": "2026-03-17T01:10:00+01:00",
+  "overallHealth": "on_track",
+  "summary": "Delivery product remains directionally sound and conceptually mature. Strategic foundation (Delivery-as-Code design, schema, state policy, rendered packets, TDE pilot contract) continues to hold. Execution gap is persistent for a third consecutive nightly cycle: all three top priorities — pilot end-to-end, gate-to-contract upgrade, and scorecard operational — remain open with zero execution starts. Overnight 2026-03-16 was intensive but focused entirely on other product lanes (Vega/PXS E2 boundary, TDE assignment acceptance, archived-repo improvement). Delivery signals were carried forward without promotion for the second consecutive night. One new signal from Jobs Review: JOB-DEL-001 proof-case bundle is complete and should be retired/archived; the intra-Lyra handoff protocol should be formalized as a governance artifact. No priority changes required.",
+  "materialChanges": "none — no Delivery product artifacts updated since 2026-03-16 nightly. JOB-DEL-001 retirement noted as a minor housekeeping signal. ACTIVATION.md and VERIFY.md expansion (PLAN step 3a, IMPLEMENT_NOW item 3-4) not yet executed; assembly files remain at 2026-03-14 state.",
+  "topPriorities": [
+    {
+      "rank": 1,
+      "title": "Run one real Delivery v0.1 pilot end to end and publish the evidence pack",
+      "status": "execution_in_progress",
+      "note": "Core scaffolding in place. Overnight 2026-03-16 noted this as a signal but did not promote it to active execution. Now in its second deferred overnight cycle. TDE_UI_PILOT_DELIVERY_CONTRACT_V1.md defines the minimum shape. ACTIVATION.md and VERIFY.md are drafted but not yet expanded to production-grade. Risk R-001 (verification debt) continues to accumulate.",
+      "nextStep": "Select one representative Delivery v0.1 pilot in PXS; run the full VERIFY path; produce canonical evidence pack covering distribution lane, gate application, evidence captured, rollback credibility, pass/fail outcome.",
+      "links": [
+        "products/delivery/04-execution/PLAN.md",
+        "products/delivery/04-execution/TDE_UI_PILOT_DELIVERY_CONTRACT_V1.md",
+        "assemblies/devsecops-delivery/v0.1/ACTIVATION.md",
+        "assemblies/devsecops-delivery/v0.1/VERIFY.md"
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "Upgrade the Delivery gate from checklist to contract",
+      "status": "execution_in_progress",
+      "note": "Gate intent exists in DELIVERY_GATE_CHECKLIST.md. Risk R-003 (gate ambiguity) remains live and rises with each delivery unit run under the current thin checklist model. No execution started.",
+      "nextStep": "Expand gate into a risk-classed contract with required checks, evidence outputs, explicit pass/fail logic, and at least one machine-checkable validation hook in the existing governance/validation pipeline.",
+      "links": [
+        "products/delivery/04-execution/PLAN.md",
+        "products/delivery/04-execution/RISKS.md",
+        "products/delivery/05-performance/METRICS.md",
+        "assemblies/devsecops-delivery/v0.1/VERIFY.md",
+        "assemblies/devsecops-delivery/v0.1/artifacts/ops-pack/DELIVERY_GATE_CHECKLIST.md"
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "Make Delivery measurement and review operational, not aspirational",
+      "status": "execution_in_progress",
+      "note": "Metric framework defined in METRICS.md. No baseline, no first weekly review run, no scorecard snapshot produced. Delivery review cadence (MODEL.yaml: weekly) has not been operationalised.",
+      "nextStep": "Define minimal low-noise weekly scorecard snapshot; run first real weekly review against it; record one concrete follow-through improvement from the result.",
+      "links": [
+        "products/delivery/04-execution/PLAN.md",
+        "products/delivery/05-performance/METRICS.md",
+        "products/delivery/04-execution/RISKS.md",
+        "products/delivery/MODEL.yaml"
+      ]
+    }
+  ],
+  "constraints": [
+    "No strategic launches without Peter involvement (MODEL.yaml critical_constraint).",
+    "Maintain verification and traceability discipline across all consuming products — this is also the core value Delivery must demonstrate in its own pilot.",
+    "Delivery owns the shipping system, not the full strategy of every product it serves (INTERFACES.md boundary rule).",
+    "Capacity constraint: overnight 2026-03-15 and 2026-03-16 both allocated to non-Delivery priorities (Vega/PXS boundary, TDE assignment acceptance, improvement loop). A third consecutive deferred cycle increases the risk that Delivery pilot never reaches a natural start trigger.",
+    "JOB-DEL-001 proof-case bundle (jobs directory) is complete; retirement + formalization of intra-Lyra handoff protocol as a governance artifact is a pending housekeeping item."
+  ],
+  "risksOrOpportunities": [
+    {
+      "id": "R-001",
+      "label": "Verification debt through thin activation/evidence practice",
+      "severity": "high",
+      "trend": "rising",
+      "note": "Core and persistent risk. Evidence gap has now spanned three nightly cycles without an execution start. ACTIVATION.md and VERIFY.md are still in their 2026-03-14 state. Mitigant (run the pilot) continues to be deferred. Trend moving from stable to rising."
+    },
+    {
+      "id": "R-002",
+      "label": "Drift through interim copy distribution",
+      "severity": "medium",
+      "trend": "stable",
+      "note": "INTERIM_COPY_SYNC_PROTOCOL.md exists. Migration toward TDE-native coordination is the stated direction but not yet operationalised. Not deteriorating."
+    },
+    {
+      "id": "R-003",
+      "label": "Gate ambiguity",
+      "severity": "high",
+      "trend": "stable",
+      "note": "Gate is still checklist-level with interpretive application risk. Rises with each delivery unit run prior to the contract upgrade. No new delivery units run that would have surfaced the gap since last cycle."
+    },
+    {
+      "id": "R-004",
+      "label": "Security/authority regression under delivery pressure",
+      "severity": "medium",
+      "trend": "stable",
+      "note": "No specific delivery-pressure events noted. Governance posture (medium) maintained. Archived-repo-misuse error from 2026-03-15 was fully closed overnight (all corrective actions implemented, CANONICAL_REPO_MAP_V1.md v1.1 updated with pre-edit repo-authority gate)."
+    },
+    {
+      "id": "R-NEW-001",
+      "label": "Pilot-start drift becoming structural",
+      "severity": "medium",
+      "trend": "rising",
+      "note": "Three consecutive nightly reports have signalled P1 (pilot execution) as open and unstarted. Without an explicit time-boxed commitment or TDE work item, this may drift indefinitely as other product lane work crowds it out. Not yet critical but warrants escalation to Control Tower for scheduling decision."
+    }
+  ],
+  "researchDelta": "none — no Delivery research artifacts updated or surfaced in this run. RADAR.md, DOCTRINE.md, IMPLICATIONS.md unchanged since prior cycle.",
+  "proposedTdeActions": [
+    {
+      "type": "signal",
+      "description": "P1 (pilot) has been open, unstarted, and deferred across three overnight cycles. Recommend Control Tower schedule an explicit time-boxed execution start for the Delivery v0.1 pilot (TDE_UI_PILOT_DELIVERY_CONTRACT_V1.md) as a TDE work item with an assigned owner and target window. Without this, R-NEW-001 (pilot-start drift) will become structural.",
+      "urgency": "medium-rising"
+    },
+    {
+      "type": "signal",
+      "description": "R-003 gate-ambiguity risk: recommend converting P2 (gate-to-contract) into a tracked TDE work item (estimated: 2-3h bounded effort) to prevent indefinite deferral.",
+      "urgency": "medium"
+    },
+    {
+      "type": "signal",
+      "description": "P3 (scorecard/review): consider bundling the first Delivery weekly review as a sub-task within the next weekly review cycle. Low effort, high signal value for proving the measurement layer.",
+      "urgency": "low"
+    },
+    {
+      "type": "signal",
+      "description": "Housekeeping: JOB-DEL-001 proof-case bundle in jobs/ directory is complete (confirmed by Jobs Review 2026-03-16). Recommend archiving and formalizing the intra-Lyra handoff protocol as a governance artifact (OPS-2026-068 scope covers this).",
+      "urgency": "low"
+    }
+  ],
+  "priorityRefreshStatus": "unchanged",
+  "priorityRefreshRationale": "Full product stack reviewed. PLAN.md execution order (steps 6-8) maps cleanly to P1-P3. No completions, no priority collapses, no emerging risks that reorder the stack. Daily memory 2026-03-16 confirms Delivery was not the execution focus overnight; no new product artifacts updated. A new signal (R-NEW-001: pilot-start drift becoming structural) was added as a risk observation, but it reinforces rather than reorders current priorities. No update to TOP_PRIORITIES.md required. Priorities remain correctly ordered, grounded, and current.",
+  "evidenceLinks": [
+    "products/delivery/04-execution/TOP_PRIORITIES.md",
+    "products/delivery/04-execution/PLAN.md",
+    "products/delivery/04-execution/RISKS.md",
+    "products/delivery/04-execution/ROADMAP.md",
+    "products/delivery/04-execution/TDE_UI_PILOT_DELIVERY_CONTRACT_V1.md",
+    "products/delivery/04-execution/IMPLEMENT_NOW_FROM_RESEARCH_2026-03-14.md",
+    "products/delivery/05-performance/METRICS.md",
+    "products/delivery/PRODUCT.md",
+    "products/delivery/MODEL.yaml",
+    "products/delivery/01-identity/VISION.md",
+    "products/delivery/02-strategy/STRATEGY.md",
+    "products/delivery/03-operating-model/OPERATING_MODEL.md",
+    "products/delivery/03-operating-model/GOVERNANCE.md",
+    "products/delivery/06-architecture/INTERFACES.md",
+    "products/delivery/07-decisions/DECISIONS.md",
+    "assemblies/devsecops-delivery/v0.1/ACTIVATION.md",
+    "assemblies/devsecops-delivery/v0.1/VERIFY.md",
+    "products/delivery/04-execution/reports/PO_NIGHTLY_2026-03-16.json",
+    "memory/2026-03-16.md"
+  ],
+  "sourceReferences": [
+    "PRODUCT_OWNER_DAILY_PRIORITY_REFRESH_PROTOCOL_V1.md",
+    "TDE_PRODUCT_OWNER_NIGHTLY_REPORT_SPEC_V1.md"
+  ]
+}

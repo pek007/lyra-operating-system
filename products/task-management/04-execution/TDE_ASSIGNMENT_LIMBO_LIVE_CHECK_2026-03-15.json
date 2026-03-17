@@ -1,0 +1,93 @@
+{
+  "checked_at": "2026-03-15T16:27:21Z",
+  "db_path": "/Users/lyra/.openclaw/workspace/os/runtime/tde_state.sqlite",
+  "stale_minutes": 15,
+  "assignment_count": 2,
+  "limbo_count": 2,
+  "findings": [
+    {
+      "assignment_id": "TASK-20260315-CP-TDE-ASSIGNMENT-ACCEPTANCE",
+      "acceptance_state": "accepted",
+      "task_id": "TASK-20260315-CP-TDE-ASSIGNMENT-ACCEPTANCE",
+      "assignment_created_at": "2026-03-15T00:37:54Z",
+      "task_present": true,
+      "task_status": "Active",
+      "task_updated_at": "2026-03-15T00:37:54Z",
+      "intake_trace_present": false,
+      "intake_matches": [],
+      "non_assignment_event_present": false,
+      "event_types": [
+        "assignment_accepted"
+      ],
+      "task_metadata": {
+        "assignment_id": "TASK-20260315-CP-TDE-ASSIGNMENT-ACCEPTANCE",
+        "assignment_source_system": "control_tower_overnight_synthesis",
+        "assignment_source_reference": "products/task-management/errors/ERR-2026-03-14-control-panel-assignment-silent-limbo.md",
+        "assignment_owner_role": "Task Management",
+        "assignment_acceptance_state": "accepted",
+        "assignment_acceptance_reason": null,
+        "objective_id": "OBJ-TDE-FOUNDATION",
+        "decision_policy_ref": "products/task-management/06-architecture/TDE_ASSIGNMENT_ACCEPTANCE_CONTRACT_V1.md",
+        "workflow_family": "overnight-control-tower",
+        "control_tower_selected_priority": 2,
+        "source_signal_class": "execution_reality_gap",
+        "required_acceptance_states": [
+          "accepted",
+          "accepted_no_runner",
+          "accepted_pending_binding",
+          "rejected_invalid_assignment",
+          "duplicate"
+        ]
+      },
+      "limbo_reason": "accepted_assignment_without_intake_or_follow_on_trace",
+      "recommended_action": "Investigate producer path, intake linkage, and runner pickup for this assignment."
+    },
+    {
+      "assignment_id": "TASK-20260314-VEGA-PXS-BOUNDARY-PASS",
+      "acceptance_state": "accepted",
+      "task_id": "TASK-20260314-VEGA-PXS-BOUNDARY-PASS",
+      "assignment_created_at": "2026-03-15T00:37:54Z",
+      "task_present": true,
+      "task_status": "active",
+      "task_updated_at": "2026-03-15T00:37:54.789115+00:00",
+      "intake_trace_present": false,
+      "intake_matches": [],
+      "non_assignment_event_present": false,
+      "event_types": [
+        "assignment_accepted"
+      ],
+      "task_metadata": {
+        "acceptance_criteria": [
+          "pxs repo present in Vega workspace as intended",
+          "pinned platform/dependency model implemented",
+          "default cross-domain reads not allowed",
+          "Vega acceptance test rerun to PASS with evidence"
+        ],
+        "evidence_refs": [
+          "governance/VEGA_ACCEPTANCE_TEST_RUN_SHEET_V1.md"
+        ],
+        "kind": "portfolio_priority",
+        "owner_product": "task-management",
+        "supporting_products": [
+          "security",
+          "governance"
+        ],
+        "why": "Top cross-product blocker repeated across research cycle; safe downstream consumption into pxs is blocked until Vega/PXS boundary passes.",
+        "assignment_id": "TASK-20260314-VEGA-PXS-BOUNDARY-PASS",
+        "assignment_source_system": "control_tower_overnight_synthesis",
+        "assignment_source_reference": "products/task-management/04-execution/nightly-reports/2026-03-15-po-nightly-report.json",
+        "assignment_owner_role": "Control Tower",
+        "assignment_acceptance_state": "accepted",
+        "assignment_acceptance_reason": null,
+        "objective_id": "OBJ-TDE-FOUNDATION",
+        "decision_policy_ref": "CONTROL_TOWER_OVERNIGHT_SYNTHESIS_POLICY_V1.md",
+        "workflow_family": "overnight-control-tower",
+        "control_tower_selected_priority": 1,
+        "portfolio_bottleneck": "unsafe and incompletely enforced downstream consumption boundary",
+        "next_required_outcome": "acceptance sheet rerun to PASS with committed evidence"
+      },
+      "limbo_reason": "accepted_assignment_without_intake_or_follow_on_trace",
+      "recommended_action": "Investigate producer path, intake linkage, and runner pickup for this assignment."
+    }
+  ]
+}

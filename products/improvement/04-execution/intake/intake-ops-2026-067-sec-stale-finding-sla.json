@@ -1,0 +1,37 @@
+{
+  "artifactType": "tde_intake_packet",
+  "schemaVersion": "1.0.0",
+  "intake_id": "OPS-2026-067",
+  "intake_class": "improvement",
+  "source_system": "jobs-review",
+  "source_type": "report",
+  "source_reference": "weekly-jobs-review-2026-03-16",
+  "submitted_at": "2026-03-17T02:05:00Z",
+  "submitted_by": "Lyra/Control Tower",
+  "title": "Add stale-finding SLA to JOB-SEC-001 to prevent findings ageing without disposition",
+  "summary": "JOB-SEC-001 is detecting but not closing recurring issues. SEC-AUTO-20260307-01 and SEC-AUTO-20260309-02 are 9+ days open with no disposition. A stale-finding SLA rule is needed.",
+  "body": "Jobs Review (2026-03-16) found that JOB-SEC-001 (Security role) is generating findings but not closing them. SEC-AUTO-20260307-01 (trust_model.multi_user_heuristic) and SEC-AUTO-20260309-02 (non-elevated PF posture) are both 9+ days open. Without a stale-finding SLA, the security job generates detection without resolution discipline. Required: (1) define a stale-finding SLA (e.g. 7 days to disposition: accept/fix/defer); (2) add SLA enforcement check to JOB-SEC-001 job definition; (3) apply SLA retroactively to the two open stale findings by forcing a decision/acceptance record.",
+  "priority_hint": "medium",
+  "workspace_scope": "lyra-os",
+  "product_scope": "security,improvement",
+  "related_entities": [
+    {
+      "type": "job",
+      "id": "JOB-SEC-001"
+    },
+    {
+      "type": "task",
+      "id": "SEC-AUTO-20260307-01"
+    },
+    {
+      "type": "task",
+      "id": "SEC-AUTO-20260309-02"
+    }
+  ],
+  "evidence_links": [
+    "memory/2026-03-16.md#L10:00"
+  ],
+  "proposed_action": "triage_and_fix",
+  "desired_outcome": "JOB-SEC-001 job definition includes stale-finding SLA; SEC-AUTO-20260307-01 and SEC-AUTO-20260309-02 formally dispositioned (accept or fix).",
+  "success_signal": "No open security findings older than SLA threshold without an explicit disposition record."
+}

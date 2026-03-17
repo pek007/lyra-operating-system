@@ -1,0 +1,34 @@
+{
+  "artifactType": "tde_intake_packet",
+  "schemaVersion": "1.0.0",
+  "intake_id": "OPS-2026-069",
+  "intake_class": "improvement",
+  "source_system": "jobs-review",
+  "source_type": "report",
+  "source_reference": "weekly-jobs-review-2026-03-16",
+  "submitted_at": "2026-03-17T02:05:00Z",
+  "submitted_by": "Lyra/Control Tower",
+  "title": "Force explicit disposition of SEC-AUTO-20260307-01 and SEC-AUTO-20260309-02 (stale open security findings)",
+  "summary": "Two security findings are 9+ days old with no disposition record. Both need an explicit accept/fix/defer decision with evidence before they can be considered managed.",
+  "body": "SEC-AUTO-20260307-01 (trust_model.multi_user_heuristic \u2014 recurring warning about multi-user heuristic under Telegram group context) and SEC-AUTO-20260309-02 (non-elevated PF posture evidence \u2014 pfctl permission denied in cron runtime) have been open for 9+ days as of 2026-03-16. No formal disposition record (accept with rationale, fix plan, or defer with expiry) exists for either. Required actions: (1) SEC-AUTO-20260307-01: write a formal risk-acceptance record or fix plan (trust boundary is partially addressed via 2026-03-09 Sprint 1; determine whether residual heuristic warning is a known-state or needs further tightening); (2) SEC-AUTO-20260309-02: write a formal approved-fallback documentation record or escalate to fix path (non-elevated pfctl is a permanent constraint on macOS; document approved evidence path).",
+  "priority_hint": "medium",
+  "workspace_scope": "lyra-os",
+  "product_scope": "security",
+  "related_entities": [
+    {
+      "type": "task",
+      "id": "SEC-AUTO-20260307-01"
+    },
+    {
+      "type": "task",
+      "id": "SEC-AUTO-20260309-02"
+    }
+  ],
+  "evidence_links": [
+    "memory/2026-03-16.md#L10:00",
+    "products/security/04-execution/TOP_PRIORITIES.md"
+  ],
+  "proposed_action": "force_disposition",
+  "desired_outcome": "Both findings have a formal disposition record (accept/fix/defer) with evidence and expiry. Neither ages further without explicit owner sign-off.",
+  "success_signal": "SEC-AUTO-20260307-01 and SEC-AUTO-20260309-02 both have disposition_state = accepted | fixed | deferred with documented rationale."
+}

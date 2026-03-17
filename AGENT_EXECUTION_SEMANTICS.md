@@ -27,13 +27,13 @@ Every completion must return:
 4. Next actions + owner
 
 ## Escalation
-Escalate to Control Tower when:
+Escalate to the Control Panel runtime when:
 - decision becomes Type 1
 - security/compliance concerns appear
 - cost/risk exceeds planned bounds
 
 ## Anti-Drift
-- No specialist agent may redefine principles/policies without explicit Control Tower approval.
+- No specialist agent may redefine principles/policies without explicit Control Panel runtime approval.
 
 ## Version
 - v1.0

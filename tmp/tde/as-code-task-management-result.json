@@ -1,0 +1,27 @@
+{
+  "artifactType": "tde_request_entry_result",
+  "schemaVersion": "1.0.0",
+  "recorded_at": "2026-03-15T16:36:07Z",
+  "request_text": "Research and define the execution-side mapping for the as-code rollout: map the shared As-Code Contract Pack into TDE intake classes, evidence expectations, state transitions, and the smallest auditable execution-bridge MVP between PXS exports and Lyra OS intake.",
+  "source_ref": "as-code-rollout-task-management-2026-03-15",
+  "request_class": "review_audit_request",
+  "intake_class": "work",
+  "intake_validation": "passed",
+  "formation_validation": "passed",
+  "formation_id": "FORM-AS-CODE-ROLLOUT-TASK-MANAGEMENT-2026-03-",
+  "recommended_next_action": "proceed_with_assumptions",
+  "required_clarifications": [],
+  "intake_packet_path": "tmp/tde/as-code-task-management-intake.json",
+  "formation_path": "tmp/tde/as-code-task-management-formation.json",
+  "canonical_creation": {
+    "formation_id": "FORM-AS-CODE-ROLLOUT-TASK-MANAGEMENT-2026-03-",
+    "objective_id": "OBJ-FORM-FORM-AS-CODE-ROLLOUT-TASK-MANAGEMENT-2026-03-",
+    "created_tasks": [
+      "TDE-FORM-FORM-AS-CODE-ROLLOUT-TASK-MANAGEMENT-2026-03--001",
+      "TDE-FORM-FORM-AS-CODE-ROLLOUT-TASK-MANAGEMENT-2026-03--002"
+    ],
+    "workflow_family": "implementation_verification_readiness",
+    "tasks_projection_path": "os/runtime/TASKS_from_db.md",
+    "objectives_path": "os/runtime/tde_objectives.json"
+  }
+}

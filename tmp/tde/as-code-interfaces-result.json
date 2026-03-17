@@ -1,0 +1,27 @@
+{
+  "artifactType": "tde_request_entry_result",
+  "schemaVersion": "1.0.0",
+  "recorded_at": "2026-03-15T16:36:01Z",
+  "request_text": "Research and define the shared As-Code Contract Pack for Lyra OS and PXS, including shared schemas or schema fragments, shared taxonomy, and a minimal mapping between PXS execution objects and Lyra OS artifact types.",
+  "source_ref": "as-code-rollout-interfaces-2026-03-15",
+  "request_class": "research_request",
+  "intake_class": "work",
+  "intake_validation": "passed",
+  "formation_validation": "passed",
+  "formation_id": "FORM-AS-CODE-ROLLOUT-INTERFACES-2026-03-15",
+  "recommended_next_action": "proceed_with_assumptions",
+  "required_clarifications": [],
+  "intake_packet_path": "tmp/tde/as-code-interfaces-intake.json",
+  "formation_path": "tmp/tde/as-code-interfaces-formation.json",
+  "canonical_creation": {
+    "formation_id": "FORM-AS-CODE-ROLLOUT-INTERFACES-2026-03-15",
+    "objective_id": "OBJ-FORM-FORM-AS-CODE-ROLLOUT-INTERFACES-2026-03-15",
+    "created_tasks": [
+      "TDE-FORM-FORM-AS-CODE-ROLLOUT-INTERFACES-2026-03-15-001",
+      "TDE-FORM-FORM-AS-CODE-ROLLOUT-INTERFACES-2026-03-15-002"
+    ],
+    "workflow_family": "implementation_verification_readiness",
+    "tasks_projection_path": "os/runtime/TASKS_from_db.md",
+    "objectives_path": "os/runtime/tde_objectives.json"
+  }
+}

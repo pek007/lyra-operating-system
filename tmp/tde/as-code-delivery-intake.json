@@ -1,0 +1,25 @@
+{
+  "artifactType": "tde_intake_packet",
+  "schemaVersion": "1.0.0",
+  "intake_id": "INTAKE-as-code-rollout-delivery-2026-03-15",
+  "intake_class": "work",
+  "source_system": "tde_request_entry",
+  "source_type": "manual_entry",
+  "source_reference": "as-code-rollout-delivery-2026-03-15",
+  "submitted_at": "2026-03-15T16:35:55Z",
+  "submitted_by": "Lyra",
+  "title": "Runtime hardening for the as-code rollout: add repo-integrity gates for merge markers and fail-fast hygiene checks, and ",
+  "summary": "Runtime hardening for the as-code rollout: add repo-integrity gates for merge markers and fail-fast hygiene checks, and replace placeholder PXS quality gates with real enforceable checks.",
+  "body": {
+    "request_text": "Runtime hardening for the as-code rollout: add repo-integrity gates for merge markers and fail-fast hygiene checks, and replace placeholder PXS quality gates with real enforceable checks.",
+    "request_class": "runtime_hardening"
+  },
+  "priority_hint": "unspecified",
+  "workspace_scope": "lyra-os-root",
+  "product_scope": "A-006",
+  "related_entities": [],
+  "evidence_links": [],
+  "proposed_action": "run_intent_formation",
+  "requested_action": "Runtime hardening for the as-code rollout: add repo-integrity gates for merge markers and fail-fast hygiene checks, and replace placeholder PXS quality gates with real enforceable checks.",
+  "success_signal": null
+}

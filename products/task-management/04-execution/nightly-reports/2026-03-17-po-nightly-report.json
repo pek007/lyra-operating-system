@@ -1,0 +1,203 @@
+{
+  "artifactType": "tde_po_nightly_report",
+  "schemaVersion": "1.0.0",
+  "synthesisId": "po-nightly-task-management-2026-03-17",
+  "productId": "A-007",
+  "productName": "Task Management",
+  "productOwner": "Lyra",
+  "synthesisDate": "2026-03-17",
+  "overallHealth": "yellow",
+  "summary": "Task Management made a material substrate advance overnight: the assignment acceptance thin-slice implementation is complete and verified (21/21 tests PASS across all five canonical acceptance cases). The silent-limbo gap is closed at the acceptance boundary. This resolves the outstanding P3 implementation item from the prior nightly report. The two remaining open blockers are the Vega/PXS E2 boundary condition (exec-based cross-domain access still FAIL, blocking downstream pxs consumption gating) and the Control Panel adapter-layer wiring (slice 2 of the acceptance thin-slice). Priority ordering is unchanged; P3 status text updated to reflect completion of acceptance implementation.",
+  "materialChanges": [
+    {
+      "change": "Assignment acceptance thin-slice implementation completed: tools/tde_assignment_accept.py verified with 21/21 tests PASS covering all five canonical acceptance cases (accepted, accepted_pending_binding, accepted_no_runner, rejected_invalid_assignment, duplicate).",
+      "significance": "The silent-limbo gap is closed at the acceptance boundary. No producer can now mistake raw task insertion for operational acceptance. All six thin-slice success criteria confirmed by test evidence.",
+      "evidence": "products/task-management/04-execution/TDE_ASSIGNMENT_ACCEPTANCE_TEST_EVIDENCE_2026-03-16.md"
+    }
+  ],
+  "topPriorities": [
+    {
+      "rank": 1,
+      "title": "Close the Vega/PXS boundary readiness gap and rerun it to PASS",
+      "status": "blocked_externally",
+      "current_state": "Filesystem-tool boundary narrowed on 2026-03-15. E2 condition (exec-based cross-domain access via sandbox.mode=off, exec.host=gateway, exec.security=full) remains FAIL. Acceptance sheet has not been rerun to PASS. Downstream pxs consumption cannot be declared safe until this is resolved.",
+      "next_concrete_step": "Decide E2 scope: apply sandbox/exec tightening vs narrow the acceptance claim with explicit rationale. Apply the chosen path and rerun the Vega acceptance sheet with committed evidence.",
+      "linkedTasks": ["TASK-20260314-VEGA-PXS-BOUNDARY-PASS"],
+      "refs": [
+        "products/task-management/04-execution/VEGA_PXS_BOUNDARY_POST_CHANGE_VALIDATION_2026-03-15.md",
+        "governance/VEGA_ACCEPTANCE_TEST_RUN_SHEET_V1.md",
+        "products/task-management/04-execution/RISKS.md"
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "Deliver a minimal executable pxs consumption contract with schemas and worked examples",
+      "status": "needs_decision",
+      "current_state": "Operating-contract artifact exists. Executable schema-backed layer, transport semantics, and worked examples not yet delivered. Priority 1 boundary closure is a prerequisite. No progress this cycle.",
+      "next_concrete_step": "Once P1 boundary is resolved, upgrade the pxs consumption interface from descriptive to minimal executable contract with request/response schemas, versioning, and 2-3 worked examples.",
+      "linkedTasks": [],
+      "refs": [
+        "products/task-management/06-architecture/PXS_CONSUMPTION_INTERFACE.md",
+        "products/task-management/02-strategy/DISTRIBUTION_MODEL.md"
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "Stabilize and prove the canonical substrate that pxs will consume",
+      "status": "execution_in_progress",
+      "current_state": "Acceptance thin-slice implementation complete and verified (21/21 PASS, 2026-03-16). All five acceptance states returned and persisted. Silent-limbo gap closed at acceptance boundary. Remaining: Control Panel adapter-layer wiring (slice 2) and DB-cutover GO/NO-GO decision path.",
+      "next_concrete_step": "Wire the Control Panel assignment adapter more tightly to the canonical intake path (thin-slice 2). Then close the DB-cutover decision with explicit GO/NO-GO evidence.",
+      "linkedTasks": ["TASK-20260315-CP-TDE-ASSIGNMENT-ACCEPTANCE"],
+      "refs": [
+        "products/task-management/04-execution/TDE_ASSIGNMENT_ACCEPTANCE_TEST_EVIDENCE_2026-03-16.md",
+        "products/task-management/04-execution/TDE_ASSIGNMENT_ACCEPTANCE_THIN_SLICE_PLAN_2026-03-15.md",
+        "products/task-management/05-performance/READINESS_SCORECARD.md"
+      ]
+    }
+  ],
+  "constraints": [
+    {
+      "title": "Vega/PXS E2 boundary condition still FAIL — exec-based cross-domain access open",
+      "constraintType": "operational",
+      "detail": "exec.host=gateway + exec.security=full + sandbox.mode=off combination allows cross-domain reads that the boundary model should prohibit. Filesystem-tool narrowing applied but does not close this path. E2 acceptance cannot be marked PASS without either exec/sandbox tightening or a scoped narrowing of the acceptance claim with explicit rationale.",
+      "nextStep": "Triage E2 as a decision: scope/restrict vs narrow claim. Apply and rerun acceptance sheet."
+    },
+    {
+      "title": "Control Panel adapter-layer wiring (thin-slice 2) outstanding",
+      "constraintType": "operational",
+      "detail": "Acceptance runtime entrypoint is implemented and tested. The dedicated Control Panel adapter has not yet been wired tightly to the canonical intake path. Until this is done, CP integration still depends on manual or partially-manual bridging.",
+      "nextStep": "Execute slice 2: wire CP assignment adapter to canonical intake path."
+    },
+    {
+      "title": "Downstream pxs consumption remains blocked pending P1 boundary gate",
+      "constraintType": "dependency",
+      "detail": "Even with P3 substrate progress, pxs consumption cannot be declared safe or production-ready until P1 boundary is confirmed PASS. Sequencing is P1 → P2 → broader adoption.",
+      "nextStep": "Maintain P1 as the top priority gate."
+    }
+  ],
+  "risksOrOpportunities": [
+    {
+      "id": "R-001",
+      "title": "Vega/PXS boundary readiness failure blocks safe downstream consumption",
+      "type": "risk",
+      "trend": "risk_rising",
+      "detail": "No progress this cycle. E2 remains FAIL. Each additional cycle without closure increases the risk that downstream consumption proceeds against an unsafe foundation or that the boundary design drifts further from enforcement.",
+      "mitigation": "Treat E2 resolution as the single highest-priority gating action. Escalate to Peter if the E2 scope decision requires his input on security posture."
+    },
+    {
+      "id": "R-002",
+      "title": "Readiness description outrunning readiness evidence",
+      "type": "risk",
+      "trend": "on_track",
+      "detail": "Acceptance thin-slice test evidence strengthens claim-to-evidence alignment. Runtime pathing and progression traces in place from prior cycle. Trend continues positive.",
+      "mitigation": "Continue tying readiness claims to explicit artifacts and GO/NO-GO decision records."
+    },
+    {
+      "id": "R-003",
+      "title": "Downstream consumption softer than product model suggests",
+      "type": "risk",
+      "trend": "on_track",
+      "detail": "Substrate is now more provably sound (acceptance implementation complete). Executable contract layer still depends on P1 closure. No regression.",
+      "mitigation": "Keep P2 executable contract as the explicit next step after P1."
+    },
+    {
+      "id": "R-005",
+      "title": "Shadow operating state / silent limbo",
+      "type": "risk",
+      "trend": "on_track",
+      "detail": "Materially resolved at the acceptance boundary. Silent limbo is now impossible at the acceptance entrypoint: explicit acceptance states returned and persisted for every submission. Slice 2 (adapter wiring) still needed for full CP integration path.",
+      "mitigation": "Execute slice 2 adapter wiring to complete the CP integration path."
+    },
+    {
+      "id": "OPP-001",
+      "title": "Acceptance substrate now behaviorally verified — ready for adapter-layer work",
+      "type": "opportunity",
+      "trend": "on_track",
+      "detail": "With 21/21 acceptance tests passing, the substrate layer is in the best-evidenced state it has been. This creates a clean foundation for slice 2 adapter wiring and sets a precedent for test-backed substrate confidence going forward.",
+      "mitigation": "Proceed to slice 2 while maintaining test coverage discipline."
+    }
+  ],
+  "researchDelta": "New execution artifact produced in current cycle: TDE_ASSIGNMENT_ACCEPTANCE_TEST_EVIDENCE_2026-03-16.md (21-test suite across five canonical acceptance cases, all PASS). This confirms the acceptance thin-slice plan is now implemented, not just planned. No other new research or product-local artifacts produced.",
+  "proposedTdeActions": [
+    {
+      "action": "Triage E2 boundary decision as the top unresolved gating signal: exec/sandbox restriction vs narrowed acceptance claim. Determine if this requires Peter input on security posture or can be resolved within Lyra's operating mandate.",
+      "intakeClass": "signal",
+      "urgency": "high"
+    },
+    {
+      "action": "Create explicit TDE task for thin-slice 2: Control Panel assignment adapter wiring to canonical intake path. This is the immediate next P3 concrete step now that slice 1 is complete.",
+      "intakeClass": "signal",
+      "urgency": "high"
+    },
+    {
+      "action": "Refresh governance/VEGA_ACCEPTANCE_TEST_RUN_SHEET_V1.md to accurately reflect current state: B1/C1/C2 partial progress, E2 still FAIL with updated fail reason (exec-based, not just fs-tool). Prevent the sheet from becoming a stale source of truth.",
+      "intakeClass": "signal",
+      "urgency": "medium"
+    },
+    {
+      "action": "After P1 boundary closure, create TDE task for P2 executable pxs contract upgrade (request/response schemas, transport semantics, worked examples).",
+      "intakeClass": "signal",
+      "urgency": "low"
+    }
+  ],
+  "priorityRefreshStatus": "updated",
+  "priorityRefreshNote": "Priority ordering unchanged (P1: Vega/PXS boundary → P2: executable pxs contract → P3: canonical substrate). P3 status text updated to reflect completion of assignment acceptance thin-slice implementation (21/21 PASS, 2026-03-16). Next concrete step for P3 updated to slice 2 adapter wiring. TOP_PRIORITIES.md last-updated date refreshed to 2026-03-17.",
+  "evidenceLinks": [
+    {
+      "kind": "priority_source",
+      "ref": "products/task-management/04-execution/TOP_PRIORITIES.md",
+      "note": "Reviewed as canonical source. P3 status text updated to reflect acceptance thin-slice completion. Priority ordering confirmed unchanged."
+    },
+    {
+      "kind": "execution_artifact",
+      "ref": "products/task-management/04-execution/TDE_ASSIGNMENT_ACCEPTANCE_TEST_EVIDENCE_2026-03-16.md",
+      "note": "Primary new evidence this cycle. 21/21 acceptance tests PASS. All five canonical acceptance cases and all six thin-slice success criteria confirmed."
+    },
+    {
+      "kind": "plan",
+      "ref": "products/task-management/04-execution/PLAN.md",
+      "note": "Current objectives align with codified top three priorities. No plan-level changes needed."
+    },
+    {
+      "kind": "risk_register",
+      "ref": "products/task-management/04-execution/RISKS.md",
+      "note": "R-001 boundary risk remains highest-impact and unresolved. R-005 silent-limbo risk resolved at acceptance boundary."
+    },
+    {
+      "kind": "readiness_scorecard",
+      "ref": "products/task-management/05-performance/READINESS_SCORECARD.md",
+      "note": "Overall Yellow-Green. Execution visibility improved by acceptance test evidence. Downstream consumability still Yellow due to open E2 boundary and incomplete executable contract."
+    },
+    {
+      "kind": "execution_artifact",
+      "ref": "products/task-management/04-execution/TDE_ASSIGNMENT_ACCEPTANCE_THIN_SLICE_PLAN_2026-03-15.md",
+      "note": "Plan that defined the five acceptance cases now confirmed implemented."
+    },
+    {
+      "kind": "previous_report",
+      "ref": "products/task-management/04-execution/nightly-reports/2026-03-16-po-nightly-report.json",
+      "note": "Prior nightly report used for delta comparison. P3 thin-slice implementation was marked outstanding there; now confirmed complete."
+    }
+  ],
+  "sourceReferences": [
+    "products/task-management/PRODUCT.md",
+    "products/task-management/MODEL.yaml",
+    "products/task-management/01-identity/VISION.md",
+    "products/task-management/02-strategy/STRATEGY.md",
+    "products/task-management/03-operating-model/OPERATING_MODEL.md",
+    "products/task-management/03-operating-model/GOVERNANCE.md",
+    "products/task-management/04-execution/PLAN.md",
+    "products/task-management/04-execution/RISKS.md",
+    "products/task-management/04-execution/ROADMAP.md",
+    "products/task-management/04-execution/TOP_PRIORITIES.md",
+    "products/task-management/04-execution/TDE_ASSIGNMENT_ACCEPTANCE_TEST_EVIDENCE_2026-03-16.md",
+    "products/task-management/04-execution/TDE_ASSIGNMENT_ACCEPTANCE_THIN_SLICE_PLAN_2026-03-15.md",
+    "products/task-management/04-execution/VEGA_PXS_BOUNDARY_POST_CHANGE_VALIDATION_2026-03-15.md",
+    "products/task-management/05-performance/METRICS.md",
+    "products/task-management/05-performance/READINESS_SCORECARD.md",
+    "products/task-management/06-architecture/INTERFACES.md",
+    "products/task-management/06-architecture/PXS_CONSUMPTION_INTERFACE.md",
+    "products/task-management/07-decisions/DECISIONS.md",
+    "products/task-management/04-execution/nightly-reports/2026-03-16-po-nightly-report.json"
+  ]
+}

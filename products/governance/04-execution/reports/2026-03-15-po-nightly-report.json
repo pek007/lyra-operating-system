@@ -1,0 +1,138 @@
+{
+  "artifactType": "product_owner_nightly_report",
+  "schemaVersion": "1.0",
+  "reportId": "po-nightly-governance-2026-03-15",
+  "productId": "A-008",
+  "productName": "Governance",
+  "productOwner": "Lyra",
+  "reportDate": "2026-03-15",
+  "overallHealth": "yellow",
+  "summary": "Governance is directionally coherent and its codified top priorities still match the product stack, but health remains yellow because the product's main value gaps are still execution gaps: the governance assembly is not yet clearly consumable/verifiable enough, and machine-checkable governance does not yet cover assembly integrity/completeness strongly enough.",
+  "topPriorities": [
+    {
+      "rank": 1,
+      "title": "Operate Governance as a real product with explicit outcomes and reviewable progress",
+      "status": "active",
+      "whyThisMattersNow": "Governance should model the same explicit goal/evidence/priority discipline it expects from the rest of the portfolio.",
+      "currentStatus": "Still current. Product intent, plan, metrics, and recent research all reinforce the need to keep Governance operated as a real product rather than letting it dissolve into ambient maintenance.",
+      "nextConcreteStep": "Continue using explicit priorities, metrics, review outputs, and product-local evidence to assess Governance as a product rather than as background platform hygiene."
+    },
+    {
+      "rank": 2,
+      "title": "Complete Governance assembly v0.1 into a clearly consumable and verifiable pack",
+      "status": "active",
+      "whyThisMattersNow": "Governance only becomes transferable downstream value when the assembly can be installed, verified, reviewed, and maintained without hidden assumptions.",
+      "currentStatus": "Still current. Risks and interfaces both show the assembly question is still unresolved enough to be an active product concern, not a solved packaging detail.",
+      "nextConcreteStep": "Make the packaging/consumability decision explicit and keep verification semantics aligned with the chosen packaging model."
+    },
+    {
+      "rank": 3,
+      "title": "Extend machine-checkable governance toward the assembly surface and source-of-truth integrity",
+      "status": "active",
+      "whyThisMattersNow": "Governance gains leverage from validation, so the next control-quality gain is reducing drift between product state, assembly state, and shipped repo state.",
+      "currentStatus": "Still current. The plan, risks, metrics, interfaces, and implementation memo all point to assembly integrity/completeness as the next meaningful machine-checkable extension.",
+      "nextConcreteStep": "Define and stage the next validation path for assembly integrity/completeness and preserve explicit linkage across product, assembly, and source-of-truth surfaces."
+    }
+  ],
+  "blockers": [
+    {
+      "id": "B-001",
+      "title": "Governance assembly consumability decision remains under-specified",
+      "impact": "Prevents Governance from being clearly portable and reviewable as a downstream-consumable pack.",
+      "evidence": [
+        "products/governance/04-execution/RISKS.md#R-002",
+        "products/governance/06-architecture/INTERFACES.md",
+        "assemblies/governance-policy/v0.1/assembly.yaml",
+        "assemblies/governance-policy/v0.1/VERIFY.md"
+      ]
+    },
+    {
+      "id": "B-002",
+      "title": "Machine-checkable governance coverage does not yet fully include assembly integrity/completeness",
+      "impact": "Leaves a gap between governance intent and enforceable control over what the assembly actually exports.",
+      "evidence": [
+        "products/governance/04-execution/RISKS.md#R-003",
+        "products/governance/05-performance/METRICS.md",
+        "products/governance/04-execution/PLAN.md"
+      ]
+    }
+  ],
+  "risks": [
+    {
+      "id": "R-001",
+      "title": "Governance product can lag behind the standards it expects from other products",
+      "level": "medium"
+    },
+    {
+      "id": "R-002",
+      "title": "Governance assembly remains scaffolded rather than truly consumable",
+      "level": "high"
+    },
+    {
+      "id": "R-003",
+      "title": "Machine-checkable governance does not yet cover the governance assembly surface strongly enough",
+      "level": "high"
+    },
+    {
+      "id": "R-004",
+      "title": "Registry and source-of-truth relationships can drift",
+      "level": "medium"
+    }
+  ],
+  "proposedTdeActions": [
+    {
+      "type": "signal",
+      "title": "Confirm Governance assembly v0.1 packaging/consumability decision",
+      "why": "This is the clearest bottleneck to making Governance portable, reviewable, and verifiable downstream."
+    },
+    {
+      "type": "signal",
+      "title": "Define the next validator/control increment for assembly integrity/completeness",
+      "why": "This closes the main leverage gap between Governance policy intent and machine-checkable enforcement."
+    },
+    {
+      "type": "signal",
+      "title": "Maintain explicit product-local review discipline for Governance",
+      "why": "Governance credibility depends on visibly applying the same explicit priority/metrics/review standard it requires elsewhere."
+    }
+  ],
+  "priorityRefreshStatus": "unchanged",
+  "priorityRefreshNote": "Reviewed full product stack against products/governance/04-execution/TOP_PRIORITIES.md. Current priorities remain aligned with PRODUCT.md, MODEL.yaml, vision, strategy, operating model, plan, metrics, risks, decisions, and the 2026-03-14 implementation memo; no refresh needed in this run.",
+  "evidenceLinks": [
+    "products/governance/PRODUCT.md",
+    "products/governance/MODEL.yaml",
+    "products/governance/01-identity/VISION.md",
+    "products/governance/02-strategy/STRATEGY.md",
+    "products/governance/03-operating-model/OPERATING_MODEL.md",
+    "products/governance/04-execution/PLAN.md",
+    "products/governance/04-execution/RISKS.md",
+    "products/governance/04-execution/TOP_PRIORITIES.md",
+    "products/governance/04-execution/IMPLEMENT_NOW_FROM_RESEARCH_2026-03-14.md",
+    "products/governance/05-performance/METRICS.md",
+    "products/governance/06-architecture/INTERFACES.md",
+    "products/governance/07-decisions/DECISIONS.md",
+    "assemblies/governance-policy/v0.1/assembly.yaml",
+    "assemblies/governance-policy/v0.1/ACTIVATION.md",
+    "assemblies/governance-policy/v0.1/VERIFY.md",
+    "memory/2026-03-14.md"
+  ],
+  "sourceReferences": {
+    "canonicalTopPriorities": "products/governance/04-execution/TOP_PRIORITIES.md",
+    "supportingProductArtifacts": [
+      "products/governance/PRODUCT.md",
+      "products/governance/MODEL.yaml",
+      "products/governance/01-identity/VISION.md",
+      "products/governance/02-strategy/STRATEGY.md",
+      "products/governance/03-operating-model/OPERATING_MODEL.md",
+      "products/governance/04-execution/PLAN.md",
+      "products/governance/04-execution/RISKS.md",
+      "products/governance/05-performance/METRICS.md",
+      "products/governance/06-architecture/INTERFACES.md",
+      "products/governance/07-decisions/DECISIONS.md"
+    ],
+    "currentStateEvidence": [
+      "products/governance/04-execution/IMPLEMENT_NOW_FROM_RESEARCH_2026-03-14.md",
+      "memory/2026-03-14.md"
+    ]
+  }
+}

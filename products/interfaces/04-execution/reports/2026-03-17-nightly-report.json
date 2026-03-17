@@ -1,0 +1,190 @@
+{
+  "artifactType": "tde_product_owner_nightly_report",
+  "schemaVersion": "v1",
+  "reportId": "interfaces-po-nightly-2026-03-17",
+  "productId": "A-009",
+  "productName": "Interfaces",
+  "productOwner": "Lyra",
+  "reportDate": "2026-03-17",
+  "generatedAt": "2026-03-17T00:15:00Z",
+  "intakeClass": "signal",
+  "overallHealth": "yellow",
+  "summary": "Interfaces is strategically coherent but has made zero execution progress since the 2026-03-15 commits. All three reported blockers from yesterday remain open and are aging. The assembly metadata link inconsistency is now 3 days old — a sub-30-minute fix that has not been prioritized. No downstream verification evidence exists. The as-code contract pack (added to PLAN.md on 2026-03-15) has not been started. The product is structurally sound and the priority model is correct, but it risks becoming a permanently deferred backlog item without a deliberate execution scheduling decision.",
+  "materialChanges": [
+    {
+      "type": "no_new_changes",
+      "detail": "No commits to products/interfaces/ or assemblies/ since 2026-03-15 (last commit: a33ac35, 'Align as-code rollout in product plans and TDE'). All open blockers have aged by one more day without resolution. No new artifacts, decisions, or evidence added.",
+      "source": "git log"
+    }
+  ],
+  "topPriorities": [
+    {
+      "rank": 1,
+      "title": "Resolve Interfaces identity, scope, and ownership boundaries",
+      "status": "on_track",
+      "whyThisMattersNow": "Strategic guardrail for all downstream work. Charter is narrowed and documented per D-001; ongoing enforcement is required as cross-cutting boundary issues arise elsewhere in the portfolio.",
+      "nextConcreteStep": "Keep ownership stance explicit wherever Interfaces is referenced, especially when boundary questions arise in downstream workspaces or other products. No new enforcement needed this cycle.",
+      "links": [
+        "products/interfaces/04-execution/PLAN.md",
+        "products/interfaces/06-architecture/INTERFACES.md",
+        "products/interfaces/07-decisions/DECISIONS.md"
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "Make the Interfaces assembly real, self-consistent, and consumable — including as-code contract pack",
+      "status": "execution_in_progress",
+      "whyThisMattersNow": "Assembly has known broken metadata links (now 3 days unresolved). As-code rollout is in PLAN.md but not yet started. Both must be resolved before Priority 3 can close. Blocker is aging.",
+      "nextConcreteStep": "(a) Correct assembly.yaml broken documentation links — this is a sub-30-minute fix; (b) begin scoping the minimal shared As-Code Contract Pack surface between Lyra OS and PXS.",
+      "links": [
+        "products/interfaces/04-execution/PLAN.md",
+        "assemblies/prompting-and-3pp/v0.1/assembly.yaml",
+        "assemblies/prompting-and-3pp/v0.1/ACTIVATION.md",
+        "assemblies/prompting-and-3pp/v0.1/VERIFY.md"
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "Run one downstream consumption pilot with evidence and one preventive drift guard",
+      "status": "needs_decision",
+      "whyThisMattersNow": "Evidence path is not closed. VERIFY contains unchecked criteria; no linked workflow evidence exists in the product stack. This is the product's core value demonstration and it has not been attempted.",
+      "nextConcreteStep": "Identify one real workflow, run it against the assembly, record evidence link in VERIFY. Enforce changelog-plus-verification drift guard for meaningful contract changes.",
+      "links": [
+        "products/interfaces/04-execution/PLAN.md",
+        "products/interfaces/05-performance/METRICS.md",
+        "assemblies/prompting-and-3pp/v0.1/VERIFY.md"
+      ]
+    }
+  ],
+  "blockers": [
+    {
+      "title": "Assembly metadata/documentation path inconsistency — now 3 days old",
+      "detail": "assembly.yaml links changelog/activation/verify to non-existent paths at assemblies/interfaces/v0.1/*; actual files live at assemblies/prompting-and-3pp/v0.1/*. This blocker was surfaced 3 days ago, estimated sub-30 minutes to fix, and has not been resolved. It weakens assembly auditability and directly blocks Priority 2 closure.",
+      "severity": "medium",
+      "age_days": 3,
+      "evidence": [
+        "assemblies/prompting-and-3pp/v0.1/assembly.yaml",
+        "assemblies/prompting-and-3pp/v0.1/ACTIVATION.md",
+        "assemblies/prompting-and-3pp/v0.1/VERIFY.md"
+      ]
+    },
+    {
+      "title": "No closed-loop downstream verification evidence — now 3 days old",
+      "detail": "VERIFY.md defines the required evidence but no completed workflow evidence link or pass outcome exists. Priority 3 cannot be called done without this. Not attempted.",
+      "severity": "medium",
+      "age_days": 3,
+      "evidence": [
+        "assemblies/prompting-and-3pp/v0.1/VERIFY.md",
+        "products/interfaces/05-performance/METRICS.md"
+      ]
+    },
+    {
+      "title": "As-code contract pack not yet started — day 2",
+      "detail": "PLAN.md now requires defining the shared As-Code Contract Pack between Lyra OS and PXS, but no artifact, scoping work, or execution evidence exists. Newly introduced scope as of 2026-03-15; no action taken.",
+      "severity": "low",
+      "age_days": 1,
+      "evidence": [
+        "products/interfaces/04-execution/PLAN.md"
+      ]
+    }
+  ],
+  "risksOrOpportunities": [
+    {
+      "title": "Deferred execution risk — Interfaces becoming a permanently backlogged product",
+      "type": "risk",
+      "detail": "Interfaces has had zero execution progress for 2 days. All three blockers are aging. Without a scheduling decision or deliberate executor assignment, the product risks drifting into a low-priority maintenance posture that never demonstrates real downstream value. This would undermine its enabling role in the portfolio.",
+      "level": "high",
+      "source": "nightly report delta — no git activity since 2026-03-15"
+    },
+    {
+      "title": "Assembly packaging remains not self-consistent — R-002 aging",
+      "type": "risk",
+      "detail": "The broken assembly links (R-002) have been open 3 days. Each day without a fix makes the assembly less credible as an export surface and erodes confidence in installation/migration mechanics.",
+      "level": "medium",
+      "source": "products/interfaces/04-execution/RISKS.md#R-002"
+    },
+    {
+      "title": "Promotion gate remains too thin — R-003 aging",
+      "type": "risk",
+      "detail": "Without one real downstream workflow with linked verification evidence, the product cannot demonstrate behavioral value or control drift credibly. This is the core maturity gap and has not been attempted.",
+      "level": "medium",
+      "source": "products/interfaces/04-execution/RISKS.md#R-003"
+    },
+    {
+      "title": "As-code rollout alignment opportunity — at risk of compounding instead of enabling",
+      "type": "opportunity_at_risk",
+      "detail": "The as-code contract pack scope (added 2026-03-15) is a genuine portfolio alignment opportunity. However, if started before the assembly link blocker is fixed and before one downstream verification pass exists, it risks compounding the evidence gap rather than enabling it.",
+      "level": "medium",
+      "source": "products/interfaces/04-execution/PLAN.md"
+    }
+  ],
+  "researchDelta": "No new product-local research in this run. No new external inputs. The 2026-03-14 research artifact (IMPLEMENT_NOW_FROM_RESEARCH_2026-03-14.md) remains the last formal research input. All action items from that research remain open.",
+  "proposedTdeActions": [
+    {
+      "type": "signal",
+      "title": "Fix assembly.yaml broken documentation links — immediate, sub-30-minute unblock",
+      "why": "This blocker is now 3 days old, is trivially fixable, and directly prevents assembly auditability. Should be scheduled in the next available daytime execution slot. No decision required."
+    },
+    {
+      "type": "signal",
+      "title": "Make a scheduling decision for Interfaces execution",
+      "why": "Interfaces has no active executor or scheduled daytime slot. Without deliberate assignment, blockers will continue aging. This requires a portfolio scheduling decision — which overnight slot or daytime window is allocated for Interfaces execution work."
+    },
+    {
+      "type": "signal",
+      "title": "Scope the minimal As-Code Contract Pack surface before building",
+      "why": "PLAN.md requires this. Scoping first keeps the contract surface minimal. One shared schema fragment or enum definition would be a valid starting point."
+    },
+    {
+      "type": "signal",
+      "title": "Close the downstream verification evidence loop — the key value demonstration",
+      "why": "Identify one real workflow, run it, record evidence in VERIFY. This is the product's core validation path and has not been attempted."
+    }
+  ],
+  "priorityRefreshStatus": "unchanged",
+  "priorityRefreshNotes": "TOP_PRIORITIES.md reviewed against full product stack. No new commits to products/interfaces/ or assemblies/ since 2026-03-15. The three priorities from the 2026-03-16 update remain correct in ordering and content. Blocker aging (day count) is a quantitative worsening, not a qualitative priority change. No update required to TOP_PRIORITIES.md.",
+  "evidenceLinks": [
+    "products/interfaces/04-execution/TOP_PRIORITIES.md",
+    "products/interfaces/PRODUCT.md",
+    "products/interfaces/MODEL.yaml",
+    "products/interfaces/01-identity/VISION.md",
+    "products/interfaces/02-strategy/STRATEGY.md",
+    "products/interfaces/03-operating-model/OPERATING_MODEL.md",
+    "products/interfaces/04-execution/PLAN.md",
+    "products/interfaces/04-execution/RISKS.md",
+    "products/interfaces/04-execution/IMPLEMENT_NOW_FROM_RESEARCH_2026-03-14.md",
+    "products/interfaces/05-performance/METRICS.md",
+    "products/interfaces/06-architecture/INTERFACES.md",
+    "products/interfaces/07-decisions/DECISIONS.md",
+    "assemblies/prompting-and-3pp/v0.1/assembly.yaml",
+    "assemblies/prompting-and-3pp/v0.1/ACTIVATION.md",
+    "assemblies/prompting-and-3pp/v0.1/VERIFY.md",
+    "products/interfaces/04-execution/reports/2026-03-16-nightly-report.json"
+  ],
+  "sourceReferences": [
+    {
+      "path": "products/interfaces/04-execution/TOP_PRIORITIES.md",
+      "role": "canonical current priorities (unchanged this run)"
+    },
+    {
+      "path": "products/interfaces/04-execution/PLAN.md",
+      "role": "execution plan, including as-code rollout scope added 2026-03-15"
+    },
+    {
+      "path": "products/interfaces/04-execution/RISKS.md",
+      "role": "risk baseline — R-002 and R-003 both aging"
+    },
+    {
+      "path": "assemblies/prompting-and-3pp/v0.1/assembly.yaml",
+      "role": "direct evidence for broken documentation link blocker"
+    },
+    {
+      "path": "assemblies/prompting-and-3pp/v0.1/VERIFY.md",
+      "role": "direct evidence for verification maturity gap"
+    },
+    {
+      "path": "products/interfaces/04-execution/reports/2026-03-16-nightly-report.json",
+      "role": "prior night baseline for delta comparison"
+    }
+  ]
+}

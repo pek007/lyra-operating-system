@@ -45,30 +45,13 @@ Design principle: auto-implement only low-risk, uncontroversial changes; route l
 - **Delivery:** Telegram announce to Lyra Operations (`-1003804530741`)
 - **Intent:** Systematic marginal improvements in quality, robustness, scalability.
 
-### 3) `continuous-improvement:weekly-leverage-handoff`
-- **Cadence:** Weekly (paired with Layer B synthesis)
-- **Session:** main runtime
-- **Delivery:** Prompt packet sent to Peter for manual Deep Research execution
-- **Intent:** Discover non-obvious, high-leverage improvement opportunities beyond daily hygiene.
-
-### 4) `tde:cutover-readiness-daily`
-- **Cron:** `45 6 * * *`
-- **Timezone:** `Europe/Stockholm`
-- **Session:** isolated
-- **Delivery:** Telegram announce to Lyra Operations (`-1003804530741`) when alert threshold is breached; otherwise silent evidence refresh
-- **Intent:** Maintain daily DB cutover readiness evidence and fail-fast alerting on parity drift bursts.
-
-**Runbook in hook**
-1. `bash tools/tde_daily_readiness_check.sh`
-2. `python3 tools/tde_cutover_alert_check.py`
-3. If alert check fails, emit escalation summary with latest report path.
-
 **Runbook in prompt**
 1. Sweep for high-signal, low-controversy improvements across docs/code/structure:
    - consistency, clarity, naming, dead links, duplicate guidance, obvious hygiene/refactor items, missing guardrails
    - perform a **library relevance pass** across key knowledge surfaces (`governance/`, top-level process docs, `knowledge/`, `tools/`) to identify older artifacts that became newly relevant due to recent decisions/releases
    - run `python3 tools/docs_hygiene_bundle.py` as the fail-fast docs/task hygiene gate before proposing doc edits (wraps `task_hygiene_check.py` + `markdown_link_check.py --changed-only`)
    - run `python3 -m unittest tools/test_markdown_link_check.py` to keep link-parser behavior coverage green before automation edits
+   - run `python3 -m unittest tools/test_parser_smoke.py` to preserve the parser smoke guard that earlier closeout/task records already cite as part of the sweep
 2. Perform OpenClaw release-delta check (see `OPENCLAW_RELEASE_DELTA_SOP.md`):
    - capture auditable command snapshot via `python3 tools/openclaw_release_delta_snapshot.py` (writes `knowledge/evidence/YYYY-MM-DD__openclaw-release-delta-snapshot.md`)
    - detect new versions (`openclaw update status`)
@@ -87,6 +70,24 @@ Design principle: auto-implement only low-risk, uncontroversial changes; route l
    - Next best action
 7. Backlog behavior:
    - Append non-trivial items to `TASKS.md` Inbox with ID format: `IMP-AUTO-YYYYMMDD-XX`
+
+### 3) `continuous-improvement:weekly-leverage-handoff`
+- **Cadence:** Weekly (paired with Layer B synthesis)
+- **Session:** main runtime
+- **Delivery:** Prompt packet sent to Peter for manual Deep Research execution
+- **Intent:** Discover non-obvious, high-leverage improvement opportunities beyond daily hygiene.
+
+### 4) `tde:cutover-readiness-daily`
+- **Cron:** `45 6 * * *`
+- **Timezone:** `Europe/Stockholm`
+- **Session:** isolated
+- **Delivery:** Telegram announce to Lyra Operations (`-1003804530741`) when alert threshold is breached; otherwise silent evidence refresh
+- **Intent:** Maintain daily DB cutover readiness evidence and fail-fast alerting on parity drift bursts.
+
+**Runbook in hook**
+1. `bash tools/tde_daily_readiness_check.sh`
+2. `python3 tools/tde_cutover_alert_check.py`
+3. If alert check fails, emit escalation summary with latest report path.
 
 **Weekly Layer B + Layer C handoff protocol**
 1. Summarize recurring friction patterns from past 7 days (minimum top 3).

@@ -1,7 +1,7 @@
 # TOP_PRIORITIES
 
 Product: Task Management
-Last updated: 2026-03-14
+Last updated: 2026-03-17
 Owner: Product Owner / Control Tower
 
 ## Priority 1
@@ -21,6 +21,6 @@ Owner: Product Owner / Control Tower
 ## Priority 3
 **Title:** Stabilize and prove the canonical substrate that `pxs` will consume
 **Why this matters now:** Downstream consumers should not be built atop a canonical state transition that is still only described or provisionally evidenced.
-**Current status:** Readiness mechanisms are strong, and cutover evidence is promising, but the canonical-state proof path still needs explicit closed-loop decision completion.
-**Next concrete step:** complete the DB-cutover observation/decision path with explicit GO/NO-GO evidence and keep readiness claims tied to current proof rather than only to description.
-**Links:** `products/task-management/04-execution/PLAN.md`, `products/task-management/05-performance/READINESS_SCORECARD.md`, `products/task-management/05-performance/METRICS.md`
+**Current status:** Assignment acceptance thin-slice implementation completed 2026-03-16: `tools/tde_assignment_accept.py` fully tested (21/21 PASS) across all five canonical acceptance cases (accepted, accepted_pending_binding, accepted_no_runner, rejected_invalid_assignment, duplicate). Silent-limbo gap is closed at the acceptance boundary. Runtime pathing hardened, post-acceptance traces added, limbo detector implemented. Remaining open items: Control Panel adapter-layer wiring (slice 2), and the DB-cutover GO/NO-GO decision path.
+**Next concrete step:** Wire the Control Panel assignment adapter more tightly to the canonical intake path (thin-slice 2); then close the DB-cutover decision path with explicit GO/NO-GO evidence.
+**Links:** `products/task-management/04-execution/PLAN.md`, `products/task-management/04-execution/TDE_ASSIGNMENT_ACCEPTANCE_THIN_SLICE_PLAN_2026-03-15.md`, `products/task-management/04-execution/TDE_ASSIGNMENT_ACCEPTANCE_TEST_EVIDENCE_2026-03-16.md`, `products/task-management/05-performance/READINESS_SCORECARD.md`, `products/task-management/05-performance/METRICS.md`

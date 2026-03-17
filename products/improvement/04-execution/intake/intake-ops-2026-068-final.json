@@ -1,0 +1,43 @@
+{
+  "artifactType": "tde_intake_packet",
+  "schemaVersion": "1.0.0",
+  "intake_id": "OPS-2026-068",
+  "intake_class": "work",
+  "source_system": "jobs-review",
+  "source_type": "report",
+  "source_reference": "weekly-jobs-review-2026-03-16",
+  "submitted_at": "2026-03-17T02:10:00Z",
+  "submitted_by": "Lyra/Control Tower",
+  "title": "Retire completed proof-case job bundles and standardize intra-Lyra handoff protocol",
+  "summary": "4 proof-case job bundles (JOB-TM-001/002, JOB-DEL-001, JOB-GOV-001) are complete but not archived. Intra-Lyra handoff protocol not formalized as governance artifact.",
+  "body": "Jobs Review (2026-03-16): JOB-TM-001, JOB-TM-002, JOB-DEL-001, JOB-GOV-001 are done proof-case bundles in jobs/ directory but not in canonical registry and not archived. Intra-Lyra handoff protocol not yet a governance artifact. Required: (1) archive done bundles (jobs/archive/ or archived status marker + index); (2) formalize handoff protocol as HANDOFF_PROTOCOL_V1.md in governance/; (3) add done-jobs index.",
+  "priority_hint": "low",
+  "workspace_scope": "lyra-os",
+  "product_scope": "governance",
+  "related_entities": [
+    {
+      "entity_type": "job",
+      "entity_ref": "JOB-TM-001"
+    },
+    {
+      "entity_type": "job",
+      "entity_ref": "JOB-TM-002"
+    },
+    {
+      "entity_type": "job",
+      "entity_ref": "JOB-DEL-001"
+    },
+    {
+      "entity_type": "job",
+      "entity_ref": "JOB-GOV-001"
+    }
+  ],
+  "evidence_links": [
+    {
+      "kind": "daily_memory",
+      "ref": "memory/2026-03-16.md"
+    }
+  ],
+  "requested_action": "Archive 4 done proof-case job bundles; publish intra-Lyra handoff protocol as governance artifact; create done-jobs index.",
+  "proposed_action": "Archive 4 done proof-case job bundles; publish intra-Lyra handoff protocol as governance artifact; create done-jobs index."
+}

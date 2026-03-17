@@ -1,0 +1,38 @@
+{
+  "artifactType": "tde_intake_packet",
+  "schemaVersion": "1.0.0",
+  "intake_id": "OPS-2026-069",
+  "intake_class": "signal",
+  "source_system": "jobs-review",
+  "source_type": "report",
+  "source_reference": "weekly-jobs-review-2026-03-16",
+  "submitted_at": "2026-03-17T02:10:00Z",
+  "submitted_by": "Lyra/Control Tower",
+  "title": "Force explicit disposition of SEC-AUTO-20260307-01 and SEC-AUTO-20260309-02",
+  "summary": "Two security findings are 9+ days old with no disposition record. Both need an explicit accept/fix/defer decision with evidence.",
+  "body": "SEC-AUTO-20260307-01 (trust_model.multi_user_heuristic) and SEC-AUTO-20260309-02 (non-elevated PF posture evidence) have been open 9+ days with no formal disposition. Required: write risk-acceptance record or fix plan for SEC-AUTO-20260307-01; write approved-fallback documentation for SEC-AUTO-20260309-02.",
+  "priority_hint": "medium",
+  "workspace_scope": "lyra-os",
+  "product_scope": "security",
+  "related_entities": [
+    {
+      "entity_type": "task",
+      "entity_ref": "SEC-AUTO-20260307-01"
+    },
+    {
+      "entity_type": "task",
+      "entity_ref": "SEC-AUTO-20260309-02"
+    }
+  ],
+  "evidence_links": [
+    {
+      "kind": "daily_memory",
+      "ref": "memory/2026-03-16.md"
+    },
+    {
+      "kind": "top_priorities",
+      "ref": "products/security/04-execution/TOP_PRIORITIES.md"
+    }
+  ],
+  "proposed_action": "Write formal disposition records (accept/fix/defer) for both stale security findings"
+}

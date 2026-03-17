@@ -1,3 +1,14 @@
+---
+title: "Best Practices for an Intent-to-Execution Service Feeding Lyra OpenClaw TDE"
+date: 2026-03-12
+source: deepresearch
+ingest_from: "local deep research import (existing report normalized during daily information-model sweep)"
+tags: [external-analysis, deepresearch, intent-to-execution, tde, planning, execution]
+decision_relevance: high
+confidence: high
+status: archived-source
+---
+
 # Best Practices for an Intent-to-Execution Service Feeding Lyra OpenClaw TDE
 
 ## Executive summary

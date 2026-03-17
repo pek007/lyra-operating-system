@@ -1,0 +1,28 @@
+{
+  "artifactType": "tde_decision_escalation_package",
+  "schemaVersion": "1.0.0",
+  "decision_id": "DEC-job-tick-20260313-163509-TDE-STAGE-ORIGIN-001",
+  "task_id": "TDE-STAGE-ORIGIN-001",
+  "objective_id": "OBJ-TDE-FOUNDATION",
+  "workflow_family": "implementation_verification_readiness",
+  "from_role": "Product Owner",
+  "to_role": "Ultimate Decision-maker",
+  "decision_question": "How should task TDE-STAGE-ORIGIN-001 proceed?",
+  "context_summary": null,
+  "options": [
+    {
+      "option_id": "opt_review",
+      "label": "Review and decide",
+      "impact_summary": "Requires Peter decision before continuation."
+    }
+  ],
+  "recommended_option_id": "opt_review",
+  "rationale": "Escalation requested because delegated authority was not sufficient for autonomous continuation.",
+  "evidence_refs": [],
+  "confidence_score": 0.5,
+  "risks_tradeoffs": "Trade-offs require Ultimate Decision-maker review.",
+  "consequence_of_delay": "Chain remains paused pending decision.",
+  "would_do_if_delegated": "Pause and escalate for decision.",
+  "escalation_reason": "delegated_authority_exceeded",
+  "escalated_at": "2026-03-13T16:35:09Z"
+}

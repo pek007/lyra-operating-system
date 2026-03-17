@@ -1,0 +1,34 @@
+{
+  "artifactType": "tde_assignment_packet",
+  "schemaVersion": "1.0.0",
+  "assignment_id": "TASK-20260315-CP-TDE-ASSIGNMENT-ACCEPTANCE",
+  "source_system": "control_tower_overnight_synthesis",
+  "source_reference": "products/task-management/errors/ERR-2026-03-14-control-panel-assignment-silent-limbo.md",
+  "submitted_at": "2026-03-15T00:35:00Z",
+  "submitted_by": "Lyra",
+  "title": "Close the Control Panel to TDE assignment acceptance and silent-limbo gap",
+  "summary": "Current TDE execution reality shows that producer-side pushes are not operationally trustworthy because assignments can enter task state without explicit acceptance, runner pickup, or feedback.",
+  "requested_action": "Implement the governed assignment acceptance path so Control Panel assignments enter TDE canonically and immediately return explicit acceptance or failure states.",
+  "priority_hint": "high",
+  "workspace_scope": "lyra-os",
+  "product_scope": "A-007",
+  "related_entities": [
+    {"entity_type": "product", "entity_ref": "A-007", "relationship": "owner"},
+    {"entity_type": "error", "entity_ref": "ERR-2026-03-14-CP-TDE-SILENT-LIMBO", "relationship": "source_error"}
+  ],
+  "evidence_links": [
+    {"kind": "error_report", "ref": "products/task-management/errors/ERR-2026-03-14-control-panel-assignment-silent-limbo.md", "note": "Canonical failure record"},
+    {"kind": "artifact", "ref": "products/task-management/06-architecture/TDE_ASSIGNMENT_ACCEPTANCE_CONTRACT_V1.md", "note": "Required contract"},
+    {"kind": "report", "ref": "products/task-management/04-execution/nightly-reports/2026-03-15-po-nightly-report.json", "note": "Nightly PO signal elevating the issue"}
+  ],
+  "assignment_owner_role": "Task Management",
+  "runner_binding_required": false,
+  "objective_id": "OBJ-TDE-FOUNDATION",
+  "decision_policy_ref": "products/task-management/06-architecture/TDE_ASSIGNMENT_ACCEPTANCE_CONTRACT_V1.md",
+  "workflow_family": "overnight-control-tower",
+  "metadata": {
+    "control_tower_selected_priority": 2,
+    "source_signal_class": "execution_reality_gap",
+    "required_acceptance_states": ["accepted", "accepted_no_runner", "accepted_pending_binding", "rejected_invalid_assignment", "duplicate"]
+  }
+}

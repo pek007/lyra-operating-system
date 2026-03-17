@@ -1,0 +1,220 @@
+{
+  "artifactType": "product_owner_nightly_report",
+  "schemaVersion": "1.0",
+  "reportId": "po-nightly-governance-2026-03-17",
+  "productId": "A-008",
+  "productName": "Governance",
+  "productOwner": "Lyra",
+  "reportDate": "2026-03-17",
+  "overallHealth": "yellow",
+  "summary": "Governance is directionally coherent and structurally stable. No governance-product artifact changes occurred since the March 16 nightly report. All three canonical top priorities remain correctly ordered and supported by the full product stack. Health remains yellow for the same structural reason as prior cycles: the two main execution gaps — assembly consumability/packaging decision and machine-checkable coverage of assembly integrity — remain open. Two new cross-product signals emerged from March 16 activity that are relevant to Governance: (1) broken links inside governance assembly artifacts were identified in the Control Tower overnight synthesis and deferred as a sub-30-min fix; and (2) the Weekly Jobs Review created OPS-2026-069 for retiring the JOB-GOV-001 proof-case bundle. Both are low-urgency items but each adds minor pressure on Priority 1 (product-as-product discipline) and Priority 2 (assembly consumability). The governance assembly packaging decision remains the strongest current blocker and continues to await Peter's triage.",
+  "materialChanges": [
+    {
+      "type": "context_addition",
+      "description": "Control Tower overnight synthesis (2026-03-16 01:35 CET) identified broken links inside governance assembly artifacts and classified them as a sub-30-min fix, deferred to daytime. Not resolved as of this report.",
+      "source": "memory/2026-03-16.md",
+      "governance_impact": "minor — adds a concrete repair sub-task to Priority 2"
+    },
+    {
+      "type": "context_addition",
+      "description": "Weekly Jobs Review (2026-03-16 10:00 CET) identified JOB-GOV-001 proof-case bundle as done and a retirement candidate. OPS-2026-069 created for proof-case retirement and intra-Lyra handoff protocol standardisation as a governance artifact.",
+      "source": "memory/2026-03-16.md",
+      "governance_impact": "low — retirement of done job bundles is good hygiene; handoff-protocol standardisation may become a new governance artifact once actioned"
+    },
+    {
+      "type": "no_change",
+      "description": "No git commits to products/governance/ or assemblies/governance-policy/ since 2026-03-14. All governance product artifacts remain at last-reviewed state.",
+      "source": "git log (verified)"
+    }
+  ],
+  "topPriorities": [
+    {
+      "rank": 1,
+      "title": "Operate Governance as a real product with explicit outcomes and reviewable progress",
+      "status": "execution_in_progress",
+      "whyThisMattersNow": "Governance must model the same explicit goal/evidence/priority discipline it imposes on the rest of the portfolio. Credibility depends on this self-discipline being visible and reviewable.",
+      "currentStatus": "Holding. Governance product stack is active, well-structured, and being exercised through recurring nightly reporting. No drift detected against plan/metrics/decisions. The JOB-GOV-001 retirement signal (OPS-2026-069) is a minor nudge: retiring done proof-case bundles cleanly is part of the same discipline.",
+      "nextConcreteStep": "Continue explicit priorities, metrics, and review-output discipline. Confirm next formal product review on track for ~2026-04-11 per monthly cadence (MODEL.yaml last_reviewed: 2026-03-11). Track OPS-2026-069 (JOB-GOV-001 retirement) through to completion.",
+      "sourceArtifacts": [
+        "products/governance/04-execution/PLAN.md",
+        "products/governance/05-performance/METRICS.md",
+        "products/governance/07-decisions/DECISIONS.md",
+        "products/governance/MODEL.yaml",
+        "memory/2026-03-16.md (jobs review / OPS-2026-069)"
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "Complete Governance assembly v0.1 into a clearly consumable and verifiable pack",
+      "status": "needs_decision",
+      "whyThisMattersNow": "Governance only delivers transferable downstream value when the assembly can be installed, verified, reviewed, and maintained without hidden assumptions. Assembly is still 'candidate' status. A packaging decision intake signal was raised overnight 2026-03-15 and is awaiting triage. Additionally, the Control Tower identified broken links inside assembly artifacts on 2026-03-16 — a concrete repair that can be executed without a decision but should not be deferred indefinitely.",
+      "currentStatus": "Blocked on packaging/consumability decision. Assembly artifact structure exists (assembly.yaml, ACTIVATION.md, VERIFY.md, policy/ops artifacts), but the explicit packaging decision and verification-semantics alignment remain open. Governance intake signal 'intake:governance:2026-03-15:assembly-packaging-decision' is pending TDE triage. Broken assembly artifact links are an identified sub-task, deferred since 2026-03-16, fixable within ~30 minutes.",
+      "nextConcreteStep": "1. Fix broken links in governance assembly artifacts (sub-30-min, executable now). 2. Triage 'intake:governance:2026-03-15:assembly-packaging-decision' in TDE. 3. Make the packaging model explicit. 4. Align VERIFY.md to the chosen model. 5. Promote assembly status from candidate when packaging is confirmed.",
+      "sourceArtifacts": [
+        "products/governance/04-execution/PLAN.md",
+        "products/governance/04-execution/RISKS.md#R-002",
+        "assemblies/governance-policy/v0.1/assembly.yaml",
+        "assemblies/governance-policy/v0.1/ACTIVATION.md",
+        "assemblies/governance-policy/v0.1/VERIFY.md",
+        "memory/2026-03-16.md (CT overnight: broken assembly links)"
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "Extend machine-checkable governance toward the assembly surface and source-of-truth integrity",
+      "status": "execution_in_progress",
+      "whyThisMattersNow": "Governance's main leverage is machine-enforced validation. The next control-quality gain is reducing drift between product state, assembly state, and what the repo actually ships.",
+      "currentStatus": "Active but not yet staged. Repo-level validation is a known strength; assembly integrity/completeness is not yet part of that control surface per RISKS.md#R-003 and PLAN.md objectives 3-4. Correctly sequenced after Priority 2 packaging decision.",
+      "nextConcreteStep": "Define and stage the next validator increment for assembly integrity/completeness. Ensure product/assembly/source-of-truth linkages are explicit in governance artifacts. Do not initiate before Priority 2 packaging decision is settled.",
+      "sourceArtifacts": [
+        "products/governance/04-execution/PLAN.md",
+        "products/governance/04-execution/RISKS.md#R-003",
+        "products/governance/06-architecture/INTERFACES.md",
+        "products/governance/05-performance/METRICS.md"
+      ]
+    }
+  ],
+  "constraints": [
+    {
+      "id": "B-001",
+      "title": "Governance assembly v0.1 packaging/consumability decision is still open",
+      "impact": "Blocks Priority 2 from progressing; prevents assembly from moving from 'candidate' to a clearly-installed and verifiable state downstream.",
+      "state": "needs_decision",
+      "evidence": [
+        "assemblies/governance-policy/v0.1/assembly.yaml (status: candidate)",
+        "products/governance/04-execution/RISKS.md#R-002",
+        "memory/2026-03-16.md (intake signal carried forward)"
+      ]
+    },
+    {
+      "id": "B-002",
+      "title": "Broken links in governance assembly artifacts unresolved since 2026-03-16",
+      "impact": "Minor but concrete gap in assembly consumability; leaves artifacts partially unreliable as navigation aids for downstream users.",
+      "state": "needs_resolution",
+      "evidence": [
+        "memory/2026-03-16.md (CT overnight: identified, deferred as sub-30-min fix)"
+      ]
+    },
+    {
+      "id": "B-003",
+      "title": "Machine-checkable governance does not yet cover assembly integrity/completeness",
+      "impact": "Leaves a meaningful gap between governance intent and enforceable control over the assembly export surface.",
+      "state": "execution_in_progress",
+      "evidence": [
+        "products/governance/04-execution/RISKS.md#R-003",
+        "products/governance/05-performance/METRICS.md",
+        "products/governance/04-execution/PLAN.md"
+      ]
+    }
+  ],
+  "risksOrOpportunities": [
+    {
+      "id": "R-001",
+      "title": "Governance product can lag behind the standards it expects from other products",
+      "level": "medium",
+      "trend": "stable",
+      "note": "Nightly reporting, explicit priority refresh discipline, and emerging job-hygiene work (OPS-2026-069) are actively mitigating this."
+    },
+    {
+      "id": "R-002",
+      "title": "Governance assembly remains scaffolded rather than truly consumable",
+      "level": "high",
+      "trend": "stable",
+      "note": "Unchanged. Packaging decision intake signal raised 2026-03-15 still awaits triage. Broken links in assembly artifacts now add a secondary consumability signal."
+    },
+    {
+      "id": "R-003",
+      "title": "Machine-checkable governance does not yet cover the assembly surface strongly enough",
+      "level": "high",
+      "trend": "stable",
+      "note": "Correctly sequenced after packaging decision; no change in risk level."
+    },
+    {
+      "id": "R-004",
+      "title": "Registry and source-of-truth relationships can drift",
+      "level": "medium",
+      "trend": "stable",
+      "note": "No new drift detected. INTERFACES.md product-vs-assembly boundary rule holding. JOB-GOV-001 retirement will eventually produce a governance artifact for handoff-protocol standardisation — an opportunity to tighten this surface."
+    }
+  ],
+  "researchDelta": null,
+  "proposedTdeActions": [
+    {
+      "type": "signal",
+      "title": "Fix broken links in governance assembly artifacts",
+      "why": "Identified sub-30-min fix (CT overnight 2026-03-16) deferred to daytime. Now deferred again overnight — should not carry a third cycle.",
+      "urgency": "high",
+      "can_execute_without_peter": true
+    },
+    {
+      "type": "signal",
+      "title": "Triage 'intake:governance:2026-03-15:assembly-packaging-decision'",
+      "why": "The most concrete handle on the Priority 2 blocker. Triaging into a decision or work item unblocks the assembly progression path.",
+      "urgency": "high",
+      "can_execute_without_peter": false
+    },
+    {
+      "type": "signal",
+      "title": "Track OPS-2026-069 (JOB-GOV-001 retirement + handoff-protocol artifact) to completion",
+      "why": "Governance should own the handoff-protocol standardisation output. Retiring the proof-case bundle cleanly is consistent with Priority 1 product discipline.",
+      "urgency": "medium",
+      "can_execute_without_peter": false
+    },
+    {
+      "type": "signal",
+      "title": "Stage next validator increment for assembly integrity/completeness",
+      "why": "Closes main machine-checkable governance gap. Correctly sequenced after Priority 2 packaging decision.",
+      "urgency": "medium",
+      "can_execute_without_peter": false
+    },
+    {
+      "type": "signal",
+      "title": "Confirm next formal product review on track (~2026-04-11)",
+      "why": "MODEL.yaml declares monthly cadence (last_reviewed: 2026-03-11). Priority 1 discipline requires this to be visible and planned.",
+      "urgency": "low",
+      "can_execute_without_peter": false
+    }
+  ],
+  "priorityRefreshStatus": "unchanged",
+  "priorityRefreshNote": "Full product stack reviewed: PRODUCT.md, MODEL.yaml, VISION.md, STRATEGY.md, OPERATING_MODEL.md, PLAN.md, RISKS.md, METRICS.md, INTERFACES.md, DECISIONS.md, TOP_PRIORITIES.md, assembly.yaml, ACTIVATION.md, VERIFY.md, IMPLEMENT_NOW_FROM_RESEARCH_2026-03-14.md, plus memory/2026-03-16.md for cross-product context. No git changes to governance artifacts since 2026-03-14. All three current priorities remain correctly ordered and fully supported by the product stack. New cross-product signals (broken assembly links, OPS-2026-069) add detail to Priority 2 next-concrete-steps but do not change the priority ranking or strategic framing. TOP_PRIORITIES.md not updated — priorities remain valid as coded.",
+  "evidenceLinks": [
+    "products/governance/PRODUCT.md",
+    "products/governance/MODEL.yaml",
+    "products/governance/01-identity/VISION.md",
+    "products/governance/02-strategy/STRATEGY.md",
+    "products/governance/03-operating-model/OPERATING_MODEL.md",
+    "products/governance/04-execution/PLAN.md",
+    "products/governance/04-execution/RISKS.md",
+    "products/governance/04-execution/TOP_PRIORITIES.md",
+    "products/governance/04-execution/IMPLEMENT_NOW_FROM_RESEARCH_2026-03-14.md",
+    "products/governance/05-performance/METRICS.md",
+    "products/governance/06-architecture/INTERFACES.md",
+    "products/governance/07-decisions/DECISIONS.md",
+    "assemblies/governance-policy/v0.1/assembly.yaml",
+    "assemblies/governance-policy/v0.1/ACTIVATION.md",
+    "assemblies/governance-policy/v0.1/VERIFY.md",
+    "products/governance/04-execution/reports/2026-03-16-po-nightly-report.json",
+    "memory/2026-03-16.md"
+  ],
+  "sourceReferences": {
+    "canonicalTopPriorities": "products/governance/04-execution/TOP_PRIORITIES.md",
+    "priorNightlyReport": "products/governance/04-execution/reports/2026-03-16-po-nightly-report.json",
+    "supportingProductArtifacts": [
+      "products/governance/PRODUCT.md",
+      "products/governance/MODEL.yaml",
+      "products/governance/01-identity/VISION.md",
+      "products/governance/02-strategy/STRATEGY.md",
+      "products/governance/03-operating-model/OPERATING_MODEL.md",
+      "products/governance/04-execution/PLAN.md",
+      "products/governance/04-execution/RISKS.md",
+      "products/governance/05-performance/METRICS.md",
+      "products/governance/06-architecture/INTERFACES.md",
+      "products/governance/07-decisions/DECISIONS.md"
+    ],
+    "currentStateEvidence": [
+      "assemblies/governance-policy/v0.1/assembly.yaml",
+      "assemblies/governance-policy/v0.1/VERIFY.md",
+      "memory/2026-03-16.md"
+    ]
+  }
+}

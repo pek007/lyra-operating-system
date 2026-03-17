@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-03-02T18:28:41.543266+00:00",
+  "generatedAt": "2026-03-17T01:02:38.515849+00:00",
   "sourceCycleTimestamp": "2026-03-02T18:28:41.515208+00:00",
   "sourceTrigger": "cron",
   "statusSummary": {
     "activeBackground": {
       "count": 1,
-      "trend": "baseline"
+      "trend": "flat"
     },
     "atRisk": {
       "count": 0,
-      "trend": "baseline"
+      "trend": "flat"
     },
     "stalled": {
       "count": 1,
-      "trend": "baseline"
+      "trend": "flat"
     }
   },
   "guardrail": {
