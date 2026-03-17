@@ -36,9 +36,10 @@ def evaluate_ready_promotions(tasks: list[dict[str, Any]], *, tick_id: str, curr
             continue
 
         chain_policy = metadata.get("chain_policy") or {}
-        if chain_policy and not chain_policy.get("pilot_enabled", False):
-            skipped.append({"task_id": task["task_id"], "reason": "pilot_not_enabled"})
-            continue
+        # Broader rollout (authorized 2026-03-17 by Peter): pilot_enabled gate removed.
+        # All tasks with valid depends_on metadata are now eligible for chaining promotion.
+        # Bounded per cycle by max_claim in the job tick runner (target: 8 high-priority local tasks).
+        # Rollback trigger: guardrail alert, approval-gate bypass, or stalled count > 1.
 
         activation_rule = metadata.get("activation_rule", SUPPORTED_ACTIVATION_RULE)
         if activation_rule != SUPPORTED_ACTIVATION_RULE:

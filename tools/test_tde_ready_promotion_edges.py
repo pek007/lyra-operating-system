@@ -24,14 +24,17 @@ class TDEReadyPromotionEdgesTest(unittest.TestCase):
         self.assertEqual(result["promoted"], [])
         self.assertEqual(result["skipped"][0]["reason"], "predecessors_not_done")
 
-    def test_pilot_gate_blocks_when_not_enabled(self) -> None:
+    def test_broader_rollout_promotes_without_pilot_enabled(self) -> None:
+        # Broader rollout authorized 2026-03-17 by Peter: pilot_enabled gate removed.
+        # Tasks with chain_policy (e.g. {family: pilot-a}) but no pilot_enabled=True
+        # should now be promoted when predecessors are done.
         tasks = [
             {"task_id": "A", "status": "Done", "metadata": {}},
             {"task_id": "B", "status": "Triage", "metadata": {"depends_on": ["A"], "activation_rule": "all_predecessors_done", "chain_policy": {"family": "pilot-a"}}},
         ]
         result = evaluate_ready_promotions(tasks, tick_id="t3", current_time="2026-03-09T00:00:00+00:00")
-        self.assertEqual(result["promoted"], [])
-        self.assertEqual(result["skipped"][0]["reason"], "pilot_not_enabled")
+        self.assertEqual(len(result["promoted"]), 1)
+        self.assertEqual(result["promoted"][0]["task_id"], "B")
 
     def test_multiple_successors_promote_but_tick_can_bound_claims(self) -> None:
         tasks = [
