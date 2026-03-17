@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-17T01:02:16.988246+00:00",
+  "timestamp": "2026-03-17T05:45:02.807176+00:00",
   "gate": "TDE_DB_CANONICAL_CUTOVER_GATE_V1",
   "verdict": "GO_CANDIDATE",
   "checks": {
@@ -7,8 +7,8 @@
     "parity_threshold": 3,
     "parity_ok": true,
     "latest_shadow_status": "skipped",
-    "actions_count": 4,
-    "events_count": 15
+    "actions_count": 8,
+    "events_count": 22
   },
   "evidence": {
     "report_date": "2026-03-17",
