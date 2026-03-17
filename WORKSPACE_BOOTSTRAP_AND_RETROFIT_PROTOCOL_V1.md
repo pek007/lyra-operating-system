@@ -57,9 +57,11 @@ Determine:
 - which Lyra OS products this workspace consumes
 - which delivery modes are active for those products in this workspace
 - what local operating implications follow from that consumption
+- which **workspace enablement capabilities** must be instantiated locally in order for those consumed capabilities to be usable
 
 Primary output:
 - consumed-capability inventory or equivalent bootstrap notes
+- first-pass workspace enablement inventory (or equivalent notes)
 
 ### Step 3. Instantiate minimum package artifacts
 Create, at minimum:
@@ -90,6 +92,9 @@ It should route to:
 ### Step 6. Record open structural gaps
 If the workspace lacks important local artifacts, do not hide the gap.
 Record what is still missing and whether the workspace is only minimally operable or fully operable.
+
+Interpretation rule:
+- if a missing local component is required for repeated downstream capability consumption, treat it as a missing **workspace enablement capability instance**, not just a random documentation gap
 
 ### Step 7. Validate package minimum viability
 Check whether the workspace can be operated without relying mainly on transcript memory.

@@ -230,6 +230,30 @@ Primary product focus: operator visibility and control surface.
 
 ---
 
+## Workspace enablement capability family
+These capabilities exist to make downstream workspaces able to consume product capabilities correctly.
+They are not just local setup chores; they are part of Lyra OS capability delivery.
+
+- **WE.C1 — Workspace bootstrap/retrofit enablement**
+  - Distributed via: workspace standards + bootstrap/retrofit protocol + local package instantiation
+  - Consumers: `pxs`, future workspaces, operators
+  - Readiness: **usable**
+  - Main gaps: current downstream packages remain Level 1/minimal; more reusable instantiation patterns are needed
+
+- **WE.C2 — Process discovery and source-of-truth enablement**
+  - Distributed via: workspace artifacts + standards + local front-door scaffolding
+  - Consumers: `pxs`, future workspaces
+  - Readiness: **usable**
+  - Main gaps: pattern exists, but consumer-side local routing helpers are still uneven in maturity
+
+- **WE.C3 — Downstream capability packaging / consumer integration enablement**
+  - Distributed via: capability package patterns + local integration artifacts + proof/validation scaffolds
+  - Consumers: `pxs`, future workspaces
+  - Readiness: **draft**
+  - Main gaps: only now becoming explicit through the first `pxs` packaging proof case; reusable downstream installation/update pattern not yet mature
+
+---
+
 ## Cross-product / current-state observations
 
 ### 1. We do have real capabilities already
@@ -263,6 +287,10 @@ Today `pxs` can access capability through:
 
 But `pxs` still lacks a mature, low-ambiguity, packaged consumption interface.
 
+### 5. Workspace enablement is now visible as a distinct capability family
+The `pxs` proof case shows that consumer-side components required for downstream use should not be treated as bespoke workspace patchwork.
+They are **workspace enablement capabilities** and should be provided through bootstrap/retrofit and capability-package patterns as part of Lyra OS itself.
+
 ---
 
 ## Current top gaps
@@ -280,6 +308,9 @@ But `pxs` still lacks a mature, low-ambiguity, packaged consumption interface.
 
 4. **Interim-copy dependency still present**
    - Controlled, but not an end-state.
+
+5. **Workspace enablement capabilities are only partially formalized**
+   - Bootstrap/retrofit and local package patterns exist, but consumer-side integration helpers and repeatable downstream package shapes are still early.
 
 ---
 

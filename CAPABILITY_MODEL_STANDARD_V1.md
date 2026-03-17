@@ -72,6 +72,37 @@ Capabilities define:
 - **Delivery mode** = how the capability reaches a consumer
 - **Workspace operating package** = what the consumer must have locally to use it correctly
 
+## Capability classes
+Lyra OS should distinguish at least two capability classes.
+
+### 1. Product capabilities
+These are capabilities directly provided by a product, such as:
+- Task Management intake
+- Security boundary review
+- Governance decision discipline
+- Control Panel visibility surfaces
+
+### 2. Workspace enablement capabilities
+These are capabilities whose job is to make downstream workspaces able to consume product capabilities correctly.
+
+Typical examples:
+- workspace bootstrap/retrofit
+- process discovery front-door scaffolding
+- source-of-truth mapping
+- local capability routing integration
+- local consumer-side helper/adaptation patterns
+- local proof/validation scaffolds for downstream capability adoption
+
+These are real capabilities, not just one-off setup chores.
+They should be modeled, improved, packaged, and reviewed like other capabilities.
+
+### Relationship between the two classes
+- **Product capability** = the useful power being offered
+- **Workspace enablement capability** = the consumer-side capability that makes that power usable in a downstream workspace
+
+A downstream workspace package is therefore not just a bag of docs.
+It is often the instantiated local form of one or more workspace enablement capabilities.
+
 ## Relationship to discovery and workspace packages
 This standard must connect directly to the discovery model.
 

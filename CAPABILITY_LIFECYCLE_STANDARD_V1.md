@@ -254,6 +254,19 @@ Use `CLOSED_LOOP_IMPROVEMENT_MODEL_V1.md` to convert meaningful signals into dur
 ### Workspace operating package
 Use `WORKSPACE_OPERATING_PACKAGE_STANDARD_V1.md` and bootstrap/retrofit protocols when a downstream workspace must consume the capability.
 
+### Workspace enablement capabilities
+When a downstream workspace needs consumer-side components in order to use a product capability correctly, do not treat those components as ad hoc local glue.
+Treat them as **workspace enablement capabilities** with their own lifecycle.
+
+Examples:
+- bootstrap/retrofit package instantiation
+- local process-discovery integration
+- local source-of-truth mapping
+- local intake helpers
+- local validation/proof scaffolds
+
+These may be instantiated locally per workspace, but they should still be governed as capabilities provided by Lyra OS.
+
 ## Ownership model
 ### Products own:
 - capability definition
