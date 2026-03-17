@@ -1,0 +1,38 @@
+{
+  "artifactType": "tde_intake_packet",
+  "schemaVersion": "1.0.0",
+  "intake_id": "<WORKSPACE>-WORK-<YYYY-MM-DD>-<SLUG>-001",
+  "intake_class": "work",
+  "source_system": "<workspace>",
+  "source_type": "document",
+  "source_reference": "<local-artifact>#<anchor-or-section>",
+  "submitted_at": "<ISO-8601>",
+  "submitted_by": "<operator-or-agent>",
+  "title": "<bounded work title>",
+  "summary": "<short human-reviewable summary>",
+  "body": "<bounded executable work description, expected output, and scope notes>",
+  "priority_hint": "medium",
+  "workspace_scope": "<workspace>",
+  "product_scope": "task-management",
+  "related_entities": [
+    {
+      "entity_type": "workspace_doc",
+      "entity_ref": "<local-source-doc>",
+      "relationship": "source_backlog_item"
+    },
+    {
+      "entity_type": "capability",
+      "entity_ref": "<CAPABILITY-ID>",
+      "relationship": "provider_capability"
+    }
+  ],
+  "evidence_links": [
+    {
+      "kind": "workspace_plan",
+      "ref": "<local-plan-doc>",
+      "note": "Source of the bounded local item selected for intake"
+    }
+  ],
+  "proposed_action": "Validate this packet against the provider-owned TDE intake contract and determine whether it should be accepted as canonical work intake.",
+  "requested_action": "Create or update canonical work for this bounded workspace item while preserving provenance back to the local workspace planning artifacts."
+}
