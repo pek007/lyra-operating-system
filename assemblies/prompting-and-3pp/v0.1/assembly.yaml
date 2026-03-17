@@ -35,6 +35,6 @@ enforcement:
   evidence_required: true
 consumers: [PXS]
 links:
-  changelog: assemblies/interfaces/v0.1/CHANGELOG.md
-  activation_doc: assemblies/interfaces/v0.1/ACTIVATION.md
-  verify_doc: assemblies/interfaces/v0.1/VERIFY.md
+  changelog: assemblies/prompting-and-3pp/v0.1/CHANGELOG.md
+  activation_doc: assemblies/prompting-and-3pp/v0.1/ACTIVATION.md
+  verify_doc: assemblies/prompting-and-3pp/v0.1/VERIFY.md
