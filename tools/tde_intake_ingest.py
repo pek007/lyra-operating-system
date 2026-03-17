@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_REGISTRY = ROOT / "schemas/_registry.json"
 DEFAULT_INTAKE_SCHEMA_KEY = "tde_intake_packet"
 DEFAULT_INTAKE_SCHEMA_VERSION = "1.0.0"
+DEFAULT_DB_PATH = "os/runtime/tde_state.sqlite"
 
 
 class ValidationError(RuntimeError):
