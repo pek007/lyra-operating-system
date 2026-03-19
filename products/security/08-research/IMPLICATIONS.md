@@ -3,34 +3,49 @@
 Status: Active
 Product: Security (`A-004`)
 Owner: Lyra
-Date: 2026-03-15
+Date: 2026-03-19
 
 ## Purpose
-Translate research and doctrine into concrete product impact.
+Translate Security doctrine, estate changes, upstream platform changes, and ecosystem findings into concrete product impact.
 
 ## Current implications
 
 ### 1. Architecture implication
-Boundary enforcement should remain Security's top architectural concern until runtime evidence matches the declared control model.
-- **Impact area:** `06-architecture/BOUNDARY.md`, `06-architecture/INTERFACES.md`
-- **Current implication:** prefer narrowly testable boundary controls over broader descriptive refinement
+Boundary enforcement remains a top architectural concern, but it now sits inside a broader estate model rather than standing alone as the only major Security question.
+- **Impact area:** `06-architecture/BOUNDARY.md`, `06-architecture/INTERFACES.md`, `06-architecture/ESTATE_MAP.md`
+- **Current implication:** keep trust-boundary expectations explicit and honest while ensuring the broader operating estate and new surfaces are also visible
 
-### 2. Execution implication
-Security overnight work should bias toward closing runtime-reality gaps and hardening execution surfaces rather than producing richer narrative reporting.
-- **Impact area:** `04-execution/TOP_PRIORITIES.md`, `04-execution/PLAN.md`
-- **Current implication:** keep priorities oriented around enforcement, verification, and hardening
+### 2. Estate implication
+Security needs a canonical view of the environments it protects and the surfaces that materially affect posture.
+- **Impact area:** `06-architecture/ESTATE_MAP.md`, `04-execution/SURFACE_CHANGE_LOG.md`, `06-architecture/CAPABILITY_MAP.md`
+- **Current implication:** treat estate awareness and surface-change visibility as first-class Security inputs, not background assumptions
 
-### 3. Research implication
-Security should maintain broad surveillance across AI-agent security themes, but only keep a few deep-dive themes active at a time.
-- **Impact area:** `08-research/*`
-- **Current implication:** broad radar plus three deep dives is the default operating posture
+### 3. Upstream-monitoring implication
+OpenClaw release and security-impact monitoring is now an operational Security function, not optional background research.
+- **Impact area:** `08-research/UPSTREAM_MONITORING_MODEL.md`, `04-execution/TOP_PRIORITIES.md`, `04-execution/ROADMAP.md`
+- **Current implication:** upstream changes should end in explicit watch, plan, update, or defer-with-risk dispositions
 
-### 4. Governance implication
+### 4. Ecosystem-pattern implication
+Security should learn from external wrappers, hardening approaches, and recurring practitioner patterns even when direct adoption is not the goal.
+- **Impact area:** `08-research/ECOSYSTEM_PATTERN_LOG.md`, `08-research/IMPLICATIONS.md`, `06-architecture/CAPABILITY_MAP.md`
+- **Current implication:** use ecosystem signals as design intelligence and capability-gap input, not just informal browsing
+
+### 5. Platform-onboarding implication
+New service introductions such as Google Workspace should be treated as material Security review triggers because they expand identity, communication, sharing, and integration surfaces.
+- **Impact area:** `04-execution/SURFACE_CHANGE_LOG.md`, `06-architecture/ESTATE_MAP.md`, `06-architecture/CAPABILITY_MAP.md`, future baseline artifacts
+- **Current implication:** each major new platform should produce explicit posture and capability consequences rather than staying an implicit environment change
+
+### 6. Execution implication
+Security work should continue to bias toward closing runtime-reality gaps and hardening high-risk execution surfaces rather than producing richer narrative reporting alone.
+- **Impact area:** `04-execution/TOP_PRIORITIES.md`, `04-execution/PLAN.md`, `06-architecture/CAPABILITY_MAP.md`
+- **Current implication:** keep priorities oriented around enforcement, verification, traceability, and usable control design
+
+### 7. Governance implication
 Control Tower should consume compact Security deltas, not the full product-local reasoning stream, unless there is a major exception or decision need.
 - **Impact area:** `CONTROL_TOWER_OVERNIGHT_SYNTHESIS_POLICY_V1.md`, nightly synthesis artifacts
-- **Current implication:** preserve context separation between Security and main-session control-tower work
+- **Current implication:** preserve context separation while ensuring Security deltas cover estate changes, upstream changes, and material new capability needs
 
-### 5. Future roadmap implication
-Browser/node/device risk and broader agent-runtime abuse patterns should likely become a more explicit future roadmap thread once the current boundary and execution-surface gaps are narrowed.
-- **Impact area:** `04-execution/ROADMAP.md`
-- **Current implication:** watch now, deepen later unless triggered by material change
+### 8. Future roadmap implication
+Browser/node/device risk, broader agent-runtime abuse patterns, and external platform surfaces should become more explicit roadmap threads as the product matures.
+- **Impact area:** `04-execution/ROADMAP.md`, `06-architecture/CAPABILITY_MAP.md`
+- **Current implication:** watch broadly now, deepen selectively where estate change, upstream change, or material exposure justifies it
