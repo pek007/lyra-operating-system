@@ -224,14 +224,15 @@ Evidence supporting that status:
 - response-state coverage now includes `accepted`, `accepted_no_runner`, `accepted_pending_binding`, `rejected_invalid_request`, `duplicate`, and `recorded_no_action`
 - minimal deterministic processor now validates request envelope + nested payload and emits a response envelope for bounded cases
 - governed write-path now exists for deterministic response-envelope output under `control/runtime/pxs-tm-responses/`
+- first bounded producer path now exists: `pxs/docs/now-next-later.md#next` -> governed request artifact -> processor -> governed response artifact
 
 This is not yet full operational automation, but it is beyond descriptive design.
 
 ## Next likely interface evolution
 Near-term expected shape:
-- live bounded producer emission from inside `pxs` runtime flows
 - tighter compatibility notes for consumer/provider versions
 - expanded bounded handling logic for `accepted_no_runner`, `accepted_pending_binding`, and `recorded_no_action`
+- optional additional producer paths beyond `now-next-later.md#next` once the first path remains stable
 
 Possible later shapes:
 - clearer capability-pack style distribution

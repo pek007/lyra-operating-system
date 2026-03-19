@@ -1,0 +1,42 @@
+{
+  "artifactType": "pxs_tm_request_envelope",
+  "schemaVersion": "1.0.0",
+  "request_id": "pxs-nnl-next-d59e26956e",
+  "consumer_workspace": "pxs",
+  "request_type": "intake",
+  "canonical_contract_ref": "products/task-management/06-architecture/TDE_INTAKE_INTERFACE_CONTRACT_V1.md",
+  "payload_schema_ref": "schemas/tde_intake_packet/v1.0.0.schema.json",
+  "payload_schema_version": "1.0.0",
+  "payload_inline": {
+    "artifactType": "tde_intake_packet",
+    "schemaVersion": "1.0.0",
+    "intake_id": "pxs-nnl-next-d59e26956e",
+    "intake_class": "work",
+    "source_system": "pxs",
+    "source_type": "document",
+    "source_reference": "pxs/docs/now-next-later.md#next",
+    "submitted_at": "2026-03-19T20:15:15Z",
+    "submitted_by": "Vega",
+    "title": "Build first vertical slice",
+    "summary": "Emit the current first pxs Next priority into the bounded PXS -> Task Management contract path: Build first vertical slice",
+    "body": "Produced automatically from pxs/docs/now-next-later.md#next. Current first Next item: Build first vertical slice",
+    "priority_hint": "high",
+    "workspace_scope": "pxs",
+    "product_scope": null,
+    "related_entities": [
+      {
+        "entity_type": "artifact",
+        "entity_ref": "pxs/docs/now-next-later.md",
+        "relationship": "source_priority_surface"
+      }
+    ],
+    "evidence_links": [],
+    "proposed_action": "form_bounded_execution_item",
+    "requested_action": "Turn 'Build first vertical slice' into one bounded execution-ready item with explicit scope and next action.",
+    "success_signal": "A bounded execution item or equivalent Task Management target exists and can be reviewed by another operator."
+  },
+  "submitted_by": "Vega",
+  "submitted_at": "2026-03-19T20:15:15Z",
+  "source_reference": "pxs/docs/now-next-later.md#next",
+  "note": "Automatically emitted from the first Next bullet in pxs/docs/now-next-later.md"
+}
