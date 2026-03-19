@@ -97,15 +97,129 @@ This interface should be considered operationally usable when:
 - compatibility/versioning semantics are not yet explicit enough
 - Phase 1 boundary acceptance is no longer the live blocker; the live gap is the missing minimal executable consumption contract layer
 
+## Minimal executable slice v1
+
+### Design choice
+The first executable slice uses **artifact-mediated packet exchange**, not a dedicated live service boundary.
+
+Reason:
+- it matches the current Lyra OS -> `pxs` boundary posture
+- it keeps transport explicit without introducing premature runtime coupling
+- it can be validated and exercised immediately using current artifacts and tooling
+
+### Transport
+Initial transport choice:
+- `pxs` produces a request packet as a governed artifact
+- Task Management consumes that packet through the product-owned intake/acceptance contracts
+- Task Management returns an explicit response artifact/result rather than relying on inferred success
+
+This keeps the first executable contract compatible with:
+- current workspace/package discipline
+- explicit artifact review
+- future evolution toward stronger schema/service packaging if justified
+
+### Request envelope
+Initial request envelope:
+- envelope id
+- envelope version
+- consumer workspace (`pxs`)
+- request type (`intake` | `assignment_acceptance`)
+- referenced canonical contract
+- payload schema/version
+- payload artifact or inline payload reference
+- submitted by
+- submitted at
+- source reference
+
+Semantics:
+- `request_type=intake` maps to `TDE_INTAKE_INTERFACE_CONTRACT_V1.md`
+- `request_type=assignment_acceptance` maps to `TDE_ASSIGNMENT_ACCEPTANCE_CONTRACT_V1.md`
+- the envelope does not replace the canonical product contracts; it makes `pxs` consumption explicit and versionable
+
+### Response envelope
+Initial response envelope:
+- response id
+- response version
+- request id
+- handled by
+- handled at
+- status (`accepted` | `accepted_no_runner` | `accepted_pending_binding` | `rejected_invalid_request` | `duplicate` | `recorded_no_action`)
+- canonical target refs (task id, decision ref, evidence ref, or artifact ref as applicable)
+- validation errors (if any)
+- note
+
+Semantics:
+- when the request type is assignment-focused, the response should align to the assignment-acceptance result vocabulary wherever possible
+- `recorded_no_action` is allowed for signal/intake cases where valid recording does not justify new executable work
+- success must be explicit; no consumer should infer success from side effects alone
+
+### Validation and error semantics
+Validation rules for the first slice:
+1. request envelope must be structurally valid
+2. referenced canonical contract must be declared
+3. payload version must be present
+4. provenance/source fields must be complete
+5. invalid requests must fail closed with explicit response output
+
+Error/result stance:
+- invalid envelope or incompatible payload -> `rejected_invalid_request`
+- valid duplicate request -> `duplicate`
+- valid intake recorded but no new executable action required -> `recorded_no_action`
+- valid assignment packet accepted but no runner -> `accepted_no_runner`
+- valid assignment packet accepted but binding incomplete -> `accepted_pending_binding`
+
+### Compatibility and versioning
+Versioning rules:
+- request and response envelopes each carry their own version
+- canonical payload contracts keep their own independent versioning
+- breaking changes require explicit version bump
+- `pxs` must declare which envelope version it emits
+- Task Management must state which versions it accepts
+
+### Worked examples
+#### Example 1 — executable work intake
+`pxs` emits:
+- request type: `intake`
+- canonical contract: `TDE_INTAKE_INTERFACE_CONTRACT_V1.md`
+- payload class: `work`
+- source reference: a concrete `pxs` artifact or issue
+
+Expected response:
+- status: explicit acceptance/recording result
+- canonical target ref: created/updated task or linked artifact
+- note: any next-step clarification
+
+#### Example 2 — assignment acceptance request
+`pxs` emits:
+- request type: `assignment_acceptance`
+- canonical contract: `TDE_ASSIGNMENT_ACCEPTANCE_CONTRACT_V1.md`
+- payload schema: `tde_assignment_packet@1.0.0`
+
+Expected response:
+- status: one of `accepted`, `accepted_no_runner`, `accepted_pending_binding`, `rejected_invalid_request`, `duplicate`
+- canonical target ref: created/updated task id when applicable
+- validation output when rejected
+
+#### Example 3 — signal intake with no new task
+`pxs` emits:
+- request type: `intake`
+- canonical contract: `TDE_INTAKE_INTERFACE_CONTRACT_V1.md`
+- payload class: `signal`
+- source reference: review/status artifact
+
+Expected response:
+- status: `recorded_no_action` or explicit linked update result
+- canonical target ref: updated artifact/evidence reference where applicable
+
 ## Next likely interface evolution
 Near-term expected shape:
-- minimal schema-backed request/response contract with validation/error semantics
-- explicit transport choice consistent with the OS→PXS integration boundary
-- worked examples for the first pilot path
+- schema files for the `pxs` request/response envelopes
+- worked pilot examples exercised end-to-end
+- tighter compatibility notes for consumer/provider versions
 
 Possible later shapes:
 - clearer capability-pack style distribution
 - fuller schema-backed task/decision contract
 - a service boundary for consumer interaction if/when justified
 
-For now, the correct interface is a documented operating contract that should be tightened into a minimal executable contract before real downstream consumption claims are treated as proven.
+For now, the correct interface is a documented operating contract with a first executable slice, which should next be backed by concrete schemas and pilot examples before downstream consumption claims are treated as proven.
