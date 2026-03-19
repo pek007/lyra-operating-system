@@ -41,9 +41,10 @@ Create or update an entry when a material change occurs that could affect:
 - **Security significance:** This is a material expansion of the attack surface. It introduces new identity/admin concerns, sharing and data-leakage risk, phishing and social-engineering exposure, and new external integration paths.
 - **Capability implications:** Increases need for identity/access posture, platform-onboarding review, document-sharing governance, integration review, auditability/logging expectations, and baseline guidance for external SaaS use.
 - **Required artifact updates:** `06-architecture/ESTATE_MAP.md`, `06-architecture/CAPABILITY_MAP.md`, `04-execution/TOP_PRIORITIES.md`, potentially `05-performance/PXS_DEPLOYMENT_BASELINE.md` and future workspace-local posture guidance
-- **Decision / disposition:** Treat as a high-priority capability-planning trigger. Security should assess the minimum acceptable posture for Google Workspace use in `pxs`.
+- **Decision / disposition:** Treat as a high-priority capability-planning trigger. Initial Security assessment completed; minimum acceptable posture now needs checklist/baseline translation.
 - **Owner:** Lyra / Security
-- **Status:** Open — assessment and posture translation required
+- **Status:** In progress — first assessment completed, posture translation still required
+- **Linked assessment:** `products/security/04-execution/2026-03-19_GOOGLE_WORKSPACE_SECURITY_ASSESSMENT__PXS.md`
 
 ### 2026-03-19 — Fast-moving OpenClaw release stream recognized as a standing security input
 - **Change:** Security explicitly recognizes that OpenClaw ships frequent releases, including fixes for known weaknesses, and that version drift may carry residual risk.
