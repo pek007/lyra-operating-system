@@ -85,3 +85,19 @@ Date: 2026-03-17
 - Evidence: first-pass governed skill portfolio artifacts and capability-linked local skill implementation in current workspace
 - Known gaps / risks: lifecycle/testing practice is newly formalized and not yet exercised across several real skill changes
 - Upgrade / retirement trigger: upgrade when multiple skill create/improve/retire cycles have been executed through the standard; retire or narrow if the capability moves into a different governance mechanism.
+
+## A-008.C6 — Bounded governance verification cycle execution
+- Owning product: Governance
+- Purpose: Run one bounded Governance VERIFY cycle consistently, with clear evidence output and minimal interpretation drift.
+- Scope / boundary: Verifies one governance artifact, process, claim, packaging surface, or control condition at a time; does not broaden into a general governance review or rewrite policy broadly during a bounded cycle.
+- Primary consumers: Governance lane, Control Panel, future scheduled governance review loops
+- Delivery mode(s): `skill`, supported by governance and assembly verification artifacts
+- Entrypoint / interface: `skills/governance-verify-cycle/`; governance and assembly verification surfaces
+- Canonical artifacts: `skills/governance-verify-cycle/SKILL.md`, `skills/governance-verify-cycle/references/verify-checklist.md`, `SKILL_CONCEPTS_FIRST_WAVE_V1.md`, `assemblies/governance-policy/v0.1/VERIFY.md`
+- Dependencies: governance artifacts, evidence paths, decision/risk records, assembly verification surfaces where relevant
+- Constraints / guardrails: no broad policy rewrites during bounded verification; escalate authority/risk issues and material standards/boundary implications; avoid non-deterministic evidence placement
+- Readiness: draft
+- Lifecycle state: building
+- Evidence: first-wave concept defined in `SKILL_CONCEPTS_FIRST_WAVE_V1.md`; governance assembly verification surface already exists in `assemblies/governance-policy/v0.1/VERIFY.md`
+- Known gaps / risks: representative live-run evidence still needs to be captured; evidence path conventions may need tightening after first real uses
+- Upgrade / retirement trigger: upgrade when multiple real bounded VERIFY cycles complete with reliable outputs and evidence placement; retire or narrow if a stronger runtime-native verification mechanism supersedes skill delivery.
