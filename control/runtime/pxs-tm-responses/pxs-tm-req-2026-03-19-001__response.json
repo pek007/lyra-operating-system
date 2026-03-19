@@ -1,0 +1,23 @@
+{
+  "artifactType": "pxs_tm_response_envelope",
+  "schemaVersion": "1.0.0",
+  "response_id": "pxs-tm-req-2026-03-19-001:response",
+  "request_id": "pxs-tm-req-2026-03-19-001",
+  "handled_by": "Lyra",
+  "handled_at": "2026-03-19T20:02:13Z",
+  "status": "accepted",
+  "canonical_target_refs": [
+    {
+      "kind": "artifact",
+      "ref": "pxs/docs/now-next-later.md#next",
+      "note": "Source reference for the accepted request."
+    },
+    {
+      "kind": "artifact",
+      "ref": "products/task-management/06-architecture/TDE_INTAKE_INTERFACE_CONTRACT_V1.md",
+      "note": "Canonical contract used for handling."
+    }
+  ],
+  "validation_errors": [],
+  "note": "Request accepted by the minimal processor after envelope and nested payload validation."
+}

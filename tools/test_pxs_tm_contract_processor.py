@@ -5,7 +5,7 @@ import json
 import tempfile
 from pathlib import Path
 
-from pxs_tm_contract_processor import process_request
+from pxs_tm_contract_processor import process_request, write_processed_response
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -47,6 +47,18 @@ def run_tests() -> None:
         rejected = process_request(request_path=bad_payload_path, search_root=ROOT / "control/runtime/empty-duplicates")
         assert rejected["status"] == "rejected_invalid_request"
         assert rejected["validation_errors"]
+
+    with tempfile.TemporaryDirectory() as td:
+        output_dir = Path(td) / "responses"
+        out_path = write_processed_response(
+            request_path=examples / "PXS_TM_REQUEST_ENVELOPE_INTAKE_WORK_V1.json",
+            search_root=ROOT / "control/runtime/empty-duplicates",
+            output_dir=output_dir,
+        )
+        assert out_path.exists()
+        written = json.loads(out_path.read_text(encoding="utf-8"))
+        assert written["artifactType"] == "pxs_tm_response_envelope"
+        assert written["request_id"] == "pxs-tm-req-2026-03-19-001"
 
     print("[PASS] PXS Task Management contract processor tests passed")
 

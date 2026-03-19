@@ -9,6 +9,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_REGISTRY = ROOT / "schemas/_registry.json"
+DEFAULT_RESPONSE_DIR = ROOT / "control/runtime/pxs-tm-responses"
 
 
 class ContractValidationError(RuntimeError):
@@ -61,6 +62,8 @@ def _validate_against_schema(payload: dict[str, Any], artifact_type: str, schema
 
 
 def _find_duplicate_response(request_id: str, search_root: Path) -> Path | None:
+    if not search_root.exists():
+        return None
     for path in sorted(search_root.rglob("*.json")):
         try:
             data = _load_json(path)
@@ -69,7 +72,7 @@ def _find_duplicate_response(request_id: str, search_root: Path) -> Path | None:
         if data.get("artifactType") != "pxs_tm_response_envelope":
             continue
         if data.get("request_id") == request_id:
-            return path.relative_to(ROOT)
+            return path.relative_to(ROOT) if path.is_relative_to(ROOT) else path
     return None
 
 
@@ -89,7 +92,7 @@ def _build_response(*, request: dict[str, Any], status: str, handled_at: str, no
 
 
 def process_request(*, request_path: Path, search_root: Path | None = None) -> dict[str, Any]:
-    search_root = search_root or (ROOT / "products/task-management/07-decisions/examples")
+    search_root = search_root or DEFAULT_RESPONSE_DIR
     request = _load_json(request_path)
     now = _iso_now()
 
@@ -168,19 +171,42 @@ def process_request(*, request_path: Path, search_root: Path | None = None) -> d
     )
 
 
+def default_output_path(*, request: dict[str, Any], output_dir: Path | None = None) -> Path:
+    output_dir = output_dir or DEFAULT_RESPONSE_DIR
+    return output_dir / f"{request['request_id']}__response.json"
+
+
+def write_processed_response(*, request_path: Path, search_root: Path | None = None, output_dir: Path | None = None) -> Path:
+    request = _load_json(request_path)
+    response = process_request(request_path=request_path, search_root=search_root)
+    out_path = default_output_path(request=request, output_dir=output_dir)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(json.dumps(response, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return out_path
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Process a PXS Task Management contract request envelope.")
     parser.add_argument("request", help="Path to the request envelope JSON file")
     parser.add_argument("--search-root", help="Directory to scan for duplicate response envelopes")
     parser.add_argument("--output", help="Optional path to write the response envelope JSON")
+    parser.add_argument("--write-governed", action="store_true", help="Write the response to the governed response directory")
+    parser.add_argument("--output-dir", help="Override the governed response output directory")
     args = parser.parse_args()
 
     request_path = Path(args.request).resolve()
-    response = process_request(
-        request_path=request_path,
-        search_root=Path(args.search_root).resolve() if args.search_root else None,
-    )
+    search_root = Path(args.search_root).resolve() if args.search_root else None
 
+    if args.write_governed:
+        out_path = write_processed_response(
+            request_path=request_path,
+            search_root=search_root,
+            output_dir=Path(args.output_dir).resolve() if args.output_dir else None,
+        )
+        print(str(out_path))
+        return
+
+    response = process_request(request_path=request_path, search_root=search_root)
     text = json.dumps(response, indent=2, ensure_ascii=False) + "\n"
     if args.output:
         Path(args.output).write_text(text, encoding="utf-8")
