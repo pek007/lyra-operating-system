@@ -222,13 +222,14 @@ Evidence supporting that status:
 - semi-real pilot completed against a real `pxs` planning artifact
 - first real bounded handling flow completed with a real Task Management state update
 - response-state coverage now includes `accepted`, `accepted_no_runner`, `accepted_pending_binding`, `rejected_invalid_request`, `duplicate`, and `recorded_no_action`
+- minimal deterministic processor now validates request envelope + nested payload and emits a response envelope for bounded cases
 
 This is not yet full operational automation, but it is beyond descriptive design.
 
 ## Next likely interface evolution
 Near-term expected shape:
-- one minimal processor that validates request envelope + nested payload and emits deterministic response envelope
 - live bounded producer emission from inside `pxs` runtime flows
+- deterministic write-path from processor output to governed response artifacts
 - tighter compatibility notes for consumer/provider versions
 
 Possible later shapes:
