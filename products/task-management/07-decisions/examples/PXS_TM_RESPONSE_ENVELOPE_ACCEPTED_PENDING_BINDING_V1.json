@@ -1,0 +1,23 @@
+{
+  "artifactType": "pxs_tm_response_envelope",
+  "schemaVersion": "1.0.0",
+  "response_id": "pxs-tm-res-2026-03-19-021",
+  "request_id": "pxs-tm-req-2026-03-19-021",
+  "handled_by": "Lyra",
+  "handled_at": "2026-03-19T20:41:00Z",
+  "status": "accepted_pending_binding",
+  "canonical_target_refs": [
+    {
+      "kind": "artifact",
+      "ref": "products/task-management/06-architecture/TDE_ASSIGNMENT_ACCEPTANCE_CONTRACT_V1.md",
+      "note": "Binding-sensitive acceptance semantics originate here"
+    },
+    {
+      "kind": "evidence",
+      "ref": "knowledge/evidence/2026-03/2026-03-19__pxs-consumption-response-coverage-v1.md",
+      "note": "Response-coverage hardening evidence"
+    }
+  ],
+  "validation_errors": [],
+  "note": "Request is valid and accepted, but required binding/policy/objective context is incomplete for normal pickup."
+}

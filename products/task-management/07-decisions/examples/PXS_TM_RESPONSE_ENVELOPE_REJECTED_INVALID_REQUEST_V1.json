@@ -1,0 +1,29 @@
+{
+  "artifactType": "pxs_tm_response_envelope",
+  "schemaVersion": "1.0.0",
+  "response_id": "pxs-tm-res-2026-03-19-022",
+  "request_id": "pxs-tm-req-2026-03-19-022",
+  "handled_by": "Lyra",
+  "handled_at": "2026-03-19T20:42:00Z",
+  "status": "rejected_invalid_request",
+  "canonical_target_refs": [
+    {
+      "kind": "evidence",
+      "ref": "knowledge/evidence/2026-03/2026-03-19__pxs-consumption-response-coverage-v1.md",
+      "note": "Response-coverage hardening evidence"
+    }
+  ],
+  "validation_errors": [
+    {
+      "code": "missing_payload_schema_version",
+      "message": "Request payload_schema_version is required for contract compatibility.",
+      "field": "payload_schema_version"
+    },
+    {
+      "code": "missing_source_reference",
+      "message": "Request source_reference must be present for provenance and traceability.",
+      "field": "source_reference"
+    }
+  ],
+  "note": "Request rejected because required provenance and compatibility fields were missing."
+}

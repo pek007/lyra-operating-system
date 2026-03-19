@@ -1,0 +1,23 @@
+{
+  "artifactType": "pxs_tm_response_envelope",
+  "schemaVersion": "1.0.0",
+  "response_id": "pxs-tm-res-2026-03-19-020",
+  "request_id": "pxs-tm-req-2026-03-19-020",
+  "handled_by": "Lyra",
+  "handled_at": "2026-03-19T20:40:00Z",
+  "status": "accepted_no_runner",
+  "canonical_target_refs": [
+    {
+      "kind": "artifact",
+      "ref": "products/task-management/06-architecture/PXS_CONSUMPTION_INTERFACE.md",
+      "note": "Request accepted into the Task Management contract surface"
+    },
+    {
+      "kind": "evidence",
+      "ref": "knowledge/evidence/2026-03/2026-03-19__pxs-consumption-response-coverage-v1.md",
+      "note": "Response-coverage hardening evidence"
+    }
+  ],
+  "validation_errors": [],
+  "note": "Request is valid and accepted, but no known runner/execution path is currently available for this bounded flow."
+}
