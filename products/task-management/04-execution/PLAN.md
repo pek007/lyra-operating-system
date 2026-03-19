@@ -28,6 +28,7 @@ Rolling near-term plan for the next 2-6 weeks.
 - define and refine the formal Task Management → `pxs` consumption interface
 - create a compact readiness/health scorecard for Task Management / TDE
 - connect the product model more explicitly to readiness evidence and downstream usage
+- convert the real `pxs` priority `Build first vertical slice` into one bounded execution-ready item by defining the smallest acceptable slice, explicit non-goals, and success signal through the PXS consumption contract pilot path
 - the interim inbox experiment has been completed and superseded as a primary coordination direction
 - integrate Delivery’s accepted pilot contract into the shared pilot flow by defining the smallest acceptable GUI slice, explicit non-goals, and the initial decision/evidence structure ✅
 - shift coordination design work toward TDE-native assigned work with assignee wake/notification
