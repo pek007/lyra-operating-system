@@ -69,3 +69,19 @@ Date: 2026-03-17
 - Evidence: successful retrofit of `pxs` into minimally valid package
 - Known gaps / risks: current downstream packages remain Level 1 / minimal; stronger local packages still needed
 - Upgrade / retirement trigger: upgrade when downstream workspaces need Level 2/3 package maturity patterns
+
+## A-008.C5 — Skill portfolio governance and lifecycle management
+- Owning product: Governance
+- Purpose: Keep the skill portfolio owned, classified, capability-linked where relevant, lifecycle-managed, and architecturally coherent.
+- Scope / boundary: Governs how skills are created, classified, reviewed, improved, constrained, and retired; does not replace product-specific ownership of the capabilities delivered through skills.
+- Primary consumers: Lyra, product owners, future workspaces consuming governed skill packs
+- Delivery mode(s): governance artifacts + skill
+- Entrypoint / interface: `SKILL_ARCHITECTURE_STANDARD_V1.md`, `SKILL_PORTFOLIO_REGISTRY.md`, `skills/skill-governance/`
+- Canonical artifacts: `SKILL_ARCHITECTURE_STANDARD_V1.md`, `SKILL_PORTFOLIO_REGISTRY.md`, `skills/skill-governance/SKILL.md`, `skills/skill-governance/references/lifecycle-checklist.md`
+- Dependencies: capability model, delivery-mode framework, product ownership discipline, skill-creator patterns
+- Constraints / guardrails: must prevent loose/unowned skills, avoid turning skills into a parallel unmanaged process layer, and avoid forcing skill delivery where another mode is clearly better.
+- Readiness: draft
+- Lifecycle state: building
+- Evidence: first-pass governed skill portfolio artifacts and capability-linked local skill implementation in current workspace
+- Known gaps / risks: lifecycle/testing practice is newly formalized and not yet exercised across several real skill changes
+- Upgrade / retirement trigger: upgrade when multiple skill create/improve/retire cycles have been executed through the standard; retire or narrow if the capability moves into a different governance mechanism.

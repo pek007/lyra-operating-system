@@ -26,6 +26,7 @@ It complements skill folder metadata and prevents loose, unowned skills.
 | Skill | Category | Owner | Product | Capability ID | Lifecycle | Readiness | Review date | Notes |
 |---|---|---|---|---|---|---|---|---|
 | control-panel-coordination | product-capability | Lyra via Control Panel | CP-001 | CP-001.C1 (proposed) | building | draft | 2026-03-26 | First local product-capability skill; normalize metadata and link to capability record |
+| skill-governance | product-capability | Lyra via Governance | A-008 | A-008.C5 | building | draft | 2026-03-26 | Meta-skill for create/audit/test/improve/constrain/retire discipline across the skill portfolio |
 
 ## Skills requiring immediate cleanup
 
