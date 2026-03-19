@@ -1,0 +1,48 @@
+{
+  "artifactType": "pxs_tm_request_envelope",
+  "schemaVersion": "1.0.0",
+  "request_id": "pxs-tm-req-2026-03-19-001",
+  "consumer_workspace": "pxs",
+  "request_type": "intake",
+  "canonical_contract_ref": "products/task-management/06-architecture/TDE_INTAKE_INTERFACE_CONTRACT_V1.md",
+  "payload_schema_ref": "schemas/tde_intake_packet/v1.0.0.schema.json",
+  "payload_schema_version": "1.0.0",
+  "payload_inline": {
+    "artifactType": "tde_intake_packet",
+    "schemaVersion": "1.0.0",
+    "intake_id": "pxs-intake-2026-03-19-001",
+    "intake_class": "work",
+    "source_system": "pxs",
+    "source_type": "document",
+    "source_reference": "pxs/docs/now-next-later.md#next",
+    "submitted_at": "2026-03-19T19:20:00Z",
+    "submitted_by": "Vega",
+    "title": "Define minimal executable PXS task-management contract",
+    "summary": "Convert the agreed PXS consumption path into a minimal executable Task Management contract slice.",
+    "body": "Need first executable contract covering request/response envelopes, validation semantics, and worked examples.",
+    "priority_hint": "high",
+    "workspace_scope": "pxs",
+    "product_scope": "A-007",
+    "related_entities": [
+      {
+        "entity_type": "artifact",
+        "entity_ref": "products/task-management/06-architecture/PXS_CONSUMPTION_INTERFACE.md",
+        "relationship": "implements"
+      }
+    ],
+    "evidence_links": [
+      {
+        "kind": "artifact",
+        "ref": "governance/VEGA_ACCEPTANCE_TEST_RUN_SHEET_V1.md",
+        "note": "Phase 1 boundary posture already accepted"
+      }
+    ],
+    "proposed_action": "create_executable_contract_slice",
+    "requested_action": "Define the first minimal executable request/response contract for PXS consumption.",
+    "success_signal": "Interface has explicit transport, envelope semantics, and worked examples."
+  },
+  "submitted_by": "Vega",
+  "submitted_at": "2026-03-19T19:20:00Z",
+  "source_reference": "pxs/docs/now-next-later.md#next",
+  "note": "Representative work-intake request from pxs into Task Management"
+}

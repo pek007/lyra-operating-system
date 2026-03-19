@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lyra.local/schemas/pxs_tm_response_envelope/v1.0.0.schema.json",
+  "title": "PXS Task Management Response Envelope",
+  "type": "object",
+  "required": [
+    "artifactType",
+    "schemaVersion",
+    "response_id",
+    "request_id",
+    "handled_by",
+    "handled_at",
+    "status"
+  ],
+  "properties": {
+    "artifactType": { "const": "pxs_tm_response_envelope" },
+    "schemaVersion": { "const": "1.0.0" },
+    "response_id": { "type": "string", "minLength": 1 },
+    "request_id": { "type": "string", "minLength": 1 },
+    "handled_by": { "type": "string", "minLength": 1 },
+    "handled_at": { "type": "string", "format": "date-time" },
+    "status": {
+      "type": "string",
+      "enum": [
+        "accepted",
+        "accepted_no_runner",
+        "accepted_pending_binding",
+        "rejected_invalid_request",
+        "duplicate",
+        "recorded_no_action"
+      ]
+    },
+    "canonical_target_refs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind", "ref"],
+        "properties": {
+          "kind": { "type": "string", "minLength": 1 },
+          "ref": { "type": "string", "minLength": 1 },
+          "note": { "type": ["string", "null"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "validation_errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "message"],
+        "properties": {
+          "code": { "type": "string", "minLength": 1 },
+          "message": { "type": "string", "minLength": 1 },
+          "field": { "type": ["string", "null"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "note": {
+      "oneOf": [
+        { "type": "string", "minLength": 1 },
+        { "type": "null" }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": { "const": "rejected_invalid_request" }
+        },
+        "required": ["status"]
+      },
+      "then": {
+        "required": ["validation_errors"],
+        "properties": {
+          "validation_errors": { "minItems": 1 }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

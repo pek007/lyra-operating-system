@@ -1,0 +1,45 @@
+{
+  "artifactType": "pxs_tm_request_envelope",
+  "schemaVersion": "1.0.0",
+  "request_id": "pxs-tm-req-2026-03-19-002",
+  "consumer_workspace": "pxs",
+  "request_type": "assignment_acceptance",
+  "canonical_contract_ref": "products/task-management/06-architecture/TDE_ASSIGNMENT_ACCEPTANCE_CONTRACT_V1.md",
+  "payload_schema_ref": "schemas/tde_assignment_packet/v1.0.0.schema.json",
+  "payload_schema_version": "1.0.0",
+  "payload_inline": {
+    "artifactType": "tde_assignment_packet",
+    "schemaVersion": "1.0.0",
+    "assignment_id": "pxs-assign-2026-03-19-001",
+    "source_system": "pxs",
+    "source_reference": "pxs/docs/backlog/issues-seed-v0.md#tm-interface",
+    "submitted_at": "2026-03-19T19:25:00Z",
+    "submitted_by": "Vega",
+    "title": "Adopt first PXS Task Management contract pilot",
+    "summary": "Request acceptance of a bounded pilot to exercise the first PXS Task Management contract slice.",
+    "requested_action": "Create and track the bounded pilot needed to validate the first PXS Task Management contract slice.",
+    "priority_hint": "medium",
+    "workspace_scope": "pxs",
+    "product_scope": "A-007",
+    "related_entities": [
+      {
+        "entity_type": "artifact",
+        "entity_ref": "products/task-management/07-decisions/examples/PXS_TM_REQUEST_ENVELOPE_INTAKE_WORK_V1.json",
+        "relationship": "related_example"
+      }
+    ],
+    "evidence_links": [],
+    "assignment_owner_role": "Task Management",
+    "runner_binding_required": true,
+    "objective_id": null,
+    "decision_policy_ref": null,
+    "workflow_family": "pxs-consumption-pilot",
+    "metadata": {
+      "consumer_expectation": "explicit acceptance response required"
+    }
+  },
+  "submitted_by": "Vega",
+  "submitted_at": "2026-03-19T19:25:00Z",
+  "source_reference": "pxs/docs/backlog/issues-seed-v0.md#tm-interface",
+  "note": "Representative assignment-acceptance request from pxs"
+}

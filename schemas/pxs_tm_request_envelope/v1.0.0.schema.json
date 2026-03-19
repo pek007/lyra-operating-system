@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lyra.local/schemas/pxs_tm_request_envelope/v1.0.0.schema.json",
+  "title": "PXS Task Management Request Envelope",
+  "type": "object",
+  "required": [
+    "artifactType",
+    "schemaVersion",
+    "request_id",
+    "consumer_workspace",
+    "request_type",
+    "canonical_contract_ref",
+    "payload_schema_ref",
+    "payload_schema_version",
+    "submitted_by",
+    "submitted_at",
+    "source_reference"
+  ],
+  "properties": {
+    "artifactType": { "const": "pxs_tm_request_envelope" },
+    "schemaVersion": { "const": "1.0.0" },
+    "request_id": { "type": "string", "minLength": 1 },
+    "consumer_workspace": { "const": "pxs" },
+    "request_type": {
+      "type": "string",
+      "enum": ["intake", "assignment_acceptance"]
+    },
+    "canonical_contract_ref": { "type": "string", "minLength": 1 },
+    "payload_schema_ref": { "type": "string", "minLength": 1 },
+    "payload_schema_version": { "type": "string", "minLength": 1 },
+    "payload_inline": {
+      "oneOf": [
+        { "type": "object" },
+        { "type": "null" }
+      ]
+    },
+    "payload_artifact_ref": {
+      "oneOf": [
+        { "type": "string", "minLength": 1 },
+        { "type": "null" }
+      ]
+    },
+    "submitted_by": { "type": "string", "minLength": 1 },
+    "submitted_at": { "type": "string", "format": "date-time" },
+    "source_reference": { "type": "string", "minLength": 1 },
+    "note": {
+      "oneOf": [
+        { "type": "string", "minLength": 1 },
+        { "type": "null" }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "anyOf": [
+        { "required": ["payload_inline"] },
+        { "required": ["payload_artifact_ref"] }
+      ]
+    },
+    {
+      "if": {
+        "properties": { "request_type": { "const": "intake" } },
+        "required": ["request_type"]
+      },
+      "then": {
+        "properties": {
+          "canonical_contract_ref": { "const": "products/task-management/06-architecture/TDE_INTAKE_INTERFACE_CONTRACT_V1.md" },
+          "payload_schema_ref": { "const": "schemas/tde_intake_packet/v1.0.0.schema.json" },
+          "payload_schema_version": { "const": "1.0.0" }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "request_type": { "const": "assignment_acceptance" } },
+        "required": ["request_type"]
+      },
+      "then": {
+        "properties": {
+          "canonical_contract_ref": { "const": "products/task-management/06-architecture/TDE_ASSIGNMENT_ACCEPTANCE_CONTRACT_V1.md" },
+          "payload_schema_ref": { "const": "schemas/tde_assignment_packet/v1.0.0.schema.json" },
+          "payload_schema_version": { "const": "1.0.0" }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

@@ -58,5 +58,11 @@
   },
   "tde_assignment_packet": {
     "1.0.0": "schemas/tde_assignment_packet/v1.0.0.schema.json"
+  },
+  "pxs_tm_request_envelope": {
+    "1.0.0": "schemas/pxs_tm_request_envelope/v1.0.0.schema.json"
+  },
+  "pxs_tm_response_envelope": {
+    "1.0.0": "schemas/pxs_tm_response_envelope/v1.0.0.schema.json"
   }
 }
