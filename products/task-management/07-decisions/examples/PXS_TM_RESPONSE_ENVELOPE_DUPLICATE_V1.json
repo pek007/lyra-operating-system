@@ -1,0 +1,23 @@
+{
+  "artifactType": "pxs_tm_response_envelope",
+  "schemaVersion": "1.0.0",
+  "response_id": "pxs-tm-res-2026-03-19-040",
+  "request_id": "pxs-tm-req-2026-03-19-010",
+  "handled_by": "Lyra",
+  "handled_at": "2026-03-19T20:50:00Z",
+  "status": "duplicate",
+  "canonical_target_refs": [
+    {
+      "kind": "artifact",
+      "ref": "products/task-management/07-decisions/examples/PXS_TM_RESPONSE_ENVELOPE_REAL_FLOW_VERTICAL_SLICE_ACCEPTED_V1.json",
+      "note": "Original accepted handling result already exists for this request id"
+    },
+    {
+      "kind": "evidence",
+      "ref": "knowledge/evidence/2026-03/2026-03-19__pxs-consumption-duplicate-coverage-v1.md",
+      "note": "Duplicate-handling coverage evidence"
+    }
+  ],
+  "validation_errors": [],
+  "note": "Duplicate request detected: this request id has already been handled and linked to an explicit response envelope."
+}

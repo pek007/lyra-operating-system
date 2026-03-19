@@ -1,6 +1,6 @@
 # PXS Consumption Interface
 
-Status: Draft active
+Status: Pilot-operational (bounded)
 Product: Task Management (`A-007`)
 Consumer: `pxs`
 Date: 2026-03-11
@@ -93,9 +93,9 @@ This interface should be considered operationally usable when:
 - the exact system-of-record mechanics for `pxs` still need clearer operational examples
 - readiness is still easier to describe than measure compactly
 - the boundary between product-internal model sophistication and consumer-required simplicity still needs discipline
-- the minimal executable request/response schema set is not yet defined
-- compatibility/versioning semantics are not yet explicit enough
-- Phase 1 boundary acceptance is no longer the live blocker; the live gap is the missing minimal executable consumption contract layer
+- live producer emission from inside `pxs` runtime flows is not yet proven
+- automated provider-side processing is not yet implemented
+- integrated nested-payload validation in one runtime processor is not yet in place
 
 ## Minimal executable slice v1
 
@@ -211,10 +211,24 @@ Expected response:
 - status: `recorded_no_action` or explicit linked update result
 - canonical target ref: updated artifact/evidence reference where applicable
 
+## Current maturity
+The `pxs` -> Task Management contract should now be treated as **pilot-operational for bounded use**.
+
+Evidence supporting that status:
+- executable contract slice defined in this interface artifact
+- request/response envelope schemas added and registered
+- worked examples validated against the schemas
+- thin pilot completed
+- semi-real pilot completed against a real `pxs` planning artifact
+- first real bounded handling flow completed with a real Task Management state update
+- response-state coverage now includes `accepted`, `accepted_no_runner`, `accepted_pending_binding`, `rejected_invalid_request`, `duplicate`, and `recorded_no_action`
+
+This is not yet full operational automation, but it is beyond descriptive design.
+
 ## Next likely interface evolution
 Near-term expected shape:
-- schema files for the `pxs` request/response envelopes
-- worked pilot examples exercised end-to-end
+- one minimal processor that validates request envelope + nested payload and emits deterministic response envelope
+- live bounded producer emission from inside `pxs` runtime flows
 - tighter compatibility notes for consumer/provider versions
 
 Possible later shapes:
