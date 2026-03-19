@@ -21,13 +21,6 @@ It complements skill folder metadata and prevents loose, unowned skills.
 - ACP extension skills: 1
 - Workspace-local skills: 1
 
-## Current local / governed skills
-
-| Skill | Category | Owner | Product | Capability ID | Lifecycle | Readiness | Review date | Notes |
-|---|---|---|---|---|---|---|---|---|
-| control-panel-coordination | product-capability | Lyra via Control Panel | CP-001 | CP-001.C1 (proposed) | building | draft | 2026-03-26 | First local product-capability skill; normalize metadata and link to capability record |
-| skill-governance | product-capability | Lyra via Governance | A-008 | A-008.C5 | building | draft | 2026-03-26 | Meta-skill for create/audit/test/improve/constrain/retire discipline across the skill portfolio |
-
 ## Skills requiring immediate cleanup
 
 | Skill | Category | Owner | Product | Capability ID | Lifecycle | Readiness | Review date | Notes |
@@ -102,13 +95,13 @@ These groups are not yet fully row-modeled individually in v1, but are recognize
 | control-panel-coordination | product-capability | Lyra via Control Panel | CP-001 | CP-001.C1 (proposed) | building | draft | 2026-03-26 | First local product-capability skill; normalize metadata and link to capability record |
 | skill-governance | product-capability | Lyra via Governance | A-008 | A-008.C5 | building | draft | 2026-03-26 | Meta-skill for create/audit/test/improve/constrain/retire discipline across the skill portfolio |
 | governance-verify-cycle | product-capability | Lyra via Governance | A-008 | A-008.C6 | building | draft | 2026-03-26 | Bounded governance verification cycle with deterministic evidence/output expectations |
+| task-management-tde-operator | product-capability | Lyra via Task Management | A-007 | A-007.C7 | building | draft | 2026-03-26 | Bounded Task Management / TDE operating cycle with explicit continuity and evidence discipline |
 
 ## Planned product-capability skills
 These are the leading candidates for the next governed implementation wave.
 
 | Skill | Category | Owner | Product | Capability ID | Lifecycle | Readiness | Review date | Notes |
 |---|---|---|---|---|---|---|---|---|
-| task-management-tde-operator | product-capability | Lyra via Task Management | A-007 | A-007.C1 (proposed) | proposed | draft | 2026-03-26 | Bounded TDE operator workflow with continuity discipline |
 | delivery-verification | product-capability | Lyra via Delivery | A-006 | A-006.C1 (proposed) | proposed | draft | 2026-03-26 | Verification-heavy skill for evidence-backed delivery checks |
 | security-health-audit | product-capability | Lyra via Security | A-004 | A-004.C1 (proposed) | proposed | draft | 2026-03-26 | Security/deployment posture verification skill |
 | interfaces-contract-validate | product-capability | Lyra via Interfaces | A-009 | A-009.C1 (proposed) | proposed | draft | 2026-03-26 | Contract-pack / compatibility / packaging validation |

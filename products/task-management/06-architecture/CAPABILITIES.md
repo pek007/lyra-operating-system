@@ -106,3 +106,19 @@ Make the current Task Management capability layer explicit as the managed unit b
 - Evidence: live projection-backed tooling migration, hygiene checks
 - Known gaps / risks: historical references to retired root `TASKS.md` still need gradual cleanup
 - Upgrade / retirement trigger: upgrade when projection format or downstream integrations need stronger contracts
+
+## A-007.C7 — Bounded Task Management operating cycle execution
+- Owning product: Task Management
+- Purpose: Provide a consistent operating procedure for bounded Task Management / TDE work that depends on explicit state, task/job continuity, and evidence-backed output.
+- Scope / boundary: Supports bounded operating cycles against canonical Task Management state and artifacts; does not silently alter TDE kernel contracts, replace DB-canonical state with chat-layer state, or become a generic product-owner brain.
+- Primary consumers: Task Management lane, Control Panel, future cron loops for bounded hygiene/review work
+- Delivery mode(s): `skill`, supported by Task Management product and runtime artifacts
+- Entrypoint / interface: `skills/task-management-tde-operator/`; Task Management product execution and runtime surfaces
+- Canonical artifacts: `skills/task-management-tde-operator/SKILL.md`, `skills/task-management-tde-operator/references/operator-checklist.md`, `SKILL_CONCEPTS_FIRST_WAVE_V1.md`, `os/runtime/TASKS_from_db.md`
+- Dependencies: canonical TDE substrate, Task Management product artifacts, job continuity artifacts, evidence and decision surfaces
+- Constraints / guardrails: DB-backed TDE state remains canonical; prefer smallest bounded next action; escalate kernel/cutover/interface issues rather than absorbing them into routine operation
+- Readiness: draft
+- Lifecycle state: building
+- Evidence: first-wave concept defined in `SKILL_CONCEPTS_FIRST_WAVE_V1.md`; active Task Management operating model and priorities already define the substrate and current operating need
+- Known gaps / risks: representative live-run evidence still needs to be captured; continuity-target heuristics may need tightening after real usage
+- Upgrade / retirement trigger: upgrade when multiple bounded Task Management cycles complete with reliable continuity and evidence placement; retire or narrow if stronger runtime-native operator surfaces supersede skill delivery.
