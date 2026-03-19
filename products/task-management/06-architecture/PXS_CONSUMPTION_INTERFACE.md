@@ -95,7 +95,7 @@ This interface should be considered operationally usable when:
 - the boundary between product-internal model sophistication and consumer-required simplicity still needs discipline
 - the minimal executable request/response schema set is not yet defined
 - compatibility/versioning semantics are not yet explicit enough
-- downstream use remains blocked by the current Vega/PXS boundary readiness failures
+- Phase 1 boundary acceptance is no longer the live blocker; the live gap is the missing minimal executable consumption contract layer
 
 ## Next likely interface evolution
 Near-term expected shape:
