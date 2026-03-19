@@ -91,6 +91,57 @@ def _build_response(*, request: dict[str, Any], status: str, handled_at: str, no
     }
 
 
+def _bounded_status_for_payload(request: dict[str, Any], payload: dict[str, Any]) -> tuple[str, str, list[dict[str, Any]]]:
+    refs: list[dict[str, Any]] = []
+    source_ref = str(request.get("source_reference") or payload.get("source_reference") or "")
+    if source_ref:
+        refs.append({"kind": "artifact", "ref": source_ref, "note": "Source reference for the request."})
+    if request.get("canonical_contract_ref"):
+        refs.append({"kind": "artifact", "ref": request["canonical_contract_ref"], "note": "Canonical contract used for handling."})
+
+    if request.get("request_type") == "intake":
+        intake_class = payload.get("intake_class")
+        if intake_class == "signal":
+            return (
+                "recorded_no_action",
+                "Valid signal intake recorded; no new executable action was required in this bounded processor path.",
+                refs,
+            )
+        return (
+            "accepted",
+            "Request accepted by the minimal processor after envelope and nested payload validation.",
+            refs,
+        )
+
+    if request.get("request_type") == "assignment_acceptance":
+        runner_binding_required = bool(payload.get("runner_binding_required"))
+        decision_policy_ref = payload.get("decision_policy_ref")
+        objective_id = payload.get("objective_id")
+        if runner_binding_required and not decision_policy_ref:
+            return (
+                "accepted_pending_binding",
+                "Request is valid and accepted, but required binding/policy/objective context is incomplete for normal pickup.",
+                refs,
+            )
+        if not objective_id:
+            return (
+                "accepted_no_runner",
+                "Request is valid and accepted, but no known runner/execution path is currently available for this bounded flow.",
+                refs,
+            )
+        return (
+            "accepted",
+            "Assignment-acceptance request accepted with sufficient binding and runner context for bounded handling.",
+            refs,
+        )
+
+    return (
+        "accepted",
+        "Request accepted by the minimal processor after envelope and nested payload validation.",
+        refs,
+    )
+
+
 def process_request(*, request_path: Path, search_root: Path | None = None) -> dict[str, Any]:
     search_root = search_root or DEFAULT_RESPONSE_DIR
     request = _load_json(request_path)
@@ -155,18 +206,12 @@ def process_request(*, request_path: Path, search_root: Path | None = None) -> d
             validation_errors=[{"code": exc.code, "message": exc.message, "field": exc.field}],
         )
 
-    source_ref = str(request.get("source_reference") or payload.get("source_reference") or "")
-    refs = []
-    if source_ref:
-        refs.append({"kind": "artifact", "ref": source_ref, "note": "Source reference for the accepted request."})
-    if request.get("canonical_contract_ref"):
-        refs.append({"kind": "artifact", "ref": request["canonical_contract_ref"], "note": "Canonical contract used for handling."})
-
+    status, note, refs = _bounded_status_for_payload(request, payload)
     return _build_response(
         request=request,
-        status="accepted",
+        status=status,
         handled_at=now,
-        note="Request accepted by the minimal processor after envelope and nested payload validation.",
+        note=note,
         target_refs=refs,
     )
 

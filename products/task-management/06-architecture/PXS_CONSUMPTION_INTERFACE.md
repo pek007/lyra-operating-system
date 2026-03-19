@@ -223,6 +223,7 @@ Evidence supporting that status:
 - first real bounded handling flow completed with a real Task Management state update
 - response-state coverage now includes `accepted`, `accepted_no_runner`, `accepted_pending_binding`, `rejected_invalid_request`, `duplicate`, and `recorded_no_action`
 - minimal deterministic processor now validates request envelope + nested payload and emits a response envelope for bounded cases
+- processor now deterministically handles bounded cases for `accepted`, `duplicate`, `rejected_invalid_request`, `accepted_pending_binding`, `accepted_no_runner`, and `recorded_no_action`
 - governed write-path now exists for deterministic response-envelope output under `control/runtime/pxs-tm-responses/`
 - first bounded producer path now exists: `pxs/docs/now-next-later.md#next` -> governed request artifact -> processor -> governed response artifact
 
