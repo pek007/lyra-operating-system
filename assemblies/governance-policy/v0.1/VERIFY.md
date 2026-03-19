@@ -1,18 +1,26 @@
 # Verification — Governance Policy Assembly v0.1
 
-Mark each check pass/fail.
+Verification status: `issue`
+Verification date: `2026-03-19`
+Verifier: `Lyra`
+Evidence: `knowledge/evidence/2026-03/2026-03-19__governance-assembly-verify-cycle-v1.md`
 
 ## Installation checks
-- [ ] `assembly.yaml` exists and version matches lock entry
-- [ ] policy artifacts present in target path
-- [ ] activation checklist linked from PXS operating docs
+- [x] `assembly.yaml` exists and version matches lock entry
+- [x] policy artifacts present in target path
+- [x] activation checklist linked from PXS operating docs
 
 ## Behavioral checks
-- [ ] simulated authority-impacting change routes through approval gate
-- [ ] simulated external tool/service change references governance policy
-- [ ] simulated config-impacting change references config checklist/SOP
+- [x] simulated authority-impacting change routes through approval gate
+- [x] simulated external tool/service change references governance policy
+- [x] simulated config-impacting change references config checklist/SOP
 
 ## Audit checks
 - [ ] evidence reference recorded for each gated simulation
-- [ ] lockfile updated with install date + owner + next review date
-- [ ] interim copy marker present (if using interim lane)
+- [x] lockfile updated with install date + owner + next review date
+- [x] interim copy marker present (if using interim lane)
+
+## Result note
+The Governance assembly surface is installed and structurally valid in the interim-copy lane, but verification remains an `issue` because the gated simulation checks do not yet have explicit per-check evidence references recorded in the target consumption surface.
+
+Until those evidence links are explicit, this assembly should remain `candidate` / `interim-copy` rather than be treated as fully verified.
