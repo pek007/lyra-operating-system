@@ -1,0 +1,57 @@
+classification_id: CLASSIFICATION_DELIVERY_REPO_INTEGRITY_GATE_2026_03_23
+title: Delivery repo-integrity fail-fast gate
+status: active
+classified_on: 2026-03-23
+classifier: Lyra
+source_ref: products/delivery/04-execution/TOP_PRIORITIES.md#Priority-1
+owning_scope:
+  kind: product
+  id: A-006
+  path: products/delivery/
+project_type: software_delivery
+route_id: ROUTE_SOFTWARE_DELIVERY_V1
+rationale:
+  - The work changes a real software-delivery control surface.
+  - The work requires implementation, verification, and evidence capture.
+  - The work directly affects release trustworthiness and in-use delivery quality.
+chosen_bundle:
+  - bundle: intent_shaping
+    artifacts:
+      - INTENT_TDE_DELIVERY_OPERATIONS_MODEL_V1.md
+      - products/delivery/01-identity/
+      - products/delivery/02-strategy/
+  - bundle: execution_coordination
+    artifacts:
+      - JOBS_PROCESS_V1.md
+      - products/task-management/
+  - bundle: delivery_governance
+    artifacts:
+      - SOFTWARE_DELIVERY_PROCESS_3PP_OS.md
+      - products/delivery/03-operating-model/OPERATING_MODEL.md
+      - products/delivery/03-operating-model/GOVERNANCE.md
+      - products/delivery/06-architecture/DELIVERY_AS_CODE_DESIGN_V1.md
+  - bundle: learning_loop
+    artifacts:
+      - CONTINUOUS_IMPROVEMENT_PROCESS_V1.md
+add_ons:
+  - status: not_required_yet
+    bundle: security_governance
+    reason: No direct credential, authority, permission, or high-downside security boundary change is evident from the priority description alone.
+    artifacts:
+      - SECURITY_PROCESS_V1.md
+      - governance/
+      - products/security/
+  - status: watch_trigger
+    bundle: security_governance
+    reason: Include if implementation touches repository permissions, merge authority, CI/CD approval boundaries, release authority, or security-sensitive enforcement paths.
+    artifacts:
+      - SECURITY_PROCESS_V1.md
+      - governance/
+      - products/security/
+review:
+  required: false
+  reviewer: null
+  notes: null
+notes:
+  - First live proof-case for the project-classification record model.
+  - Companion narrative example exists in processes/examples/PROJECT_PROCESS_CLASSIFICATION_EXAMPLE_2026-03-23__delivery-repo-integrity-gate.md.

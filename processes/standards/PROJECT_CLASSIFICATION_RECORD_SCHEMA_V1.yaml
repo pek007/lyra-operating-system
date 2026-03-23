@@ -1,0 +1,82 @@
+schema: project-classification-record-v1
+required:
+  - classification_id
+  - title
+  - status
+  - classified_on
+  - classifier
+  - source_ref
+  - owning_scope
+  - project_type
+  - route_id
+  - rationale
+  - chosen_bundle
+  - add_ons
+fields:
+  classification_id:
+    type: string
+    pattern: "^[A-Z0-9_-]{3,}$"
+  title:
+    type: string
+  status:
+    type: enum
+    values: [draft, active, superseded, archived]
+  classified_on:
+    type: date
+  classifier:
+    type: string
+  source_ref:
+    type: string
+  owning_scope:
+    type: object
+    required: [kind, id]
+    fields:
+      kind:
+        type: enum
+        values: [product, workspace, shared]
+      id:
+        type: string
+      path:
+        type: string
+  project_type:
+    type: string
+  route_id:
+    type: string
+  rationale:
+    type: list
+    itemType: string
+  chosen_bundle:
+    type: list
+    itemType: object
+    itemFields:
+      bundle:
+        type: string
+      artifacts:
+        type: list
+        itemType: string
+  add_ons:
+    type: list
+    itemType: object
+    itemFields:
+      status:
+        type: enum
+        values: [included, not_required_yet, watch_trigger]
+      bundle:
+        type: string
+      reason:
+        type: string
+      artifacts:
+        type: list
+        itemType: string
+  review:
+    type: object_or_null
+    fields:
+      required:
+        type: boolean
+      reviewer:
+        type: string_or_null
+      notes:
+        type: string_or_null
+  notes:
+    type: list
+    itemType: string

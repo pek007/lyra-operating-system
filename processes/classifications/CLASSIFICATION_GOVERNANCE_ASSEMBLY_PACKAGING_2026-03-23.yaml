@@ -1,0 +1,50 @@
+classification_id: CLASSIFICATION_GOVERNANCE_ASSEMBLY_PACKAGING_2026_03_23
+title: Governance assembly packaging and verification closure
+status: active
+classified_on: 2026-03-23
+classifier: Lyra
+source_ref: products/governance/04-execution/TOP_PRIORITIES.md#Priority-2
+owning_scope:
+  kind: product
+  id: A-008
+  path: products/governance/
+project_type: governance_change
+route_id: ROUTE_GOVERNANCE_CHANGE_V1
+rationale:
+  - The dominant work is clarifying packaging, verification semantics, and control closure for a governance assembly.
+  - Auditability and consumable governance posture matter more here than raw implementation throughput.
+  - Delivery is relevant as an add-on because the assembly may need packaging and activation as a governed change.
+chosen_bundle:
+  - bundle: intent_decision_framing
+    artifacts:
+      - INTENT_TDE_DELIVERY_OPERATIONS_MODEL_V1.md
+      - governance/
+      - products/governance/
+  - bundle: governance_control
+    artifacts:
+      - governance/
+      - SECURITY_PROCESS_V1.md
+      - products/governance/06-architecture/
+  - bundle: execution_coordination
+    artifacts:
+      - JOBS_PROCESS_V1.md
+      - products/task-management/
+  - bundle: improvement_verification
+    artifacts:
+      - CONTINUOUS_IMPROVEMENT_PROCESS_V1.md
+      - ERROR_REPORTING_STANDARD_V1.md
+add_ons:
+  - status: included
+    bundle: delivery_governance
+    reason: The priority explicitly concerns assembly packaging, verification closure, and downstream consumability as a governed change surface.
+    artifacts:
+      - SOFTWARE_DELIVERY_PROCESS_3PP_OS.md
+      - products/delivery/
+      - assemblies/governance-policy/v0.1/ACTIVATION.md
+      - assemblies/governance-policy/v0.1/VERIFY.md
+review:
+  required: true
+  reviewer: Peter
+  notes: Material classification because packaging posture and verification semantics affect downstream governance consumption.
+notes:
+  - Good contrast case for route-add-on behavior because governance is primary but delivery is still explicitly required.

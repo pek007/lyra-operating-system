@@ -1,0 +1,41 @@
+classification_id: CLASSIFICATION_PXS_OPERATING_PACKAGE_RETROFIT_2026_03_23
+title: PXS operating-package retrofit and local process-discovery establishment
+status: active
+classified_on: 2026-03-23
+classifier: Lyra
+source_ref: pxs/PROCESS_DISCOVERY_INDEX.md
+owning_scope:
+  kind: workspace
+  id: PXS
+  path: pxs/
+project_type: workspace_retrofit
+route_id: ROUTE_WORKSPACE_RETROFIT_V1
+rationale:
+  - The work is about making a downstream workspace locally operable rather than changing one product's internal logic.
+  - Source-of-truth placement, process discovery, and local authority are primary concerns.
+  - The existing PXS discovery layer is itself evidence that this route is real and needed.
+chosen_bundle:
+  - bundle: workspace_package
+    artifacts:
+      - WORKSPACE_OPERATING_PACKAGE_STANDARD_V1.md
+      - PROCESS_DISCOVERY_INDEX_STANDARD_V1.md
+      - WORKSPACE_BOOTSTRAP_AND_RETROFIT_PROTOCOL_V1.md
+  - bundle: local_authority_and_discovery
+    artifacts:
+      - pxs/SOURCE_OF_TRUTH.md
+      - pxs/PROCESS_DISCOVERY_INDEX.md
+      - pxs/AGENTS.md
+  - bundle: execution_coordination
+    artifacts:
+      - JOBS_PROCESS_V1.md
+      - products/task-management/
+  - bundle: improvement_loop
+    artifacts:
+      - CONTINUOUS_IMPROVEMENT_PROCESS_V1.md
+add_ons: []
+review:
+  required: false
+  reviewer: null
+  notes: null
+notes:
+  - Chosen as a non-product case so the classification model covers workspace-level operating work as well as product work.

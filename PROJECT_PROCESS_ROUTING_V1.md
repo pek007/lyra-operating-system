@@ -146,8 +146,10 @@ If no route is clear:
 The human-readable routing defined here is paired with:
 - `processes/PROCESS_ROUTE_REGISTRY_V1.yaml`
 - `processes/standards/PROCESS_ROUTE_SCHEMA_V1.yaml`
+- `processes/PROJECT_CLASSIFICATION_REGISTRY_V1.yaml`
+- `processes/standards/PROJECT_CLASSIFICATION_RECORD_SCHEMA_V1.yaml`
 
-These artifacts exist so route selection can become easier to validate, automate, and inspect without relying only on prose interpretation.
+These artifacts exist so route selection can become easier to validate, automate, inspect, and store without relying only on prose interpretation.
 
 ## Output expectation
 A project is considered minimally process-routed when the operator or agent can state:

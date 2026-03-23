@@ -1,0 +1,8 @@
+schema: project-classification-registry-v1
+owner: Lyra OS Platform
+updated: 2026-03-23
+schema_ref: processes/standards/PROJECT_CLASSIFICATION_RECORD_SCHEMA_V1.yaml
+records:
+  - processes/classifications/CLASSIFICATION_DELIVERY_REPO_INTEGRITY_GATE_2026-03-23.yaml
+  - processes/classifications/CLASSIFICATION_GOVERNANCE_ASSEMBLY_PACKAGING_2026-03-23.yaml
+  - processes/classifications/CLASSIFICATION_PXS_OPERATING_PACKAGE_RETROFIT_2026-03-23.yaml
