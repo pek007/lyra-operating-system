@@ -1,0 +1,57 @@
+classification_id: CLASSIFICATION_INTERFACES_CONTRACT_PACK_2026_03_23
+title: Interfaces as-code contract pack scoping and delivery
+status: active
+classified_on: 2026-03-23
+classifier: Lyra
+source_ref: products/interfaces/04-execution/TOP_PRIORITIES.md#Priority-2
+owning_scope:
+  kind: product
+  id: A-009
+  path: products/interfaces/
+project_type: software_delivery
+route_id: ROUTE_SOFTWARE_DELIVERY_V1
+rationale:
+  - The work aims to define and ship a minimal shared as-code contract surface between Lyra OS and PXS.
+  - It requires structured interface definition, implementation/scoping artifacts, downstream consumption, and verification evidence.
+  - Although boundary/ownership discipline matters, the dominant path is still governed capability delivery rather than pure governance policy change.
+chosen_bundle:
+  - bundle: intent_shaping
+    artifacts:
+      - INTENT_TDE_DELIVERY_OPERATIONS_MODEL_V1.md
+      - products/interfaces/01-identity/
+      - products/interfaces/02-strategy/
+  - bundle: execution_coordination
+    artifacts:
+      - JOBS_PROCESS_V1.md
+      - products/task-management/
+  - bundle: delivery_governance
+    artifacts:
+      - SOFTWARE_DELIVERY_PROCESS_3PP_OS.md
+      - products/delivery/03-operating-model/OPERATING_MODEL.md
+      - products/delivery/03-operating-model/GOVERNANCE.md
+      - products/delivery/06-architecture/DELIVERY_AS_CODE_DESIGN_V1.md
+  - bundle: learning_loop
+    artifacts:
+      - CONTINUOUS_IMPROVEMENT_PROCESS_V1.md
+      - products/improvement/
+add_ons:
+  - status: included
+    bundle: product_governance
+    reason: Interfaces identity, scope, and ownership boundaries remain a live strategic guardrail and must stay explicit while the contract pack is defined.
+    artifacts:
+      - PRODUCT_WAY_OF_WORKING_PROCESS_V1.md
+      - products/interfaces/06-architecture/INTERFACES.md
+      - products/interfaces/07-decisions/DECISIONS.md
+  - status: watch_trigger
+    bundle: workspace_retrofit
+    reason: Include if PXS requires local operating-package changes or new local authority/discovery surfaces to consume the contract pack properly.
+    artifacts:
+      - WORKSPACE_OPERATING_PACKAGE_STANDARD_V1.md
+      - pxs/PROCESS_DISCOVERY_INDEX.md
+      - pxs/SOURCE_OF_TRUTH.md
+review:
+  required: true
+  reviewer: Peter
+  notes: Material because product boundary clarity and downstream shared contract surface are both in play.
+notes:
+  - This is a deliberately mixed case where software-delivery is dominant but product-governance is an explicit add-on rather than an afterthought.

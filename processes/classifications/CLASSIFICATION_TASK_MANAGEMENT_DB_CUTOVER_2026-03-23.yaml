@@ -1,0 +1,57 @@
+classification_id: CLASSIFICATION_TASK_MANAGEMENT_DB_CUTOVER_2026_03_23
+title: Task Management producer-adapter wiring and DB-cutover readiness closure
+status: active
+classified_on: 2026-03-23
+classifier: Lyra
+source_ref: products/task-management/04-execution/TOP_PRIORITIES.md#Priority-3
+owning_scope:
+  kind: product
+  id: A-007
+  path: products/task-management/
+project_type: software_delivery
+route_id: ROUTE_SOFTWARE_DELIVERY_V1
+rationale:
+  - The work wires runtime producer/adapter behavior and forces an explicit DB-cutover GO/NO-GO decision backed by evidence.
+  - It directly affects canonical execution substrate behavior, runtime reliability, and release/cutover judgment.
+  - Governance and readiness matter, but the dominant path is implementation plus verification of a delivery-relevant runtime change.
+chosen_bundle:
+  - bundle: intent_shaping
+    artifacts:
+      - INTENT_TDE_DELIVERY_OPERATIONS_MODEL_V1.md
+      - products/task-management/01-identity/
+      - products/task-management/02-strategy/
+  - bundle: execution_coordination
+    artifacts:
+      - JOBS_PROCESS_V1.md
+      - products/task-management/
+  - bundle: delivery_governance
+    artifacts:
+      - SOFTWARE_DELIVERY_PROCESS_3PP_OS.md
+      - products/delivery/03-operating-model/OPERATING_MODEL.md
+      - products/delivery/03-operating-model/GOVERNANCE.md
+      - products/delivery/06-architecture/DELIVERY_AS_CODE_DESIGN_V1.md
+  - bundle: learning_loop
+    artifacts:
+      - CONTINUOUS_IMPROVEMENT_PROCESS_V1.md
+      - products/task-management/05-performance/READINESS_SCORECARD.md
+add_ons:
+  - status: included
+    bundle: product_governance
+    reason: The DB-cutover path requires explicit GO/NO-GO evidence and clear readiness posture rather than implicit technical drift.
+    artifacts:
+      - PRODUCT_WAY_OF_WORKING_PROCESS_V1.md
+      - products/task-management/05-performance/READINESS_SCORECARD.md
+      - products/task-management/05-performance/METRICS.md
+  - status: watch_trigger
+    bundle: security_governance
+    reason: Include if runtime-path cleanup or adapter wiring changes authority boundaries, sensitive runtime access, or recovery posture.
+    artifacts:
+      - SECURITY_PROCESS_V1.md
+      - governance/
+      - products/security/
+review:
+  required: true
+  reviewer: Peter
+  notes: Material because cutover readiness and runtime-path closure affect system-of-record integrity and operating trust.
+notes:
+  - Good stress test for the model because the work sits between delivery, readiness governance, and runtime execution reality.

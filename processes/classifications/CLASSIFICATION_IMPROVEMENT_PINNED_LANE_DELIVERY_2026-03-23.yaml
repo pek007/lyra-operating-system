@@ -1,0 +1,57 @@
+classification_id: CLASSIFICATION_IMPROVEMENT_PINNED_LANE_DELIVERY_2026_03_23
+title: Improvement pinned-lane delivery into PXS with version truth and rollback semantics
+status: active
+classified_on: 2026-03-23
+classifier: Lyra
+source_ref: products/improvement/04-execution/TOP_PRIORITIES.md#Priority-2
+owning_scope:
+  kind: product
+  id: A-005
+  path: products/improvement/
+project_type: software_delivery
+route_id: ROUTE_SOFTWARE_DELIVERY_V1
+rationale:
+  - The work is explicitly about shipping A-005 into PXS through a pinned lane with version truth, rollback behavior, and verification semantics.
+  - Deployment path, installed-version truth, rollback, and verification make delivery governance central rather than optional.
+  - Workspace consumption matters, but the dominant execution path is still governed delivery of a capability into a downstream environment.
+chosen_bundle:
+  - bundle: intent_shaping
+    artifacts:
+      - INTENT_TDE_DELIVERY_OPERATIONS_MODEL_V1.md
+      - products/improvement/01-identity/
+      - products/improvement/02-strategy/
+  - bundle: execution_coordination
+    artifacts:
+      - JOBS_PROCESS_V1.md
+      - products/task-management/
+  - bundle: delivery_governance
+    artifacts:
+      - SOFTWARE_DELIVERY_PROCESS_3PP_OS.md
+      - products/delivery/03-operating-model/OPERATING_MODEL.md
+      - products/delivery/03-operating-model/GOVERNANCE.md
+      - products/delivery/06-architecture/DELIVERY_AS_CODE_DESIGN_V1.md
+  - bundle: learning_loop
+    artifacts:
+      - CONTINUOUS_IMPROVEMENT_PROCESS_V1.md
+      - products/improvement/06-architecture/INTERFACES.md
+add_ons:
+  - status: included
+    bundle: workspace_retrofit
+    reason: The capability is being delivered into PXS and therefore depends on local operability, installed-version truth, and downstream verification posture.
+    artifacts:
+      - WORKSPACE_OPERATING_PACKAGE_STANDARD_V1.md
+      - pxs/PROCESS_DISCOVERY_INDEX.md
+      - pxs/PXS_ASSEMBLY_LOCK.md
+  - status: watch_trigger
+    bundle: security_governance
+    reason: Include if the pinned-lane implementation changes authority, access, runtime permissions, or rollback behavior in a security-sensitive way.
+    artifacts:
+      - SECURITY_PROCESS_V1.md
+      - governance/
+      - products/security/
+review:
+  required: true
+  reviewer: Peter
+  notes: Material because deployment posture, rollback semantics, and downstream truth surfaces affect real operating reliability.
+notes:
+  - Good test case for when workspace-retrofit becomes an explicit add-on to software delivery.
