@@ -78,6 +78,9 @@ For each stage include only:
 - contribution category
 - blocker note (optional)
 
+Reference contract:
+- `OVERNIGHT_LOOP_LEDGER_CONTRACT_V1.md`
+
 ## Weekly review questions
 Review the overnight loop weekly using only these questions:
 1. Did the loop run reliably?

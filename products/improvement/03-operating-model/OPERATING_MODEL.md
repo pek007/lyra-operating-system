@@ -57,5 +57,6 @@ The management intent is deliberately narrow:
 
 Improvement should keep this layer lean and decision-oriented. It should not expand into broad reporting bureaucracy or attempt to own every product-local metric.
 
-Current minimum reference:
+Current minimum references:
 - `OVERNIGHT_LOOP_MINIMUM_PERFORMANCE_STANDARD_V1.md`
+- `OVERNIGHT_LOOP_LEDGER_CONTRACT_V1.md`
