@@ -1,0 +1,57 @@
+schema: process-route-v1
+required:
+  - route_id
+  - project_type
+  - title
+  - status
+  - owner
+  - applies_when
+  - primary_bundle
+  - required_addons
+  - precedence
+  - source_artifacts
+fields:
+  route_id:
+    type: string
+    pattern: "^[A-Z0-9_-]{3,}$"
+  project_type:
+    type: string
+  title:
+    type: string
+  status:
+    type: enum
+    values: [draft, active, deprecated, archived]
+  owner:
+    type: string
+  applies_when:
+    type: list
+    itemType: string
+  primary_bundle:
+    type: list
+    itemType: object
+    itemFields:
+      bundle:
+        type: string
+      artifacts:
+        type: list
+        itemType: string
+  required_addons:
+    type: list
+    itemType: object
+    itemFields:
+      condition:
+        type: string
+      bundle:
+        type: string
+      artifacts:
+        type: list
+        itemType: string
+  precedence:
+    type: list
+    itemType: string
+  source_artifacts:
+    type: list
+    itemType: string
+  notes:
+    type: list
+    itemType: string

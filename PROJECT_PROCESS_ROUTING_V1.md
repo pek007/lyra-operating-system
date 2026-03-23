@@ -142,6 +142,13 @@ If no route is clear:
 - route it into the improvement/error loop for clarification
 - do not treat ambiguity as permission to skip process selection
 
+## Machine-usable companion
+The human-readable routing defined here is paired with:
+- `processes/PROCESS_ROUTE_REGISTRY_V1.yaml`
+- `processes/standards/PROCESS_ROUTE_SCHEMA_V1.yaml`
+
+These artifacts exist so route selection can become easier to validate, automate, and inspect without relying only on prose interpretation.
+
 ## Output expectation
 A project is considered minimally process-routed when the operator or agent can state:
 - project type

@@ -1,0 +1,194 @@
+schema: process-route-registry-v1
+owner: Lyra OS Platform
+updated: 2026-03-23
+schema_ref: processes/standards/PROCESS_ROUTE_SCHEMA_V1.yaml
+routes:
+  - route_id: ROUTE_SOFTWARE_DELIVERY_V1
+    project_type: software_delivery
+    title: Software / digital capability delivery project
+    status: active
+    owner: Lyra OS Platform
+    applies_when:
+      - Building or materially changing a software capability
+      - Shaping a feature, application, service, integration, or internal tool
+      - Architecture, testing, release, or in-use verification materially matter
+    primary_bundle:
+      - bundle: intent_shaping
+        artifacts:
+          - INTENT_TDE_DELIVERY_OPERATIONS_MODEL_V1.md
+          - products/<owning-product>/01-identity/
+          - products/<owning-product>/02-strategy/
+      - bundle: execution_coordination
+        artifacts:
+          - JOBS_PROCESS_V1.md
+          - products/task-management/
+      - bundle: delivery_governance
+        artifacts:
+          - SOFTWARE_DELIVERY_PROCESS_3PP_OS.md
+          - products/delivery/03-operating-model/OPERATING_MODEL.md
+          - products/delivery/03-operating-model/GOVERNANCE.md
+          - products/delivery/06-architecture/DELIVERY_AS_CODE_DESIGN_V1.md
+      - bundle: learning_loop
+        artifacts:
+          - CONTINUOUS_IMPROVEMENT_PROCESS_V1.md
+    required_addons:
+      - condition: Security, authority, or real-world downside is material
+        bundle: security_governance
+        artifacts:
+          - SECURITY_PROCESS_V1.md
+          - governance/
+          - products/security/
+    precedence:
+      - Most specific approved local or product-owned process
+      - Shared/platform routing artifact when cross-product coordination is needed
+      - Broader fallback only when no more specific approved artifact exists
+    source_artifacts:
+      - PROJECT_PROCESS_ROUTING_V1.md
+      - PROCESS_DISCOVERY_INDEX.md
+
+  - route_id: ROUTE_BUSINESS_INITIATIVE_V1
+    project_type: business_initiative
+    title: Business development / strategic initiative
+    status: active
+    owner: Lyra OS Platform
+    applies_when:
+      - Shaping a business offer, operating move, commercial initiative, or strategic change
+      - Work is outcome-heavy and may or may not require software delivery later
+    primary_bundle:
+      - bundle: intent_shaping
+        artifacts:
+          - INTENT_TDE_DELIVERY_OPERATIONS_MODEL_V1.md
+          - products/<owning-product>/02-strategy/
+      - bundle: execution_coordination
+        artifacts:
+          - JOBS_PROCESS_V1.md
+          - products/task-management/
+      - bundle: product_governance
+        artifacts:
+          - PRODUCT_WAY_OF_WORKING_PROCESS_V1.md
+          - products/<owning-product>/04-execution/
+          - products/<owning-product>/07-decisions/DECISIONS.md
+      - bundle: improvement_loop
+        artifacts:
+          - CONTINUOUS_IMPROVEMENT_PROCESS_V1.md
+    required_addons:
+      - condition: The initiative crosses into governed implementation, release, handoff, or deployment
+        bundle: delivery_governance
+        artifacts:
+          - SOFTWARE_DELIVERY_PROCESS_3PP_OS.md
+          - products/delivery/
+    precedence:
+      - Most specific approved local or product-owned process
+      - Shared/platform routing artifact when cross-product coordination is needed
+      - Broader fallback only when no more specific approved artifact exists
+    source_artifacts:
+      - PROJECT_PROCESS_ROUTING_V1.md
+      - PROCESS_DISCOVERY_INDEX.md
+
+  - route_id: ROUTE_GOVERNANCE_CHANGE_V1
+    project_type: governance_change
+    title: Governance / policy / control change
+    status: active
+    owner: Lyra OS Platform
+    applies_when:
+      - Changing rules, policy, authority, compliance posture, approvals, or control logic
+      - Auditability and escalation boundaries matter more than delivery speed alone
+    primary_bundle:
+      - bundle: intent_decision_framing
+        artifacts:
+          - INTENT_TDE_DELIVERY_OPERATIONS_MODEL_V1.md
+          - governance/
+      - bundle: governance_control
+        artifacts:
+          - governance/
+          - SECURITY_PROCESS_V1.md
+      - bundle: execution_coordination
+        artifacts:
+          - JOBS_PROCESS_V1.md
+      - bundle: improvement_verification
+        artifacts:
+          - CONTINUOUS_IMPROVEMENT_PROCESS_V1.md
+          - ERROR_REPORTING_STANDARD_V1.md
+    required_addons:
+      - condition: The change must be packaged, released, or activated as a governed change
+        bundle: delivery_governance
+        artifacts:
+          - SOFTWARE_DELIVERY_PROCESS_3PP_OS.md
+          - products/delivery/
+    precedence:
+      - Most specific approved local or product-owned process
+      - Shared/platform routing artifact when cross-product coordination is needed
+      - Broader fallback only when no more specific approved artifact exists
+    source_artifacts:
+      - PROJECT_PROCESS_ROUTING_V1.md
+      - PROCESS_DISCOVERY_INDEX.md
+
+  - route_id: ROUTE_WORKSPACE_RETROFIT_V1
+    project_type: workspace_retrofit
+    title: Workspace bootstrap / retrofit / operating-package change
+    status: active
+    owner: Lyra OS Platform
+    applies_when:
+      - Creating or upgrading a downstream workspace
+      - Clarifying source of truth, process discovery, authority, or local operating paths
+      - Moving a workspace from ad hoc to operable
+    primary_bundle:
+      - bundle: workspace_package
+        artifacts:
+          - WORKSPACE_OPERATING_PACKAGE_STANDARD_V1.md
+          - PROCESS_DISCOVERY_INDEX_STANDARD_V1.md
+          - WORKSPACE_BOOTSTRAP_AND_RETROFIT_PROTOCOL_V1.md
+      - bundle: local_authority_and_discovery
+        artifacts:
+          - <workspace>/SOURCE_OF_TRUTH.md
+          - <workspace>/PROCESS_DISCOVERY_INDEX.md
+          - <workspace>/AGENTS.md
+      - bundle: execution_coordination
+        artifacts:
+          - JOBS_PROCESS_V1.md
+      - bundle: improvement_loop
+        artifacts:
+          - CONTINUOUS_IMPROVEMENT_PROCESS_V1.md
+    required_addons: []
+    precedence:
+      - Most specific approved local workspace artifact
+      - Approved shared standard explicitly adopted by the workspace
+      - Broader fallback only when no more specific approved artifact exists
+    source_artifacts:
+      - PROJECT_PROCESS_ROUTING_V1.md
+      - PROCESS_DISCOVERY_INDEX.md
+      - pxs/PROCESS_DISCOVERY_INDEX.md
+
+  - route_id: ROUTE_OS_PROCESS_IMPROVEMENT_V1
+    project_type: os_process_improvement
+    title: Internal operating-system / process improvement project
+    status: active
+    owner: Lyra OS Platform
+    applies_when:
+      - Improving Lyra OS operating behavior itself
+      - Tightening process discovery, routing, validation, cadence, or control surfaces
+      - Converting repeated friction into better operating architecture
+    primary_bundle:
+      - bundle: improvement_layer
+        artifacts:
+          - CONTINUOUS_IMPROVEMENT_PROCESS_V1.md
+          - CLOSED_LOOP_IMPROVEMENT_MODEL_V1.md
+      - bundle: error_corrective_action
+        artifacts:
+          - ERROR_REPORTING_STANDARD_V1.md
+      - bundle: process_discovery_and_ownership
+        artifacts:
+          - PROCESS_DISCOVERY_INDEX.md
+          - PROCESS_DISCOVERY_INDEX_STANDARD_V1.md
+          - PROCESS_OWNERSHIP_AND_COORDINATION_RULE_V1.md
+      - bundle: execution_coordination
+        artifacts:
+          - JOBS_PROCESS_V1.md
+    required_addons: []
+    precedence:
+      - Most specific approved local or product-owned process
+      - Shared/platform routing artifact when cross-product coordination is needed
+      - Broader fallback only when no more specific approved artifact exists
+    source_artifacts:
+      - PROJECT_PROCESS_ROUTING_V1.md
+      - PROCESS_DISCOVERY_INDEX.md
