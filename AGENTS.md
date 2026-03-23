@@ -55,7 +55,7 @@ When switching jobs mid-task, make the switch explicit and apply that job's stan
 
 ### Process discovery rule
 - Before performing a non-trivial operational activity, check whether an official process, SOP, runbook, or standard applies in the current scope.
-- In the Lyra OS root workspace, use `PROCESS_DISCOVERY_INDEX_STANDARD_V1.md`, `WORKSPACE_OPERATING_PACKAGE_STANDARD_V1.md`, and the owning product/domain artifacts to determine where process authority should live.
+- In the Lyra OS root workspace, start with `PROCESS_DISCOVERY_INDEX.md`, then use `WORKSPACE_OPERATING_PACKAGE_STANDARD_V1.md` and the owning product/domain artifacts to determine where process authority should live.
 - In downstream workspaces, prefer the workspace-local process discovery/front-door artifacts and source-of-truth map over internal Lyra OS assumptions.
 - Do not invent a parallel central process layer by copying product-local recurring processes into shared front-door docs.
 

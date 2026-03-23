@@ -64,6 +64,8 @@ Track core processes, standards, and runbooks with review state.
 | JOBS_PROCESS_V1.md | Process | Peter/Lyra | Active | 2026-03-01 | 2026-03-31 |
 | PROCESS_LIFECYCLE_PROCESS_V1.md | Meta-Process | Peter/Lyra | Active | 2026-03-01 | 2026-03-31 |
 | PROCESS_AUDIT_FUNCTION_V1.md | Audit Function | Peter/Lyra | Active | 2026-03-01 | 2026-03-31 |
+| PROCESS_DISCOVERY_INDEX.md | Process Discovery Index | Lyra | Active | 2026-03-23 | Trigger-based |
+| PROJECT_PROCESS_ROUTING_V1.md | Routing Standard | Lyra | Active | 2026-03-23 | Trigger-based |
 | SOFTWARE_DEVELOPMENT_PROCESS_V1.md | Process | Peter/Lyra | Active | 2026-03-01 | 2026-03-31 |
 | RESTORE_PROCESS_V1.md | Process | Peter/Lyra | Active | 2026-03-01 | 2026-03-31 |
 | SECURITY_PROCESS_V1.md | Process | Peter/Lyra | Active | 2026-03-01 | 2026-03-31 |
