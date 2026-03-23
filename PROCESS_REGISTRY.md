@@ -68,6 +68,7 @@ Track core processes, standards, and runbooks with review state.
 | PROJECT_PROCESS_ROUTING_V1.md | Routing Standard | Lyra | Active | 2026-03-23 | Trigger-based |
 | processes/PROCESS_ROUTE_REGISTRY_V1.yaml | Route Registry | Lyra | Active | 2026-03-23 | Trigger-based |
 | processes/standards/PROCESS_ROUTE_SCHEMA_V1.yaml | Schema Standard | Lyra | Active | 2026-03-23 | Trigger-based |
+| processes/examples/PROJECT_PROCESS_CLASSIFICATION_EXAMPLE_2026-03-23__delivery-repo-integrity-gate.md | Example | Lyra | Active | 2026-03-23 | Trigger-based |
 | SOFTWARE_DEVELOPMENT_PROCESS_V1.md | Process | Peter/Lyra | Active | 2026-03-01 | 2026-03-31 |
 | RESTORE_PROCESS_V1.md | Process | Peter/Lyra | Active | 2026-03-01 | 2026-03-31 |
 | SECURITY_PROCESS_V1.md | Process | Peter/Lyra | Active | 2026-03-01 | 2026-03-31 |
