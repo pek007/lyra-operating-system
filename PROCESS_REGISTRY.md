@@ -71,6 +71,7 @@ Track core processes, standards, and runbooks with review state.
 | processes/examples/PROJECT_PROCESS_CLASSIFICATION_EXAMPLE_2026-03-23__delivery-repo-integrity-gate.md | Example | Lyra | Active | 2026-03-23 | Trigger-based |
 | processes/PROJECT_CLASSIFICATION_REGISTRY_V1.yaml | Classification Registry | Lyra | Active | 2026-03-23 | Trigger-based |
 | processes/standards/PROJECT_CLASSIFICATION_RECORD_SCHEMA_V1.yaml | Schema Standard | Lyra | Active | 2026-03-23 | Trigger-based |
+| PROJECT_CLASSIFICATION_USAGE_RULE_V1.md | Usage Rule | Lyra | Active | 2026-03-23 | Trigger-based |
 | SOFTWARE_DEVELOPMENT_PROCESS_V1.md | Process | Peter/Lyra | Active | 2026-03-01 | 2026-03-31 |
 | RESTORE_PROCESS_V1.md | Process | Peter/Lyra | Active | 2026-03-01 | 2026-03-31 |
 | SECURITY_PROCESS_V1.md | Process | Peter/Lyra | Active | 2026-03-01 | 2026-03-31 |

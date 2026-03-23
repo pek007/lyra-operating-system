@@ -15,6 +15,7 @@ When a new project, initiative, or bounded workstream starts:
 2. use the listed bundle as the default process stack
 3. refine only if the owning product/workspace has a more specific approved operating path
 4. if no project type fits cleanly, escalate the ambiguity instead of improvising
+5. if the work crosses the threshold in `PROJECT_CLASSIFICATION_USAGE_RULE_V1.md`, create or update a classification record before non-trivial execution proceeds
 
 ## Global routing rules
 - Always prefer the most specific approved local or product-owned process over a broader shared fallback.
