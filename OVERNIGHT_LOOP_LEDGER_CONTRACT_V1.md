@@ -87,3 +87,5 @@ It is a compact control record for:
 - If written incrementally, keep updates additive and stable.
 - Do not duplicate large report contents inside the ledger; link instead.
 - If a stage does not run, record `skipped` or `failed` rather than omitting it silently.
+- For product learn-and-replan stages, prefer linking the canonical nightly report artifact path rather than a memory note whenever that artifact exists.
+- If any upstream product-nightly artifact is present only in a non-canonical legacy path or non-canonical schema, the ledger should not hide that drift; record the stage as `partial` or note the path/schema deviation explicitly.

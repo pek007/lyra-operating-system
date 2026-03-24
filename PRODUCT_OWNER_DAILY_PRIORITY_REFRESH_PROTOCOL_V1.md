@@ -68,6 +68,8 @@ Instead:
 1. run the daily refresh logic
 2. update `TOP_PRIORITIES.md` if needed
 3. generate the nightly report from the refreshed code-based source
+4. write the report to the canonical path required by `TDE_PRODUCT_OWNER_NIGHTLY_REPORT_SPEC_V1.md`
+5. use the canonical minimum schema rather than a product-local variant
 
 ## Relationship to Control Tower
 Product Owners own product-local priority refresh.

@@ -16,11 +16,14 @@ Control Tower decides cross-product overnight execution priorities.
 ## Inputs
 Control Tower overnight synthesis should use:
 - the current product-owner nightly synthesis deltas
+- the canonical product-owner nightly artifacts written according to `TDE_PRODUCT_OWNER_NIGHTLY_REPORT_SPEC_V1.md`
 - current `TOP_PRIORITIES.md` artifacts for active products
 - current TDE execution state
 - current known blockers, risks, opportunities, and readiness signals
 - current strategic phase and portfolio bottleneck
 - product-local artifact updates only when exceptions or major deltas require them
+
+If a product-nightly artifact is missing, written to a non-canonical path, or uses a non-canonical minimum schema, Control Tower should treat that as control drift rather than silently normalizing it away.
 
 ## Main questions
 Control Tower should answer:

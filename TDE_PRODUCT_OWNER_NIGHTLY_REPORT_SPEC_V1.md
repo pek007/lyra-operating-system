@@ -151,18 +151,56 @@ not as:
 
 Promotion into work, decision items, or no-action recording should happen only after triage and/or Control Tower synthesis.
 
-## Storage guidance
-Canonical nightly report artifacts should live in a stable machine-usable location.
+## Canonical storage path and filename
+Canonical nightly report artifacts should live in one stable product-local machine-usable location.
 
-Recommended pattern:
-- product-local execution artifact path, or
-- dedicated runtime/report path linked from the product
+Required pattern:
+- `products/<slug>/04-execution/nightly-reports/YYYY-MM-DD-po-nightly-report.json`
 
-The exact storage path may evolve, but the report should be durable, inspectable, and replayable.
+Rules:
+- do not alternate between `reports/` and `nightly-reports/`
+- do not vary the filename shape (`PO_NIGHTLY`, `_product-owner-nightly-report`, etc.)
+- one product should use one canonical path pattern consistently across nights
+- if legacy report locations exist, treat them as historical artifacts, not the forward standard
+
+The purpose is to make report discovery, verification, replay, and downstream automation trivial.
+
+## Canonical minimum schema
+A compliant nightly report object should use one canonical field shape.
+
+Required top-level keys:
+- `artifactType`
+- `schemaVersion`
+- `synthesisId`
+- `productId`
+- `productName`
+- `productOwner`
+- `synthesisDate`
+- `overallHealth`
+- `summary`
+- `materialChanges`
+- `topPriorities`
+- `blockers`
+- `risksOrOpportunities`
+- `proposedNextActions`
+- `priorityRefreshStatus`
+- `evidenceLinks`
+
+Field normalization rules:
+- use `synthesisId`, not `reportId`
+- use `synthesisDate`, not `reportDate`
+- use `risksOrOpportunities`, not parallel ad hoc `risks` unless also normalized into the canonical field
+- keep `priorityRefreshStatus` constrained to: `unchanged`, `updated`, `missing`, or `stale_detected_not_updated`
+- additional fields are allowed when useful, but they must not replace or rename the canonical minimum keys
 
 ## Validation rule
 The report should be schema-valid before adapter transformation into a `tde_intake_packet`.
 Invalid report objects must fail closed rather than silently entering TDE.
+
+If a runtime cannot satisfy the canonical path or canonical minimum schema in a given run, it should:
+- record that fact explicitly in the run output
+- prefer a visible partial/failed control outcome over silently improvising a variant artifact
+- avoid claiming a fully conforming success when path/schema drift occurred
 
 ## Anti-patterns
 Avoid:
