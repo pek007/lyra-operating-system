@@ -68,7 +68,7 @@ Purpose:
 - avoid manually populated presentation-only UI behavior
 
 Expected output:
-- binding/data contract note for the slice
+- `products/task-management/04-execution/TDE_SELF_UI_READINESS_20260326_002_BINDING_CONTRACT.md`
 
 ### Task 3 — Thin implementation slice
 Suggested task id:
