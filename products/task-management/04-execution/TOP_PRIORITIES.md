@@ -1,26 +1,26 @@
 # TOP_PRIORITIES
 
 Product: Task Management
-Last updated: 2026-03-17
+Last updated: 2026-03-26
 Owner: Product Owner / Control Tower
 
 ## Priority 1
-**Title:** Close the Vega/PXS boundary readiness gap and rerun it to PASS
-**Why this matters now:** The strongest current blocker to downstream Task Management consumption is not TDE internals but the failing Vega/PXS boundary readiness conditions that make safe, repeatable consumption impossible.
-**Current status:** Acceptance evidence currently shows blocking failures: `pxs` repo placement missing, pinned dependency not implemented, and cross-domain reads still allowed.
-**Next concrete step:** treat the Vega/PXS acceptance failures as the top active gating dependency, close the failing conditions, and rerun the boundary acceptance sheet to PASS with evidence.
-**Links:** `products/task-management/04-execution/PLAN.md`, `products/task-management/04-execution/RISKS.md`, `governance/VEGA_ACCEPTANCE_TEST_RUN_SHEET_V1.md`, `products/task-management/06-architecture/PXS_CONSUMPTION_INTERFACE.md`
+**Title:** Refresh Task Management’s compact current-state surfaces to the accepted Phase 1 posture and current executable reality
+**Why this matters now:** The strongest current product-control gap is no longer absence of a downstream contract; it is drift between the live evidence and the compact executive surfaces used to steer the product. The top priority remains keeping those compact surfaces synchronized so executive steering and TDE-linked execution can rely on them without reconstructing state from scattered artifacts.
+**Current status:** `governance/VEGA_ACCEPTANCE_TEST_RUN_SHEET_V1.md` records **PASS (Phase 1)** after Peter’s 2026-03-16 scope decision. `06-architecture/PXS_CONSUMPTION_INTERFACE.md` defines a bounded executable slice and states the interface is **pilot-operational for bounded use**. The selected overnight Control Tower item `CT-2026-03-23-TM-COMPACT-SYNC`, linked to `TDE-FORM-FORM-CONTROL-TOWER-TASK-MANAGEMENT-COMPACT-SU-001/002`, has now refreshed and verified `PLAN.md`, `RISKS.md`, `READINESS_SCORECARD.md`, `ROADMAP.md`, and `TOP_PRIORITIES.md` against the named canonical evidence base and active TDE/runtime projection.
+**Next concrete step:** use the now-synchronized compact current-state surface to define and execute the next explicit runtime-path closure step so producer/adapter wiring and DB-cutover readiness advance without reintroducing control-surface drift.
+**Links:** `governance/VEGA_ACCEPTANCE_TEST_RUN_SHEET_V1.md`, `products/task-management/04-execution/PLAN.md`, `products/task-management/04-execution/RISKS.md`, `products/task-management/05-performance/READINESS_SCORECARD.md`, `products/task-management/04-execution/ROADMAP.md`, `products/task-management/04-execution/CONTROL_TOWER_COMPACT_SURFACE_SYNC_STEP_2026-03-23.md`, `products/task-management/06-architecture/PXS_CONSUMPTION_INTERFACE.md`, `os/runtime/TASKS_from_db.md`
 
 ## Priority 2
-**Title:** Deliver a minimal executable `pxs` consumption contract with schemas and worked examples
-**Why this matters now:** A taxonomy of intended interaction is useful, but downstream consumption will stay soft until the interface becomes an explicit executable contract.
-**Current status:** First-pass consumption interface exists, but it still lacks minimal request/response schemas, compatibility/versioning clarity, and worked examples.
-**Next concrete step:** upgrade the `pxs` consumption interface from descriptive contract to minimal executable contract with request/response expectations, validation/error semantics, explicit transport choice, and 2–3 worked examples.
-**Links:** `products/task-management/04-execution/PLAN.md`, `products/task-management/06-architecture/PXS_CONSUMPTION_INTERFACE.md`, `products/task-management/02-strategy/DISTRIBUTION_MODEL.md`
+**Title:** Stabilize the `pxs` consumption contract from bounded pilot-operational use into a disciplined, inspectable downstream interface
+**Why this matters now:** The first executable slice now exists, which means the next bottleneck is not conceptual interface definition but disciplined stabilization: compatibility clarity, bounded handling expansion, and proof that `pxs` consumption works without hidden operator rescue.
+**Current status:** `06-architecture/PXS_CONSUMPTION_INTERFACE.md` now documents request/response envelopes, validation/error semantics, versioning rules, worked examples, a deterministic bounded processor, governed response artifacts, and a first bounded producer path. This is beyond descriptive design, but it is still explicitly bounded rather than broadly proven.
+**Next concrete step:** tighten provider/consumer compatibility notes, extend bounded handling and examples where needed, and accumulate clearer operational proof that `pxs` can use the interface with low-friction inspection and without hidden context dependence.
+**Links:** `products/task-management/06-architecture/PXS_CONSUMPTION_INTERFACE.md`, `products/task-management/06-architecture/TDE_INTAKE_INTERFACE_CONTRACT_V1.md`, `products/task-management/06-architecture/TDE_ASSIGNMENT_ACCEPTANCE_CONTRACT_V1.md`, `products/task-management/07-decisions/DECISIONS.md`
 
 ## Priority 3
-**Title:** Stabilize and prove the canonical substrate that `pxs` will consume
-**Why this matters now:** Downstream consumers should not be built atop a canonical state transition that is still only described or provisionally evidenced.
-**Current status:** Assignment acceptance thin-slice implementation completed 2026-03-16: `tools/tde_assignment_accept.py` fully tested (21/21 PASS) across all five canonical acceptance cases (accepted, accepted_pending_binding, accepted_no_runner, rejected_invalid_assignment, duplicate). Silent-limbo gap is closed at the acceptance boundary. Runtime pathing hardened, post-acceptance traces added, limbo detector implemented. Remaining open items: Control Panel adapter-layer wiring (slice 2), and the DB-cutover GO/NO-GO decision path.
-**Next concrete step:** Wire the Control Panel assignment adapter more tightly to the canonical intake path (thin-slice 2); then close the DB-cutover decision path with explicit GO/NO-GO evidence.
-**Links:** `products/task-management/04-execution/PLAN.md`, `products/task-management/04-execution/TDE_ASSIGNMENT_ACCEPTANCE_THIN_SLICE_PLAN_2026-03-15.md`, `products/task-management/04-execution/TDE_ASSIGNMENT_ACCEPTANCE_TEST_EVIDENCE_2026-03-16.md`, `products/task-management/05-performance/READINESS_SCORECARD.md`, `products/task-management/05-performance/METRICS.md`
+**Title:** Close the remaining substrate-to-runtime gap by wiring the producer/adapter path, forming experiment work into canonical runtime state, and forcing explicit DB-cutover readiness decisions
+**Why this matters now:** The assignment-acceptance substrate is now behaviorally verified, and the TDE self-UI proving experiment produced a real, live, inspectable thin slice with an honest **PARTIAL PASS** result. That means the main remaining execution risk is no longer whether TDE can support a bounded self-referential product slice at all; it is the gap between registered/inspectable experiment state and full producer/runtime closure in canonical DB-backed task state.
+**Current status:** `04-execution/TDE_ASSIGNMENT_ACCEPTANCE_TEST_EVIDENCE_2026-03-16.md` shows **21/21 PASS** across all five canonical assignment-acceptance outcomes, confirming the silent-limbo gap is closed at the acceptance boundary. The self-UI experiment artifacts now show that a real Control Panel route (`/tde-readiness`) can be built, served, and inspected live, but the verification result remains **PARTIAL PASS** because the experiment tasks are still not yet formed into DB-backed runtime task state and therefore do not yet prove full post-build runtime/event closure.
+**Next concrete step:** form the TDE self-UI experiment tasks into canonical DB-backed runtime state, update the readiness view so it reflects a real post-build runtime/state change for those tasks, and then force the next explicit DB-cutover readiness decision with visible GO/NO-GO evidence.
+**Links:** `products/task-management/04-execution/TDE_ASSIGNMENT_ACCEPTANCE_THIN_SLICE_PLAN_2026-03-15.md`, `products/task-management/04-execution/TDE_ASSIGNMENT_ACCEPTANCE_TEST_EVIDENCE_2026-03-16.md`, `products/task-management/04-execution/TDE_SELF_UI_READINESS_20260326_004_VERIFICATION.md`, `products/task-management/05-performance/READINESS_SCORECARD.md`, `products/task-management/05-performance/METRICS.md`

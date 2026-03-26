@@ -1,47 +1,51 @@
 # Current Plan
 
 ## Planning horizon
-Rolling near-term plan for the next 2-6 weeks.
+Rolling near-term plan for the next 2–6 weeks.
 
 ## Current objectives
-1. Close the Vega/PXS boundary readiness gap and rerun it to PASS.
-2. Deliver a minimal executable `pxs` consumption contract with schemas and worked examples.
-3. Stabilize and prove the canonical substrate that `pxs` will consume.
-4. Keep Task Management product boundaries explicit while the downstream consumption path hardens.
+1. Keep the accepted Phase 1 Vega/PXS boundary posture explicit across compact steering surfaces and readiness language.
+2. Stabilize the bounded-operational `pxs` consumption contract into a disciplined, inspectable downstream interface.
+3. Close the remaining substrate-to-runtime gap by wiring the producer/adapter path, forming proving-slice work into canonical runtime state, and forcing an explicit DB-cutover GO/NO-GO path.
+4. Keep Task Management product boundaries explicit while downstream consumption and runtime hardening progress.
 
 ## Current workstreams
-### Workstream 1: Product model foundation
-- create canonical Task Management product model artifacts
-- define what is durable versus operationally volatile
-- use the Task Management product as the pilot for a reusable product standard
+### Workstream 1: Compact current-state alignment
+- refresh `PLAN.md`, `RISKS.md`, and `READINESS_SCORECARD.md` to match accepted Phase 1 posture and current evidence
+- keep compact executive surfaces synchronized to canonical decisions, interface state, and readiness evidence
+- reduce management-surface drift so product steering reflects current executable reality rather than older blocker framing
 
-### Workstream 2: Interface clarity
-- document interfaces into `pxs`
-- make dependencies and responsibilities explicit
-- reduce hidden coupling and implicit assumptions
+Current evidence anchors for this workstream:
+- accepted Phase 1 boundary posture: `governance/VEGA_ACCEPTANCE_TEST_RUN_SHEET_V1.md` (**PASS (Phase 1)**)
+- bounded-operational downstream interface: `products/task-management/06-architecture/PXS_CONSUMPTION_INTERFACE.md`
+- assignment-acceptance substrate proof: `products/task-management/04-execution/TDE_ASSIGNMENT_ACCEPTANCE_TEST_EVIDENCE_2026-03-16.md` (**21/21 PASS**)
+- canonical runtime projection / active TDE state: `os/runtime/TASKS_from_db.md`
 
-### Workstream 3: Operational readiness
-- align TDE deployment requirements, evidence, and product health view
-- make it easier to answer whether the product is ready for broader operational use
+### Workstream 2: Downstream interface stabilization
+- tighten provider/consumer compatibility notes for the bounded `pxs` consumption path
+- extend bounded handling, worked examples, and inspection clarity where needed
+- accumulate evidence that `pxs` can consume the interface without hidden operator rescue
+
+### Workstream 3: Runtime-path closure
+- wire the Control Panel / producer path more tightly to canonical intake and assignment acceptance
+- form the TDE self-UI experiment work into canonical DB-backed runtime state so the proving slice can reflect a real post-build runtime/state change
+- make DB-cutover readiness a visible GO/NO-GO decision with evidence
+- keep runtime hardening grounded in the already-verified assignment-acceptance substrate and the new self-UI proving evidence
 
 ## Immediate next steps
-- define and refine the formal Task Management → `pxs` consumption interface
-- create a compact readiness/health scorecard for Task Management / TDE
-- connect the product model more explicitly to readiness evidence and downstream usage
-- convert the real `pxs` priority `Build first vertical slice` into one bounded execution-ready item by defining the smallest acceptable slice, explicit non-goals, and success signal through the PXS consumption contract pilot path
-- the interim inbox experiment has been completed and superseded as a primary coordination direction
-- integrate Delivery’s accepted pilot contract into the shared pilot flow by defining the smallest acceptable GUI slice, explicit non-goals, and the initial decision/evidence structure ✅
-- shift coordination design work toward TDE-native assigned work with assignee wake/notification
-- obtain a Delivery-defined execution process contract through the eventual assigned-work / handoff model rather than extending mailbox-style coordination
-- define how the shared As-Code Contract Pack maps into TDE intake classes, evidence expectations, and execution state transitions
-- design the smallest auditable execution-bridge MVP between PXS exports and Lyra OS intake/triage
+- refresh compact steering surfaces so they explicitly reflect: accepted Phase 1 boundary posture, bounded-operational `pxs` interface, and 21/21 assignment-acceptance evidence
+- tighten `PXS_CONSUMPTION_INTERFACE.md` compatibility semantics and add the next bounded proof/example where inspection remains thin
+- define and execute the explicit next runtime-path step from experiment-task runtime formation into DB-cutover readiness evidence
+- keep Delivery’s accepted pilot contract integrated through the shared pilot flow without reintroducing mailbox-style coordination
+- keep Task Management as the execution-side mapping owner for the shared As-Code Contract Pack into TDE intake classes, evidence expectations, and execution state transitions
 
 ## Added as-code rollout focus
 - Task Management owns the execution-side mapping from cross-repo contracts into signal/work/decision handling
-- the first bridge should be minimal: decisions, active tasks, and evidence bundle ingest with explicit approval points for high-risk transformations
+- the first bridge should stay minimal: decisions, active tasks, and evidence bundle ingest with explicit approval points for high-risk transformations
 - avoid creating a separate planning layer; use product artifacts for intended structure and TDE for executable follow-through
 
 ## Out of scope for now
+- re-litigating the accepted Phase 1 boundary as if it were still the main open blocker
 - full commercialization packaging
 - generalized multi-product schema enforcement
 - heavy process expansion without evidence of need
