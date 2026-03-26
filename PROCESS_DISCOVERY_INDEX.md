@@ -21,6 +21,7 @@ Official process artifacts in the root workspace are:
 - approved product-owned operating artifacts inside `products/<slug>/`
 - approved governance artifacts inside `governance/` when they define control or authority
 - approved workspace-operating-package standards when the task is about workspace setup, retrofit, or local operability
+- approved Lyra OS Model artifacts when the task is about system-level design authority, cross-product design, runtime design, or model-impacting change
 
 Official status is determined by ownership and governance, not by filename alone.
 
@@ -124,6 +125,21 @@ Use when:
 - deciding what must be locally authoritative versus consumed from shared/product outputs
 - assessing whether a workspace is truly operable
 
+### 9. System-level model design / model-impacting change
+Start with:
+- `LYRA_OS_MODEL_INDEX.md`
+- `LYRA_OS_MODEL_V1.md`
+- `MODEL_CHANGE_PROTOCOL_V1.md`
+- relevant Lyra OS Model submodel artifacts
+- `products/control-panel/`
+
+Use when:
+- the task is about system-level design authority
+- a cross-product, cross-runtime, or cross-workspace design question arises
+- repeated local learning may require Model promotion
+- a change may materially affect the Lyra OS Model
+- runtime reality appears to be drifting from explicit design authority
+
 ## Related authority artifacts
 - `AGENTS.md`
 - `PROCESS_REGISTRY.md`
@@ -137,6 +153,8 @@ Use when:
 - `processes/standards/PROJECT_CLASSIFICATION_RECORD_SCHEMA_V1.yaml`
 - `WORKSPACE_OPERATING_PACKAGE_STANDARD_V1.md`
 - `PROCESS_DISCOVERY_INDEX_STANDARD_V1.md`
+- `LYRA_OS_MODEL_INDEX.md`
+- `MODEL_CHANGE_PROTOCOL_V1.md`
 
 ## Notes
 - This artifact is a root routing layer, not a parallel process manual.
