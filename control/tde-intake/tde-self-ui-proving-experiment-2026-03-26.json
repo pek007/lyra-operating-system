@@ -1,0 +1,55 @@
+{
+  "intakeId": "CT-2026-03-26-TDE-SELF-UI-PROVING-EXPERIMENT",
+  "title": "TDE self-UI proving experiment",
+  "status": "proposed",
+  "createdOn": "2026-03-26",
+  "owner": "Lyra",
+  "owningProduct": {
+    "id": "A-007",
+    "name": "Task Management"
+  },
+  "classificationRef": "processes/classifications/CLASSIFICATION_TDE_SELF_UI_PROVING_EXPERIMENT_2026-03-26.yaml",
+  "briefRef": "products/task-management/04-execution/TDE_SELF_UI_PROVING_EXPERIMENT_BRIEF_2026-03-26.md",
+  "experimentMode": "bounded_pilot_operational",
+  "objective": "Test whether TDE can take a bounded product vision for a UI about TDE itself, convert that vision into canonical work, drive implementation through the real task/runtime path, and leave behind inspectable operated proof with limited manual rescue.",
+  "recommendedSlice": {
+    "name": "TDE Operator Readiness View",
+    "type": "operator-facing-ui-slice",
+    "minimumContents": [
+      "experiment objective / slice identity",
+      "canonical tasks generated for the slice",
+      "current state and recent transitions",
+      "assignment / acceptance status",
+      "runtime events or execution markers",
+      "readiness / cutover evidence links",
+      "links to canonical source artifacts"
+    ]
+  },
+  "preconditions": [
+    "one explicit entry artifact remains canonical",
+    "canonical runtime/task truth is identified",
+    "producer/adapter/runtime path is made explicit",
+    "experiment operating mode is declared",
+    "bounded GO/NO-GO posture for DB/readiness is stated",
+    "one thin slice is selected"
+  ],
+  "successCriteria": [
+    "bounded UI vision becomes explicit canonical work",
+    "work moves through the actual producer/adapter/runtime path",
+    "a working UI slice exists and reflects real state changes",
+    "at least one real post-build run/update/event is evidenced",
+    "a reviewer can inspect what happened without tribal knowledge"
+  ],
+  "failureSignals": [
+    "canonical state is ambiguous",
+    "progress depends on undocumented manual stitching",
+    "the UI is manually populated rather than driven from real state",
+    "operation is not evidenced after implementation",
+    "evidence exists only as narrative reconstruction"
+  ],
+  "nextAction": "Perform one explicit runtime-closure hardening step, then instantiate the live experiment task set and evidence chain.",
+  "notes": [
+    "This is intentionally a proving experiment, not a commitment to a full TDE UI program.",
+    "The experiment should attack the current bottleneck of inspectable runtime closure rather than optimizing for UI breadth or polish."
+  ]
+}

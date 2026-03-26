@@ -1,0 +1,58 @@
+classification_id: CLASSIFICATION_TDE_SELF_UI_PROVING_EXPERIMENT_2026-03-26
+title: TDE self-UI proving experiment
+status: active
+classified_on: 2026-03-26
+classifier: Lyra
+source_ref: products/task-management/04-execution/TDE_SELF_UI_PROVING_EXPERIMENT_BRIEF_2026-03-26.md
+owning_scope:
+  kind: product
+  id: A-007
+  path: products/task-management
+project_type: software_delivery
+route_id: ROUTE_SOFTWARE_DELIVERY_V1
+rationale:
+  - The work is a bounded software/digital capability delivery project for an operator-facing UI slice about TDE itself.
+  - The experiment must convert a bounded product vision into canonical execution state, implementation, and operated proof.
+  - Delivery governance matters because the work must be implemented, verified, and demonstrated in use, not only described.
+  - Task Management is the owning product because the slice is explicitly about TDE operational visibility and proof.
+chosen_bundle:
+  - bundle: intent_shaping
+    artifacts:
+      - INTENT_TDE_DELIVERY_OPERATIONS_MODEL_V1.md
+      - products/task-management/01-identity/VISION.md
+      - products/task-management/02-strategy/STRATEGY.md
+  - bundle: execution_coordination
+    artifacts:
+      - JOBS_PROCESS_V1.md
+      - products/task-management/
+  - bundle: delivery_governance
+    artifacts:
+      - SOFTWARE_DELIVERY_PROCESS_3PP_OS.md
+      - products/delivery/03-operating-model/OPERATING_MODEL.md
+      - products/delivery/03-operating-model/GOVERNANCE.md
+      - products/delivery/06-architecture/DELIVERY_AS_CODE_DESIGN_V1.md
+  - bundle: learning_loop
+    artifacts:
+      - CONTINUOUS_IMPROVEMENT_PROCESS_V1.md
+add_ons:
+  - status: included
+    bundle: product_governance
+    reason: The experiment changes the Task Management product execution surface and should remain anchored to product priorities, plan, risks, and decisions.
+    artifacts:
+      - PRODUCT_WAY_OF_WORKING_PROCESS_V1.md
+      - products/task-management/04-execution/
+      - products/task-management/07-decisions/DECISIONS.md
+  - status: watch_trigger
+    bundle: security_governance
+    reason: No material new authority or external exposure is in scope initially, but include security/governance review if the slice expands into external access, new permissions, or production operational control.
+    artifacts:
+      - SECURITY_PROCESS_V1.md
+      - governance/
+      - products/security/
+review:
+  required: false
+  reviewer: null
+  notes: null
+notes:
+  - This classification is intentionally bounded to a thin-slice proving experiment, not a full TDE product UI program.
+  - Revisit the classification if the experiment expands from operator-facing readiness visibility into broader workflow management or external-facing delivery.
