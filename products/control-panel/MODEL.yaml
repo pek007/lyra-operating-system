@@ -8,7 +8,8 @@ lifecycle: incubation
 
 domain: OS
 purpose: >
-  Provide a trusted control surface for observing, governing, and operating Lyra OS.
+  Provide a trusted control and model-stewardship surface for observing,
+  governing, and operating Lyra OS.
 
 users:
   primary:
@@ -33,11 +34,13 @@ dependencies:
   upstream:
     - governance
     - shared-platform-capabilities
+    - lyra-os-model
   downstream:
     - lyra-os-operators
   critical_constraints:
     - separate runtime boundary should be preserved
     - avoid direct dependency on PX product codebases
+    - do not collapse all model-domain ownership into control-panel
 
 artifacts:
   product: PRODUCT.md
@@ -56,10 +59,11 @@ metrics:
     - observability quality
     - operational decision speed
     - trust in control outputs
+    - model coherence visibility
   guardrails:
     - boundary discipline
     - change safety
 
 review:
   review_cadence: monthly
-  last_reviewed: 2026-03-11
+  last_reviewed: 2026-03-26
