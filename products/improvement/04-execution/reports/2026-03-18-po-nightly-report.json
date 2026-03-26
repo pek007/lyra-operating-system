@@ -1,0 +1,195 @@
+{
+  "artifactType": "tde_po_nightly_report",
+  "schemaVersion": "1.0.0",
+  "synthesisId": "po-nightly-improvement-2026-03-18",
+  "productId": "A-005",
+  "productName": "Improvement",
+  "productOwner": "Lyra",
+  "synthesisDate": "2026-03-18T01:20:00+01:00",
+  "overallHealth": "execution_in_progress",
+  "summary": "Improvement remains strategically coherent and the codified priority order is still correct. Priority refresh review found TOP_PRIORITIES.md current: P1 remains the dominant bottleneck because the canonical TDE-first improvement substrate is still not explicitly defined, P2 remains unstarted with interim-copy drift still the live distribution mode, and P3 now has its first fully closed proof case after IMP-ERR-20260315-ARCHIVED-REPO-MISUSE-01 was formally closed in TDE on 2026-03-17. That is genuine progress, but it has not yet been converted into the minimum product-side improvement interface across active products. The four Jobs Review signals remain a useful stress-test surface waiting for P1 substrate definition and canonical routing.",
+  "materialChanges": [
+    "IMP-ERR-20260315-ARCHIVED-REPO-MISUSE-01 is now formally closed in TDE (closure_id CLOSE-IMP-ERR-20260315-ARCHIVED-REPO-MISUSE-01-20260317-003605-532136). This completes the first end-to-end incident-to-improvement conversion cycle and upgrades P3 from partial progress to one verified proof case.",
+    "TOP_PRIORITIES.md remains aligned with the full product stack and current execution reality. No priority reorder or wording change was required in this run.",
+    "The four Jobs Review signals (OPS-2026-066 through OPS-2026-069) remain present in canonical TDE Inbox, which strengthens the case for P1 but does not yet constitute a defined improvement substrate or deployed minimum interface.",
+    "No new execution evidence appeared for P2 pinned-lane delivery into PXS. Interim-copy / drift exposure remains unchanged.",
+    "No changes detected in PRODUCT.md, MODEL.yaml, VISION.md, STRATEGY.md, OPERATING_MODEL.md, PLAN.md, METRICS.md, INTERFACES.md, or DECISIONS.md since the last nightly report."
+  ],
+  "topPriorities": [
+    {
+      "rank": 1,
+      "title": "Converge improvement execution into one canonical TDE-first system of record",
+      "status": "execution_in_progress",
+      "why": "Improvement still lacks an explicitly defined canonical substrate in TDE terms (queue ID, linkage rules, intake format). Without that, signals can enter TDE, but the product still does not have one deliberate, reusable execution path for improvement work.",
+      "currentStatus": "Strategic direction remains clear. Jobs Review signals are now in canonical TDE Inbox, but the substrate definition itself is still missing.",
+      "nextStep": "Define the canonical improvement execution substrate in TDE terms (queue ID, linkage rules, intake format); update improvement runbooks to use it; then route the current Jobs Review signals through that substrate as first validation cases.",
+      "progressSinceLastReport": "no_change",
+      "source": "products/improvement/04-execution/TOP_PRIORITIES.md"
+    },
+    {
+      "rank": 2,
+      "title": "Ship A-005 into PXS through a pinned lane with version truth, rollback, and verification semantics",
+      "status": "execution_in_progress",
+      "why": "Improvement distribution is still not living through a pinned-lane path with machine-checkable installed-version truth. Interim-copy drift remains the active exposure.",
+      "currentStatus": "No new delivery evidence. No pinned-lane implementation or verification movement since the prior report.",
+      "nextStep": "Implement the pinned lane as an operational path with machine-checkable installed-version truth, explicit rollback behavior, and a verification pass that closes the interim-drift gap.",
+      "progressSinceLastReport": "no_change",
+      "source": "products/improvement/04-execution/TOP_PRIORITIES.md"
+    },
+    {
+      "rank": 3,
+      "title": "Roll out the minimum improvement interface across active products, starting with mandatory incident-to-improvement conversion",
+      "status": "execution_in_progress",
+      "why": "The first full proof case now exists, which makes the interface ready to formalize from evidence rather than theory. But the interface has not yet been specified and deployed across products.",
+      "currentStatus": "One complete proof case exists (IMP-ERR-20260315 closed). Four additional improvement-eligible signals are present in TDE Inbox. No minimum interface spec or rollout evidence yet.",
+      "nextStep": "Formalize the minimum product-side improvement interface (intake format, linkage rules, review cadence, mandatory conversion rule for material incidents) using IMP-ERR-20260315 as the reference pattern; then begin deployment across active products.",
+      "progressSinceLastReport": "progress",
+      "source": "products/improvement/04-execution/TOP_PRIORITIES.md"
+    }
+  ],
+  "constraints": [
+    "Improvement must remain evidence-backed and must not become a narrative-only reporting layer.",
+    "Improvement does not own canonical task/decision state; that boundary remains with Task Management.",
+    "No authority or security boundary changes should be made as part of improvement rollout without explicit escalation."
+  ],
+  "blockers": [
+    {
+      "id": "B-001",
+      "title": "Canonical TDE improvement substrate is still undefined",
+      "detail": "There is still no explicit queue ID, linkage rule set, or intake contract that defines Improvement's canonical execution path in TDE terms.",
+      "affectsPriorities": [1, 3]
+    }
+  ],
+  "risksOrOpportunities": [
+    {
+      "id": "R-001",
+      "title": "Improvement execution state is split across multiple systems of record",
+      "trend": "risk_rising",
+      "note": "TDE Inbox now contains relevant signals, but without a defined substrate the product still risks fragmented follow-through and weak comparability."
+    },
+    {
+      "id": "R-002",
+      "title": "Deployment drift between Lyra OS and consuming workspaces",
+      "trend": "stable",
+      "note": "No pinned-lane delivery progress this cycle. Interim-copy exposure remains unchanged."
+    },
+    {
+      "id": "R-003",
+      "title": "Improvement signals do not convert reliably into owned execution",
+      "trend": "stable_improving",
+      "note": "The first full proof case is now closed, which materially improves confidence, but the product-wide minimum interface is still not deployed."
+    },
+    {
+      "id": "R-004",
+      "title": "Status truth drifts inside the improvement product itself",
+      "trend": "stable",
+      "note": "No new internal truth drift detected in this review; priority surface remained aligned with the full product stack."
+    },
+    {
+      "id": "OPP-001",
+      "title": "Use the Jobs Review signals as first real substrate-validation cases",
+      "trend": "opportunity",
+      "note": "OPS-2026-066 through 069 provide a bounded, concrete test surface once P1 substrate definition exists."
+    }
+  ],
+  "researchDelta": "No new Improvement-specific research artifacts were added in this cycle.",
+  "proposedTdeActions": [
+    {
+      "action": "Define the canonical improvement execution substrate in TDE terms (queue ID, linkage rules, intake format) and bind runbooks to it.",
+      "class": "signal",
+      "priority": "high",
+      "rationale": "This remains the dominant blocker and the highest-leverage next move for the product."
+    },
+    {
+      "action": "Use OPS-2026-066 through OPS-2026-069 as the first validation set for the canonical improvement substrate once defined.",
+      "class": "signal",
+      "priority": "medium",
+      "rationale": "They are already present in TDE, bounded, and directly relevant to Improvement's closed-loop purpose."
+    },
+    {
+      "action": "Formalize the minimum improvement interface across active products using IMP-ERR-20260315 as the reference pattern.",
+      "class": "signal",
+      "priority": "medium",
+      "rationale": "The product now has one closed proof case and can move from proof to interface definition."
+    },
+    {
+      "action": "Plan the pinned-lane distribution path for A-005 into PXS with installed-version truth and rollback semantics.",
+      "class": "signal",
+      "priority": "medium",
+      "rationale": "P2 remains unstarted and drift risk continues to accumulate passively."
+    }
+  ],
+  "priorityRefreshStatus": "unchanged",
+  "priorityRefreshNote": "TOP_PRIORITIES.md was reviewed against the full Improvement product stack and current execution evidence. It remains current and correctly ordered. No update required in this run.",
+  "evidenceLinks": [
+    {
+      "ref": "products/improvement/04-execution/TOP_PRIORITIES.md",
+      "note": "Canonical current priority source; reviewed and retained unchanged in this run."
+    },
+    {
+      "ref": "products/improvement/PRODUCT.md",
+      "note": "Product charter and scope."
+    },
+    {
+      "ref": "products/improvement/MODEL.yaml",
+      "note": "Product metadata and review baseline."
+    },
+    {
+      "ref": "products/improvement/01-identity/VISION.md",
+      "note": "Product identity and desired outcome."
+    },
+    {
+      "ref": "products/improvement/02-strategy/STRATEGY.md",
+      "note": "Strategic choices."
+    },
+    {
+      "ref": "products/improvement/03-operating-model/OPERATING_MODEL.md",
+      "note": "Closed-loop operating model."
+    },
+    {
+      "ref": "products/improvement/04-execution/PLAN.md",
+      "note": "Execution objectives."
+    },
+    {
+      "ref": "products/improvement/04-execution/RISKS.md",
+      "note": "Risk baseline."
+    },
+    {
+      "ref": "products/improvement/05-performance/METRICS.md",
+      "note": "North star and health metrics."
+    },
+    {
+      "ref": "products/improvement/06-architecture/INTERFACES.md",
+      "note": "Minimum improvement interface definition and boundary rule."
+    },
+    {
+      "ref": "products/improvement/07-decisions/DECISIONS.md",
+      "note": "Boundary decisions D-001 and D-002."
+    },
+    {
+      "ref": "os/runtime/TASKS_from_db.md",
+      "note": "Current canonical TDE projection showing OPS-2026-066 through 069 in Inbox and IMP-ERR-20260315 in Done."
+    },
+    {
+      "ref": "control/CT-OVERNIGHT-SYNTHESIS-2026-03-17.md",
+      "note": "Confirms IMP-ERR-20260315 closure and identifies P1 substrate definition as the next highest-leverage move."
+    },
+    {
+      "ref": "ARCHIVED_REPO_MISUSE_ERROR_REPORT_2026-03-15.md",
+      "note": "Closed source error report for the first complete incident-to-improvement conversion."
+    },
+    {
+      "ref": "products/improvement/04-execution/tde-improvement-imp-err-20260315-archived-repo-misuse-01-close-imp-err-20260315-archived-repo-misuse-01-20260317-003605-532136.md",
+      "note": "Closure artifact for the completed P3 proof case."
+    },
+    {
+      "ref": "memory/2026-03-17.md",
+      "note": "Recent continuity note from prior Improvement nightly run."
+    }
+  ],
+  "sourceReferences": [
+    "products/improvement/04-execution/reports/2026-03-17-po-nightly-report.json",
+    "products/improvement/04-execution/TOP_PRIORITIES.md",
+    "os/runtime/TASKS_from_db.md"
+  ]
+}

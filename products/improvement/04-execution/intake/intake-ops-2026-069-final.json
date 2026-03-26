@@ -14,6 +14,12 @@
   "priority_hint": "medium",
   "workspace_scope": "lyra-os",
   "product_scope": "security",
+  "improvement_type": "risk-disposition-hardening",
+  "expected_closure_evidence": [
+    "formal disposition record for SEC-AUTO-20260307-01 (risk acceptance or fix plan, with expiry/reopen logic if accepted)",
+    "formal disposition or approved fallback proof path for SEC-AUTO-20260309-02",
+    "traceable linkage from both stale findings to their disposition artifacts"
+  ],
   "related_entities": [
     {
       "entity_type": "task",

@@ -28,3 +28,10 @@
 - Why it matters: Performance management is currently too implicit and scattered. Making this responsibility explicit gives the system a home for simple measurement, follow-up, and closed-loop learning without creating a separate management layer.
 - Evidence: `OVERNIGHT_LOOP_MINIMUM_PERFORMANCE_STANDARD_V1.md`
 - Review trigger: Revisit if the measurement layer becomes too heavy, fails to detect drift/stuckness, or later justifies a separate explicit product/capability.
+
+### D-006 — Improvement also owns bounded external AI-agent opportunity scouting and evaluation
+- Decision: Improvement includes a bounded external opportunity-sensing loop for AI agent systems in general and OpenClaw in particular. This covers discovery, triage, evaluation, explicit dispositioning, and routing of promising opportunities into watch, reject, or TDE-linked test/adoption paths.
+- Scope: identify high-signal external use cases, operating patterns, tooling, and deployment practices; maintain a reusable opportunity library; and produce compact executive-useful summaries of the most relevant new developments.
+- Non-scope: Improvement does not become a general AI news desk, undifferentiated trend archive, or speculative backlog without routing discipline.
+- Why it matters: meaningful leverage can come not only from fixing internal friction but also from noticing and selectively adopting external patterns early. Making this explicit gives the nightly research work a defined purpose and decision path.
+- Review trigger: Revisit if the scouting loop becomes too noisy, lacks explicit dispositions, or fails to produce actionable routing into real evaluation/adoption work.

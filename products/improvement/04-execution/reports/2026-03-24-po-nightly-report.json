@@ -1,0 +1,284 @@
+{
+  "artifactType": "tde_po_nightly_report",
+  "schemaVersion": "1.0.0",
+  "synthesisId": "po-nightly-improvement-2026-03-24",
+  "productId": "A-005",
+  "productName": "Improvement",
+  "productOwner": "Lyra",
+  "synthesisDate": "2026-03-24T01:20:00+01:00",
+  "overallHealth": "execution_in_progress",
+  "summary": "Improvement remains strategically coherent, but the canonical priority surface was stale and has now been refreshed. The most important learning since yesterday is that Improvement scope materially expanded from interface rollout/maintenance into explicit ownership of the minimum cross-system measurement-and-follow-up standard for recurring loops, starting with the overnight loop. That is a real planning delta: the former Priority 3 rollout gap has largely moved into maintenance, while the new live gap is applying the overnight minimum-performance standard and ledger contract in a lightweight, auditable way. Priority 1 remains the strongest structural bottleneck, Priority 2 remains the clearest unchanged execution gap, and the refreshed Priority 3 now reflects the new control-layer responsibility rather than yesterday’s already-mostly-complete rollout posture.",
+  "materialChanges": [
+    "TOP_PRIORITIES.md was stale relative to the full product stack and was updated in this run: the former Priority 3 interface-rollout item moved to watch/maintenance, and a new Priority 3 now captures the newly codified minimum cross-system measurement-and-follow-up responsibility starting with the overnight loop.",
+    "Internal product state changed on 2026-03-23: OPERATING_MODEL.md, PLAN.md, and DECISIONS.md were updated to make lightweight performance/follow-up ownership explicit, including D-005.",
+    "Two new control artifacts now exist and materially change execution expectations: OVERNIGHT_LOOP_MINIMUM_PERFORMANCE_STANDARD_V1.md and OVERNIGHT_LOOP_LEDGER_CONTRACT_V1.md.",
+    "No new execution evidence appeared for Priority 2; pinned-lane delivery into PXS still shows no visible operational progress.",
+    "The previously dominant interface-rollout gap is no longer the main open planning problem because active-product first-deployment coverage and the reusable standard reference set were already completed before this run."
+  ],
+  "mostImportantLearningSinceYesterday": "Improvement is no longer only defining how signals become improvement work; it now also owns the minimum proof that recurring operational loops are running, helping, and auditable. That shifts the immediate planning gap from more rollout-definition work toward lightweight live control application for the overnight loop.",
+  "deltaIngestion": {
+    "status": "material_delta_ingested",
+    "internalChangesSinceYesterday": [
+      {
+        "signal": "Improvement scope expanded to include minimum cross-system measurement-and-follow-up for recurring loops",
+        "disposition": "update_now",
+        "implication": "Refresh TOP_PRIORITIES.md so the canonical priority surface reflects the new D-005 responsibility and the immediate overnight-loop application gap."
+      },
+      {
+        "signal": "New overnight minimum-performance standard and ledger contract published",
+        "disposition": "update_now",
+        "implication": "The product now has a concrete, bounded artifact pair that can support lightweight live auditability; this should appear in top-priority wording and next actions."
+      },
+      {
+        "signal": "Minimum product-side improvement interface rollout remains complete and in maintenance mode",
+        "disposition": "watch",
+        "implication": "Keep enforcing reuse and drift correction during product reviews/surface changes, but do not keep it as the main active priority-setting gap."
+      },
+      {
+        "signal": "Pinned-lane A-005 delivery still lacks fresh evidence",
+        "disposition": "watch",
+        "implication": "Priority 2 remains active and unchanged; drift exposure continues until a real lane with version truth, rollback, and verification exists."
+      },
+      {
+        "signal": "Validated exemplar intake batch OPS-2026-066 through OPS-2026-069 remains open in canonical runtime state",
+        "disposition": "watch",
+        "implication": "Priority 1 remains structurally correct; the substrate is selected and validated, but live execution proof still benefits from explicit dispositions."
+      }
+    ],
+    "externalChangesSinceYesterday": [
+      {
+        "signal": "Fresh CI/CD supply-chain compromise reporting reinforces the value of auditable, lightweight operational controls and verification semantics",
+        "disposition": "watch",
+        "implication": "This strengthens Improvement’s new overnight auditability/verification posture and Priority 2’s version-truth/verification rationale, but it does not justify a priority reorder on its own.",
+        "references": [
+          "https://www.crowdstrike.com/en-us/blog/from-scanner-to-stealer-inside-the-trivy-action-supply-chain-compromise/",
+          "https://socket.dev/blog/trivy-under-attack-again-github-actions-compromise"
+        ]
+      },
+      {
+        "signal": "No stronger official external delta was found that changes Improvement product direction versus existing internal evidence",
+        "disposition": "no_material_change",
+        "implication": "Improvement remains internally driven this cycle; external signals are contextual reinforcement, not primary steering input."
+      }
+    ],
+    "keyImplications": [
+      "Priority refresh was required and completed in code.",
+      "The product’s next non-execution planning focus is now lightweight operational control proof, not additional rollout-definition work.",
+      "The major unchanged gap remains pinned-lane deployment into PXS."
+    ]
+  },
+  "topPriorities": [
+    {
+      "rank": 1,
+      "title": "Converge improvement execution into one canonical TDE-first system of record",
+      "status": "execution_in_progress",
+      "why": "Improvement still needs one explicit, reusable, evidence-backed execution path; otherwise signals can fragment across non-canonical surfaces and weaken traceability.",
+      "currentStatus": "The low-risk Phase 1 substrate is selected in D-003 and is now supported by PLAN, OPERATING_MODEL, INTERFACES, TDE entry-surface alignment, and exemplar validation around OPS-2026-066 through OPS-2026-069. The remaining gap is disciplined ongoing live reuse and explicit disposition through the canonical execution system rather than substrate ambiguity.",
+      "nextStep": "Use the aligned Phase 1 substrate as the default live operating path and drive the validated exemplar batch toward explicit disposition so the substrate is visibly exercised in canonical execution, not just codified.",
+      "progressSinceLastReport": "stable",
+      "source": "products/improvement/04-execution/TOP_PRIORITIES.md"
+    },
+    {
+      "rank": 2,
+      "title": "Ship A-005 into PXS through a pinned lane with version truth, rollback, and verification semantics",
+      "status": "execution_in_progress",
+      "why": "Improvement delivery still depends on interim-copy behavior, so downstream drift risk remains active and installed-state truth is weak.",
+      "currentStatus": "No new progress is visible in the reviewed product stack or execution evidence. Interim-copy lanes still appear to be the baseline mechanism, and the pinned-lane target is not yet the lived distribution path.",
+      "nextStep": "Implement the pinned lane as an operational path with machine-checkable installed-version truth, explicit rollback behavior, and a verification pass that closes the interim-drift gap.",
+      "progressSinceLastReport": "no_change",
+      "source": "products/improvement/04-execution/TOP_PRIORITIES.md"
+    },
+    {
+      "rank": 3,
+      "title": "Operationalize the minimum cross-system measurement-and-follow-up standard, starting with the overnight loop",
+      "status": "prepared_next_step",
+      "why": "Improvement now explicitly owns the minimum standard for proving whether recurring loops ran, helped, and remain auditable. Without lightweight live application, the overnight system can repeat activity without clearly surfacing stuckness or contribution.",
+      "currentStatus": "D-005, OPERATING_MODEL.md, and PLAN.md now codify this responsibility. The standard and ledger contract exist, but live application has not yet become visible as a recurring canonical control record.",
+      "nextStep": "Apply the overnight minimum-performance standard in a lightweight way by maintaining the compact canonical ledger entry for each night so run health, contribution, and stuckness can be assessed without a heavy reporting layer.",
+      "progressSinceLastReport": "advanced",
+      "source": "products/improvement/04-execution/TOP_PRIORITIES.md"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "B-001",
+      "title": "Pinned-lane deployment path into PXS is still absent",
+      "detail": "Improvement still lacks an operational distribution path with installed-version truth, rollback semantics, and verification closure in the consuming environment.",
+      "affectsPriorities": [2]
+    },
+    {
+      "id": "B-002",
+      "title": "Live overnight control application is not yet visible",
+      "detail": "The overnight minimum-performance standard and ledger contract are now defined, but there is not yet a stable recurring ledger trail showing run status, contribution, and auditability in practice.",
+      "affectsPriorities": [3]
+    },
+    {
+      "id": "B-003",
+      "title": "Validated exemplar intake batch remains open in canonical runtime state",
+      "detail": "OPS-2026-066 through OPS-2026-069 are still open in current TDE runtime state, so the selected substrate is validated and aligned but not yet visibly taken through more of the canonical execution lifecycle.",
+      "affectsPriorities": [1]
+    }
+  ],
+  "constraints": [
+    "Improvement must remain evidence-backed and must not become a narrative-only reporting layer.",
+    "Improvement does not own canonical task or decision state; that boundary remains with Task Management / TDE.",
+    "The new measurement/follow-up responsibility is intentionally narrow and should not expand into broad reporting bureaucracy.",
+    "No authority or security boundary changes should be made as part of improvement rollout without explicit escalation."
+  ],
+  "risksOrOpportunities": [
+    {
+      "id": "R-001",
+      "title": "Improvement execution state is split across multiple systems of record",
+      "trend": "stable_improving",
+      "note": "The substrate decision, exemplar validation, entry-surface alignment, and interface maintenance rule materially reduce ambiguity; residual risk now depends on continued live enforcement."
+    },
+    {
+      "id": "R-002",
+      "title": "Deployment drift between Lyra OS and consuming workspaces",
+      "trend": "stable",
+      "note": "No pinned-lane progress this cycle. Interim-copy exposure remains unchanged."
+    },
+    {
+      "id": "R-003",
+      "title": "Improvement signals do not convert reliably into owned execution",
+      "trend": "improving",
+      "note": "The proof case is closed, the reference batch exists, and active-product rollout is complete. The remaining risk is sustained reuse and disposition discipline rather than definition."
+    },
+    {
+      "id": "R-004",
+      "title": "Status truth drifts inside the improvement product itself",
+      "trend": "stable_improving",
+      "note": "A stale priority surface was detected and corrected in this run rather than left implicit."
+    },
+    {
+      "id": "R-005",
+      "title": "New measurement scope could expand into process overhead",
+      "trend": "watch",
+      "note": "The overnight standard is intentionally narrow; the main control risk is turning a lean auditability layer into a reporting burden."
+    },
+    {
+      "id": "OPP-001",
+      "title": "Use the overnight ledger as the first bounded proof that Improvement can own lightweight follow-up without creating bureaucracy",
+      "trend": "opportunity",
+      "note": "A successful narrow implementation would give the portfolio a reusable control pattern for other recurring loops."
+    }
+  ],
+  "researchDelta": "External scanning found contextual reinforcement rather than steering change. Fresh CI/CD compromise reporting increases the value of auditable verification and lightweight control records, but no external development displaced the internal product stack as the main driver of tonight’s refresh. The material delta was internal: D-005 plus the new overnight standard and ledger contract changed what Improvement should treat as an active top priority.",
+  "proposedNextActions": [
+    {
+      "action": "Treat the refreshed TOP_PRIORITIES.md as the canonical current priority source for overnight synthesis and future Improvement planning.",
+      "class": "signal",
+      "priority": "high",
+      "rationale": "The priority surface was stale and has now been corrected in code."
+    },
+    {
+      "action": "Begin lightweight live application of the overnight minimum-performance standard through the canonical overnight ledger path.",
+      "class": "signal",
+      "priority": "high",
+      "rationale": "This is the clearest new gap created by yesterday’s scope and standards update."
+    },
+    {
+      "action": "Keep pinned-lane A-005 delivery visible as the main unchanged execution blocker/risk until real distribution-path evidence exists.",
+      "class": "signal",
+      "priority": "high",
+      "rationale": "Priority 2 remains materially unchanged and still accumulates passive drift risk."
+    },
+    {
+      "action": "Use future product reviews and product-surface edits to enforce the minimum improvement interface maintenance rule by reusing the standard reference set and correcting drift at the point of change.",
+      "class": "signal",
+      "priority": "medium",
+      "rationale": "The rollout gap has shifted from deployment to maintenance; it still matters, but it is no longer the top planning delta."
+    }
+  ],
+  "priorityRefreshStatus": "updated",
+  "priorityRefreshNote": "TOP_PRIORITIES.md was refreshed in this run because the prior surface predated a material product change: Improvement now explicitly owns the minimum cross-system measurement-and-follow-up standard for recurring loops, starting with the overnight loop. The old Priority 3 still described a rollout problem that had largely shifted into maintenance. The new Priority 3 now reflects the live control-layer responsibility, while the completed interface rollout moves to watch/maintenance.",
+  "evidenceLinks": [
+    {
+      "ref": "products/improvement/04-execution/TOP_PRIORITIES.md",
+      "note": "Canonical current priority source; updated in this run."
+    },
+    {
+      "ref": "products/improvement/PRODUCT.md",
+      "note": "Product charter and scope."
+    },
+    {
+      "ref": "products/improvement/MODEL.yaml",
+      "note": "Product metadata and review baseline."
+    },
+    {
+      "ref": "products/improvement/01-identity/VISION.md",
+      "note": "Product identity and desired outcome."
+    },
+    {
+      "ref": "products/improvement/02-strategy/STRATEGY.md",
+      "note": "Strategic choices."
+    },
+    {
+      "ref": "products/improvement/03-operating-model/OPERATING_MODEL.md",
+      "note": "Closed-loop operating model; updated on 2026-03-23 to include minimum measurement-and-follow-up responsibility."
+    },
+    {
+      "ref": "products/improvement/04-execution/PLAN.md",
+      "note": "Execution objectives and immediate next-step language; updated on 2026-03-23."
+    },
+    {
+      "ref": "products/improvement/04-execution/RISKS.md",
+      "note": "Current product risk baseline."
+    },
+    {
+      "ref": "products/improvement/05-performance/METRICS.md",
+      "note": "North star and health metrics."
+    },
+    {
+      "ref": "products/improvement/06-architecture/INTERFACES.md",
+      "note": "Phase 1 canonical interface and minimum product-side improvement interface requirement."
+    },
+    {
+      "ref": "products/improvement/07-decisions/DECISIONS.md",
+      "note": "Includes D-003 selecting the Phase 1 substrate, D-004 naming the standard reference set, and D-005 adding minimum cross-system measurement-and-follow-up ownership."
+    },
+    {
+      "ref": "OVERNIGHT_LOOP_MINIMUM_PERFORMANCE_STANDARD_V1.md",
+      "note": "New bounded standard for proving whether the overnight loop ran, helped, and remains auditable."
+    },
+    {
+      "ref": "OVERNIGHT_LOOP_LEDGER_CONTRACT_V1.md",
+      "note": "Canonical compact ledger contract for live overnight-loop control records."
+    },
+    {
+      "ref": "products/improvement/04-execution/MINIMUM_IMPROVEMENT_INTERFACE_STANDARD_REFERENCE_SET_2026-03-22.md",
+      "note": "Shows the former Priority 3 rollout package is already complete enough to move into maintenance mode."
+    },
+    {
+      "ref": "products/improvement/04-execution/P1_CANONICAL_TDE_SUBSTRATE_EXEMPLAR_VALIDATION_2026-03-20.md",
+      "note": "Confirms OPS-2026-066 through OPS-2026-069 as the validated exemplar intake batch."
+    },
+    {
+      "ref": "os/runtime/TASKS_from_db.md",
+      "note": "Current canonical TDE projection still showing OPS-2026-066 through OPS-2026-069 open."
+    },
+    {
+      "ref": "products/A-005/management/SCORECARD.md",
+      "note": "Still shows pinned-lane migration not started."
+    },
+    {
+      "ref": "products/improvement/04-execution/reports/2026-03-23-po-nightly-report.json",
+      "note": "Prior nightly synthesis baseline for delta comparison."
+    }
+  ],
+  "sourceReferences": [
+    "products/improvement/04-execution/reports/2026-03-23-po-nightly-report.json",
+    "products/improvement/04-execution/TOP_PRIORITIES.md",
+    "products/improvement/04-execution/RISKS.md",
+    "products/improvement/03-operating-model/OPERATING_MODEL.md",
+    "products/improvement/04-execution/PLAN.md",
+    "products/improvement/07-decisions/DECISIONS.md",
+    "OVERNIGHT_LOOP_MINIMUM_PERFORMANCE_STANDARD_V1.md",
+    "OVERNIGHT_LOOP_LEDGER_CONTRACT_V1.md",
+    "products/improvement/04-execution/MINIMUM_IMPROVEMENT_INTERFACE_STANDARD_REFERENCE_SET_2026-03-22.md",
+    "os/runtime/TASKS_from_db.md",
+    "products/A-005/management/SCORECARD.md",
+    "memory/2026-03-23.md",
+    "memory/2026-03-24.md"
+  ]
+}

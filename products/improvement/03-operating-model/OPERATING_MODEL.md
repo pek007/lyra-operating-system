@@ -60,3 +60,22 @@ Improvement should keep this layer lean and decision-oriented. It should not exp
 Current minimum references:
 - `OVERNIGHT_LOOP_MINIMUM_PERFORMANCE_STANDARD_V1.md`
 - `OVERNIGHT_LOOP_LEDGER_CONTRACT_V1.md`
+
+## External AI-agent opportunity scouting
+Improvement also owns a bounded external opportunity-sensing loop for AI agent systems in general and OpenClaw in particular.
+
+The purpose is not broad trend collection. The purpose is to:
+- scan for high-signal new use cases, operating patterns, tools, and deployment practices,
+- identify ideas that could materially improve Lyra OS, PX Strategy, or downstream workspaces,
+- maintain explicit dispositions so the same low-value ideas are not repeatedly re-evaluated,
+- and route worthwhile opportunities into watch, reject, or TDE-linked test/adoption paths.
+
+This opportunity-sensing loop should stay compact and executive-useful.
+Each materially logged opportunity should answer, at minimum:
+- what the idea/use case is,
+- why it matters to us,
+- where it appears most relevant,
+- what evidence would justify testing or adoption,
+- and its current disposition (`watch`, `reject`, `worth_testing`, `routed`, `adopted`, or equivalent).
+
+The default cadence can include lightweight recurring review, including a compact executive briefing on the most relevant newly observed opportunities.

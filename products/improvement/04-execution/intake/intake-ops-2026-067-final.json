@@ -14,6 +14,12 @@
   "priority_hint": "medium",
   "workspace_scope": "lyra-os",
   "product_scope": "security",
+  "improvement_type": "control-gap-remediation",
+  "expected_closure_evidence": [
+    "JOB-SEC-001 definition updated with explicit stale-finding SLA and enforcement rule",
+    "evidence or decision records showing retroactive disposition of SEC-AUTO-20260307-01 and SEC-AUTO-20260309-02",
+    "validation artifact confirming the stale-finding rule is now part of the recurring security review loop"
+  ],
   "related_entities": [
     {
       "entity_type": "job",

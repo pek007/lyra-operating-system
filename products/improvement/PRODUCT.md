@@ -20,8 +20,11 @@ This product includes:
 - improvement logging and cadence patterns
 - deployment of improvement mechanisms into consuming environments
 - guardrails for safe improvement work
+- external opportunity sensing for AI agent systems, including new use cases, operating patterns, and tooling relevant to Lyra OS, PX Strategy, and OpenClaw
+- triage, evaluation, and explicit routing of promising external opportunities into watch, reject, or TDE-linked follow-up paths
+- maintenance of a reusable opportunity library for high-signal AI-agent and OpenClaw-relevant ideas
 
-This product does not own canonical task/decision state itself; that remains with Task Management. Improvement owns the learning-and-prevention loop that acts on signals from execution.
+This product does not own canonical task/decision state itself; that remains with Task Management. Improvement owns the learning-and-prevention loop that acts on signals from execution and from externally observed opportunities.
 
 ## Product model
 Thin v1 product model artifacts:

@@ -1,0 +1,258 @@
+{
+  "artifactType": "tde_po_nightly_report",
+  "schemaVersion": "1.0.0",
+  "synthesisId": "po-nightly-improvement-2026-03-26",
+  "productId": "A-005",
+  "productName": "Improvement",
+  "productOwner": "Lyra",
+  "synthesisDate": "2026-03-26T01:20:00+01:00",
+  "overallHealth": "execution_in_progress",
+  "summary": "Improvement remains pointed at the right outcome and the current top-priority order still matches the full product stack. The most important learning since yesterday is that no new internal evidence has displaced the 2026-03-25 shift in Priority 3 from first-use activation to repeated-use sufficiency: the second-cycle overnight-ledger evidence still holds as the main live proof surface, while Priority 1 remains the structural bottleneck and Priority 2 remains the clearest unchanged deployment gap. Net result: learn-and-replan completed with no material priority reordering, no justified deeper research, and TOP_PRIORITIES.md confirmed current rather than refreshed.",
+  "materialChanges": [
+    "No new internal product-surface change since the 2026-03-25 overnight cycle materially altered Improvement direction, bottleneck order, or next-step framing.",
+    "The latest internal delta remains the already-incorporated 2026-03-25 repeated-cycle overnight-ledger evidence and stuckness check, which continues to support Priority 3 as a live control-proof surface rather than a future-only design item.",
+    "Current runtime/task surfaces still show OPS-2026-066 through OPS-2026-069 open, so Priority 1 remains the strongest structural bottleneck in lived execution rather than a solved substrate question.",
+    "A-005 pinned-lane migration still shows no new delivery-path evidence; interim-drift exposure therefore remains materially unchanged.",
+    "External scan surfaced only weak general reinforcement for auditability and digital audit trails, not a product-shaping change. External delta disposition remains watch/no_material_change rather than update_now."
+  ],
+  "topPriorities": [
+    {
+      "rank": 1,
+      "title": "Converge improvement execution into one canonical TDE-first system of record",
+      "status": "execution_in_progress",
+      "why": "Improvement still needs one explicit, reusable, evidence-backed execution path; otherwise signals can fragment across non-canonical surfaces and weaken traceability.",
+      "currentStatus": "The low-risk Phase 1 substrate remains selected in D-003 and supported by PLAN, OPERATING_MODEL, INTERFACES, intake contract, TDE entry-surface alignment, and exemplar validation. The live gap remains disciplined ongoing use and explicit disposition through canonical execution, with OPS-2026-066 through OPS-2026-069 still open in the current TDE surface.",
+      "nextStep": "Keep future improvement intake TDE-linked by default and drive the validated exemplar batch toward explicit disposition so the selected substrate remains visibly exercised in canonical execution rather than only codified.",
+      "progressSinceLastReport": "stable",
+      "source": "products/improvement/04-execution/TOP_PRIORITIES.md"
+    },
+    {
+      "rank": 2,
+      "title": "Ship A-005 into PXS through a pinned lane with version truth, rollback, and verification semantics",
+      "status": "execution_in_progress",
+      "why": "Improvement delivery still depends on interim-copy behavior, so downstream drift risk remains active and installed-state truth is weak.",
+      "currentStatus": "No new progress is visible in the reviewed product stack or scorecard. A-005 pinned-lane migration still reads as not started, so the lived distribution path remains weaker than the intended standard.",
+      "nextStep": "Implement the pinned lane as an operational path with machine-checkable installed-version truth, explicit rollback behavior, and a verification pass that closes the interim-drift gap.",
+      "progressSinceLastReport": "no_change",
+      "source": "products/improvement/04-execution/TOP_PRIORITIES.md"
+    },
+    {
+      "rank": 3,
+      "title": "Operationalize the minimum cross-system measurement-and-follow-up standard, starting with the overnight loop",
+      "status": "execution_in_progress",
+      "why": "Improvement now owns the minimum standard for proving whether recurring loops ran, helped, and remain auditable. The key live uncertainty is no longer first-use activation but whether repeated cycles stay inspectable and honest without needing heavier task-layer representation too early.",
+      "currentStatus": "The 2026-03-25 repeated-cycle sufficiency and anti-stuckness evidence remains the freshest live proof. The compact selected-priority -> intake/current-work -> ledger -> execution-evidence chain held across a second cycle, and the next-cycle escalation rule is explicit. No new evidence since then changes this framing.",
+      "nextStep": "Reuse and maintain the compact canonical ledger path on future overnight cycles only while each reuse produces comparably explicit bounded advancement; escalate to stronger task-layer representation if a later cycle stops meeting that standard cleanly.",
+      "progressSinceLastReport": "stable",
+      "source": "products/improvement/04-execution/TOP_PRIORITIES.md"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "B-001",
+      "title": "Pinned-lane deployment path into PXS is still absent",
+      "detail": "Improvement still lacks an operational distribution path with installed-version truth, rollback semantics, and verification closure in the consuming environment.",
+      "affectsPriorities": [2]
+    },
+    {
+      "id": "B-002",
+      "title": "Validated exemplar intake batch remains open in canonical runtime state",
+      "detail": "OPS-2026-066 through OPS-2026-069 are still open in current TDE runtime state, so the selected substrate is validated and aligned but not yet visibly taken through more of the canonical execution lifecycle.",
+      "affectsPriorities": [1]
+    },
+    {
+      "id": "B-003",
+      "title": "Repeated-cycle overnight-ledger evidence is still only two cycles deep",
+      "detail": "The compact ledger chain has now held across a second live cycle, but later reuse must still prove comparably explicit advancement or escalate to stronger task-layer representation.",
+      "affectsPriorities": [3]
+    }
+  ],
+  "risksOrOpportunities": [
+    {
+      "id": "R-001",
+      "title": "Improvement execution state is split across multiple systems of record",
+      "trend": "stable_improving",
+      "note": "The substrate decision, entry-surface alignment, and exemplar validation materially reduced ambiguity; the residual risk now depends on continued live enforcement and explicit disposition."
+    },
+    {
+      "id": "R-002",
+      "title": "Deployment drift between Lyra OS and consuming workspaces",
+      "trend": "stable",
+      "note": "No pinned-lane progress is visible this cycle. Interim-copy exposure remains unchanged."
+    },
+    {
+      "id": "R-003",
+      "title": "Improvement signals do not convert reliably into owned execution",
+      "trend": "stable_improving",
+      "note": "The closed-loop model is stronger than before and Priority 3 now has repeated-use evidence, but sustained conversion discipline still depends on canonical TDE-linked follow-through."
+    },
+    {
+      "id": "R-004",
+      "title": "Status truth drifts inside the improvement product itself",
+      "trend": "stable",
+      "note": "No new internal inconsistency was found in this run. The current TOP_PRIORITIES surface remains aligned with the broader stack."
+    },
+    {
+      "id": "R-005",
+      "title": "Minimum follow-up measurement expands into process overhead",
+      "trend": "watch",
+      "note": "The overnight control layer remains intentionally narrow; maintain that boundary and avoid broad reporting bureaucracy."
+    },
+    {
+      "id": "OPP-001",
+      "title": "Use repeated overnight-ledger reuse as the first proof that Improvement can own lightweight follow-up without bureaucracy",
+      "trend": "opportunity",
+      "note": "A later clean reuse or a disciplined escalation would strengthen confidence that compact auditability controls can stay honest under repetition."
+    }
+  ],
+  "proposedNextActions": [
+    {
+      "action": "Keep `products/improvement/04-execution/TOP_PRIORITIES.md` as the canonical current priority source with no refresh this cycle.",
+      "class": "no_material_change",
+      "priority": "high",
+      "rationale": "The full stack review did not show stale or misordered priorities."
+    },
+    {
+      "action": "Continue treating repeated-use overnight-ledger sufficiency as the main live watchpoint and require the next reuse to show comparably explicit advancement or escalate representation strength.",
+      "class": "watch",
+      "priority": "high",
+      "rationale": "Priority 3 remains the strongest current learning surface, but no new evidence since yesterday justifies a replan."
+    },
+    {
+      "action": "Keep pinned-lane A-005 delivery visible as the clearest unchanged blocker/risk until real distribution-path evidence exists.",
+      "class": "watch",
+      "priority": "high",
+      "rationale": "Priority 2 remains materially unchanged and continues to accumulate passive drift risk."
+    },
+    {
+      "action": "Keep OPS-2026-066 through OPS-2026-069 visible as the live proof surface for substrate-through-disposition discipline.",
+      "class": "watch",
+      "priority": "medium",
+      "rationale": "Priority 1 remains correct, but the main remaining evidence gap is explicit disposition in canonical runtime state."
+    },
+    {
+      "action": "Do not initiate deeper research from this run.",
+      "class": "backlog",
+      "priority": "low",
+      "rationale": "Current uncertainty is operational and product-local; the next valuable signal should come from execution evidence, not broader external research."
+    }
+  ],
+  "priorityRefreshStatus": "unchanged",
+  "evidenceLinks": [
+    {
+      "ref": "products/improvement/04-execution/TOP_PRIORITIES.md",
+      "note": "Canonical current priority source; reviewed and confirmed current in this run."
+    },
+    {
+      "ref": "products/improvement/PRODUCT.md",
+      "note": "Product charter and scope."
+    },
+    {
+      "ref": "products/improvement/MODEL.yaml",
+      "note": "Product metadata and review baseline."
+    },
+    {
+      "ref": "products/improvement/01-identity/VISION.md",
+      "note": "Product identity and intended outcome."
+    },
+    {
+      "ref": "products/improvement/02-strategy/STRATEGY.md",
+      "note": "Strategic choices and boundary."
+    },
+    {
+      "ref": "products/improvement/03-operating-model/OPERATING_MODEL.md",
+      "note": "Closed-loop model and minimum measurement/follow-up responsibility."
+    },
+    {
+      "ref": "products/improvement/04-execution/PLAN.md",
+      "note": "Current execution objectives and rollout/control status."
+    },
+    {
+      "ref": "products/improvement/04-execution/RISKS.md",
+      "note": "Current risk baseline for Improvement."
+    },
+    {
+      "ref": "products/improvement/05-performance/METRICS.md",
+      "note": "North star and health metrics."
+    },
+    {
+      "ref": "products/improvement/06-architecture/INTERFACES.md",
+      "note": "Minimum improvement interface and Phase 1 TDE-linked intake rule."
+    },
+    {
+      "ref": "products/improvement/07-decisions/DECISIONS.md",
+      "note": "Includes D-003 substrate decision, D-004 reference-set decision, and D-005 follow-up ownership decision."
+    },
+    {
+      "ref": "products/improvement/04-execution/OVERNIGHT_LEDGER_REPEATED_CYCLE_STUCKNESS_CHECK_2026-03-25.md",
+      "note": "Freshest bounded live evidence for Priority 3 repeated-use sufficiency and explicit escalation rule."
+    },
+    {
+      "ref": "control/runtime/overnight-ledger/2026-03-25.json",
+      "note": "Canonical repeated-cycle overnight ledger record."
+    },
+    {
+      "ref": "control/CT-OVERNIGHT-SYNTHESIS-2026-03-25.md",
+      "note": "Shows Improvement P3 selected as the highest-value overnight priority for repeated-use sufficiency testing."
+    },
+    {
+      "ref": "os/runtime/TASKS_from_db.md",
+      "note": "Current canonical TDE projection still showing OPS-2026-066 through OPS-2026-069 open."
+    },
+    {
+      "ref": "products/A-005/management/SCORECARD.md",
+      "note": "Still shows pinned-lane migration not started."
+    },
+    {
+      "ref": "products/improvement/04-execution/nightly-reports/2026-03-25-po-nightly-report.json",
+      "note": "Yesterday's canonical nightly artifact used for delta comparison."
+    },
+    {
+      "ref": "https://datascope.io/en/blog/audit-best-practices-2026/",
+      "note": "Weak external watch-level reinforcement for digital auditability; not a steering source."
+    },
+    {
+      "ref": "https://tallysolutions.com/tally/audit-trail-edit-log-compliance/",
+      "note": "Weak external reinforcement that explicit edit logging and audit trails remain valuable; used only as contextual support."
+    }
+  ],
+  "deltaIngestion": {
+    "disposition": "no_material_change",
+    "mostImportantLearningSinceYesterday": "No fresh signal displaced yesterday's learning: Priority 3's live question is still repeated-use sufficiency and representation honesty, not first-use activation or strategic redesign.",
+    "signals": [
+      {
+        "signal": "No new internal product-artifact changes since the 2026-03-25 repeated-cycle update",
+        "classification": "no_material_change",
+        "implication": "Keep TOP_PRIORITIES.md unchanged."
+      },
+      {
+        "signal": "Repeated-cycle overnight-ledger sufficiency evidence remains the freshest live proof surface",
+        "classification": "watch",
+        "implication": "Continue monitoring the next reuse against the explicit bounded-advancement rule."
+      },
+      {
+        "signal": "OPS-2026-066 through OPS-2026-069 remain open in canonical runtime state",
+        "classification": "watch",
+        "implication": "Keep substrate-through-disposition discipline as the main Priority 1 proof gap."
+      },
+      {
+        "signal": "A-005 pinned-lane migration still reads as not started",
+        "classification": "watch",
+        "implication": "Maintain Priority 2 as the clearest unchanged deployment risk."
+      },
+      {
+        "signal": "External scan produced only generic auditability reinforcement",
+        "classification": "backlog",
+        "implication": "Do not widen research or change strategy from this signal."
+      }
+    ],
+    "deeperResearchNomination": {
+      "needed": false,
+      "reason": "Current uncertainty is operational and execution-shaped. The next useful delta should come from a later live cycle or concrete delivery evidence, not broader external research."
+    }
+  },
+  "sourceReferences": [
+    "PRODUCT_OWNER_DAILY_PRIORITY_REFRESH_PROTOCOL_V1.md",
+    "TDE_PRODUCT_OWNER_NIGHTLY_REPORT_SPEC_V1.md"
+  ]
+}

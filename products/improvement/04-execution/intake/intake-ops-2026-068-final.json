@@ -14,6 +14,12 @@
   "priority_hint": "low",
   "workspace_scope": "lyra-os",
   "product_scope": "governance",
+  "improvement_type": "operating-model-hygiene",
+  "expected_closure_evidence": [
+    "archival/index artifact proving the four completed proof-case bundles were retired or marked archived canonically",
+    "published governance artifact for the intra-Lyra handoff protocol",
+    "index or registry update showing where completed bundles are now tracked"
+  ],
   "related_entities": [
     {
       "entity_type": "job",

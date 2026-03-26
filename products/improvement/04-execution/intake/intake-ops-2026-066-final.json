@@ -14,6 +14,12 @@
   "priority_hint": "medium",
   "workspace_scope": "lyra-os",
   "product_scope": "improvement",
+  "improvement_type": "runtime-compatibility-hardening",
+  "expected_closure_evidence": [
+    "updated cron/job configuration or runbook showing compliant delivery model",
+    "smoke-test evidence proving JOB-CI-001 still delivers correctly after the OpenClaw 2026.3.11 change",
+    "checklist/update artifact showing cron delivery validation is now part of the post-update smoke path"
+  ],
   "related_entities": [
     {
       "entity_type": "job",
