@@ -1,0 +1,44 @@
+{
+  "formationId": "FORM-TDE-SELF-UI-OPERATOR-READINESS-2026-03-26",
+  "objectiveId": "OBJ-TDE-SELF-UI-OPERATOR-READINESS-2026-03-26",
+  "title": "Implement and operate the TDE Operator Readiness View proving slice",
+  "status": "proposed",
+  "createdOn": "2026-03-26",
+  "owner": "Lyra",
+  "owningProduct": {
+    "id": "A-007",
+    "name": "Task Management"
+  },
+  "parentExperimentIntake": "control/tde-intake/tde-self-ui-proving-experiment-2026-03-26.json",
+  "taskSetRef": "products/task-management/04-execution/TDE_SELF_UI_OPERATOR_READINESS_VIEW_TASK_SET_2026-03-26.md",
+  "workflowFamily": "implementation_verification_readiness",
+  "decisionPolicyRef": "products/task-management/07-decisions/REFERENCE_TDE_POLICY_ENVELOPE_IMPLEMENTATION_VERIFICATION_V1.json",
+  "objective": "Create and operate one bounded operator-facing UI slice that makes the TDE self-UI proving experiment inspectable through real execution state rather than descriptive documents alone.",
+  "successCriteria": [
+    "a bounded objective is entered through the canonical experiment intake",
+    "canonical tasks are formed for the slice",
+    "a working operator-facing view exists",
+    "the view reflects real runtime/task state or post-build event updates",
+    "the experiment leaves behind an inspectable evidence package"
+  ],
+  "declaredLimitation": "The assignment-acceptance substrate is strongly proven, but the broader producer/adapter-to-runtime-to-operated-proof chain is only partially proven. Any manual rescue or closure ambiguity during execution must be logged and counted against a full PASS.",
+  "proposedTasks": [
+    {
+      "taskId": "TDE-SELF-UI-READINESS-20260326-001",
+      "title": "Define and approve bounded slice scope, runtime assumptions, and evidence expectations"
+    },
+    {
+      "taskId": "TDE-SELF-UI-READINESS-20260326-002",
+      "title": "Define the canonical data/state bindings for the Operator Readiness View"
+    },
+    {
+      "taskId": "TDE-SELF-UI-READINESS-20260326-003",
+      "title": "Implement the bounded Operator Readiness View thin slice"
+    },
+    {
+      "taskId": "TDE-SELF-UI-READINESS-20260326-004",
+      "title": "Verify the slice against real state change and capture operated proof"
+    }
+  ],
+  "nextAction": "Register the objective and form canonical runtime tasks from this objective under the declared experiment limitation."
+}
