@@ -98,7 +98,7 @@ Purpose:
 - capture whether manual rescue was required
 
 Expected output:
-- verification/evidence artifact
+- `products/task-management/04-execution/TDE_SELF_UI_READINESS_20260326_004_VERIFICATION.md`
 - pass/partial/fail judgment against the proving rubric
 
 ## Proposed stage mapping
