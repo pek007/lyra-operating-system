@@ -53,7 +53,7 @@ Purpose:
 - prevent scope expansion before runtime evidence exists
 
 Expected output:
-- concise execution framing note or equivalent canonical linkage artifact
+- `products/task-management/04-execution/TDE_SELF_UI_READINESS_20260326_001_EXECUTION_FRAMING.md`
 
 ### Task 2 — Runtime/data binding definition
 Suggested task id:
