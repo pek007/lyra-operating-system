@@ -148,7 +148,7 @@ At minimum, the experiment should leave behind:
 
 ## Recommended next step
 Before launching the experiment:
-- do one explicit runtime-closure hardening step
+- complete `products/task-management/04-execution/TDE_SELF_UI_RUNTIME_CLOSURE_HARDENING_STEP_2026-03-26.md`
 - then instantiate this brief as a live experiment artifact and initial task set
 
 That is the cleanest path to a serious thin-slice test rather than a visually persuasive but strategically weak demo.

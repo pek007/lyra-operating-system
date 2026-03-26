@@ -47,7 +47,7 @@
     "operation is not evidenced after implementation",
     "evidence exists only as narrative reconstruction"
   ],
-  "nextAction": "Perform one explicit runtime-closure hardening step, then instantiate the live experiment task set and evidence chain.",
+  "nextAction": "Complete products/task-management/04-execution/TDE_SELF_UI_RUNTIME_CLOSURE_HARDENING_STEP_2026-03-26.md, then instantiate the live experiment task set and evidence chain.",
   "notes": [
     "This is intentionally a proving experiment, not a commitment to a full TDE UI program.",
     "The experiment should attack the current bottleneck of inspectable runtime closure rather than optimizing for UI breadth or polish."
