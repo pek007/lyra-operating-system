@@ -31,7 +31,8 @@ Control Tower should answer:
 2. Which product-local priorities matter most now at the portfolio level?
 3. Which proposed actions should become overnight TDE execution priorities?
 4. Which signals should be recorded but not promoted into action?
-5. What, if anything, may require Peter in the morning?
+5. Is there evidence of Model drift or a candidate Model-impacting change that should be surfaced through `MODEL_CHANGE_PROTOCOL_V1.md`?
+6. What, if anything, may require Peter in the morning?
 
 ## Verify before surface rule (added 2026-03-17, ERR-2026-03-17-E2-STALE-SURFACE)
 When a carried-forward decision item has a named canonical artifact (acceptance sheet, decision record, etc.):
@@ -55,6 +56,7 @@ Control Tower may decide to:
 - update existing active work
 - create new work
 - create a decision item
+- create or update a Model-change candidate under `MODEL_CHANGE_PROTOCOL_V1.md`
 - record with no further action
 
 ## Default overnight selection rule
@@ -90,6 +92,7 @@ A valid overnight synthesis note should contain:
 - portfolio bottleneck
 - selected overnight priorities (1-3)
 - the few material changes that matter at portfolio level
+- any detected Model drift or Model-change candidate worth routing
 - what was activated/updated in TDE
 - what remains blocked or requires decision
 - what may require Peter before 07:00
@@ -123,9 +126,10 @@ This policy should be updated when:
 The overnight runtime should:
 1. gather product-owner report signals
 2. compare them against current portfolio bottleneck and TDE state
-3. select 1-3 overnight priorities
-4. update TDE accordingly
-5. emit a concise executive synthesis summary
+3. check whether any signal implies Model drift or a Model-impacting change candidate
+4. select 1-3 overnight priorities
+5. update TDE and/or Model-change routing accordingly
+6. emit a concise executive synthesis summary
 
 ## Version
 - v1.0
