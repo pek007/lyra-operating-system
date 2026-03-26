@@ -1,0 +1,29 @@
+{
+  "artifactType": "tde_request_entry_result",
+  "schemaVersion": "1.0.0",
+  "recorded_at": "2026-03-26T16:01:05Z",
+  "request_text": "Implement and operate the TDE Operator Readiness View proving slice as the first live task set for the TDE self-UI proving experiment, under the declared limitation that the broader producer/adapter-to-runtime-to-operated-proof chain is only partially proven and any manual rescue must be logged.",
+  "source_ref": "tde-self-ui-operator-readiness-2026-03-26",
+  "request_class": "implementation_request",
+  "intake_class": "work",
+  "intake_validation": "passed",
+  "formation_validation": "passed",
+  "formation_id": "FORM-TDE-SELF-UI-OPERATOR-READINESS-2026-03-26",
+  "recommended_next_action": "proceed_with_constraints",
+  "required_clarifications": [],
+  "intake_packet_path": "os/runtime/tde-self-ui-operator-readiness-intake.json",
+  "formation_path": "os/runtime/tde-self-ui-operator-readiness-formation.json",
+  "canonical_creation": {
+    "formation_id": "FORM-TDE-SELF-UI-OPERATOR-READINESS-2026-03-26",
+    "objective_id": "OBJ-TDE-SELF-UI-OPERATOR-READINESS-2026-03-26",
+    "created_tasks": [
+      "TDE-SELF-UI-READINESS-20260326-001",
+      "TDE-SELF-UI-READINESS-20260326-002",
+      "TDE-SELF-UI-READINESS-20260326-003",
+      "TDE-SELF-UI-READINESS-20260326-004"
+    ],
+    "workflow_family": "implementation_verification_readiness",
+    "tasks_projection_path": "os/runtime/TASKS_from_db.md",
+    "objectives_path": "os/runtime/tde_objectives.json"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "artifactType": "tde_intent_formation_record",
+  "schemaVersion": "1.0.0",
+  "formation_id": "FORM-TDE-SELF-UI-OPERATOR-READINESS-2026-03-26",
+  "source_type": "chat_request",
+  "source_ref": "tde-self-ui-operator-readiness-2026-03-26",
+  "formed_at": "2026-03-26T16:01:05Z",
+  "formed_by_role": "Product Owner",
+  "formation_rationale": "A bounded proving slice can be formed under explicit limitations. The request is specific enough to create a governed objective and first task set for the TDE Operator Readiness View while preserving the declared constraint that broader producer/adapter/runtime closure is only partially proven.",
+  "interpreted_intent": "Implement and operate a bounded operator-facing TDE self-UI slice through the canonical implementation -> verification -> readiness path.",
+  "request_type": "implementation_request",
+  "specificity_level": "high",
+  "ambiguity_types": [],
+  "actionability_status": "executable_with_constraints",
+  "assumptions": [
+    "The slice remains bounded to the TDE Operator Readiness View.",
+    "Any manual rescue or closure ambiguity will be explicitly logged as experiment evidence.",
+    "The experiment does not justify broad autonomy or full-product claims."
+  ],
+  "known_unknowns": [
+    "Exact implementation shape of the first UI rendering path.",
+    "Whether post-build operated proof can be achieved without additional runtime glue."
+  ],
+  "proposed_objective": {
+    "objective_title": "Implement and operate the TDE Operator Readiness View proving slice",
+    "objective_summary": "Create and operate one bounded operator-facing UI slice that makes the TDE self-UI proving experiment inspectable through real execution state rather than descriptive documents alone.",
+    "objective_id": "OBJ-TDE-SELF-UI-OPERATOR-READINESS-2026-03-26"
+  },
+  "proposed_success_criteria": [
+    "A bounded objective is entered through the canonical experiment intake.",
+    "Canonical tasks are formed for the slice.",
+    "A working operator-facing view exists.",
+    "The view reflects real runtime/task state or post-build event updates.",
+    "The experiment leaves behind an inspectable evidence package."
+  ],
+  "proposed_workflow_family": "implementation_verification_readiness",
+  "proposed_first_stage_set": [
+    "implementation",
+    "verification",
+    "readiness-review"
+  ],
+  "proposed_first_task_set": [
+    {
+      "task_id": "TDE-SELF-UI-READINESS-20260326-001",
+      "task_title": "Define and approve bounded slice scope, runtime assumptions, and evidence expectations",
+      "task_summary": "Lock the slice scope, evidence standard, and declared experiment limitation into execution.",
+      "stage_id": "implementation"
+    },
+    {
+      "task_id": "TDE-SELF-UI-READINESS-20260326-002",
+      "task_title": "Define the canonical data/state bindings for the Operator Readiness View",
+      "task_summary": "Specify what the UI reads and how state/evidence transitions are surfaced from canonical sources.",
+      "stage_id": "implementation"
+    },
+    {
+      "task_id": "TDE-SELF-UI-READINESS-20260326-003",
+      "task_title": "Implement the bounded Operator Readiness View thin slice",
+      "task_summary": "Build the smallest working operator-facing UI slice for the experiment.",
+      "stage_id": "implementation"
+    },
+    {
+      "task_id": "TDE-SELF-UI-READINESS-20260326-004",
+      "task_title": "Verify the slice against real state change and capture operated proof",
+      "task_summary": "Confirm the slice is operated and leaves behind inspectable proof, including any manual rescue used.",
+      "stage_id": "verification"
+    }
+  ],
+  "required_clarifications": [],
+  "recommended_next_action": "proceed_with_constraints"
+}

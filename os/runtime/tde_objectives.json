@@ -72,6 +72,66 @@
       "created_with_assumptions": true,
       "creation_mapping_version": "v1",
       "created_at": "2026-03-15T16:36:07.074954+00:00"
+    },
+    {
+      "objective_id": "OBJ-FORM-FORM-CONTROL-TOWER-OVERNIGHT-SYNTHESIS-2026-0",
+      "owner": "A-007",
+      "title": "Harden TDE runtime behavior",
+      "summary": "Implement a bounded hardening slice for TDE/OpenClaw runtime behavior.",
+      "workflow_family": "implementation_verification_readiness",
+      "success_criteria": [
+        "A bounded runtime hardening slice is implemented and validated in staging."
+      ],
+      "formation_id": "FORM-CONTROL-TOWER-OVERNIGHT-SYNTHESIS-2026-0",
+      "created_with_assumptions": true,
+      "creation_mapping_version": "v1",
+      "created_at": "2026-03-18T00:36:13.045101+00:00"
+    },
+    {
+      "objective_id": "OBJ-FORM-FORM-PRODUCTS-IMPROVEMENT-04-EXECUTION-TOP-PR",
+      "owner": "A-007",
+      "title": "Conduct bounded review or audit",
+      "summary": "Run a bounded review/audit slice and capture findings clearly.",
+      "workflow_family": "implementation_verification_readiness",
+      "success_criteria": [
+        "A bounded review/audit result is produced with useful findings."
+      ],
+      "formation_id": "FORM-PRODUCTS-IMPROVEMENT-04-EXECUTION-TOP-PR",
+      "created_with_assumptions": true,
+      "creation_mapping_version": "v1",
+      "created_at": "2026-03-19T00:36:18.394082+00:00"
+    },
+    {
+      "objective_id": "OBJ-FORM-FORM-CONTROL-TOWER-TASK-MANAGEMENT-COMPACT-SU",
+      "owner": "A-007",
+      "title": "Conduct bounded review or audit",
+      "summary": "Run a bounded review/audit slice and capture findings clearly.",
+      "workflow_family": "implementation_verification_readiness",
+      "success_criteria": [
+        "A bounded review/audit result is produced with useful findings."
+      ],
+      "formation_id": "FORM-CONTROL-TOWER-TASK-MANAGEMENT-COMPACT-SU",
+      "created_with_assumptions": true,
+      "creation_mapping_version": "v1",
+      "created_at": "2026-03-22T00:36:32.230926+00:00"
+    },
+    {
+      "objective_id": "OBJ-TDE-SELF-UI-OPERATOR-READINESS-2026-03-26",
+      "owner": "A-007",
+      "title": "Implement and operate the TDE Operator Readiness View proving slice",
+      "summary": "Create and operate one bounded operator-facing UI slice that makes the TDE self-UI proving experiment inspectable through real execution state rather than descriptive documents alone.",
+      "workflow_family": "implementation_verification_readiness",
+      "success_criteria": [
+        "A bounded objective is entered through the canonical experiment intake.",
+        "Canonical tasks are formed for the slice.",
+        "A working operator-facing view exists.",
+        "The view reflects real runtime/task state or post-build event updates.",
+        "The experiment leaves behind an inspectable evidence package."
+      ],
+      "formation_id": "FORM-TDE-SELF-UI-OPERATOR-READINESS-2026-03-26",
+      "created_with_assumptions": true,
+      "creation_mapping_version": "v1",
+      "created_at": "2026-03-26T16:01:05+00:00"
     }
   ]
 }
