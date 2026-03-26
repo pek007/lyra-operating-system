@@ -5,7 +5,7 @@ Rolling near-term plan for the next 2–6 weeks.
 
 ## Current objectives
 1. Keep the accepted Phase 1 Vega/PXS boundary posture explicit across compact steering surfaces and readiness language.
-2. Stabilize the bounded-operational `pxs` consumption contract into a disciplined, inspectable downstream interface.
+2. Stabilize the bounded-operational `pxs` consumption contract into a disciplined, inspectable downstream interface with an explicit machine-execution boundary and invocation rule.
 3. Close the remaining substrate-to-runtime gap by wiring the producer/adapter path, forming proving-slice work into canonical runtime state, and forcing an explicit DB-cutover GO/NO-GO path.
 4. Keep Task Management product boundaries explicit while downstream consumption and runtime hardening progress.
 
@@ -23,6 +23,9 @@ Current evidence anchors for this workstream:
 
 ### Workstream 2: Downstream interface stabilization
 - tighten provider/consumer compatibility notes for the bounded `pxs` consumption path
+- make the TDE machine-execution boundary explicit so it is clear what belongs in prompt-level work, executive/control-plane objects, and TDE
+- define a usable invocation rule for when `pxs` should route work into TDE versus keeping it outside the execution plane
+- strengthen the linking model so TDE executes against external domain objects rather than absorbing them into one blended task pool
 - extend bounded handling, worked examples, and inspection clarity where needed
 - accumulate evidence that `pxs` can consume the interface without hidden operator rescue
 
@@ -34,7 +37,7 @@ Current evidence anchors for this workstream:
 
 ## Immediate next steps
 - refresh compact steering surfaces so they explicitly reflect: accepted Phase 1 boundary posture, bounded-operational `pxs` interface, and 21/21 assignment-acceptance evidence
-- tighten `PXS_CONSUMPTION_INTERFACE.md` compatibility semantics and add the next bounded proof/example where inspection remains thin
+- tighten `PXS_CONSUMPTION_INTERFACE.md` compatibility semantics, add an explicit boundary/invocation rule for `pxs`, and add the next bounded proof/example where inspection remains thin
 - define and execute the explicit next runtime-path step from experiment-task runtime formation into DB-cutover readiness evidence
 - keep Delivery’s accepted pilot contract integrated through the shared pilot flow without reintroducing mailbox-style coordination
 - keep Task Management as the execution-side mapping owner for the shared As-Code Contract Pack into TDE intake classes, evidence expectations, and execution state transitions
