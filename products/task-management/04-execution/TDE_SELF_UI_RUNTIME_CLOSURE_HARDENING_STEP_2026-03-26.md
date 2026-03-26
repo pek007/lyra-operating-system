@@ -82,6 +82,10 @@ Current Task Management evidence suggests the dominant remaining bottleneck is n
 - `products/task-management/04-execution/TDE_ASSIGNMENT_ACCEPTANCE_TEST_EVIDENCE_2026-03-16.md`
 - `os/runtime/TASKS_from_db.md`
 
+## Current assessment linkage
+Current gate assessment:
+- `products/task-management/04-execution/TDE_SELF_UI_RUNTIME_CLOSURE_GATE_ASSESSMENT_2026-03-26.md`
+
 ## Recommended immediate next action after PASS
 If this hardening step passes:
 - instantiate the first live experiment task set
@@ -90,6 +94,6 @@ If this hardening step passes:
 
 ## Recommended immediate next action after FAIL or PARTIAL PASS
 If this hardening step does not fully pass:
-- do not launch the proving experiment yet
-- convert the missing closure point into the next explicit Task Management runtime-path work item
-- rerun the gate only after that closure point is materially improved
+- do not claim full end-to-end closure
+- either convert the missing closure point into the next explicit Task Management runtime-path work item or proceed only in bounded pilot mode with the limitation explicitly declared
+- rerun the gate after the closure point is materially improved
