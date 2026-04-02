@@ -86,7 +86,23 @@ Date: 2026-03-17
 - Known gaps / risks: lifecycle/testing practice is newly formalized and not yet exercised across several real skill changes
 - Upgrade / retirement trigger: upgrade when multiple skill create/improve/retire cycles have been executed through the standard; retire or narrow if the capability moves into a different governance mechanism.
 
-## A-008.C6 — Bounded governance verification cycle execution
+## A-008.C6 — Shared policy/compliance distribution and local adoption
+- Owning product: Governance
+- Purpose: Define, package, and route shared governance policies so they can be applied consistently across Lyra OS and downstream workspaces such as `pxs` without relying on hidden thread memory or ad hoc interpretation.
+- Scope / boundary: Governs shared policy families such as privacy/personal-data handling, compliance baselines, naming/identifier discipline, retention/deletion expectations, and other cross-workspace governance instructions; does not replace workspace-local authority surfaces or product-local operating processes.
+- Primary consumers: all products, `pxs`, future workspaces, operators, agents
+- Delivery mode(s): governance artifacts + policy-pack + ops-pack + workspace operating package adoption + selective schema/validator support where justified
+- Entrypoint / interface: governance policy standards, workspace adoption artifacts, process-discovery routing, and validation/evidence surfaces
+- Canonical artifacts: `PRODUCT.md`, `02-strategy/STRATEGY.md`, `03-operating-model/OPERATING_MODEL.md`, `06-architecture/INTERFACES.md`, `WORKSPACE_OPERATING_PACKAGE_STANDARD_V1.md`, `PROCESS_DISCOVERY_INDEX_STANDARD_V1.md`, `GDPR_AI_ACT_COMPLIANCE_BASELINE_V1.md`
+- Dependencies: workspace operating package standard, process discovery model, delivery-mode framework, source-of-truth clarity, validation/evidence loops
+- Constraints / guardrails: model-first not model-only; shared policies must be explicit in the Governance product model before broad rollout; local workspaces must adopt policies through their own authority surfaces; hard controls should remain in config/plugins/services where bypass is unacceptable
+- Readiness: draft
+- Lifecycle state: building
+- Evidence: compliance baseline exists and workspace operating package standards already provide the downstream adoption path; explicit model anchoring for shared-policy distribution is now being established
+- Known gaps / risks: policy-family inventory is incomplete; local adoption in `pxs` and other workspaces is still uneven; machine-checkable enforcement exists only for selected governance surfaces so far
+- Upgrade / retirement trigger: upgrade when at least one policy family (for example personal-data minimization / naming discipline) is modeled, published, locally adopted in `pxs`, and supported by a bounded validation/review loop
+
+## A-008.C7 — Bounded governance verification cycle execution
 - Owning product: Governance
 - Purpose: Run one bounded Governance VERIFY cycle consistently, with clear evidence output and minimal interpretation drift.
 - Scope / boundary: Verifies one governance artifact, process, claim, packaging surface, or control condition at a time; does not broaden into a general governance review or rewrite policy broadly during a bounded cycle.
