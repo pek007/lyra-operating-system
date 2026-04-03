@@ -12,3 +12,4 @@
 - define minimum workflow-security standard for automation-heavy repos
 - identify which evidence artifact classes require tighter schema strictness first
 - sequence these changes as enabling controls before broader policy-as-code and execution-bridge work
+- use the new Prompt Injection Defense capability and checklist to review the highest-blast-radius runtime paths, starting with `px-internal-dev`

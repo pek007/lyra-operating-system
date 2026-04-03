@@ -32,11 +32,11 @@ Security should keep current-state acceptance honest without collapsing future h
 - **Mitigation direction:** Prefer committed evidence bundles or deterministic redacted summaries for baseline-critical references and promotion decisions.
 
 ### R-003 — Security estate growth can outpace explicit posture translation
-- **Description:** The operating estate now includes more than the original boundary-and-baseline frame, including Google Workspace and other expanding external/integration surfaces.
-- **Affected scope:** `pxs`, Google Workspace, integrations, communication/document surfaces
-- **Consequence:** New attack surfaces may become operationally normal before their security implications, capabilities, and minimum posture expectations are made explicit.
-- **Current posture:** Newly elevated active risk.
-- **Mitigation direction:** Use `ESTATE_MAP.md`, `SURFACE_CHANGE_LOG.md`, and `CAPABILITY_MAP.md` to force explicit review and posture translation whenever a material new platform or surface is introduced.
+- **Description:** The operating estate now includes more than the original boundary-and-baseline frame, including Google Workspace and other expanding external/integration surfaces, and the current gap is no longer recognition alone but standing translation into baseline, risk, review, and direct-evidence expectations.
+- **Affected scope:** `pxs`, Google Workspace, integrations, communication/document surfaces, critical-account/admin surfaces
+- **Consequence:** New attack surfaces may become operationally normal before their security implications, minimum posture expectations, and direct provider/admin proof requirements are made explicit on standing control surfaces.
+- **Current posture:** Active risk with sharper evidence on 2026-04-02/2026-04-03; current priority is integration and closure rather than further broad discovery.
+- **Mitigation direction:** Use `ESTATE_MAP.md`, `SURFACE_CHANGE_LOG.md`, `CAPABILITY_MAP.md`, `2026-04-02_GOOGLE_WORKSPACE_MINIMUM_POSTURE_CHECKLIST__PXS.md`, `2026-04-03_ESTATE_BASELINE_RISK_ALIGNMENT_STEP.md`, and `2026-04-03_GOOGLE_WORKSPACE_PROOF_GAP_STATUS_MATRIX__PXS.md` to force explicit review and posture translation whenever a material new platform or surface is introduced and to keep the remaining direct-proof items compact and operator-facing.
 
 ### R-004 — Upstream OpenClaw change can alter local risk faster than the product stack adapts
 - **Description:** OpenClaw evolves quickly, including fixes for known weaknesses and changes to behavior or defaults. Local posture can drift relative to upstream risk reality even without local configuration changes.
@@ -46,11 +46,18 @@ Security should keep current-state acceptance honest without collapsing future h
 - **Mitigation direction:** Run explicit upstream monitoring and classify changes into watch, plan, update-now, or defer-with-risk-note dispositions.
 
 ### R-005 — Auditability and traceability are still underdefined for the highest-risk actions
-- **Description:** Security increasingly depends on being able to reconstruct what happened, what failed, and whether controls actually fired, but the current minimum standard for high-value traceability is still incomplete.
-- **Affected scope:** Lyra OS, `pxs`, external write surfaces, automation-heavy paths
-- **Consequence:** Investigation, control verification, and post-incident learning remain weaker than they should be.
-- **Current posture:** Active capability gap rather than proof of immediate failure.
-- **Mitigation direction:** Define a narrow first traceability/logging standard for the highest-risk actions and surfaces.
+- **Description:** Security increasingly depends on being able to reconstruct what happened, what failed, and whether controls actually fired, and current evidence now shows that execution success, routing success, and outbound delivery success are distinct truth surfaces that can diverge even when job intent looks correct.
+- **Affected scope:** Lyra OS, `pxs`, external write surfaces, automation-heavy paths, messaging/delivery paths, approval/admin-sensitive actions
+- **Consequence:** Investigation, control verification, and post-incident learning remain weaker than they should be, and recurring-output surfaces can look healthier than their real end-to-end closure state.
+- **Current posture:** Active capability gap with a first minimum standard and first applied evidence note now in place; the remaining gap is adoption across standing control surfaces.
+- **Mitigation direction:** Apply `2026-04-02_MINIMUM_TRACEABILITY_STANDARD_FOR_HIGH_RISK_ACTIONS.md`, `2026-04-02_TELEGRAM_OUTBOUND_DELIVERY_PATH_EVIDENCE_NOTE.md`, and `2026-04-03_ESTATE_BASELINE_RISK_ALIGNMENT_STEP.md` so high-risk paths keep execution, routing, delivery, and evidence status distinct.
+
+### R-006 — Prompt injection exposure is not yet coherently translated into standing security controls
+- **Description:** Lyra/OpenClaw operates in an environment where untrusted content, browser/tool use, external messaging, and broad runtime authority can combine into meaningful prompt injection risk, but current defenses are still only partially translated into explicit standing security controls and review routines.
+- **Affected scope:** Lyra OS, `pxs`, browser/web-fetch paths, tool-using runtimes, outbound communication paths, shared-trust contexts
+- **Consequence:** Prompt injection remains a live cross-cutting risk whose blast radius may exceed current control clarity, especially in paths that combine untrusted content with powerful runtime actions.
+- **Current posture:** Active risk newly translated from research into a draft Security capability posture; controls exist in part but are not yet unified or fully reviewed as a coherent defense capability.
+- **Mitigation direction:** Use `2026-04-03_PROMPT_INJECTION_DEFENSE_CAPABILITY.md`, `2026-04-03_PROMPT_INJECTION_DEFENSE_CONTROL_CHECKLIST.md`, and `2026-04-03_PROMPT_INJECTION_DEFENSE_PLAN.md` to move from research posture into standing review and targeted hardening.
 
 ## Accepted current-state conditions that should not be misread as unresolved blockers
 
