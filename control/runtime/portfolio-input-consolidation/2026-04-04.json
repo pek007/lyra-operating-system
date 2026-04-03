@@ -301,14 +301,15 @@
         ]
       },
       {
-        "title": "Create active BU overview pages for Advice & Board Participation, Education & Mentoring, Intelligence & Knowledge, Investments, and Media",
+        "title": "Create BU overview pages for the active PX Strategy business-unit set",
         "classification": "create_new_page",
         "target": "wiki/pxs/business-units/",
-        "why": "The wiki hub now names these units, but there are no visible browseable pages for several active portfolio units even though their charters and nightly loops are now stable enough to justify compact overview pages.",
+        "why": "The business-units wiki area currently has only the hub README and no BU-specific overview pages. The active portfolio now visibly includes Consulting, Advice & Board Participation, AI & High Tech, Education & Mentoring, Intelligence & Knowledge, Investments, Media, and PXS Tools, so the missing-page gap is broader than a small subset.",
         "evidence": [
           "wiki/pxs/business-units/README.md",
-          "pxs/docs/instances/px-strategy/business-units/pxs-advice-board-participation/nightly-reports/2026-04-04-vega-nightly-report.md",
-          "pxs/docs/instances/px-strategy/business-units/pxs-intelligence-knowledge/nightly-reports/2026-04-04-vega-nightly-report.md"
+          "pxs/docs/instances/px-strategy/business-units/pxs-consulting/nightly-reports/2026-04-04-vega-nightly-report.md",
+          "pxs/docs/instances/px-strategy/business-units/pxs-ai-high-tech/nightly-reports/2026-04-04-vega-nightly-report.md",
+          "pxs/docs/instances/px-strategy/business-units/pxs-media/nightly-reports/2026-04-04-vega-nightly-report.md"
         ]
       },
       {
