@@ -1,0 +1,447 @@
+{
+  "artifact": "portfolio-input-consolidation",
+  "domain": "vega",
+  "date": "2026-04-12",
+  "generatedAt": "2026-04-12T01:40:00+02:00",
+  "timezone": "Europe/Stockholm",
+  "policyRef": "CONTROL_TOWER_OVERNIGHT_SYNTHESIS_POLICY_V1.md",
+  "purpose": "Bounded overnight Vega-domain portfolio input consolidation for the portfolio decision step, including bounded wiki-maintenance signal generation. Signal only, no execution selection or large wiki rewrite work.",
+  "status": "complete",
+  "comparisonBaseline": "Current night's 2026-04-12 Vega BU and internal-function learn-and-replan artifacts, the prior Vega consolidation artifact control/runtime/portfolio-input-consolidation/2026-04-11.json, and the previous night's relevant 2026-04-11 BU/function nightly artifacts. No 2026-04-12 Vega department nightly reports were found during this bounded consolidation pass.",
+  "sources": [
+    "control/runtime/portfolio-input-consolidation/2026-04-11.json",
+    "pxs/docs/instances/px-strategy/business-units/pxs-consulting/nightly-reports/2026-04-11-vega-nightly-report.md",
+    "pxs/docs/instances/px-strategy/business-units/pxs-advice-board-participation/nightly-reports/2026-04-11-vega-nightly-report.md",
+    "pxs/docs/instances/px-strategy/business-units/pxs-ai-high-tech/nightly-reports/2026-04-11-vega-nightly-report.md",
+    "pxs/docs/instances/px-strategy/business-units/pxs-education-mentoring/nightly-reports/2026-04-11-vega-nightly-report.md",
+    "pxs/docs/instances/px-strategy/business-units/pxs-intelligence-knowledge/nightly-reports/2026-04-11-vega-nightly-report.md",
+    "pxs/docs/instances/px-strategy/business-units/pxs-investments/nightly-reports/2026-04-11-vega-nightly-report.md",
+    "pxs/docs/instances/px-strategy/business-units/pxs-media/nightly-reports/2026-04-11-vega-nightly-report.md",
+    "pxs/docs/instances/px-strategy/internal-functions/pxs-os/nightly-reports/2026-04-11-vega-nightly-report.md",
+    "pxs/docs/instances/px-strategy/business-units/pxs-consulting/nightly-reports/2026-04-12-vega-nightly-report.md",
+    "pxs/docs/instances/px-strategy/business-units/pxs-advice-board-participation/nightly-reports/2026-04-12-vega-nightly-report.md",
+    "pxs/docs/instances/px-strategy/business-units/pxs-ai-high-tech/nightly-reports/2026-04-12-vega-nightly-report.md",
+    "pxs/docs/instances/px-strategy/business-units/pxs-education-mentoring/nightly-reports/2026-04-12-vega-nightly-report.md",
+    "pxs/docs/instances/px-strategy/business-units/pxs-intelligence-knowledge/nightly-reports/2026-04-12-vega-nightly-report.md",
+    "pxs/docs/instances/px-strategy/business-units/pxs-investments/nightly-reports/2026-04-12-vega-nightly-report.md",
+    "pxs/docs/instances/px-strategy/business-units/pxs-media/nightly-reports/2026-04-12-vega-nightly-report.md",
+    "pxs/docs/instances/px-strategy/internal-functions/pxs-os/nightly-reports/2026-04-12-vega-nightly-report.md",
+    "pxs/docs/instances/px-strategy/business-units/portfolio-nightly-reports/2026-04-11-vega-bu-synthesis.md",
+    "WIKI_MAINTENANCE_IN_NIGHTLY_LOOPS_2026-04-03.md",
+    "wiki/lyra/TEMPLATES_AND_RULES/WIKI_GROWTH_RULES.md",
+    "wiki/lyra/operating-patterns/README.md",
+    "wiki/lyra/research-intelligence-methods/README.md",
+    "wiki/pxs/README.md",
+    "wiki/pxs/business-units/README.md",
+    "wiki/pxs/research-intelligence/README.md"
+  ],
+  "portfolioDelta": {
+    "overallAssessment": "The Vega portfolio stayed strategically stable again tonight, but unlike 2026-04-11 the main overnight work was not pure hold-steady verification. Most active BUs needed narrow continuity repairs because their local routing anchors were lagging behind the current 2026-04-11 portfolio layer. Those repairs are now largely complete. The result is a portfolio that remains narrow in strategic content, but cleaner in decision traceability: the adjacent-BU boundary cluster is now aligned to the current daytime path, the recurring model-gap queue remains unchanged in membership and order, and PXS OS adds stronger evidence that the wider workspace is behaving like a truth-maintenance system.",
+    "whatChangedSinceBaseline": [
+      {
+        "theme": "Continuity-drift repair became the dominant overnight BU action",
+        "treatment": "update_now",
+        "why": "Consulting, Advice & Board Participation, Education & Mentoring, AI & High-tech, Investments, Media, and Intelligence & Knowledge all found stale local routing anchors or evidence chains and corrected them to the current 2026-04-11 portfolio layer.",
+        "evidence": [
+          "pxs/docs/instances/px-strategy/business-units/pxs-consulting/nightly-reports/2026-04-12-vega-nightly-report.md",
+          "pxs/docs/instances/px-strategy/business-units/pxs-advice-board-participation/nightly-reports/2026-04-12-vega-nightly-report.md",
+          "pxs/docs/instances/px-strategy/business-units/pxs-education-mentoring/nightly-reports/2026-04-12-vega-nightly-report.md",
+          "pxs/docs/instances/px-strategy/business-units/pxs-ai-high-tech/nightly-reports/2026-04-12-vega-nightly-report.md",
+          "pxs/docs/instances/px-strategy/business-units/pxs-investments/nightly-reports/2026-04-12-vega-nightly-report.md",
+          "pxs/docs/instances/px-strategy/business-units/pxs-intelligence-knowledge/nightly-reports/2026-04-12-vega-nightly-report.md",
+          "pxs/docs/instances/px-strategy/business-units/pxs-media/nightly-reports/2026-04-12-vega-nightly-report.md"
+        ]
+      },
+      {
+        "theme": "The adjacent-BU boundary cluster is now fully current at the BU layer and cleanly waiting on daytime judgment",
+        "treatment": "watch",
+        "why": "The three-BU cluster no longer appears split across mixed routing anchors. Overnight value now clearly shifts to daytime decision conversion rather than further BU-local repair.",
+        "evidence": [
+          "pxs/docs/instances/px-strategy/business-units/pxs-consulting/nightly-reports/2026-04-12-vega-nightly-report.md",
+          "pxs/docs/instances/px-strategy/business-units/pxs-advice-board-participation/nightly-reports/2026-04-12-vega-nightly-report.md",
+          "pxs/docs/instances/px-strategy/business-units/pxs-education-mentoring/nightly-reports/2026-04-12-vega-nightly-report.md"
+        ]
+      },
+      {
+        "theme": "The recurring Vega model-gap queue remained unchanged in membership and order for another night",
+        "treatment": "watch",
+        "why": "AI & High-tech still points to C1/C2, Media and Intelligence & Knowledge still point primarily to C7, Investments still points to A4/B6, and PXS OS still points to D1/D5. Tonight updated traceability, not queue membership.",
+        "evidence": [
+          "pxs/docs/instances/px-strategy/business-units/pxs-ai-high-tech/nightly-reports/2026-04-12-vega-nightly-report.md",
+          "pxs/docs/instances/px-strategy/business-units/pxs-intelligence-knowledge/nightly-reports/2026-04-12-vega-nightly-report.md",
+          "pxs/docs/instances/px-strategy/business-units/pxs-investments/nightly-reports/2026-04-12-vega-nightly-report.md",
+          "pxs/docs/instances/px-strategy/business-units/pxs-media/nightly-reports/2026-04-12-vega-nightly-report.md",
+          "pxs/docs/instances/px-strategy/internal-functions/pxs-os/nightly-reports/2026-04-12-vega-nightly-report.md"
+        ]
+      },
+      {
+        "theme": "PXS OS strengthened the cross-portfolio reading that truthful routing-anchor maintenance is becoming a recurring operating pattern",
+        "treatment": "watch",
+        "why": "The internal-function pass explicitly recognized wider workspace behavior as truth-maintenance, source-to-closure discipline, and explicit model-gap visibility rather than one-off package work.",
+        "evidence": [
+          "pxs/docs/instances/px-strategy/internal-functions/pxs-os/nightly-reports/2026-04-12-vega-nightly-report.md"
+        ]
+      },
+      {
+        "theme": "The current-night department layer remains absent from the bounded evidence set",
+        "treatment": "watch",
+        "why": "No 2026-04-12 department nightlies were found during consolidation. The BU/function picture is usable, but still not fully complete for cross-unit synthesis.",
+        "evidence": [
+          "control/runtime/portfolio-input-consolidation/2026-04-12.json"
+        ]
+      }
+    ],
+    "materiallyNewVsRoutineNoise": {
+      "materiallyNew": [
+        {
+          "theme": "Continuity-drift correction became the main overnight contribution across most active BUs",
+          "treatment": "update_now"
+        },
+        {
+          "theme": "The workspace now has stronger explicit evidence that truth-maintenance is itself a durable operating pattern",
+          "treatment": "watch"
+        }
+      ],
+      "routineNoiseOrCarryForward": [
+        {
+          "theme": "External AI, publishing, knowledge, mentoring, and investment signals continued to reinforce known direction without forcing reprioritization",
+          "treatment": "watch"
+        },
+        {
+          "theme": "The recurring model-gap cluster remained stable rather than expanding",
+          "treatment": "watch"
+        },
+        {
+          "theme": "The missing department layer remains a completeness watchpoint",
+          "treatment": "watch"
+        }
+      ]
+    }
+  },
+  "crossPortfolioRecurringInputs": {
+    "internal": [
+      {
+        "theme": "Decision conversion remains more valuable than further overnight analysis in the adjacent-BU boundary cluster",
+        "units": [
+          "pxs-consulting",
+          "pxs-advice-board-participation",
+          "pxs-education-mentoring"
+        ],
+        "note": "All three units now point cleanly to the current 2026-04-11 daytime path. The route is continuity-clean and waiting on daytime judgment rather than more overnight analysis."
+      },
+      {
+        "theme": "The canonical Vega model-gap queue remains concentrated and stable",
+        "units": [
+          "pxs-ai-high-tech",
+          "pxs-investments",
+          "pxs-intelligence-knowledge",
+          "pxs-media",
+          "pxs-os"
+        ],
+        "note": "The recurring gap cluster stayed unchanged across the reviewed 2026-04-12 BU/function set: C1/C2, C7, A4/B6, and D1/D5."
+      },
+      {
+        "theme": "Nightly review is now behaving as continuity maintenance, synthesis triage, and promotion/gap signaling more than local package discovery",
+        "units": [
+          "portfolio"
+        ],
+        "note": "Tonight's pattern was dominated by update-now continuity repairs or no-material-change judgments, making portfolio synthesis and wiki-signal generation more valuable than rediscovery."
+      },
+      {
+        "theme": "Portfolio completeness still depends on getting the department nightly layer to land consistently",
+        "units": [
+          "portfolio",
+          "departments"
+        ],
+        "note": "The BU and internal-function layers are now consistent enough for bounded synthesis, but missing department outputs should remain visible as a completeness watchpoint rather than silently ignored."
+      }
+    ],
+    "external": [
+      {
+        "theme": "External commentary across enterprise AI, publishing, retrieval, mentoring, investment, and operating-system orchestration still validates credibility, governance, trust, and structured execution over generic scale",
+        "units": [
+          "portfolio"
+        ],
+        "note": "Useful corroboration, but again secondary to internal continuity, decision conversion, and model-gap management rather than forcing Vega reprioritization."
+      }
+    ]
+  },
+  "unitDispositions": [
+    {
+      "unit": "pxs-consulting",
+      "classification": "update_now",
+      "changedSinceBaseline": "A stale CP-001 evidence chain pointing to the older 2026-04-10 boundary-decision route was refreshed to the current 2026-04-11 path.",
+      "treatment": "update_now",
+      "reason": "The BU did not change strategically, but needed narrow continuity repair to preserve traceability into the adjacent-BU daytime decision path."
+    },
+    {
+      "unit": "pxs-advice-board-participation",
+      "classification": "update_now",
+      "changedSinceBaseline": "A stale CP-001 evidence chain pointing to the older 2026-04-10 boundary-decision route was refreshed to the current 2026-04-11 path.",
+      "treatment": "update_now",
+      "reason": "The BU did not change strategically, but needed narrow continuity repair to preserve traceability into the adjacent-BU daytime decision path."
+    },
+    {
+      "unit": "pxs-education-mentoring",
+      "classification": "update_now",
+      "changedSinceBaseline": "A stale CP-001 evidence chain pointing to the older 2026-04-10 boundary-decision route was refreshed to the current 2026-04-11 path.",
+      "treatment": "update_now",
+      "reason": "The BU did not change strategically, but needed narrow continuity repair to preserve traceability into the adjacent-BU daytime decision path."
+    },
+    {
+      "unit": "pxs-ai-high-tech",
+      "classification": "update_now",
+      "changedSinceBaseline": "Stale BU-local routing anchors were refreshed to the current 2026-04-11 synthesis while the main C1/C2 model gap remained unchanged.",
+      "treatment": "update_now",
+      "reason": "The BU stayed strategically stable, but local traces were lagging behind the current portfolio layer."
+    },
+    {
+      "unit": "pxs-intelligence-knowledge",
+      "classification": "update_now",
+      "changedSinceBaseline": "TOP_PRIORITIES, STATE, and CHANGE_PROPOSALS were refreshed from the older 2026-04-03 routing anchor to the current 2026-04-11 synthesis while C7 remained the main live gap.",
+      "treatment": "update_now",
+      "reason": "The BU stayed strategically stable, but package coherence required a routing-anchor refresh."
+    },
+    {
+      "unit": "pxs-investments",
+      "classification": "update_now",
+      "changedSinceBaseline": "Stale BU-local routing anchors were refreshed to the current 2026-04-11 synthesis while A4/B6 remained the main live gap.",
+      "treatment": "update_now",
+      "reason": "The BU stayed strategically stable, but local traces were lagging behind the current portfolio layer."
+    },
+    {
+      "unit": "pxs-media",
+      "classification": "update_now",
+      "changedSinceBaseline": "TOP_PRIORITIES, STATE, and CHANGE_PROPOSALS were refreshed from the older 2026-04-03 routing anchor to the current 2026-04-11 synthesis while C7 remained the main live gap.",
+      "treatment": "update_now",
+      "reason": "The BU stayed strategically stable, but package coherence required a routing-anchor refresh."
+    },
+    {
+      "unit": "pxs-os",
+      "classification": "no_material_change",
+      "changedSinceBaseline": "No function-local package change was needed. The strongest incremental signal was stronger evidence that truth-maintenance and source-to-closure behavior are becoming durable operating patterns.",
+      "treatment": "watch",
+      "reason": "This remains the clearest internal-function model-alignment issue set, but tonight contributed reinforcement rather than fresh reprioritization."
+    }
+  ],
+  "themeDispositions": [
+    {
+      "theme": "Adjacent-BU boundary rule daytime decision conversion",
+      "treatment": "update_now",
+      "scope": [
+        "pxs-consulting",
+        "pxs-advice-board-participation",
+        "pxs-education-mentoring",
+        "portfolio-control"
+      ],
+      "reason": "This remains the clearest decision-ready cross-BU issue, and tonight's continuity repairs mean there is no further overnight prep advantage in reopening the local packages."
+    },
+    {
+      "theme": "Clustered model incompleteness in C1/C2, C7, A4/B6, and D1/D5",
+      "treatment": "watch",
+      "scope": [
+        "portfolio",
+        "model-governance"
+      ],
+      "reason": "Still the main recurring model-shaping queue within tonight's reviewed BU/function set, and tonight again added traceability repair more than net-new candidate creation."
+    },
+    {
+      "theme": "Defer new BU-local control surfaces until real operating pressure appears",
+      "treatment": "backlog",
+      "scope": [
+        "portfolio"
+      ],
+      "reason": "Repeated tonight across the reviewed BUs and still appropriate as an operating discipline rather than immediate work."
+    },
+    {
+      "theme": "Missing current-night department layer in consolidation inputs",
+      "treatment": "watch",
+      "scope": [
+        "portfolio",
+        "departments",
+        "overnight-loop"
+      ],
+      "reason": "The BU and function picture is now useful and materially complete enough for bounded synthesis, but the missing 2026-04-12 department layer should remain visible as a completeness gap."
+    },
+    {
+      "theme": "Nightly-loop knowledge promotion and wiki-gap handling",
+      "treatment": "update_now",
+      "scope": [
+        "portfolio",
+        "wiki-maintenance"
+      ],
+      "reason": "Because the BU/function package set stayed strategically stable and most edits were continuity repairs, the highest-signal incremental work is again to surface durable operating knowledge and obvious wiki gaps rather than force more local package churn."
+    },
+    {
+      "theme": "Immediate Peter escalation before the protected morning window",
+      "treatment": "no_material_change",
+      "scope": [
+        "portfolio"
+      ],
+      "reason": "No reviewed signal requires urgent escalation before the protected book-writing block."
+    }
+  ],
+  "modelChangeAssessment": {
+    "modelDriftSignal": true,
+    "candidateModelImpact": true,
+    "assessment": "Tonight's Vega pass again strengthened a bounded set of already-visible model-change candidates rather than opening a broader frontier. The repeated signals remain: (1) C1/C2 are too thin for AI & High-tech's and partly Consulting's current market/value logic; (2) C7 is too thin for Intelligence & Knowledge and Media's ecosystem-position and sources-of-advantage logic; (3) A4/B6 are too thin for Investments' governance and ownership-economics dependence; and (4) D1/D5 remain too thin for PXS OS capability anchoring and current evidence references. The adjacent-BU boundary cluster remains decision-conversion work first, not fresh model-gap discovery.",
+    "why": [
+      "AI & High-tech explicitly remains ahead of C1/C2 even after its routing anchors were refreshed.",
+      "Consulting still carries thinner-than-needed C1/C2 logic, but this remains secondary to the adjacent-BU daytime decision route.",
+      "Intelligence & Knowledge and Media both keep C7 as the strongest recurring cross-BU model-gap candidate.",
+      "Investments still depends on underdefined A4/B6 control and ownership-economics rules.",
+      "PXS OS still depends on an unpopulated D1 and lagging D5 evidence references.",
+      "Consulting, Advice & Board Participation, and Education & Mentoring remain more about daytime decision conversion than fresh model-gap discovery."
+    ],
+    "recommendedDisposition": "watch",
+    "candidateChangeClass": "clustered_existing_candidates",
+    "nextStep": "Keep the current gap cluster visible for the Vega decision step and subsequent model-shaping queue. Do not open duplicate proposals from this bounded consolidation pass."
+  },
+  "wikiMaintenance": {
+    "overallAssessment": "Tonight's outputs were high-signal for wiki maintenance because most of the portfolio stayed strategically stable while local traces were corrected. That combination increases the value of bounded synthesis: the clearest compounding opportunity is to capture durable operating patterns and obvious hub/page gaps, not to rewrite the wiki broadly. No large rewrite was justified. The clearest wiki-level signals are: (1) the Lyra operating-pattern layer now has stronger evidence for a compact page on truth-maintenance nightly loops and bounded consolidation, (2) the PX Strategy business-unit hub still lacks first-pass stable overview pages for active BUs, (3) the recurring Vega model-gap cluster remains a compact synthesis candidate, and (4) the wiki still lacks explicit coverage for continuity-drift repair as part of overnight operating reality.",
+    "durableKnowledgeSignals": [
+      {
+        "title": "Nightly loops now behave as maintenance-of-truth, synthesis-triage, bounded wiki-integration, and promotion/gap systems",
+        "classification": "promote_now",
+        "target": "wiki/lyra/operating-patterns/",
+        "why": "This is now durable across multiple Vega cycles and reinforced again tonight by the combination of strategic stability, repeated continuity-drift repair, and explicit portfolio consolidation behavior.",
+        "evidence": [
+          "WIKI_MAINTENANCE_IN_NIGHTLY_LOOPS_2026-04-03.md",
+          "control/runtime/portfolio-input-consolidation/2026-04-11.json",
+          "control/runtime/portfolio-input-consolidation/2026-04-12.json",
+          "pxs/docs/instances/px-strategy/internal-functions/pxs-os/nightly-reports/2026-04-12-vega-nightly-report.md"
+        ]
+      },
+      {
+        "title": "Continuity-drift repair is now an explicit sub-pattern of truthful nightly maintenance",
+        "classification": "update_existing_page",
+        "target": "future wiki/lyra/operating-patterns/nightly-learn-replan-and-consolidation page",
+        "why": "Tonight adds a sharper nuance than prior passes: package stability does not remove the need for narrow routing-anchor correction, and that should be captured when the operating-pattern page is created.",
+        "evidence": [
+          "pxs/docs/instances/px-strategy/business-units/pxs-consulting/nightly-reports/2026-04-12-vega-nightly-report.md",
+          "pxs/docs/instances/px-strategy/business-units/pxs-ai-high-tech/nightly-reports/2026-04-12-vega-nightly-report.md",
+          "pxs/docs/instances/px-strategy/business-units/pxs-media/nightly-reports/2026-04-12-vega-nightly-report.md"
+        ]
+      },
+      {
+        "title": "The recurring PX Strategy model-gap queue remains a stable compact synthesis candidate",
+        "classification": "research_next",
+        "target": "wiki/pxs/research-intelligence/ or wiki/lyra/capabilities/",
+        "why": "The cluster C1/C2, C7, A4/B6, and D1/D5 is durable and portfolio-relevant, but it should first be synthesized as one compact concept page rather than scattered across weak small pages.",
+        "evidence": [
+          "control/runtime/portfolio-input-consolidation/2026-04-11.json",
+          "control/runtime/portfolio-input-consolidation/2026-04-12.json",
+          "pxs/docs/instances/px-strategy/business-units/pxs-ai-high-tech/nightly-reports/2026-04-12-vega-nightly-report.md",
+          "pxs/docs/instances/px-strategy/business-units/pxs-investments/nightly-reports/2026-04-12-vega-nightly-report.md",
+          "pxs/docs/instances/px-strategy/business-units/pxs-media/nightly-reports/2026-04-12-vega-nightly-report.md",
+          "pxs/docs/instances/px-strategy/internal-functions/pxs-os/nightly-reports/2026-04-12-vega-nightly-report.md"
+        ]
+      },
+      {
+        "title": "Completeness of the overnight loop itself is becoming a durable operational knowledge topic",
+        "classification": "watch",
+        "target": "wiki/lyra/operating-patterns/README.md",
+        "why": "Missing department-layer visibility remains present across consecutive consolidations, but still looks better as a bounded watchpoint than a standalone page right now.",
+        "evidence": [
+          "control/runtime/portfolio-input-consolidation/2026-04-11.json",
+          "control/runtime/portfolio-input-consolidation/2026-04-12.json"
+        ]
+      }
+    ],
+    "boundedChangesApplied": [],
+    "findings": [
+      {
+        "title": "Create a Lyra operating-pattern page for nightly learn/replan, portfolio input consolidation, bounded wiki integration, and continuity-drift handling",
+        "classification": "promote_now",
+        "target": "wiki/lyra/operating-patterns/",
+        "why": "There is now enough repeated evidence across multiple nights to justify one compact reusable operating-pattern page, and tonight adds the continuity-drift repair nuance that makes the pattern more complete.",
+        "evidence": [
+          "WIKI_MAINTENANCE_IN_NIGHTLY_LOOPS_2026-04-03.md",
+          "wiki/lyra/operating-patterns/README.md",
+          "control/runtime/portfolio-input-consolidation/2026-04-11.json",
+          "control/runtime/portfolio-input-consolidation/2026-04-12.json"
+        ]
+      },
+      {
+        "title": "Update the Lyra operating-patterns hub after the nightly/consolidation pattern page exists",
+        "classification": "update_existing_page",
+        "target": "wiki/lyra/operating-patterns/README.md",
+        "why": "The hub already exists and should point to the new page once it is created, but the right move is to update the hub only after the underlying page lands.",
+        "evidence": [
+          "wiki/lyra/operating-patterns/README.md"
+        ]
+      },
+      {
+        "title": "Create first-pass BU overview pages for the active PX Strategy business-unit set",
+        "classification": "create_new_page",
+        "target": "wiki/pxs/business-units/",
+        "why": "The hub shows the active portfolio, but there are still no first-pass pages for individual active business units even though the active set and nightly summaries are now stable enough to support them.",
+        "evidence": [
+          "wiki/pxs/business-units/README.md",
+          "pxs/docs/instances/px-strategy/business-units/pxs-consulting/nightly-reports/2026-04-12-vega-nightly-report.md",
+          "pxs/docs/instances/px-strategy/business-units/pxs-media/nightly-reports/2026-04-12-vega-nightly-report.md"
+        ]
+      },
+      {
+        "title": "Research a compact concept page for the recurring PX Strategy model-gap cluster",
+        "classification": "research_next",
+        "target": "wiki/pxs/research-intelligence/ or wiki/lyra/capabilities/",
+        "why": "The cluster is clearly durable across multiple nights, but it should first be promoted as a compact synthesis rather than as fragmented small pages.",
+        "evidence": [
+          "wiki/pxs/research-intelligence/README.md",
+          "control/runtime/portfolio-input-consolidation/2026-04-11.json",
+          "control/runtime/portfolio-input-consolidation/2026-04-12.json"
+        ]
+      },
+      {
+        "title": "Watch whether the PX Strategy business-units hub becomes stale again as BU overview pages are added",
+        "classification": "watch",
+        "target": "wiki/pxs/business-units/README.md",
+        "why": "The current hub is still serviceable. No direct edit is obviously needed in this bounded pass, but it should stay under watch once overview pages begin to land.",
+        "evidence": [
+          "wiki/pxs/business-units/README.md"
+        ]
+      },
+      {
+        "title": "Watch whether the Research & Intelligence hub remains too thin once the recurring model-gap concept page is created",
+        "classification": "watch",
+        "target": "wiki/pxs/research-intelligence/README.md",
+        "why": "The current hub is acceptable as a stub, but recurring model-gap signals show that this area may soon need more explicit coverage and navigation structure.",
+        "evidence": [
+          "wiki/pxs/research-intelligence/README.md"
+        ]
+      },
+      {
+        "title": "Watch whether a lightweight overnight-loop completeness note is needed if missing department-layer incidents continue",
+        "classification": "watch",
+        "target": "wiki/lyra/operating-patterns/",
+        "why": "A repeated missing department-layer signal is now visible across consecutive consolidations, but it still does not justify a separate page until the pattern proves durable enough to be more than a bounded watchpoint.",
+        "evidence": [
+          "control/runtime/portfolio-input-consolidation/2026-04-11.json",
+          "control/runtime/portfolio-input-consolidation/2026-04-12.json"
+        ]
+      },
+      {
+        "title": "Ignore direct promotion of dated nightly reports into wiki pages",
+        "classification": "ignore",
+        "target": "all nightly reports",
+        "why": "Per current wiki growth rules and the nightly-wiki integration note, dated operational reports should feed compact synthesis or hub updates rather than becoming wiki pages themselves.",
+        "evidence": [
+          "WIKI_MAINTENANCE_IN_NIGHTLY_LOOPS_2026-04-03.md",
+          "wiki/lyra/TEMPLATES_AND_RULES/WIKI_GROWTH_RULES.md"
+        ]
+      }
+    ]
+  },
+  "decisionStepReadySummary": {
+    "portfolioView": "The Vega portfolio stayed strategically narrow again tonight, but most BU movement took the form of continuity-drift repair rather than pure hold-steady verification. The top daytime decision input remains the adjacent-BU boundary cluster across Consulting, Advice & Board Participation, and Education & Mentoring, now with the local BU traces aligned to the current 2026-04-11 path. The main recurring model-shaping queue remains clustered in C1/C2, C7, A4/B6, and D1/D5. The most operationally useful net-new signal is that the portfolio now has stronger evidence that truthful routing maintenance is itself part of the overnight operating pattern.",
+    "likelyDecisionUse": [
+      "Keep the adjacent-BU daytime decision path as the lead cross-BU portfolio item.",
+      "Treat the stable model-gap cluster as the next bounded model-shaping queue rather than opening new exploration tracks.",
+      "Use the strong continuity-repair pattern as evidence that most current BU packages are directionally right but require disciplined routing-anchor maintenance.",
+      "Use the wiki-maintenance findings only as bounded promotion and gap signals, not as a prompt for large wiki rewrites.",
+      "Keep the missing 2026-04-12 department layer visible as a completeness watchpoint rather than silently normalizing it."
+    ],
+    "urgentEscalation": false
+  }
+}
