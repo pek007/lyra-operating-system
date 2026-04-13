@@ -39,6 +39,7 @@ Capture the major product decisions that shape Task Management so the product do
 - Decision: Task Management will use CRM Core Slice 1 as the first bounded proving case for Delivery / TDE / PXS Tools integration, with TDE owning the change-to-evidence execution-support loop around implementation/test/evidence progression rather than taking primary ownership of CRM feature implementation.
 - Why it matters: This gives TDE a real repeated workflow family to support, keeps the machine-execution boundary explicit, and avoids collapsing architecture/product judgment into premature execution-plane ownership.
 - Reference: `2026-04-13_DELIVERY_TDE_PXS_TOOLS_CRM_INTEGRATION_PILOT_NOTE.md`
+- Contract: `products/delivery/04-execution/CRM_CORE_SLICE_1_CHANGE_TO_EVIDENCE_PILOT_CONTRACT_V1.md`
 
 ## Related decision artifacts
 - `07-decisions/DELIVERY_MODE_DECISION_PXS_V1.md`

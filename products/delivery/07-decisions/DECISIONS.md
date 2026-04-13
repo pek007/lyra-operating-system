@@ -24,3 +24,4 @@
 - Decision: Delivery will use CRM Core Slice 1 as the first bounded proving case for Delivery / TDE / PXS Tools integration, but only for the change-to-evidence support loop rather than primary CRM feature implementation.
 - Why it matters: This gives Delivery a real joined proof case with enforceable gates and evidence expectations while preserving the explicit boundary that TDE should support repeated machine-execution workflow patterns before it is asked to own CRM implementation work directly.
 - Reference: `2026-04-13_DELIVERY_TDE_PXS_TOOLS_CRM_INTEGRATION_PILOT_NOTE.md`
+- Contract: `products/delivery/04-execution/CRM_CORE_SLICE_1_CHANGE_TO_EVIDENCE_PILOT_CONTRACT_V1.md`
