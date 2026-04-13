@@ -47,6 +47,15 @@ Current evidence anchors for this workstream:
 - the first bridge should stay minimal: decisions, active tasks, and evidence bundle ingest with explicit approval points for high-risk transformations
 - avoid creating a separate planning layer; use product artifacts for intended structure and TDE for executable follow-through
 
+## PxS Tools development execution integration
+- treat PxS-side architecture work as input for absorbing repeated development-support execution patterns into TDE where machine execution adds reliability, continuity, and auditability
+- prioritize stateful machine-execution patterns, recurring background runs, dependency/retry/handoff support, and structured execution support for repeated workflow families
+- use recurring manual orchestration and operator-rescue patterns as input for TDE-side professionalization rather than leaving them outside the execution plane
+- use `MINIMUM_AUTONOMOUS_DELIVERY_LOOP_V0_1_2026-04-03.md` as the target direction for shifting routine procedural progression out of chat and into workflow/execution logic
+- first bounded proving case: CRM Core Slice 1 change-to-evidence loop, where TDE owns machine-execution support state around implementation/test/evidence progression without taking primary ownership of CRM feature implementation
+- reference: `products/task-management/04-execution/2026-04-03_PXS_TOOLS_MACHINE_EXECUTION_INTEGRATION_NOTE.md`
+- reference: `2026-04-13_DELIVERY_TDE_PXS_TOOLS_CRM_INTEGRATION_PILOT_NOTE.md`
+
 ## Out of scope for now
 - re-litigating the accepted Phase 1 boundary as if it were still the main open blocker
 - full commercialization packaging

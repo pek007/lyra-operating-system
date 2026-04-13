@@ -39,3 +39,13 @@
 - define a compact Delivery-side pilot contract for the One-Iteration TDE UI Pilot
 - make explicit the smallest viable delivery shape, minimum production bar, minimum evidence set, and early gate questions
 - use the pilot to validate the compact PxS-aligned delivery baseline, not only generic Delivery v0.1 mechanics
+- define the first Delivery / TDE / PXS Tools bounded proving case as the CRM Core Slice 1 change-to-evidence loop, where Delivery owns the professional envelope and TDE owns the machine-execution support state rather than primary implementation
+
+## PxS Tools software delivery professionalization
+- treat PxS-side architecture work as input for making PXS Tools software development more professional, secure, efficient, auditable, repeatable, and improvable over time
+- absorb repeated manual development orchestration into Delivery-owned patterns where appropriate
+- strengthen validation/generation/documentation flow, commit/push/reporting reliability, and delivery-stage auditability for coding-agent-supported development work
+- use repeated manual development patterns and quality failures as feedback signals for Delivery improvement rather than leaving them as recurring operator burden
+- integrate `MINIMUM_AUTONOMOUS_DELIVERY_LOOP_V0_1_2026-04-03.md` as the target direction for reducing routine procedural prompting and keeping Peter at true decision points rather than workflow-engine duty
+- reference: `products/delivery/04-execution/2026-04-03_PXS_TOOLS_SOFTWARE_DELIVERY_PROFESSIONALIZATION_INTEGRATION_NOTE.md`
+- first bounded proving case: `2026-04-13_DELIVERY_TDE_PXS_TOOLS_CRM_INTEGRATION_PILOT_NOTE.md`

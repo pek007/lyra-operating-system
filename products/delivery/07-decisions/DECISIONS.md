@@ -19,3 +19,8 @@
 ### D-004 — Delivery adopts an artifact-first research layer with broad radar and bounded deep dives
 - Decision: Delivery adopts `08-research/` as a canonical product layer, using a broad domain map and radar for awareness plus a limited set of active deep dives for detailed analysis. Research is valid only when it updates doctrine, implications, decisions, plans, controls, or other canonical product artifacts.
 - Why it matters: This makes Delivery learning cumulative, keeps the product broad enough to avoid blind spots, preserves context separation from Control Tower, and prevents research from degrading into prompt theater or low-signal reporting.
+
+### D-005 — First Delivery / TDE / PXS Tools proving case is the CRM Core Slice 1 change-to-evidence loop
+- Decision: Delivery will use CRM Core Slice 1 as the first bounded proving case for Delivery / TDE / PXS Tools integration, but only for the change-to-evidence support loop rather than primary CRM feature implementation.
+- Why it matters: This gives Delivery a real joined proof case with enforceable gates and evidence expectations while preserving the explicit boundary that TDE should support repeated machine-execution workflow patterns before it is asked to own CRM implementation work directly.
+- Reference: `2026-04-13_DELIVERY_TDE_PXS_TOOLS_CRM_INTEGRATION_PILOT_NOTE.md`
