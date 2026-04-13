@@ -2,7 +2,7 @@
 
 Date: 2026-04-13
 Owner: Lyra
-Status: Prepared, pending explicit start conditions
+Status: Prepared, implementation lane confirmed for pilot cycle 1
 Related intake: `control/tde-intake/crm-core-slice-1-change-to-evidence-pilot-2026-04-13.json`
 Related contract: `products/delivery/04-execution/CRM_CORE_SLICE_1_CHANGE_TO_EVIDENCE_PILOT_CONTRACT_V1.md`
 
@@ -29,10 +29,10 @@ This kickoff packet governs the support loop around the slice:
 - kickoff acceptance structure exists: `CRM_CORE_SLICE_1_KICKOFF_ACCEPTANCE_NOTE_2026-04-03.md`
 - pilot boundary and contract are explicit
 
-### Still required before active implementation start
-- explicit confirmation that CRM Core Slice 1 remains the accepted restart slice
-- explicit identification of the implementation lane for this cycle
-- explicit confirmation that the current implementation split remains: internal/Lyra for scope and architecture judgment, coding-agent-supported implementation for the bounded slice
+### Start conditions now satisfied
+- CRM Core Slice 1 remains the accepted bounded restart slice for this pilot
+- implementation lane is explicitly identified in `products/delivery/04-execution/CRM_CORE_SLICE_1_IMPLEMENTATION_LANE_CONFIRMATION_2026-04-13.md`
+- the implementation split remains explicit: internal/Lyra for scope and architecture judgment, coding-agent-supported implementation for the bounded slice
 
 ## Role split for this cycle
 ### PXS Tools / CRM
@@ -104,11 +104,11 @@ This packet supports transition from:
 to:
 - `kickoff-packet-prepared`
 
-It should not imply transition to `implementation-in-progress` until the remaining pre-start conditions are explicitly satisfied.
+The remaining pre-start conditions are now explicitly satisfied, so this packet can support transition into `implementation-in-progress` under the confirmed implementation lane.
 
 ## Recommended next action
-Use this kickoff packet as the bounded start bundle, then record the explicit implementation-lane confirmation needed to move the pilot from prepared state into active implementation support.
+Use this kickoff packet as the bounded start bundle together with `products/delivery/04-execution/CRM_CORE_SLICE_1_IMPLEMENTATION_LANE_CONFIRMATION_2026-04-13.md` to move the pilot into active implementation support.
 
 ## Bottom line
-The pilot now has a real kickoff packet.
-The next move is not more design expansion, but one explicit implementation-start confirmation so the first CRM pilot cycle can begin under the agreed Delivery/TDE boundary.
+The pilot now has a real kickoff packet and an explicit implementation-lane confirmation.
+The first CRM pilot cycle can begin under the agreed Delivery/TDE boundary.

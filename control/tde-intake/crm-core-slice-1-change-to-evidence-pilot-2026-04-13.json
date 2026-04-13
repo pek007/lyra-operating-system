@@ -83,9 +83,9 @@
   "current_execution_status": {
     "as_of": "2026-04-13T18:17:00Z",
     "selected_priority_ref": "2026-04-13_DELIVERY_TDE_PXS_TOOLS_CRM_INTEGRATION_PILOT_NOTE.md",
-    "current_open_gap": "The pilot boundary and contract are now explicit, but no canonical TDE-backed kickoff cycle has yet been activated for CRM Core Slice 1. Without that activation, the integration remains designed but unproven.",
-    "latest_execution_evidence": "products/delivery/04-execution/CRM_CORE_SLICE_1_CHANGE_TO_EVIDENCE_PILOT_CONTRACT_V1.md",
-    "next_authorized_step": "Use the kickoff packet in products/delivery/04-execution/CRM_CORE_SLICE_1_PILOT_KICKOFF_PACKET_2026-04-13.md as the bounded start bundle, then record the explicit implementation-lane confirmation required to move the cycle from kickoff-packet-prepared into active implementation support under the pilot contract."
+    "current_open_gap": "The pilot is now activated with a kickoff packet and confirmed implementation lane, but the first bounded implementation cycle has not yet produced verification capture or evidence-pack output. The integration is active but not yet proven by cycle completion evidence.",
+    "latest_execution_evidence": "products/delivery/04-execution/CRM_CORE_SLICE_1_IMPLEMENTATION_LANE_CONFIRMATION_2026-04-13.md",
+    "next_authorized_step": "Use the confirmed kickoff bundle to run the first bounded implementation cycle for CRM Core Slice 1, then capture verification/test output and assemble the pilot evidence packet under the Delivery evidence-completeness gate."
   },
   "proposed_action": "Create canonical tracked work for the first CRM change-to-evidence pilot cycle and use it as the proving case for Delivery/TDE/PXS Tools integration.",
   "requested_action": "Do not leave the CRM pilot as an architecture note only; activate one real bounded cycle through TDE-backed execution-support state with Delivery-governed evidence expectations.",
