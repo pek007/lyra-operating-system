@@ -1,0 +1,93 @@
+{
+  "artifactType": "tde_intake_packet",
+  "schemaVersion": "1.0.0",
+  "intake_id": "CT-2026-04-13-CRM-CORE-SLICE-1-CHANGE-TO-EVIDENCE-PILOT",
+  "intake_class": "work",
+  "source_system": "control-panel-pilot-activation",
+  "source_type": "cross_product_integration_pilot",
+  "source_reference": "2026-04-13_DELIVERY_TDE_PXS_TOOLS_CRM_INTEGRATION_PILOT_NOTE.md",
+  "submitted_at": "2026-04-13T18:17:00Z",
+  "submitted_by": "Lyra/Control Panel",
+  "title": "Activate the CRM Core Slice 1 change-to-evidence pilot under Delivery and TDE",
+  "summary": "Start the first bounded Delivery / TDE / PXS Tools integration pilot using CRM Core Slice 1 as the proving case. The pilot should route the change-to-evidence support loop into canonical TDE-tracked work without making TDE the primary implementation plane for CRM feature development.",
+  "body": {
+    "summary": "Activate the CRM Core Slice 1 change-to-evidence support loop defined in the pilot note and pilot contract. The immediate objective is to move one real CRM Slice 1 cycle through explicit kickoff, verification capture, evidence assembly, and completion-or-abort review using TDE-backed machine-work state and a Delivery-governed evidence-completeness gate. The pilot must preserve the agreed boundary: CRM implementation remains owned by PXS Tools and the implementation lane, while TDE owns the execution-support state around the cycle.",
+    "workflow_family": "crm-core-slice-1-change-to-evidence-loop",
+    "expected_closure_evidence": [
+      "explicit kickoff packet or equivalent activation record for CRM Core Slice 1 under the pilot contract",
+      "one recorded verification/test capture step with explicit pass/fail or mixed-result output",
+      "one explicit evidence packet for the slice run containing implementation summary, test summary, out-of-scope confirmation, unresolved issues, and recommended next action",
+      "a clear completion, abort, or follow-up-required judgment for the pilot cycle",
+      "a visible record that TDE carried the execution-support state rather than chat-memory-only coordination"
+    ]
+  },
+  "priority_hint": "high",
+  "workspace_scope": "lyra-os",
+  "product_scope": "task-management",
+  "related_entities": [
+    {
+      "entity_type": "product",
+      "entity_ref": "products/delivery",
+      "relationship": "governing_product"
+    },
+    {
+      "entity_type": "product",
+      "entity_ref": "products/task-management",
+      "relationship": "execution_state_owner"
+    },
+    {
+      "entity_type": "project",
+      "entity_ref": "crm-core-slice-1",
+      "relationship": "proving_case"
+    },
+    {
+      "entity_type": "decision_artifact",
+      "entity_ref": "products/delivery/04-execution/CRM_CORE_SLICE_1_CHANGE_TO_EVIDENCE_PILOT_CONTRACT_V1.md",
+      "relationship": "governed_by"
+    }
+  ],
+  "evidence_links": [
+    {
+      "kind": "pilot_note",
+      "ref": "2026-04-13_DELIVERY_TDE_PXS_TOOLS_CRM_INTEGRATION_PILOT_NOTE.md"
+    },
+    {
+      "kind": "pilot_contract",
+      "ref": "products/delivery/04-execution/CRM_CORE_SLICE_1_CHANGE_TO_EVIDENCE_PILOT_CONTRACT_V1.md"
+    },
+    {
+      "kind": "crm_delivery_brief",
+      "ref": "CRM_CORE_SLICE_1_DELIVERY_BRIEF_2026-04-03.md"
+    },
+    {
+      "kind": "crm_test_and_evidence_spec",
+      "ref": "CRM_CORE_SLICE_1_TEST_AND_EVIDENCE_SPEC_2026-04-03.md"
+    },
+    {
+      "kind": "crm_restart_decision",
+      "ref": "CRM_RESTART_THIN_SLICE_DECISION_NOTE_2026-04-03.md"
+    },
+    {
+      "kind": "crm_restart_readiness",
+      "ref": "CRM_DEVELOPMENT_RESTART_READINESS_2026-04-03.md"
+    },
+    {
+      "kind": "initiative",
+      "ref": "repos/control-panel/docs/initiatives/crm-delivery-professionalization/INITIATIVE.md"
+    },
+    {
+      "kind": "operating_design",
+      "ref": "MINIMUM_AUTONOMOUS_DELIVERY_LOOP_V0_1_2026-04-03.md"
+    }
+  ],
+  "current_execution_status": {
+    "as_of": "2026-04-13T18:17:00Z",
+    "selected_priority_ref": "2026-04-13_DELIVERY_TDE_PXS_TOOLS_CRM_INTEGRATION_PILOT_NOTE.md",
+    "current_open_gap": "The pilot boundary and contract are now explicit, but no canonical TDE-backed kickoff cycle has yet been activated for CRM Core Slice 1. Without that activation, the integration remains designed but unproven.",
+    "latest_execution_evidence": "products/delivery/04-execution/CRM_CORE_SLICE_1_CHANGE_TO_EVIDENCE_PILOT_CONTRACT_V1.md",
+    "next_authorized_step": "Create the first bounded kickoff packet for CRM Core Slice 1 under the pilot contract, then move the cycle through verification capture and evidence assembly using the defined TDE-owned support states and Delivery evidence-completeness gate."
+  },
+  "proposed_action": "Create canonical tracked work for the first CRM change-to-evidence pilot cycle and use it as the proving case for Delivery/TDE/PXS Tools integration.",
+  "requested_action": "Do not leave the CRM pilot as an architecture note only; activate one real bounded cycle through TDE-backed execution-support state with Delivery-governed evidence expectations.",
+  "success_signal": "One real CRM Core Slice 1 pilot cycle runs through explicit kickoff, verification capture, evidence assembly, and completion/abort review under the agreed boundary."
+}
