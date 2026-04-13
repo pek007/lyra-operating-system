@@ -51,3 +51,4 @@
 - first bounded proving case: `2026-04-13_DELIVERY_TDE_PXS_TOOLS_CRM_INTEGRATION_PILOT_NOTE.md`
 - first pilot contract: `products/delivery/04-execution/CRM_CORE_SLICE_1_CHANGE_TO_EVIDENCE_PILOT_CONTRACT_V1.md`
 - pilot activation intake: `control/tde-intake/crm-core-slice-1-change-to-evidence-pilot-2026-04-13.json`
+- kickoff packet prepared: `products/delivery/04-execution/CRM_CORE_SLICE_1_PILOT_KICKOFF_PACKET_2026-04-13.md`

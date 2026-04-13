@@ -54,6 +54,7 @@ Current evidence anchors for this workstream:
 - use `MINIMUM_AUTONOMOUS_DELIVERY_LOOP_V0_1_2026-04-03.md` as the target direction for shifting routine procedural progression out of chat and into workflow/execution logic
 - first bounded proving case: CRM Core Slice 1 change-to-evidence loop, where TDE owns machine-execution support state around implementation/test/evidence progression without taking primary ownership of CRM feature implementation
 - activation intake created: `control/tde-intake/crm-core-slice-1-change-to-evidence-pilot-2026-04-13.json`
+- kickoff packet prepared: `products/delivery/04-execution/CRM_CORE_SLICE_1_PILOT_KICKOFF_PACKET_2026-04-13.md`
 - reference: `products/task-management/04-execution/2026-04-03_PXS_TOOLS_MACHINE_EXECUTION_INTEGRATION_NOTE.md`
 - reference: `2026-04-13_DELIVERY_TDE_PXS_TOOLS_CRM_INTEGRATION_PILOT_NOTE.md`
 - reference: `products/delivery/04-execution/CRM_CORE_SLICE_1_CHANGE_TO_EVIDENCE_PILOT_CONTRACT_V1.md`
