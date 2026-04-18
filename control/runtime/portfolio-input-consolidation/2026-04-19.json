@@ -2,12 +2,12 @@
   "artifact": "portfolio-input-consolidation",
   "domain": "vega",
   "date": "2026-04-19",
-  "generatedAt": "2026-04-19T01:43:00+02:00",
+  "generatedAt": "2026-04-19T01:52:00+02:00",
   "timezone": "Europe/Stockholm",
   "policyRef": "CONTROL_TOWER_OVERNIGHT_SYNTHESIS_POLICY_V1.md",
   "purpose": "Bounded overnight Vega-domain portfolio input consolidation for the portfolio decision step, including bounded wiki-maintenance signal generation. Signal only, no execution selection or large wiki rewrite work.",
   "status": "complete",
-  "comparisonBaseline": "Current night's 2026-04-19 Vega BU learn-and-replan artifacts, the prior Vega consolidation artifacts at control/runtime/portfolio-input-consolidation/2026-04-18.json and 2026-04-17.json, tonight's relevant product-owner nightlies as bounded cross-portfolio signal, and the current wiki surfaces already tracking recurring Vega patterns. No 2026-04-19 Vega internal-function nightly reports or Vega department nightly reports were found during this bounded consolidation pass.",
+  "comparisonBaseline": "Current night's 2026-04-19 Vega BU and internal-function learn-and-replan artifacts, the prior Vega consolidation artifacts at control/runtime/portfolio-input-consolidation/2026-04-18.json and 2026-04-17.json, tonight's relevant product-owner nightlies as bounded cross-portfolio signal, and the current wiki surfaces already tracking recurring Vega patterns. No 2026-04-19 Vega department nightly reports were found during this bounded consolidation pass.",
   "sources": [
     "control/runtime/portfolio-input-consolidation/2026-04-18.json",
     "control/runtime/portfolio-input-consolidation/2026-04-17.json",
@@ -18,6 +18,7 @@
     "pxs/docs/instances/px-strategy/business-units/pxs-intelligence-knowledge/nightly-reports/2026-04-19-vega-nightly-report.md",
     "pxs/docs/instances/px-strategy/business-units/pxs-investments/nightly-reports/2026-04-19-vega-nightly-report.md",
     "pxs/docs/instances/px-strategy/business-units/pxs-media/nightly-reports/2026-04-19-vega-nightly-report.md",
+    "pxs/docs/instances/px-strategy/internal-functions/pxs-os/nightly-reports/2026-04-19-vega-nightly-report.md",
     "products/interfaces/04-execution/nightly-reports/2026-04-19-po-nightly-report.json",
     "products/improvement/04-execution/nightly-reports/2026-04-19-po-nightly-report.json",
     "products/task-management/04-execution/nightly-reports/2026-04-19-po-nightly-report.json",
@@ -78,10 +79,11 @@
         ]
       },
       {
-        "theme": "The current-night Vega internal-function and department layers remain absent from the bounded evidence set",
+        "theme": "The current-night Vega department layer remains absent from the bounded evidence set, while the internal-function layer now confirms the same operating-pattern and model-alignment picture",
         "treatment": "watch",
-        "why": "No 2026-04-19 internal-function nightlies or department nightlies were found during consolidation. The BU picture remains usable, but the cross-unit evidence set is still incomplete.",
+        "why": "The new 2026-04-19 PXS OS nightly report strengthens the bounded source-to-closure and compact-surface operating-pattern signal while leaving the direct D1/D5 model-alignment gap unchanged. No 2026-04-19 department nightlies were found during consolidation.",
         "evidence": [
+          "pxs/docs/instances/px-strategy/internal-functions/pxs-os/nightly-reports/2026-04-19-vega-nightly-report.md",
           "control/runtime/portfolio-input-consolidation/2026-04-19.json"
         ]
       }
@@ -103,7 +105,7 @@
           "treatment": "watch"
         },
         {
-          "theme": "The missing internal-function and department layers remain completeness watchpoints.",
+          "theme": "The missing department layer remains a completeness watchpoint, while the internal-function layer now reinforces rather than changes the live Vega picture.",
           "treatment": "watch"
         }
       ]
@@ -146,13 +148,20 @@
         "note": "This is relevant as durable operating knowledge and a possible wiki-promotion signal, but it does not itself make Interfaces a Vega portfolio priority in this consolidation step."
       },
       {
-        "theme": "Portfolio completeness still depends on getting the Vega internal-function and department nightly layers to land consistently",
+        "theme": "PXS OS reinforces the same portfolio operating doctrine without changing Vega BU priority order",
+        "units": [
+          "pxs-os",
+          "portfolio-operating-pattern"
+        ],
+        "note": "The function nightly confirms that source-to-closure routing, bounded promotion from compact control surfaces, and route-out discipline are becoming more concrete operating expectations, while the clearest direct model gap remains D1 plus a narrower D5 evidence-reference lag."
+      },
+      {
+        "theme": "Portfolio completeness still depends on getting the Vega department nightly layer to land consistently",
         "units": [
           "portfolio",
-          "internal-functions",
           "departments"
         ],
-        "note": "The BU layer is usable for bounded synthesis, but the missing layers should stay visible as control-completeness watchpoints rather than be normalized away."
+        "note": "The BU plus internal-function layers are usable for bounded synthesis, but the missing department outputs should stay visible as a control-completeness watchpoint rather than be normalized away."
       }
     ],
     "external": [
@@ -214,6 +223,13 @@
       "changedSinceBaseline": "The package remained cleanly anchored to the C7 model-completion path, but several continuity surfaces needed refresh into the current confirmation layer.",
       "treatment": "watch",
       "reason": "The BU stayed strategically stable and still exposes the same ecosystem-position and sources-of-advantage gap."
+    },
+    {
+      "unit": "pxs-os",
+      "classification": "no_material_change",
+      "changedSinceBaseline": "No function-local package refresh was needed. The strongest incremental signal was confirmation that adjacent product/runtime evidence is making truthful routing, exact blocker visibility, and compact-surface promotion thresholds more concrete, without changing the function stack.",
+      "treatment": "watch",
+      "reason": "The function stayed strategically stable and still exposes the same direct model-alignment gap in D1 plus a narrower D5 evidence-reference lag."
     }
   ],
   "themeDispositions": [
@@ -246,13 +262,13 @@
       "reason": "Repeated tonight across the reviewed BUs and still appropriate as operating discipline rather than immediate work."
     },
     {
-      "theme": "Missing Vega internal-function and department nightlies in the current evidence set",
+      "theme": "Missing Vega department nightlies in the current evidence set",
       "treatment": "watch",
       "scope": [
         "portfolio",
         "review-loop-completeness"
       ],
-      "reason": "Portfolio synthesis is usable but still incomplete without consistent participation from those layers."
+      "reason": "Portfolio synthesis is now stronger with the 2026-04-19 PXS OS nightly included, but still incomplete without consistent department participation."
     },
     {
       "theme": "Source-to-closure routing and bounded promotion are solidifying as a reusable operating pattern",
@@ -265,13 +281,14 @@
     }
   ],
   "wikiMaintenance": {
-    "summary": "Tonight's outputs again argue for bounded wiki maintenance rather than broad documentation work. The clearest durable value is to keep the recurring model-gap synthesis current, strengthen the Media and Intelligence & Knowledge overview pages now that their role logic is stably articulated, and capture a sharper Lyra operating-pattern signal from the Interfaces proof shift. The main visible gaps remain one compact page for the adjacent-BU boundary cluster and better browseable coverage for the missing Vega internal-function layer, but those should stay bounded rather than turning into a large wiki expansion.",
+    "summary": "Tonight's outputs again argue for bounded wiki maintenance rather than broad documentation work. The clearest durable value is to keep the recurring model-gap synthesis current, strengthen the Media and Intelligence & Knowledge overview pages now that their role logic is stably articulated, and capture a sharper Lyra operating-pattern signal from the Interfaces proof shift plus the corroborating PXS OS function view. The main visible gaps remain one compact page for the adjacent-BU boundary cluster and better browseable internal-function coverage for PXS OS, but those should stay bounded rather than turning into a large wiki expansion.",
     "durableKnowledgeSignals": [
       "The recurring Vega model-gap cluster remains stable across another night: C1/C2, C7, and A4/B6 remain the live BU-visible queue.",
       "The adjacent-BU boundary cluster remains the top daytime decision-conversion issue and is now a durable portfolio pattern rather than a one-off local ambiguity.",
       "Interfaces now provides a stronger operating-pattern example in which nightly work moves from ambiguity reduction into explicit promotion-quality proof and bounded verification.",
+      "PXS OS now adds a function-level corroboration that truthful routing, bounded promotion, and route-out discipline are becoming durable operating patterns rather than one-product quirks.",
       "Media and Intelligence & Knowledge role logic are stable enough that their wiki overview pages can move beyond first-pass summaries and more clearly reflect reusable advantage, monetization posture, and active C7 pressure.",
-      "The absence of 2026-04-19 Vega internal-function and department nightlies is now a visible knowledge-completeness gap that should stay explicit in portfolio maintenance."
+      "The absence of 2026-04-19 Vega department nightlies is still a visible knowledge-completeness gap that should stay explicit in portfolio maintenance."
     ],
     "findings": [
       {
@@ -320,13 +337,14 @@
         "topic": "Lyra nightly learn/replan operating-pattern page now has a stronger proof-phase example available",
         "classification": "update_existing_page",
         "confidence": "medium",
-        "why": "The operating-pattern page is directionally right, and Interfaces now offers a cleaner example of how mature nightlies shift from ambiguity analysis to bounded live-proof and verification work. That is a high-signal small update, not a rewrite.",
+        "why": "The operating-pattern page is directionally right, and Interfaces plus the corroborating PXS OS function pass now offer a cleaner cross-context example of how mature nightlies shift from ambiguity analysis to bounded live-proof, truthful routing, and verification work. That is a high-signal small update, not a rewrite.",
         "targets": [
           "wiki/lyra/operating-patterns/nightly-learn-replan-and-consolidation.md"
         ],
         "evidence": [
           "wiki/lyra/operating-patterns/nightly-learn-replan-and-consolidation.md",
-          "products/interfaces/04-execution/nightly-reports/2026-04-19-po-nightly-report.json"
+          "products/interfaces/04-execution/nightly-reports/2026-04-19-po-nightly-report.json",
+          "pxs/docs/instances/px-strategy/internal-functions/pxs-os/nightly-reports/2026-04-19-vega-nightly-report.md"
         ]
       },
       {
@@ -346,22 +364,22 @@
       },
       {
         "topic": "Missing browseable Vega internal-function overview coverage for PXS OS or equivalent current internal-function layer",
-        "classification": "research_next",
+        "classification": "create_new_page",
         "confidence": "medium",
-        "why": "The gap is visible, but tonight no 2026-04-19 internal-function nightly artifact was present, so the best bounded move is to verify the intended internal-function wiki shape before creating a page.",
+        "why": "PXS OS is now a stable internal-function surface with repeated portfolio relevance, and the new 2026-04-19 function nightly increases confidence that a thin browseable overview page would improve discoverability without creating a parallel source of truth.",
         "targets": [
-          "wiki/pxs/"
+          "wiki/pxs/internal-functions/pxs-os.md"
         ],
         "evidence": [
-          "control/runtime/portfolio-input-consolidation/2026-04-19.json",
-          "control/runtime/portfolio-input-consolidation/2026-04-18.json"
+          "pxs/docs/instances/px-strategy/internal-functions/pxs-os/nightly-reports/2026-04-19-vega-nightly-report.md",
+          "control/runtime/portfolio-input-consolidation/2026-04-19.json"
         ]
       },
       {
         "topic": "Missing Vega department-nightly layer should remain an operational completeness watchpoint, not a wiki-first fix",
         "classification": "watch",
         "confidence": "high",
-        "why": "The repeated absence is real, but the right next move is to improve loop participation or clarify scope rather than create documentation that mainly memorializes a missing runtime behavior.",
+        "why": "The repeated absence is real, but the right next move is still to improve loop participation or clarify scope rather than create documentation that mainly memorializes a missing runtime behavior.",
         "targets": [],
         "evidence": [
           "control/runtime/portfolio-input-consolidation/2026-04-19.json"
