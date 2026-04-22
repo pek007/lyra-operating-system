@@ -54,6 +54,7 @@ Current evidence anchors for this workstream:
 - use `MINIMUM_AUTONOMOUS_DELIVERY_LOOP_V0_1_2026-04-03.md` as the target direction for shifting routine procedural progression out of chat and into workflow/execution logic
 - selected first thin-slice autonomous support path: Delivery-governed evidence-completeness gate + TDE-tracked execution-support loop for a bounded internal PXS Tools slice
 - canonical narrowing decision: `products/delivery/04-execution/FIRST_AUTONOMOUS_SUPPORT_PATH_SELECTION_2026-04-22.md`
+- first test-case selection rule: `products/delivery/04-execution/FIRST_AUTONOMOUS_SUPPORT_PATH_TEST_CASE_SELECTION_2026-04-22.md`
 - first bounded proving case: CRM Core Slice 1 change-to-evidence loop, where TDE owns machine-execution support state around implementation/test/evidence progression without taking primary ownership of CRM feature implementation
 - activation intake created: `control/tde-intake/crm-core-slice-1-change-to-evidence-pilot-2026-04-13.json`
 - kickoff packet prepared: `products/delivery/04-execution/CRM_CORE_SLICE_1_PILOT_KICKOFF_PACKET_2026-04-13.md`
