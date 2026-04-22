@@ -47,6 +47,8 @@
 - strengthen validation/generation/documentation flow, commit/push/reporting reliability, and delivery-stage auditability for coding-agent-supported development work
 - use repeated manual development patterns and quality failures as feedback signals for Delivery improvement rather than leaving them as recurring operator burden
 - integrate `MINIMUM_AUTONOMOUS_DELIVERY_LOOP_V0_1_2026-04-03.md` as the target direction for reducing routine procedural prompting and keeping Peter at true decision points rather than workflow-engine duty
+- selected first thin-slice autonomous support path: Delivery-governed evidence-completeness gate + TDE-tracked execution-support loop for a bounded internal PXS Tools slice
+- canonical narrowing decision: `products/delivery/04-execution/FIRST_AUTONOMOUS_SUPPORT_PATH_SELECTION_2026-04-22.md`
 - reference: `products/delivery/04-execution/2026-04-03_PXS_TOOLS_SOFTWARE_DELIVERY_PROFESSIONALIZATION_INTEGRATION_NOTE.md`
 - first bounded proving case: `2026-04-13_DELIVERY_TDE_PXS_TOOLS_CRM_INTEGRATION_PILOT_NOTE.md`
 - first pilot contract: `products/delivery/04-execution/CRM_CORE_SLICE_1_CHANGE_TO_EVIDENCE_PILOT_CONTRACT_V1.md`
