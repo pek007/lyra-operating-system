@@ -26,7 +26,7 @@
   "related_entities": [
     {
       "entity_type": "portfolio_signal",
-      "entity_ref": "control/runtime/portfolio-input-consolidation/2026-04-22.json",
+      "entity_ref": "control/runtime/portfolio-input-consolidation/2026-04-23.json",
       "relationship": "selected_priority"
     },
     {
@@ -43,7 +43,7 @@
   "evidence_links": [
     {
       "kind": "portfolio_input",
-      "ref": "control/runtime/portfolio-input-consolidation/2026-04-22.json"
+      "ref": "control/runtime/portfolio-input-consolidation/2026-04-23.json"
     },
     {
       "kind": "vega_synthesis",
@@ -86,6 +86,10 @@
       "ref": "control/execution-evidence/vega-adjacent-bu-boundary-morning-decision-sequence-refresh-2026-04-22-0502-cest.md"
     },
     {
+      "kind": "execution_evidence",
+      "ref": "control/execution-evidence/vega-adjacent-bu-boundary-current-chain-refresh-2026-04-23-0203-cest.md"
+    },
+    {
       "kind": "consulting_priority",
       "ref": "pxs/docs/instances/px-strategy/business-units/pxs-consulting/TOP_PRIORITIES.md"
     },
@@ -112,8 +116,8 @@
   "current_decision_status": {
     "as_of": "2026-04-22T01:41:00+02:00",
     "selected_priority_ref": "control/CT-OVERNIGHT-SYNTHESIS-2026-04-22.md",
-    "decision_posture": "Decision-ready, repeatedly reaffirmed, and still unclosed. The portfolio has carried this route across multiple nights, but the absence of a canonical Control Panel TDE decision item is now itself a control-surface gap.",
-    "latest_execution_evidence": "control/execution-evidence/vega-adjacent-bu-boundary-morning-decision-sequence-refresh-2026-04-22-0502-cest.md",
+    "decision_posture": "Decision-ready, repeatedly reaffirmed, and still unclosed. The portfolio has carried this route across multiple nights, but it now has a canonical Control Panel TDE decision item plus a refreshed 2026-04-23 continuity edge rather than relying on the prior day's confirmation layer as the live route.",
+    "latest_execution_evidence": "control/execution-evidence/vega-adjacent-bu-boundary-current-chain-refresh-2026-04-23-0203-cest.md",
     "next_authorized_step": "Start from the compact executive brief at pxs/docs/instances/px-strategy/business-units/portfolio-nightly-reports/2026-04-22-vega-bu-executive-brief.md, then follow the now-explicit morning sequence: open the daytime review packet, capture the accept / accept-with-edits / reject judgment first in the compact decision-at-a-glance block, and, if accepted, execute the application checklist by patching the three BU charters first. Then explicitly decide whether CP-001 becomes a routed model-impacting change candidate under MODEL_CHANGE_PROTOCOL_V1.md."
   }
 }
