@@ -3,7 +3,7 @@
 Status: Active
 Owner: Peter / Lyra
 Date: 2026-03-11
-Last updated: 2026-03-16 (v1.1 — added lifecycle status, archived repo section, pre-edit authority gate)
+Last updated: 2026-04-24 (v1.2 — re-pointed `lyra-operating-system` authority to workspace root, added `pxs` + `pxs-crm`, and downgraded nested Lyra clone to legacy local status)
 
 ## Purpose
 Define the canonical local repo path, lifecycle status, and authority rule for all code-bearing repos in the workspace.
@@ -32,15 +32,49 @@ This gate is a response to ERR-2026-03-15-ARCHIVED-REPO-MISUSE.
 
 ## Active repos
 
-### Lyra Operating System / TDE
-- Product(s): `A-007 Task Management` and shared Lyra OS code line
+### Lyra Operating System / workspace root
+- Product(s): shared Lyra OS operating workspace, governance/model/docs line, and the currently active `lyra-operating-system` mainline
 - Lifecycle status: **Active**
 - Remote: `https://github.com/pek007/lyra-operating-system.git`
-- Canonical local repo: `repos/lyra-operating-system`
-- Workspace root authoritative? `No` (workspace root is documentation/governance, not the canonical code clone)
+- Canonical local repo: `/Users/lyra/.openclaw/workspace`
+- Workspace root authoritative? `Yes`
 - Notes:
-  - use this clone for TDE / Lyra OS code reconciliation, sync, rebase, and push decisions
-  - workspace-root clone must not be assumed authoritative for code-lineage decisions
+  - use this clone for `lyra-operating-system` fetch / status / sync / rebase / push decisions unless a later explicit decision changes repo authority
+  - current operating reality is that the workspace root is the maintained and pushed mainline for this remote
+  - do not assume the nested clone under `repos/lyra-operating-system` is authoritative
+
+### PXS
+- Product(s): `PX Strategy` operating repo
+- Lifecycle status: **Active**
+- Remote: `https://github.com/pek007/pxs.git`
+- Canonical local repo: `/Users/lyra/.openclaw/workspace-px-internal-dev/pxs`
+- Notes:
+  - use this clone for `pxs` fetch / status / sync / push decisions
+  - keep local nightly/report work bounded so committed history reaches GitHub in small increments
+
+### PXS CRM
+- Product(s): `PXS CRM`
+- Lifecycle status: **Active**
+- Remote: `https://github.com/pek007/pxs-crm.git`
+- Canonical local repo: `/Users/lyra/.openclaw/workspace-px-internal-dev/pxs-crm`
+- Notes:
+  - use this clone for `pxs-crm` fetch / status / sync / push decisions
+  - current baseline is clean and synced; preserve that as the standard
+
+### Lyra Operating System nested clone
+- Product(s): legacy/local secondary clone of `lyra-operating-system`
+- Lifecycle status: **Legacy local clone — non-authoritative**
+- Remote: `https://github.com/pek007/lyra-operating-system.git`
+- Local repo: `/Users/lyra/.openclaw/workspace/repos/lyra-operating-system`
+- Permitted uses:
+  - inspect divergence
+  - extract reusable code or notes intentionally
+  - reconcile or retire the clone under an explicit cleanup step
+- NOT permitted:
+  - treat as the default source for sync / rebase / push decisions
+  - assume its local divergence represents the current authoritative repo state
+- Notes:
+  - this clone is materially divergent from the active mainline and should be reconciled or retired rather than silently used
 
 ---
 
@@ -68,9 +102,10 @@ This gate is a response to ERR-2026-03-15-ARCHIVED-REPO-MISUSE.
 
 ## Workspace root status
 - Path: `/Users/lyra/.openclaw/workspace`
-- Role: global operating workspace — documentation, governance, models, memory, and shared artifacts
+- Role: global operating workspace — documentation, governance, models, memory, shared artifacts, and the current authoritative local clone for the `lyra-operating-system` remote
 - Authority rule:
-  - may contain a Git clone of the operating-system repo, but should not be treated as the default authoritative code clone for any product unless explicitly declared
+  - for the `lyra-operating-system` remote, this workspace root is the default authoritative clone unless a later explicit decision changes it
+  - for other repos, defer to the canonical local repo listed above
 
 ---
 
@@ -78,7 +113,10 @@ This gate is a response to ERR-2026-03-15-ARCHIVED-REPO-MISUSE.
 
 | Repo | Status | Permitted for implementation? |
 |------|--------|-------------------------------|
-| `repos/lyra-operating-system` | Active | Yes |
+| `/Users/lyra/.openclaw/workspace` | Active | Yes |
+| `/Users/lyra/.openclaw/workspace-px-internal-dev/pxs` | Active | Yes |
+| `/Users/lyra/.openclaw/workspace-px-internal-dev/pxs-crm` | Active | Yes |
+| `/Users/lyra/.openclaw/workspace/repos/lyra-operating-system` | Legacy local clone | No (inspect/reconcile only) |
 | `repos/control-panel` | Archived | No (inspect/reuse only) |
 
 ---
@@ -104,3 +142,4 @@ Reassess this map when:
 |------|--------|--------|
 | 2026-03-11 | v1.0 — initial canonical repo map (active-clone authority rule) | GIT_TOPOLOGY_AND_SYNC_ERROR_REPORT_2026-03-11 |
 | 2026-03-16 | v1.1 — added lifecycle status, archived repo section, pre-edit authority gate | ERR-2026-03-15-ARCHIVED-REPO-MISUSE corrective action |
+| 2026-04-24 | v1.2 — re-pointed `lyra-operating-system` authority to workspace root, added `pxs` + `pxs-crm`, and downgraded nested Lyra clone to legacy local status | GitHub hygiene + repo-authority reconciliation |

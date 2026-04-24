@@ -52,8 +52,8 @@
 - [x] Use `repos/lyra-operating-system` as the canonical locus for TDE / Lyra OS code reconciliation unless explicitly changed.
 - [x] Add an explicit repo-root confirmation step before future sync / rebase / push actions.
 - [ ] Implement the canonical repo authority rule in ongoing operations and verify it through future sync decisions.
-- [ ] Adopt a lightweight Git sync cadence rule for active code-bearing products.
-- [ ] Assign these remaining corrective actions into the canonical action system instead of the legacy `TASKS.md` reference board.
+- [x] Adopt a lightweight Git sync cadence rule for active code-bearing products. (`GIT_AND_GITHUB_WAYS_OF_WORKING_V1.md`, 2026-04-24)
+- [x] Assign these remaining corrective actions into the canonical action system instead of the legacy `TASKS.md` reference board.
 
 ## Preventive changes
 - Before any Git sync decision:
@@ -85,4 +85,6 @@
 - no further Git sync decisions are made against the wrong clone for the same remote
 
 ## Closure note
-- Initial incident mitigated by aborting the rebase and documenting the corrective rule. Full closure depends on recording canonical repo authority and applying it consistently.
+- Initial incident mitigated by aborting the rebase and documenting the corrective rule.
+- 2026-04-24 update: `CANONICAL_REPO_MAP_V1.md` was refreshed to reflect the active authoritative repo set and `GIT_AND_GITHUB_WAYS_OF_WORKING_V1.md` now defines the missing Git sync cadence rule.
+- Full closure still depends on consistent use of the canonical authority rule in practice, including reconciling or retiring the divergent nested `repos/lyra-operating-system` clone so it cannot be mistaken for the active authority surface.
