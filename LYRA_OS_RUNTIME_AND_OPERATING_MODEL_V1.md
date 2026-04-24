@@ -259,6 +259,70 @@ The runtime model must preserve:
 
 Runtime capability must not be mistaken for runtime authority.
 
+## Reasoning-depth control
+
+Lyra OS should treat **reasoning depth / thinking level** as an explicit runtime operating control.
+
+Reasoning depth is not only a local prompt preference or model-quality setting.
+It is part of how the runtime balances:
+- decision quality
+- latency
+- throughput
+- control
+- risk of under-reasoning on hard tasks
+- risk of over-reasoning on routine work
+
+The operating model should therefore prefer:
+- a clear default reasoning posture for general work
+- explicit escalation when stronger judgment materially improves outcomes
+- lower reasoning posture when responsiveness is the more important operating constraint
+
+## Reasoning escalation and deep-work lanes
+
+Lyra OS should use an explicit reasoning-escalation pattern rather than rely only on operator instinct.
+
+The default pattern is:
+1. use the standard reasoning posture for normal work
+2. escalate for architecture, root-cause debugging, difficult tradeoff decisions, security-sensitive review, or repeated weak first passes
+3. return to the standard posture when the task returns to bounded execution or routine follow-through
+
+Where certain workflow classes repeatedly benefit from stronger reasoning posture, Lyra OS may define dedicated deep-work lanes.
+
+These lanes should:
+- reflect real workflow differences rather than create unnecessary runtime sprawl
+- be explicit about entry and exit conditions
+- preserve a bounded handoff back to normal execution work
+
+## Applicability by runtime type
+
+This doctrine applies primarily to **work-performing runtimes** and scoped workers acting on their behalf.
+
+Examples include:
+- primary operating runtimes such as Lyra
+- separate domain runtimes such as Vega
+- scoped spawned runs or isolated sessions executing bounded work
+
+Thin control or system runtimes should generally not become independent deep-reasoning lanes of their own.
+Their role is to:
+- route
+- wake
+- dispatch
+- preserve control surfaces
+
+When a thin control or system runtime detects the need for stronger reasoning, it should wake or dispatch the appropriate work-performing runtime, or launch a bounded worker with explicit reasoning posture.
+
+## Runtime review rule for reasoning posture
+
+Reasoning-depth policy should be reviewed using evidence from real representative tasks.
+
+Lyra OS should not harden a reasoning policy solely from intuition, vendor guidance, or isolated anecdotes.
+Where useful, benchmark tasks or recurring work samples should be used to assess:
+- whether stronger reasoning improved judgment quality
+- which task classes benefited materially
+- where higher reasoning created latency without enough quality gain
+
+This keeps reasoning-depth policy inside the inspectable runtime-improvement loop.
+
 ## Continuity rule
 
 Continuity should not depend primarily on chat transcript memory.
@@ -379,4 +443,4 @@ The operating model should make Lyra OS:
 ## Short doctrine statement
 
 **Lyra OS should run through explicit, bounded, inspectable operating loops tied to canonical artifacts.  
-Execution, review, delivery, improvement, and learning should reinforce one another, while continuity and control should depend on explicit state and authority rather than hidden runtime memory.**
+Execution, review, delivery, improvement, and learning should reinforce one another, while continuity and control should depend on explicit state and authority rather than hidden runtime memory. Reasoning depth should be treated as an explicit operating control, with governed default posture, escalation posture, and evidence-backed review.**

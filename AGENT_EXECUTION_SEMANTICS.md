@@ -11,6 +11,11 @@ Operational rules for how agents run in the multi-agent model.
 ## Default Rule
 - Use spawned subagents unless long-lived memory/context ownership is explicitly required.
 
+## Execution-profile rule
+- Reasoning-depth control belongs primarily to execution profiles and workflow lanes, not to proliferation of persistent agents.
+- A persistent or system/control runtime should not exist mainly to hold a deeper thinking default.
+- When deeper reasoning is needed, prefer an explicit lane change, session/thread control, or a spawned bounded worker with the required reasoning posture.
+
 ## Spawn Contract
 Every spawned run must include:
 - Objective
@@ -34,6 +39,7 @@ Escalate to the Control Panel runtime when:
 
 ## Anti-Drift
 - No specialist agent may redefine principles/policies without explicit Control Panel runtime approval.
+- Thin orchestration or system runtimes should not silently become de facto deep-reasoning policy owners; they should route that work through the appropriate work-performing runtime or scoped worker.
 
 ## Version
 - v1.0

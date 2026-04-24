@@ -177,6 +177,39 @@ Possible promotions include:
 
 Promotion should be deliberate, not automatic.
 
+## Reasoning-posture promotion rule
+
+Learning about reasoning depth should be treated like other operating learning.
+
+If local experiments repeatedly show that different reasoning postures materially change:
+- decision quality
+- error rate
+- architecture judgment
+- debugging reliability
+- review quality
+- workflow speed/drag tradeoffs
+
+then that learning should be considered for promotion beyond local prompt habits.
+
+Possible promotion targets include:
+- runtime operating model updates
+- workspace operating guidance
+- product-local lane conventions
+- execution-profile defaults
+- review and benchmark protocols
+
+## Anti-drift rule for reasoning posture
+
+Reasoning-depth behavior should not drift silently into de facto system design.
+
+Unhealthy drift exists when:
+- stronger reasoning is repeatedly used in practice but not reflected in operating guidance
+- defaults remain weak while operators compensate informally
+- deep-work threads emerge repeatedly without explicit lane design
+- speed/quality tradeoffs are argued from intuition without benchmark evidence
+
+When that happens, the appropriate response is explicit review and promotion or constraint, not continued informal adaptation.
+
 ## Drift rule
 
 Lyra OS should distinguish between:
@@ -311,4 +344,4 @@ The learning and evolution model should make Lyra OS:
 ## Short doctrine statement
 
 **Lyra OS should learn explicitly, improve deliberately, and evolve through governed promotion of evidence-backed lessons.  
-Local adaptation is allowed, but repeated learning should become durable system improvement rather than hidden drift.**
+Local adaptation is allowed, but repeated learning should become durable system improvement rather than hidden drift. That includes reasoning-posture learning: defaults, escalation patterns, and lane usage should become explicit when they materially affect system behavior.**

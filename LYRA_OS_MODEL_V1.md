@@ -209,4 +209,4 @@ When updating the Model:
 
 **Lyra OS is governed by an explicit Model.  
 That Model defines the system’s strategic intent, authority structure, portfolio logic, delivery and consumption design, runtime operating design, and learning/evolution logic.  
-Products, workspaces, processes, and runtime loops operate within that design.**
+Products, workspaces, processes, and runtime loops operate within that design. Reasoning depth is part of runtime operating design and should be explicit, evidence-informed, and governed rather than left to silent habit.**
