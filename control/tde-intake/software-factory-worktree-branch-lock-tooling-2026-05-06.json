@@ -1,0 +1,47 @@
+{
+  "artifactType": "tde_intake_packet",
+  "schemaVersion": "1.0.0",
+  "intake_id": "CP-2026-05-06-SOFTWARE-FACTORY-WORKTREE-BRANCH-LOCK-TOOLING",
+  "intake_class": "work",
+  "source_system": "software_factory_phase3b_proof",
+  "source_type": "automation",
+  "source_reference": "control/execution-evidence/software-factory-phase3b-isolated-worktree-parallel-builder-proof-2026-05-06.md",
+  "submitted_at": "2026-05-06T14:40:00Z",
+  "submitted_by": "Lyra / Delivery Software Factory",
+  "title": "Formalize Software Factory worktree/branch naming and file-scope lock-check tooling",
+  "summary": "Phase 3b proved copy-mode isolated parallel builders with manual exact-copy integration. The next maturation step is reusable worktree/branch naming and file-scope lock-check tooling before larger scale-up.",
+  "body": {
+    "control_state": "queued_recommended_next_control_object",
+    "predecessor_evidence": "control/execution-evidence/software-factory-phase3b-isolated-worktree-parallel-builder-proof-2026-05-06.md",
+    "scope": "Delivery-owned tooling/specification only; formalize naming conventions and a validator/helper for declared file-scope locks before using larger parallel builder lanes.",
+    "hard_constraints": [
+      "no persistent agents",
+      "no PXS/PXS CRM mutation",
+      "no deploy/release",
+      "no credential/access changes",
+      "no external sends",
+      "no destructive cleanup",
+      "explicit owner approval required before execution"
+    ],
+    "close_when": "A validated spec/helper exists for worktree/branch naming and file-scope lock checking, with expected-fail fixtures for overlapping scopes."
+  },
+  "priority_hint": "high",
+  "workspace_scope": "lyra-os / software-factory",
+  "product_scope": "delivery / task-management / security as gatekeeper",
+  "proposed_action": "After owner approval, build a small reusable worktree/branch naming and file-scope lock-check helper/spec for Software Factory parallel builders.",
+  "requested_action": "After owner approval, build a small reusable worktree/branch naming and file-scope lock-check helper/spec for Software Factory parallel builders.",
+  "success_signal": "Future parallel builder runs can fail closed before dispatch when file scopes overlap or naming/isolation evidence is missing.",
+  "related_entities": [
+    {
+      "entity_type": "predecessor_evidence",
+      "entity_ref": "control/execution-evidence/software-factory-phase3b-isolated-worktree-parallel-builder-proof-2026-05-06.md",
+      "relationship": "derived_from"
+    }
+  ],
+  "evidence_links": [
+    {
+      "kind": "predecessor_evidence",
+      "ref": "control/execution-evidence/software-factory-phase3b-isolated-worktree-parallel-builder-proof-2026-05-06.md"
+    }
+  ]
+}

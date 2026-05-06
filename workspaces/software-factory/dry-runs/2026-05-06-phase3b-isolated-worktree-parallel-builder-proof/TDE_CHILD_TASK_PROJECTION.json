@@ -1,0 +1,110 @@
+{
+  "artifactType": "software_factory_tde_child_task_projection",
+  "schemaVersion": "0.1.0",
+  "factory_run_id": "SF-ORCH-2026-05-06-PHASE3B-ISOLATED-PARALLEL-BUILDERS",
+  "parent_tde_ref": "control/tde-intake/software-factory-phase3b-isolated-worktree-parallel-builder-proof-2026-05-06.json",
+  "child_tasks": [
+    {
+      "task_id": "SF-P3B-001",
+      "workstream": "Run orchestration and isolation setup",
+      "role": "orchestrator",
+      "state": "done",
+      "file_scope": [
+        "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/ORCHESTRATION_PLAN.md",
+        "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/manifests/pre-root-allowed-manifest.json"
+      ],
+      "dependencies": [],
+      "evidence_target": "ORCHESTRATION_PLAN.md"
+    },
+    {
+      "task_id": "SF-P3B-001A",
+      "workstream": "Review isolation design and file-scope split",
+      "role": "architect",
+      "state": "done",
+      "file_scope": [
+        "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/ORCHESTRATION_PLAN.md",
+        "products/delivery/04-execution/SOFTWARE_FACTORY_ISOLATED_WORKTREE_DISCIPLINE_V0_2026-05-04.md"
+      ],
+      "dependencies": [
+        "SF-P3B-001"
+      ],
+      "evidence_target": "worker-results/ARCHITECT_RESULT.md"
+    },
+    {
+      "task_id": "SF-P3B-002",
+      "workstream": "Builder A file-scope lock artifact",
+      "role": "builder",
+      "state": "done",
+      "file_scope": [
+        "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/isolated-copy-builder-a/products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_BUILDER_FILE_SCOPE_LOCK_V0.md"
+      ],
+      "dependencies": [
+        "SF-P3B-001",
+        "SF-P3B-001A"
+      ],
+      "evidence_target": "worker-results/BUILDER_A_RESULT.md"
+    },
+    {
+      "task_id": "SF-P3B-003",
+      "workstream": "Builder B integration checklist artifact",
+      "role": "builder",
+      "state": "done",
+      "file_scope": [
+        "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/isolated-copy-builder-b/products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_BUILDER_INTEGRATION_CHECKLIST_V0.md"
+      ],
+      "dependencies": [
+        "SF-P3B-001",
+        "SF-P3B-001A"
+      ],
+      "evidence_target": "worker-results/BUILDER_B_RESULT.md"
+    },
+    {
+      "task_id": "SF-P3B-004",
+      "workstream": "Gatekeeper boundary review",
+      "role": "gatekeeper",
+      "state": "done",
+      "file_scope": [
+        "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/ORCHESTRATION_PLAN.md",
+        "products/delivery/04-execution/SOFTWARE_FACTORY_ISOLATED_WORKTREE_DISCIPLINE_V0_2026-05-04.md"
+      ],
+      "dependencies": [
+        "SF-P3B-001",
+        "SF-P3B-001A"
+      ],
+      "evidence_target": "worker-results/GATEKEEPER_RESULT.md"
+    },
+    {
+      "task_id": "SF-P3B-005",
+      "workstream": "Integrate isolated outputs",
+      "role": "integrator",
+      "state": "done",
+      "file_scope": [
+        "products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_BUILDER_FILE_SCOPE_LOCK_V0.md",
+        "products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_BUILDER_INTEGRATION_CHECKLIST_V0.md",
+        "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/manifests/post-root-allowed-manifest.json"
+      ],
+      "dependencies": [
+        "SF-P3B-002",
+        "SF-P3B-003",
+        "SF-P3B-004"
+      ],
+      "evidence_target": "worker-results/INTEGRATOR_RESULT.md"
+    },
+    {
+      "task_id": "SF-P3B-006",
+      "workstream": "Verify attribution and closure",
+      "role": "verifier",
+      "state": "done",
+      "file_scope": [
+        "products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_BUILDER_FILE_SCOPE_LOCK_V0.md",
+        "products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_BUILDER_INTEGRATION_CHECKLIST_V0.md",
+        "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/",
+        "control/execution-evidence/software-factory-phase3b-isolated-worktree-parallel-builder-proof-2026-05-06.md"
+      ],
+      "dependencies": [
+        "SF-P3B-005"
+      ],
+      "evidence_target": "worker-results/VERIFIER_RESULT.md"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "files": [
+    {
+      "path": "products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_BUILDER_FILE_SCOPE_LOCK_V0.md",
+      "exists": true,
+      "sha256": "cc6931f64bda7ae6109c1514814473b05d7745521f5b405bbed0b6cf78078f55",
+      "bytes": 4807
+    },
+    {
+      "path": "products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_BUILDER_INTEGRATION_CHECKLIST_V0.md",
+      "exists": true,
+      "sha256": "3d50c6d0d1447175685f03eecb5a9c566a10f1309a70463afffcc8ba932785dc",
+      "bytes": 4665
+    }
+  ],
+  "source_files": [
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/isolated-copy-builder-a/products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_BUILDER_FILE_SCOPE_LOCK_V0.md",
+      "exists": true,
+      "sha256": "cc6931f64bda7ae6109c1514814473b05d7745521f5b405bbed0b6cf78078f55",
+      "bytes": 4807
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/isolated-copy-builder-b/products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_BUILDER_INTEGRATION_CHECKLIST_V0.md",
+      "exists": true,
+      "sha256": "3d50c6d0d1447175685f03eecb5a9c566a10f1309a70463afffcc8ba932785dc",
+      "bytes": 4665
+    }
+  ]
+}

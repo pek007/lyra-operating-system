@@ -1803,6 +1803,12 @@
       "ext": ".md"
     },
     {
+      "path": "control/execution-evidence/software-factory-ephemeral-dispatch-mvp-2026-05-06.md",
+      "size": 4372,
+      "sha256": "5c3684578e732c1f9d0c66f2f5973d826f4c5e9c2565d417091e7eab5d0534bf",
+      "ext": ".md"
+    },
+    {
       "path": "control/execution-evidence/vega-adjacent-bu-boundary-current-chain-refresh-2026-04-23-0203-cest.md",
       "size": 3230,
       "sha256": "936f03b355d0d85ce998b68e1303f67806ba1f48ce106d6aad2bc52645543bef",
@@ -1968,6 +1974,18 @@
       "path": "control/tde-intake/crm-core-slice-1-change-to-evidence-pilot-2026-04-13.json",
       "size": 6231,
       "sha256": "1983692888f5aae2d7f759ee02946e10a9c63c885f4e9ba8f67e33e97f2ba2e0",
+      "ext": ".json"
+    },
+    {
+      "path": "control/tde-intake/software-factory-ephemeral-dispatch-mvp-2026-05-06.json",
+      "size": 3154,
+      "sha256": "b86d46674589e9046364f5898d6f0ca79ca12c5bb86dd33b5be203b6d4790d90",
+      "ext": ".json"
+    },
+    {
+      "path": "control/tde-intake/software-factory-phase3b-isolated-worktree-parallel-builder-proof-2026-05-06.json",
+      "size": 3165,
+      "sha256": "1f7ed848e3b001709033951c8ef01fe6bee46bb4ea0da4bea7abf1c7abde0ce5",
       "ext": ".json"
     },
     {
@@ -6189,6 +6207,12 @@
       "ext": ".md"
     },
     {
+      "path": "products/delivery/06-architecture/SOFTWARE_FACTORY_WORKER_RESULT_CONTRACT_V0.md",
+      "size": 5560,
+      "sha256": "9b0b0f7c25063968dac8f4691c565e310ccf39e76ffb4eeb4b28e51e0a7eeb8d",
+      "ext": ".md"
+    },
+    {
       "path": "products/delivery/06-architecture/rendered-packets/APPROVAL_MEMO_TEMPLATE_V1.md",
       "size": 902,
       "sha256": "79dce7c2d86e89ac825306d144c50a1400597928a9bcf2b935dcdae1ed2b355e",
@@ -7093,6 +7117,12 @@
       "size": 2396,
       "sha256": "805ca26e1480f1f21eb6612e6b21ca1fea8eaa0970e7fa5210d41808d7fb9047",
       "ext": ".md"
+    },
+    {
+      "path": "products/security/06-architecture/PROMPT_INJECTION_AGENT_BASELINE_ADOPTION_V1.json",
+      "size": 3707,
+      "sha256": "9ad0e01c9fd9384d1461192ae89fc07e321030e8a13221a1c7e9f33ef6eec320",
+      "ext": ".json"
     },
     {
       "path": "products/security/07-decisions/AUTH_AND_MODEL_ROUTING_INTERIM_POLICY_ADOPTION_DECISION_2026-04-22.md",
@@ -8922,6 +8952,162 @@
       "path": "wiki/pxs/research-intelligence/README.md",
       "size": 362,
       "sha256": "0a31ef64b9ab25aa7768f8133cd0dc8579629c3423d476932d7ea86c1fe3f33b",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/ORCHESTRATION_PLAN.md",
+      "size": 6108,
+      "sha256": "815e493770ad557d318ffa45063c969b54a23b46007b7bb0676a8779c916681c",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/TDE_CHILD_TASK_PROJECTION.json",
+      "size": 3213,
+      "sha256": "1d3fc9913bbed67677c12d8574927b08ac8436225abf46407f264ac023299dee",
+      "ext": ".json"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/WORKSPACE_INPUT_SNAPSHOT.md",
+      "size": 1993,
+      "sha256": "d50bf2aa1d42de9371be3caa9ad3e4dee9193affb7589185320fc59c98a20d70",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/drafts/SOFTWARE_FACTORY_WORKER_RESULT_CONTRACT_V0_DRAFT.md",
+      "size": 5359,
+      "sha256": "97b08b8e8f88d697eaa4dad351a0ba430a91acece8986714b28c73efe7ab71a4",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/logs/orchestration-validation-after-integration.log",
+      "size": 74,
+      "sha256": "be3b260cee4c1dd05cbb72279ef43828b93792a2c747ae3525e253f7cceaaa76",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/logs/orchestration-validation-after-normalization.log",
+      "size": 74,
+      "sha256": "be3b260cee4c1dd05cbb72279ef43828b93792a2c747ae3525e253f7cceaaa76",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/logs/orchestration-validation-final.log",
+      "size": 74,
+      "sha256": "be3b260cee4c1dd05cbb72279ef43828b93792a2c747ae3525e253f7cceaaa76",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/logs/orchestration-validation-post-tde-ingest.log",
+      "size": 74,
+      "sha256": "be3b260cee4c1dd05cbb72279ef43828b93792a2c747ae3525e253f7cceaaa76",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/logs/repo-validation-final-after-risk-tag.log",
+      "size": 1397,
+      "sha256": "09ab741fa0ac11e75a943d42797d9b5349c33216547ab05a8851a55244f8bc5f",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/logs/repo-validation-final.log",
+      "size": 1339,
+      "sha256": "38a0567c493f6d8887c95eb619f3add86005541b1d18794db1a305fdb7349d4f",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/logs/repo-validation-post-tde-ingest.log",
+      "size": 1397,
+      "sha256": "09ab741fa0ac11e75a943d42797d9b5349c33216547ab05a8851a55244f8bc5f",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/logs/tde-cockpit-after-phase3-final.log",
+      "size": 282,
+      "sha256": "dbe3848799701a94f81c90203fbe340e21d5eafd23e4d93f94a6f2edd0f7e72e",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/logs/tde-cockpit-after-phase3.log",
+      "size": 282,
+      "sha256": "437069c8c5713794126811e5a36d37c68e75538b012576e8bfe628c212d10581",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/logs/tde-ingest-phase3-parent.log",
+      "size": 521,
+      "sha256": "813957db6d0343264dd139e64a57fd3efefd3112b507da903229e3244b0460a3",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/logs/tde-ingest-phase3b-next.log",
+      "size": 560,
+      "sha256": "2635ad277a2dc1586bbc755b2b6993967647f04438c9d1db902f8d34d8bee597",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/role-packets/ARCHITECT_PACKET.md",
+      "size": 812,
+      "sha256": "f0f63491a465a01f7285454ed519ec61d337e2328490307b2c28465aae8505f5",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/role-packets/BUILDER_PACKET.md",
+      "size": 2691,
+      "sha256": "d4868406a4d1bc4f75f47ce2694827eeb7d9db163983417bacd061a0e0bf5df3",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/role-packets/GATEKEEPER_PACKET.md",
+      "size": 696,
+      "sha256": "c104365204539f4fd427100d6c4a84980b13a27de1a8ecb6e1c480879acade80",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/role-packets/INTEGRATOR_PACKET.md",
+      "size": 783,
+      "sha256": "1cccbaf0266d11446208a570daaf333600e68df20cc683f350abc5c6b926d0fc",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/role-packets/ORCHESTRATOR_PACKET.md",
+      "size": 698,
+      "sha256": "95f550849d70a47afe1ef3d4519d0e23417a90e01548564c8ed12711aed208a3",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/role-packets/VERIFIER_PACKET.md",
+      "size": 794,
+      "sha256": "ddffcfe44e0d9f5fdd4a944b202ca23a3faaa5dc349e7c779aebef205b52c1bb",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/worker-results/ARCHITECT_RESULT.md",
+      "size": 7095,
+      "sha256": "cbf5dca275bd1d9376ae9e92a70ebfcf51a02c8bb05149b28ef47b1fb7c7b222",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/worker-results/BUILDER_RESULT.md",
+      "size": 3137,
+      "sha256": "a3e82d0066b374324e3114de534c8561fa326a9aeb7e9cd5666b081c89b1fc87",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/worker-results/GATEKEEPER_RESULT.md",
+      "size": 7856,
+      "sha256": "b594ad73926eeae5529ff9fa3ff331e2395454ca19cc6999b3ccf07ae4807cee",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/worker-results/INTEGRATOR_RESULT.md",
+      "size": 2782,
+      "sha256": "9879321918fe6a9ca7a7e22860b127bbc92f6e5a508d3b6d806f11e294c692ca",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/worker-results/VERIFIER_RESULT.md",
+      "size": 3839,
+      "sha256": "c4e75699081d64988391c5313e0ec672b29497119df9a595b0e36d522a761a7a",
       "ext": ".md"
     }
   ]

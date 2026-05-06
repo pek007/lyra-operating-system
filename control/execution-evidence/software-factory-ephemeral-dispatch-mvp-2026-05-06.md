@@ -1,6 +1,6 @@
 # Software Factory Phase 3 Ephemeral Dispatch MVP Evidence
 
-Status: integrated / verifier pending
+Status: completed / pass
 Date: 2026-05-06
 Run ID: `SF-ORCH-2026-05-06-EPHEMERAL-DISPATCH-MVP`
 Run folder: `workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/`
@@ -24,7 +24,7 @@ Prohibited authority preserved: no credentials/access changes, external sends, d
 | Builder | pass | `worker-results/BUILDER_RESULT.md`; draft contract |
 | Gatekeeper | pass with traceability condition | `worker-results/GATEKEEPER_RESULT.md` |
 | Integrator | pass | `worker-results/INTEGRATOR_RESULT.md` |
-| Verifier | pending | `worker-results/VERIFIER_RESULT.md` |
+| Verifier | pass after recheck | `worker-results/VERIFIER_RESULT.md` |
 
 ## Integrated artifact
 Created `products/delivery/06-architecture/SOFTWARE_FACTORY_WORKER_RESULT_CONTRACT_V0.md` from the Builder draft, preserving Architect-required fields and Gatekeeper authority boundary language.
@@ -46,10 +46,17 @@ Gatekeeper identified a shorthand/non-existent traceability path in `TDE_CHILD_T
 - `workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/worker-results/*.md`
 
 ## Validation
-Pending Verifier run.
+- `python3 tools/validate_software_factory_orchestration.py workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp` — pass after integration.
+- `python3 tools/validate_software_factory_orchestration.py workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp` — pass after result normalization.
+- Final verifier recheck ran the same orchestration validator and recorded pass in `worker-results/VERIFIER_RESULT.md`.
+- Final repo validation passed with only the known residual warning in the older 2026-05-04 isolated-copy preflight snapshot.
+- Parent Phase 3 and next Phase 3b control intakes were ingested into DB-backed TDE intake state.
+
+## Verifier closure
+Initial verifier found closure gaps, not a no-go: Builder and Gatekeeper result files were missing sections required by the newly integrated Worker Result Contract, and this evidence note still had pending markers. Integrator normalized those two pre-contract worker result files without changing their substantive findings; final verifier recheck confirmed those gaps closed and validation passed.
 
 ## Result
-Pending final verifier. Current integration state: pass / verifier-ready.
+Completed / pass for Phase 3 ephemeral dispatch MVP.
 
 ## Exactly one next control object
 If verifier passes: create a follow-up control object for **Phase 3b isolated-worktree parallel-builder proof**, before any persistent agents, PXS/PXS CRM mutation, deploy/release, or larger Software Factory scale-up.

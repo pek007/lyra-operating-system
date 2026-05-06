@@ -9,7 +9,7 @@ Readable projection: `os/runtime/TASKS_from_db.md`
 
 ## 1. What needs attention now
 
-1. **Intake acceptance gap:** 35 / 97 file intakes have exact DB intake/assignment matches.
+1. **Intake acceptance gap:** 37 / 99 file intakes have exact DB intake/assignment matches; 1 historical intakes have explicit disposition; 61 remain unresolved/not exact accepted.
 2. **Open task surface:** 2 DB rows are Active/Waiting/Blocked/Deferred/Escalated.
 3. **Closure-required debt:** 0 meaningful `Done` rows lack structured closure/disposition evidence.
 4. **Projection parity:** `match=true` for `os/runtime/TASKS_from_db.md`.
@@ -41,24 +41,35 @@ This cockpit is an operator surface, not a canonical state store.
 
 | Value | Count |
 | --- | ---: |
-| `db_accepted` | 35 |
+| `db_accepted` | 37 |
 | `assignment_accepted` | 0 |
+| `dispositioned_historical` | 1 |
 | `unaccepted_file_only` | 0 |
-| `invalid_packet` | 58 |
+| `invalid_packet` | 57 |
 | `legacy_object_not_packet` | 4 |
 | `packet_unvalidated` | 0 |
 | `unreadable` | 0 |
 
 Duplicate IDs: **1**.
-Exact DB intake/assignment matches: **35 / 97**.
-Not exact runtime-accepted: **62 / 97**.
+Exact DB intake/assignment matches: **37 / 99**.
+Not exact runtime-accepted: **62 / 99**.
+Explicitly dispositioned historical intakes: **1 / 99**.
+Unresolved not exact accepted: **61 / 99**.
+
+### Decision-object dispositions
+
+| Value | Count |
+| --- | ---: |
+| `duplicate` | 0 |
+| `superseded` | 1 |
+| `recorded_no_action` | 0 |
 
 ### DB intake outcomes
 
 | Value | Count |
 | --- | ---: |
-| `create_decision` | 5 |
-| `create_work` | 34 |
+| `create_decision` | 6 |
+| `create_work` | 35 |
 | `update_existing` | 4 |
 
 ## 5. Assignment acceptance states
@@ -115,8 +126,8 @@ Tasks with closure metadata: **26**.
 
 | Warning | Severity | Owner action |
 | --- | --- | --- |
-| File-submitted ≠ runtime-accepted remains widespread. | High | Do not treat intake files as accepted TDE work unless DB state confirms it. |
-| Many file packets may fail current schema. | High | Add producer adapters or intentionally evolve schema before bulk ingest. |
+| File-submitted ≠ runtime-accepted remains widespread. | High | Do not treat intake files as accepted TDE work unless DB state confirms it or a decision object explicitly dispositions historical state. |
+| Many file packets may fail current schema. | High | Add producer adapters, explicitly disposition historical files, or intentionally evolve schema before bulk ingest. |
 | `TASKS_from_db.md` is readable projection only. | Medium | Keep DB as canonical; cockpit and projection are operator surfaces. |
 | Level 3 decision automation should remain envelope-bound. | Medium | Proceed only through named policy envelopes and visible approval/blocking signals. |
 

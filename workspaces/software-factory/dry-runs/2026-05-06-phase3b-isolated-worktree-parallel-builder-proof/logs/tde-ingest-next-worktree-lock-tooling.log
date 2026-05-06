@@ -1,0 +1,14 @@
+{
+  "intake_id": "CP-2026-05-06-SOFTWARE-FACTORY-WORKTREE-BRANCH-LOCK-TOOLING",
+  "status": "ingested",
+  "triage_outcome": "create_work",
+  "outcome": {
+    "triage_outcome": "create_work",
+    "reason": "bounded_corrective_work_packet",
+    "linked_refs": [],
+    "processed_at": "2026-05-06T14:39:45Z",
+    "intake_id": "CP-2026-05-06-SOFTWARE-FACTORY-WORKTREE-BRANCH-LOCK-TOOLING",
+    "workspace_scope": "lyra-os / software-factory",
+    "product_scope": "delivery / task-management / security as gatekeeper"
+  }
+}
