@@ -1,0 +1,92 @@
+{
+  "artifactType": "software_factory_tde_child_task_projection",
+  "schemaVersion": "0.1.0",
+  "factory_run_id": "SF-ORCH-2026-05-06-EPHEMERAL-DISPATCH-MVP",
+  "parent_tde_ref": "control/tde-intake/software-factory-ephemeral-dispatch-mvp-2026-05-06.json",
+  "child_tasks": [
+    {
+      "task_id": "SF-P3-001",
+      "workstream": "Run orchestration and owner boundary",
+      "role": "orchestrator",
+      "state": "done",
+      "file_scope": [
+        "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/ORCHESTRATION_PLAN.md",
+        "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/TDE_CHILD_TASK_PROJECTION.json"
+      ],
+      "dependencies": [],
+      "evidence_target": "ORCHESTRATION_PLAN.md"
+    },
+    {
+      "task_id": "SF-P3-002",
+      "workstream": "Analyze worker result contract needs",
+      "role": "architect",
+      "state": "done",
+      "file_scope": [
+        "products/delivery/04-execution/SOFTWARE_FACTORY_ORCHESTRATION_LAYER_PLAN_2026-04-28.md",
+        "products/delivery/06-architecture/SOFTWARE_FACTORY_TDE_ORCHESTRATION_CONTRACT_V0.md"
+      ],
+      "dependencies": [
+        "SF-P3-001"
+      ],
+      "evidence_target": "worker-results/ARCHITECT_RESULT.md"
+    },
+    {
+      "task_id": "SF-P3-003",
+      "workstream": "Draft worker result contract",
+      "role": "builder",
+      "state": "done",
+      "file_scope": [
+        "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/drafts/SOFTWARE_FACTORY_WORKER_RESULT_CONTRACT_V0_DRAFT.md"
+      ],
+      "dependencies": [
+        "SF-P3-001"
+      ],
+      "evidence_target": "worker-results/BUILDER_RESULT.md"
+    },
+    {
+      "task_id": "SF-P3-004",
+      "workstream": "Check security and authority gates",
+      "role": "gatekeeper",
+      "state": "done",
+      "file_scope": [
+        "products/security/04-execution/2026-04-02_MINIMUM_TRACEABILITY_STANDARD_FOR_HIGH_RISK_ACTIONS.md",
+        "products/delivery/04-execution/SOFTWARE_FACTORY_ISOLATED_WORKTREE_DISCIPLINE_V0_2026-05-04.md"
+      ],
+      "dependencies": [
+        "SF-P3-001"
+      ],
+      "evidence_target": "worker-results/GATEKEEPER_RESULT.md"
+    },
+    {
+      "task_id": "SF-P3-005",
+      "workstream": "Integrate worker outputs",
+      "role": "integrator",
+      "state": "done",
+      "file_scope": [
+        "products/delivery/06-architecture/SOFTWARE_FACTORY_WORKER_RESULT_CONTRACT_V0.md",
+        "control/execution-evidence/software-factory-ephemeral-dispatch-mvp-2026-05-06.md"
+      ],
+      "dependencies": [
+        "SF-P3-002",
+        "SF-P3-003",
+        "SF-P3-004"
+      ],
+      "evidence_target": "worker-results/INTEGRATOR_RESULT.md"
+    },
+    {
+      "task_id": "SF-P3-006",
+      "workstream": "Verify integrated contract and evidence",
+      "role": "verifier",
+      "state": "done",
+      "file_scope": [
+        "products/delivery/06-architecture/SOFTWARE_FACTORY_WORKER_RESULT_CONTRACT_V0.md",
+        "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/",
+        "control/execution-evidence/"
+      ],
+      "dependencies": [
+        "SF-P3-005"
+      ],
+      "evidence_target": "worker-results/VERIFIER_RESULT.md"
+    }
+  ]
+}

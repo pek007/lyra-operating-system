@@ -1,0 +1,100 @@
+{
+  "artifact_type": "prompt_injection_agent_baseline_adoption",
+  "schema_version": "1.0.0",
+  "status": "active",
+  "date": "2026-04-26",
+  "owner_product": "products/security",
+  "baseline_ref": "products/security/03-operating-model/PROMPT_INJECTION_AGENT_BASELINE_V1.md",
+  "initiative_ref": "control/initiatives/records/INIT-2026-003-prompt-injection-defense-hardening.yaml",
+  "tde_ref": "control/tde-intake/security-prompt-injection-next-high-blast-radius-target-2026-04-26.json",
+  "required_anchor": "Prompt Injection Agent Baseline v1",
+  "config_ref": "~/.openclaw/openclaw.json",
+  "active_agent_expectations": [
+    {
+      "agent_id": "main",
+      "workspace_ref": "/Users/lyra/.openclaw/workspace",
+      "required_guidance_refs": [
+        "AGENTS.md"
+      ],
+      "risk_tags": [
+        "group_chat",
+        "web_fetch",
+        "tool_use",
+        "filesystem",
+        "external_messaging",
+        "high_authority"
+      ],
+      "expected_posture": "Baseline adopted in root workspace guidance; approval required for external/destructive/security-boundary actions."
+    },
+    {
+      "agent_id": "px-internal-dev",
+      "workspace_ref": "/Users/lyra/.openclaw/workspace-px-internal-dev",
+      "required_guidance_refs": [
+        "/Users/lyra/.openclaw/workspace-px-internal-dev/AGENTS.md"
+      ],
+      "risk_tags": [
+        "broad_exec",
+        "sandbox_off",
+        "ask_off",
+        "filesystem",
+        "shared_workspace",
+        "gws",
+        "google_workspace"
+      ],
+      "expected_posture": "Baseline adopted in local workspace guidance; high-authority terminal and GWS exposure are explicitly risk-tagged; Gmail sending remains approval-gated by local wrapper/policy boundary."
+    },
+    {
+      "agent_id": "px-junior-assistant",
+      "workspace_ref": "/Users/lyra/.openclaw/workspace-px-internal-dev",
+      "required_guidance_refs": [
+        "/Users/lyra/.openclaw/workspace-px-internal-dev/AGENTS.md",
+        "/Users/lyra/.openclaw/workspace-px-internal-dev/JUNIOR_ASSISTANT.md"
+      ],
+      "risk_tags": [
+        "gws",
+        "google_workspace",
+        "drive",
+        "drafting",
+        "client_data",
+        "shared_workspace"
+      ],
+      "expected_posture": "Baseline adopted in local workspace and role guidance; Google/GWS path selected for next high-blast-radius assessment."
+    },
+    {
+      "agent_id": "system-recovery",
+      "workspace_ref": "/Users/lyra/.openclaw/workspace/system-recovery",
+      "required_guidance_refs": [
+        "system-recovery/AGENTS.md"
+      ],
+      "risk_tags": [
+        "recovery",
+        "terminal",
+        "approval_gated",
+        "web_denied",
+        "external_messaging_denied"
+      ],
+      "expected_posture": "Baseline adopted in recovery-specific form; no broad context loading or unguided mutating actions."
+    },
+    {
+      "agent_id": "external-comms",
+      "workspace_ref": "/Users/lyra/.openclaw/workspace/external-comms",
+      "required_guidance_refs": [
+        "external-comms/AGENTS.md"
+      ],
+      "risk_tags": [
+        "external_publication",
+        "sensitive_internal_material",
+        "drafting",
+        "reputation"
+      ],
+      "expected_posture": "Baseline adopted in publication-specific form; external sends remain approval-bound."
+    }
+  ],
+  "high_risk_markers": {
+    "exec_full_ask_off": "reviewed_but_not_aligned_until_narrowed_or_exception_governed",
+    "gws": "requires_google_prompt_injection_assessment_before_expansion",
+    "external_publication": "draft_only_without_explicit_approval",
+    "recovery_terminal": "diagnostic_first_and_approval_gated_for_mutation"
+  },
+  "validator_ref": "tools/validate_prompt_injection_baseline.py"
+}

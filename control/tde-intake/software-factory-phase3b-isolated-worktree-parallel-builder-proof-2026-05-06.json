@@ -1,0 +1,57 @@
+{
+  "artifactType": "tde_intake_packet",
+  "schemaVersion": "1.0.0",
+  "intake_id": "CP-2026-05-06-SOFTWARE-FACTORY-PHASE3B-ISOLATED-WORKTREE-PARALLEL-BUILDER-PROOF",
+  "intake_class": "work",
+  "source_system": "software_factory_phase3_mvp",
+  "source_type": "automation",
+  "source_reference": "control/execution-evidence/software-factory-ephemeral-dispatch-mvp-2026-05-06.md",
+  "submitted_at": "2026-05-06T14:15:00Z",
+  "submitted_by": "Lyra / Delivery Software Factory",
+  "title": "Run Software Factory Phase 3b isolated-worktree parallel-builder proof",
+  "summary": "Phase 3 ephemeral dispatch MVP proved bounded role dispatch, result collection, manual integration, independent gatekeeping, verifier feedback, and closure repair. The next control object is to prove isolated-worktree parallel-builder merge discipline before any larger scale-up.",
+  "body": {
+    "control_state": "queued_recommended_next_control_object",
+    "predecessor_run": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/",
+    "predecessor_evidence": "control/execution-evidence/software-factory-ephemeral-dispatch-mvp-2026-05-06.md",
+    "scope": "Delivery-owned low-risk proof only; two independent builders in isolated worktrees/copies with non-overlapping file scopes and one integrator/verifier path.",
+    "hard_constraints": [
+      "no persistent agents",
+      "no PXS/PXS CRM mutation",
+      "no deploy/release",
+      "no credential/access changes",
+      "no external sends",
+      "no destructive cleanup",
+      "explicit owner approval required before execution"
+    ],
+    "close_when": "Two builder workers modify separate scoped files in isolated worktrees/copies, integrator combines outputs, verifier confirms scoped attribution and validation, and evidence identifies the next control object."
+  },
+  "priority_hint": "high",
+  "workspace_scope": "lyra-os / software-factory",
+  "product_scope": "delivery / task-management / security as gatekeeper",
+  "proposed_action": "After owner approval, run the Phase 3b isolated-worktree parallel-builder proof as the next Software Factory orchestration maturation step.",
+  "success_signal": "Parallel builder isolation and merge discipline are proven before Software Factory scale-up.",
+  "requested_action": "After owner approval, run the Phase 3b isolated-worktree parallel-builder proof as the next Software Factory orchestration maturation step.",
+  "related_entities": [
+    {
+      "entity_type": "predecessor_evidence",
+      "entity_ref": "control/execution-evidence/software-factory-ephemeral-dispatch-mvp-2026-05-06.md",
+      "relationship": "derived_from"
+    },
+    {
+      "entity_type": "predecessor_run",
+      "entity_ref": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/",
+      "relationship": "derived_from"
+    }
+  ],
+  "evidence_links": [
+    {
+      "kind": "predecessor_evidence",
+      "ref": "control/execution-evidence/software-factory-ephemeral-dispatch-mvp-2026-05-06.md"
+    },
+    {
+      "kind": "predecessor_run",
+      "ref": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/ORCHESTRATION_PLAN.md"
+    }
+  ]
+}

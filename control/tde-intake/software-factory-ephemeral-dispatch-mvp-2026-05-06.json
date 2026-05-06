@@ -1,0 +1,63 @@
+{
+  "artifactType": "tde_intake_packet",
+  "schemaVersion": "1.0.0",
+  "intake_id": "CP-2026-05-06-SOFTWARE-FACTORY-EPHEMERAL-DISPATCH-MVP",
+  "intake_class": "work",
+  "source_system": "telegram_group_chat",
+  "source_type": "chat_message",
+  "source_reference": "Lyra Operations message 6233, 2026-05-06",
+  "submitted_at": "2026-05-06T14:00:00Z",
+  "submitted_by": "Peter Eklind / Lyra",
+  "title": "Run Software Factory Phase 3 ephemeral subagent dispatch MVP",
+  "summary": "Prove that the Software Factory orchestration layer can dispatch bounded ephemeral role agents from a run packet, collect worker results, manually integrate, verify, and produce owner-reviewable evidence without persistent agents or PXS/Vega interference.",
+  "body": {
+    "control_state": "owner_go_for_bounded_phase3_proof",
+    "scope": "Delivery-owned Software Factory control artifact: worker result contract and dispatch evidence.",
+    "run_folder": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/",
+    "primary_plan": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/ORCHESTRATION_PLAN.md",
+    "allowed_paths": [
+      "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/",
+      "products/delivery/06-architecture/SOFTWARE_FACTORY_WORKER_RESULT_CONTRACT_V0.md",
+      "control/execution-evidence/software-factory-ephemeral-dispatch-mvp-2026-05-06.md"
+    ],
+    "prohibited_actions": [
+      "persistent agents",
+      "PXS/PXS CRM mutation",
+      "Vega Inquiry Engine thread intervention",
+      "deploy/release",
+      "credential/access changes",
+      "external sends",
+      "destructive cleanup"
+    ],
+    "close_when": "At least three ephemeral role workers are dispatched, worker results are collected, one Delivery-owned contract artifact is integrated, validation passes, and evidence identifies the next control object."
+  },
+  "priority_hint": "high",
+  "workspace_scope": "lyra-os / software-factory",
+  "product_scope": "delivery / task-management / control-panel as safe target family",
+  "evidence_links": [
+    {
+      "kind": "phase3_plan",
+      "ref": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/ORCHESTRATION_PLAN.md"
+    }
+  ],
+  "requested_action": "Execute the Phase 3 dispatch MVP with ephemeral subagents only.",
+  "success_signal": "A validated run shows bounded role dispatch, result summaries, manual integration, independent verification, and owner-reviewable evidence.",
+  "related_entities": [
+    {
+      "entity_type": "factory_run",
+      "entity_ref": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/",
+      "relationship": "executed_as"
+    },
+    {
+      "entity_type": "evidence",
+      "entity_ref": "control/execution-evidence/software-factory-ephemeral-dispatch-mvp-2026-05-06.md",
+      "relationship": "closed_by"
+    },
+    {
+      "entity_type": "artifact",
+      "entity_ref": "products/delivery/06-architecture/SOFTWARE_FACTORY_WORKER_RESULT_CONTRACT_V0.md",
+      "relationship": "created"
+    }
+  ],
+  "proposed_action": "Execute the Phase 3 dispatch MVP with ephemeral subagents only."
+}
