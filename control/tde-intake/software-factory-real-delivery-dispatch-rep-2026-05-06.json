@@ -1,0 +1,51 @@
+{
+  "artifactType": "tde_intake_packet",
+  "schemaVersion": "1.0.0",
+  "intake_id": "CP-2026-05-06-SOFTWARE-FACTORY-REAL-DELIVERY-DISPATCH-REP",
+  "intake_class": "work",
+  "source_system": "software_factory_automation_decision",
+  "source_type": "chat_message",
+  "source_reference": "control/tde-intake/software-factory-automatic-worktree-creation-2026-05-06.json",
+  "submitted_at": "2026-05-06T15:10:00Z",
+  "submitted_by": "Peter Eklind / Lyra",
+  "title": "Run one more real Delivery tool-backed parallel dispatch before worktree automation",
+  "summary": "Peter accepted recommendation to hold automatic git worktree creation and instead run one additional real Delivery-owned tool-backed dispatch rep using the lock-manifest gate and isolated-copy discipline.",
+  "body": {
+    "control_state": "owner_go_for_one_more_rep_before_worktree_automation",
+    "decision": "Do not implement automatic worktree creation yet; run one more real Delivery dispatch rep first.",
+    "scope": "Delivery-owned internal operating artifacts only; use file-scope lock checker as required pre-dispatch gate.",
+    "target_outputs": [
+      "products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_DISPATCH_READINESS_CHECKLIST_V0.md",
+      "products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_DISPATCH_FRICTION_LOG_V0.md"
+    ],
+    "hard_constraints": [
+      "no persistent agents",
+      "no PXS/PXS CRM mutation",
+      "no deploy/release",
+      "no credential/access changes",
+      "no external sends",
+      "no destructive cleanup",
+      "no Vega Inquiry Engine intervention"
+    ],
+    "close_when": "The additional dispatch rep is validated, evidenced, and either confirms worktree automation should still wait or identifies concrete automation requirements."
+  },
+  "priority_hint": "medium",
+  "workspace_scope": "lyra-os / software-factory",
+  "product_scope": "delivery / task-management / security as gatekeeper",
+  "proposed_action": "Run a bounded tool-backed parallel dispatch rep against real Delivery operating artifacts before worktree automation.",
+  "requested_action": "Run a bounded tool-backed parallel dispatch rep against real Delivery operating artifacts before worktree automation.",
+  "success_signal": "A real Delivery dispatch rep passes with lock-gate evidence and friction captured for automation/no-automation decision.",
+  "related_entities": [
+    {
+      "entity_type": "predecessor_intake",
+      "entity_ref": "control/tde-intake/software-factory-automatic-worktree-creation-2026-05-06.json",
+      "relationship": "refines_decision"
+    }
+  ],
+  "evidence_links": [
+    {
+      "kind": "predecessor_evidence",
+      "ref": "control/execution-evidence/software-factory-tool-backed-parallel-dispatch-gate-2026-05-06.md"
+    }
+  ]
+}

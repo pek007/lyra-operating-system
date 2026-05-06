@@ -1,0 +1,3 @@
+timestamp: 2026-05-06 17:11:21 CEST
+command: python3 tools/software_factory_file_scope_lock_check.py workspaces/software-factory/dry-runs/2026-05-06-real-delivery-dispatch-rep/manifests/pre-dispatch-lock-manifest.json
+[PASS] Software Factory file-scope lock check passed: workspaces/software-factory/dry-runs/2026-05-06-real-delivery-dispatch-rep/manifests/pre-dispatch-lock-manifest.json

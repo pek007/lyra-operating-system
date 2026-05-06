@@ -1815,6 +1815,12 @@
       "ext": ".md"
     },
     {
+      "path": "control/execution-evidence/software-factory-tool-backed-parallel-dispatch-gate-2026-05-06.md",
+      "size": 3860,
+      "sha256": "d8a3a6237ff1fa74b41630538cc651801de5f1af4e8bb472f2ac25d278849fde",
+      "ext": ".md"
+    },
+    {
       "path": "control/execution-evidence/software-factory-worktree-branch-lock-tooling-2026-05-06.md",
       "size": 4047,
       "sha256": "b3e64450e576d19299a104f5d14e0777bf702e61442f927f533d7e216ca5a90c",
@@ -1986,6 +1992,12 @@
       "path": "control/tde-intake/crm-core-slice-1-change-to-evidence-pilot-2026-04-13.json",
       "size": 6231,
       "sha256": "1983692888f5aae2d7f759ee02946e10a9c63c885f4e9ba8f67e33e97f2ba2e0",
+      "ext": ".json"
+    },
+    {
+      "path": "control/tde-intake/software-factory-automatic-worktree-creation-2026-05-06.json",
+      "size": 2763,
+      "sha256": "d7eddba6f33b6e0545a9ff00e178184fad4e11ba3d2dcb493f5cf55d6ede8db1",
       "ext": ".json"
     },
     {
@@ -6237,6 +6249,18 @@
       "ext": ".md"
     },
     {
+      "path": "products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_DISPATCH_GATE_RUNBOOK_V0.md",
+      "size": 3853,
+      "sha256": "8f40264be4a59189a04ac1978c9f573699748ed05316139b3959d42ba3926ac3",
+      "ext": ".md"
+    },
+    {
+      "path": "products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_DISPATCH_PACKET_TEMPLATE_V0.md",
+      "size": 4439,
+      "sha256": "105af01b1abaf3a7974c36622a0c9f2e7a720e44b0d50d1c66d5e76d19a9a661",
+      "ext": ".md"
+    },
+    {
       "path": "products/delivery/06-architecture/SOFTWARE_FACTORY_WORKER_RESULT_CONTRACT_V0.md",
       "size": 5560,
       "sha256": "9b0b0f7c25063968dac8f4691c565e310ccf39e76ffb4eeb4b28e51e0a7eeb8d",
@@ -9354,6 +9378,210 @@
       "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/worker-results/VERIFIER_RESULT.md",
       "size": 6410,
       "sha256": "9ff0e31efebe9ace5ef64b43816dd622d47f5a7aebd8c0c3f6019263af8dc6aa",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/ORCHESTRATION_PLAN.md",
+      "size": 6108,
+      "sha256": "87e5fed282851ab7346e11c1295ed0a64e90ec9b3c21fc27705e4e91f53cfc24",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/SCOPED_DIFF.md",
+      "size": 1274,
+      "sha256": "1ca0eea5e81893f6553affabdb7a2fcb145c908552bb82d85c52859848e9da95",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/TDE_CHILD_TASK_PROJECTION.json",
+      "size": 4430,
+      "sha256": "ed933299cb7d5cc06b6b3b53db6060022a956339441e27b1e53b70ab4a90363b",
+      "ext": ".json"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/WORKSPACE_INPUT_SNAPSHOT.md",
+      "size": 1839,
+      "sha256": "0275d8d11e6529836cc9356b1ecd25ea4402e8b0c46f3e8dc843497476e2f89b",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/isolated-copy-builder-a/products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_DISPATCH_PACKET_TEMPLATE_V0.md",
+      "size": 4439,
+      "sha256": "105af01b1abaf3a7974c36622a0c9f2e7a720e44b0d50d1c66d5e76d19a9a661",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/isolated-copy-builder-b/products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_DISPATCH_GATE_RUNBOOK_V0.md",
+      "size": 3853,
+      "sha256": "8f40264be4a59189a04ac1978c9f573699748ed05316139b3959d42ba3926ac3",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/logs/file-scope-lock-final.log",
+      "size": 179,
+      "sha256": "700d29866dae9a24227eb9b9fccd261775a27af54701bd1caaedd081dea65925",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/logs/orchestration-validation-after-integration.log",
+      "size": 74,
+      "sha256": "be3b260cee4c1dd05cbb72279ef43828b93792a2c747ae3525e253f7cceaaa76",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/logs/orchestration-validation-final.log",
+      "size": 74,
+      "sha256": "be3b260cee4c1dd05cbb72279ef43828b93792a2c747ae3525e253f7cceaaa76",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/logs/orchestration-validation-pre-dispatch.log",
+      "size": 74,
+      "sha256": "be3b260cee4c1dd05cbb72279ef43828b93792a2c747ae3525e253f7cceaaa76",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/logs/pre-dispatch-lock-check.log",
+      "size": 179,
+      "sha256": "700d29866dae9a24227eb9b9fccd261775a27af54701bd1caaedd081dea65925",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/logs/pre-integration-lock-check-timestamped.log",
+      "size": 405,
+      "sha256": "c5664e752b816c93c71162f4afd6da2105d3fcf940f7ecf1fef1bd1e932b71be",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/logs/repo-validation-final.log",
+      "size": 1397,
+      "sha256": "134d0b831c83fbe2bed7ce6c67cc74887f33c887930b3e21bb67ad893afd3b72",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/logs/tde-cockpit-after-phase3c.log",
+      "size": 427,
+      "sha256": "c642eb163c413bf940ead3111d89c0db7ea0718205e1b5a52fc01e527a65d550",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/logs/tde-ingest-next-automatic-worktree-creation.log",
+      "size": 518,
+      "sha256": "c62d6c9020e5eae56badbd943822322d7186ef1457cd9da4625c1100e77e2603",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/logs/verifier-orchestration-validation.log",
+      "size": 74,
+      "sha256": "be3b260cee4c1dd05cbb72279ef43828b93792a2c747ae3525e253f7cceaaa76",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/logs/verifier-post-root-hash-check.log",
+      "size": 666,
+      "sha256": "a72251a33fbb025a3f4e4ed7b785808faeab0a30965f09625abe438f7efd7748",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/logs/verifier-pre-dispatch-lock-check.log",
+      "size": 179,
+      "sha256": "700d29866dae9a24227eb9b9fccd261775a27af54701bd1caaedd081dea65925",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/manifests/post-root-allowed-manifest.json",
+      "size": 1412,
+      "sha256": "db1d721ecfcdcbb1a12af817f3b267155a8c13c6d8ff6a3438dd5cbeaf806153",
+      "ext": ".json"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/manifests/pre-dispatch-lock-manifest.json",
+      "size": 2119,
+      "sha256": "6b8c4813371d9c215cc849b9a0bd0bbe135db782348efa7269b7cd1bad90b180",
+      "ext": ".json"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/role-packets/ARCHITECT_PACKET.md",
+      "size": 599,
+      "sha256": "722975ae04ba2000728d89c720b77359da6051e3af39ed5890eff629815a2f23",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/role-packets/BUILDER_A_PACKET.md",
+      "size": 670,
+      "sha256": "5c987a48389330b6b5a824a42704ec9aa51906586906c306d9675a5bf3b7a917",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/role-packets/BUILDER_B_PACKET.md",
+      "size": 644,
+      "sha256": "e29ec8af89d9b1bbe89f1ae39e489fe49d1f02bee71647e6e461d56d28d4f49f",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/role-packets/BUILDER_PACKET.md",
+      "size": 3433,
+      "sha256": "d16d802473b48daebe9a8b3d205c4b399299db62b2cb848fb2c5a92dde375783",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/role-packets/GATEKEEPER_PACKET.md",
+      "size": 520,
+      "sha256": "eb17826b79e92cd9dd6cd80c25e8f0f764ddb448630687b9d2a86114234d4e3f",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/role-packets/INTEGRATOR_PACKET.md",
+      "size": 792,
+      "sha256": "a56eb1489788acd436693c1006e4614b1d8215a181b8730bb6f0c386cbaba114",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/role-packets/ORCHESTRATOR_PACKET.md",
+      "size": 405,
+      "sha256": "67ecdc57df5b6a4d8243423abefa31705c6fd8e872906ec50f4ed998cc0c57ba",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/role-packets/VERIFIER_PACKET.md",
+      "size": 508,
+      "sha256": "83e17d4400225920aa1a9491a15e59a22ef88b003b4bbba01ff784ec1c65e3d1",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/worker-results/ARCHITECT_RESULT.md",
+      "size": 4429,
+      "sha256": "502b14330397df8f58d94469cc2c1d68d6d273eb8d6ce3e7cec59deb912f6920",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/worker-results/BUILDER_A_RESULT.md",
+      "size": 3211,
+      "sha256": "2aa9344ec8b625c657ca4ca4eadd1c740120a73b9a704ee6a7090c92557655e5",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/worker-results/BUILDER_B_RESULT.md",
+      "size": 3051,
+      "sha256": "fc2f647b152d3948fe3883de47ad1bef7b196462611fb8963663ef8e75e53d86",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/worker-results/GATEKEEPER_RESULT.md",
+      "size": 5674,
+      "sha256": "ad70f7ab0ae39fe949e9c70ee923b1d7ef84076078f73d63b9529133522d28e9",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/worker-results/INTEGRATOR_RESULT.md",
+      "size": 3710,
+      "sha256": "2b691f81b96b422e8d6c069a66bc502d4ddedf4ce37627f4e5671a848a70c551",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/worker-results/VERIFIER_RESULT.md",
+      "size": 7215,
+      "sha256": "93af096b303833d51199d7b9412924574e01e5f6c075675c877bf335bd9781ee",
       "ext": ".md"
     },
     {

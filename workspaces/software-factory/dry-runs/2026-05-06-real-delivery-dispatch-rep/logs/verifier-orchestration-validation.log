@@ -1,0 +1,3 @@
+timestamp: 2026-05-06 17:15:58 CEST
+command: python3 tools/validate_software_factory_orchestration.py workspaces/software-factory/dry-runs/2026-05-06-real-delivery-dispatch-rep
+[PASS] Software Factory orchestration validation passed (1 run folder(s))

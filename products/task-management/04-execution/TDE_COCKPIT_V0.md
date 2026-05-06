@@ -9,7 +9,7 @@ Readable projection: `os/runtime/TASKS_from_db.md`
 
 ## 1. What needs attention now
 
-1. **Intake acceptance gap:** 39 / 101 file intakes have exact DB intake/assignment matches; 6 historical intakes have explicit disposition; 56 remain unresolved/not exact accepted.
+1. **Intake acceptance gap:** 41 / 103 file intakes have exact DB intake/assignment matches; 10 historical intakes have explicit disposition; 52 remain unresolved/not exact accepted.
 2. **Open task surface:** 2 DB rows are Active/Waiting/Blocked/Deferred/Escalated.
 3. **Closure-required debt:** 0 meaningful `Done` rows lack structured closure/disposition evidence.
 4. **Projection parity:** `match=true` for `os/runtime/TASKS_from_db.md`.
@@ -41,20 +41,20 @@ This cockpit is an operator surface, not a canonical state store.
 
 | Value | Count |
 | --- | ---: |
-| `db_accepted` | 39 |
+| `db_accepted` | 41 |
 | `assignment_accepted` | 0 |
-| `dispositioned_historical` | 6 |
+| `dispositioned_historical` | 10 |
 | `unaccepted_file_only` | 0 |
-| `invalid_packet` | 52 |
+| `invalid_packet` | 48 |
 | `legacy_object_not_packet` | 4 |
 | `packet_unvalidated` | 0 |
 | `unreadable` | 0 |
 
 Duplicate IDs: **1**.
-Exact DB intake/assignment matches: **39 / 101**.
-Not exact runtime-accepted: **62 / 101**.
-Explicitly dispositioned historical intakes: **6 / 101**.
-Unresolved not exact accepted: **56 / 101**.
+Exact DB intake/assignment matches: **41 / 103**.
+Not exact runtime-accepted: **62 / 103**.
+Explicitly dispositioned historical intakes: **10 / 103**.
+Unresolved not exact accepted: **52 / 103**.
 
 ### Decision-object dispositions
 
@@ -64,14 +64,14 @@ Disposition source: `generated_index`.
 | --- | ---: |
 | `duplicate` | 0 |
 | `superseded` | 3 |
-| `recorded_no_action` | 3 |
+| `recorded_no_action` | 7 |
 
 ### DB intake outcomes
 
 | Value | Count |
 | --- | ---: |
-| `create_decision` | 7 |
-| `create_work` | 36 |
+| `create_decision` | 8 |
+| `create_work` | 37 |
 | `update_existing` | 4 |
 
 ## 5. Assignment acceptance states

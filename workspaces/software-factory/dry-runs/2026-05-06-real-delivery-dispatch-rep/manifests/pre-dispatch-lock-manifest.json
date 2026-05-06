@@ -1,0 +1,43 @@
+{
+  "artifactType": "software_factory_file_scope_locks",
+  "schemaVersion": "0.1.0",
+  "factory_run_id": "SF-ORCH-2026-05-06-REAL-DELIVERY-DISPATCH-REP",
+  "workers": [
+    {
+      "worker_id": "builder-a",
+      "branch": "sf/sf-orch-2026-05-06-real-delivery-dispatch-rep/builder-a",
+      "worktree_path": "workspaces/software-factory/worktrees/sf-orch-2026-05-06-real-delivery-dispatch-rep/builder-a",
+      "assigned_result_path": "workspaces/software-factory/dry-runs/2026-05-06-real-delivery-dispatch-rep/worker-results/BUILDER_A_RESULT.md",
+      "write_scopes": [
+        {
+          "path": "workspaces/software-factory/dry-runs/2026-05-06-real-delivery-dispatch-rep/isolated-copy-builder-a/products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_DISPATCH_READINESS_CHECKLIST_V0.md",
+          "scope_type": "file",
+          "mode": "create"
+        }
+      ],
+      "read_only_paths": [
+        "products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_DISPATCH_PACKET_TEMPLATE_V0.md",
+        "products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_DISPATCH_GATE_RUNBOOK_V0.md",
+        "products/delivery/06-architecture/SOFTWARE_FACTORY_WORKER_RESULT_CONTRACT_V0.md"
+      ]
+    },
+    {
+      "worker_id": "builder-b",
+      "branch": "sf/sf-orch-2026-05-06-real-delivery-dispatch-rep/builder-b",
+      "worktree_path": "workspaces/software-factory/worktrees/sf-orch-2026-05-06-real-delivery-dispatch-rep/builder-b",
+      "assigned_result_path": "workspaces/software-factory/dry-runs/2026-05-06-real-delivery-dispatch-rep/worker-results/BUILDER_B_RESULT.md",
+      "write_scopes": [
+        {
+          "path": "workspaces/software-factory/dry-runs/2026-05-06-real-delivery-dispatch-rep/isolated-copy-builder-b/products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_DISPATCH_FRICTION_LOG_V0.md",
+          "scope_type": "file",
+          "mode": "create"
+        }
+      ],
+      "read_only_paths": [
+        "products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_DISPATCH_PACKET_TEMPLATE_V0.md",
+        "products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_DISPATCH_GATE_RUNBOOK_V0.md",
+        "products/delivery/06-architecture/SOFTWARE_FACTORY_WORKER_RESULT_CONTRACT_V0.md"
+      ]
+    }
+  ]
+}

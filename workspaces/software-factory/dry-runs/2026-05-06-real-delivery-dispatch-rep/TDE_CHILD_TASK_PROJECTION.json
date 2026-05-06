@@ -1,0 +1,108 @@
+{
+  "artifactType": "software_factory_tde_child_task_projection",
+  "schemaVersion": "0.1.0",
+  "factory_run_id": "SF-ORCH-2026-05-06-REAL-DELIVERY-DISPATCH-REP",
+  "parent_tde_ref": "control/tde-intake/software-factory-real-delivery-dispatch-rep-2026-05-06.json",
+  "child_tasks": [
+    {
+      "task_id": "SF-P3D-001",
+      "workstream": "real-delivery-dispatch-rep",
+      "role": "orchestrator",
+      "state": "done",
+      "file_scope": [
+        "workspaces/software-factory/dry-runs/2026-05-06-real-delivery-dispatch-rep/ORCHESTRATION_PLAN.md",
+        "workspaces/software-factory/dry-runs/2026-05-06-real-delivery-dispatch-rep/WORKSPACE_INPUT_SNAPSHOT.md",
+        "workspaces/software-factory/dry-runs/2026-05-06-real-delivery-dispatch-rep/TDE_CHILD_TASK_PROJECTION.json",
+        "workspaces/software-factory/dry-runs/2026-05-06-real-delivery-dispatch-rep/manifests/pre-dispatch-lock-manifest.json"
+      ],
+      "dependencies": [],
+      "evidence_target": "ORCHESTRATION_PLAN.md"
+    },
+    {
+      "task_id": "SF-P3D-002",
+      "workstream": "real-delivery-dispatch-rep",
+      "role": "architect",
+      "state": "done",
+      "file_scope": [
+        "workspaces/software-factory/dry-runs/2026-05-06-real-delivery-dispatch-rep/worker-results/ARCHITECT_RESULT.md"
+      ],
+      "dependencies": [
+        "SF-P3D-001"
+      ],
+      "evidence_target": "worker-results/ARCHITECT_RESULT.md"
+    },
+    {
+      "task_id": "SF-P3D-003A",
+      "workstream": "real-delivery-dispatch-rep",
+      "role": "builder",
+      "state": "done",
+      "file_scope": [
+        "workspaces/software-factory/dry-runs/2026-05-06-real-delivery-dispatch-rep/isolated-copy-builder-a/products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_DISPATCH_READINESS_CHECKLIST_V0.md",
+        "workspaces/software-factory/dry-runs/2026-05-06-real-delivery-dispatch-rep/worker-results/BUILDER_A_RESULT.md"
+      ],
+      "dependencies": [
+        "SF-P3D-002"
+      ],
+      "evidence_target": "worker-results/BUILDER_A_RESULT.md"
+    },
+    {
+      "task_id": "SF-P3D-003B",
+      "workstream": "real-delivery-dispatch-rep",
+      "role": "builder",
+      "state": "done",
+      "file_scope": [
+        "workspaces/software-factory/dry-runs/2026-05-06-real-delivery-dispatch-rep/isolated-copy-builder-b/products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_DISPATCH_FRICTION_LOG_V0.md",
+        "workspaces/software-factory/dry-runs/2026-05-06-real-delivery-dispatch-rep/worker-results/BUILDER_B_RESULT.md"
+      ],
+      "dependencies": [
+        "SF-P3D-002"
+      ],
+      "evidence_target": "worker-results/BUILDER_B_RESULT.md"
+    },
+    {
+      "task_id": "SF-P3D-004",
+      "workstream": "real-delivery-dispatch-rep",
+      "role": "gatekeeper",
+      "state": "done",
+      "file_scope": [
+        "workspaces/software-factory/dry-runs/2026-05-06-real-delivery-dispatch-rep/worker-results/GATEKEEPER_RESULT.md"
+      ],
+      "dependencies": [
+        "SF-P3D-001"
+      ],
+      "evidence_target": "worker-results/GATEKEEPER_RESULT.md"
+    },
+    {
+      "task_id": "SF-P3D-005",
+      "workstream": "real-delivery-dispatch-rep",
+      "role": "integrator",
+      "state": "done",
+      "file_scope": [
+        "products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_DISPATCH_READINESS_CHECKLIST_V0.md",
+        "products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_DISPATCH_FRICTION_LOG_V0.md",
+        "workspaces/software-factory/dry-runs/2026-05-06-real-delivery-dispatch-rep/manifests/post-root-allowed-manifest.json",
+        "workspaces/software-factory/dry-runs/2026-05-06-real-delivery-dispatch-rep/SCOPED_DIFF.md",
+        "workspaces/software-factory/dry-runs/2026-05-06-real-delivery-dispatch-rep/worker-results/INTEGRATOR_RESULT.md"
+      ],
+      "dependencies": [
+        "SF-P3D-003A",
+        "SF-P3D-003B",
+        "SF-P3D-004"
+      ],
+      "evidence_target": "worker-results/INTEGRATOR_RESULT.md"
+    },
+    {
+      "task_id": "SF-P3D-006",
+      "workstream": "real-delivery-dispatch-rep",
+      "role": "verifier",
+      "state": "done",
+      "file_scope": [
+        "workspaces/software-factory/dry-runs/2026-05-06-real-delivery-dispatch-rep/worker-results/VERIFIER_RESULT.md"
+      ],
+      "dependencies": [
+        "SF-P3D-005"
+      ],
+      "evidence_target": "worker-results/VERIFIER_RESULT.md"
+    }
+  ]
+}

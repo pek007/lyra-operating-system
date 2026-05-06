@@ -1,0 +1,19 @@
+Repo integrity check passed: scanned 1641 tracked files; no merge-conflict markers or suspicious leftover suffixes found.
+If this gate starts failing repeatedly, route the miss into canonical TDE-linked improvement work per products/delivery/06-architecture/INTERFACES.md.
+[PASS] Architecture fitness gate passed
+[PASS] Delivery v0.1 quality gate passed
+If this gate starts failing repeatedly, route the weak-gate finding into canonical TDE-linked improvement work per Delivery's operating model and interfaces.
+[PASS] CRM pilot evidence gate passed
+The CRM pilot evidence-completeness control surface remains explicit enough to support a fail-closed verification gate when the first bounded cycle runs.
+Compliance pack validation passed.
+wrote /Users/lyra/.openclaw/workspace/inventory/generated/repo_inventory.json
+knowledge indexes generated
+wrote /Users/lyra/.openclaw/workspace/knowledge/reports/INDEX.md
+Standard-change policy check passed
+OK: generated TDE task projection open-task IDs and intents are unique
+Markdown link check passed (changed-only, 934 files)
+Initiative record validation passed.
+Prompt-injection baseline validation passed
+Referenced script guard passed (30 references checked)
+WARN: /Users/lyra/.openclaw/workspace/workspaces/software-factory/dry-runs/2026-05-04-isolated-copy-preflight: WORKSPACE_INPUT_SNAPSHOT.md contains placeholder-looking text
+Validation passed
