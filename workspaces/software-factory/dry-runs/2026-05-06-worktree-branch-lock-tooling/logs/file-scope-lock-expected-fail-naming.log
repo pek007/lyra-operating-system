@@ -1,0 +1,4 @@
+[FAIL] Software Factory file-scope lock check failed: tools/fixtures/software_factory_file_scope_locks/fail-naming.json
+- workers[0].branch must match sf/<factory-run-slug>/<worker-slug>: feature/builder-a
+- workers[0].branch must start with sf/sf-orch-2026-05-06-worktree-lock-check/: feature/builder-a
+- workers[0].worktree_path must include factory run slug sf-orch-2026-05-06-worktree-lock-check: tmp/builder-a

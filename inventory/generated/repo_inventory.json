@@ -1809,6 +1809,12 @@
       "ext": ".md"
     },
     {
+      "path": "control/execution-evidence/software-factory-phase3b-isolated-worktree-parallel-builder-proof-2026-05-06.md",
+      "size": 3989,
+      "sha256": "cbf24c28a8d86ff10dbea8005082d0e45b6160a46babf5469de3150d43a51d60",
+      "ext": ".md"
+    },
+    {
       "path": "control/execution-evidence/vega-adjacent-bu-boundary-current-chain-refresh-2026-04-23-0203-cest.md",
       "size": 3230,
       "sha256": "936f03b355d0d85ce998b68e1303f67806ba1f48ce106d6aad2bc52645543bef",
@@ -1986,6 +1992,12 @@
       "path": "control/tde-intake/software-factory-phase3b-isolated-worktree-parallel-builder-proof-2026-05-06.json",
       "size": 3165,
       "sha256": "1f7ed848e3b001709033951c8ef01fe6bee46bb4ea0da4bea7abf1c7abde0ce5",
+      "ext": ".json"
+    },
+    {
+      "path": "control/tde-intake/software-factory-worktree-branch-lock-tooling-2026-05-06.json",
+      "size": 2743,
+      "sha256": "a3bf57bb71dc043c75a2775a2194a37ed901692b87f2720023d0f7a4c045010c",
       "ext": ".json"
     },
     {
@@ -6207,6 +6219,18 @@
       "ext": ".md"
     },
     {
+      "path": "products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_BUILDER_FILE_SCOPE_LOCK_V0.md",
+      "size": 7406,
+      "sha256": "6fecd9c7a2b8685ec961accdb94c3d3020fd482c421f12ae691369d1e259e503",
+      "ext": ".md"
+    },
+    {
+      "path": "products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_BUILDER_INTEGRATION_CHECKLIST_V0.md",
+      "size": 5132,
+      "sha256": "af739ef48e34cc973f36b07eddcd2101b1e3e42db527944197b5c66a5b7ab5f4",
+      "ext": ".md"
+    },
+    {
       "path": "products/delivery/06-architecture/SOFTWARE_FACTORY_WORKER_RESULT_CONTRACT_V0.md",
       "size": 5560,
       "sha256": "9b0b0f7c25063968dac8f4691c565e310ccf39e76ffb4eeb4b28e51e0a7eeb8d",
@@ -9108,6 +9132,186 @@
       "path": "workspaces/software-factory/dry-runs/2026-05-06-ephemeral-dispatch-mvp/worker-results/VERIFIER_RESULT.md",
       "size": 3839,
       "sha256": "c4e75699081d64988391c5313e0ec672b29497119df9a595b0e36d522a761a7a",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/ORCHESTRATION_PLAN.md",
+      "size": 6179,
+      "sha256": "41537cfeadd31d8060b54005480d2973e14820ceaa8791c2524cfafd0c0a2760",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/SCOPED_DIFF.md",
+      "size": 1141,
+      "sha256": "2caa98f6d9e1b08431c841deb2b2e1e5383e7fe0f8064f7aa66864b54e1ef014",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/TDE_CHILD_TASK_PROJECTION.json",
+      "size": 4470,
+      "sha256": "bd6bc29412cf224cc7236d10e0ec8005ad85f653ddb725cf84e104ed77a95383",
+      "ext": ".json"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/WORKSPACE_INPUT_SNAPSHOT.md",
+      "size": 1904,
+      "sha256": "43646ae85928e95f156bfe515220e7fd91a4f11640e833dd92bfe9af4ea42f81",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/isolated-copy-builder-a/products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_BUILDER_FILE_SCOPE_LOCK_V0.md",
+      "size": 4807,
+      "sha256": "cc6931f64bda7ae6109c1514814473b05d7745521f5b405bbed0b6cf78078f55",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/isolated-copy-builder-a/products/delivery/06-architecture/SOFTWARE_FACTORY_WORKER_RESULT_CONTRACT_V0.md",
+      "size": 5560,
+      "sha256": "9b0b0f7c25063968dac8f4691c565e310ccf39e76ffb4eeb4b28e51e0a7eeb8d",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/isolated-copy-builder-b/products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_BUILDER_INTEGRATION_CHECKLIST_V0.md",
+      "size": 4665,
+      "sha256": "3d50c6d0d1447175685f03eecb5a9c566a10f1309a70463afffcc8ba932785dc",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/isolated-copy-builder-b/products/delivery/06-architecture/SOFTWARE_FACTORY_WORKER_RESULT_CONTRACT_V0.md",
+      "size": 5560,
+      "sha256": "9b0b0f7c25063968dac8f4691c565e310ccf39e76ffb4eeb4b28e51e0a7eeb8d",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/logs/orchestration-validation-after-integration.log",
+      "size": 74,
+      "sha256": "be3b260cee4c1dd05cbb72279ef43828b93792a2c747ae3525e253f7cceaaa76",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/logs/orchestration-validation-final.log",
+      "size": 74,
+      "sha256": "be3b260cee4c1dd05cbb72279ef43828b93792a2c747ae3525e253f7cceaaa76",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/logs/orchestration-validation-verifier.log",
+      "size": 74,
+      "sha256": "be3b260cee4c1dd05cbb72279ef43828b93792a2c747ae3525e253f7cceaaa76",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/logs/repo-validation-final.log",
+      "size": 1397,
+      "sha256": "d504a588d4f9247e183d797abcc49003dd24f5d375a765f0cee47cae8bc9533e",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/logs/tde-cockpit-after-phase3b.log",
+      "size": 374,
+      "sha256": "fcf90716d4cb4b899546e8bc06e1acf18af94948f7ed2d715abefdf9c9e406fb",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/logs/tde-ingest-next-worktree-lock-tooling.log",
+      "size": 520,
+      "sha256": "d801ad794b3b418c68afa690a71349a9bd58398e23bd3c072d3c9dd9b9502f81",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/manifests/post-root-allowed-manifest.json",
+      "size": 1282,
+      "sha256": "b7546b1e2aeb198b208ddd229c7a59563046a25732ce513f3cebd111b1ced591",
+      "ext": ".json"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/manifests/pre-root-allowed-manifest.json",
+      "size": 390,
+      "sha256": "4e48f6413720c7f995d3b1c7ddd3487b7c00bbd9cdabf98ccedd2c2a2b2af947",
+      "ext": ".json"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/role-packets/ARCHITECT_PACKET.md",
+      "size": 684,
+      "sha256": "21516a73cc6895a12207e559ee1a63651174bf2368289fd98ef9beac7cbd89b1",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/role-packets/BUILDER_A_PACKET.md",
+      "size": 1082,
+      "sha256": "771f42e6a125b4496e86a75f1ac5bf92d6b4941c847b43ccc808198fbd1e235e",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/role-packets/BUILDER_B_PACKET.md",
+      "size": 1107,
+      "sha256": "a0b2a68988e8db79ab0e979e0a43eaaa52aaac5002dfeb66c11578224cb7263e",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/role-packets/BUILDER_PACKET.md",
+      "size": 2975,
+      "sha256": "b85511d65005088a21f3d5ab3572ba0521677234d24bc372434f41fefd3b87e8",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/role-packets/GATEKEEPER_PACKET.md",
+      "size": 592,
+      "sha256": "25bb686b3edc7b2fbfd7e26167dafcfab827fa33262d48aee695e97c8dfa7001",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/role-packets/INTEGRATOR_PACKET.md",
+      "size": 743,
+      "sha256": "429572fe3361c7bfd15b5f12a7cfdad7cb598a329a65a7de5dcc5cc4cd623959",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/role-packets/ORCHESTRATOR_PACKET.md",
+      "size": 512,
+      "sha256": "4fddcd21810bf361826829a1547be80342941ee0309b2f43028d2c27f8746e8c",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/role-packets/VERIFIER_PACKET.md",
+      "size": 542,
+      "sha256": "f37e51bb6ed164ff772d91759ac6ae8f761d88df880ce23d5ce834701e902a0b",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/worker-results/ARCHITECT_RESULT.md",
+      "size": 5849,
+      "sha256": "973ed2f1cb0846868042ab8f6babe9f5b8408dfeeea2e13eaa223d7a936cddc7",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/worker-results/BUILDER_A_RESULT.md",
+      "size": 2539,
+      "sha256": "07759931e2260ee300adc5c3fd53991f933ff58d8dbabc614bb5da3e630cbc95",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/worker-results/BUILDER_B_RESULT.md",
+      "size": 2814,
+      "sha256": "6dc410f8cf71dd99848028691395da2afc8d6c4b4e1181de604f470809182404",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/worker-results/GATEKEEPER_RESULT.md",
+      "size": 6006,
+      "sha256": "cb3b2eb1d0178610bf5f0ba01ac168119eb8b12fd99f4828c3e8ffa96fc4eb5d",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/worker-results/INTEGRATOR_RESULT.md",
+      "size": 3534,
+      "sha256": "0df25c6abca1de54250166867bb4853bb0e90819c4b3a8873d90b0ff977995f1",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-phase3b-isolated-worktree-parallel-builder-proof/worker-results/VERIFIER_RESULT.md",
+      "size": 6410,
+      "sha256": "9ff0e31efebe9ace5ef64b43816dd622d47f5a7aebd8c0c3f6019263af8dc6aa",
       "ext": ".md"
     }
   ]

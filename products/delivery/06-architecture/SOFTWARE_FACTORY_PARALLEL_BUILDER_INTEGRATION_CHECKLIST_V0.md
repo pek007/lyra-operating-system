@@ -18,6 +18,8 @@ The Integrator may inspect, compare, and adopt builder outputs into the designat
 ### 1. Confirm intake package
 
 - [ ] Confirm each builder has an assigned role packet, assigned artifact path, and assigned worker result path.
+- [ ] Confirm a pre-dispatch file-scope lock manifest exists for parallel builder lanes, or record why the run is serial/manual-only.
+- [ ] Confirm `python3 tools/software_factory_file_scope_lock_check.py <lock-manifest.json>` passed before dispatch when parallel builders are used.
 - [ ] Confirm each worker result follows `products/delivery/06-architecture/SOFTWARE_FACTORY_WORKER_RESULT_CONTRACT_V0.md`.
 - [ ] Confirm each changed file is inside that builder's allowed isolated-copy/result scope.
 - [ ] Confirm every builder states an authority boundary and recommended integration state.
@@ -62,12 +64,13 @@ Resolve or escalate before integration if any of these appear:
 
 Recommended v0 order:
 
-1. Validate each individual worker result for required sections and scoped changed files.
-2. Inspect each builder artifact against its packet acceptance criteria.
-3. Perform conflict review across all builder artifacts selected for integration.
-4. Adopt selected content into the Integrator-owned root/final target.
-5. Run the factory validation command supplied by the role packet or owning lane.
-6. Re-check final root/final target diff and evidence file before marking the run complete.
+1. Validate the file-scope lock manifest with `tools/software_factory_file_scope_lock_check.py` before dispatch or before late integration if the manifest was created retrospectively.
+2. Validate each individual worker result for required sections and scoped changed files.
+3. Inspect each builder artifact against its packet acceptance criteria.
+4. Perform conflict review across all builder artifacts selected for integration.
+5. Adopt selected content into the Integrator-owned root/final target.
+6. Run the factory validation command supplied by the role packet or owning lane.
+7. Re-check final root/final target diff and evidence file before marking the run complete.
 
 ### 7. Capture post-integration manifest
 

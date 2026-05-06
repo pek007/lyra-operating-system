@@ -1,0 +1,45 @@
+{
+  "artifactType": "software_factory_file_scope_locks",
+  "schemaVersion": "0.1.0",
+  "factory_run_id": "SF-ORCH-2026-05-06-WORKTREE-LOCK-CHECK",
+  "workers": [
+    {
+      "worker_id": "builder-a",
+      "branch": "sf/sf-orch-2026-05-06-worktree-lock-check/builder-a",
+      "worktree_path": "workspaces/software-factory/worktrees/sf-orch-2026-05-06-worktree-lock-check/builder-a",
+      "assigned_result_path": "workspaces/software-factory/dry-runs/2026-05-06-worktree-lock-check/worker-results/BUILDER_A_RESULT.md",
+      "write_scopes": [
+        {
+          "path": "products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_BUILDER_FILE_SCOPE_LOCK_V0.md",
+          "scope_type": "file",
+          "mode": "modify"
+        }
+      ],
+      "changed_files": [
+        "products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_BUILDER_FILE_SCOPE_LOCK_V0.md"
+      ],
+      "read_only_paths": [
+        "products/delivery/06-architecture/SOFTWARE_FACTORY_WORKER_RESULT_CONTRACT_V0.md"
+      ]
+    },
+    {
+      "worker_id": "builder-b",
+      "branch": "sf/sf-orch-2026-05-06-worktree-lock-check/builder-b",
+      "worktree_path": "workspaces/software-factory/worktrees/sf-orch-2026-05-06-worktree-lock-check/builder-b",
+      "assigned_result_path": "workspaces/software-factory/dry-runs/2026-05-06-worktree-lock-check/worker-results/BUILDER_B_RESULT.md",
+      "write_scopes": [
+        {
+          "path": "products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_BUILDER_INTEGRATION_CHECKLIST_V0.md",
+          "scope_type": "file",
+          "mode": "modify"
+        }
+      ],
+      "changed_files": [
+        "products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_BUILDER_INTEGRATION_CHECKLIST_V0.md"
+      ],
+      "read_only_paths": [
+        "products/delivery/06-architecture/SOFTWARE_FACTORY_WORKER_RESULT_CONTRACT_V0.md"
+      ]
+    }
+  ]
+}

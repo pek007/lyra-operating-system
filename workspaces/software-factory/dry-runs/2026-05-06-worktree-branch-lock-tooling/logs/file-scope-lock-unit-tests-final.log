@@ -1,0 +1,5 @@
+PASS non-overlapping builder scopes
+PASS overlapping directory/file scopes
+PASS bad worktree/branch naming
+PASS changed file outside lock
+[PASS] Software Factory file-scope lock checker tests passed
