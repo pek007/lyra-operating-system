@@ -1,0 +1,41 @@
+{
+  "artifactType": "software_factory_file_scope_locks",
+  "schemaVersion": "0.1.0",
+  "factory_run_id": "SF-ORCH-2026-05-06-TOOL-BACKED-PARALLEL-DISPATCH-GATE",
+  "workers": [
+    {
+      "worker_id": "builder-a",
+      "branch": "sf/sf-orch-2026-05-06-tool-backed-parallel-dispatch-gate/builder-a",
+      "worktree_path": "workspaces/software-factory/worktrees/sf-orch-2026-05-06-tool-backed-parallel-dispatch-gate/builder-a",
+      "assigned_result_path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/worker-results/BUILDER_A_RESULT.md",
+      "write_scopes": [
+        {
+          "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/isolated-copy-builder-a/products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_DISPATCH_PACKET_TEMPLATE_V0.md",
+          "scope_type": "file",
+          "mode": "create"
+        }
+      ],
+      "read_only_paths": [
+        "products/delivery/06-architecture/SOFTWARE_FACTORY_WORKER_RESULT_CONTRACT_V0.md",
+        "products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_BUILDER_FILE_SCOPE_LOCK_V0.md"
+      ]
+    },
+    {
+      "worker_id": "builder-b",
+      "branch": "sf/sf-orch-2026-05-06-tool-backed-parallel-dispatch-gate/builder-b",
+      "worktree_path": "workspaces/software-factory/worktrees/sf-orch-2026-05-06-tool-backed-parallel-dispatch-gate/builder-b",
+      "assigned_result_path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/worker-results/BUILDER_B_RESULT.md",
+      "write_scopes": [
+        {
+          "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/isolated-copy-builder-b/products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_DISPATCH_GATE_RUNBOOK_V0.md",
+          "scope_type": "file",
+          "mode": "create"
+        }
+      ],
+      "read_only_paths": [
+        "products/delivery/06-architecture/SOFTWARE_FACTORY_WORKER_RESULT_CONTRACT_V0.md",
+        "products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_BUILDER_INTEGRATION_CHECKLIST_V0.md"
+      ]
+    }
+  ]
+}

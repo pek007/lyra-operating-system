@@ -1,0 +1,108 @@
+{
+  "artifactType": "software_factory_tde_child_task_projection",
+  "schemaVersion": "0.1.0",
+  "factory_run_id": "SF-ORCH-2026-05-06-TOOL-BACKED-PARALLEL-DISPATCH-GATE",
+  "parent_tde_ref": "control/tde-intake/software-factory-worktree-branch-lock-tooling-2026-05-06.json",
+  "child_tasks": [
+    {
+      "task_id": "SF-P3C-001",
+      "workstream": "tool-backed-dispatch",
+      "role": "orchestrator",
+      "state": "done",
+      "file_scope": [
+        "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/ORCHESTRATION_PLAN.md",
+        "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/WORKSPACE_INPUT_SNAPSHOT.md",
+        "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/TDE_CHILD_TASK_PROJECTION.json",
+        "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/manifests/pre-dispatch-lock-manifest.json"
+      ],
+      "dependencies": [],
+      "evidence_target": "ORCHESTRATION_PLAN.md"
+    },
+    {
+      "task_id": "SF-P3C-002",
+      "workstream": "tool-backed-dispatch",
+      "role": "architect",
+      "state": "done",
+      "file_scope": [
+        "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/worker-results/ARCHITECT_RESULT.md"
+      ],
+      "dependencies": [
+        "SF-P3C-001"
+      ],
+      "evidence_target": "worker-results/ARCHITECT_RESULT.md"
+    },
+    {
+      "task_id": "SF-P3C-003A",
+      "workstream": "tool-backed-dispatch",
+      "role": "builder",
+      "state": "done",
+      "file_scope": [
+        "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/isolated-copy-builder-a/products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_DISPATCH_PACKET_TEMPLATE_V0.md",
+        "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/worker-results/BUILDER_A_RESULT.md"
+      ],
+      "dependencies": [
+        "SF-P3C-002"
+      ],
+      "evidence_target": "worker-results/BUILDER_A_RESULT.md"
+    },
+    {
+      "task_id": "SF-P3C-003B",
+      "workstream": "tool-backed-dispatch",
+      "role": "builder",
+      "state": "done",
+      "file_scope": [
+        "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/isolated-copy-builder-b/products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_DISPATCH_GATE_RUNBOOK_V0.md",
+        "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/worker-results/BUILDER_B_RESULT.md"
+      ],
+      "dependencies": [
+        "SF-P3C-002"
+      ],
+      "evidence_target": "worker-results/BUILDER_B_RESULT.md"
+    },
+    {
+      "task_id": "SF-P3C-004",
+      "workstream": "tool-backed-dispatch",
+      "role": "gatekeeper",
+      "state": "done",
+      "file_scope": [
+        "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/worker-results/GATEKEEPER_RESULT.md"
+      ],
+      "dependencies": [
+        "SF-P3C-001"
+      ],
+      "evidence_target": "worker-results/GATEKEEPER_RESULT.md"
+    },
+    {
+      "task_id": "SF-P3C-005",
+      "workstream": "tool-backed-dispatch",
+      "role": "integrator",
+      "state": "done",
+      "file_scope": [
+        "products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_DISPATCH_PACKET_TEMPLATE_V0.md",
+        "products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_DISPATCH_GATE_RUNBOOK_V0.md",
+        "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/manifests/post-root-allowed-manifest.json",
+        "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/SCOPED_DIFF.md",
+        "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/worker-results/INTEGRATOR_RESULT.md"
+      ],
+      "dependencies": [
+        "SF-P3C-003A",
+        "SF-P3C-003B",
+        "SF-P3C-004"
+      ],
+      "evidence_target": "worker-results/INTEGRATOR_RESULT.md"
+    },
+    {
+      "task_id": "SF-P3C-006",
+      "workstream": "tool-backed-dispatch",
+      "role": "verifier",
+      "state": "done",
+      "file_scope": [
+        "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/worker-results/VERIFIER_RESULT.md"
+      ],
+      "dependencies": [
+        "SF-P3C-005"
+      ],
+      "evidence_target": "worker-results/VERIFIER_RESULT.md"
+    }
+  ]
+}

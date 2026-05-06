@@ -1,0 +1,14 @@
+{
+  "out": "products/task-management/04-execution/TDE_COCKPIT_V0.md",
+  "task_count": 153,
+  "open_count": 2,
+  "closure_required_debt": 0,
+  "lowercase_done_count": 0,
+  "intake_file_count": 101,
+  "intake_accepted_exact_count": 39,
+  "intake_dispositioned_historical_count": 6,
+  "intake_unresolved_not_accepted_count": 56,
+  "decision_disposition_source": "generated_index",
+  "parity_match": true,
+  "check_failures": []
+}

@@ -1815,6 +1815,12 @@
       "ext": ".md"
     },
     {
+      "path": "control/execution-evidence/software-factory-worktree-branch-lock-tooling-2026-05-06.md",
+      "size": 4047,
+      "sha256": "b3e64450e576d19299a104f5d14e0777bf702e61442f927f533d7e216ca5a90c",
+      "ext": ".md"
+    },
+    {
       "path": "control/execution-evidence/vega-adjacent-bu-boundary-current-chain-refresh-2026-04-23-0203-cest.md",
       "size": 3230,
       "sha256": "936f03b355d0d85ce998b68e1303f67806ba1f48ce106d6aad2bc52645543bef",
@@ -8133,6 +8139,30 @@
       "ext": ".py"
     },
     {
+      "path": "tools/fixtures/software_factory_file_scope_locks/fail-changed-file.json",
+      "size": 854,
+      "sha256": "32ddad617750a0ee0a3be607358e0bbafebdcd035068b7169ba7e5021e160805",
+      "ext": ".json"
+    },
+    {
+      "path": "tools/fixtures/software_factory_file_scope_locks/fail-naming.json",
+      "size": 607,
+      "sha256": "00574978d21bed66c10c2ad2129cc6d2999e936111bc9dd4459cdd579e4dc8fa",
+      "ext": ".json"
+    },
+    {
+      "path": "tools/fixtures/software_factory_file_scope_locks/fail-overlap.json",
+      "size": 1216,
+      "sha256": "4d22059c1e7e17d9c13cbe28bb8093bb3251b86327cbb1027bfa2c24ffcbd8f7",
+      "ext": ".json"
+    },
+    {
+      "path": "tools/fixtures/software_factory_file_scope_locks/pass-non-overlap.json",
+      "size": 1873,
+      "sha256": "4c34260251aec326e24c868bc56755c722be0ba41e94ddf23eaef1103074386e",
+      "ext": ".json"
+    },
+    {
       "path": "tools/gen_effective_direction_snapshot.py",
       "size": 2096,
       "sha256": "4ddae5e399a916d67b6524ebd7846d3b845d46997b42f3034d608d221e7a1c5d",
@@ -8256,6 +8286,12 @@
       "path": "tools/referenced_script_guard.py",
       "size": 2108,
       "sha256": "e132ec9e9e8637461293d18d9489e3d7e973846f6422ff68f455c50be59b143f",
+      "ext": ".py"
+    },
+    {
+      "path": "tools/software_factory_file_scope_lock_check.py",
+      "size": 12088,
+      "sha256": "5be371788ecd527bad7229b8885451457728895765cf9b59bc0b3eeb404f700e",
       "ext": ".py"
     },
     {
@@ -8694,6 +8730,12 @@
       "path": "tools/test_s35_state_ledger_write.py",
       "size": 2649,
       "sha256": "81d4bfa8003a77fc13a32879bbc7cad0bee87c8df714bcfcc72c86c757164c0a",
+      "ext": ".py"
+    },
+    {
+      "path": "tools/test_software_factory_file_scope_lock_check.py",
+      "size": 1675,
+      "sha256": "e3f0b72b3bb54f95e1866bb718073637d707e0b7c92f63b79c7fb4f7d3978a53",
       "ext": ".py"
     },
     {
@@ -9313,6 +9355,108 @@
       "size": 6410,
       "sha256": "9ff0e31efebe9ace5ef64b43816dd622d47f5a7aebd8c0c3f6019263af8dc6aa",
       "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-worktree-branch-lock-tooling/README.md",
+      "size": 1394,
+      "sha256": "6f419fdd99d9be3612f94402cdedb00d20dc2b6377eeba4770ff71307d6f86d3",
+      "ext": ".md"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-worktree-branch-lock-tooling/logs/file-scope-lock-expected-fail-changed-file-final.log",
+      "size": 286,
+      "sha256": "f53f06de6c3856c958e0991330cec4c9392223219a541fc3ed362620f69e194b",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-worktree-branch-lock-tooling/logs/file-scope-lock-expected-fail-changed-file.log",
+      "size": 286,
+      "sha256": "f53f06de6c3856c958e0991330cec4c9392223219a541fc3ed362620f69e194b",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-worktree-branch-lock-tooling/logs/file-scope-lock-expected-fail-naming-final.log",
+      "size": 415,
+      "sha256": "8901191f33b80dde48860890b78fa81561d3aae1cd6f76220af5eefa451152df",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-worktree-branch-lock-tooling/logs/file-scope-lock-expected-fail-naming.log",
+      "size": 415,
+      "sha256": "8901191f33b80dde48860890b78fa81561d3aae1cd6f76220af5eefa451152df",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-worktree-branch-lock-tooling/logs/file-scope-lock-expected-fail-overlap-final.log",
+      "size": 328,
+      "sha256": "37f903acb449a78ce12f75eed23d30b24a7f0902198194c2eed3bdab2ef0e408",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-worktree-branch-lock-tooling/logs/file-scope-lock-expected-fail-overlap.log",
+      "size": 328,
+      "sha256": "37f903acb449a78ce12f75eed23d30b24a7f0902198194c2eed3bdab2ef0e408",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-worktree-branch-lock-tooling/logs/file-scope-lock-expected-failures-summary-final.log",
+      "size": 44,
+      "sha256": "dc2c26eff726ed74dc58f1ca0697e51dfcff98b404cf52c6e2174668bea91009",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-worktree-branch-lock-tooling/logs/file-scope-lock-expected-failures-summary.log",
+      "size": 44,
+      "sha256": "dc2c26eff726ed74dc58f1ca0697e51dfcff98b404cf52c6e2174668bea91009",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-worktree-branch-lock-tooling/logs/file-scope-lock-pass-fixture-final.log",
+      "size": 125,
+      "sha256": "1b36229b5deb68cd0b00f2d372935a54ec3eee3603ec5e20c48e2f16961be8b4",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-worktree-branch-lock-tooling/logs/file-scope-lock-pass-fixture.log",
+      "size": 125,
+      "sha256": "1b36229b5deb68cd0b00f2d372935a54ec3eee3603ec5e20c48e2f16961be8b4",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-worktree-branch-lock-tooling/logs/file-scope-lock-unit-tests-closure.log",
+      "size": 199,
+      "sha256": "ff4fb166c90166950ae97be91f2c91f6cb902256f154991754dd67f29defc243",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-worktree-branch-lock-tooling/logs/file-scope-lock-unit-tests-final.log",
+      "size": 199,
+      "sha256": "ff4fb166c90166950ae97be91f2c91f6cb902256f154991754dd67f29defc243",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-worktree-branch-lock-tooling/logs/file-scope-lock-unit-tests.log",
+      "size": 199,
+      "sha256": "ff4fb166c90166950ae97be91f2c91f6cb902256f154991754dd67f29defc243",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-worktree-branch-lock-tooling/logs/repo-validation-lock-tooling-closure.log",
+      "size": 1397,
+      "sha256": "69dd26785b41c79f9769b6db208170abfb43d4469bb5fceaff1d52cd241fae18",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-worktree-branch-lock-tooling/logs/repo-validation-lock-tooling.log",
+      "size": 1397,
+      "sha256": "69dd26785b41c79f9769b6db208170abfb43d4469bb5fceaff1d52cd241fae18",
+      "ext": ".log"
+    },
+    {
+      "path": "workspaces/software-factory/dry-runs/2026-05-06-worktree-branch-lock-tooling/logs/tde-cockpit-after-lock-tooling.log",
+      "size": 374,
+      "sha256": "fcf90716d4cb4b899546e8bc06e1acf18af94948f7ed2d715abefdf9c9e406fb",
+      "ext": ".log"
     }
   ]
 }

@@ -1,0 +1,33 @@
+{
+  "factory_run_id": "SF-ORCH-2026-05-06-TOOL-BACKED-PARALLEL-DISPATCH-GATE",
+  "integrated_files": [
+    {
+      "root": {
+        "path": "products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_DISPATCH_PACKET_TEMPLATE_V0.md",
+        "exists": true,
+        "sha256": "105af01b1abaf3a7974c36622a0c9f2e7a720e44b0d50d1c66d5e76d19a9a661",
+        "bytes": 4439
+      },
+      "source": {
+        "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/isolated-copy-builder-a/products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_DISPATCH_PACKET_TEMPLATE_V0.md",
+        "exists": true,
+        "sha256": "105af01b1abaf3a7974c36622a0c9f2e7a720e44b0d50d1c66d5e76d19a9a661",
+        "bytes": 4439
+      }
+    },
+    {
+      "root": {
+        "path": "products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_DISPATCH_GATE_RUNBOOK_V0.md",
+        "exists": true,
+        "sha256": "8f40264be4a59189a04ac1978c9f573699748ed05316139b3959d42ba3926ac3",
+        "bytes": 3853
+      },
+      "source": {
+        "path": "workspaces/software-factory/dry-runs/2026-05-06-tool-backed-parallel-dispatch-gate/isolated-copy-builder-b/products/delivery/06-architecture/SOFTWARE_FACTORY_PARALLEL_DISPATCH_GATE_RUNBOOK_V0.md",
+        "exists": true,
+        "sha256": "8f40264be4a59189a04ac1978c9f573699748ed05316139b3959d42ba3926ac3",
+        "bytes": 3853
+      }
+    }
+  ]
+}

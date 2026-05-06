@@ -1,0 +1,47 @@
+{
+  "artifactType": "tde_intake_packet",
+  "schemaVersion": "1.0.0",
+  "intake_id": "CP-2026-05-06-SOFTWARE-FACTORY-AUTOMATIC-WORKTREE-CREATION",
+  "intake_class": "work",
+  "source_system": "software_factory_tool_backed_dispatch_gate",
+  "source_type": "automation",
+  "source_reference": "control/execution-evidence/software-factory-tool-backed-parallel-dispatch-gate-2026-05-06.md",
+  "submitted_at": "2026-05-06T15:05:00Z",
+  "submitted_by": "Lyra / Delivery Software Factory",
+  "title": "Decide and, if approved, add automatic Software Factory worktree creation",
+  "summary": "Tool-backed parallel dispatch gate passed end-to-end using declared isolated-copy scopes. The next maturation step is to decide whether to add automatic git worktree/branch creation around the existing lock manifest gate.",
+  "body": {
+    "control_state": "queued_recommended_next_control_object",
+    "predecessor_evidence": "control/execution-evidence/software-factory-tool-backed-parallel-dispatch-gate-2026-05-06.md",
+    "scope": "Delivery-owned tooling/specification only; decide whether to automate git worktree/branch creation after a successful lock-manifest gate, before larger parallel builder scale-up.",
+    "hard_constraints": [
+      "no persistent agents",
+      "no PXS/PXS CRM mutation",
+      "no deploy/release",
+      "no credential/access changes",
+      "no external sends",
+      "no destructive cleanup",
+      "explicit owner approval required before execution"
+    ],
+    "close_when": "A decision is recorded: either hold worktree automation or implement a bounded helper that creates/removes named worktrees safely after lock-manifest validation, with expected-fail tests."
+  },
+  "priority_hint": "medium",
+  "workspace_scope": "lyra-os / software-factory",
+  "product_scope": "delivery / task-management / security as gatekeeper",
+  "proposed_action": "After owner approval, decide whether to add automatic git worktree/branch creation around the existing file-scope lock manifest gate.",
+  "requested_action": "After owner approval, decide whether to add automatic git worktree/branch creation around the existing file-scope lock manifest gate.",
+  "success_signal": "Software Factory has either a recorded hold decision or a validated helper for safe automatic worktree/branch creation after lock-manifest validation.",
+  "related_entities": [
+    {
+      "entity_type": "predecessor_evidence",
+      "entity_ref": "control/execution-evidence/software-factory-tool-backed-parallel-dispatch-gate-2026-05-06.md",
+      "relationship": "derived_from"
+    }
+  ],
+  "evidence_links": [
+    {
+      "kind": "predecessor_evidence",
+      "ref": "control/execution-evidence/software-factory-tool-backed-parallel-dispatch-gate-2026-05-06.md"
+    }
+  ]
+}
